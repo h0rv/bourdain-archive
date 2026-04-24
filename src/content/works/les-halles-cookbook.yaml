@@ -4,11 +4,12 @@ type: book
 date: "2004"
 date_precision: year
 summary: Cookbook tied to Bourdain's years at Brasserie Les Halles, with bistro recipes and kitchen voice.
+image_url: https://covers.openlibrary.org/b/isbn/9781582341804-M.jpg
 tags: [kitchens, new-york, hospitality]
 people: [anthony-bourdain]
 places: [les-halles, new-york-city]
 sources: [open-library]
-related: [kitchens, hospitality]
+related: []
 status: needs-review
 availability:
   library_url: https://openlibrary.org/search?q=Anthony+Bourdain%27s+Les+Halles+Cookbook

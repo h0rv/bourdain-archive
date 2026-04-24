@@ -4,6 +4,7 @@ type: comic
 date: "2018"
 date_precision: year
 summary: Horror anthology comic organized around food, storytelling, appetite, and folklore.
+image_url: https://covers.openlibrary.org/b/isbn/9781506706696-M.jpg
 tags: [comic, horror, storytelling]
 people: [anthony-bourdain]
 places: []

@@ -5,7 +5,6 @@ const collectionPaths: Record<string, string> = {
   episodes: 'tv',
   appearances: 'appearances',
   places: 'places',
-  themes: 'themes',
   sources: 'sources',
 };
 
@@ -38,7 +37,7 @@ export function statusClass(status: string): string {
 }
 
 export function formatDate(date?: string | null, precision?: string): string {
-  if (!date) return 'Date unknown';
+  if (!date) return 'Undated';
   if (precision === 'year') return date.slice(0, 4);
   if (precision === 'month') return date.slice(0, 7);
   return date;

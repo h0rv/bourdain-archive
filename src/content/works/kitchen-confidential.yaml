@@ -4,11 +4,12 @@ type: book
 date: "2000"
 date_precision: year
 summary: Bourdain's breakout nonfiction book about restaurant work, kitchen culture, addiction, labor, and the mythology of cooks.
+image_url: https://covers.openlibrary.org/b/isbn/9780060899226-M.jpg
 tags: [kitchens, new-york, labor, addiction]
 people: [anthony-bourdain]
 places: [new-york-city]
 sources: [open-library]
-related: [kitchens, labor, addiction]
+related: []
 status: needs-review
 availability:
   library_url: https://openlibrary.org/search?q=Kitchen+Confidential+Anthony+Bourdain

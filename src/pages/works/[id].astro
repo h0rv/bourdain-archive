@@ -10,7 +10,6 @@ export async function getStaticPaths() {
     ...(await getCollection('episodes')).map((entry) => ({ entry, collection: 'episodes' })),
     ...(await getCollection('appearances')).map((entry) => ({ entry, collection: 'appearances' })),
     ...(await getCollection('places')).map((entry) => ({ entry, collection: 'places' })),
-    ...(await getCollection('themes')).map((entry) => ({ entry, collection: 'themes' })),
   ];
   return entries.map((entry) => ({ params: { id: entry.data.id }, props: { entry, sources, relatedEntries } }));
 }

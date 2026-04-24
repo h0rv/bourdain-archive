@@ -12,11 +12,6 @@ const pageTitle = title === siteName ? siteName : `${title} · ${siteName}`;
 const withBase = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
 const navItems = [
   { href: withBase('/'), label: 'Timeline' },
-  { href: withBase('/works/'), label: 'Works' },
-  { href: withBase('/tv/'), label: 'TV' },
-  { href: withBase('/appearances/'), label: 'Appearances' },
-  { href: withBase('/places/'), label: 'Places' },
-  { href: withBase('/themes/'), label: 'Themes' },
   { href: withBase('/sources/'), label: 'Sources' },
   { href: withBase('/about/'), label: 'About' },
 ];

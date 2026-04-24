@@ -4,11 +4,12 @@ type: book
 date: "2001"
 date_precision: year
 summary: Short nonfiction book about Mary Mallon, public health, class, food labor, and stigma.
+image_url: https://covers.openlibrary.org/b/isbn/9781582341330-M.jpg
 tags: [labor, class, kitchens]
 people: [anthony-bourdain]
 places: [new-york-city]
 sources: [open-library]
-related: [labor, class]
+related: []
 status: needs-review
 availability:
   library_url: https://openlibrary.org/search?q=Typhoid+Mary+Anthony+Bourdain

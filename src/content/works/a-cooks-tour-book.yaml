@@ -4,11 +4,12 @@ type: book
 date: "2001"
 date_precision: year
 summary: Travel and food book following Bourdain's search for memorable meals and the cultures around them.
+image_url: https://covers.openlibrary.org/b/isbn/9780060012786-M.jpg
 tags: [travel, food-media]
 people: [anthony-bourdain]
 places: []
 sources: [open-library]
-related: [a-cooks-tour-show, travel]
+related: [a-cooks-tour-show]
 status: needs-review
 availability:
   library_url: https://openlibrary.org/search?q=A+Cook%27s+Tour+Anthony+Bourdain

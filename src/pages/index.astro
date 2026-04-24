@@ -2,28 +2,65 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import EntryCard from '../components/EntryCard.astro';
-import { sortByDateDesc } from '../lib/content';
+import { formatType, sortByDateDesc } from '../lib/content';
 
 const works = await getCollection('works');
-const episodes = await getCollection('episodes');
+const shows = (await getCollection('episodes')).filter((entry) => entry.data.type === 'show');
 const appearances = await getCollection('appearances');
-const timeline = [
+const entries = [
   ...works.map((entry) => ({ entry, collection: 'works' })),
-  ...episodes.map((entry) => ({ entry, collection: 'episodes' })),
+  ...shows.map((entry) => ({ entry, collection: 'episodes' })),
   ...appearances.map((entry) => ({ entry, collection: 'appearances' })),
-]
-  .filter((item) => Boolean(item.entry.data.date))
-  .sort((a, b) => sortByDateDesc(a.entry, b.entry));
+].sort((a, b) => sortByDateDesc(a.entry, b.entry));
+const filters = Array.from(new Set(entries.map(({ entry }) => entry.data.type))).sort();
 ---
 <BaseLayout title="Bourdain Index">
   <section class="hero">
     <h1>Bourdain Index</h1>
   </section>
 
-  <h2 class="section-heading">Timeline</h2>
-  <ol class="timeline">
-    {timeline.map(({ entry, collection }) => (
-      <li class="timeline-item"><EntryCard entry={entry} collection={collection} /></li>
+  <div class="controls" aria-label="View controls">
+    <div class="pill-row" aria-label="Filters">
+      <button class="pill is-active" type="button" data-filter="all">All</button>
+      {filters.map((filter) => (
+        <button class="pill" type="button" data-filter={filter}>{formatType(filter)}</button>
+      ))}
+    </div>
+    <div class="pill-row" aria-label="Layout">
+      <button class="pill is-active" type="button" data-view="timeline">Timeline</button>
+      <button class="pill" type="button" data-view="cards">Cards</button>
+    </div>
+  </div>
+
+  <ol class="stream" data-stream data-view="timeline">
+    {entries.map(({ entry, collection }) => (
+      <li class="stream-item" data-type={entry.data.type}>
+        <EntryCard entry={entry} collection={collection} />
+      </li>
     ))}
   </ol>
+
+  <script>
+    const stream = document.querySelector('[data-stream]');
+    const filterButtons = document.querySelectorAll('[data-filter]');
+    const viewButtons = document.querySelectorAll('[data-view]');
+
+    filterButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const filter = button.getAttribute('data-filter');
+        filterButtons.forEach((item) => item.classList.toggle('is-active', item === button));
+        document.querySelectorAll('.stream-item').forEach((item) => {
+          item.hidden = filter !== 'all' && item.getAttribute('data-type') !== filter;
+        });
+      });
+    });
+
+    viewButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const view = button.getAttribute('data-view');
+        viewButtons.forEach((item) => item.classList.toggle('is-active', item === button));
+        stream?.setAttribute('data-view', view ?? 'timeline');
+      });
+    });
+  </script>
 </BaseLayout>

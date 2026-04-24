@@ -4,11 +4,12 @@ type: book
 date: "2016"
 date_precision: year
 summary: Home-cooking cookbook framed around Bourdain's family life, entertaining, and personal canon of dishes.
+image_url: https://covers.openlibrary.org/b/isbn/9780062409959-M.jpg
 tags: [hospitality, fatherhood]
 people: [anthony-bourdain]
 places: []
 sources: [open-library]
-related: [hospitality, fatherhood]
+related: []
 status: needs-review
 availability:
   library_url: https://openlibrary.org/search?q=Appetites+Anthony+Bourdain

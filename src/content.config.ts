@@ -28,6 +28,7 @@ const commonEntrySchema = z.object({
   sources: z.array(z.string()).default([]),
   related: z.array(z.string()).default([]),
   status: statusSchema.default('needs-review'),
+  image_url: urlField,
   availability: availabilitySchema,
 });
 
@@ -78,7 +79,6 @@ export const collections = {
       death_date: z.string().nullable().optional(),
     }),
   }),
-  themes: defineCollection({ type: 'data', schema: namedEntrySchema.extend({ type: z.literal('theme') }) }),
   sources: defineCollection({
     type: 'data',
     schema: z.object({

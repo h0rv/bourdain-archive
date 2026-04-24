@@ -42,7 +42,7 @@ const sourceRefs = (data.sources ?? []).map((id: string) => findByDataId(sources
     )}
 
     <section class="detail-box">
-      <h2>Linked entries</h2>
+      <h2>Entries</h2>
       {linkedEntries.length > 0 ? (
         <ul class="clean-list">
           {linkedEntries.map(({ entry: linkedEntry, collection }) => (
@@ -53,7 +53,7 @@ const sourceRefs = (data.sources ?? []).map((id: string) => findByDataId(sources
           ))}
         </ul>
       ) : (
-        <p class="meta">No entries reference this place yet.</p>
+        <p class="meta">None.</p>
       )}
     </section>
 
@@ -66,7 +66,7 @@ const sourceRefs = (data.sources ?? []).map((id: string) => findByDataId(sources
           ))}
         </ul>
       ) : (
-        <p class="meta">No source attached yet.</p>
+        <p class="meta">Unsourced.</p>
       )}
     </section>
   </article>

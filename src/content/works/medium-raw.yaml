@@ -4,11 +4,12 @@ type: book
 date: "2010"
 date_precision: year
 summary: Follow-up memoir and essay collection reflecting on fame, food media, restaurants, fatherhood, and Bourdain's changed public life.
+image_url: https://covers.openlibrary.org/b/isbn/9780061718946-M.jpg
 tags: [fame, food-media, fatherhood, kitchens]
 people: [anthony-bourdain]
 places: []
 sources: [open-library]
-related: [fame, food-media, fatherhood]
+related: []
 status: needs-review
 availability:
   library_url: https://openlibrary.org/search?q=Medium+Raw+Anthony+Bourdain

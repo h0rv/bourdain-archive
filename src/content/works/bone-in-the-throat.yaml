@@ -4,11 +4,12 @@ type: book
 date: "1995"
 date_precision: year
 summary: Bourdain's debut crime novel, set around restaurants, organized crime, and New York kitchen life.
+image_url: https://covers.openlibrary.org/b/isbn/9781582341026-M.jpg
 tags: [fiction, kitchens, new-york]
 people: [anthony-bourdain]
 places: [new-york-city]
 sources: [open-library]
-related: [kitchens, new-york]
+related: []
 status: needs-review
 availability:
   library_url: https://openlibrary.org/search?q=Bone+in+the+Throat+Anthony+Bourdain

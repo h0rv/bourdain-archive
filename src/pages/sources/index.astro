@@ -13,7 +13,7 @@ const sources = (await getCollection('sources')).sort((a, b) => a.data.title.loc
         <h2><a href={entryHref('sources', entry.data.id)}>{entry.data.title}</a></h2>
         <p class="meta">{entry.data.type} · accessed {entry.data.accessed}</p>
         {entry.data.notes && <p class="summary">{entry.data.notes}</p>}
-        <p><a href={entry.data.url}>Open source</a></p>
+        <p><a href={entry.data.url}>Open</a></p>
       </article>
     ))}
   </div>

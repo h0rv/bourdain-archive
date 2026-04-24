@@ -4,11 +4,12 @@ type: book
 date: "2007"
 date_precision: year
 summary: Illustrated companion book connected to Bourdain's travel television series No Reservations.
+image_url: https://covers.openlibrary.org/b/isbn/9781596914476-M.jpg
 tags: [travel, food-media]
 people: [anthony-bourdain]
 places: []
 sources: [open-library]
-related: [no-reservations-show, travel]
+related: [no-reservations-show]
 status: needs-review
 availability:
   library_url: https://openlibrary.org/search?q=No+Reservations+Anthony+Bourdain
