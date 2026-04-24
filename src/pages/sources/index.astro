@@ -4,9 +4,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { entryHref } from '../../lib/content';
 
 const sources = (await getCollection('sources')).sort((a, b) => a.data.title.localeCompare(b.data.title));
+const highlighted = sources.find((entry) => entry.data.id === 'anthony-bourdain-world-map');
 ---
 <BaseLayout title="Sources">
   <h1 class="page-title">Sources</h1>
+  {highlighted && (
+    <section class="detail-box related-source">
+      <h2>Related</h2>
+      <p><a href={highlighted.data.url}>{highlighted.data.title}</a></p>
+      <p class="summary">{highlighted.data.notes}</p>
+    </section>
+  )}
   <div class="card-list">
     {sources.map((entry) => (
       <article class="card">
