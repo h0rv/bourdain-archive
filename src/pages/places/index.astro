@@ -1,0 +1,32 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { entryHref, entryTitle, statusClass } from '../../lib/content';
+
+const places = (await getCollection('places')).sort((a, b) => entryTitle(a).localeCompare(entryTitle(b)));
+const referencedEntries = [
+  ...(await getCollection('works')).map((entry) => ({ entry, collection: 'works' })),
+  ...(await getCollection('episodes')).map((entry) => ({ entry, collection: 'episodes' })),
+  ...(await getCollection('appearances')).map((entry) => ({ entry, collection: 'appearances' })),
+];
+
+const countForPlace = (id: string) => referencedEntries.filter(({ entry }) => entry.data.places?.includes(id)).length;
+---
+<BaseLayout title="Places">
+  <h1 class="page-title">Places</h1>
+  <p class="lede">Countries, cities, restaurants, boroughs, and recurring locations. Place pages are aggregated from entry YAML references.</p>
+  <div class="card-list">
+    {places.map((entry) => {
+      const count = countForPlace(entry.data.id);
+      return (
+        <article class="card">
+          <h2><a href={entryHref('places', entry.data.id)}>{entryTitle(entry)}</a></h2>
+          <p class="meta">
+            Place · {count} linked {count === 1 ? 'entry' : 'entries'} · <span class={`badge ${statusClass(entry.data.status)}`}>{entry.data.status}</span>
+          </p>
+          <p class="summary">{entry.data.summary}</p>
+        </article>
+      );
+    })}
+  </div>
+</BaseLayout>

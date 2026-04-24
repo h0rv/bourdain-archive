@@ -1,0 +1,20 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { entryHref, entryTitle, statusClass } from '../../lib/content';
+
+const themes = (await getCollection('themes')).sort((a, b) => entryTitle(a).localeCompare(entryTitle(b)));
+---
+<BaseLayout title="Themes">
+  <h1 class="page-title">Themes</h1>
+  <p class="lede">Recurring ideas across Bourdain’s work and public record.</p>
+  <div class="card-list">
+    {themes.map((entry) => (
+      <article class="card">
+        <h2><a href={entryHref('themes', entry.data.id)}>{entryTitle(entry)}</a></h2>
+        <p class="meta">Theme · <span class={`badge ${statusClass(entry.data.status)}`}>{entry.data.status}</span></p>
+        <p class="summary">{entry.data.summary}</p>
+      </article>
+    ))}
+  </div>
+</BaseLayout>

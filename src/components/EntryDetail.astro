@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { availabilityBadges, entryHref, entryTitle, findByDataId, formatDate, formatType, statusClass } from '../lib/content';
+
+interface Props {
+  entry: any;
+  collection: string;
+  sources: any[];
+  relatedEntries: any[];
+}
+
+const { entry, collection, sources, relatedEntries } = Astro.props;
+const data = entry.data;
+const title = entryTitle(entry);
+const sourceRefs = (data.sources ?? []).map((id: string) => findByDataId(sources, id)).filter(Boolean);
+const relatedRefs = (data.related ?? []).map((id: string) => relatedEntries.find((item: any) => item.entry.data.id === id)).filter(Boolean);
+const badges = availabilityBadges(data.availability);
+---
+<BaseLayout title={title} description={data.summary}>
+  <article>
+    <h1 class="page-title">{title}</h1>
+    <p class="meta">
+      {formatType(data.type)}
+      {data.date ? ` · ${formatDate(data.date, data.date_precision)}` : ''}
+      {' · '}
+      <span class={`badge ${statusClass(data.status)}`}>{data.status}</span>
+    </p>
+
+    <p class="lede">{data.summary}</p>
+
+    <div class="detail-grid">
+      <section class="detail-box">
+        <h2>Availability</h2>
+        <ul class="clean-list">
+          {badges.map((badge) => (
+            <li>{badge.url ? <a href={badge.url}>{badge.label}</a> : badge.label}</li>
+          ))}
+        </ul>
+      </section>
+
+      {data.tags?.length > 0 && (
+        <section class="detail-box">
+          <h2>Tags</h2>
+          <ul class="tag-list">
+            {data.tags.map((tag: string) => <li class="tag">{tag}</li>)}
+          </ul>
+        </section>
+      )}
+
+      {data.people?.length > 0 && (
+        <section class="detail-box">
+          <h2>People</h2>
+          <ul class="clean-list">
+            {data.people.map((person: string) => <li>{person}</li>)}
+          </ul>
+        </section>
+      )}
+
+      {data.places?.length > 0 && (
+        <section class="detail-box">
+          <h2>Places</h2>
+          <ul class="clean-list">
+            {data.places.map((place: string) => <li>{place}</li>)}
+          </ul>
+        </section>
+      )}
+    </div>
+
+    <section class="detail-box">
+      <h2>Sources</h2>
+      {sourceRefs.length > 0 ? (
+        <ul class="clean-list">
+          {sourceRefs.map((source: any) => (
+            <li><a href={source.data.url}>{source.data.title}</a> <span class="meta">({source.data.type})</span></li>
+          ))}
+        </ul>
+      ) : (
+        <p class="meta">No source attached yet.</p>
+      )}
+    </section>
+
+    <section class="detail-box">
+      <h2>Related</h2>
+      {relatedRefs.length > 0 ? (
+        <ul class="clean-list">
+          {relatedRefs.map((item: any) => (
+            <li><a href={entryHref(item.collection, item.entry.data.id)}>{entryTitle(item.entry)}</a></li>
+          ))}
+        </ul>
+      ) : (
+        <p class="meta">No related entries yet.</p>
+      )}
+    </section>
+  </article>
+</BaseLayout>

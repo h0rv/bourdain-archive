@@ -1,0 +1,73 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { entryHref, entryTitle, findByDataId, formatDate, formatType, statusClass } from '../../lib/content';
+
+export async function getStaticPaths() {
+  const places = await getCollection('places');
+  const sources = await getCollection('sources');
+  const referencedEntries = [
+    ...(await getCollection('works')).map((entry) => ({ entry, collection: 'works' })),
+    ...(await getCollection('episodes')).map((entry) => ({ entry, collection: 'episodes' })),
+    ...(await getCollection('appearances')).map((entry) => ({ entry, collection: 'appearances' })),
+  ];
+
+  return places.map((entry) => ({
+    params: { id: entry.data.id },
+    props: {
+      entry,
+      sources,
+      linkedEntries: referencedEntries.filter((item) => item.entry.data.places?.includes(entry.data.id)),
+    },
+  }));
+}
+
+const { entry, sources, linkedEntries } = Astro.props;
+const data = entry.data;
+const sourceRefs = (data.sources ?? []).map((id: string) => findByDataId(sources, id)).filter(Boolean);
+---
+<BaseLayout title={data.name} description={data.summary}>
+  <article>
+    <h1 class="page-title">{data.name}</h1>
+    <p class="meta">Place · <span class={`badge ${statusClass(data.status)}`}>{data.status}</span></p>
+    <p class="lede">{data.summary}</p>
+
+    {data.tags?.length > 0 && (
+      <section class="detail-box">
+        <h2>Tags</h2>
+        <ul class="tag-list">
+          {data.tags.map((tag: string) => <li class="tag">{tag}</li>)}
+        </ul>
+      </section>
+    )}
+
+    <section class="detail-box">
+      <h2>Linked entries</h2>
+      {linkedEntries.length > 0 ? (
+        <ul class="clean-list">
+          {linkedEntries.map(({ entry: linkedEntry, collection }) => (
+            <li>
+              <a href={entryHref(collection, linkedEntry.data.id)}>{entryTitle(linkedEntry)}</a>
+              <span class="meta"> · {formatType(linkedEntry.data.type)} · {formatDate(linkedEntry.data.date, linkedEntry.data.date_precision)}</span>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p class="meta">No entries reference this place yet.</p>
+      )}
+    </section>
+
+    <section class="detail-box">
+      <h2>Sources</h2>
+      {sourceRefs.length > 0 ? (
+        <ul class="clean-list">
+          {sourceRefs.map((source: any) => (
+            <li><a href={source.data.url}>{source.data.title}</a> <span class="meta">({source.data.type})</span></li>
+          ))}
+        </ul>
+      ) : (
+        <p class="meta">No source attached yet.</p>
+      )}
+    </section>
+  </article>
+</BaseLayout>

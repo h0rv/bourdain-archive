@@ -1,0 +1,24 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import EntryCard from '../../components/EntryCard.astro';
+import { formatType, sortByDateDesc } from '../../lib/content';
+
+const works = (await getCollection('works')).sort(sortByDateDesc);
+const groups = Array.from(new Set(works.map((entry) => entry.data.type))).sort();
+---
+<BaseLayout title="Works">
+  <h1 class="page-title">Works</h1>
+  <p class="lede">Books, essays, field notes, comics, and other written work.</p>
+  {groups.map((group) => {
+    const entries = works.filter((entry) => entry.data.type === group);
+    return entries.length > 0 && (
+      <section>
+        <h2 class="section-heading">{formatType(group)}</h2>
+        <div class="card-list">
+          {entries.map((entry) => <EntryCard entry={entry} collection="works" />)}
+        </div>
+      </section>
+    );
+  })}
+</BaseLayout>

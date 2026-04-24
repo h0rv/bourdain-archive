@@ -1,0 +1,20 @@
+---
+import { getCollection } from 'astro:content';
+import EntryDetail from '../../components/EntryDetail.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('appearances');
+  const sources = await getCollection('sources');
+  const relatedEntries = [
+    ...(await getCollection('works')).map((entry) => ({ entry, collection: 'works' })),
+    ...(await getCollection('episodes')).map((entry) => ({ entry, collection: 'episodes' })),
+    ...(await getCollection('appearances')).map((entry) => ({ entry, collection: 'appearances' })),
+    ...(await getCollection('places')).map((entry) => ({ entry, collection: 'places' })),
+    ...(await getCollection('themes')).map((entry) => ({ entry, collection: 'themes' })),
+  ];
+  return entries.map((entry) => ({ params: { id: entry.data.id }, props: { entry, sources, relatedEntries } }));
+}
+
+const { entry, sources, relatedEntries } = Astro.props;
+---
+<EntryDetail entry={entry} collection="appearances" sources={sources} relatedEntries={relatedEntries} />

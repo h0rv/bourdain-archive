@@ -1,5 +1,19 @@
 ---
+import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import EntryCard from '../components/EntryCard.astro';
+import { sortByDateDesc } from '../lib/content';
+
+const works = await getCollection('works');
+const episodes = await getCollection('episodes');
+const appearances = await getCollection('appearances');
+const timeline = [
+  ...works.map((entry) => ({ entry, collection: 'works' })),
+  ...episodes.map((entry) => ({ entry, collection: 'episodes' })),
+  ...appearances.map((entry) => ({ entry, collection: 'appearances' })),
+]
+  .filter((item) => Boolean(item.entry.data.date))
+  .sort((a, b) => sortByDateDesc(a.entry, b.entry));
 ---
 <BaseLayout title="Bourdain Index">
   <section class="hero">
@@ -11,5 +25,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </section>
 
   <h2 class="section-heading">Timeline</h2>
-  <p class="lede">Timeline data is coming next: YAML content collections will power dated works, episodes, and appearances.</p>
+  <ol class="timeline">
+    {timeline.map(({ entry, collection }) => (
+      <li class="timeline-item"><EntryCard entry={entry} collection={collection} /></li>
+    ))}
+  </ol>
 </BaseLayout>

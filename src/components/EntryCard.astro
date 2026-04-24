@@ -1,0 +1,29 @@
+---
+import { availabilityBadges, entryHref, entryTitle, formatDate, formatType, statusClass } from '../lib/content';
+
+interface Props {
+  entry: any;
+  collection: string;
+  showSummary?: boolean;
+}
+
+const { entry, collection, showSummary = true } = Astro.props;
+const data = entry.data;
+const href = entryHref(collection, data.id);
+const badges = availabilityBadges(data.availability);
+---
+<article class="card">
+  <h2><a href={href}>{entryTitle(entry)}</a></h2>
+  <p class="meta">
+    {formatType(data.type)} · {formatDate(data.date, data.date_precision)} · <span class={`badge ${statusClass(data.status)}`}>{data.status}</span>
+  </p>
+  {showSummary && <p class="summary">{data.summary}</p>}
+  {data.tags?.length > 0 && (
+    <ul class="tag-list" aria-label="Tags">
+      {data.tags.slice(0, 6).map((tag: string) => <li class="tag">{tag}</li>)}
+    </ul>
+  )}
+  <ul class="badges" aria-label="Availability">
+    {badges.map((badge) => <li class="badge">{badge.label}</li>)}
+  </ul>
+</article>
