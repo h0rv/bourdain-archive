@@ -4,6 +4,7 @@ type: life-event
 date: "1999-04-19"
 date_precision: day
 summary: The New Yorker publishes Bourdain's essay that becomes the launch point for Kitchen Confidential and his wider public career.
+image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/First_2_The_New_Yorker_logos_01.jpg/500px-First_2_The_New_Yorker_logos_01.jpg"
 tags: [writing, kitchens, breakout]
 people: [anthony-bourdain]
 places: [new-york-city]

@@ -4,6 +4,7 @@ type: life-event
 date: "1975"
 date_precision: year
 summary: Bourdain leaves Vassar College after two years and continues moving toward restaurant work.
+image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c1/Old_Main%2C_Vassar_College_edit1.jpg/500px-Old_Main%2C_Vassar_College_edit1.jpg"
 tags: [life, kitchens]
 people: [anthony-bourdain]
 places: []
