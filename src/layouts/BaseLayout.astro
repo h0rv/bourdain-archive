@@ -31,7 +31,19 @@ const navItems = [
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href={withBase('/')}>Bourdain Index</a>
+      <a class="brand" href={withBase('/')} aria-label="Bourdain Index home">
+        <img
+          class="brand-mark"
+          src="https://d1w8c6s6gmwlek.b-cdn.net/trendyteeshop.com/overlays/389/644/38964494.png"
+          alt="Cook Free or Die"
+          width="96"
+          height="96"
+        />
+        <span class="brand-copy">
+          <span class="brand-name">Bourdain Index</span>
+          <span class="brand-kicker">cook free or die</span>
+        </span>
+      </a>
       <nav class="site-nav" aria-label="Primary navigation">
         {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
       </nav>
