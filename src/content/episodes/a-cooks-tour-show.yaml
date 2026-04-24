@@ -1,0 +1,13 @@
+id: a-cooks-tour-show
+title: A Cook's Tour
+type: show
+date: "2002"
+date_precision: year
+summary: Food Network travel series following Bourdain after the success of Kitchen Confidential.
+tags: [travel, food-media]
+people: [anthony-bourdain]
+places: []
+sources: [shows-by-country-github]
+related: [a-cooks-tour-book, travel]
+status: needs-review
+availability: {}

@@ -1,0 +1,14 @@
+id: fresh-air-interviews
+title: Fresh Air interviews
+type: radio
+date_precision: unknown
+host: Terry Gross
+summary: Fresh Air archive grouping for Bourdain's interviews about books, television, restaurants, and public life.
+tags: [radio, books, food-media]
+people: [anthony-bourdain, terry-gross]
+places: []
+sources: [fresh-air-archive]
+related: [kitchen-confidential, medium-raw]
+status: needs-review
+availability:
+  official_url: https://freshairarchive.org/guests/anthony-bourdain

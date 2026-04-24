@@ -1,0 +1,14 @@
+id: world-travel
+title: World Travel
+type: book
+date: "2021"
+date_precision: year
+summary: Posthumous travel guide built around Bourdain's journeys, recommendations, and collaborators.
+tags: [travel, posthumous]
+people: [anthony-bourdain]
+places: []
+sources: [open-library]
+related: [travel]
+status: needs-review
+availability:
+  library_url: https://openlibrary.org/search?q=World+Travel+Anthony+Bourdain

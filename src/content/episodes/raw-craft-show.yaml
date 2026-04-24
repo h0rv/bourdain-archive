@@ -1,0 +1,13 @@
+id: raw-craft-show
+title: Raw Craft
+type: show
+date: "2015"
+date_precision: year
+summary: Short-form series hosted by Bourdain about makers, craft, and skilled manual work.
+tags: [craft, labor]
+people: [anthony-bourdain]
+places: []
+sources: [reddit-archival-megathread]
+related: [labor]
+status: needs-review
+availability: {}

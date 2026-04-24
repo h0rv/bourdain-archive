@@ -1,0 +1,13 @@
+id: the-layover-show
+title: The Layover
+type: show
+date: "2011"
+date_precision: year
+summary: Travel series organized around short stays and practical city itineraries.
+tags: [travel, cities, food-media]
+people: [anthony-bourdain]
+places: []
+sources: [shows-by-country-github]
+related: [travel]
+status: needs-review
+availability: {}

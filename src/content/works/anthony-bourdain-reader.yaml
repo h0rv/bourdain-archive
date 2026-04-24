@@ -1,0 +1,14 @@
+id: anthony-bourdain-reader
+title: The Anthony Bourdain Reader
+type: book
+date: "2024"
+date_precision: year
+summary: Posthumous collection gathering selected writing from across Bourdain's career.
+tags: [posthumous, kitchens, travel]
+people: [anthony-bourdain]
+places: []
+sources: [open-library]
+related: [kitchens, travel]
+status: needs-review
+availability:
+  library_url: https://openlibrary.org/search?q=The+Anthony+Bourdain+Reader

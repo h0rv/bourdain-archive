@@ -1,0 +1,15 @@
+id: jre-138
+title: "Joe Rogan Experience #138: Anthony Bourdain"
+type: podcast
+date: "2011-09-11"
+date_precision: day
+host: Joe Rogan
+duration_minutes: 150
+summary: Long-form podcast appearance with Anthony Bourdain.
+tags: [podcast, travel, food-media, fame]
+people: [anthony-bourdain, joe-rogan]
+places: []
+sources: [reddit-archival-megathread]
+related: [fame, food-media]
+status: needs-review
+availability: {}

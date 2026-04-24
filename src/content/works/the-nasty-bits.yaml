@@ -1,0 +1,14 @@
+id: the-nasty-bits
+title: The Nasty Bits
+type: book
+date: "2006"
+date_precision: year
+summary: Collection of Bourdain essays and journalism on food, travel, restaurants, and culture.
+tags: [travel, kitchens, food-media]
+people: [anthony-bourdain]
+places: []
+sources: [open-library]
+related: [travel, food-media]
+status: needs-review
+availability:
+  library_url: https://openlibrary.org/search?q=The+Nasty+Bits+Anthony+Bourdain

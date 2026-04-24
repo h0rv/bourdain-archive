@@ -1,0 +1,14 @@
+id: typhoid-mary
+title: Typhoid Mary
+type: book
+date: "2001"
+date_precision: year
+summary: Short nonfiction book about Mary Mallon, public health, class, food labor, and stigma.
+tags: [labor, class, kitchens]
+people: [anthony-bourdain]
+places: [new-york-city]
+sources: [open-library]
+related: [labor, class]
+status: needs-review
+availability:
+  library_url: https://openlibrary.org/search?q=Typhoid+Mary+Anthony+Bourdain

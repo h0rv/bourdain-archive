@@ -1,0 +1,16 @@
+id: nerdist-podcast-528
+title: The Nerdist Podcast 528
+type: podcast
+date: "2014"
+date_precision: year
+host: Chris Hardwick
+summary: Nerdist Podcast appearance with Bourdain discussing television, travel, writing, and food culture.
+tags: [podcast, travel, food-media]
+people: [anthony-bourdain, chris-hardwick]
+places: []
+sources: [nerdist-528-archive]
+related: [travel, food-media]
+status: needs-review
+availability:
+  archive_url: https://archive.org/details/The_Nerdist_Podcast_528
+  audio_url: https://archive.org/details/The_Nerdist_Podcast_528

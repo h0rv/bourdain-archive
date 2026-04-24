@@ -1,0 +1,15 @@
+id: parts-unknown-tokyo
+title: Tokyo
+type: episode
+show: Parts Unknown
+date: "2013"
+date_precision: year
+summary: Parts Unknown episode exploring Tokyo through food, subcultures, discipline, nightlife, and obsession.
+tags: [tokyo, travel, cities]
+people: [anthony-bourdain]
+places: [tokyo]
+sources: [explore-parts-unknown, shows-by-country-github]
+related: [travel]
+status: needs-review
+availability:
+  official_url: https://explorepartsunknown.com/

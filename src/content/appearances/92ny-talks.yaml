@@ -1,0 +1,12 @@
+id: 92ny-talks
+title: 92NY talks
+type: panel
+date_precision: unknown
+summary: Placeholder for Anthony Bourdain talks and public conversations hosted by 92NY.
+tags: [panel, books, food-media]
+people: [anthony-bourdain]
+places: [new-york-city]
+sources: [reddit-archival-megathread]
+related: [food-media]
+status: needs-review
+availability: {}

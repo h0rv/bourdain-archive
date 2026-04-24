@@ -1,0 +1,13 @@
+id: charlie-rose-appearances
+title: Charlie Rose appearances
+type: interview
+date_precision: unknown
+host: Charlie Rose
+summary: Placeholder for Anthony Bourdain interviews on Charlie Rose.
+tags: [interview, television, food-media]
+people: [anthony-bourdain, charlie-rose]
+places: []
+sources: [reddit-archival-megathread]
+related: [food-media]
+status: needs-review
+availability: {}

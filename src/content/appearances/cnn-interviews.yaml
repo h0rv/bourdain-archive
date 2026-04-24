@@ -1,0 +1,12 @@
+id: cnn-interviews
+title: CNN interviews
+type: interview
+date_precision: unknown
+summary: Placeholder grouping for CNN interview segments and promotional appearances connected to Parts Unknown and Bourdain's public commentary.
+tags: [interview, television, food-media]
+people: [anthony-bourdain]
+places: []
+sources: [explore-parts-unknown, reddit-archival-megathread]
+related: [parts-unknown-show]
+status: needs-review
+availability: {}

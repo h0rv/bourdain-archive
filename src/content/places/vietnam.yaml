@@ -1,0 +1,9 @@
+id: vietnam
+name: Vietnam
+type: place
+summary: Recurring country in Bourdain's work, associated with travel, food, war memory, affection, and return.
+tags: [travel, war]
+people: [anthony-bourdain]
+places: []
+sources: [shows-by-country-github]
+status: needs-review

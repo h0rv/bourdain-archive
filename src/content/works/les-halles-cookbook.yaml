@@ -1,0 +1,14 @@
+id: les-halles-cookbook
+title: Anthony Bourdain's Les Halles Cookbook
+type: book
+date: "2004"
+date_precision: year
+summary: Cookbook tied to Bourdain's years at Brasserie Les Halles, with bistro recipes and kitchen voice.
+tags: [kitchens, new-york, hospitality]
+people: [anthony-bourdain]
+places: [les-halles, new-york-city]
+sources: [open-library]
+related: [kitchens, hospitality]
+status: needs-review
+availability:
+  library_url: https://openlibrary.org/search?q=Anthony+Bourdain%27s+Les+Halles+Cookbook

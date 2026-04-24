@@ -1,0 +1,9 @@
+id: hong-kong
+name: Hong Kong
+type: place
+summary: Important Bourdain travel location associated with cinema, food, craft, and episodes across his television career.
+tags: [travel, cities]
+people: [anthony-bourdain]
+places: []
+sources: [anthony-bourdain-world-map, shows-by-country-github]
+status: needs-review

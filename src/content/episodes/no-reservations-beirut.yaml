@@ -1,0 +1,14 @@
+id: no-reservations-beirut
+title: Beirut
+type: episode
+show: No Reservations
+date: "2006"
+date_precision: year
+summary: No Reservations episode disrupted by the 2006 Lebanon War, later becoming one of Bourdain's defining television moments.
+tags: [beirut, war, travel]
+people: [anthony-bourdain]
+places: [beirut]
+sources: [shows-by-country-github, reddit-archival-megathread]
+related: [war]
+status: needs-review
+availability: {}

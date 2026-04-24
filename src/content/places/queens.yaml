@@ -1,0 +1,9 @@
+id: queens
+name: Queens
+type: place
+summary: New York borough associated with immigrant foodways, working neighborhoods, and Bourdain's broader New York geography.
+tags: [new-york, cities, class]
+people: [anthony-bourdain]
+places: [new-york-city]
+sources: [anthony-bourdain-world-map]
+status: needs-review

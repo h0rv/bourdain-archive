@@ -1,0 +1,9 @@
+id: tokyo
+name: Tokyo
+type: place
+summary: City featured in Bourdain's travel work through food, subculture, precision, nightlife, and obsession.
+tags: [travel, cities]
+people: [anthony-bourdain]
+places: []
+sources: [shows-by-country-github]
+status: needs-review

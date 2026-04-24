@@ -1,0 +1,9 @@
+id: new-jersey
+name: New Jersey
+type: place
+summary: Bourdain's childhood geography and the focus of a Parts Unknown return episode.
+tags: [america, family]
+people: [anthony-bourdain]
+places: []
+sources: [shows-by-country-github]
+status: needs-review

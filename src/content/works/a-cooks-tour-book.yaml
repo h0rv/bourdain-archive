@@ -1,0 +1,14 @@
+id: a-cooks-tour-book
+title: A Cook's Tour
+type: book
+date: "2001"
+date_precision: year
+summary: Travel and food book following Bourdain's search for memorable meals and the cultures around them.
+tags: [travel, food-media]
+people: [anthony-bourdain]
+places: []
+sources: [open-library]
+related: [a-cooks-tour-show, travel]
+status: needs-review
+availability:
+  library_url: https://openlibrary.org/search?q=A+Cook%27s+Tour+Anthony+Bourdain

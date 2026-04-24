@@ -1,0 +1,14 @@
+id: kitchen-confidential
+title: Kitchen Confidential
+type: book
+date: "2000"
+date_precision: year
+summary: Bourdain's breakout nonfiction book about restaurant work, kitchen culture, addiction, labor, and the mythology of cooks.
+tags: [kitchens, new-york, labor, addiction]
+people: [anthony-bourdain]
+places: [new-york-city]
+sources: [open-library]
+related: [kitchens, labor, addiction]
+status: needs-review
+availability:
+  library_url: https://openlibrary.org/search?q=Kitchen+Confidential+Anthony+Bourdain

@@ -1,0 +1,14 @@
+id: bone-in-the-throat
+title: Bone in the Throat
+type: book
+date: "1995"
+date_precision: year
+summary: Bourdain's debut crime novel, set around restaurants, organized crime, and New York kitchen life.
+tags: [fiction, kitchens, new-york]
+people: [anthony-bourdain]
+places: [new-york-city]
+sources: [open-library]
+related: [kitchens, new-york]
+status: needs-review
+availability:
+  library_url: https://openlibrary.org/search?q=Bone+in+the+Throat+Anthony+Bourdain

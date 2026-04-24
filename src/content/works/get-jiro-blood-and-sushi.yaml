@@ -1,0 +1,14 @@
+id: get-jiro-blood-and-sushi
+title: "Get Jiro: Blood and Sushi"
+type: comic
+date: "2015"
+date_precision: year
+summary: Prequel graphic novel expanding the violent food-world satire of Get Jiro!.
+tags: [comic, food-media, violence]
+people: [anthony-bourdain]
+places: []
+sources: [open-library]
+related: [get-jiro, food-media]
+status: needs-review
+availability:
+  library_url: https://openlibrary.org/search?q=Get+Jiro+Blood+and+Sushi

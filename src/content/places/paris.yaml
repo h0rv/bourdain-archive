@@ -1,0 +1,9 @@
+id: paris
+name: Paris
+type: place
+summary: Recurring reference point for restaurants, travel, bistro cooking, and Bourdain's culinary imagination.
+tags: [travel, kitchens]
+people: [anthony-bourdain]
+places: []
+sources: [anthony-bourdain-world-map]
+status: needs-review

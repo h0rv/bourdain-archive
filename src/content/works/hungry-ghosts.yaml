@@ -1,0 +1,14 @@
+id: hungry-ghosts
+title: Hungry Ghosts
+type: comic
+date: "2018"
+date_precision: year
+summary: Horror anthology comic organized around food, storytelling, appetite, and folklore.
+tags: [comic, horror, storytelling]
+people: [anthony-bourdain]
+places: []
+sources: [open-library]
+related: []
+status: needs-review
+availability:
+  library_url: https://openlibrary.org/search?q=Hungry+Ghosts+Anthony+Bourdain

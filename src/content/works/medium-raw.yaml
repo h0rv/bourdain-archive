@@ -1,0 +1,14 @@
+id: medium-raw
+title: Medium Raw
+type: book
+date: "2010"
+date_precision: year
+summary: Follow-up memoir and essay collection reflecting on fame, food media, restaurants, fatherhood, and Bourdain's changed public life.
+tags: [fame, food-media, fatherhood, kitchens]
+people: [anthony-bourdain]
+places: []
+sources: [open-library]
+related: [fame, food-media, fatherhood]
+status: needs-review
+availability:
+  library_url: https://openlibrary.org/search?q=Medium+Raw+Anthony+Bourdain
