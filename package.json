@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "astro dev",
     "archive": "node scripts/archive-sources.mjs",
+    "import:literature": "node scripts/import-literature.mjs",
+    "validate:data": "node scripts/validate-data.mjs",
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check"
