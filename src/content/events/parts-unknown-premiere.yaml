@@ -4,7 +4,7 @@ type: life-event
 date: "2013-04-14"
 date_precision: day
 summary: Parts Unknown premieres on CNN, extending Bourdain's television work into politics, history, conflict, labor, and place.
-image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Anthony_Bourdain_Peabody_2014b.jpg/500px-Anthony_Bourdain_Peabody_2014b.jpg"
+image_url: /images/events/parts-unknown-premiere.jpg
 tags: [television, parts-unknown]
 people: [anthony-bourdain]
 places: []

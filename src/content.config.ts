@@ -3,6 +3,7 @@ import { defineCollection, z } from 'astro:content';
 const statusSchema = z.enum(['confirmed', 'needs-review', 'missing-source', 'dead-link', 'partial']);
 const datePrecisionSchema = z.enum(['day', 'month', 'year', 'unknown']);
 const urlField = z.string().url().nullable().optional();
+const imageField = z.union([z.string().url(), z.string().startsWith('/')]).nullable().optional();
 
 const availabilitySchema = z.object({
   official_url: urlField,
@@ -28,7 +29,7 @@ const commonEntrySchema = z.object({
   sources: z.array(z.string()).default([]),
   related: z.array(z.string()).default([]),
   status: statusSchema.default('needs-review'),
-  image_url: urlField,
+  image_url: imageField,
   availability: availabilitySchema,
 });
 

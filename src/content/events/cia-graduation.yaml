@@ -4,7 +4,7 @@ type: life-event
 date: "1978"
 date_precision: year
 summary: Bourdain graduates from the Culinary Institute of America, formalizing the culinary path that leads into New York kitchens.
-image_url: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Culinary_Institute_of_America_%28276630419%29.jpg/500px-Culinary_Institute_of_America_%28276630419%29.jpg"
+image_url: /images/events/cia-graduation.jpg
 tags: [life, kitchens, education]
 people: [anthony-bourdain]
 places: [new-york-city]

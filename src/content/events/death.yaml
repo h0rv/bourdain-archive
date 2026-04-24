@@ -4,7 +4,7 @@ type: life-event
 date: "2018-06-08"
 date_precision: day
 summary: Bourdain dies in Kaysersberg, France while filming Parts Unknown.
-image_url: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Kaysersberg_France.jpg"
+image_url: /images/events/death.jpg
 tags: [life, death]
 people: [anthony-bourdain]
 places: []

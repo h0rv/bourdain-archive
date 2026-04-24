@@ -1,0 +1,65 @@
+[
+  {
+    "id": "born",
+    "file": "/images/events/born.jpg",
+    "source_title": "Times Square in 1956.webm",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Times_Square_in_1956.webm",
+    "license": "Public domain",
+    "artist": "Unknown author",
+    "credit": "https://www.facebook.com/watch/?v=8135027829845065"
+  },
+  {
+    "id": "vassar-dropout",
+    "file": "/images/events/vassar-dropout.jpg",
+    "source_title": "Old Main, Vassar College edit1.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Old_Main,_Vassar_College_edit1.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Daniel Case",
+    "credit": "Own work"
+  },
+  {
+    "id": "cia-graduation",
+    "file": "/images/events/cia-graduation.jpg",
+    "source_title": "Culinary Institute of America (276630419).jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Culinary_Institute_of_America_(276630419).jpg",
+    "license": "CC BY 2.0",
+    "artist": "Jiashiang from New Jersey, US",
+    "credit": "Culinary Institute of America"
+  },
+  {
+    "id": "les-halles-executive-chef",
+    "file": "/images/events/les-halles-executive-chef.jpg",
+    "source_title": "Anthony Bourdain Tribute.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Anthony_Bourdain_Tribute.jpg",
+    "license": "CC BY-SA 4.0",
+    "artist": "Lenina Libera",
+    "credit": "Own work"
+  },
+  {
+    "id": "dont-eat-before-reading-this",
+    "file": "/images/events/dont-eat-before-reading-this.jpg",
+    "source_title": "First 2 The New Yorker logos 01.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:First_2_The_New_Yorker_logos_01.jpg",
+    "license": "Public domain",
+    "artist": "w:Rea Irvin for w:The New Yorker",
+    "credit": "https://www.tcj.com/the-true-history-of-eustace-tilley/"
+  },
+  {
+    "id": "parts-unknown-premiere",
+    "file": "/images/events/parts-unknown-premiere.jpg",
+    "source_title": "Anthony Bourdain Peabody 2014b.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Anthony_Bourdain_Peabody_2014b.jpg",
+    "license": "CC BY 2.0",
+    "artist": "Peabody Awards",
+    "credit": "This file was derived from:  Anthony Bourdain and Charlie Rose 2014.jpg"
+  },
+  {
+    "id": "death",
+    "file": "/images/events/death.jpg",
+    "source_title": "Kaysersberg France.jpg",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Kaysersberg_France.jpg",
+    "license": "CC BY-SA 3.0",
+    "artist": "Oswald Engelhardt",
+    "credit": "Fotografiert im August 2005"
+  }
+]

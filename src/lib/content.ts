@@ -128,6 +128,11 @@ export function previewForUrl(url?: string | null, cache?: Record<string, any>) 
   };
 }
 
+export function siteAssetUrl(url?: string | null): string | undefined {
+  if (!url) return undefined;
+  return url.startsWith('/') ? withBase(url) : url;
+}
+
 export function previewForEntry(entry: any, cache?: Record<string, any>) {
   const data = entry.data ?? entry;
   const url = primaryAvailabilityUrl(data);
@@ -137,7 +142,7 @@ export function previewForEntry(entry: any, cache?: Record<string, any>) {
     host: urlPreview.host,
     title: urlPreview.title,
     description: urlPreview.description,
-    image: data.image_url ?? urlPreview.image,
+    image: siteAssetUrl(data.image_url) ?? urlPreview.image,
     favicon: urlPreview.favicon,
     archive: urlPreview.archive,
     label: data.publication ?? urlPreview.title ?? urlPreview.host ?? formatType(data.type),
