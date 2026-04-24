@@ -5,6 +5,46 @@ import { entryHref } from '../../lib/content';
 
 const sources = (await getCollection('sources')).sort((a, b) => a.data.title.localeCompare(b.data.title));
 const highlighted = sources.find((entry) => entry.data.id === 'anthony-bourdain-world-map');
+const sourceGroups = [
+  { id: 'tumblr', label: 'Tumblr' },
+  { id: 'medium', label: 'Medium' },
+  { id: 'list', label: 'Li.st' },
+  { id: 'field-notes', label: 'Field notes' },
+  { id: 'tv', label: 'TV' },
+  { id: 'interviews', label: 'Interviews' },
+  { id: 'articles', label: 'Articles' },
+  { id: 'catalogs', label: 'Catalogs' },
+  { id: 'socials', label: 'Socials' },
+  { id: 'other', label: 'Other' },
+];
+const sourceGroupLabels = Object.fromEntries(sourceGroups.map((group) => [group.id, group.label]));
+const sourceGroupFor = (entry: any) => {
+  const id = entry.data.id;
+  const type = entry.data.type;
+  const url = entry.data.url;
+  if (id.startsWith('tumblr-') || url.includes('anthonybourdain.tumblr.com')) return 'tumblr';
+  if (id.startsWith('medium-') || url.includes('medium.com/')) return 'medium';
+  if (id.startsWith('list-') || id.startsWith('bourdain-list') || url.includes('li.st/') || url.includes('bourdain.greg.technology')) return 'list';
+  if (type === 'field-note' || (url.includes('explorepartsunknown.com') && url.includes('field-notes'))) return 'field-notes';
+  if (['episode-guide', 'official-show-page', 'official-video', 'video-series', 'dead-official-page', 'official-archive', 'dataset', 'fan-index', 'transcript-index'].includes(type)) return 'tv';
+  if (type.includes('interview') || ['podcast', 'panel', 'radio-archive', 'audio-archive', 'audio-interview'].includes(type)) return 'interviews';
+  if (['article', 'essay', 'profile', 'review', 'obituary'].includes(type)) return 'articles';
+  if (type.includes('awards') || type.includes('library') || type.includes('catalog') || type.includes('authority') || type === 'publisher-page') return 'catalogs';
+  if (type === 'social-profile') return 'socials';
+  return 'other';
+};
+const sourceEntries = sources.map((entry) => {
+  const group = sourceGroupFor(entry);
+  return {
+    entry,
+    group,
+    groupLabel: sourceGroupLabels[group] ?? 'Other',
+    searchable: [entry.data.title, entry.data.type, entry.data.notes, entry.data.url, sourceGroupLabels[group]]
+      .filter(Boolean)
+      .join(' ')
+      .toLowerCase(),
+  };
+});
 ---
 <BaseLayout title="Sources">
   <h1 class="page-title">Sources</h1>
@@ -15,14 +55,117 @@ const highlighted = sources.find((entry) => entry.data.id === 'anthony-bourdain-
       <p class="summary">{highlighted.data.notes}</p>
     </section>
   )}
-  <div class="card-list">
-    {sources.map((entry) => (
-      <article class="card">
+
+  <div class="controls sources-controls" aria-label="Source filters">
+    <div class="search-control">
+      <label for="source-search">Search</label>
+      <div class="search-box">
+        <span aria-hidden="true">⌕</span>
+        <input id="source-search" type="search" placeholder="Search sources…" data-source-search />
+      </div>
+      <p class="result-count" data-source-count>{sources.length} sources</p>
+    </div>
+    <div class="control-groups">
+      <div class="filter-group source-filter-group" aria-label="Source type filters">
+        <span class="filter-label">Source</span>
+        <div class="pill-row">
+          <button class="pill is-active" type="button" data-source-all>All</button>
+          {sourceGroups.map((group) => (
+            <button class="pill is-active" type="button" data-source-group={group.id}>{group.label}</button>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card-list" data-source-list>
+    {sourceEntries.map(({ entry, group, groupLabel, searchable }) => (
+      <article class="card" data-source-card data-source-group={group} data-source-text={searchable}>
         <h2><a href={entryHref('sources', entry.data.id)}>{entry.data.title}</a></h2>
-        <p class="meta">{entry.data.type} · accessed {entry.data.accessed}</p>
+        <p class="meta">{groupLabel} · {entry.data.type} · accessed {entry.data.accessed}</p>
         {entry.data.notes && <p class="summary">{entry.data.notes}</p>}
         <p><a href={entry.data.url}>Open</a></p>
       </article>
     ))}
   </div>
+  <p class="no-results" data-source-no-results hidden>No matches. Clear filters or try a broader search.</p>
+
+  <script>
+    const sourceSearch = document.querySelector<HTMLInputElement>('[data-source-search]');
+    const sourceCount = document.querySelector<HTMLElement>('[data-source-count]');
+    const sourceNoResults = document.querySelector<HTMLElement>('[data-source-no-results]');
+    const allButton = document.querySelector<HTMLButtonElement>('[data-source-all]');
+    const groupButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-source-group]'));
+    const sourceCards = Array.from(document.querySelectorAll<HTMLElement>('[data-source-card]'));
+    const totalSources = sourceCards.length;
+    const STORAGE_KEY = 'bourdain-archive.source-controls.v1';
+
+    const activeGroups = () =>
+      groupButtons
+        .filter((button) => button.classList.contains('is-active'))
+        .map((button) => button.getAttribute('data-source-group'))
+        .filter(Boolean);
+
+    const saveSourceControls = () => {
+      try {
+        localStorage.setItem(
+          STORAGE_KEY,
+          JSON.stringify({
+            query: sourceSearch?.value ?? '',
+            groups: activeGroups(),
+          }),
+        );
+      } catch {}
+    };
+
+    const updateAllState = () => {
+      allButton?.classList.toggle('is-active', activeGroups().length === groupButtons.length);
+    };
+
+    const updateSources = () => {
+      const groups = activeGroups();
+      const query = sourceSearch?.value.trim().toLowerCase() ?? '';
+      let visibleCount = 0;
+
+      sourceCards.forEach((card) => {
+        const matchesGroup = groups.includes(card.getAttribute('data-source-group'));
+        const matchesSearch = !query || (card.getAttribute('data-source-text') ?? '').includes(query);
+        const isVisible = matchesGroup && matchesSearch;
+        card.hidden = !isVisible;
+        if (isVisible) visibleCount += 1;
+      });
+
+      updateAllState();
+      if (sourceCount) sourceCount.textContent = `${visibleCount} of ${totalSources} sources`;
+      if (sourceNoResults) sourceNoResults.hidden = visibleCount > 0;
+      saveSourceControls();
+    };
+
+    const applySavedSourceControls = () => {
+      try {
+        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '{}');
+        if (sourceSearch && typeof saved.query === 'string') sourceSearch.value = saved.query;
+        if (Array.isArray(saved.groups)) {
+          groupButtons.forEach((button) => button.classList.toggle('is-active', saved.groups.includes(button.getAttribute('data-source-group'))));
+        }
+      } catch {}
+    };
+
+    allButton?.addEventListener('click', () => {
+      const shouldEnableAll = activeGroups().length !== groupButtons.length;
+      groupButtons.forEach((button) => button.classList.toggle('is-active', shouldEnableAll));
+      updateSources();
+    });
+
+    groupButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        button.classList.toggle('is-active');
+        updateSources();
+      });
+    });
+
+    sourceSearch?.addEventListener('input', updateSources);
+    applySavedSourceControls();
+    updateSources();
+  </script>
 </BaseLayout>
