@@ -78,6 +78,12 @@ export const collections = {
       bucket: z.string(),
     }),
   }),
+  events: defineCollection({
+    type: 'data',
+    schema: commonEntrySchema.extend({
+      type: z.literal('life-event'),
+    }),
+  }),
   places: defineCollection({ type: 'data', schema: namedEntrySchema.extend({ type: z.literal('place') }) }),
   people: defineCollection({
     type: 'data',

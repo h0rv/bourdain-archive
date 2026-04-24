@@ -5,6 +5,7 @@ const collectionPaths: Record<string, string> = {
   episodes: 'tv',
   appearances: 'appearances',
   literature: 'literature',
+  events: 'events',
   places: 'places',
   sources: 'sources',
 };

@@ -8,7 +8,9 @@ const works = await getCollection('works');
 const shows = (await getCollection('episodes')).filter((entry) => entry.data.type === 'show');
 const appearances = await getCollection('appearances');
 const literature = await getCollection('literature');
+const events = await getCollection('events');
 const entries = [
+  ...events.map((entry) => ({ entry, collection: 'events', authorship: 'by' })),
   ...works.map((entry) => ({ entry, collection: 'works', authorship: 'by' })),
   ...shows.map((entry) => ({ entry, collection: 'episodes', authorship: 'by' })),
   ...appearances.map((entry) => ({ entry, collection: 'appearances', authorship: 'by' })),
