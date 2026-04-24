@@ -13,6 +13,14 @@ npm run dev
 npm run build
 ```
 
+## Archive sources
+
+```sh
+npm run archive
+```
+
+Raw snapshots live in `archive/raw/`. Converted data lives in `archive/derived/`. Add sources in `archive/sources.json`.
+
 ## Data
 
 One YAML file per entry under `src/content/`.

@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
+    "archive": "node scripts/archive-sources.mjs",
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check"

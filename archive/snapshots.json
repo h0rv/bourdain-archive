@@ -1,0 +1,34 @@
+[
+  {
+    "id": "shows-by-country-readme",
+    "url": "https://raw.githubusercontent.com/cnlowery/anthony-bourdain-shows-by-country/master/README.md",
+    "raw_path": "archive/raw/shows-by-country-readme.md",
+    "fetched_at": "2026-04-24T15:48:32.206Z",
+    "bytes": 12713,
+    "sha256": "42d10e047871818a77731f14e736695b947bc7f1f1b2139a9a94d48bd9929bfd"
+  },
+  {
+    "id": "travel-places-readme",
+    "url": "https://raw.githubusercontent.com/underthecurve/bourdain-travel-places/master/README.md",
+    "raw_path": "archive/raw/travel-places-readme.md",
+    "fetched_at": "2026-04-24T15:48:32.284Z",
+    "bytes": 298,
+    "sha256": "8622227b55f79888fc4aaf97b5653b441f0348ff8e83fcd17d0bd10e780d13e4"
+  },
+  {
+    "id": "travel-places-map-data",
+    "url": "https://raw.githubusercontent.com/underthecurve/bourdain-travel-places/master/Map_data.csv",
+    "raw_path": "archive/raw/travel-places-map-data.csv",
+    "fetched_at": "2026-04-24T15:48:32.403Z",
+    "bytes": 270022,
+    "sha256": "c9db4963f72d22a1b06c840d0160e459e89326364011507d6e18f0ed5ce63ab7"
+  },
+  {
+    "id": "reddit-archival-megathread",
+    "url": "https://www.reddit.com/r/AnthonyBourdain/comments/ai45r3/anthony_bourdain_archival_megathread/.json?raw_json=1",
+    "raw_path": "archive/raw/reddit-anthony-bourdain-archival-megathread.json",
+    "fetched_at": "2026-04-24T15:48:32.963Z",
+    "bytes": 236907,
+    "sha256": "3d500405453efe2fb77a38e3cb442444bba953c4d2827e8ad6bc61c4956b8d71"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "id": "shows-by-country-readme",
+    "type": "markdown_episode_country_index",
+    "url": "https://raw.githubusercontent.com/cnlowery/anthony-bourdain-shows-by-country/master/README.md",
+    "raw_path": "archive/raw/shows-by-country-readme.md",
+    "derived_path": "archive/derived/shows-by-country.yaml",
+    "canonical_url": "https://github.com/cnlowery/anthony-bourdain-shows-by-country",
+    "notes": "Episode index grouped by country/region. Source README says data gathered from TheTVDB."
+  },
+  {
+    "id": "travel-places-readme",
+    "type": "snapshot",
+    "url": "https://raw.githubusercontent.com/underthecurve/bourdain-travel-places/master/README.md",
+    "raw_path": "archive/raw/travel-places-readme.md",
+    "canonical_url": "https://github.com/underthecurve/bourdain-travel-places",
+    "license": "CC BY 4.0 for data; MIT for code"
+  },
+  {
+    "id": "travel-places-map-data",
+    "type": "csv_travel_places",
+    "url": "https://raw.githubusercontent.com/underthecurve/bourdain-travel-places/master/Map_data.csv",
+    "raw_path": "archive/raw/travel-places-map-data.csv",
+    "derived_path": "archive/derived/travel-places.yaml",
+    "canonical_url": "https://github.com/underthecurve/bourdain-travel-places/blob/master/Map_data.csv",
+    "license": "CC BY 4.0"
+  },
+  {
+    "id": "reddit-archival-megathread",
+    "type": "reddit_thread_json",
+    "url": "https://www.reddit.com/r/AnthonyBourdain/comments/ai45r3/anthony_bourdain_archival_megathread/.json?raw_json=1",
+    "raw_path": "archive/raw/reddit-anthony-bourdain-archival-megathread.json",
+    "derived_path": "archive/derived/reddit-archival-megathread-links.yaml",
+    "canonical_url": "https://www.reddit.com/r/AnthonyBourdain/comments/ai45r3/anthony_bourdain_archival_megathread/",
+    "notes": "Raw Reddit JSON snapshot plus derived outbound-link index."
+  }
+]
