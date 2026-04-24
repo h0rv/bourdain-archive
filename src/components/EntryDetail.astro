@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { availabilityBadges, entryHref, entryTitle, findByDataId, formatDate, formatType, statusClass } from '../lib/content';
+import { availabilityBadges, entryHref, entryTitle, findByDataId, formatDate, formatType, previewForUrl, statusClass } from '../lib/content';
 
 interface Props {
   entry: any;
@@ -15,6 +15,7 @@ const title = entryTitle(entry);
 const sourceRefs = (data.sources ?? []).map((id: string) => findByDataId(sources, id)).filter(Boolean);
 const relatedRefs = (data.related ?? []).map((id: string) => relatedEntries.find((item: any) => item.entry.data.id === id)).filter(Boolean);
 const badges = availabilityBadges(data.availability);
+const availabilityPreviews = badges.map((badge) => ({ ...badge, preview: previewForUrl(badge.url) }));
 ---
 <BaseLayout title={title} description={data.summary}>
   <article>
@@ -29,13 +30,31 @@ const badges = availabilityBadges(data.availability);
     <p class="lede">{data.summary}</p>
 
     <div class="detail-grid">
-      <section class="detail-box">
+      <section class="detail-box availability-box">
         <h2>Availability</h2>
-        <ul class="clean-list">
-          {badges.map((badge) => (
-            <li>{badge.url ? <a href={badge.url}>{badge.label}</a> : badge.label}</li>
+        <div class="link-preview-list">
+          {availabilityPreviews.map((badge) => (
+            badge.url ? (
+              <a class="link-preview" href={badge.url}>
+                <span class="link-preview-media">
+                  {badge.preview.image ? (
+                    <img src={badge.preview.image} alt="" loading="lazy" />
+                  ) : badge.preview.favicon ? (
+                    <img class="link-preview-favicon" src={badge.preview.favicon} alt="" loading="lazy" />
+                  ) : (
+                    <span>{badge.label}</span>
+                  )}
+                </span>
+                <span class="link-preview-copy">
+                  <strong>{badge.label}</strong>
+                  {badge.preview.host && <span>{badge.preview.host}</span>}
+                </span>
+              </a>
+            ) : (
+              <p class="meta">{badge.label}</p>
+            )
           ))}
-        </ul>
+        </div>
       </section>
 
       {data.tags?.length > 0 && (

@@ -1,5 +1,5 @@
 ---
-import { availabilityBadges, entryHref, entryTitle, formatDate, formatType, statusClass } from '../lib/content';
+import { availabilityBadges, entryHref, entryTitle, formatDate, formatType, previewForEntry, statusClass } from '../lib/content';
 
 interface Props {
   entry: any;
@@ -11,13 +11,17 @@ const { entry, collection, showSummary = true } = Astro.props;
 const data = entry.data;
 const href = entryHref(collection, data.id);
 const badges = availabilityBadges(data.availability);
+const preview = previewForEntry(entry);
 ---
 <article class="card" data-entry data-type={data.type} data-collection={collection}>
   <a class="card-media" href={href} aria-label={entryTitle(entry)}>
-    {data.image_url ? (
-      <img src={data.image_url} alt="" loading="lazy" />
+    {preview.image ? (
+      <img src={preview.image} alt="" loading="lazy" />
     ) : (
-      <span>{formatType(data.type)}</span>
+      <span class="media-fallback">
+        {preview.favicon && <img class="media-favicon" src={preview.favicon} alt="" loading="lazy" />}
+        <span>{preview.label}</span>
+      </span>
     )}
   </a>
   <div class="card-body">

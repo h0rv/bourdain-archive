@@ -61,3 +61,67 @@ export function availabilityBadges(availability?: Record<string, string | null |
 export function findByDataId(entries: any[], id: string) {
   return entries.find((entry) => entry.data.id === id);
 }
+
+export function primaryAvailabilityUrl(data: any): string | undefined {
+  const availability = data.availability ?? {};
+  return (
+    availability.video_url ??
+    availability.audio_url ??
+    availability.official_url ??
+    availability.streaming_url ??
+    availability.purchase_url ??
+    availability.library_url ??
+    availability.archive_url ??
+    availability.transcript_url ??
+    undefined
+  );
+}
+
+export function hostnameForUrl(url?: string | null): string | undefined {
+  if (!url) return undefined;
+  try {
+    return new URL(url).hostname.replace(/^www\./, '');
+  } catch {
+    return undefined;
+  }
+}
+
+export function youtubeId(url?: string | null): string | undefined {
+  if (!url) return undefined;
+  try {
+    const parsed = new URL(url);
+    const host = parsed.hostname.replace(/^www\./, '');
+    if (host === 'youtu.be') return parsed.pathname.split('/').filter(Boolean)[0];
+    if (host.endsWith('youtube.com')) {
+      if (parsed.searchParams.get('v')) return parsed.searchParams.get('v') ?? undefined;
+      const parts = parsed.pathname.split('/').filter(Boolean);
+      if (['embed', 'shorts', 'live'].includes(parts[0])) return parts[1];
+    }
+  } catch {
+    return undefined;
+  }
+  return undefined;
+}
+
+export function previewForUrl(url?: string | null) {
+  const host = hostnameForUrl(url);
+  const videoId = youtubeId(url);
+  return {
+    host,
+    image: videoId ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` : undefined,
+    favicon: host ? `https://www.google.com/s2/favicons?domain=${host}&sz=128` : undefined,
+  };
+}
+
+export function previewForEntry(entry: any) {
+  const data = entry.data ?? entry;
+  const url = primaryAvailabilityUrl(data);
+  const urlPreview = previewForUrl(url);
+  return {
+    url,
+    host: urlPreview.host,
+    image: data.image_url ?? urlPreview.image,
+    favicon: urlPreview.favicon,
+    label: data.publication ?? urlPreview.host ?? formatType(data.type),
+  };
+}
