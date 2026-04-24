@@ -313,10 +313,11 @@ a:hover {
 }
 
 .control-groups {
-  display: grid;
-  grid-template-columns: minmax(10rem, 0.82fr) minmax(12rem, 1fr) auto;
-  gap: 0.45rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.6rem;
   align-items: center;
+  justify-content: flex-end;
   min-width: 0;
 }
 
@@ -328,8 +329,13 @@ a:hover {
   min-width: 0;
 }
 
+.main-filters {
+  flex: 0 1 auto;
+}
+
 .compact-controls {
   display: flex;
+  flex: 0 0 auto;
   flex-wrap: nowrap;
   gap: 0.32rem;
   align-items: center;
@@ -348,6 +354,46 @@ a:hover {
 
 .pill-row::-webkit-scrollbar {
   display: none;
+}
+
+.advanced-filters {
+  grid-column: 1 / -1;
+  margin-top: -0.15rem;
+  color: var(--muted);
+}
+
+.advanced-filters summary {
+  width: fit-content;
+  padding: 0.18rem 0;
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.58rem;
+  font-weight: 900;
+  letter-spacing: 0.045em;
+  line-height: 1;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.advanced-filters summary:hover {
+  color: var(--ink);
+}
+
+.advanced-filter-grid {
+  display: grid;
+  gap: 0.55rem;
+  margin-top: 0.5rem;
+  padding-top: 0.55rem;
+  border-top: 1px solid rgba(17, 16, 14, 0.1);
+}
+
+.advanced-filters .filter-group {
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+}
+
+.advanced-filters .pill-row {
+  flex-wrap: wrap;
+  overflow: visible;
 }
 
 .pill {
@@ -826,7 +872,7 @@ article > .detail-box + .detail-box {
   }
 
   .control-groups {
-    grid-template-columns: minmax(0, 1fr);
+    justify-content: flex-start;
   }
 
   .compact-controls {

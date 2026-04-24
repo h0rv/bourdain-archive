@@ -62,21 +62,12 @@ const searchableText = (entry: any, collection: string, authorship: string) =>
     </div>
 
     <div class="control-groups">
-      <div class="filter-group" aria-label="Scope filters">
+      <div class="filter-group main-filters" aria-label="Scope filters">
         <span class="filter-label">Scope</span>
         <div class="pill-row">
           <button class="pill is-active" type="button" data-filter-clear>All</button>
           <button class="pill" type="button" data-filter-author="by">By Bourdain</button>
           <button class="pill" type="button" data-filter-author="about">About Bourdain</button>
-          <button class="pill" type="button" data-filter-facet="posthumous">Posthumous</button>
-        </div>
-      </div>
-      <div class="filter-group" aria-label="Type filters">
-        <span class="filter-label">Type</span>
-        <div class="pill-row">
-          {filters.map((filter) => (
-            <button class="pill" type="button" data-filter-type={filter}>{formatType(filter)}</button>
-          ))}
         </div>
       </div>
       <div class="filter-group compact-controls" aria-label="Sort and view controls">
@@ -92,6 +83,26 @@ const searchableText = (entry: any, collection: string, authorship: string) =>
         </div>
       </div>
     </div>
+
+    <details class="advanced-filters">
+      <summary>Advanced filters</summary>
+      <div class="advanced-filter-grid">
+        <div class="filter-group" aria-label="Type filters">
+          <span class="filter-label">Type</span>
+          <div class="pill-row">
+            {filters.map((filter) => (
+              <button class="pill" type="button" data-filter-type={filter}>{formatType(filter)}</button>
+            ))}
+          </div>
+        </div>
+        <div class="filter-group" aria-label="Facet filters">
+          <span class="filter-label">Flags</span>
+          <div class="pill-row">
+            <button class="pill" type="button" data-filter-facet="posthumous">Posthumous</button>
+          </div>
+        </div>
+      </div>
+    </details>
   </div>
 
   <ol class="stream" data-stream data-view="timeline">
