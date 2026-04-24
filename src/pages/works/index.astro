@@ -9,7 +9,6 @@ const groups = Array.from(new Set(works.map((entry) => entry.data.type))).sort()
 ---
 <BaseLayout title="Works">
   <h1 class="page-title">Works</h1>
-  <p class="lede">Books, essays, field notes, comics, and other written work.</p>
   {groups.map((group) => {
     const entries = works.filter((entry) => entry.data.type === group);
     return entries.length > 0 && (

@@ -7,7 +7,6 @@ const themes = (await getCollection('themes')).sort((a, b) => entryTitle(a).loca
 ---
 <BaseLayout title="Themes">
   <h1 class="page-title">Themes</h1>
-  <p class="lede">Recurring ideas across Bourdain’s work and public record.</p>
   <div class="card-list">
     {themes.map((entry) => (
       <article class="card">

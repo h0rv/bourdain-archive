@@ -7,7 +7,6 @@ const sources = (await getCollection('sources')).sort((a, b) => a.data.title.loc
 ---
 <BaseLayout title="Sources">
   <h1 class="page-title">Sources</h1>
-  <p class="lede">Every source used by the index, plus research starting points.</p>
   <div class="card-list">
     {sources.map((entry) => (
       <article class="card">

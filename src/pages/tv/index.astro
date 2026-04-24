@@ -11,7 +11,6 @@ const showNames = Array.from(new Set([...shows.map((entry) => entry.data.title),
 ---
 <BaseLayout title="TV">
   <h1 class="page-title">TV</h1>
-  <p class="lede">Show-level entries and selected episodes from Bourdain’s television work.</p>
   {showNames.map((showName) => {
     const showEntry = shows.find((entry) => entry.data.title === showName);
     const showEpisodes = episodes.filter((entry) => entry.data.show === showName);

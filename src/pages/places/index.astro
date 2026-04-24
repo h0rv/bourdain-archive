@@ -14,7 +14,6 @@ const countForPlace = (id: string) => referencedEntries.filter(({ entry }) => en
 ---
 <BaseLayout title="Places">
   <h1 class="page-title">Places</h1>
-  <p class="lede">Countries, cities, restaurants, boroughs, and recurring locations. Place pages are aggregated from entry YAML references.</p>
   <div class="card-list">
     {places.map((entry) => {
       const count = countForPlace(entry.data.id);

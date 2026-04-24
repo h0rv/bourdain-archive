@@ -8,7 +8,6 @@ const appearances = (await getCollection('appearances')).sort(sortByDateDesc);
 ---
 <BaseLayout title="Appearances">
   <h1 class="page-title">Appearances</h1>
-  <p class="lede">Podcasts, radio, long-form interviews, panels, late-night, and other public appearances.</p>
   <div class="card-list">
     {appearances.map((entry) => <EntryCard entry={entry} collection="appearances" />)}
   </div>
