@@ -1,0 +1,1158 @@
+{
+  "generated_at": "2026-04-24T16:51:13.542Z",
+  "count": 94,
+  "registry": {
+    "https://freshairarchive.org/guests/anthony-bourdain": {
+      "url": "https://freshairarchive.org/guests/anthony-bourdain",
+      "latest_url": "https://web.archive.org/web/2/https://freshairarchive.org/guests/anthony-bourdain",
+      "calendar_url": "https://web.archive.org/web/*/https://freshairarchive.org/guests/anthony-bourdain",
+      "save_url": "https://web.archive.org/save/https://freshairarchive.org/guests/anthony-bourdain",
+      "refs": [
+        {
+          "owner": "src/content/appearances/fresh-air-interviews.yaml",
+          "field": "official_url"
+        },
+        {
+          "owner": "src/content/sources/fresh-air-archive.yaml",
+          "field": "url"
+        }
+      ]
+    },
+    "https://interviews.televisionacademy.com/interviews/anthony-bourdain": {
+      "url": "https://interviews.televisionacademy.com/interviews/anthony-bourdain",
+      "latest_url": "https://web.archive.org/web/2/https://interviews.televisionacademy.com/interviews/anthony-bourdain",
+      "calendar_url": "https://web.archive.org/web/*/https://interviews.televisionacademy.com/interviews/anthony-bourdain",
+      "save_url": "https://web.archive.org/save/https://interviews.televisionacademy.com/interviews/anthony-bourdain",
+      "refs": [
+        {
+          "owner": "src/content/appearances/television-academy-interview.yaml",
+          "field": "official_url"
+        },
+        {
+          "owner": "src/content/sources/television-academy-interview.yaml",
+          "field": "url"
+        }
+      ]
+    },
+    "https://explorepartsunknown.com/": {
+      "url": "https://explorepartsunknown.com/",
+      "latest_url": "https://web.archive.org/web/2/https://explorepartsunknown.com/",
+      "calendar_url": "https://web.archive.org/web/*/https://explorepartsunknown.com/",
+      "save_url": "https://web.archive.org/save/https://explorepartsunknown.com/",
+      "refs": [
+        {
+          "owner": "src/content/episodes/parts-unknown-show.yaml",
+          "field": "official_url"
+        },
+        {
+          "owner": "src/content/sources/explore-parts-unknown.yaml",
+          "field": "url"
+        }
+      ]
+    },
+    "https://www.eater.com/2018/6/8/17441550/andrew-zimmern-mourns-anthony-bourdain": {
+      "url": "https://www.eater.com/2018/6/8/17441550/andrew-zimmern-mourns-anthony-bourdain",
+      "latest_url": "https://web.archive.org/web/2/https://www.eater.com/2018/6/8/17441550/andrew-zimmern-mourns-anthony-bourdain",
+      "calendar_url": "https://web.archive.org/web/*/https://www.eater.com/2018/6/8/17441550/andrew-zimmern-mourns-anthony-bourdain",
+      "save_url": "https://web.archive.org/save/https://www.eater.com/2018/6/8/17441550/andrew-zimmern-mourns-anthony-bourdain",
+      "refs": [
+        {
+          "owner": "src/content/literature/andrew-zimmern-on-bourdain-you-don-t-know-which-of-your-friends-is-suffering-eat.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.grubstreet.com/2019/06/anthony-bourdain-addiction.html": {
+      "url": "https://www.grubstreet.com/2019/06/anthony-bourdain-addiction.html",
+      "latest_url": "https://web.archive.org/web/2/https://www.grubstreet.com/2019/06/anthony-bourdain-addiction.html",
+      "calendar_url": "https://web.archive.org/web/*/https://www.grubstreet.com/2019/06/anthony-bourdain-addiction.html",
+      "save_url": "https://web.archive.org/save/https://www.grubstreet.com/2019/06/anthony-bourdain-addiction.html",
+      "refs": [
+        {
+          "owner": "src/content/literature/anthony-bourdain-addiction-and-hoping-for-a-better-life-grub-street.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.thrillist.com/eat/nation/remembering-anthony-bourdain": {
+      "url": "https://www.thrillist.com/eat/nation/remembering-anthony-bourdain",
+      "latest_url": "https://web.archive.org/web/2/https://www.thrillist.com/eat/nation/remembering-anthony-bourdain",
+      "calendar_url": "https://web.archive.org/web/*/https://www.thrillist.com/eat/nation/remembering-anthony-bourdain",
+      "save_url": "https://web.archive.org/save/https://www.thrillist.com/eat/nation/remembering-anthony-bourdain",
+      "refs": [
+        {
+          "owner": "src/content/literature/anthony-bourdain-and-the-wisdom-of-talking-to-strangers-thrillist.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://pitchfork.com/news/anthony-bourdain-dead-at-61": {
+      "url": "https://pitchfork.com/news/anthony-bourdain-dead-at-61",
+      "latest_url": "https://web.archive.org/web/2/https://pitchfork.com/news/anthony-bourdain-dead-at-61",
+      "calendar_url": "https://web.archive.org/web/*/https://pitchfork.com/news/anthony-bourdain-dead-at-61",
+      "save_url": "https://web.archive.org/save/https://pitchfork.com/news/anthony-bourdain-dead-at-61",
+      "refs": [
+        {
+          "owner": "src/content/literature/anthony-bourdain-dead-at-61-pitchfork.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.latimes.com/archives/blogs/show-tracker/story/2011-11-23/anthony-bourdain-dishes-on-the-layover-and-life-as-a-tv-foodie": {
+      "url": "https://www.latimes.com/archives/blogs/show-tracker/story/2011-11-23/anthony-bourdain-dishes-on-the-layover-and-life-as-a-tv-foodie",
+      "latest_url": "https://web.archive.org/web/2/https://www.latimes.com/archives/blogs/show-tracker/story/2011-11-23/anthony-bourdain-dishes-on-the-layover-and-life-as-a-tv-foodie",
+      "calendar_url": "https://web.archive.org/web/*/https://www.latimes.com/archives/blogs/show-tracker/story/2011-11-23/anthony-bourdain-dishes-on-the-layover-and-life-as-a-tv-foodie",
+      "save_url": "https://web.archive.org/save/https://www.latimes.com/archives/blogs/show-tracker/story/2011-11-23/anthony-bourdain-dishes-on-the-layover-and-life-as-a-tv-foodie",
+      "refs": [
+        {
+          "owner": "src/content/literature/anthony-bourdain-dishes-on-the-layover-and-life-as-a-tv-foodie-los-angeles-times.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.theguardian.com/food/2021/jul/16/anthony-bourdain-documentary-ai-voiceover-roadrunner": {
+      "url": "https://www.theguardian.com/food/2021/jul/16/anthony-bourdain-documentary-ai-voiceover-roadrunner",
+      "latest_url": "https://web.archive.org/web/2/https://www.theguardian.com/food/2021/jul/16/anthony-bourdain-documentary-ai-voiceover-roadrunner",
+      "calendar_url": "https://web.archive.org/web/*/https://www.theguardian.com/food/2021/jul/16/anthony-bourdain-documentary-ai-voiceover-roadrunner",
+      "save_url": "https://web.archive.org/save/https://www.theguardian.com/food/2021/jul/16/anthony-bourdain-documentary-ai-voiceover-roadrunner",
+      "refs": [
+        {
+          "owner": "src/content/literature/anthony-bourdain-documentary-sparks-backlash-for-using-ai-voiceover-the-guardian.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://time.com/5305838/anthony-bourdain-dead/": {
+      "url": "https://time.com/5305838/anthony-bourdain-dead/",
+      "latest_url": "https://web.archive.org/web/2/https://time.com/5305838/anthony-bourdain-dead/",
+      "calendar_url": "https://web.archive.org/web/*/https://time.com/5305838/anthony-bourdain-dead/",
+      "save_url": "https://web.archive.org/save/https://time.com/5305838/anthony-bourdain-dead/",
+      "refs": [
+        {
+          "owner": "src/content/literature/anthony-bourdain-found-dead-at-61-from-apparent-suicide-time.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.latimes.com/business/hollywood/la-fi-ct-bourdain-obit-20180608-story.html": {
+      "url": "https://www.latimes.com/business/hollywood/la-fi-ct-bourdain-obit-20180608-story.html",
+      "latest_url": "https://web.archive.org/web/2/https://www.latimes.com/business/hollywood/la-fi-ct-bourdain-obit-20180608-story.html",
+      "calendar_url": "https://web.archive.org/web/*/https://www.latimes.com/business/hollywood/la-fi-ct-bourdain-obit-20180608-story.html",
+      "save_url": "https://web.archive.org/save/https://www.latimes.com/business/hollywood/la-fi-ct-bourdain-obit-20180608-story.html",
+      "refs": [
+        {
+          "owner": "src/content/literature/anthony-bourdain-globe-trotting-chef-dies-at-61-los-angeles-times.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.washingtonpost.com/food/2023/11/30/henry-kissinger-anthony-bourdain-cambodia/": {
+      "url": "https://www.washingtonpost.com/food/2023/11/30/henry-kissinger-anthony-bourdain-cambodia/",
+      "latest_url": "https://web.archive.org/web/2/https://www.washingtonpost.com/food/2023/11/30/henry-kissinger-anthony-bourdain-cambodia/",
+      "calendar_url": "https://web.archive.org/web/*/https://www.washingtonpost.com/food/2023/11/30/henry-kissinger-anthony-bourdain-cambodia/",
+      "save_url": "https://web.archive.org/save/https://www.washingtonpost.com/food/2023/11/30/henry-kissinger-anthony-bourdain-cambodia/",
+      "refs": [
+        {
+          "owner": "src/content/literature/anthony-bourdain-hated-henry-kissinger-washington-post.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.theguardian.com/lifeandstyle/2013/sep/27/anthony-bourdain-parts-unknown-family-values": {
+      "url": "https://www.theguardian.com/lifeandstyle/2013/sep/27/anthony-bourdain-parts-unknown-family-values",
+      "latest_url": "https://web.archive.org/web/2/https://www.theguardian.com/lifeandstyle/2013/sep/27/anthony-bourdain-parts-unknown-family-values",
+      "calendar_url": "https://web.archive.org/web/*/https://www.theguardian.com/lifeandstyle/2013/sep/27/anthony-bourdain-parts-unknown-family-values",
+      "save_url": "https://web.archive.org/save/https://www.theguardian.com/lifeandstyle/2013/sep/27/anthony-bourdain-parts-unknown-family-values",
+      "refs": [
+        {
+          "owner": "src/content/literature/anthony-bourdain-my-family-values-the-guardian.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.eater.com/2018/6/8/17441262/anthony-bourdain-food-and-travel-shows-legacy": {
+      "url": "https://www.eater.com/2018/6/8/17441262/anthony-bourdain-food-and-travel-shows-legacy",
+      "latest_url": "https://web.archive.org/web/2/https://www.eater.com/2018/6/8/17441262/anthony-bourdain-food-and-travel-shows-legacy",
+      "calendar_url": "https://web.archive.org/web/*/https://www.eater.com/2018/6/8/17441262/anthony-bourdain-food-and-travel-shows-legacy",
+      "save_url": "https://web.archive.org/save/https://www.eater.com/2018/6/8/17441262/anthony-bourdain-food-and-travel-shows-legacy",
+      "refs": [
+        {
+          "owner": "src/content/literature/anthony-bourdain-rewrote-the-rules-for-food-and-travel-tv-eater.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.grubstreet.com/2018/06/anthony-bourdains-biography-will-be-released-in-2019.html": {
+      "url": "https://www.grubstreet.com/2018/06/anthony-bourdains-biography-will-be-released-in-2019.html",
+      "latest_url": "https://web.archive.org/web/2/https://www.grubstreet.com/2018/06/anthony-bourdains-biography-will-be-released-in-2019.html",
+      "calendar_url": "https://web.archive.org/web/*/https://www.grubstreet.com/2018/06/anthony-bourdains-biography-will-be-released-in-2019.html",
+      "save_url": "https://web.archive.org/save/https://www.grubstreet.com/2018/06/anthony-bourdains-biography-will-be-released-in-2019.html",
+      "refs": [
+        {
+          "owner": "src/content/literature/anthony-bourdain-s-biography-will-be-released-in-2019-grub-street.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.bonappetit.com/gallery/anthony-bourdain-childhood-photos": {
+      "url": "https://www.bonappetit.com/gallery/anthony-bourdain-childhood-photos",
+      "latest_url": "https://web.archive.org/web/2/https://www.bonappetit.com/gallery/anthony-bourdain-childhood-photos",
+      "calendar_url": "https://web.archive.org/web/*/https://www.bonappetit.com/gallery/anthony-bourdain-childhood-photos",
+      "save_url": "https://web.archive.org/save/https://www.bonappetit.com/gallery/anthony-bourdain-childhood-photos",
+      "refs": [
+        {
+          "owner": "src/content/literature/anthony-bourdain-s-childhood-photos-bon-appetit.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.grubstreet.com/2018/06/anthony-bourdain-restaurant-democracy-legacy.html": {
+      "url": "https://www.grubstreet.com/2018/06/anthony-bourdain-restaurant-democracy-legacy.html",
+      "latest_url": "https://web.archive.org/web/2/https://www.grubstreet.com/2018/06/anthony-bourdain-restaurant-democracy-legacy.html",
+      "calendar_url": "https://web.archive.org/web/*/https://www.grubstreet.com/2018/06/anthony-bourdain-restaurant-democracy-legacy.html",
+      "save_url": "https://web.archive.org/save/https://www.grubstreet.com/2018/06/anthony-bourdain-restaurant-democracy-legacy.html",
+      "refs": [
+        {
+          "owner": "src/content/literature/anthony-bourdain-s-crusade-for-fine-dining-democracy-grub-street.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.eater.com/2018/10/3/17929834/anthony-bourdains-hungry-ghosts-comic-book": {
+      "url": "https://www.eater.com/2018/10/3/17929834/anthony-bourdains-hungry-ghosts-comic-book",
+      "latest_url": "https://web.archive.org/web/2/https://www.eater.com/2018/10/3/17929834/anthony-bourdains-hungry-ghosts-comic-book",
+      "calendar_url": "https://web.archive.org/web/*/https://www.eater.com/2018/10/3/17929834/anthony-bourdains-hungry-ghosts-comic-book",
+      "save_url": "https://web.archive.org/save/https://www.eater.com/2018/10/3/17929834/anthony-bourdains-hungry-ghosts-comic-book",
+      "refs": [
+        {
+          "owner": "src/content/literature/anthony-bourdain-s-hungry-ghosts-eater.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.thrillist.com/eat/los-angeles/anthony-bourdain-los-angeles-interview": {
+      "url": "https://www.thrillist.com/eat/los-angeles/anthony-bourdain-los-angeles-interview",
+      "latest_url": "https://web.archive.org/web/2/https://www.thrillist.com/eat/los-angeles/anthony-bourdain-los-angeles-interview",
+      "calendar_url": "https://web.archive.org/web/*/https://www.thrillist.com/eat/los-angeles/anthony-bourdain-los-angeles-interview",
+      "save_url": "https://web.archive.org/save/https://www.thrillist.com/eat/los-angeles/anthony-bourdain-los-angeles-interview",
+      "refs": [
+        {
+          "owner": "src/content/literature/anthony-bourdain-s-la-a-q-and-a-with-a-legend-thrillist.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.eater.com/2018/6/13/16774768/anthony-bourdain-books": {
+      "url": "https://www.eater.com/2018/6/13/16774768/anthony-bourdain-books",
+      "latest_url": "https://web.archive.org/web/2/https://www.eater.com/2018/6/13/16774768/anthony-bourdain-books",
+      "calendar_url": "https://web.archive.org/web/*/https://www.eater.com/2018/6/13/16774768/anthony-bourdain-books",
+      "save_url": "https://web.archive.org/save/https://www.eater.com/2018/6/13/16774768/anthony-bourdain-books",
+      "refs": [
+        {
+          "owner": "src/content/literature/anthony-bourdain-s-literary-legacy-in-13-books-eater.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.vanityfair.com/style/2021/09/anthony-bourdain-director-producer-exclusive-excerpt": {
+      "url": "https://www.vanityfair.com/style/2021/09/anthony-bourdain-director-producer-exclusive-excerpt",
+      "latest_url": "https://web.archive.org/web/2/https://www.vanityfair.com/style/2021/09/anthony-bourdain-director-producer-exclusive-excerpt",
+      "calendar_url": "https://web.archive.org/web/*/https://www.vanityfair.com/style/2021/09/anthony-bourdain-director-producer-exclusive-excerpt",
+      "save_url": "https://web.archive.org/save/https://www.vanityfair.com/style/2021/09/anthony-bourdain-director-producer-exclusive-excerpt",
+      "refs": [
+        {
+          "owner": "src/content/literature/anthony-bourdain-s-longtime-director-and-producer-remembers-him-vanity-fair.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.newyorker.com/magazine/2017/02/13/anthony-bourdains-moveable-feast": {
+      "url": "https://www.newyorker.com/magazine/2017/02/13/anthony-bourdains-moveable-feast",
+      "latest_url": "https://web.archive.org/web/2/https://www.newyorker.com/magazine/2017/02/13/anthony-bourdains-moveable-feast",
+      "calendar_url": "https://web.archive.org/web/*/https://www.newyorker.com/magazine/2017/02/13/anthony-bourdains-moveable-feast",
+      "save_url": "https://web.archive.org/save/https://www.newyorker.com/magazine/2017/02/13/anthony-bourdains-moveable-feast",
+      "refs": [
+        {
+          "owner": "src/content/literature/anthony-bourdain-s-moveable-feast-the-new-yorker.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.latimes.com/entertainment-arts/story/2023-11-30/anthony-bourdain-henry-kissinger-remarks": {
+      "url": "https://www.latimes.com/entertainment-arts/story/2023-11-30/anthony-bourdain-henry-kissinger-remarks",
+      "latest_url": "https://web.archive.org/web/2/https://www.latimes.com/entertainment-arts/story/2023-11-30/anthony-bourdain-henry-kissinger-remarks",
+      "calendar_url": "https://web.archive.org/web/*/https://www.latimes.com/entertainment-arts/story/2023-11-30/anthony-bourdain-henry-kissinger-remarks",
+      "save_url": "https://web.archive.org/save/https://www.latimes.com/entertainment-arts/story/2023-11-30/anthony-bourdain-henry-kissinger-remarks",
+      "refs": [
+        {
+          "owner": "src/content/literature/anthony-bourdain-s-scathing-henry-kissinger-remarks-resurface-los-angeles-times.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.thrillist.com/entertainment/nation/anthony-bourdain-interview-appetites-cookbook": {
+      "url": "https://www.thrillist.com/entertainment/nation/anthony-bourdain-interview-appetites-cookbook",
+      "latest_url": "https://web.archive.org/web/2/https://www.thrillist.com/entertainment/nation/anthony-bourdain-interview-appetites-cookbook",
+      "calendar_url": "https://web.archive.org/web/*/https://www.thrillist.com/entertainment/nation/anthony-bourdain-interview-appetites-cookbook",
+      "save_url": "https://web.archive.org/save/https://www.thrillist.com/entertainment/nation/anthony-bourdain-interview-appetites-cookbook",
+      "refs": [
+        {
+          "owner": "src/content/literature/anthony-bourdain-the-thrillist-interview-thrillist.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.bonappetit.com/people/celebrities/article/anthony-bourdain-parts-unknown": {
+      "url": "https://www.bonappetit.com/people/celebrities/article/anthony-bourdain-parts-unknown",
+      "latest_url": "https://web.archive.org/web/2/https://www.bonappetit.com/people/celebrities/article/anthony-bourdain-parts-unknown",
+      "calendar_url": "https://web.archive.org/web/*/https://www.bonappetit.com/people/celebrities/article/anthony-bourdain-parts-unknown",
+      "save_url": "https://web.archive.org/save/https://www.bonappetit.com/people/celebrities/article/anthony-bourdain-parts-unknown",
+      "refs": [
+        {
+          "owner": "src/content/literature/anthony-bourdain-thinks-you-re-crazy-for-eating-airplane-food-bon-appetit.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.latimes.com/books/la-et-jc-bourdain-books-20180608-story.html": {
+      "url": "https://www.latimes.com/books/la-et-jc-bourdain-books-20180608-story.html",
+      "latest_url": "https://web.archive.org/web/2/https://www.latimes.com/books/la-et-jc-bourdain-books-20180608-story.html",
+      "calendar_url": "https://web.archive.org/web/*/https://www.latimes.com/books/la-et-jc-bourdain-books-20180608-story.html",
+      "save_url": "https://web.archive.org/save/https://www.latimes.com/books/la-et-jc-bourdain-books-20180608-story.html",
+      "refs": [
+        {
+          "owner": "src/content/literature/books-were-good-to-anthony-bourdain-but-tv-was-even-better-los-angeles-times.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.washingtonpost.com/food/2021/09/30/bourdain-oral-biography-review/": {
+      "url": "https://www.washingtonpost.com/food/2021/09/30/bourdain-oral-biography-review/",
+      "latest_url": "https://web.archive.org/web/2/https://www.washingtonpost.com/food/2021/09/30/bourdain-oral-biography-review/",
+      "calendar_url": "https://web.archive.org/web/*/https://www.washingtonpost.com/food/2021/09/30/bourdain-oral-biography-review/",
+      "save_url": "https://web.archive.org/save/https://www.washingtonpost.com/food/2021/09/30/bourdain-oral-biography-review/",
+      "refs": [
+        {
+          "owner": "src/content/literature/bourdain-oral-biography-review-washington-post.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.bonappetit.com/story/angela-dimayuga-anthony-bourdain": {
+      "url": "https://www.bonappetit.com/story/angela-dimayuga-anthony-bourdain",
+      "latest_url": "https://web.archive.org/web/2/https://www.bonappetit.com/story/angela-dimayuga-anthony-bourdain",
+      "calendar_url": "https://web.archive.org/web/*/https://www.bonappetit.com/story/angela-dimayuga-anthony-bourdain",
+      "save_url": "https://web.archive.org/save/https://www.bonappetit.com/story/angela-dimayuga-anthony-bourdain",
+      "refs": [
+        {
+          "owner": "src/content/literature/chef-angela-dimayuga-on-her-last-conversation-with-anthony-bourdain-bon-appetit.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.eater.com/2018/6/8/17442084/anthony-bourdain-remembered": {
+      "url": "https://www.eater.com/2018/6/8/17442084/anthony-bourdain-remembered",
+      "latest_url": "https://web.archive.org/web/2/https://www.eater.com/2018/6/8/17442084/anthony-bourdain-remembered",
+      "calendar_url": "https://web.archive.org/web/*/https://www.eater.com/2018/6/8/17442084/anthony-bourdain-remembered",
+      "save_url": "https://web.archive.org/save/https://www.eater.com/2018/6/8/17442084/anthony-bourdain-remembered",
+      "refs": [
+        {
+          "owner": "src/content/literature/chefs-and-food-writers-remember-anthony-bourdain-eater.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.washingtonpost.com/news/food/wp/2019/07/30/when-listing-anthony-bourdains-greatest-literary-hits-dont-discount-typhoid-mary/": {
+      "url": "https://www.washingtonpost.com/news/food/wp/2019/07/30/when-listing-anthony-bourdains-greatest-literary-hits-dont-discount-typhoid-mary/",
+      "latest_url": "https://web.archive.org/web/2/https://www.washingtonpost.com/news/food/wp/2019/07/30/when-listing-anthony-bourdains-greatest-literary-hits-dont-discount-typhoid-mary/",
+      "calendar_url": "https://web.archive.org/web/*/https://www.washingtonpost.com/news/food/wp/2019/07/30/when-listing-anthony-bourdains-greatest-literary-hits-dont-discount-typhoid-mary/",
+      "save_url": "https://web.archive.org/save/https://www.washingtonpost.com/news/food/wp/2019/07/30/when-listing-anthony-bourdains-greatest-literary-hits-dont-discount-typhoid-mary/",
+      "refs": [
+        {
+          "owner": "src/content/literature/don-t-discount-typhoid-mary-washington-post.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.theguardian.com/books/2022/oct/14/down-and-out-in-paradise-review-a-disservice-to-anthony-bourdain": {
+      "url": "https://www.theguardian.com/books/2022/oct/14/down-and-out-in-paradise-review-a-disservice-to-anthony-bourdain",
+      "latest_url": "https://web.archive.org/web/2/https://www.theguardian.com/books/2022/oct/14/down-and-out-in-paradise-review-a-disservice-to-anthony-bourdain",
+      "calendar_url": "https://web.archive.org/web/*/https://www.theguardian.com/books/2022/oct/14/down-and-out-in-paradise-review-a-disservice-to-anthony-bourdain",
+      "save_url": "https://web.archive.org/save/https://www.theguardian.com/books/2022/oct/14/down-and-out-in-paradise-review-a-disservice-to-anthony-bourdain",
+      "refs": [
+        {
+          "owner": "src/content/literature/down-and-out-in-paradise-review-the-guardian.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://time.com/5306636/eric-ripert-statement-anthony-bourdain-death/": {
+      "url": "https://time.com/5306636/eric-ripert-statement-anthony-bourdain-death/",
+      "latest_url": "https://web.archive.org/web/2/https://time.com/5306636/eric-ripert-statement-anthony-bourdain-death/",
+      "calendar_url": "https://web.archive.org/web/*/https://time.com/5306636/eric-ripert-statement-anthony-bourdain-death/",
+      "save_url": "https://web.archive.org/save/https://time.com/5306636/eric-ripert-statement-anthony-bourdain-death/",
+      "refs": [
+        {
+          "owner": "src/content/literature/eric-ripert-speaks-out-after-finding-anthony-bourdain-dead-time.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.rollingstone.com/culture/culture-features/anthony-bourdain-chef-author-sensation-1234615054/": {
+      "url": "https://www.rollingstone.com/culture/culture-features/anthony-bourdain-chef-author-sensation-1234615054/",
+      "latest_url": "https://web.archive.org/web/2/https://www.rollingstone.com/culture/culture-features/anthony-bourdain-chef-author-sensation-1234615054/",
+      "calendar_url": "https://web.archive.org/web/*/https://www.rollingstone.com/culture/culture-features/anthony-bourdain-chef-author-sensation-1234615054/",
+      "save_url": "https://web.archive.org/save/https://www.rollingstone.com/culture/culture-features/anthony-bourdain-chef-author-sensation-1234615054/",
+      "refs": [
+        {
+          "owner": "src/content/literature/how-anthony-bourdain-became-an-instant-sensation-rolling-stone.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.grubstreet.com/2018/06/anthony-bourdain-food-writing-legacy.html": {
+      "url": "https://www.grubstreet.com/2018/06/anthony-bourdain-food-writing-legacy.html",
+      "latest_url": "https://web.archive.org/web/2/https://www.grubstreet.com/2018/06/anthony-bourdain-food-writing-legacy.html",
+      "calendar_url": "https://web.archive.org/web/*/https://www.grubstreet.com/2018/06/anthony-bourdain-food-writing-legacy.html",
+      "save_url": "https://web.archive.org/save/https://www.grubstreet.com/2018/06/anthony-bourdain-food-writing-legacy.html",
+      "refs": [
+        {
+          "owner": "src/content/literature/how-anthony-bourdain-forever-changed-food-writing-grub-street.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.eater.com/22388507/anthony-bourdain-world-travel-book-laurie-woolever-interview": {
+      "url": "https://www.eater.com/22388507/anthony-bourdain-world-travel-book-laurie-woolever-interview",
+      "latest_url": "https://web.archive.org/web/2/https://www.eater.com/22388507/anthony-bourdain-world-travel-book-laurie-woolever-interview",
+      "calendar_url": "https://web.archive.org/web/*/https://www.eater.com/22388507/anthony-bourdain-world-travel-book-laurie-woolever-interview",
+      "save_url": "https://web.archive.org/save/https://www.eater.com/22388507/anthony-bourdain-world-travel-book-laurie-woolever-interview",
+      "refs": [
+        {
+          "owner": "src/content/literature/how-anthony-bourdain-s-longtime-assistant-made-his-new-book-a-reality-eater.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.grubstreet.com/2021/07/director-morgan-neville-roadrunner-anthony-bourdain-documentary.html": {
+      "url": "https://www.grubstreet.com/2021/07/director-morgan-neville-roadrunner-anthony-bourdain-documentary.html",
+      "latest_url": "https://web.archive.org/web/2/https://www.grubstreet.com/2021/07/director-morgan-neville-roadrunner-anthony-bourdain-documentary.html",
+      "calendar_url": "https://web.archive.org/web/*/https://www.grubstreet.com/2021/07/director-morgan-neville-roadrunner-anthony-bourdain-documentary.html",
+      "save_url": "https://web.archive.org/save/https://www.grubstreet.com/2021/07/director-morgan-neville-roadrunner-anthony-bourdain-documentary.html",
+      "refs": [
+        {
+          "owner": "src/content/literature/how-do-you-tell-the-story-of-anthony-bourdain-grub-street.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.theguardian.com/food/2022/oct/01/i-am-lonely-controversial-book-reveals-anthony-bourdains-final-days": {
+      "url": "https://www.theguardian.com/food/2022/oct/01/i-am-lonely-controversial-book-reveals-anthony-bourdains-final-days",
+      "latest_url": "https://web.archive.org/web/2/https://www.theguardian.com/food/2022/oct/01/i-am-lonely-controversial-book-reveals-anthony-bourdains-final-days",
+      "calendar_url": "https://web.archive.org/web/*/https://www.theguardian.com/food/2022/oct/01/i-am-lonely-controversial-book-reveals-anthony-bourdains-final-days",
+      "save_url": "https://web.archive.org/save/https://www.theguardian.com/food/2022/oct/01/i-am-lonely-controversial-book-reveals-anthony-bourdains-final-days",
+      "refs": [
+        {
+          "owner": "src/content/literature/i-am-lonely-controversial-book-reveals-anthony-bourdain-s-final-days-the-guardia.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.vanityfair.com/style/2021/09/inside-anthony-bourdains-all-consuming-relationship": {
+      "url": "https://www.vanityfair.com/style/2021/09/inside-anthony-bourdains-all-consuming-relationship",
+      "latest_url": "https://web.archive.org/web/2/https://www.vanityfair.com/style/2021/09/inside-anthony-bourdains-all-consuming-relationship",
+      "calendar_url": "https://web.archive.org/web/*/https://www.vanityfair.com/style/2021/09/inside-anthony-bourdains-all-consuming-relationship",
+      "save_url": "https://web.archive.org/save/https://www.vanityfair.com/style/2021/09/inside-anthony-bourdains-all-consuming-relationship",
+      "refs": [
+        {
+          "owner": "src/content/literature/inside-anthony-bourdain-s-all-consuming-relationship-vanity-fair.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.bonappetit.com/story/bourdain-the-definitive-oral-biography": {
+      "url": "https://www.bonappetit.com/story/bourdain-the-definitive-oral-biography",
+      "latest_url": "https://web.archive.org/web/2/https://www.bonappetit.com/story/bourdain-the-definitive-oral-biography",
+      "calendar_url": "https://web.archive.org/web/*/https://www.bonappetit.com/story/bourdain-the-definitive-oral-biography",
+      "save_url": "https://web.archive.org/save/https://www.bonappetit.com/story/bourdain-the-definitive-oral-biography",
+      "refs": [
+        {
+          "owner": "src/content/literature/it-s-not-often-that-you-meet-people-who-are-funny-clever-and-kind-and-anthony-wa.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.theguardian.com/food/2025/apr/06/working-with-nys-hottest-chefs-took-its-toll-on-laurie-woolever-but-nothing-prepared-her-for-anthony-bourdains-death": {
+      "url": "https://www.theguardian.com/food/2025/apr/06/working-with-nys-hottest-chefs-took-its-toll-on-laurie-woolever-but-nothing-prepared-her-for-anthony-bourdains-death",
+      "latest_url": "https://web.archive.org/web/2/https://www.theguardian.com/food/2025/apr/06/working-with-nys-hottest-chefs-took-its-toll-on-laurie-woolever-but-nothing-prepared-her-for-anthony-bourdains-death",
+      "calendar_url": "https://web.archive.org/web/*/https://www.theguardian.com/food/2025/apr/06/working-with-nys-hottest-chefs-took-its-toll-on-laurie-woolever-but-nothing-prepared-her-for-anthony-bourdains-death",
+      "save_url": "https://web.archive.org/save/https://www.theguardian.com/food/2025/apr/06/working-with-nys-hottest-chefs-took-its-toll-on-laurie-woolever-but-nothing-prepared-her-for-anthony-bourdains-death",
+      "refs": [
+        {
+          "owner": "src/content/literature/laurie-woolever-on-food-addiction-and-working-with-anthony-bourdain-the-guardian.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://people.com/anthony-bourdain-assistant-laurie-woolever-reveals-his-eerie-final-texts-memoir-care-and-feeding-exclusive-11685428": {
+      "url": "https://people.com/anthony-bourdain-assistant-laurie-woolever-reveals-his-eerie-final-texts-memoir-care-and-feeding-exclusive-11685428",
+      "latest_url": "https://web.archive.org/web/2/https://people.com/anthony-bourdain-assistant-laurie-woolever-reveals-his-eerie-final-texts-memoir-care-and-feeding-exclusive-11685428",
+      "calendar_url": "https://web.archive.org/web/*/https://people.com/anthony-bourdain-assistant-laurie-woolever-reveals-his-eerie-final-texts-memoir-care-and-feeding-exclusive-11685428",
+      "save_url": "https://web.archive.org/save/https://people.com/anthony-bourdain-assistant-laurie-woolever-reveals-his-eerie-final-texts-memoir-care-and-feeding-exclusive-11685428",
+      "refs": [
+        {
+          "owner": "src/content/literature/laurie-woolever-reveals-his-final-texts-in-memoir-people.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.eater.com/2018/11/9/18080354/anthony-bourdain-parts-unknown-sandra-zweig-interview": {
+      "url": "https://www.eater.com/2018/11/9/18080354/anthony-bourdain-parts-unknown-sandra-zweig-interview",
+      "latest_url": "https://web.archive.org/web/2/https://www.eater.com/2018/11/9/18080354/anthony-bourdain-parts-unknown-sandra-zweig-interview",
+      "calendar_url": "https://web.archive.org/web/*/https://www.eater.com/2018/11/9/18080354/anthony-bourdain-parts-unknown-sandra-zweig-interview",
+      "save_url": "https://web.archive.org/save/https://www.eater.com/2018/11/9/18080354/anthony-bourdain-parts-unknown-sandra-zweig-interview",
+      "refs": [
+        {
+          "owner": "src/content/literature/parts-unknown-producer-sandra-zweig-on-anthony-bourdain-s-tv-legacy-eater.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.theatlantic.com/entertainment/archive/2018/06/remembering-anthony-bourdain/562388/": {
+      "url": "https://www.theatlantic.com/entertainment/archive/2018/06/remembering-anthony-bourdain/562388/",
+      "latest_url": "https://web.archive.org/web/2/https://www.theatlantic.com/entertainment/archive/2018/06/remembering-anthony-bourdain/562388/",
+      "calendar_url": "https://web.archive.org/web/*/https://www.theatlantic.com/entertainment/archive/2018/06/remembering-anthony-bourdain/562388/",
+      "save_url": "https://web.archive.org/save/https://www.theatlantic.com/entertainment/archive/2018/06/remembering-anthony-bourdain/562388/",
+      "refs": [
+        {
+          "owner": "src/content/literature/remembering-anthony-bourdain-the-atlantic.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.eater.com/2018/11/1/18049550/samin-nosrat-on-anthony-bourdain-netflix-podcast": {
+      "url": "https://www.eater.com/2018/11/1/18049550/samin-nosrat-on-anthony-bourdain-netflix-podcast",
+      "latest_url": "https://web.archive.org/web/2/https://www.eater.com/2018/11/1/18049550/samin-nosrat-on-anthony-bourdain-netflix-podcast",
+      "calendar_url": "https://web.archive.org/web/*/https://www.eater.com/2018/11/1/18049550/samin-nosrat-on-anthony-bourdain-netflix-podcast",
+      "save_url": "https://web.archive.org/save/https://www.eater.com/2018/11/1/18049550/samin-nosrat-on-anthony-bourdain-netflix-podcast",
+      "refs": [
+        {
+          "owner": "src/content/literature/samin-nosrat-discusses-anthony-bourdain-s-complicated-legacy-eater.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.theguardian.com/film/2021/jul/21/anthony-bourdain-documentary-roadrunner-ai-deepfake-furore": {
+      "url": "https://www.theguardian.com/film/2021/jul/21/anthony-bourdain-documentary-roadrunner-ai-deepfake-furore",
+      "latest_url": "https://web.archive.org/web/2/https://www.theguardian.com/film/2021/jul/21/anthony-bourdain-documentary-roadrunner-ai-deepfake-furore",
+      "calendar_url": "https://web.archive.org/web/*/https://www.theguardian.com/film/2021/jul/21/anthony-bourdain-documentary-roadrunner-ai-deepfake-furore",
+      "save_url": "https://web.archive.org/save/https://www.theguardian.com/film/2021/jul/21/anthony-bourdain-documentary-roadrunner-ai-deepfake-furore",
+      "refs": [
+        {
+          "owner": "src/content/literature/the-bourdain-ai-furore-shouldn-t-overshadow-roadrunner-the-guardian.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.gq.com/story/anthony-bourdain-men-of-the-year-tribute": {
+      "url": "https://www.gq.com/story/anthony-bourdain-men-of-the-year-tribute",
+      "latest_url": "https://web.archive.org/web/2/https://www.gq.com/story/anthony-bourdain-men-of-the-year-tribute",
+      "calendar_url": "https://web.archive.org/web/*/https://www.gq.com/story/anthony-bourdain-men-of-the-year-tribute",
+      "save_url": "https://web.archive.org/save/https://www.gq.com/story/anthony-bourdain-men-of-the-year-tribute",
+      "refs": [
+        {
+          "owner": "src/content/literature/the-enormous-life-of-anthony-bourdain-according-to-those-who-knew-him-gq.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.grubstreet.com/2012/04/the-appeal-of-anthony-bourdain.html": {
+      "url": "https://www.grubstreet.com/2012/04/the-appeal-of-anthony-bourdain.html",
+      "latest_url": "https://web.archive.org/web/2/https://www.grubstreet.com/2012/04/the-appeal-of-anthony-bourdain.html",
+      "calendar_url": "https://web.archive.org/web/*/https://www.grubstreet.com/2012/04/the-appeal-of-anthony-bourdain.html",
+      "save_url": "https://web.archive.org/save/https://www.grubstreet.com/2012/04/the-appeal-of-anthony-bourdain.html",
+      "refs": [
+        {
+          "owner": "src/content/literature/the-feeding-tube-the-anthony-bourdain-brand-grub-street.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.bonappetit.com/story/anthony-bourdain-biography-controversy": {
+      "url": "https://www.bonappetit.com/story/anthony-bourdain-biography-controversy",
+      "latest_url": "https://web.archive.org/web/2/https://www.bonappetit.com/story/anthony-bourdain-biography-controversy",
+      "calendar_url": "https://web.archive.org/web/*/https://www.bonappetit.com/story/anthony-bourdain-biography-controversy",
+      "save_url": "https://web.archive.org/save/https://www.bonappetit.com/story/anthony-bourdain-biography-controversy",
+      "refs": [
+        {
+          "owner": "src/content/literature/the-latest-anthony-bourdain-biography-is-already-controversial-bon-appetit.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.newyorker.com/news/postscript/travels-with-anthony-bourdain": {
+      "url": "https://www.newyorker.com/news/postscript/travels-with-anthony-bourdain",
+      "latest_url": "https://web.archive.org/web/2/https://www.newyorker.com/news/postscript/travels-with-anthony-bourdain",
+      "calendar_url": "https://web.archive.org/web/*/https://www.newyorker.com/news/postscript/travels-with-anthony-bourdain",
+      "save_url": "https://web.archive.org/save/https://www.newyorker.com/news/postscript/travels-with-anthony-bourdain",
+      "refs": [
+        {
+          "owner": "src/content/literature/travels-with-anthony-bourdain-the-new-yorker.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.washingtonpost.com/food/2021/04/21/bourdain-travel-book/": {
+      "url": "https://www.washingtonpost.com/food/2021/04/21/bourdain-travel-book/",
+      "latest_url": "https://web.archive.org/web/2/https://www.washingtonpost.com/food/2021/04/21/bourdain-travel-book/",
+      "calendar_url": "https://web.archive.org/web/*/https://www.washingtonpost.com/food/2021/04/21/bourdain-travel-book/",
+      "save_url": "https://web.archive.org/save/https://www.washingtonpost.com/food/2021/04/21/bourdain-travel-book/",
+      "refs": [
+        {
+          "owner": "src/content/literature/we-were-all-grieving-laurie-woolever-on-compiling-bourdain-s-travel-book-washing.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.eater.com/2017/1/25/14376996/anthony-bourdain-novels-fiction": {
+      "url": "https://www.eater.com/2017/1/25/14376996/anthony-bourdain-novels-fiction",
+      "latest_url": "https://web.archive.org/web/2/https://www.eater.com/2017/1/25/14376996/anthony-bourdain-novels-fiction",
+      "calendar_url": "https://web.archive.org/web/*/https://www.eater.com/2017/1/25/14376996/anthony-bourdain-novels-fiction",
+      "save_url": "https://web.archive.org/save/https://www.eater.com/2017/1/25/14376996/anthony-bourdain-novels-fiction",
+      "refs": [
+        {
+          "owner": "src/content/literature/what-anthony-bourdain-s-early-crime-fiction-novels-reveal-eater.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.eater.com/22747424/anthony-bourdain-biography-laurie-woolever-book-review": {
+      "url": "https://www.eater.com/22747424/anthony-bourdain-biography-laurie-woolever-book-review",
+      "latest_url": "https://web.archive.org/web/2/https://www.eater.com/22747424/anthony-bourdain-biography-laurie-woolever-book-review",
+      "calendar_url": "https://web.archive.org/web/*/https://www.eater.com/22747424/anthony-bourdain-biography-laurie-woolever-book-review",
+      "save_url": "https://web.archive.org/save/https://www.eater.com/22747424/anthony-bourdain-biography-laurie-woolever-book-review",
+      "refs": [
+        {
+          "owner": "src/content/literature/who-knows-anthony-bourdain-eater.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.eater.com/2019/6/27/18761641/anthony-bourdain-day-june-25-grief-mourning-fans": {
+      "url": "https://www.eater.com/2019/6/27/18761641/anthony-bourdain-day-june-25-grief-mourning-fans",
+      "latest_url": "https://web.archive.org/web/2/https://www.eater.com/2019/6/27/18761641/anthony-bourdain-day-june-25-grief-mourning-fans",
+      "calendar_url": "https://web.archive.org/web/*/https://www.eater.com/2019/6/27/18761641/anthony-bourdain-day-june-25-grief-mourning-fans",
+      "save_url": "https://web.archive.org/save/https://www.eater.com/2019/6/27/18761641/anthony-bourdain-day-june-25-grief-mourning-fans",
+      "refs": [
+        {
+          "owner": "src/content/literature/who-was-bourdain-day-for-eater.json",
+          "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://www.anthonybourdainworldmap.com/": {
+      "url": "https://www.anthonybourdainworldmap.com/",
+      "latest_url": "https://web.archive.org/web/2/https://www.anthonybourdainworldmap.com/",
+      "calendar_url": "https://web.archive.org/web/*/https://www.anthonybourdainworldmap.com/",
+      "save_url": "https://web.archive.org/save/https://www.anthonybourdainworldmap.com/",
+      "refs": [
+        {
+          "owner": "src/content/sources/anthony-bourdain-world-map.yaml",
+          "field": "url"
+        }
+      ]
+    },
+    "https://explorepartsunknown.com/detroit/bourdains-field-notes-detroit/": {
+      "url": "https://explorepartsunknown.com/detroit/bourdains-field-notes-detroit/",
+      "latest_url": "https://web.archive.org/web/2/https://explorepartsunknown.com/detroit/bourdains-field-notes-detroit/",
+      "calendar_url": "https://web.archive.org/web/*/https://explorepartsunknown.com/detroit/bourdains-field-notes-detroit/",
+      "save_url": "https://web.archive.org/save/https://explorepartsunknown.com/detroit/bourdains-field-notes-detroit/",
+      "refs": [
+        {
+          "owner": "src/content/sources/explore-parts-unknown-detroit.yaml",
+          "field": "url"
+        }
+      ]
+    },
+    "https://openlibrary.org/": {
+      "url": "https://openlibrary.org/",
+      "latest_url": "https://web.archive.org/web/2/https://openlibrary.org/",
+      "calendar_url": "https://web.archive.org/web/*/https://openlibrary.org/",
+      "save_url": "https://web.archive.org/save/https://openlibrary.org/",
+      "refs": [
+        {
+          "owner": "src/content/sources/open-library.yaml",
+          "field": "url"
+        }
+      ]
+    },
+    "https://www.reddit.com/r/AnthonyBourdain/comments/ai45r3/anthony_bourdain_archival_megathread/": {
+      "url": "https://www.reddit.com/r/AnthonyBourdain/comments/ai45r3/anthony_bourdain_archival_megathread/",
+      "latest_url": "https://web.archive.org/web/2/https://www.reddit.com/r/AnthonyBourdain/comments/ai45r3/anthony_bourdain_archival_megathread/",
+      "calendar_url": "https://web.archive.org/web/*/https://www.reddit.com/r/AnthonyBourdain/comments/ai45r3/anthony_bourdain_archival_megathread/",
+      "save_url": "https://web.archive.org/save/https://www.reddit.com/r/AnthonyBourdain/comments/ai45r3/anthony_bourdain_archival_megathread/",
+      "refs": [
+        {
+          "owner": "src/content/sources/reddit-archival-megathread.yaml",
+          "field": "url"
+        },
+        {
+          "owner": "archive/sources.json",
+          "field": "reddit-archival-megathread.canonical_url"
+        }
+      ]
+    },
+    "https://github.com/cnlowery/anthony-bourdain-shows-by-country": {
+      "url": "https://github.com/cnlowery/anthony-bourdain-shows-by-country",
+      "latest_url": "https://web.archive.org/web/2/https://github.com/cnlowery/anthony-bourdain-shows-by-country",
+      "calendar_url": "https://web.archive.org/web/*/https://github.com/cnlowery/anthony-bourdain-shows-by-country",
+      "save_url": "https://web.archive.org/save/https://github.com/cnlowery/anthony-bourdain-shows-by-country",
+      "refs": [
+        {
+          "owner": "src/content/sources/shows-by-country-github.yaml",
+          "field": "url"
+        },
+        {
+          "owner": "archive/sources.json",
+          "field": "shows-by-country-readme.canonical_url"
+        }
+      ]
+    },
+    "https://github.com/underthecurve/bourdain-travel-places": {
+      "url": "https://github.com/underthecurve/bourdain-travel-places",
+      "latest_url": "https://web.archive.org/web/2/https://github.com/underthecurve/bourdain-travel-places",
+      "calendar_url": "https://web.archive.org/web/*/https://github.com/underthecurve/bourdain-travel-places",
+      "save_url": "https://web.archive.org/save/https://github.com/underthecurve/bourdain-travel-places",
+      "refs": [
+        {
+          "owner": "src/content/sources/travel-places-github.yaml",
+          "field": "url"
+        },
+        {
+          "owner": "archive/sources.json",
+          "field": "travel-places-readme.canonical_url"
+        }
+      ]
+    },
+    "https://covers.openlibrary.org/b/isbn/9780060012786-M.jpg": {
+      "url": "https://covers.openlibrary.org/b/isbn/9780060012786-M.jpg",
+      "latest_url": "https://web.archive.org/web/2/https://covers.openlibrary.org/b/isbn/9780060012786-M.jpg",
+      "calendar_url": "https://web.archive.org/web/*/https://covers.openlibrary.org/b/isbn/9780060012786-M.jpg",
+      "save_url": "https://web.archive.org/save/https://covers.openlibrary.org/b/isbn/9780060012786-M.jpg",
+      "refs": [
+        {
+          "owner": "src/content/works/a-cooks-tour-book.yaml",
+          "field": "image_url"
+        }
+      ]
+    },
+    "https://openlibrary.org/search?q=A+Cook%27s+Tour+Anthony+Bourdain": {
+      "url": "https://openlibrary.org/search?q=A+Cook%27s+Tour+Anthony+Bourdain",
+      "latest_url": "https://web.archive.org/web/2/https://openlibrary.org/search?q=A+Cook%2527s+Tour+Anthony+Bourdain",
+      "calendar_url": "https://web.archive.org/web/*/https://openlibrary.org/search?q=A+Cook%2527s+Tour+Anthony+Bourdain",
+      "save_url": "https://web.archive.org/save/https://openlibrary.org/search?q=A+Cook%2527s+Tour+Anthony+Bourdain",
+      "refs": [
+        {
+          "owner": "src/content/works/a-cooks-tour-book.yaml",
+          "field": "library_url"
+        }
+      ]
+    },
+    "https://openlibrary.org/search?q=The+Anthony+Bourdain+Reader": {
+      "url": "https://openlibrary.org/search?q=The+Anthony+Bourdain+Reader",
+      "latest_url": "https://web.archive.org/web/2/https://openlibrary.org/search?q=The+Anthony+Bourdain+Reader",
+      "calendar_url": "https://web.archive.org/web/*/https://openlibrary.org/search?q=The+Anthony+Bourdain+Reader",
+      "save_url": "https://web.archive.org/save/https://openlibrary.org/search?q=The+Anthony+Bourdain+Reader",
+      "refs": [
+        {
+          "owner": "src/content/works/anthony-bourdain-reader.yaml",
+          "field": "library_url"
+        }
+      ]
+    },
+    "https://covers.openlibrary.org/b/isbn/9780062409959-M.jpg": {
+      "url": "https://covers.openlibrary.org/b/isbn/9780062409959-M.jpg",
+      "latest_url": "https://web.archive.org/web/2/https://covers.openlibrary.org/b/isbn/9780062409959-M.jpg",
+      "calendar_url": "https://web.archive.org/web/*/https://covers.openlibrary.org/b/isbn/9780062409959-M.jpg",
+      "save_url": "https://web.archive.org/save/https://covers.openlibrary.org/b/isbn/9780062409959-M.jpg",
+      "refs": [
+        {
+          "owner": "src/content/works/appetites.yaml",
+          "field": "image_url"
+        }
+      ]
+    },
+    "https://openlibrary.org/search?q=Appetites+Anthony+Bourdain": {
+      "url": "https://openlibrary.org/search?q=Appetites+Anthony+Bourdain",
+      "latest_url": "https://web.archive.org/web/2/https://openlibrary.org/search?q=Appetites+Anthony+Bourdain",
+      "calendar_url": "https://web.archive.org/web/*/https://openlibrary.org/search?q=Appetites+Anthony+Bourdain",
+      "save_url": "https://web.archive.org/save/https://openlibrary.org/search?q=Appetites+Anthony+Bourdain",
+      "refs": [
+        {
+          "owner": "src/content/works/appetites.yaml",
+          "field": "library_url"
+        }
+      ]
+    },
+    "https://covers.openlibrary.org/b/isbn/9781582341026-M.jpg": {
+      "url": "https://covers.openlibrary.org/b/isbn/9781582341026-M.jpg",
+      "latest_url": "https://web.archive.org/web/2/https://covers.openlibrary.org/b/isbn/9781582341026-M.jpg",
+      "calendar_url": "https://web.archive.org/web/*/https://covers.openlibrary.org/b/isbn/9781582341026-M.jpg",
+      "save_url": "https://web.archive.org/save/https://covers.openlibrary.org/b/isbn/9781582341026-M.jpg",
+      "refs": [
+        {
+          "owner": "src/content/works/bone-in-the-throat.yaml",
+          "field": "image_url"
+        }
+      ]
+    },
+    "https://openlibrary.org/search?q=Bone+in+the+Throat+Anthony+Bourdain": {
+      "url": "https://openlibrary.org/search?q=Bone+in+the+Throat+Anthony+Bourdain",
+      "latest_url": "https://web.archive.org/web/2/https://openlibrary.org/search?q=Bone+in+the+Throat+Anthony+Bourdain",
+      "calendar_url": "https://web.archive.org/web/*/https://openlibrary.org/search?q=Bone+in+the+Throat+Anthony+Bourdain",
+      "save_url": "https://web.archive.org/save/https://openlibrary.org/search?q=Bone+in+the+Throat+Anthony+Bourdain",
+      "refs": [
+        {
+          "owner": "src/content/works/bone-in-the-throat.yaml",
+          "field": "library_url"
+        }
+      ]
+    },
+    "https://covers.openlibrary.org/b/isbn/9781401252267-M.jpg": {
+      "url": "https://covers.openlibrary.org/b/isbn/9781401252267-M.jpg",
+      "latest_url": "https://web.archive.org/web/2/https://covers.openlibrary.org/b/isbn/9781401252267-M.jpg",
+      "calendar_url": "https://web.archive.org/web/*/https://covers.openlibrary.org/b/isbn/9781401252267-M.jpg",
+      "save_url": "https://web.archive.org/save/https://covers.openlibrary.org/b/isbn/9781401252267-M.jpg",
+      "refs": [
+        {
+          "owner": "src/content/works/get-jiro-blood-and-sushi.yaml",
+          "field": "image_url"
+        }
+      ]
+    },
+    "https://openlibrary.org/search?q=Get+Jiro+Blood+and+Sushi": {
+      "url": "https://openlibrary.org/search?q=Get+Jiro+Blood+and+Sushi",
+      "latest_url": "https://web.archive.org/web/2/https://openlibrary.org/search?q=Get+Jiro+Blood+and+Sushi",
+      "calendar_url": "https://web.archive.org/web/*/https://openlibrary.org/search?q=Get+Jiro+Blood+and+Sushi",
+      "save_url": "https://web.archive.org/save/https://openlibrary.org/search?q=Get+Jiro+Blood+and+Sushi",
+      "refs": [
+        {
+          "owner": "src/content/works/get-jiro-blood-and-sushi.yaml",
+          "field": "library_url"
+        }
+      ]
+    },
+    "https://covers.openlibrary.org/b/isbn/9781401228279-M.jpg": {
+      "url": "https://covers.openlibrary.org/b/isbn/9781401228279-M.jpg",
+      "latest_url": "https://web.archive.org/web/2/https://covers.openlibrary.org/b/isbn/9781401228279-M.jpg",
+      "calendar_url": "https://web.archive.org/web/*/https://covers.openlibrary.org/b/isbn/9781401228279-M.jpg",
+      "save_url": "https://web.archive.org/save/https://covers.openlibrary.org/b/isbn/9781401228279-M.jpg",
+      "refs": [
+        {
+          "owner": "src/content/works/get-jiro.yaml",
+          "field": "image_url"
+        }
+      ]
+    },
+    "https://openlibrary.org/search?q=Get+Jiro+Anthony+Bourdain": {
+      "url": "https://openlibrary.org/search?q=Get+Jiro+Anthony+Bourdain",
+      "latest_url": "https://web.archive.org/web/2/https://openlibrary.org/search?q=Get+Jiro+Anthony+Bourdain",
+      "calendar_url": "https://web.archive.org/web/*/https://openlibrary.org/search?q=Get+Jiro+Anthony+Bourdain",
+      "save_url": "https://web.archive.org/save/https://openlibrary.org/search?q=Get+Jiro+Anthony+Bourdain",
+      "refs": [
+        {
+          "owner": "src/content/works/get-jiro.yaml",
+          "field": "library_url"
+        }
+      ]
+    },
+    "https://covers.openlibrary.org/b/isbn/9781582341033-M.jpg": {
+      "url": "https://covers.openlibrary.org/b/isbn/9781582341033-M.jpg",
+      "latest_url": "https://web.archive.org/web/2/https://covers.openlibrary.org/b/isbn/9781582341033-M.jpg",
+      "calendar_url": "https://web.archive.org/web/*/https://covers.openlibrary.org/b/isbn/9781582341033-M.jpg",
+      "save_url": "https://web.archive.org/save/https://covers.openlibrary.org/b/isbn/9781582341033-M.jpg",
+      "refs": [
+        {
+          "owner": "src/content/works/gone-bamboo.yaml",
+          "field": "image_url"
+        }
+      ]
+    },
+    "https://openlibrary.org/search?q=Gone+Bamboo+Anthony+Bourdain": {
+      "url": "https://openlibrary.org/search?q=Gone+Bamboo+Anthony+Bourdain",
+      "latest_url": "https://web.archive.org/web/2/https://openlibrary.org/search?q=Gone+Bamboo+Anthony+Bourdain",
+      "calendar_url": "https://web.archive.org/web/*/https://openlibrary.org/search?q=Gone+Bamboo+Anthony+Bourdain",
+      "save_url": "https://web.archive.org/save/https://openlibrary.org/search?q=Gone+Bamboo+Anthony+Bourdain",
+      "refs": [
+        {
+          "owner": "src/content/works/gone-bamboo.yaml",
+          "field": "library_url"
+        }
+      ]
+    },
+    "https://covers.openlibrary.org/b/isbn/9781506706696-M.jpg": {
+      "url": "https://covers.openlibrary.org/b/isbn/9781506706696-M.jpg",
+      "latest_url": "https://web.archive.org/web/2/https://covers.openlibrary.org/b/isbn/9781506706696-M.jpg",
+      "calendar_url": "https://web.archive.org/web/*/https://covers.openlibrary.org/b/isbn/9781506706696-M.jpg",
+      "save_url": "https://web.archive.org/save/https://covers.openlibrary.org/b/isbn/9781506706696-M.jpg",
+      "refs": [
+        {
+          "owner": "src/content/works/hungry-ghosts.yaml",
+          "field": "image_url"
+        }
+      ]
+    },
+    "https://openlibrary.org/search?q=Hungry+Ghosts+Anthony+Bourdain": {
+      "url": "https://openlibrary.org/search?q=Hungry+Ghosts+Anthony+Bourdain",
+      "latest_url": "https://web.archive.org/web/2/https://openlibrary.org/search?q=Hungry+Ghosts+Anthony+Bourdain",
+      "calendar_url": "https://web.archive.org/web/*/https://openlibrary.org/search?q=Hungry+Ghosts+Anthony+Bourdain",
+      "save_url": "https://web.archive.org/save/https://openlibrary.org/search?q=Hungry+Ghosts+Anthony+Bourdain",
+      "refs": [
+        {
+          "owner": "src/content/works/hungry-ghosts.yaml",
+          "field": "library_url"
+        }
+      ]
+    },
+    "https://covers.openlibrary.org/b/isbn/9780060899226-M.jpg": {
+      "url": "https://covers.openlibrary.org/b/isbn/9780060899226-M.jpg",
+      "latest_url": "https://web.archive.org/web/2/https://covers.openlibrary.org/b/isbn/9780060899226-M.jpg",
+      "calendar_url": "https://web.archive.org/web/*/https://covers.openlibrary.org/b/isbn/9780060899226-M.jpg",
+      "save_url": "https://web.archive.org/save/https://covers.openlibrary.org/b/isbn/9780060899226-M.jpg",
+      "refs": [
+        {
+          "owner": "src/content/works/kitchen-confidential.yaml",
+          "field": "image_url"
+        }
+      ]
+    },
+    "https://openlibrary.org/search?q=Kitchen+Confidential+Anthony+Bourdain": {
+      "url": "https://openlibrary.org/search?q=Kitchen+Confidential+Anthony+Bourdain",
+      "latest_url": "https://web.archive.org/web/2/https://openlibrary.org/search?q=Kitchen+Confidential+Anthony+Bourdain",
+      "calendar_url": "https://web.archive.org/web/*/https://openlibrary.org/search?q=Kitchen+Confidential+Anthony+Bourdain",
+      "save_url": "https://web.archive.org/save/https://openlibrary.org/search?q=Kitchen+Confidential+Anthony+Bourdain",
+      "refs": [
+        {
+          "owner": "src/content/works/kitchen-confidential.yaml",
+          "field": "library_url"
+        }
+      ]
+    },
+    "https://covers.openlibrary.org/b/isbn/9781582341804-M.jpg": {
+      "url": "https://covers.openlibrary.org/b/isbn/9781582341804-M.jpg",
+      "latest_url": "https://web.archive.org/web/2/https://covers.openlibrary.org/b/isbn/9781582341804-M.jpg",
+      "calendar_url": "https://web.archive.org/web/*/https://covers.openlibrary.org/b/isbn/9781582341804-M.jpg",
+      "save_url": "https://web.archive.org/save/https://covers.openlibrary.org/b/isbn/9781582341804-M.jpg",
+      "refs": [
+        {
+          "owner": "src/content/works/les-halles-cookbook.yaml",
+          "field": "image_url"
+        }
+      ]
+    },
+    "https://openlibrary.org/search?q=Anthony+Bourdain%27s+Les+Halles+Cookbook": {
+      "url": "https://openlibrary.org/search?q=Anthony+Bourdain%27s+Les+Halles+Cookbook",
+      "latest_url": "https://web.archive.org/web/2/https://openlibrary.org/search?q=Anthony+Bourdain%2527s+Les+Halles+Cookbook",
+      "calendar_url": "https://web.archive.org/web/*/https://openlibrary.org/search?q=Anthony+Bourdain%2527s+Les+Halles+Cookbook",
+      "save_url": "https://web.archive.org/save/https://openlibrary.org/search?q=Anthony+Bourdain%2527s+Les+Halles+Cookbook",
+      "refs": [
+        {
+          "owner": "src/content/works/les-halles-cookbook.yaml",
+          "field": "library_url"
+        }
+      ]
+    },
+    "https://covers.openlibrary.org/b/isbn/9780061718946-M.jpg": {
+      "url": "https://covers.openlibrary.org/b/isbn/9780061718946-M.jpg",
+      "latest_url": "https://web.archive.org/web/2/https://covers.openlibrary.org/b/isbn/9780061718946-M.jpg",
+      "calendar_url": "https://web.archive.org/web/*/https://covers.openlibrary.org/b/isbn/9780061718946-M.jpg",
+      "save_url": "https://web.archive.org/save/https://covers.openlibrary.org/b/isbn/9780061718946-M.jpg",
+      "refs": [
+        {
+          "owner": "src/content/works/medium-raw.yaml",
+          "field": "image_url"
+        }
+      ]
+    },
+    "https://openlibrary.org/search?q=Medium+Raw+Anthony+Bourdain": {
+      "url": "https://openlibrary.org/search?q=Medium+Raw+Anthony+Bourdain",
+      "latest_url": "https://web.archive.org/web/2/https://openlibrary.org/search?q=Medium+Raw+Anthony+Bourdain",
+      "calendar_url": "https://web.archive.org/web/*/https://openlibrary.org/search?q=Medium+Raw+Anthony+Bourdain",
+      "save_url": "https://web.archive.org/save/https://openlibrary.org/search?q=Medium+Raw+Anthony+Bourdain",
+      "refs": [
+        {
+          "owner": "src/content/works/medium-raw.yaml",
+          "field": "library_url"
+        }
+      ]
+    },
+    "https://covers.openlibrary.org/b/isbn/9781596914476-M.jpg": {
+      "url": "https://covers.openlibrary.org/b/isbn/9781596914476-M.jpg",
+      "latest_url": "https://web.archive.org/web/2/https://covers.openlibrary.org/b/isbn/9781596914476-M.jpg",
+      "calendar_url": "https://web.archive.org/web/*/https://covers.openlibrary.org/b/isbn/9781596914476-M.jpg",
+      "save_url": "https://web.archive.org/save/https://covers.openlibrary.org/b/isbn/9781596914476-M.jpg",
+      "refs": [
+        {
+          "owner": "src/content/works/no-reservations-book.yaml",
+          "field": "image_url"
+        }
+      ]
+    },
+    "https://openlibrary.org/search?q=No+Reservations+Anthony+Bourdain": {
+      "url": "https://openlibrary.org/search?q=No+Reservations+Anthony+Bourdain",
+      "latest_url": "https://web.archive.org/web/2/https://openlibrary.org/search?q=No+Reservations+Anthony+Bourdain",
+      "calendar_url": "https://web.archive.org/web/*/https://openlibrary.org/search?q=No+Reservations+Anthony+Bourdain",
+      "save_url": "https://web.archive.org/save/https://openlibrary.org/search?q=No+Reservations+Anthony+Bourdain",
+      "refs": [
+        {
+          "owner": "src/content/works/no-reservations-book.yaml",
+          "field": "library_url"
+        }
+      ]
+    },
+    "https://covers.openlibrary.org/b/isbn/9781596913608-M.jpg": {
+      "url": "https://covers.openlibrary.org/b/isbn/9781596913608-M.jpg",
+      "latest_url": "https://web.archive.org/web/2/https://covers.openlibrary.org/b/isbn/9781596913608-M.jpg",
+      "calendar_url": "https://web.archive.org/web/*/https://covers.openlibrary.org/b/isbn/9781596913608-M.jpg",
+      "save_url": "https://web.archive.org/save/https://covers.openlibrary.org/b/isbn/9781596913608-M.jpg",
+      "refs": [
+        {
+          "owner": "src/content/works/the-nasty-bits.yaml",
+          "field": "image_url"
+        }
+      ]
+    },
+    "https://openlibrary.org/search?q=The+Nasty+Bits+Anthony+Bourdain": {
+      "url": "https://openlibrary.org/search?q=The+Nasty+Bits+Anthony+Bourdain",
+      "latest_url": "https://web.archive.org/web/2/https://openlibrary.org/search?q=The+Nasty+Bits+Anthony+Bourdain",
+      "calendar_url": "https://web.archive.org/web/*/https://openlibrary.org/search?q=The+Nasty+Bits+Anthony+Bourdain",
+      "save_url": "https://web.archive.org/save/https://openlibrary.org/search?q=The+Nasty+Bits+Anthony+Bourdain",
+      "refs": [
+        {
+          "owner": "src/content/works/the-nasty-bits.yaml",
+          "field": "library_url"
+        }
+      ]
+    },
+    "https://covers.openlibrary.org/b/isbn/9781582341330-M.jpg": {
+      "url": "https://covers.openlibrary.org/b/isbn/9781582341330-M.jpg",
+      "latest_url": "https://web.archive.org/web/2/https://covers.openlibrary.org/b/isbn/9781582341330-M.jpg",
+      "calendar_url": "https://web.archive.org/web/*/https://covers.openlibrary.org/b/isbn/9781582341330-M.jpg",
+      "save_url": "https://web.archive.org/save/https://covers.openlibrary.org/b/isbn/9781582341330-M.jpg",
+      "refs": [
+        {
+          "owner": "src/content/works/typhoid-mary.yaml",
+          "field": "image_url"
+        }
+      ]
+    },
+    "https://openlibrary.org/search?q=Typhoid+Mary+Anthony+Bourdain": {
+      "url": "https://openlibrary.org/search?q=Typhoid+Mary+Anthony+Bourdain",
+      "latest_url": "https://web.archive.org/web/2/https://openlibrary.org/search?q=Typhoid+Mary+Anthony+Bourdain",
+      "calendar_url": "https://web.archive.org/web/*/https://openlibrary.org/search?q=Typhoid+Mary+Anthony+Bourdain",
+      "save_url": "https://web.archive.org/save/https://openlibrary.org/search?q=Typhoid+Mary+Anthony+Bourdain",
+      "refs": [
+        {
+          "owner": "src/content/works/typhoid-mary.yaml",
+          "field": "library_url"
+        }
+      ]
+    },
+    "https://covers.openlibrary.org/b/isbn/9780062802798-M.jpg": {
+      "url": "https://covers.openlibrary.org/b/isbn/9780062802798-M.jpg",
+      "latest_url": "https://web.archive.org/web/2/https://covers.openlibrary.org/b/isbn/9780062802798-M.jpg",
+      "calendar_url": "https://web.archive.org/web/*/https://covers.openlibrary.org/b/isbn/9780062802798-M.jpg",
+      "save_url": "https://web.archive.org/save/https://covers.openlibrary.org/b/isbn/9780062802798-M.jpg",
+      "refs": [
+        {
+          "owner": "src/content/works/world-travel.yaml",
+          "field": "image_url"
+        }
+      ]
+    },
+    "https://openlibrary.org/search?q=World+Travel+Anthony+Bourdain": {
+      "url": "https://openlibrary.org/search?q=World+Travel+Anthony+Bourdain",
+      "latest_url": "https://web.archive.org/web/2/https://openlibrary.org/search?q=World+Travel+Anthony+Bourdain",
+      "calendar_url": "https://web.archive.org/web/*/https://openlibrary.org/search?q=World+Travel+Anthony+Bourdain",
+      "save_url": "https://web.archive.org/save/https://openlibrary.org/search?q=World+Travel+Anthony+Bourdain",
+      "refs": [
+        {
+          "owner": "src/content/works/world-travel.yaml",
+          "field": "library_url"
+        }
+      ]
+    },
+    "https://raw.githubusercontent.com/cnlowery/anthony-bourdain-shows-by-country/master/README.md": {
+      "url": "https://raw.githubusercontent.com/cnlowery/anthony-bourdain-shows-by-country/master/README.md",
+      "latest_url": "https://web.archive.org/web/2/https://raw.githubusercontent.com/cnlowery/anthony-bourdain-shows-by-country/master/README.md",
+      "calendar_url": "https://web.archive.org/web/*/https://raw.githubusercontent.com/cnlowery/anthony-bourdain-shows-by-country/master/README.md",
+      "save_url": "https://web.archive.org/save/https://raw.githubusercontent.com/cnlowery/anthony-bourdain-shows-by-country/master/README.md",
+      "refs": [
+        {
+          "owner": "archive/sources.json",
+          "field": "shows-by-country-readme.url"
+        }
+      ]
+    },
+    "https://raw.githubusercontent.com/underthecurve/bourdain-travel-places/master/README.md": {
+      "url": "https://raw.githubusercontent.com/underthecurve/bourdain-travel-places/master/README.md",
+      "latest_url": "https://web.archive.org/web/2/https://raw.githubusercontent.com/underthecurve/bourdain-travel-places/master/README.md",
+      "calendar_url": "https://web.archive.org/web/*/https://raw.githubusercontent.com/underthecurve/bourdain-travel-places/master/README.md",
+      "save_url": "https://web.archive.org/save/https://raw.githubusercontent.com/underthecurve/bourdain-travel-places/master/README.md",
+      "refs": [
+        {
+          "owner": "archive/sources.json",
+          "field": "travel-places-readme.url"
+        }
+      ]
+    },
+    "https://raw.githubusercontent.com/underthecurve/bourdain-travel-places/master/Map_data.csv": {
+      "url": "https://raw.githubusercontent.com/underthecurve/bourdain-travel-places/master/Map_data.csv",
+      "latest_url": "https://web.archive.org/web/2/https://raw.githubusercontent.com/underthecurve/bourdain-travel-places/master/Map_data.csv",
+      "calendar_url": "https://web.archive.org/web/*/https://raw.githubusercontent.com/underthecurve/bourdain-travel-places/master/Map_data.csv",
+      "save_url": "https://web.archive.org/save/https://raw.githubusercontent.com/underthecurve/bourdain-travel-places/master/Map_data.csv",
+      "refs": [
+        {
+          "owner": "archive/sources.json",
+          "field": "travel-places-map-data.url"
+        }
+      ]
+    },
+    "https://github.com/underthecurve/bourdain-travel-places/blob/master/Map_data.csv": {
+      "url": "https://github.com/underthecurve/bourdain-travel-places/blob/master/Map_data.csv",
+      "latest_url": "https://web.archive.org/web/2/https://github.com/underthecurve/bourdain-travel-places/blob/master/Map_data.csv",
+      "calendar_url": "https://web.archive.org/web/*/https://github.com/underthecurve/bourdain-travel-places/blob/master/Map_data.csv",
+      "save_url": "https://web.archive.org/save/https://github.com/underthecurve/bourdain-travel-places/blob/master/Map_data.csv",
+      "refs": [
+        {
+          "owner": "archive/sources.json",
+          "field": "travel-places-map-data.canonical_url"
+        }
+      ]
+    },
+    "https://www.reddit.com/r/AnthonyBourdain/comments/ai45r3/anthony_bourdain_archival_megathread/.json?raw_json=1": {
+      "url": "https://www.reddit.com/r/AnthonyBourdain/comments/ai45r3/anthony_bourdain_archival_megathread/.json?raw_json=1",
+      "latest_url": "https://web.archive.org/web/2/https://www.reddit.com/r/AnthonyBourdain/comments/ai45r3/anthony_bourdain_archival_megathread/.json?raw_json=1",
+      "calendar_url": "https://web.archive.org/web/*/https://www.reddit.com/r/AnthonyBourdain/comments/ai45r3/anthony_bourdain_archival_megathread/.json?raw_json=1",
+      "save_url": "https://web.archive.org/save/https://www.reddit.com/r/AnthonyBourdain/comments/ai45r3/anthony_bourdain_archival_megathread/.json?raw_json=1",
+      "refs": [
+        {
+          "owner": "archive/sources.json",
+          "field": "reddit-archival-megathread.url"
+        }
+      ]
+    },
+    "https://docs.google.com/spreadsheets/d/14l07iFQMr5eNfYSqDjq8dyMwxsrPI0RjD7QY4muRpNU/edit?usp=sharing": {
+      "url": "https://docs.google.com/spreadsheets/d/14l07iFQMr5eNfYSqDjq8dyMwxsrPI0RjD7QY4muRpNU/edit?usp=sharing",
+      "latest_url": "https://web.archive.org/web/2/https://docs.google.com/spreadsheets/d/14l07iFQMr5eNfYSqDjq8dyMwxsrPI0RjD7QY4muRpNU/edit?usp=sharing",
+      "calendar_url": "https://web.archive.org/web/*/https://docs.google.com/spreadsheets/d/14l07iFQMr5eNfYSqDjq8dyMwxsrPI0RjD7QY4muRpNU/edit?usp=sharing",
+      "save_url": "https://web.archive.org/save/https://docs.google.com/spreadsheets/d/14l07iFQMr5eNfYSqDjq8dyMwxsrPI0RjD7QY4muRpNU/edit?usp=sharing",
+      "refs": [
+        {
+          "owner": "archive/sources.json",
+          "field": "filming-locations-bourdain.canonical_url"
+        }
+      ]
+    }
+  }
+}

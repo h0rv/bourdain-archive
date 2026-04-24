@@ -1,4 +1,5 @@
 ---
+import linkPreviewCache from '../../archive/derived/link-previews.json';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { availabilityBadges, entryHref, entryTitle, findByDataId, formatDate, formatType, previewForUrl, statusClass } from '../lib/content';
 
@@ -15,7 +16,7 @@ const title = entryTitle(entry);
 const sourceRefs = (data.sources ?? []).map((id: string) => findByDataId(sources, id)).filter(Boolean);
 const relatedRefs = (data.related ?? []).map((id: string) => relatedEntries.find((item: any) => item.entry.data.id === id)).filter(Boolean);
 const badges = availabilityBadges(data.availability);
-const availabilityPreviews = badges.map((badge) => ({ ...badge, preview: previewForUrl(badge.url) }));
+const availabilityPreviews = badges.map((badge) => ({ ...badge, preview: previewForUrl(badge.url, linkPreviewCache.previews) }));
 ---
 <BaseLayout title={title} description={data.summary}>
   <article>
@@ -35,7 +36,7 @@ const availabilityPreviews = badges.map((badge) => ({ ...badge, preview: preview
         <div class="link-preview-list">
           {availabilityPreviews.map((badge) => (
             badge.url ? (
-              <a class="link-preview" href={badge.url}>
+              <div class="link-preview">
                 <span class="link-preview-media">
                   {badge.preview.image ? (
                     <img src={badge.preview.image} alt="" loading="lazy" />
@@ -46,10 +47,15 @@ const availabilityPreviews = badges.map((badge) => ({ ...badge, preview: preview
                   )}
                 </span>
                 <span class="link-preview-copy">
-                  <strong>{badge.label}</strong>
+                  <strong>{badge.preview.title ?? badge.label}</strong>
                   {badge.preview.host && <span>{badge.preview.host}</span>}
+                  <code>{badge.url}</code>
+                  <span class="link-preview-actions">
+                    <a href={badge.url}>Open</a>
+                    {badge.preview.archive && <a href={badge.preview.archive.latest_url}>Archive</a>}
+                  </span>
                 </span>
-              </a>
+              </div>
             ) : (
               <p class="meta">{badge.label}</p>
             )

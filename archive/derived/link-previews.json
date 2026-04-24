@@ -1,0 +1,741 @@
+{
+  "generated_at": "2026-04-24T16:51:07.646Z",
+  "previews": {
+    "https://archive.org/details/The_Nerdist_Podcast_528": {
+      "url": "https://archive.org/details/The_Nerdist_Podcast_528",
+      "final_url": "https://archive.org/details/The_Nerdist_Podcast_528",
+      "ok": true,
+      "status": 200,
+      "title": "The Nerdist Podcast Number 528: Anthony Bourdain : The Nerdist Podcast : Free Download, Borrow, and Streaming : Internet Archive",
+      "description": "World traveler and brave food enthusiast Anthony Bourdain hangs out with the guys to talk about eating strange food in strange places, his intricate plans when...",
+      "image": "https://archive.org/services/img/The_Nerdist_Podcast_528",
+      "site_name": "Internet Archive",
+      "fetched_at": "2026-04-24T16:50:48.602Z"
+    },
+    "https://explorepartsunknown.com/": {
+      "url": "https://explorepartsunknown.com/",
+      "final_url": "https://explorepartsunknown.com/",
+      "ok": true,
+      "status": 200,
+      "title": "Explore Parts Unknown",
+      "description": "Travel further.",
+      "image": "https://s0.wp.com/_si/?t=eyJpbWciOiJodHRwczpcL1wvZXhwbG9yZXBhcnRzdW5rbm93bi5jb21cL3dwLWNvbnRlbnRcL3RoZW1lc1wvYWJwdVwvYXNzZXRzXC9kaXN0XC9pbWFnZXNcL2V4cGxvcmUtY292ZXIuanBnIiwidHh0IjoiRXhwbG9yZSBQYXJ0cyBVbmtub3duIiwidGVtcGxhdGUiOiJoaWdod2F5IiwiZm9udCI6IiIsImJsb2dfaWQiOjEyNDIxODQ2MH0.X03uXJR7n48idPD6OD8xwjbbQdzDvnP-qMqinZXwLn0MQ",
+      "site_name": "Explore Parts Unknown",
+      "fetched_at": "2026-04-24T16:50:48.297Z"
+    },
+    "https://explorepartsunknown.com/detroit/bourdains-field-notes-detroit/": {
+      "url": "https://explorepartsunknown.com/detroit/bourdains-field-notes-detroit/",
+      "final_url": "https://explorepartsunknown.com/detroit/bourdains-field-notes-detroit/",
+      "ok": true,
+      "status": 200,
+      "title": "Anthony Bourdain’s field notes from Detroit",
+      "description": "“Detroit isn’t just a national treasure. It IS America.”",
+      "image": "https://explorepartsunknown.com/wp-content/uploads/2018/12/23596_002_0531-1.jpeg?quality=95&strip=color",
+      "site_name": "Explore Parts Unknown",
+      "fetched_at": "2026-04-24T16:50:48.274Z"
+    },
+    "https://freshairarchive.org/guests/anthony-bourdain": {
+      "url": "https://freshairarchive.org/guests/anthony-bourdain",
+      "final_url": "https://freshairarchive.org/guests/anthony-bourdain",
+      "ok": true,
+      "status": 200,
+      "title": "Bourdain, Anthony",
+      "image": "https://freshairarchive.org/sites/default/files/styles/square_1600/public/2020-05/GettyImages-532138426.jpg?itok=kWJ5wYUY",
+      "site_name": "Fresh Air Archive: Interviews with Terry Gross",
+      "fetched_at": "2026-04-24T16:50:48.513Z"
+    },
+    "https://github.com/cnlowery/anthony-bourdain-shows-by-country": {
+      "url": "https://github.com/cnlowery/anthony-bourdain-shows-by-country",
+      "final_url": "https://github.com/cnlowery/anthony-bourdain-shows-by-country",
+      "ok": true,
+      "status": 200,
+      "title": "GitHub - cnlowery/anthony-bourdain-shows-by-country: An index of Anthony Bourdain's tv shows grouped by country",
+      "description": "An index of Anthony Bourdain's tv shows grouped by country - cnlowery/anthony-bourdain-shows-by-country",
+      "image": "https://opengraph.githubassets.com/38a05a536c0be600786e706d7f8823036042b0318396c7a363da0ff78456c099/cnlowery/anthony-bourdain-shows-by-country",
+      "site_name": "GitHub",
+      "fetched_at": "2026-04-24T16:50:48.877Z"
+    },
+    "https://github.com/underthecurve/bourdain-travel-places": {
+      "url": "https://github.com/underthecurve/bourdain-travel-places",
+      "final_url": "https://github.com/underthecurve/bourdain-travel-places",
+      "ok": true,
+      "status": 200,
+      "title": "GitHub - underthecurve/bourdain-travel-places",
+      "description": "Contribute to underthecurve/bourdain-travel-places development by creating an account on GitHub.",
+      "image": "https://opengraph.githubassets.com/19afd6e5509eb8512da5a456799db6c0d1f63faec07fef9501c3f0bdb9e1c664/underthecurve/bourdain-travel-places",
+      "site_name": "GitHub",
+      "fetched_at": "2026-04-24T16:50:48.916Z"
+    },
+    "https://interviews.televisionacademy.com/interviews/anthony-bourdain": {
+      "url": "https://interviews.televisionacademy.com/interviews/anthony-bourdain",
+      "final_url": "https://interviews.televisionacademy.com/interviews/anthony-bourdain",
+      "ok": true,
+      "status": 200,
+      "title": "Anthony Bourdain",
+      "image": "https://interviews.televisionacademy.com/media/785/download?inline",
+      "fetched_at": "2026-04-24T16:50:48.933Z"
+    },
+    "https://openlibrary.org/": {
+      "url": "https://openlibrary.org/",
+      "final_url": "https://openlibrary.org/",
+      "ok": true,
+      "status": 200,
+      "title": "Welcome to Open Library | Open Library",
+      "description": "Open Library is an open, editable library catalog, building towards a web page for every book ever published. Read, borrow, and discover more than 3M books for free.",
+      "fetched_at": "2026-04-24T16:50:49.082Z"
+    },
+    "https://openlibrary.org/search?q=A+Cook%27s+Tour+Anthony+Bourdain": {
+      "url": "https://openlibrary.org/search?q=A+Cook%27s+Tour+Anthony+Bourdain",
+      "final_url": "https://openlibrary.org/search?q=A+Cook%27s+Tour+Anthony+Bourdain",
+      "ok": true,
+      "status": 200,
+      "title": "search | Open Library",
+      "description": "Open Library is an open, editable library catalog, building towards a web page for every book ever published. Read, borrow, and discover more than 3M books for free.",
+      "fetched_at": "2026-04-24T16:50:50.087Z"
+    },
+    "https://openlibrary.org/search?q=Anthony+Bourdain%27s+Les+Halles+Cookbook": {
+      "url": "https://openlibrary.org/search?q=Anthony+Bourdain%27s+Les+Halles+Cookbook",
+      "final_url": "https://openlibrary.org/search?q=Anthony+Bourdain%27s+Les+Halles+Cookbook",
+      "ok": true,
+      "status": 200,
+      "title": "search | Open Library",
+      "description": "Open Library is an open, editable library catalog, building towards a web page for every book ever published. Read, borrow, and discover more than 3M books for free.",
+      "fetched_at": "2026-04-24T16:50:49.636Z"
+    },
+    "https://openlibrary.org/search?q=Appetites+Anthony+Bourdain": {
+      "url": "https://openlibrary.org/search?q=Appetites+Anthony+Bourdain",
+      "final_url": "https://openlibrary.org/search?q=Appetites+Anthony+Bourdain",
+      "ok": true,
+      "status": 200,
+      "title": "search | Open Library",
+      "description": "Open Library is an open, editable library catalog, building towards a web page for every book ever published. Read, borrow, and discover more than 3M books for free.",
+      "fetched_at": "2026-04-24T16:50:49.724Z"
+    },
+    "https://openlibrary.org/search?q=Bone+in+the+Throat+Anthony+Bourdain": {
+      "url": "https://openlibrary.org/search?q=Bone+in+the+Throat+Anthony+Bourdain",
+      "final_url": "https://openlibrary.org/search?q=Bone+in+the+Throat+Anthony+Bourdain",
+      "ok": true,
+      "status": 200,
+      "title": "search | Open Library",
+      "description": "Open Library is an open, editable library catalog, building towards a web page for every book ever published. Read, borrow, and discover more than 3M books for free.",
+      "fetched_at": "2026-04-24T16:50:49.742Z"
+    },
+    "https://openlibrary.org/search?q=Get+Jiro+Anthony+Bourdain": {
+      "url": "https://openlibrary.org/search?q=Get+Jiro+Anthony+Bourdain",
+      "final_url": "https://openlibrary.org/search?q=Get+Jiro+Anthony+Bourdain",
+      "ok": true,
+      "status": 200,
+      "title": "search | Open Library",
+      "description": "Open Library is an open, editable library catalog, building towards a web page for every book ever published. Read, borrow, and discover more than 3M books for free.",
+      "fetched_at": "2026-04-24T16:50:50.353Z"
+    },
+    "https://openlibrary.org/search?q=Get+Jiro+Blood+and+Sushi": {
+      "url": "https://openlibrary.org/search?q=Get+Jiro+Blood+and+Sushi",
+      "final_url": "https://openlibrary.org/search?q=Get+Jiro+Blood+and+Sushi",
+      "ok": true,
+      "status": 200,
+      "title": "search | Open Library",
+      "description": "Open Library is an open, editable library catalog, building towards a web page for every book ever published. Read, borrow, and discover more than 3M books for free.",
+      "fetched_at": "2026-04-24T16:50:50.268Z"
+    },
+    "https://openlibrary.org/search?q=Gone+Bamboo+Anthony+Bourdain": {
+      "url": "https://openlibrary.org/search?q=Gone+Bamboo+Anthony+Bourdain",
+      "final_url": "https://openlibrary.org/search?q=Gone+Bamboo+Anthony+Bourdain",
+      "ok": true,
+      "status": 200,
+      "title": "search | Open Library",
+      "description": "Open Library is an open, editable library catalog, building towards a web page for every book ever published. Read, borrow, and discover more than 3M books for free.",
+      "fetched_at": "2026-04-24T16:50:50.310Z"
+    },
+    "https://openlibrary.org/search?q=Hungry+Ghosts+Anthony+Bourdain": {
+      "url": "https://openlibrary.org/search?q=Hungry+Ghosts+Anthony+Bourdain",
+      "final_url": "https://openlibrary.org/search?q=Hungry+Ghosts+Anthony+Bourdain",
+      "ok": true,
+      "status": 200,
+      "title": "search | Open Library",
+      "description": "Open Library is an open, editable library catalog, building towards a web page for every book ever published. Read, borrow, and discover more than 3M books for free.",
+      "fetched_at": "2026-04-24T16:50:50.287Z"
+    },
+    "https://openlibrary.org/search?q=Kitchen+Confidential+Anthony+Bourdain": {
+      "url": "https://openlibrary.org/search?q=Kitchen+Confidential+Anthony+Bourdain",
+      "final_url": "https://openlibrary.org/search?q=Kitchen+Confidential+Anthony+Bourdain",
+      "ok": true,
+      "status": 200,
+      "title": "search | Open Library",
+      "description": "Open Library is an open, editable library catalog, building towards a web page for every book ever published. Read, borrow, and discover more than 3M books for free.",
+      "fetched_at": "2026-04-24T16:50:50.896Z"
+    },
+    "https://openlibrary.org/search?q=Medium+Raw+Anthony+Bourdain": {
+      "url": "https://openlibrary.org/search?q=Medium+Raw+Anthony+Bourdain",
+      "ok": false,
+      "status": 429,
+      "fetched_at": "2026-04-24T16:50:50.371Z"
+    },
+    "https://openlibrary.org/search?q=No+Reservations+Anthony+Bourdain": {
+      "url": "https://openlibrary.org/search?q=No+Reservations+Anthony+Bourdain",
+      "ok": false,
+      "status": 429,
+      "fetched_at": "2026-04-24T16:50:50.401Z"
+    },
+    "https://openlibrary.org/search?q=The+Anthony+Bourdain+Reader": {
+      "url": "https://openlibrary.org/search?q=The+Anthony+Bourdain+Reader",
+      "final_url": "https://openlibrary.org/search?q=The+Anthony+Bourdain+Reader",
+      "ok": true,
+      "status": 200,
+      "title": "search | Open Library",
+      "description": "Open Library is an open, editable library catalog, building towards a web page for every book ever published. Read, borrow, and discover more than 3M books for free.",
+      "fetched_at": "2026-04-24T16:50:50.521Z"
+    },
+    "https://openlibrary.org/search?q=The+Nasty+Bits+Anthony+Bourdain": {
+      "url": "https://openlibrary.org/search?q=The+Nasty+Bits+Anthony+Bourdain",
+      "ok": false,
+      "status": 429,
+      "fetched_at": "2026-04-24T16:50:50.632Z"
+    },
+    "https://openlibrary.org/search?q=Typhoid+Mary+Anthony+Bourdain": {
+      "url": "https://openlibrary.org/search?q=Typhoid+Mary+Anthony+Bourdain",
+      "final_url": "https://openlibrary.org/search?q=Typhoid+Mary+Anthony+Bourdain",
+      "ok": true,
+      "status": 200,
+      "title": "search | Open Library",
+      "description": "Open Library is an open, editable library catalog, building towards a web page for every book ever published. Read, borrow, and discover more than 3M books for free.",
+      "fetched_at": "2026-04-24T16:50:50.730Z"
+    },
+    "https://openlibrary.org/search?q=World+Travel+Anthony+Bourdain": {
+      "url": "https://openlibrary.org/search?q=World+Travel+Anthony+Bourdain",
+      "ok": false,
+      "status": 429,
+      "fetched_at": "2026-04-24T16:50:50.609Z"
+    },
+    "https://people.com/anthony-bourdain-assistant-laurie-woolever-reveals-his-eerie-final-texts-memoir-care-and-feeding-exclusive-11685428": {
+      "url": "https://people.com/anthony-bourdain-assistant-laurie-woolever-reveals-his-eerie-final-texts-memoir-care-and-feeding-exclusive-11685428",
+      "ok": false,
+      "status": 403,
+      "fetched_at": "2026-04-24T16:50:50.808Z"
+    },
+    "https://pitchfork.com/news/anthony-bourdain-dead-at-61": {
+      "url": "https://pitchfork.com/news/anthony-bourdain-dead-at-61",
+      "final_url": "https://pitchfork.com/news/anthony-bourdain-dead-at-61/",
+      "ok": true,
+      "status": 200,
+      "title": "Anthony Bourdain Dead at 61",
+      "description": "Celebrated chef, TV host, and music lover has died by suicide",
+      "image": "https://media.pitchfork.com/photos/5b1a746179b0b354fe8938a8/16:9/w_1280,c_limit/Anthony_Bourdain.jpg",
+      "site_name": "Pitchfork",
+      "fetched_at": "2026-04-24T16:50:53.458Z"
+    },
+    "https://time.com/5305838/anthony-bourdain-dead/": {
+      "url": "https://time.com/5305838/anthony-bourdain-dead/",
+      "ok": false,
+      "status": 406,
+      "fetched_at": "2026-04-24T16:50:50.864Z"
+    },
+    "https://time.com/5306636/eric-ripert-statement-anthony-bourdain-death/": {
+      "url": "https://time.com/5306636/eric-ripert-statement-anthony-bourdain-death/",
+      "ok": false,
+      "status": 406,
+      "fetched_at": "2026-04-24T16:50:50.926Z"
+    },
+    "https://www.anthonybourdainworldmap.com/": {
+      "url": "https://www.anthonybourdainworldmap.com/",
+      "final_url": "https://www.anthonybourdainworldmap.com/",
+      "ok": true,
+      "status": 200,
+      "fetched_at": "2026-04-24T16:50:51.367Z"
+    },
+    "https://www.bonappetit.com/gallery/anthony-bourdain-childhood-photos": {
+      "url": "https://www.bonappetit.com/gallery/anthony-bourdain-childhood-photos",
+      "final_url": "https://www.bonappetit.com/gallery/anthony-bourdain-childhood-photos",
+      "ok": true,
+      "status": 200,
+      "title": "Anthony Bourdain’s Childhood Photos",
+      "description": "To experience joy, my father taught me, one has to leave oneself open to it.”",
+      "image": "https://assets.bonappetit.com/photos/57e07fbcbf7e91497a10df3a/16:9/w_1280,c_limit/bourdain-slide-17.jpg",
+      "site_name": "Bon Appétit",
+      "fetched_at": "2026-04-24T16:50:53.658Z"
+    },
+    "https://www.bonappetit.com/people/celebrities/article/anthony-bourdain-parts-unknown": {
+      "url": "https://www.bonappetit.com/people/celebrities/article/anthony-bourdain-parts-unknown",
+      "final_url": "https://www.bonappetit.com/people/celebrities/article/anthony-bourdain-parts-unknown",
+      "ok": true,
+      "status": 200,
+      "title": "Anthony Bourdain Thinks You&#x27;re Crazy for Eating Airplane Food",
+      "description": "There&#x27;s nothing Anthony Bourdain won&#x27;t eat, but there&#x27;s one place you won&#x27;t see him eating.",
+      "image": "https://assets.bonappetit.com/photos/57bf2c7fa184a3c9209db420/16:9/w_1280,c_limit/anthony-bourdain-getty.jpg",
+      "site_name": "Bon Appétit",
+      "fetched_at": "2026-04-24T16:50:51.750Z"
+    },
+    "https://www.bonappetit.com/story/angela-dimayuga-anthony-bourdain": {
+      "url": "https://www.bonappetit.com/story/angela-dimayuga-anthony-bourdain",
+      "final_url": "https://www.bonappetit.com/story/angela-dimayuga-anthony-bourdain",
+      "ok": true,
+      "status": 200,
+      "title": "Chef Angela Dimayuga on Her Last Conversation with Anthony Bourdain",
+      "description": "“He wanted to be my mentor. He said that I could call him at 2 a.m. and he’d answer.”",
+      "image": "https://assets.bonappetit.com/photos/5b1e91299731de29fe912127/16:9/w_1280,c_limit/bourdain.jpg",
+      "site_name": "Bon Appétit",
+      "fetched_at": "2026-04-24T16:50:52.134Z"
+    },
+    "https://www.bonappetit.com/story/anthony-bourdain-biography-controversy": {
+      "url": "https://www.bonappetit.com/story/anthony-bourdain-biography-controversy",
+      "final_url": "https://www.bonappetit.com/story/anthony-bourdain-biography-controversy",
+      "ok": true,
+      "status": 200,
+      "title": "The Latest Anthony Bourdain Biography Is Already Controversial",
+      "description": "The biography, \"Down and Out in Paradise,\" is being criticized by some of the late chef&#x27;s friends and family for being inaccurate",
+      "image": "https://assets.bonappetit.com/photos/63336dec0e39c893410d3237/16:9/w_1280,c_limit/h_10.01141760.jpg",
+      "site_name": "Bon Appétit",
+      "fetched_at": "2026-04-24T16:50:51.905Z"
+    },
+    "https://www.bonappetit.com/story/bourdain-the-definitive-oral-biography": {
+      "url": "https://www.bonappetit.com/story/bourdain-the-definitive-oral-biography",
+      "final_url": "https://www.bonappetit.com/story/bourdain-the-definitive-oral-biography",
+      "ok": true,
+      "status": 200,
+      "title": "\"It&#x27;s Not Often That You Meet People Who Are Funny, Clever, and Kind. And Anthony Was\"",
+      "description": "In Laurie Woolever’s new book, Bourdain: The Definitive Oral Biography, chef Nigella Lawson recalls her late costar and friend, Anthony Bourdain.",
+      "image": "https://assets.bonappetit.com/photos/61520b2831e0d5bd4e444406/16:9/w_1280,c_limit/Anthony-Bourdain-Book-Excerpt-Lede.jpg",
+      "site_name": "Bon Appétit",
+      "fetched_at": "2026-04-24T16:50:52.060Z"
+    },
+    "https://www.eater.com/2017/1/25/14376996/anthony-bourdain-novels-fiction": {
+      "url": "https://www.eater.com/2017/1/25/14376996/anthony-bourdain-novels-fiction",
+      "final_url": "https://www.eater.com/2017/1/25/14376996/anthony-bourdain-novels-fiction",
+      "ok": true,
+      "status": 200,
+      "title": "Fiction Confidential",
+      "description": "A look at Anthony Bourdain through his early crime fiction novels, and what they revealed about the man behind the TV persona",
+      "image": "https://platform.eater.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/7865593/bourdain_color_smoke.jpg?quality=90&strip=all&crop=2.25%2C0%2C95.5%2C100&w=1200",
+      "site_name": "Eater",
+      "fetched_at": "2026-04-24T16:50:52.499Z"
+    },
+    "https://www.eater.com/2018/10/3/17929834/anthony-bourdains-hungry-ghosts-comic-book": {
+      "url": "https://www.eater.com/2018/10/3/17929834/anthony-bourdains-hungry-ghosts-comic-book",
+      "final_url": "https://www.eater.com/2018/10/3/17929834/anthony-bourdains-hungry-ghosts-comic-book",
+      "ok": true,
+      "status": 200,
+      "title": "‘Anthony Bourdain’s Hungry Ghosts’ Is a Collection of Eerie Food Tales Steeped in Samurai Lore",
+      "description": "How the late author/TV host teamed up with friend Joel Rose to tell chilling horror stories",
+      "image": "https://platform.eater.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/13207545/bourdain_hungry_ghosts_1.jpg?quality=90&strip=all&crop=0%2C9.2951768998889%2C100%2C81.409646200222&w=1200",
+      "site_name": "Eater",
+      "fetched_at": "2026-04-24T16:50:52.409Z"
+    },
+    "https://www.eater.com/2018/11/1/18049550/samin-nosrat-on-anthony-bourdain-netflix-podcast": {
+      "url": "https://www.eater.com/2018/11/1/18049550/samin-nosrat-on-anthony-bourdain-netflix-podcast",
+      "final_url": "https://www.eater.com/2018/11/1/18049550/samin-nosrat-on-anthony-bourdain-netflix-podcast",
+      "ok": true,
+      "status": 200,
+      "title": "Samin Nosrat Discusses Anthony Bourdain’s Complicated Legacy",
+      "description": "Plus, today’s the day for free Taco Bell, and more food news",
+      "image": "https://platform.eater.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/13370139/saminbourdain.jpg?quality=90&strip=all&crop=0,10.812311597652,100,78.375376804696",
+      "site_name": "Eater",
+      "fetched_at": "2026-04-24T16:50:52.597Z"
+    },
+    "https://www.eater.com/2018/11/9/18080354/anthony-bourdain-parts-unknown-sandra-zweig-interview": {
+      "url": "https://www.eater.com/2018/11/9/18080354/anthony-bourdain-parts-unknown-sandra-zweig-interview",
+      "final_url": "https://www.eater.com/2018/11/9/18080354/anthony-bourdain-parts-unknown-sandra-zweig-interview",
+      "ok": true,
+      "status": 200,
+      "title": "‘Parts Unknown’ Producer Sandra Zweig on Anthony Bourdain’s TV Legacy",
+      "description": "A Q&A with Zweig reveals how the show evolved over the years",
+      "image": "https://platform.eater.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/13418617/ABPU_S12_LES7.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
+      "site_name": "Eater",
+      "fetched_at": "2026-04-24T16:50:52.727Z"
+    },
+    "https://www.eater.com/2018/6/13/16774768/anthony-bourdain-books": {
+      "url": "https://www.eater.com/2018/6/13/16774768/anthony-bourdain-books",
+      "final_url": "https://www.eater.com/2018/6/13/16774768/anthony-bourdain-books",
+      "ok": true,
+      "status": 200,
+      "title": "Anthony Bourdain’s Literary Legacy in 13 Books",
+      "description": "Before he was on TV, he became famous for putting pen to paper",
+      "image": "https://platform.eater.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/9866483/Bourdain_books3.jpg?quality=90&strip=all&crop=0%2C10.723165084465%2C100%2C78.55366983107&w=1200",
+      "site_name": "Eater",
+      "fetched_at": "2026-04-24T16:50:52.752Z"
+    },
+    "https://www.eater.com/2018/6/8/17441262/anthony-bourdain-food-and-travel-shows-legacy": {
+      "url": "https://www.eater.com/2018/6/8/17441262/anthony-bourdain-food-and-travel-shows-legacy",
+      "final_url": "https://www.eater.com/2018/6/8/17441262/anthony-bourdain-food-and-travel-shows-legacy",
+      "ok": true,
+      "status": 200,
+      "title": "Anthony Bourdain Rewrote the Rules for Food and Travel Shows",
+      "description": "From A Cook’s Tour to Parts Unknown, the host was the first of his kind on television, and revealed what food looked like under a political lens",
+      "image": "https://platform.eater.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/10765081/parts_unknown_uruguay_anthony_bourdain.png?quality=90&strip=all&crop=0%2C3.4037885308603%2C100%2C93.192422938279&w=1200",
+      "site_name": "Eater",
+      "fetched_at": "2026-04-24T16:50:52.953Z"
+    },
+    "https://www.eater.com/2018/6/8/17441550/andrew-zimmern-mourns-anthony-bourdain": {
+      "url": "https://www.eater.com/2018/6/8/17441550/andrew-zimmern-mourns-anthony-bourdain",
+      "final_url": "https://www.eater.com/2018/6/8/17441550/andrew-zimmern-mourns-anthony-bourdain",
+      "ok": true,
+      "status": 200,
+      "title": "Andrew Zimmern on Bourdain: ‘You Don’t Know Which of Your Friends Is Suffering’",
+      "description": "The fellow chef and television host conveys his heartbreak over the loss of his friend",
+      "image": "https://platform.eater.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/11501965/zimmernbourdain.png?quality=90&strip=all&crop=0,10.654607016334,100,78.690785967332",
+      "site_name": "Eater",
+      "fetched_at": "2026-04-24T16:50:52.990Z"
+    },
+    "https://www.eater.com/2018/6/8/17442084/anthony-bourdain-remembered": {
+      "url": "https://www.eater.com/2018/6/8/17442084/anthony-bourdain-remembered",
+      "final_url": "https://www.eater.com/2018/6/8/17442084/anthony-bourdain-remembered",
+      "ok": true,
+      "status": 200,
+      "title": "Eric Ripert on Bourdain: He Was ‘One of the Great Storytellers of Our Time’",
+      "description": "The well-respected chef and TV personality made an impact on the food industry",
+      "image": "https://platform.eater.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/11502535/621668952.jpg.jpg?quality=90&strip=all&crop=0%2C10.732984293194%2C100%2C78.534031413613&w=1200",
+      "site_name": "Eater",
+      "fetched_at": "2026-04-24T16:50:53.286Z"
+    },
+    "https://www.eater.com/2019/6/27/18761641/anthony-bourdain-day-june-25-grief-mourning-fans": {
+      "url": "https://www.eater.com/2019/6/27/18761641/anthony-bourdain-day-june-25-grief-mourning-fans",
+      "final_url": "https://www.eater.com/2019/6/27/18761641/anthony-bourdain-day-june-25-grief-mourning-fans",
+      "ok": true,
+      "status": 200,
+      "title": "Who Was Bourdain Day For?",
+      "description": "Public figures die all the time, but losing Anthony Bourdain felt like losing a friend",
+      "image": "https://platform.eater.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/16682128/GettyImages_542626418.jpg?quality=90&strip=all&crop=0%2C10.894576950423%2C100%2C78.210846099153&w=1200",
+      "site_name": "Eater",
+      "fetched_at": "2026-04-24T16:50:53.203Z"
+    },
+    "https://www.eater.com/22388507/anthony-bourdain-world-travel-book-laurie-woolever-interview": {
+      "url": "https://www.eater.com/22388507/anthony-bourdain-world-travel-book-laurie-woolever-interview",
+      "final_url": "https://www.eater.com/22388507/anthony-bourdain-world-travel-book-laurie-woolever-interview",
+      "ok": true,
+      "status": 200,
+      "title": "How Anthony Bourdain’s Longtime Assistant Made His New Book a Reality",
+      "description": "With “World Travel,” Laurie Woolever makes it possible for fans to travel with Anthony Bourdain once again",
+      "image": "https://platform.eater.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/22454819/Bourdain_Woolever_CNN.jpg?quality=90&strip=all&crop=0%2C6.369982547993%2C100%2C87.260034904014&w=1200",
+      "site_name": "Eater",
+      "fetched_at": "2026-04-24T16:50:53.438Z"
+    },
+    "https://www.eater.com/22747424/anthony-bourdain-biography-laurie-woolever-book-review": {
+      "url": "https://www.eater.com/22747424/anthony-bourdain-biography-laurie-woolever-book-review",
+      "final_url": "https://www.eater.com/22747424/anthony-bourdain-biography-laurie-woolever-book-review",
+      "ok": true,
+      "status": 200,
+      "title": "The New Anthony Bourdain Biography Reveals How Unknowable He Really Was",
+      "description": "To remember somebody well isn’t necessarily to know them, as Laurie Woolever’s “Bourdain: The Definitive Oral Biography” reveals — one conversation at a time",
+      "image": "https://platform.eater.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/22957660/187622944.jpg?quality=90&strip=all&crop=0%2C9.3654762835039%2C100%2C81.269047432992&w=1200",
+      "site_name": "Eater",
+      "fetched_at": "2026-04-24T16:50:53.499Z"
+    },
+    "https://www.gq.com/story/anthony-bourdain-men-of-the-year-tribute": {
+      "url": "https://www.gq.com/story/anthony-bourdain-men-of-the-year-tribute",
+      "final_url": "https://www.gq.com/story/anthony-bourdain-men-of-the-year-tribute",
+      "ok": true,
+      "status": 200,
+      "title": "The Enormous Life of Anthony Bourdain, According to Those Who Knew Him Best",
+      "description": "Chefs, artists, and loved ones pay tribute to the late culinary icon.",
+      "image": "https://media.gq.com/photos/5bf47321304e48274b12579a/16:9/w_1280,c_limit/Anthony%20Bourdain-The%20Last%20Curious%20Man-GQ-December-120118-06.jpg",
+      "site_name": "GQ",
+      "fetched_at": "2026-04-24T16:50:55.517Z"
+    },
+    "https://www.grubstreet.com/2012/04/the-appeal-of-anthony-bourdain.html": {
+      "url": "https://www.grubstreet.com/2012/04/the-appeal-of-anthony-bourdain.html",
+      "final_url": "https://www.grubstreet.com/2012/04/the-appeal-of-anthony-bourdain.html",
+      "ok": true,
+      "status": 200,
+      "title": "The Feeding Tube: The Anthony Bourdain Brand",
+      "description": "What is it about the &#x27;No Reservations&#x27; host that makes him so polarizing?",
+      "image": "https://pyxis.nymag.com/v1/imgs/818/65a/a3fa43389510d50c822b8e19f6cd20e4ae-05-anthonybourdain-1.1x.rsocial.w1200.jpg",
+      "site_name": "Grub Street",
+      "fetched_at": "2026-04-24T16:50:54.275Z"
+    },
+    "https://www.grubstreet.com/2018/06/anthony-bourdain-food-writing-legacy.html": {
+      "url": "https://www.grubstreet.com/2018/06/anthony-bourdain-food-writing-legacy.html",
+      "final_url": "https://www.grubstreet.com/2018/06/anthony-bourdain-food-writing-legacy.html",
+      "ok": true,
+      "status": 200,
+      "title": "How Anthony Bourdain Forever Changed Food Writing",
+      "description": "The acclaimed author found the heart of kitchen life like no writer had before.",
+      "image": "https://pyxis.nymag.com/v1/imgs/99c/ce0/a01acfa4b346ede9ed9872c1ae5ac4cc94-08-anthony-bourdain-2.1x.rsocial.w1200.jpg",
+      "site_name": "Grub Street",
+      "fetched_at": "2026-04-24T16:50:54.305Z"
+    },
+    "https://www.grubstreet.com/2018/06/anthony-bourdain-restaurant-democracy-legacy.html": {
+      "url": "https://www.grubstreet.com/2018/06/anthony-bourdain-restaurant-democracy-legacy.html",
+      "final_url": "https://www.grubstreet.com/2018/06/anthony-bourdain-restaurant-democracy-legacy.html",
+      "ok": true,
+      "status": 200,
+      "title": "Anthony Bourdain’s Crusade for Fine-Dining Democracy",
+      "description": "Nobody did more than Bourdain to reveal the grimy realities lurking under big-city restaurants’ luxurious veneer.",
+      "image": "https://pyxis.nymag.com/v1/imgs/867/332/5d400eabc7b5a62abeb4d60b435564a28f-08-anthony-bourdain-2002.1x.rsocial.w1200.jpg",
+      "site_name": "Grub Street",
+      "fetched_at": "2026-04-24T16:50:54.100Z"
+    },
+    "https://www.grubstreet.com/2018/06/anthony-bourdains-biography-will-be-released-in-2019.html": {
+      "url": "https://www.grubstreet.com/2018/06/anthony-bourdains-biography-will-be-released-in-2019.html",
+      "final_url": "https://www.grubstreet.com/2018/06/anthony-bourdains-biography-will-be-released-in-2019.html",
+      "ok": true,
+      "status": 200,
+      "title": "Anthony Bourdain’s Biography Will Be Released in 2019",
+      "description": "Expect stories from the “people who knew him best.”",
+      "image": "https://pyxis.nymag.com/v1/imgs/48f/1c9/cd7a12893edc5a5949f9f0f090a63245b0-29-anthony-bourdain.1x.rsocial.w1200.jpg",
+      "site_name": "Grub Street",
+      "fetched_at": "2026-04-24T16:50:54.503Z"
+    },
+    "https://www.grubstreet.com/2019/06/anthony-bourdain-addiction.html": {
+      "url": "https://www.grubstreet.com/2019/06/anthony-bourdain-addiction.html",
+      "final_url": "https://www.grubstreet.com/2019/06/anthony-bourdain-addiction.html",
+      "ok": true,
+      "status": 200,
+      "title": "Anthony Bourdain, Addiction, and the Hope for a Better Life",
+      "description": "A year after his death, Bourdain’s story of recovery can still inspire.",
+      "image": "https://pyxis.nymag.com/v1/imgs/62f/101/c0da5f2c1286c7220b251954e683dbf242-05-anthony-bourdain.1x.rsocial.w1200.jpg",
+      "site_name": "Grub Street",
+      "fetched_at": "2026-04-24T16:50:54.686Z"
+    },
+    "https://www.grubstreet.com/2021/07/director-morgan-neville-roadrunner-anthony-bourdain-documentary.html": {
+      "url": "https://www.grubstreet.com/2021/07/director-morgan-neville-roadrunner-anthony-bourdain-documentary.html",
+      "final_url": "https://www.grubstreet.com/2021/07/director-morgan-neville-roadrunner-anthony-bourdain-documentary.html",
+      "ok": true,
+      "status": 200,
+      "title": "How Do You Tell the Story of Anthony Bourdain?",
+      "description": "“I made the film to get people to start to see him as a person again,” says Roadrunner director Morgan Neville.",
+      "image": "https://pyxis.nymag.com/v1/imgs/fe2/46a/0aadda4369acb624aaed4510532d8748a5-GRUB-MORGAN-FNL-1675-2.1x.rsocial.w1200.jpg",
+      "site_name": "Grub Street",
+      "fetched_at": "2026-04-24T16:50:54.978Z"
+    },
+    "https://www.latimes.com/archives/blogs/show-tracker/story/2011-11-23/anthony-bourdain-dishes-on-the-layover-and-life-as-a-tv-foodie": {
+      "url": "https://www.latimes.com/archives/blogs/show-tracker/story/2011-11-23/anthony-bourdain-dishes-on-the-layover-and-life-as-a-tv-foodie",
+      "final_url": "https://www.latimes.com/archives/blogs/show-tracker/story/2011-11-23/anthony-bourdain-dishes-on-the-layover-and-life-as-a-tv-foodie",
+      "ok": true,
+      "status": 200,
+      "title": "Anthony Bourdain dishes on &#x27;The Layover&#x27; and life as a TV foodie",
+      "description": "This article was originally on a blog post platform and may be missing photos, graphics or links.",
+      "image": "https://ca-times.brightspotcdn.com/dims4/default/64e287b/2147483647/strip/true/crop/2400x1260+0+0/resize/1200x630!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fdf%2F45%2F57d858144a2a88575fa2b03080bb%2Flatlogo-ss.jpg",
+      "site_name": "Los Angeles Times",
+      "fetched_at": "2026-04-24T16:50:55.140Z"
+    },
+    "https://www.latimes.com/books/la-et-jc-bourdain-books-20180608-story.html": {
+      "url": "https://www.latimes.com/books/la-et-jc-bourdain-books-20180608-story.html",
+      "final_url": "https://www.latimes.com/books/la-et-jc-bourdain-books-20180608-story.html",
+      "ok": true,
+      "status": 200,
+      "title": "Books were good to Anthony Bourdain — but TV was even better",
+      "description": "“I was never sitting in a garret struggling over an unpublished manuscript,” Anthony Bourdain once told me about how he got started as a writer.",
+      "image": "https://ca-times.brightspotcdn.com/dims4/default/9dbce2b/2147483647/strip/true/crop/2047x1075+0+38/resize/1200x630!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F15%2Fc3%2F5fd68ebfb99184d511eeba674462%2Fla-1528498461-kovvnscut6-snap-image",
+      "site_name": "Los Angeles Times",
+      "fetched_at": "2026-04-24T16:50:55.452Z"
+    },
+    "https://www.latimes.com/business/hollywood/la-fi-ct-bourdain-obit-20180608-story.html": {
+      "url": "https://www.latimes.com/business/hollywood/la-fi-ct-bourdain-obit-20180608-story.html",
+      "final_url": "https://www.latimes.com/business/hollywood/la-fi-ct-bourdain-obit-20180608-story.html",
+      "ok": true,
+      "status": 200,
+      "title": "Anthony Bourdain, globe-trotting chef who explored culture through cuisine, dies at 61 in apparent suicide",
+      "description": "For all his gastronomic globe-trotting, Anthony Bourdain remained, in his words, “a man of simple needs.”",
+      "image": "https://ca-times.brightspotcdn.com/dims4/default/b1b6b9c/2147483647/strip/true/crop/2048x1075+0+237/resize/1200x630!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F96%2Fbf%2Fb9bc7d99774794cd2ce919735922%2Fla-fo-anthony-bourdain-pictures-012",
+      "site_name": "Los Angeles Times",
+      "fetched_at": "2026-04-24T16:50:55.632Z"
+    },
+    "https://www.latimes.com/entertainment-arts/story/2023-11-30/anthony-bourdain-henry-kissinger-remarks": {
+      "url": "https://www.latimes.com/entertainment-arts/story/2023-11-30/anthony-bourdain-henry-kissinger-remarks",
+      "final_url": "https://www.latimes.com/entertainment-arts/story/2023-11-30/anthony-bourdain-henry-kissinger-remarks",
+      "ok": true,
+      "status": 200,
+      "title": "Anthony Bourdain&#x27;s scathing Henry Kissinger remarks resurface after foreign policy figure&#x27;s death",
+      "description": "Anthony Bourdain&#x27;s remarks on Henry Kissinger go viral in the wake of the former secretary of State&#x27;s death.",
+      "image": "https://ca-times.brightspotcdn.com/dims4/default/95ce2df/2147483647/strip/true/crop/2374x1246+0+0/resize/1200x630!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fc0%2F8c%2Ff9e98a744368bab744bee4f375b3%2Fbourdain-kissinger.jpg",
+      "site_name": "Los Angeles Times",
+      "fetched_at": "2026-04-24T16:50:55.320Z"
+    },
+    "https://www.newyorker.com/magazine/2017/02/13/anthony-bourdains-moveable-feast": {
+      "url": "https://www.newyorker.com/magazine/2017/02/13/anthony-bourdains-moveable-feast",
+      "final_url": "https://www.newyorker.com/magazine/2017/02/13/anthony-bourdains-moveable-feast",
+      "ok": true,
+      "status": 200,
+      "title": "Anthony Bourdain’s Moveable Feast",
+      "description": "Patrick Radden Keefe profiled the late chef and star of “Parts Unknown,” in 2017. “I travel around the world, eat a lot of shit, and basically do whatever the fuck I want,” he said.",
+      "image": "https://media.newyorker.com/photos/59097dd2c14b3c606c1098da/16:9/w_1280,c_limit/170213_r29425.jpg",
+      "site_name": "The New Yorker",
+      "fetched_at": "2026-04-24T16:50:56.097Z"
+    },
+    "https://www.newyorker.com/news/postscript/travels-with-anthony-bourdain": {
+      "url": "https://www.newyorker.com/news/postscript/travels-with-anthony-bourdain",
+      "final_url": "https://www.newyorker.com/news/postscript/travels-with-anthony-bourdain",
+      "ok": true,
+      "status": 200,
+      "title": "Travels with Anthony Bourdain",
+      "description": "Tony will be remembered for his infectious enthusiasms and his brash exuberance, but I was most inspired by his capacity for reinvention.",
+      "image": "https://media.newyorker.com/photos/5b1ab7751418f038a67040ae/16:9/w_1280,c_limit/Keefe-TravelsWithBourdain.jpg",
+      "site_name": "The New Yorker",
+      "fetched_at": "2026-04-24T16:50:56.219Z"
+    },
+    "https://www.reddit.com/r/AnthonyBourdain/comments/ai45r3/anthony_bourdain_archival_megathread/": {
+      "url": "https://www.reddit.com/r/AnthonyBourdain/comments/ai45r3/anthony_bourdain_archival_megathread/",
+      "final_url": "https://www.reddit.com/r/AnthonyBourdain/comments/ai45r3/anthony_bourdain_archival_megathread/",
+      "ok": true,
+      "status": 200,
+      "title": "Reddit - Please wait for verification",
+      "fetched_at": "2026-04-24T16:50:55.691Z"
+    },
+    "https://www.rollingstone.com/culture/culture-features/anthony-bourdain-chef-author-sensation-1234615054/": {
+      "url": "https://www.rollingstone.com/culture/culture-features/anthony-bourdain-chef-author-sensation-1234615054/",
+      "final_url": "https://www.rollingstone.com/culture/culture-features/anthony-bourdain-chef-author-sensation-1234615054/",
+      "ok": true,
+      "status": 200,
+      "title": "Middle-Aged, Desperate and Broke as a Joke: How Anthony Bourdain Became an Instant Sensation",
+      "description": "The origin story of how Anthony Bourdain went from chef to best-selling writer and a TV star",
+      "image": "https://www.rollingstone.com/wp-content/uploads/2022/10/anthony-bourdain-excerpt-h_10.01141729.jpg?crop=0px%2C0px%2C1800px%2C1014px&resize=1600%2C900",
+      "site_name": "Rolling Stone",
+      "fetched_at": "2026-04-24T16:50:56.431Z"
+    },
+    "https://www.theatlantic.com/entertainment/archive/2018/06/remembering-anthony-bourdain/562388/": {
+      "url": "https://www.theatlantic.com/entertainment/archive/2018/06/remembering-anthony-bourdain/562388/",
+      "final_url": "https://www.theatlantic.com/entertainment/archive/2018/06/remembering-anthony-bourdain/562388/",
+      "ok": true,
+      "status": 200,
+      "title": "Remembering Anthony Bourdain",
+      "description": "The chef and writer, who died at 61, changed the way we think about restaurant kitchens and the people who work within them.",
+      "image": "https://cdn.theatlantic.com/thumbor/3w8DTn2Wl_uDJpEP_pTcmAqOQWg=/0x50:3686x1970/1200x625/media/img/mt/2018/06/AP_18130641163102/original.jpg",
+      "site_name": "The Atlantic",
+      "fetched_at": "2026-04-24T16:50:56.588Z"
+    },
+    "https://www.theguardian.com/books/2022/oct/14/down-and-out-in-paradise-review-a-disservice-to-anthony-bourdain": {
+      "url": "https://www.theguardian.com/books/2022/oct/14/down-and-out-in-paradise-review-a-disservice-to-anthony-bourdain",
+      "final_url": "https://www.theguardian.com/books/2022/oct/14/down-and-out-in-paradise-review-a-disservice-to-anthony-bourdain",
+      "ok": true,
+      "status": 200,
+      "title": "Down and Out in Paradise review – a disservice to Anthony Bourdain",
+      "description": "An engrossing but tasteless portrait of the Parts Unknown host lets his death overshadow a complex and varied life",
+      "image": "https://i.guim.co.uk/img/media/32151c6a5a6a076874e6d5a5411c1713699306cb/0_78_2468_1480/master/2468.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctYWdlLTIwMjIucG5n&enable=upscale&s=4db54142d3dd202f61a55d036952db36",
+      "site_name": "the Guardian",
+      "fetched_at": "2026-04-24T16:50:56.409Z"
+    },
+    "https://www.theguardian.com/film/2021/jul/21/anthony-bourdain-documentary-roadrunner-ai-deepfake-furore": {
+      "url": "https://www.theguardian.com/film/2021/jul/21/anthony-bourdain-documentary-roadrunner-ai-deepfake-furore",
+      "final_url": "https://www.theguardian.com/film/2021/jul/21/anthony-bourdain-documentary-roadrunner-ai-deepfake-furore",
+      "ok": true,
+      "status": 200,
+      "title": "The Bourdain AI furore shouldn’t overshadow an effective, complicated film | Adrian Horton",
+      "description": "Despite anger over a decision to deepfake the voice of the much-loved star in a new documentary it’s a haunting and difficult film that deserves to be seen",
+      "image": "https://i.guim.co.uk/img/media/1293f26cefda42cc765ebd04e1adf322b6336d7a/0_0_3600_2160/master/3600.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctb3BpbmlvbnMtYWdlLTIwMjEucG5n&enable=upscale&s=51493bb3bed607ed7a852d30ff8b88c8",
+      "site_name": "the Guardian",
+      "fetched_at": "2026-04-24T16:50:56.496Z"
+    },
+    "https://www.theguardian.com/food/2021/jul/16/anthony-bourdain-documentary-ai-voiceover-roadrunner": {
+      "url": "https://www.theguardian.com/food/2021/jul/16/anthony-bourdain-documentary-ai-voiceover-roadrunner",
+      "final_url": "https://www.theguardian.com/food/2021/jul/16/anthony-bourdain-documentary-ai-voiceover-roadrunner",
+      "ok": true,
+      "status": 200,
+      "title": "Anthony Bourdain documentary sparks backlash for using AI to fake voice",
+      "description": "Roadrunner director Morgan Neville revealed he used AI to create three lines of voiceover by the late celebrity chef",
+      "image": "https://i.guim.co.uk/img/media/ff234b77c9dfc2e2e3a38651f434397b0d60bca6/0_32_1835_1100/master/1835.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctYWdlLTIwMjEucG5n&enable=upscale&s=d2967b7d83acd306ad7e070be9471b36",
+      "site_name": "the Guardian",
+      "fetched_at": "2026-04-24T16:50:56.556Z"
+    },
+    "https://www.theguardian.com/food/2022/oct/01/i-am-lonely-controversial-book-reveals-anthony-bourdains-final-days": {
+      "url": "https://www.theguardian.com/food/2022/oct/01/i-am-lonely-controversial-book-reveals-anthony-bourdains-final-days",
+      "final_url": "https://www.theguardian.com/food/2022/oct/01/i-am-lonely-controversial-book-reveals-anthony-bourdains-final-days",
+      "ok": true,
+      "status": 200,
+      "title": "‘I am lonely’: controversial book reveals Anthony Bourdain’s final days",
+      "description": "Family and friends are upset by new biography divulging Bourdain’s moods – and texts – in the lead-up to his death",
+      "image": "https://i.guim.co.uk/img/media/6b66744a3f5cf41be3d13bc2db64a0ab860af67b/0_12_3556_2135/master/3556.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdG8tYWdlLTIwMjIucG5n&enable=upscale&s=06998156268d2703ffa4de5c32922473",
+      "site_name": "the Guardian",
+      "fetched_at": "2026-04-24T16:50:56.731Z"
+    },
+    "https://www.theguardian.com/food/2025/apr/06/working-with-nys-hottest-chefs-took-its-toll-on-laurie-woolever-but-nothing-prepared-her-for-anthony-bourdains-death": {
+      "url": "https://www.theguardian.com/food/2025/apr/06/working-with-nys-hottest-chefs-took-its-toll-on-laurie-woolever-but-nothing-prepared-her-for-anthony-bourdains-death",
+      "final_url": "https://www.theguardian.com/food/2025/apr/06/working-with-nys-hottest-chefs-took-its-toll-on-laurie-woolever-but-nothing-prepared-her-for-anthony-bourdains-death",
+      "ok": true,
+      "status": 200,
+      "title": "Feeding the soul: Laurie Woolever on food, addiction – and working with Anthony Bourdain",
+      "description": "Working alongside NY’s hottest chefs took its toll on Laurie Woolever, but in a new memoir she opens up about her battles with drinking, drugs – and losing her friend",
+      "image": "https://i.guim.co.uk/img/media/e0fa04a813be33710854ada830f93dfe2da51f1e/0_476_4800_2880/master/4800.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdG8tZGVmYXVsdC5wbmc&enable=upscale&s=a35614fea6c50e77fc90a645f3d7000a",
+      "site_name": "the Guardian",
+      "fetched_at": "2026-04-24T16:50:56.622Z"
+    },
+    "https://www.theguardian.com/lifeandstyle/2013/sep/27/anthony-bourdain-parts-unknown-family-values": {
+      "url": "https://www.theguardian.com/lifeandstyle/2013/sep/27/anthony-bourdain-parts-unknown-family-values",
+      "final_url": "https://www.theguardian.com/lifeandstyle/2013/sep/27/anthony-bourdain-parts-unknown-family-values",
+      "ok": true,
+      "status": 200,
+      "title": "Anthony Bourdain | My family values",
+      "description": "The chef and author of Kitchen Confidential talks about growing up in a stable New Jersey home, where his parents taught him to love music and film. But then he became a 10-year-old druggie rebel. Interview by Britt Collins",
+      "image": "https://i.guim.co.uk/img/static/sys-images/Guardian/About/General/2013/9/23/1379933698590/Anthony-Bourdain-010.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctYWdlLTIwMTMucG5n&enable=upscale&s=61bf3f5830a37b7770597d316ec73b9f",
+      "site_name": "the Guardian",
+      "fetched_at": "2026-04-24T16:50:56.851Z"
+    },
+    "https://www.thrillist.com/eat/los-angeles/anthony-bourdain-los-angeles-interview": {
+      "url": "https://www.thrillist.com/eat/los-angeles/anthony-bourdain-los-angeles-interview",
+      "final_url": "https://www.thrillist.com/eat/los-angeles/anthony-bourdain-los-angeles-interview",
+      "ok": true,
+      "status": 200,
+      "title": "Anthony Bourdain&#x27;s LA: A Q&A With a Legend",
+      "description": "Yep, we talked to Tony.",
+      "image": "https://assets3.thrillist.com/v1/image/1795100/1200x600/scale;;webp=auto;jpeg_quality=85.jpg",
+      "site_name": "Thrillist",
+      "fetched_at": "2026-04-24T16:50:56.764Z"
+    },
+    "https://www.thrillist.com/eat/nation/remembering-anthony-bourdain": {
+      "url": "https://www.thrillist.com/eat/nation/remembering-anthony-bourdain",
+      "final_url": "https://www.thrillist.com/eat/nation/remembering-anthony-bourdain",
+      "ok": true,
+      "status": 200,
+      "title": "Anthony Bourdain and the Wisdom of Talking to Strangers",
+      "description": "RIP",
+      "image": "https://assets3.thrillist.com/v1/image/2767507/1200x600/scale;;webp=auto;jpeg_quality=85.jpg",
+      "site_name": "Thrillist",
+      "fetched_at": "2026-04-24T16:50:56.781Z"
+    },
+    "https://www.thrillist.com/entertainment/nation/anthony-bourdain-interview-appetites-cookbook": {
+      "url": "https://www.thrillist.com/entertainment/nation/anthony-bourdain-interview-appetites-cookbook",
+      "final_url": "https://www.thrillist.com/entertainment/nation/anthony-bourdain-interview-appetites-cookbook",
+      "ok": true,
+      "status": 200,
+      "title": "Anthony Bourdain: The Thrillist Interview",
+      "description": "Two hours with a legend.",
+      "image": "https://assets3.thrillist.com/v1/image/2767330/1200x600/scale;;webp=auto;jpeg_quality=85.jpg",
+      "site_name": "Thrillist",
+      "fetched_at": "2026-04-24T16:50:56.885Z"
+    },
+    "https://www.vanityfair.com/style/2021/09/anthony-bourdain-director-producer-exclusive-excerpt": {
+      "url": "https://www.vanityfair.com/style/2021/09/anthony-bourdain-director-producer-exclusive-excerpt",
+      "final_url": "https://www.vanityfair.com/style/2021/09/anthony-bourdain-director-producer-exclusive-excerpt",
+      "ok": true,
+      "status": 200,
+      "title": "Read an Exclusive Excerpt From ‘In the Weeds: Around the World and Behind the Scenes with Anthony Bourdain’",
+      "description": "Tom Vitale, Bourdain’s longtime director and producer, on discovering an unfinished manuscript left behind by the late chef.",
+      "image": "https://media.vanityfair.com/photos/6142065d8801f831aa17f99d/16:9/w_1280,c_limit/Anthony-Bourdain-filming-bts-Libya-2013-tout-lede.jpg",
+      "site_name": "Vanity Fair",
+      "fetched_at": "2026-04-24T16:50:57.399Z"
+    },
+    "https://www.vanityfair.com/style/2021/09/inside-anthony-bourdains-all-consuming-relationship": {
+      "url": "https://www.vanityfair.com/style/2021/09/inside-anthony-bourdains-all-consuming-relationship",
+      "final_url": "https://www.vanityfair.com/style/2021/09/inside-anthony-bourdains-all-consuming-relationship",
+      "ok": true,
+      "status": 200,
+      "title": "“I Knew It Was Doomed; I Knew Someone Was Doomed”: Inside Anthony Bourdain’s All-Consuming Relationship",
+      "description": "In an excerpt from ‘Bourdain: The Definitive Oral Biography,’ friends, family, and colleagues describe the titan of the food world’s obsessive love affair with Asia Argento.",
+      "image": "https://media.vanityfair.com/photos/614a3c48e0676d8136718393/16:9/w_1280,c_limit/Bourdain-Oral-Biography-Tout-Lede.jpg",
+      "site_name": "Vanity Fair",
+      "fetched_at": "2026-04-24T16:50:57.644Z"
+    },
+    "https://www.washingtonpost.com/food/2021/04/21/bourdain-travel-book/": {
+      "url": "https://www.washingtonpost.com/food/2021/04/21/bourdain-travel-book/",
+      "ok": false,
+      "error": "timeout",
+      "fetched_at": "2026-04-24T16:51:06.853Z"
+    },
+    "https://www.washingtonpost.com/food/2021/09/30/bourdain-oral-biography-review/": {
+      "url": "https://www.washingtonpost.com/food/2021/09/30/bourdain-oral-biography-review/",
+      "ok": false,
+      "error": "timeout",
+      "fetched_at": "2026-04-24T16:51:06.886Z"
+    },
+    "https://www.washingtonpost.com/food/2023/11/30/henry-kissinger-anthony-bourdain-cambodia/": {
+      "url": "https://www.washingtonpost.com/food/2023/11/30/henry-kissinger-anthony-bourdain-cambodia/",
+      "ok": false,
+      "error": "timeout",
+      "fetched_at": "2026-04-24T16:51:07.400Z"
+    },
+    "https://www.washingtonpost.com/news/food/wp/2019/07/30/when-listing-anthony-bourdains-greatest-literary-hits-dont-discount-typhoid-mary/": {
+      "url": "https://www.washingtonpost.com/news/food/wp/2019/07/30/when-listing-anthony-bourdains-greatest-literary-hits-dont-discount-typhoid-mary/",
+      "ok": false,
+      "error": "timeout",
+      "fetched_at": "2026-04-24T16:51:07.644Z"
+    }
+  }
+}

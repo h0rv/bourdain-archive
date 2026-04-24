@@ -103,25 +103,42 @@ export function youtubeId(url?: string | null): string | undefined {
   return undefined;
 }
 
-export function previewForUrl(url?: string | null) {
-  const host = hostnameForUrl(url);
-  const videoId = youtubeId(url);
+export function archiveTargetsForUrl(url?: string | null) {
+  if (!url) return undefined;
+  const encoded = encodeURI(url);
   return {
-    host,
-    image: videoId ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` : undefined,
-    favicon: host ? `https://www.google.com/s2/favicons?domain=${host}&sz=128` : undefined,
+    latest_url: `https://web.archive.org/web/2/${encoded}`,
+    calendar_url: `https://web.archive.org/web/*/${encoded}`,
+    save_url: `https://web.archive.org/save/${encoded}`,
   };
 }
 
-export function previewForEntry(entry: any) {
+export function previewForUrl(url?: string | null, cache?: Record<string, any>) {
+  const host = hostnameForUrl(url);
+  const videoId = youtubeId(url);
+  const cached = url ? cache?.[url] : undefined;
+  return {
+    host,
+    title: cached?.title,
+    description: cached?.description,
+    image: videoId ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` : cached?.image,
+    favicon: host ? `https://www.google.com/s2/favicons?domain=${host}&sz=128` : undefined,
+    archive: archiveTargetsForUrl(url),
+  };
+}
+
+export function previewForEntry(entry: any, cache?: Record<string, any>) {
   const data = entry.data ?? entry;
   const url = primaryAvailabilityUrl(data);
-  const urlPreview = previewForUrl(url);
+  const urlPreview = previewForUrl(url, cache);
   return {
     url,
     host: urlPreview.host,
+    title: urlPreview.title,
+    description: urlPreview.description,
     image: data.image_url ?? urlPreview.image,
     favicon: urlPreview.favicon,
-    label: data.publication ?? urlPreview.host ?? formatType(data.type),
+    archive: urlPreview.archive,
+    label: data.publication ?? urlPreview.title ?? urlPreview.host ?? formatType(data.type),
   };
 }
