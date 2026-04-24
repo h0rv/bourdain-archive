@@ -180,7 +180,8 @@ const searchableText = (entry: any, collection: string, authorship: string) =>
       const saved = readSavedControls();
       if (searchInput && typeof saved.query === 'string') searchInput.value = saved.query;
       setActiveValues(typeButtons, 'data-filter-type', saved.types);
-      setActiveValues(authorButtons, 'data-filter-author', saved.authors);
+      const savedAuthors = Array.isArray(saved.authors) ? saved.authors.filter((value: unknown) => value === 'by' || value === 'about') : [];
+      authorButtons.forEach((button) => button.classList.toggle('is-active', savedAuthors.length === 1 && button.getAttribute('data-filter-author') === savedAuthors[0]));
       setActiveValues(facetButtons, 'data-filter-facet', saved.facets);
 
       if (saved.sort === 'asc' || saved.sort === 'desc') {
@@ -259,9 +260,18 @@ const searchableText = (entry: any, collection: string, authorship: string) =>
       updateControls();
     });
 
-    [...typeButtons, ...authorButtons, ...facetButtons].forEach((button) => {
+    [...typeButtons, ...facetButtons].forEach((button) => {
       button.addEventListener('click', () => {
         button.classList.toggle('is-active');
+        updateControls();
+      });
+    });
+
+    authorButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const wasActive = button.classList.contains('is-active');
+        authorButtons.forEach((item) => item.classList.remove('is-active'));
+        button.classList.toggle('is-active', !wasActive);
         updateControls();
       });
     });
