@@ -1,0 +1,33 @@
+{
+  "id": "down-and-out-in-paradise-review-the-guardian",
+  "title": "Down and Out in Paradise review",
+  "type": "review",
+  "date": "2022",
+  "date_precision": "year",
+  "summary": "Book review — The Guardian.",
+  "publication": "The Guardian",
+  "bucket": "Book review",
+  "tags": [
+    "about-bourdain",
+    "literature",
+    "book-review",
+    "posthumous"
+  ],
+  "people": [
+    "anthony-bourdain"
+  ],
+  "places": [],
+  "sources": [],
+  "related": [],
+  "status": "needs-review",
+  "availability": {
+    "official_url": "https://www.theguardian.com/books/2022/oct/14/down-and-out-in-paradise-review-a-disservice-to-anthony-bourdain",
+    "archive_url": null,
+    "library_url": null,
+    "audio_url": null,
+    "video_url": null,
+    "transcript_url": null,
+    "streaming_url": null,
+    "purchase_url": null
+  }
+}

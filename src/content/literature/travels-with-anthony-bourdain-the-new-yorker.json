@@ -1,0 +1,32 @@
+{
+  "id": "travels-with-anthony-bourdain-the-new-yorker",
+  "title": "Travels with Anthony Bourdain",
+  "type": "tribute",
+  "date": null,
+  "date_precision": "unknown",
+  "summary": "Remembrance — The New Yorker.",
+  "publication": "The New Yorker",
+  "bucket": "Remembrance",
+  "tags": [
+    "about-bourdain",
+    "literature",
+    "remembrance"
+  ],
+  "people": [
+    "anthony-bourdain"
+  ],
+  "places": [],
+  "sources": [],
+  "related": [],
+  "status": "needs-review",
+  "availability": {
+    "official_url": "https://www.newyorker.com/news/postscript/travels-with-anthony-bourdain",
+    "archive_url": null,
+    "library_url": null,
+    "audio_url": null,
+    "video_url": null,
+    "transcript_url": null,
+    "streaming_url": null,
+    "purchase_url": null
+  }
+}

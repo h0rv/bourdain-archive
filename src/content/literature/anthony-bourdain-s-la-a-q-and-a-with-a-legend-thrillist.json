@@ -1,0 +1,32 @@
+{
+  "id": "anthony-bourdain-s-la-a-q-and-a-with-a-legend-thrillist",
+  "title": "Anthony Bourdain’s LA: A Q&A With a Legend",
+  "type": "interview",
+  "date": null,
+  "date_precision": "unknown",
+  "summary": "Interview — Thrillist.",
+  "publication": "Thrillist",
+  "bucket": "Interview",
+  "tags": [
+    "about-bourdain",
+    "literature",
+    "interview"
+  ],
+  "people": [
+    "anthony-bourdain"
+  ],
+  "places": [],
+  "sources": [],
+  "related": [],
+  "status": "needs-review",
+  "availability": {
+    "official_url": "https://www.thrillist.com/eat/los-angeles/anthony-bourdain-los-angeles-interview",
+    "archive_url": null,
+    "library_url": null,
+    "audio_url": null,
+    "video_url": null,
+    "transcript_url": null,
+    "streaming_url": null,
+    "purchase_url": null
+  }
+}

@@ -1,4 +1,4 @@
-# Bourdain Index
+# Bourdain Archive
 
 ## Run
 

@@ -19,7 +19,7 @@ import { fileURLToPath } from 'node:url';
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const MANIFEST = resolve(ROOT, 'archive/sources.json');
 const SNAPSHOTS = resolve(ROOT, 'archive/snapshots.json');
-const USER_AGENT = 'bourdain-index/0.1 metadata archiver';
+const USER_AGENT = 'bourdain-archive/0.1 metadata archiver';
 
 async function writeJson(path, doc) {
   const fullPath = resolve(ROOT, path);

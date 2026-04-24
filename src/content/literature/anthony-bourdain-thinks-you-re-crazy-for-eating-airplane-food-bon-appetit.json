@@ -1,0 +1,32 @@
+{
+  "id": "anthony-bourdain-thinks-you-re-crazy-for-eating-airplane-food-bon-appetit",
+  "title": "Anthony Bourdain Thinks You’re Crazy for Eating Airplane Food",
+  "type": "interview",
+  "date": null,
+  "date_precision": "unknown",
+  "summary": "Interview — Bon Appétit.",
+  "publication": "Bon Appétit",
+  "bucket": "Interview",
+  "tags": [
+    "about-bourdain",
+    "literature",
+    "interview"
+  ],
+  "people": [
+    "anthony-bourdain"
+  ],
+  "places": [],
+  "sources": [],
+  "related": [],
+  "status": "needs-review",
+  "availability": {
+    "official_url": "https://www.bonappetit.com/people/celebrities/article/anthony-bourdain-parts-unknown",
+    "archive_url": null,
+    "library_url": null,
+    "audio_url": null,
+    "video_url": null,
+    "transcript_url": null,
+    "streaming_url": null,
+    "purchase_url": null
+  }
+}

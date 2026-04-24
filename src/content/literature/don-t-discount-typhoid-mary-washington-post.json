@@ -1,0 +1,33 @@
+{
+  "id": "don-t-discount-typhoid-mary-washington-post",
+  "title": "Don’t discount “Typhoid Mary”",
+  "type": "essay",
+  "date": "2019-07-30",
+  "date_precision": "day",
+  "summary": "Literary essay — Washington Post.",
+  "publication": "Washington Post",
+  "bucket": "Literary essay",
+  "tags": [
+    "about-bourdain",
+    "literature",
+    "literary-essay",
+    "posthumous"
+  ],
+  "people": [
+    "anthony-bourdain"
+  ],
+  "places": [],
+  "sources": [],
+  "related": [],
+  "status": "needs-review",
+  "availability": {
+    "official_url": "https://www.washingtonpost.com/news/food/wp/2019/07/30/when-listing-anthony-bourdains-greatest-literary-hits-dont-discount-typhoid-mary/",
+    "archive_url": null,
+    "library_url": null,
+    "audio_url": null,
+    "video_url": null,
+    "transcript_url": null,
+    "streaming_url": null,
+    "purchase_url": null
+  }
+}

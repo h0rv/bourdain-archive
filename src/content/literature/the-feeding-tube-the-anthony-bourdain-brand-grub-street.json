@@ -1,0 +1,32 @@
+{
+  "id": "the-feeding-tube-the-anthony-bourdain-brand-grub-street",
+  "title": "The Feeding Tube: The Anthony Bourdain Brand",
+  "type": "essay",
+  "date": "2012-04",
+  "date_precision": "month",
+  "summary": "Media/brand essay — Grub Street.",
+  "publication": "Grub Street",
+  "bucket": "Media/brand essay",
+  "tags": [
+    "about-bourdain",
+    "literature",
+    "media-brand-essay"
+  ],
+  "people": [
+    "anthony-bourdain"
+  ],
+  "places": [],
+  "sources": [],
+  "related": [],
+  "status": "needs-review",
+  "availability": {
+    "official_url": "https://www.grubstreet.com/2012/04/the-appeal-of-anthony-bourdain.html",
+    "archive_url": null,
+    "library_url": null,
+    "audio_url": null,
+    "video_url": null,
+    "transcript_url": null,
+    "streaming_url": null,
+    "purchase_url": null
+  }
+}

@@ -1,4 +1,4 @@
-# MVP Spec: Bourdain Index
+# MVP Spec: Bourdain Archive
 
 ## Goal
 
@@ -218,7 +218,7 @@ Explain:
 # MVP repo structure
 
 ```txt
-bourdain-index/
+bourdain-archive/
   src/
     content/
       works/
@@ -850,7 +850,7 @@ Book · 2000 · needs-review
 Include this in `/about/`.
 
 ```txt
-Bourdain Index is an open-source index and reading guide.
+Bourdain Archive is an open-source index and reading guide.
 
 It does not host copyrighted books, full articles, full episode videos, or unauthorized transcripts.
 
@@ -883,7 +883,7 @@ GitHub Pages deploy notes
 # Coding agent prompt
 
 ```txt
-Build a lean Astro static site called Bourdain Index.
+Build a lean Astro static site called Bourdain Archive.
 
 Use:
 - Astro

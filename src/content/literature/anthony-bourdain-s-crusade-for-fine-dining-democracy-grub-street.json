@@ -1,0 +1,32 @@
+{
+  "id": "anthony-bourdain-s-crusade-for-fine-dining-democracy-grub-street",
+  "title": "Anthony Bourdain’s Crusade for Fine-Dining Democracy",
+  "type": "essay",
+  "date": "2018-06",
+  "date_precision": "month",
+  "summary": "Legacy essay — Grub Street.",
+  "publication": "Grub Street",
+  "bucket": "Legacy essay",
+  "tags": [
+    "about-bourdain",
+    "literature",
+    "legacy-essay"
+  ],
+  "people": [
+    "anthony-bourdain"
+  ],
+  "places": [],
+  "sources": [],
+  "related": [],
+  "status": "needs-review",
+  "availability": {
+    "official_url": "https://www.grubstreet.com/2018/06/anthony-bourdain-restaurant-democracy-legacy.html",
+    "archive_url": null,
+    "library_url": null,
+    "audio_url": null,
+    "video_url": null,
+    "transcript_url": null,
+    "streaming_url": null,
+    "purchase_url": null
+  }
+}

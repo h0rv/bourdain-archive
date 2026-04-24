@@ -1,0 +1,32 @@
+{
+  "id": "anthony-bourdain-my-family-values-the-guardian",
+  "title": "Anthony Bourdain: My family values",
+  "type": "article",
+  "date": "2013",
+  "date_precision": "year",
+  "summary": "Personal/family — The Guardian.",
+  "publication": "The Guardian",
+  "bucket": "Personal/family",
+  "tags": [
+    "about-bourdain",
+    "literature",
+    "personal-family"
+  ],
+  "people": [
+    "anthony-bourdain"
+  ],
+  "places": [],
+  "sources": [],
+  "related": [],
+  "status": "needs-review",
+  "availability": {
+    "official_url": "https://www.theguardian.com/lifeandstyle/2013/sep/27/anthony-bourdain-parts-unknown-family-values",
+    "archive_url": null,
+    "library_url": null,
+    "audio_url": null,
+    "video_url": null,
+    "transcript_url": null,
+    "streaming_url": null,
+    "purchase_url": null
+  }
+}

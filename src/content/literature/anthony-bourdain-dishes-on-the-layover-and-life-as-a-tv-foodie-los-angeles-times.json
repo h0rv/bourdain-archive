@@ -1,0 +1,32 @@
+{
+  "id": "anthony-bourdain-dishes-on-the-layover-and-life-as-a-tv-foodie-los-angeles-times",
+  "title": "Anthony Bourdain dishes on “The Layover” and life as a TV foodie",
+  "type": "interview",
+  "date": "2011-11-23",
+  "date_precision": "day",
+  "summary": "Interview — Los Angeles Times.",
+  "publication": "Los Angeles Times",
+  "bucket": "Interview",
+  "tags": [
+    "about-bourdain",
+    "literature",
+    "interview"
+  ],
+  "people": [
+    "anthony-bourdain"
+  ],
+  "places": [],
+  "sources": [],
+  "related": [],
+  "status": "needs-review",
+  "availability": {
+    "official_url": "https://www.latimes.com/archives/blogs/show-tracker/story/2011-11-23/anthony-bourdain-dishes-on-the-layover-and-life-as-a-tv-foodie",
+    "archive_url": null,
+    "library_url": null,
+    "audio_url": null,
+    "video_url": null,
+    "transcript_url": null,
+    "streaming_url": null,
+    "purchase_url": null
+  }
+}

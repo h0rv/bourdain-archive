@@ -1,0 +1,32 @@
+{
+  "id": "anthony-bourdain-the-thrillist-interview-thrillist",
+  "title": "Anthony Bourdain: The Thrillist Interview",
+  "type": "interview",
+  "date": null,
+  "date_precision": "unknown",
+  "summary": "Interview/profile — Thrillist.",
+  "publication": "Thrillist",
+  "bucket": "Interview/profile",
+  "tags": [
+    "about-bourdain",
+    "literature",
+    "interview-profile"
+  ],
+  "people": [
+    "anthony-bourdain"
+  ],
+  "places": [],
+  "sources": [],
+  "related": [],
+  "status": "needs-review",
+  "availability": {
+    "official_url": "https://www.thrillist.com/entertainment/nation/anthony-bourdain-interview-appetites-cookbook",
+    "archive_url": null,
+    "library_url": null,
+    "audio_url": null,
+    "video_url": null,
+    "transcript_url": null,
+    "streaming_url": null,
+    "purchase_url": null
+  }
+}

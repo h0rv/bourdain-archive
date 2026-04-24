@@ -1,0 +1,32 @@
+{
+  "id": "anthony-bourdain-and-the-wisdom-of-talking-to-strangers-thrillist",
+  "title": "Anthony Bourdain and the Wisdom of Talking to Strangers",
+  "type": "tribute",
+  "date": null,
+  "date_precision": "unknown",
+  "summary": "Tribute/legacy — Thrillist.",
+  "publication": "Thrillist",
+  "bucket": "Tribute/legacy",
+  "tags": [
+    "about-bourdain",
+    "literature",
+    "tribute-legacy"
+  ],
+  "people": [
+    "anthony-bourdain"
+  ],
+  "places": [],
+  "sources": [],
+  "related": [],
+  "status": "needs-review",
+  "availability": {
+    "official_url": "https://www.thrillist.com/eat/nation/remembering-anthony-bourdain",
+    "archive_url": null,
+    "library_url": null,
+    "audio_url": null,
+    "video_url": null,
+    "transcript_url": null,
+    "streaming_url": null,
+    "purchase_url": null
+  }
+}

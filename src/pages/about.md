@@ -1,7 +1,7 @@
 ---
 layout: ../layouts/BaseLayout.astro
 title: About
-description: About Bourdain Index.
+description: About Bourdain Archive.
 ---
 
 # About

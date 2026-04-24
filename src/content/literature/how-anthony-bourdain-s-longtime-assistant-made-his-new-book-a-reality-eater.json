@@ -1,0 +1,32 @@
+{
+  "id": "how-anthony-bourdain-s-longtime-assistant-made-his-new-book-a-reality-eater",
+  "title": "How Anthony Bourdain’s Longtime Assistant Made His New Book a Reality",
+  "type": "interview",
+  "date": null,
+  "date_precision": "unknown",
+  "summary": "Book/interview — Eater.",
+  "publication": "Eater",
+  "bucket": "Book/interview",
+  "tags": [
+    "about-bourdain",
+    "literature",
+    "book-interview"
+  ],
+  "people": [
+    "anthony-bourdain"
+  ],
+  "places": [],
+  "sources": [],
+  "related": [],
+  "status": "needs-review",
+  "availability": {
+    "official_url": "https://www.eater.com/22388507/anthony-bourdain-world-travel-book-laurie-woolever-interview",
+    "archive_url": null,
+    "library_url": null,
+    "audio_url": null,
+    "video_url": null,
+    "transcript_url": null,
+    "streaming_url": null,
+    "purchase_url": null
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "id": "who-was-bourdain-day-for-eater",
+  "title": "Who Was Bourdain Day For?",
+  "type": "article",
+  "date": "2019-06-27",
+  "date_precision": "day",
+  "summary": "Grief/fandom — Eater.",
+  "publication": "Eater",
+  "bucket": "Grief/fandom",
+  "tags": [
+    "about-bourdain",
+    "literature",
+    "grief-fandom",
+    "posthumous"
+  ],
+  "people": [
+    "anthony-bourdain"
+  ],
+  "places": [],
+  "sources": [],
+  "related": [],
+  "status": "needs-review",
+  "availability": {
+    "official_url": "https://www.eater.com/2019/6/27/18761641/anthony-bourdain-day-june-25-grief-mourning-fans",
+    "archive_url": null,
+    "library_url": null,
+    "audio_url": null,
+    "video_url": null,
+    "transcript_url": null,
+    "streaming_url": null,
+    "purchase_url": null
+  }
+}

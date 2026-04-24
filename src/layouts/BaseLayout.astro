@@ -6,8 +6,8 @@ interface Props {
   description?: string;
 }
 
-const siteName = 'Bourdain Index';
-const { title = siteName, description = 'Anthony Bourdain index.' } = Astro.props;
+const siteName = 'Bourdain Archive';
+const { title = siteName, description = 'Anthony Bourdain archive.' } = Astro.props;
 const pageTitle = title === siteName ? siteName : `${title} · ${siteName}`;
 const withBase = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
 const navItems = [
@@ -29,7 +29,7 @@ const navItems = [
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href={withBase('/')} aria-label="Bourdain Index home">
+      <a class="brand" href={withBase('/')} aria-label="Bourdain Archive home">
         <img
           class="brand-mark"
           src="https://d1w8c6s6gmwlek.b-cdn.net/trendyteeshop.com/overlays/389/644/38964494.png"
@@ -38,7 +38,7 @@ const navItems = [
           height="96"
         />
         <span class="brand-copy">
-          <span class="brand-name">Bourdain Index</span>
+          <span class="brand-name">Bourdain Archive</span>
           <span class="brand-kicker">cook free or die</span>
         </span>
       </a>

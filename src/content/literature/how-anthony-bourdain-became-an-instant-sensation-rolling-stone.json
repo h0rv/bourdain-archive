@@ -1,0 +1,32 @@
+{
+  "id": "how-anthony-bourdain-became-an-instant-sensation-rolling-stone",
+  "title": "How Anthony Bourdain Became an Instant Sensation",
+  "type": "article",
+  "date": null,
+  "date_precision": "unknown",
+  "summary": "Origin story — Rolling Stone.",
+  "publication": "Rolling Stone",
+  "bucket": "Origin story",
+  "tags": [
+    "about-bourdain",
+    "literature",
+    "origin-story"
+  ],
+  "people": [
+    "anthony-bourdain"
+  ],
+  "places": [],
+  "sources": [],
+  "related": [],
+  "status": "needs-review",
+  "availability": {
+    "official_url": "https://www.rollingstone.com/culture/culture-features/anthony-bourdain-chef-author-sensation-1234615054/",
+    "archive_url": null,
+    "library_url": null,
+    "audio_url": null,
+    "video_url": null,
+    "transcript_url": null,
+    "streaming_url": null,
+    "purchase_url": null
+  }
+}

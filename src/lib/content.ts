@@ -4,6 +4,7 @@ const collectionPaths: Record<string, string> = {
   works: 'works',
   episodes: 'tv',
   appearances: 'appearances',
+  literature: 'literature',
   places: 'places',
   sources: 'sources',
 };

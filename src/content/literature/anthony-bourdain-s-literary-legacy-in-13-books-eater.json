@@ -1,0 +1,33 @@
+{
+  "id": "anthony-bourdain-s-literary-legacy-in-13-books-eater",
+  "title": "Anthony Bourdain’s Literary Legacy in 13 Books",
+  "type": "essay",
+  "date": "2018-06-13",
+  "date_precision": "day",
+  "summary": "Literary legacy — Eater.",
+  "publication": "Eater",
+  "bucket": "Literary legacy",
+  "tags": [
+    "about-bourdain",
+    "literature",
+    "literary-legacy",
+    "posthumous"
+  ],
+  "people": [
+    "anthony-bourdain"
+  ],
+  "places": [],
+  "sources": [],
+  "related": [],
+  "status": "needs-review",
+  "availability": {
+    "official_url": "https://www.eater.com/2018/6/13/16774768/anthony-bourdain-books",
+    "archive_url": null,
+    "library_url": null,
+    "audio_url": null,
+    "video_url": null,
+    "transcript_url": null,
+    "streaming_url": null,
+    "purchase_url": null
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "id": "anthony-bourdain-dead-at-61-pitchfork",
+  "title": "Anthony Bourdain Dead at 61",
+  "type": "obit",
+  "date": null,
+  "date_precision": "unknown",
+  "summary": "Music/culture obit — Pitchfork.",
+  "publication": "Pitchfork",
+  "bucket": "Music/culture obit",
+  "tags": [
+    "about-bourdain",
+    "literature",
+    "music-culture-obit"
+  ],
+  "people": [
+    "anthony-bourdain"
+  ],
+  "places": [],
+  "sources": [],
+  "related": [],
+  "status": "needs-review",
+  "availability": {
+    "official_url": "https://pitchfork.com/news/anthony-bourdain-dead-at-61",
+    "archive_url": null,
+    "library_url": null,
+    "audio_url": null,
+    "video_url": null,
+    "transcript_url": null,
+    "streaming_url": null,
+    "purchase_url": null
+  }
+}

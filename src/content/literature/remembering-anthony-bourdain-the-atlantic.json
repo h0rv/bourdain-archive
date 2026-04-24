@@ -1,0 +1,32 @@
+{
+  "id": "remembering-anthony-bourdain-the-atlantic",
+  "title": "Remembering Anthony Bourdain",
+  "type": "obit",
+  "date": "2018-06",
+  "date_precision": "month",
+  "summary": "Obit/essay — The Atlantic.",
+  "publication": "The Atlantic",
+  "bucket": "Obit/essay",
+  "tags": [
+    "about-bourdain",
+    "literature",
+    "obit-essay"
+  ],
+  "people": [
+    "anthony-bourdain"
+  ],
+  "places": [],
+  "sources": [],
+  "related": [],
+  "status": "needs-review",
+  "availability": {
+    "official_url": "https://www.theatlantic.com/entertainment/archive/2018/06/remembering-anthony-bourdain/562388/",
+    "archive_url": null,
+    "library_url": null,
+    "audio_url": null,
+    "video_url": null,
+    "transcript_url": null,
+    "streaming_url": null,
+    "purchase_url": null
+  }
+}

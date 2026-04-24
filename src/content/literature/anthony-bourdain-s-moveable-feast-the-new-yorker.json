@@ -1,0 +1,32 @@
+{
+  "id": "anthony-bourdain-s-moveable-feast-the-new-yorker",
+  "title": "Anthony Bourdain’s Moveable Feast",
+  "type": "profile",
+  "date": "2017-02-13",
+  "date_precision": "day",
+  "summary": "Profile — The New Yorker.",
+  "publication": "The New Yorker",
+  "bucket": "Profile",
+  "tags": [
+    "about-bourdain",
+    "literature",
+    "profile"
+  ],
+  "people": [
+    "anthony-bourdain"
+  ],
+  "places": [],
+  "sources": [],
+  "related": [],
+  "status": "needs-review",
+  "availability": {
+    "official_url": "https://www.newyorker.com/magazine/2017/02/13/anthony-bourdains-moveable-feast",
+    "archive_url": null,
+    "library_url": null,
+    "audio_url": null,
+    "video_url": null,
+    "transcript_url": null,
+    "streaming_url": null,
+    "purchase_url": null
+  }
+}

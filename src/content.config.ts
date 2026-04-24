@@ -70,6 +70,14 @@ export const collections = {
       duration_minutes: z.number().nullable().optional(),
     }),
   }),
+  literature: defineCollection({
+    type: 'data',
+    schema: commonEntrySchema.extend({
+      type: z.enum(['article', 'essay', 'interview', 'obit', 'profile', 'review', 'tribute']),
+      publication: z.string(),
+      bucket: z.string(),
+    }),
+  }),
   places: defineCollection({ type: 'data', schema: namedEntrySchema.extend({ type: z.literal('place') }) }),
   people: defineCollection({
     type: 'data',

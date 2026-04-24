@@ -1,0 +1,33 @@
+{
+  "id": "samin-nosrat-discusses-anthony-bourdain-s-complicated-legacy-eater",
+  "title": "Samin Nosrat Discusses Anthony Bourdain’s Complicated Legacy",
+  "type": "essay",
+  "date": "2018-11-01",
+  "date_precision": "day",
+  "summary": "Legacy commentary — Eater.",
+  "publication": "Eater",
+  "bucket": "Legacy commentary",
+  "tags": [
+    "about-bourdain",
+    "literature",
+    "legacy-commentary",
+    "posthumous"
+  ],
+  "people": [
+    "anthony-bourdain"
+  ],
+  "places": [],
+  "sources": [],
+  "related": [],
+  "status": "needs-review",
+  "availability": {
+    "official_url": "https://www.eater.com/2018/11/1/18049550/samin-nosrat-on-anthony-bourdain-netflix-podcast",
+    "archive_url": null,
+    "library_url": null,
+    "audio_url": null,
+    "video_url": null,
+    "transcript_url": null,
+    "streaming_url": null,
+    "purchase_url": null
+  }
+}

@@ -7,10 +7,12 @@ import { formatType, sortByDateDesc } from '../lib/content';
 const works = await getCollection('works');
 const shows = (await getCollection('episodes')).filter((entry) => entry.data.type === 'show');
 const appearances = await getCollection('appearances');
+const literature = await getCollection('literature');
 const entries = [
-  ...works.map((entry) => ({ entry, collection: 'works' })),
-  ...shows.map((entry) => ({ entry, collection: 'episodes' })),
-  ...appearances.map((entry) => ({ entry, collection: 'appearances' })),
+  ...works.map((entry) => ({ entry, collection: 'works', authorship: 'by' })),
+  ...shows.map((entry) => ({ entry, collection: 'episodes', authorship: 'by' })),
+  ...appearances.map((entry) => ({ entry, collection: 'appearances', authorship: 'by' })),
+  ...literature.map((entry) => ({ entry, collection: 'literature', authorship: 'about' })),
 ].sort((a, b) => sortByDateDesc(a.entry, b.entry));
 const filters = Array.from(new Set(entries.map(({ entry }) => entry.data.type))).sort();
 const deathDate = '2018-06-08';
@@ -22,14 +24,16 @@ const isPosthumous = (entry) => {
   return entry.data.date > deathDate;
 };
 ---
-<BaseLayout title="Bourdain Index">
+<BaseLayout title="Bourdain Archive">
   <section class="hero">
-    <h1>Bourdain Index</h1>
+    <h1>Bourdain Archive</h1>
   </section>
 
   <div class="controls" aria-label="View controls">
     <div class="pill-row" aria-label="Filters">
-      <button class="pill is-active" type="button" data-filter-clear>All</button>
+      <button class="pill" type="button" data-filter-clear>All</button>
+      <button class="pill is-active" type="button" data-filter-author="by">By Bourdain</button>
+      <button class="pill" type="button" data-filter-author="about">About Bourdain</button>
       <button class="pill" type="button" data-filter-facet="posthumous">Posthumous</button>
       {filters.map((filter) => (
         <button class="pill" type="button" data-filter-type={filter}>{formatType(filter)}</button>
@@ -42,8 +46,8 @@ const isPosthumous = (entry) => {
   </div>
 
   <ol class="stream" data-stream data-view="timeline">
-    {entries.map(({ entry, collection }) => (
-      <li class="stream-item" data-type={entry.data.type} data-posthumous={isPosthumous(entry) ? 'true' : 'false'}>
+    {entries.map(({ entry, collection, authorship }) => (
+      <li class="stream-item" data-type={entry.data.type} data-author={authorship} data-posthumous={isPosthumous(entry) ? 'true' : 'false'}>
         <EntryCard entry={entry} collection={collection} />
       </li>
     ))}
@@ -53,6 +57,7 @@ const isPosthumous = (entry) => {
     const stream = document.querySelector('[data-stream]');
     const clearButton = document.querySelector('[data-filter-clear]');
     const typeButtons = document.querySelectorAll('[data-filter-type]');
+    const authorButtons = document.querySelectorAll('[data-filter-author]');
     const facetButtons = document.querySelectorAll('[data-filter-facet]');
     const viewButtons = document.querySelectorAll('[data-view]');
 
@@ -60,32 +65,39 @@ const isPosthumous = (entry) => {
       const activeTypes = Array.from(typeButtons)
         .filter((button) => button.classList.contains('is-active'))
         .map((button) => button.getAttribute('data-filter-type'));
+      const activeAuthors = Array.from(authorButtons)
+        .filter((button) => button.classList.contains('is-active'))
+        .map((button) => button.getAttribute('data-filter-author'));
       const posthumousOnly = Array.from(facetButtons).some(
         (button) => button.getAttribute('data-filter-facet') === 'posthumous' && button.classList.contains('is-active'),
       );
-      const hasFilters = activeTypes.length > 0 || posthumousOnly;
+      const hasFilters = activeTypes.length > 0 || activeAuthors.length > 0 || posthumousOnly;
 
       clearButton?.classList.toggle('is-active', !hasFilters);
 
       document.querySelectorAll('.stream-item').forEach((item) => {
         const matchesType = activeTypes.length === 0 || activeTypes.includes(item.getAttribute('data-type'));
+        const matchesAuthor = activeAuthors.length === 0 || activeAuthors.includes(item.getAttribute('data-author'));
         const matchesPosthumous = !posthumousOnly || item.getAttribute('data-posthumous') === 'true';
-        item.hidden = !matchesType || !matchesPosthumous;
+        item.hidden = !matchesType || !matchesAuthor || !matchesPosthumous;
       });
     };
 
     clearButton?.addEventListener('click', () => {
       typeButtons.forEach((button) => button.classList.remove('is-active'));
+      authorButtons.forEach((button) => button.classList.remove('is-active'));
       facetButtons.forEach((button) => button.classList.remove('is-active'));
       updateFilters();
     });
 
-    [...typeButtons, ...facetButtons].forEach((button) => {
+    [...typeButtons, ...authorButtons, ...facetButtons].forEach((button) => {
       button.addEventListener('click', () => {
         button.classList.toggle('is-active');
         updateFilters();
       });
     });
+
+    updateFilters();
 
     viewButtons.forEach((button) => {
       button.addEventListener('click', () => {

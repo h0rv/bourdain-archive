@@ -1,0 +1,33 @@
+{
+  "id": "parts-unknown-producer-sandra-zweig-on-anthony-bourdain-s-tv-legacy-eater",
+  "title": "“Parts Unknown” Producer Sandra Zweig on Anthony Bourdain’s TV Legacy",
+  "type": "interview",
+  "date": "2018-11-09",
+  "date_precision": "day",
+  "summary": "TV legacy interview — Eater.",
+  "publication": "Eater",
+  "bucket": "TV legacy interview",
+  "tags": [
+    "about-bourdain",
+    "literature",
+    "tv-legacy-interview",
+    "posthumous"
+  ],
+  "people": [
+    "anthony-bourdain"
+  ],
+  "places": [],
+  "sources": [],
+  "related": [],
+  "status": "needs-review",
+  "availability": {
+    "official_url": "https://www.eater.com/2018/11/9/18080354/anthony-bourdain-parts-unknown-sandra-zweig-interview",
+    "archive_url": null,
+    "library_url": null,
+    "audio_url": null,
+    "video_url": null,
+    "transcript_url": null,
+    "streaming_url": null,
+    "purchase_url": null
+  }
+}

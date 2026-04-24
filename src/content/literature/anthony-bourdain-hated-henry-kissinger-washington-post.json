@@ -1,0 +1,33 @@
+{
+  "id": "anthony-bourdain-hated-henry-kissinger-washington-post",
+  "title": "Anthony Bourdain hated Henry Kissinger",
+  "type": "essay",
+  "date": "2023-11-30",
+  "date_precision": "day",
+  "summary": "Legacy/politics — Washington Post.",
+  "publication": "Washington Post",
+  "bucket": "Legacy/politics",
+  "tags": [
+    "about-bourdain",
+    "literature",
+    "legacy-politics",
+    "posthumous"
+  ],
+  "people": [
+    "anthony-bourdain"
+  ],
+  "places": [],
+  "sources": [],
+  "related": [],
+  "status": "needs-review",
+  "availability": {
+    "official_url": "https://www.washingtonpost.com/food/2023/11/30/henry-kissinger-anthony-bourdain-cambodia/",
+    "archive_url": null,
+    "library_url": null,
+    "audio_url": null,
+    "video_url": null,
+    "transcript_url": null,
+    "streaming_url": null,
+    "purchase_url": null
+  }
+}

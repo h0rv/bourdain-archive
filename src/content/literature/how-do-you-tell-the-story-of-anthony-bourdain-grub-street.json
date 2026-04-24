@@ -1,0 +1,33 @@
+{
+  "id": "how-do-you-tell-the-story-of-anthony-bourdain-grub-street",
+  "title": "How Do You Tell the Story of Anthony Bourdain?",
+  "type": "interview",
+  "date": "2021-07",
+  "date_precision": "month",
+  "summary": "Documentary interview — Grub Street.",
+  "publication": "Grub Street",
+  "bucket": "Documentary interview",
+  "tags": [
+    "about-bourdain",
+    "literature",
+    "documentary-interview",
+    "posthumous"
+  ],
+  "people": [
+    "anthony-bourdain"
+  ],
+  "places": [],
+  "sources": [],
+  "related": [],
+  "status": "needs-review",
+  "availability": {
+    "official_url": "https://www.grubstreet.com/2021/07/director-morgan-neville-roadrunner-anthony-bourdain-documentary.html",
+    "archive_url": null,
+    "library_url": null,
+    "audio_url": null,
+    "video_url": null,
+    "transcript_url": null,
+    "streaming_url": null,
+    "purchase_url": null
+  }
+}

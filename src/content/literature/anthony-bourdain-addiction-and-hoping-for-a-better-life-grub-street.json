@@ -1,0 +1,33 @@
+{
+  "id": "anthony-bourdain-addiction-and-hoping-for-a-better-life-grub-street",
+  "title": "Anthony Bourdain, Addiction, and Hoping for a Better Life",
+  "type": "essay",
+  "date": "2019-06",
+  "date_precision": "month",
+  "summary": "Essay — Grub Street.",
+  "publication": "Grub Street",
+  "bucket": "Essay",
+  "tags": [
+    "about-bourdain",
+    "literature",
+    "essay",
+    "posthumous"
+  ],
+  "people": [
+    "anthony-bourdain"
+  ],
+  "places": [],
+  "sources": [],
+  "related": [],
+  "status": "needs-review",
+  "availability": {
+    "official_url": "https://www.grubstreet.com/2019/06/anthony-bourdain-addiction.html",
+    "archive_url": null,
+    "library_url": null,
+    "audio_url": null,
+    "video_url": null,
+    "transcript_url": null,
+    "streaming_url": null,
+    "purchase_url": null
+  }
+}
