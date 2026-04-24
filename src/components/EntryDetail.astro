@@ -1,7 +1,7 @@
 ---
 import linkPreviewCache from '../../archive/derived/link-previews.json';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { availabilityBadges, entryHref, entryTitle, findByDataId, formatDate, formatType, previewForUrl, statusClass } from '../lib/content';
+import { availabilityBadges, entryHref, entryTitle, findByDataId, formatDate, formatType, previewForUrl, statusClass, visibleStatus } from '../lib/content';
 
 interface Props {
   entry: any;
@@ -17,6 +17,7 @@ const sourceRefs = (data.sources ?? []).map((id: string) => findByDataId(sources
 const relatedRefs = (data.related ?? []).map((id: string) => relatedEntries.find((item: any) => item.entry.data.id === id)).filter(Boolean);
 const badges = availabilityBadges(data.availability);
 const availabilityPreviews = badges.map((badge) => ({ ...badge, preview: previewForUrl(badge.url, linkPreviewCache.previews) }));
+const displayStatus = visibleStatus(data.status);
 ---
 <BaseLayout title={title} description={data.summary}>
   <article>
@@ -24,8 +25,7 @@ const availabilityPreviews = badges.map((badge) => ({ ...badge, preview: preview
     <p class="meta">
       {formatType(data.type)}
       {data.date ? ` · ${formatDate(data.date, data.date_precision)}` : ''}
-      {' · '}
-      <span class={`badge ${statusClass(data.status)}`}>{data.status}</span>
+      {displayStatus && <> · <span class={`badge ${statusClass(displayStatus)}`}>{displayStatus}</span></>}
     </p>
 
     <p class="lede">{data.summary}</p>
@@ -47,7 +47,7 @@ const availabilityPreviews = badges.map((badge) => ({ ...badge, preview: preview
                   )}
                 </span>
                 <span class="link-preview-copy">
-                  <strong>{badge.preview.title ?? badge.label}</strong>
+                  <strong>{badge.label}</strong>
                   {badge.preview.host && <span>{badge.preview.host}</span>}
                   <code>{badge.url}</code>
                   <span class="link-preview-actions">
@@ -96,7 +96,7 @@ const availabilityPreviews = badges.map((badge) => ({ ...badge, preview: preview
       {sourceRefs.length > 0 ? (
         <ul class="clean-list">
           {sourceRefs.map((source: any) => (
-            <li><a href={source.data.url}>{source.data.title}</a> <span class="meta">({source.data.type})</span></li>
+            <li><a href={entryHref('sources', source.data.id)}>{source.data.title}</a> <span class="meta">({source.data.type})</span></li>
           ))}
         </ul>
       ) : (

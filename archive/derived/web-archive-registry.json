@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-24T18:35:00.045Z",
-  "count": 493,
+  "generated_at": "2026-04-24T18:42:19.286Z",
+  "count": 491,
   "registry": {
     "https://92ytalks.libsyn.com/webpage/2015/11": {
       "url": "https://92ytalks.libsyn.com/webpage/2015/11",
@@ -1114,22 +1114,6 @@
         }
       ]
     },
-    "https://explorepartsunknown.com/detroit/bourdains-field-notes-detroit/": {
-      "url": "https://explorepartsunknown.com/detroit/bourdains-field-notes-detroit/",
-      "latest_url": "https://web.archive.org/web/2/https://explorepartsunknown.com/detroit/bourdains-field-notes-detroit/",
-      "calendar_url": "https://web.archive.org/web/*/https://explorepartsunknown.com/detroit/bourdains-field-notes-detroit/",
-      "save_url": "https://web.archive.org/save/https://explorepartsunknown.com/detroit/bourdains-field-notes-detroit/",
-      "refs": [
-        {
-          "owner": "src/content/sources/explore-parts-unknown-detroit.yaml",
-          "field": "url"
-        },
-        {
-          "owner": "src/content/sources/field-notes-detroit.yaml",
-          "field": "url"
-        }
-      ]
-    },
     "https://explorepartsunknown.com/armenia/he-didnt-buy-hypocrisy": {
       "url": "https://explorepartsunknown.com/armenia/he-didnt-buy-hypocrisy",
       "latest_url": "https://web.archive.org/web/2/https://explorepartsunknown.com/armenia/he-didnt-buy-hypocrisy",
@@ -1342,6 +1326,18 @@
       "refs": [
         {
           "owner": "src/content/sources/field-notes-cuba.yaml",
+          "field": "url"
+        }
+      ]
+    },
+    "https://explorepartsunknown.com/detroit/bourdains-field-notes-detroit/": {
+      "url": "https://explorepartsunknown.com/detroit/bourdains-field-notes-detroit/",
+      "latest_url": "https://web.archive.org/web/2/https://explorepartsunknown.com/detroit/bourdains-field-notes-detroit/",
+      "calendar_url": "https://web.archive.org/web/*/https://explorepartsunknown.com/detroit/bourdains-field-notes-detroit/",
+      "save_url": "https://web.archive.org/save/https://explorepartsunknown.com/detroit/bourdains-field-notes-detroit/",
+      "refs": [
+        {
+          "owner": "src/content/sources/field-notes-detroit.yaml",
           "field": "url"
         }
       ]
@@ -3430,18 +3426,6 @@
       "refs": [
         {
           "owner": "src/content/sources/raw-craft-youtube.yaml",
-          "field": "url"
-        }
-      ]
-    },
-    "http://reddit.com/r/IAmA/comments/197ji0/i_am_anthony_bourdain_ask_me_anything": {
-      "url": "http://reddit.com/r/IAmA/comments/197ji0/i_am_anthony_bourdain_ask_me_anything",
-      "latest_url": "https://web.archive.org/web/2/http://reddit.com/r/IAmA/comments/197ji0/i_am_anthony_bourdain_ask_me_anything",
-      "calendar_url": "https://web.archive.org/web/*/http://reddit.com/r/IAmA/comments/197ji0/i_am_anthony_bourdain_ask_me_anything",
-      "save_url": "https://web.archive.org/save/http://reddit.com/r/IAmA/comments/197ji0/i_am_anthony_bourdain_ask_me_anything",
-      "refs": [
-        {
-          "owner": "src/content/sources/reddit-ama-2013-bourdain.yaml",
           "field": "url"
         }
       ]
@@ -5614,18 +5598,6 @@
       "refs": [
         {
           "owner": "src/content/sources/wtf-752-bourdain.yaml",
-          "field": "url"
-        }
-      ]
-    },
-    "https://www.wtfpod.com/podcast/repost-anthony-bourdain-from-2011": {
-      "url": "https://www.wtfpod.com/podcast/repost-anthony-bourdain-from-2011",
-      "latest_url": "https://web.archive.org/web/2/https://www.wtfpod.com/podcast/repost-anthony-bourdain-from-2011",
-      "calendar_url": "https://web.archive.org/web/*/https://www.wtfpod.com/podcast/repost-anthony-bourdain-from-2011",
-      "save_url": "https://web.archive.org/save/https://www.wtfpod.com/podcast/repost-anthony-bourdain-from-2011",
-      "refs": [
-        {
-          "owner": "src/content/sources/wtfpod-repost-anthony-bourdain-2011.yaml",
           "field": "url"
         }
       ]

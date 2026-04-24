@@ -101,6 +101,11 @@ export function statusClass(status: string): string {
   return `status-${status}`;
 }
 
+export function visibleStatus(status?: string | null): string | undefined {
+  if (!status || status === 'confirmed') return undefined;
+  return status;
+}
+
 export function formatDate(date?: string | null, precision?: string): string {
   if (!date) return 'Undated';
   if (precision === 'year') return date.slice(0, 4);
@@ -209,6 +214,6 @@ export function previewForEntry(entry: any, cache?: Record<string, any>) {
     image: siteAssetUrl(data.image_url) ?? urlPreview.image,
     favicon: urlPreview.favicon,
     archive: urlPreview.archive,
-    label: data.publication ?? urlPreview.title ?? urlPreview.host ?? data.title ?? formatType(data.type),
+    label: data.publication ?? data.title ?? urlPreview.title ?? urlPreview.host ?? formatType(data.type),
   };
 }

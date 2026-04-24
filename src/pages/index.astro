@@ -10,13 +10,22 @@ const appearances = await getCollection('appearances');
 const literature = await getCollection('literature');
 const events = await getCollection('events');
 const sources = await getCollection('sources');
+const curatedEntries = [
+  ...events,
+  ...works,
+  ...shows,
+  ...appearances,
+  ...literature,
+];
+const curatedSourceIds = new Set(curatedEntries.flatMap((entry) => entry.data.sources ?? []));
+const timelineSources = sources.filter((entry) => !curatedSourceIds.has(entry.data.id));
 const entries = [
   ...events.map((entry) => ({ entry, collection: 'events', authorship: 'by', sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
   ...works.map((entry) => ({ entry, collection: 'works', authorship: 'by', sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
   ...shows.map((entry) => ({ entry, collection: 'episodes', authorship: 'by', sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
   ...appearances.map((entry) => ({ entry, collection: 'appearances', authorship: 'by', sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
   ...literature.map((entry) => ({ entry, collection: 'literature', authorship: 'about', sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
-  ...sources.map((entry) => ({ entry, collection: 'sources', authorship: 'by', sourceGroup: sourceGroupFor(entry.data), timelineDate: sourceTimelineDate(entry.data) })),
+  ...timelineSources.map((entry) => ({ entry, collection: 'sources', authorship: 'by', sourceGroup: sourceGroupFor(entry.data), timelineDate: sourceTimelineDate(entry.data) })),
 ].sort((a, b) => {
   const left = { data: { date: a.timelineDate.date } };
   const right = { data: { date: b.timelineDate.date } };
@@ -160,6 +169,7 @@ const searchableText = (entry: any, collection: string, authorship: string, sour
     const totalItems = items.length;
     const STORAGE_KEY = 'bourdain-archive.timeline-controls.v2';
     let sortDirection = 'desc';
+    let renderedSortDirection = '';
 
     const activeValues = (buttons: NodeListOf<HTMLButtonElement>, attribute: string) =>
       Array.from(buttons)
@@ -246,6 +256,12 @@ const searchableText = (entry: any, collection: string, authorship: string, sour
       });
     };
 
+    const renderSortedItems = () => {
+      if (!stream || renderedSortDirection === sortDirection) return;
+      items.sort(compareItems).forEach((item) => stream.append(item));
+      renderedSortDirection = sortDirection;
+    };
+
     const updateControls = () => {
       const activeTypes = activeValues(typeButtons, 'data-filter-type');
       const activeAuthors = activeValues(authorButtons, 'data-filter-author');
@@ -263,7 +279,7 @@ const searchableText = (entry: any, collection: string, authorship: string, sour
       clearButton?.classList.toggle('is-active', !hasScopeFilters);
       sourceAllButton?.classList.toggle('is-active', activeSources.length === sourceButtons.length);
       stream?.querySelectorAll('.timeline-year').forEach((marker) => marker.remove());
-      items.sort(compareItems).forEach((item) => stream?.append(item));
+      renderSortedItems();
 
       let visibleCount = 0;
       items.forEach((item) => {

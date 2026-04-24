@@ -1,6 +1,6 @@
 ---
 import linkPreviewCache from '../../archive/derived/link-previews.json';
-import { availabilityBadges, entryHref, entryTitle, formatDate, formatType, previewForEntry, sourceTimelineDate, statusClass } from '../lib/content';
+import { availabilityBadges, entryHref, entryTitle, formatDate, formatType, previewForEntry, sourceTimelineDate, statusClass, visibleStatus } from '../lib/content';
 
 interface Props {
   entry: any;
@@ -17,6 +17,7 @@ const isWebPreview = !data.image_url && Boolean(preview.url);
 const timelineDate = collection === 'sources' ? sourceTimelineDate(data) : { date: data.date, precision: data.date_precision };
 const summary = data.summary ?? data.notes ?? 'Source record.';
 const status = data.status ?? 'confirmed';
+const displayStatus = visibleStatus(status);
 ---
 <article class="card" data-entry data-type={data.type} data-collection={collection}>
   <a class={`card-media ${isWebPreview ? 'is-web-preview' : ''}`} href={href} aria-label={entryTitle(entry)}>
@@ -33,7 +34,8 @@ const status = data.status ?? 'confirmed';
   <div class="card-body">
     <h2><a href={href}>{entryTitle(entry)}</a></h2>
     <p class="meta">
-      {formatType(data.type)} · {formatDate(timelineDate.date, timelineDate.precision)} · <span class={`badge ${statusClass(status)}`}>{status}</span>
+      {formatType(data.type)} · {formatDate(timelineDate.date, timelineDate.precision)}
+      {displayStatus && <> · <span class={`badge ${statusClass(displayStatus)}`}>{displayStatus}</span></>}
     </p>
     {showSummary && <p class="summary">{summary}</p>}
     {data.tags?.length > 0 && (

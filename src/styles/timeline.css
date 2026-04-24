@@ -18,6 +18,12 @@
   position: relative;
 }
 
+.stream-item,
+.card-list > .card {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 14rem;
+}
+
 .stream-item::before,
 .card-list > .card::before,
 .detail-box::before {

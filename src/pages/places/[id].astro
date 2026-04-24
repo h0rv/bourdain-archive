@@ -1,7 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { entryHref, entryTitle, findByDataId, formatDate, formatType, statusClass } from '../../lib/content';
+import { entryHref, entryTitle, findByDataId, formatDate, formatType, statusClass, visibleStatus } from '../../lib/content';
 
 export async function getStaticPaths() {
   const places = await getCollection('places');
@@ -25,11 +25,12 @@ export async function getStaticPaths() {
 const { entry, sources, linkedEntries } = Astro.props;
 const data = entry.data;
 const sourceRefs = (data.sources ?? []).map((id: string) => findByDataId(sources, id)).filter(Boolean);
+const displayStatus = visibleStatus(data.status);
 ---
 <BaseLayout title={data.name} description={data.summary}>
   <article>
     <h1 class="page-title">{data.name}</h1>
-    <p class="meta">Place · <span class={`badge ${statusClass(data.status)}`}>{data.status}</span></p>
+    <p class="meta">Place{displayStatus && <> · <span class={`badge ${statusClass(displayStatus)}`}>{displayStatus}</span></>}</p>
     <p class="lede">{data.summary}</p>
 
     {data.tags?.length > 0 && (
@@ -62,7 +63,7 @@ const sourceRefs = (data.sources ?? []).map((id: string) => findByDataId(sources
       {sourceRefs.length > 0 ? (
         <ul class="clean-list">
           {sourceRefs.map((source: any) => (
-            <li><a href={source.data.url}>{source.data.title}</a> <span class="meta">({source.data.type})</span></li>
+            <li><a href={entryHref('sources', source.data.id)}>{source.data.title}</a> <span class="meta">({source.data.type})</span></li>
           ))}
         </ul>
       ) : (
