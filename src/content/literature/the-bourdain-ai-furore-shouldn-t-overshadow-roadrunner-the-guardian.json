@@ -2,8 +2,8 @@
   "id": "the-bourdain-ai-furore-shouldn-t-overshadow-roadrunner-the-guardian",
   "title": "The Bourdain AI furore shouldn’t overshadow Roadrunner",
   "type": "review",
-  "date": "2021",
-  "date_precision": "year",
+  "date": "2021-07-21",
+  "date_precision": "day",
   "summary": "Documentary review — The Guardian.",
   "publication": "The Guardian",
   "bucket": "Documentary review",
@@ -17,7 +17,9 @@
     "anthony-bourdain"
   ],
   "places": [],
-  "sources": [],
+  "sources": [
+    "the-bourdain-ai-furore-shouldn-t-overshadow-roadrunner-the-guardian"
+  ],
   "related": [],
   "status": "needs-review",
   "availability": {

@@ -71,6 +71,7 @@ function isSkippable(url) {
     const parsed = new URL(url);
     const host = parsed.hostname.replace(/^www\./, '');
     if (host === 'covers.openlibrary.org') return true;
+    if (host === 'openlibrary.org' && parsed.pathname === '/search') return true;
     if (host === 'i.ytimg.com') return true;
     if (host === 'google.com' || host.endsWith('.google.com')) return true;
     return false;
@@ -188,7 +189,8 @@ async function runQueue(items, worker) {
 
 const urls = await contentUrls();
 const existing = await loadExisting();
-const toFetch = REFRESH ? urls : urls.filter((url) => !existing[url]);
+const currentExisting = Object.fromEntries(Object.entries(existing).filter(([url]) => urls.includes(url)));
+const toFetch = REFRESH ? urls : urls.filter((url) => !currentExisting[url]);
 console.log(`preview urls: ${urls.length}; fetching: ${toFetch.length}`);
 
 const fetched = await runQueue(toFetch, async (url, index) => {
@@ -198,7 +200,7 @@ const fetched = await runQueue(toFetch, async (url, index) => {
   return preview;
 });
 
-const previews = { ...existing };
+const previews = { ...currentExisting };
 for (const preview of fetched) previews[preview.url] = preview;
 
 await mkdir(dirname(OUT), { recursive: true });

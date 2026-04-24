@@ -2,8 +2,8 @@
   "id": "how-anthony-bourdain-forever-changed-food-writing-grub-street",
   "title": "How Anthony Bourdain Forever Changed Food Writing",
   "type": "essay",
-  "date": "2018-06",
-  "date_precision": "month",
+  "date": "2018-06-08",
+  "date_precision": "day",
   "summary": "Legacy essay — Grub Street.",
   "publication": "Grub Street",
   "bucket": "Legacy essay",
@@ -16,7 +16,9 @@
     "anthony-bourdain"
   ],
   "places": [],
-  "sources": [],
+  "sources": [
+    "how-anthony-bourdain-forever-changed-food-writing-grub-street"
+  ],
   "related": [],
   "status": "needs-review",
   "availability": {

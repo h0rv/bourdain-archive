@@ -2,8 +2,8 @@
   "id": "how-do-you-tell-the-story-of-anthony-bourdain-grub-street",
   "title": "How Do You Tell the Story of Anthony Bourdain?",
   "type": "interview",
-  "date": "2021-07",
-  "date_precision": "month",
+  "date": "2021-07-13",
+  "date_precision": "day",
   "summary": "Documentary interview — Grub Street.",
   "publication": "Grub Street",
   "bucket": "Documentary interview",
@@ -17,7 +17,9 @@
     "anthony-bourdain"
   ],
   "places": [],
-  "sources": [],
+  "sources": [
+    "how-do-you-tell-the-story-of-anthony-bourdain-grub-street"
+  ],
   "related": [],
   "status": "needs-review",
   "availability": {

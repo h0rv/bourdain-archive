@@ -1,8 +1,8 @@
 id: nerdist-podcast-528
 title: The Nerdist Podcast 528
 type: podcast
-date: "2014"
-date_precision: year
+date: "2014-06-02"
+date_precision: day
 host: Chris Hardwick
 summary: Nerdist Podcast appearance with Bourdain discussing television, travel, writing, and food culture.
 tags: [podcast, travel, food-media]

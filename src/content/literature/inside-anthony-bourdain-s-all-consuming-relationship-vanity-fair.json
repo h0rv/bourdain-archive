@@ -2,8 +2,8 @@
   "id": "inside-anthony-bourdain-s-all-consuming-relationship-vanity-fair",
   "title": "Inside Anthony Bourdain’s All-Consuming Relationship",
   "type": "article",
-  "date": "2021-09",
-  "date_precision": "month",
+  "date": "2021-09-23",
+  "date_precision": "day",
   "summary": "Excerpt/oral bio — Vanity Fair.",
   "publication": "Vanity Fair",
   "bucket": "Excerpt/oral bio",
@@ -17,7 +17,9 @@
     "anthony-bourdain"
   ],
   "places": [],
-  "sources": [],
+  "sources": [
+    "inside-anthony-bourdain-s-all-consuming-relationship-vanity-fair"
+  ],
   "related": [],
   "status": "needs-review",
   "availability": {

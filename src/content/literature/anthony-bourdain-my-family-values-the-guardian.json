@@ -2,8 +2,8 @@
   "id": "anthony-bourdain-my-family-values-the-guardian",
   "title": "Anthony Bourdain: My family values",
   "type": "article",
-  "date": "2013",
-  "date_precision": "year",
+  "date": "2013-09-27",
+  "date_precision": "day",
   "summary": "Personal/family — The Guardian.",
   "publication": "The Guardian",
   "bucket": "Personal/family",
@@ -16,7 +16,9 @@
     "anthony-bourdain"
   ],
   "places": [],
-  "sources": [],
+  "sources": [
+    "anthony-bourdain-my-family-values-the-guardian"
+  ],
   "related": [],
   "status": "needs-review",
   "availability": {

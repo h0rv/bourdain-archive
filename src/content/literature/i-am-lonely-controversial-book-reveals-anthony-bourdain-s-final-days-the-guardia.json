@@ -2,8 +2,8 @@
   "id": "i-am-lonely-controversial-book-reveals-anthony-bourdain-s-final-days-the-guardia",
   "title": "“I am lonely”: controversial book reveals Anthony Bourdain’s final days",
   "type": "article",
-  "date": "2022",
-  "date_precision": "year",
+  "date": "2022-10-01",
+  "date_precision": "day",
   "summary": "Book controversy — The Guardian.",
   "publication": "The Guardian",
   "bucket": "Book controversy",
@@ -17,7 +17,9 @@
     "anthony-bourdain"
   ],
   "places": [],
-  "sources": [],
+  "sources": [
+    "i-am-lonely-controversial-book-reveals-anthony-bourdain-s-final-days-the-guardia"
+  ],
   "related": [],
   "status": "needs-review",
   "availability": {

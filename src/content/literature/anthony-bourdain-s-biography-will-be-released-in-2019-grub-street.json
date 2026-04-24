@@ -2,8 +2,8 @@
   "id": "anthony-bourdain-s-biography-will-be-released-in-2019-grub-street",
   "title": "Anthony Bourdain’s Biography Will Be Released in 2019",
   "type": "article",
-  "date": "2018-06",
-  "date_precision": "month",
+  "date": "2018-06-27",
+  "date_precision": "day",
   "summary": "Bio news — Grub Street.",
   "publication": "Grub Street",
   "bucket": "Bio news",
@@ -16,7 +16,9 @@
     "anthony-bourdain"
   ],
   "places": [],
-  "sources": [],
+  "sources": [
+    "anthony-bourdain-s-biography-will-be-released-in-2019-grub-street"
+  ],
   "related": [],
   "status": "needs-review",
   "availability": {

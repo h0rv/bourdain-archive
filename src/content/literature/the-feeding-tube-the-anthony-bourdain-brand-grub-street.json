@@ -2,8 +2,8 @@
   "id": "the-feeding-tube-the-anthony-bourdain-brand-grub-street",
   "title": "The Feeding Tube: The Anthony Bourdain Brand",
   "type": "essay",
-  "date": "2012-04",
-  "date_precision": "month",
+  "date": "2012-04-06",
+  "date_precision": "day",
   "summary": "Media/brand essay — Grub Street.",
   "publication": "Grub Street",
   "bucket": "Media/brand essay",
@@ -16,7 +16,9 @@
     "anthony-bourdain"
   ],
   "places": [],
-  "sources": [],
+  "sources": [
+    "the-feeding-tube-the-anthony-bourdain-brand-grub-street"
+  ],
   "related": [],
   "status": "needs-review",
   "availability": {

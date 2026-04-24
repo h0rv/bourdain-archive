@@ -2,8 +2,8 @@
   "id": "laurie-woolever-on-food-addiction-and-working-with-anthony-bourdain-the-guardian",
   "title": "Laurie Woolever on food, addiction, and working with Anthony Bourdain",
   "type": "article",
-  "date": "2025",
-  "date_precision": "year",
+  "date": "2025-04-06",
+  "date_precision": "day",
   "summary": "Personal memoir/Bourdain-adjacent — The Guardian.",
   "publication": "The Guardian",
   "bucket": "Personal memoir/Bourdain-adjacent",
@@ -17,7 +17,9 @@
     "anthony-bourdain"
   ],
   "places": [],
-  "sources": [],
+  "sources": [
+    "laurie-woolever-on-food-addiction-and-working-with-anthony-bourdain-the-guardian"
+  ],
   "related": [],
   "status": "needs-review",
   "availability": {

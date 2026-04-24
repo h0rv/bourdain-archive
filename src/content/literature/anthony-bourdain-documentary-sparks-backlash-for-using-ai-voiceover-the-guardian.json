@@ -2,8 +2,8 @@
   "id": "anthony-bourdain-documentary-sparks-backlash-for-using-ai-voiceover-the-guardian",
   "title": "Anthony Bourdain documentary sparks backlash for using AI voiceover",
   "type": "article",
-  "date": "2021",
-  "date_precision": "year",
+  "date": "2021-07-16",
+  "date_precision": "day",
   "summary": "Documentary/AI — The Guardian.",
   "publication": "The Guardian",
   "bucket": "Documentary/AI",
@@ -17,7 +17,9 @@
     "anthony-bourdain"
   ],
   "places": [],
-  "sources": [],
+  "sources": [
+    "anthony-bourdain-documentary-sparks-backlash-for-using-ai-voiceover-the-guardian"
+  ],
   "related": [],
   "status": "needs-review",
   "availability": {
