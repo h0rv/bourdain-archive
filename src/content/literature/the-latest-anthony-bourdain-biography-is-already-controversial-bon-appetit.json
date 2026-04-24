@@ -2,8 +2,8 @@
   "id": "the-latest-anthony-bourdain-biography-is-already-controversial-bon-appetit",
   "title": "The Latest Anthony Bourdain Biography Is Already Controversial",
   "type": "article",
-  "date": null,
-  "date_precision": "unknown",
+  "date": "2022-09-27",
+  "date_precision": "day",
   "summary": "Bio controversy — Bon Appétit.",
   "publication": "Bon Appétit",
   "bucket": "Bio controversy",
@@ -16,12 +16,14 @@
     "anthony-bourdain"
   ],
   "places": [],
-  "sources": [],
+  "sources": [
+    "anthony-bourdain-biography-controversy-bon-appetit"
+  ],
   "related": [],
   "status": "needs-review",
   "availability": {
     "official_url": "https://www.bonappetit.com/story/anthony-bourdain-biography-controversy",
-    "archive_url": null,
+    "archive_url": "https://web.archive.org/web/2/https://www.bonappetit.com/story/anthony-bourdain-biography-controversy",
     "library_url": null,
     "audio_url": null,
     "video_url": null,

@@ -2,8 +2,8 @@
   "id": "eric-ripert-speaks-out-after-finding-anthony-bourdain-dead-time",
   "title": "Eric Ripert Speaks Out After Finding Anthony Bourdain Dead",
   "type": "tribute",
-  "date": null,
-  "date_precision": "unknown",
+  "date": "2018-06-08",
+  "date_precision": "day",
   "summary": "Memorial statement — Time.",
   "publication": "Time",
   "bucket": "Memorial statement",
@@ -16,12 +16,14 @@
     "anthony-bourdain"
   ],
   "places": [],
-  "sources": [],
+  "sources": [
+    "eric-ripert-statement-anthony-bourdain-death-time"
+  ],
   "related": [],
   "status": "needs-review",
   "availability": {
     "official_url": "https://time.com/5306636/eric-ripert-statement-anthony-bourdain-death/",
-    "archive_url": null,
+    "archive_url": "https://web.archive.org/web/2/https://time.com/5306636/eric-ripert-statement-anthony-bourdain-death/",
     "library_url": null,
     "audio_url": null,
     "video_url": null,

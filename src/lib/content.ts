@@ -21,6 +21,69 @@ const availabilityFields = [
   ['purchase_url', 'Purchase'],
 ] as const;
 
+export const sourceGroups = [
+  { id: 'curated', label: 'Curated entries' },
+  { id: 'tumblr', label: 'Tumblr' },
+  { id: 'medium', label: 'Medium' },
+  { id: 'list', label: 'Li.st' },
+  { id: 'field-notes', label: 'Field notes' },
+  { id: 'tv', label: 'TV' },
+  { id: 'interviews', label: 'Interviews' },
+  { id: 'articles', label: 'Articles' },
+  { id: 'catalogs', label: 'Catalogs' },
+  { id: 'socials', label: 'Socials' },
+  { id: 'other', label: 'Other' },
+] as const;
+
+export const sourceGroupLabels = Object.fromEntries(sourceGroups.map((group) => [group.id, group.label]));
+
+export function sourceGroupFor(data: any): string {
+  const id = data.id ?? '';
+  const type = data.type ?? '';
+  const url = data.url ?? '';
+  if (id.startsWith('tumblr-') || url.includes('anthonybourdain.tumblr.com')) return 'tumblr';
+  if (id.startsWith('medium-') || url.includes('medium.com/')) return 'medium';
+  if (id.startsWith('list-') || id.startsWith('bourdain-list') || url.includes('li.st/') || url.includes('bourdain.greg.technology')) return 'list';
+  if (type === 'field-note' || (url.includes('explorepartsunknown.com') && url.includes('field-notes'))) return 'field-notes';
+  if (['episode-guide', 'official-show-page', 'official-video', 'video-series', 'dead-official-page', 'official-archive', 'dataset', 'fan-index', 'transcript-index'].includes(type)) return 'tv';
+  if (type.includes('interview') || ['podcast', 'panel', 'radio-archive', 'audio-archive', 'audio-interview'].includes(type)) return 'interviews';
+  if (['article', 'essay', 'profile', 'review', 'obituary'].includes(type)) return 'articles';
+  if (type.includes('awards') || type.includes('library') || type.includes('catalog') || type.includes('authority') || type === 'publisher-page') return 'catalogs';
+  if (type === 'social-profile') return 'socials';
+  return 'other';
+}
+
+const monthNumbers: Record<string, string> = {
+  january: '01',
+  february: '02',
+  march: '03',
+  april: '04',
+  may: '05',
+  june: '06',
+  july: '07',
+  august: '08',
+  september: '09',
+  october: '10',
+  november: '11',
+  december: '12',
+};
+
+export function sourceTimelineDate(data: any): { date?: string; precision: string } {
+  if (data.date) return { date: data.date, precision: data.date_precision ?? 'unknown' };
+
+  const notes = data.notes ?? '';
+  const isoPageDate = notes.match(/Page date:\s*(\d{4}-\d{2}-\d{2})/i);
+  if (isoPageDate) return { date: isoPageDate[1], precision: 'day' };
+
+  const publishedDate = notes.match(/Published\s+([A-Za-z]+)\s+(\d{1,2}),\s+(\d{4})/i);
+  if (publishedDate) {
+    const month = monthNumbers[publishedDate[1].toLowerCase()];
+    if (month) return { date: `${publishedDate[3]}-${month}-${publishedDate[2].padStart(2, '0')}`, precision: 'day' };
+  }
+
+  return { date: undefined, precision: 'unknown' };
+}
+
 export function entryTitle(entry: any): string {
   return entry.data.title ?? entry.data.name ?? entry.data.id;
 }
@@ -74,6 +137,7 @@ export function primaryAvailabilityUrl(data: any): string | undefined {
     availability.library_url ??
     availability.archive_url ??
     availability.transcript_url ??
+    data.url ??
     undefined
   );
 }
@@ -145,6 +209,6 @@ export function previewForEntry(entry: any, cache?: Record<string, any>) {
     image: siteAssetUrl(data.image_url) ?? urlPreview.image,
     favicon: urlPreview.favicon,
     archive: urlPreview.archive,
-    label: data.publication ?? urlPreview.title ?? urlPreview.host ?? formatType(data.type),
+    label: data.publication ?? urlPreview.title ?? urlPreview.host ?? data.title ?? formatType(data.type),
   };
 }

@@ -2,8 +2,8 @@
   "id": "who-knows-anthony-bourdain-eater",
   "title": "Who Knows Anthony Bourdain?",
   "type": "review",
-  "date": null,
-  "date_precision": "unknown",
+  "date": "2021-10-27",
+  "date_precision": "day",
   "summary": "Biography review — Eater.",
   "publication": "Eater",
   "bucket": "Biography review",
@@ -16,12 +16,14 @@
     "anthony-bourdain"
   ],
   "places": [],
-  "sources": [],
+  "sources": [
+    "anthony-bourdain-biography-laurie-woolever-book-review-eater"
+  ],
   "related": [],
   "status": "needs-review",
   "availability": {
     "official_url": "https://www.eater.com/22747424/anthony-bourdain-biography-laurie-woolever-book-review",
-    "archive_url": null,
+    "archive_url": "https://web.archive.org/web/2/https://www.eater.com/22747424/anthony-bourdain-biography-laurie-woolever-book-review",
     "library_url": null,
     "audio_url": null,
     "video_url": null,

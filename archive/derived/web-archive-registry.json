@@ -1,7 +1,55 @@
 {
-  "generated_at": "2026-04-24T18:20:19.574Z",
-  "count": 469,
+  "generated_at": "2026-04-24T18:35:00.045Z",
+  "count": 493,
   "registry": {
+    "https://92ytalks.libsyn.com/webpage/2015/11": {
+      "url": "https://92ytalks.libsyn.com/webpage/2015/11",
+      "latest_url": "https://web.archive.org/web/2/https://92ytalks.libsyn.com/webpage/2015/11",
+      "calendar_url": "https://web.archive.org/web/*/https://92ytalks.libsyn.com/webpage/2015/11",
+      "save_url": "https://web.archive.org/save/https://92ytalks.libsyn.com/webpage/2015/11",
+      "refs": [
+        {
+          "owner": "src/content/appearances/92ny-talks.yaml",
+          "field": "official_url"
+        },
+        {
+          "owner": "src/content/sources/92ny-talks-pepin-bourdain.yaml",
+          "field": "url"
+        }
+      ]
+    },
+    "https://charlierose.com/guests/5158": {
+      "url": "https://charlierose.com/guests/5158",
+      "latest_url": "https://web.archive.org/web/2/https://charlierose.com/guests/5158",
+      "calendar_url": "https://web.archive.org/web/*/https://charlierose.com/guests/5158",
+      "save_url": "https://web.archive.org/save/https://charlierose.com/guests/5158",
+      "refs": [
+        {
+          "owner": "src/content/appearances/charlie-rose-appearances.yaml",
+          "field": "official_url"
+        },
+        {
+          "owner": "src/content/sources/charlie-rose-bourdain-guest.yaml",
+          "field": "url"
+        }
+      ]
+    },
+    "https://transcripts.cnn.com/show/cnr/date/2013-04-10/segment/10": {
+      "url": "https://transcripts.cnn.com/show/cnr/date/2013-04-10/segment/10",
+      "latest_url": "https://web.archive.org/web/2/https://transcripts.cnn.com/show/cnr/date/2013-04-10/segment/10",
+      "calendar_url": "https://web.archive.org/web/*/https://transcripts.cnn.com/show/cnr/date/2013-04-10/segment/10",
+      "save_url": "https://web.archive.org/save/https://transcripts.cnn.com/show/cnr/date/2013-04-10/segment/10",
+      "refs": [
+        {
+          "owner": "src/content/appearances/cnn-interviews.yaml",
+          "field": "transcript_url"
+        },
+        {
+          "owner": "src/content/sources/cnn-newsroom-parts-unknown-2013.yaml",
+          "field": "url"
+        }
+      ]
+    },
     "https://freshairarchive.org/guests/anthony-bourdain": {
       "url": "https://freshairarchive.org/guests/anthony-bourdain",
       "latest_url": "https://web.archive.org/web/2/https://freshairarchive.org/guests/anthony-bourdain",
@@ -18,6 +66,38 @@
         }
       ]
     },
+    "https://www.paramountpressexpress.com/cbs-entertainment/shows/the-late-show-with-stephen-colbert/releases/view?id=43761": {
+      "url": "https://www.paramountpressexpress.com/cbs-entertainment/shows/the-late-show-with-stephen-colbert/releases/view?id=43761",
+      "latest_url": "https://web.archive.org/web/2/https://www.paramountpressexpress.com/cbs-entertainment/shows/the-late-show-with-stephen-colbert/releases/view?id=43761",
+      "calendar_url": "https://web.archive.org/web/*/https://www.paramountpressexpress.com/cbs-entertainment/shows/the-late-show-with-stephen-colbert/releases/view?id=43761",
+      "save_url": "https://web.archive.org/save/https://www.paramountpressexpress.com/cbs-entertainment/shows/the-late-show-with-stephen-colbert/releases/view?id=43761",
+      "refs": [
+        {
+          "owner": "src/content/appearances/late-show-appearances.yaml",
+          "field": "official_url"
+        },
+        {
+          "owner": "src/content/sources/paramount-press-late-show-bourdain-2015.yaml",
+          "field": "url"
+        }
+      ]
+    },
+    "https://www.reddit.com/r/IAmA/comments/197ji0/i_am_anthony_bourdain_ask_me_anything/": {
+      "url": "https://www.reddit.com/r/IAmA/comments/197ji0/i_am_anthony_bourdain_ask_me_anything/",
+      "latest_url": "https://web.archive.org/web/2/https://www.reddit.com/r/IAmA/comments/197ji0/i_am_anthony_bourdain_ask_me_anything/",
+      "calendar_url": "https://web.archive.org/web/*/https://www.reddit.com/r/IAmA/comments/197ji0/i_am_anthony_bourdain_ask_me_anything/",
+      "save_url": "https://web.archive.org/save/https://www.reddit.com/r/IAmA/comments/197ji0/i_am_anthony_bourdain_ask_me_anything/",
+      "refs": [
+        {
+          "owner": "src/content/appearances/reddit-ama.yaml",
+          "field": "official_url"
+        },
+        {
+          "owner": "src/content/sources/reddit-ama-2013.yaml",
+          "field": "url"
+        }
+      ]
+    },
     "https://interviews.televisionacademy.com/interviews/anthony-bourdain": {
       "url": "https://interviews.televisionacademy.com/interviews/anthony-bourdain",
       "latest_url": "https://web.archive.org/web/2/https://interviews.televisionacademy.com/interviews/anthony-bourdain",
@@ -29,7 +109,27 @@
           "field": "official_url"
         },
         {
+          "owner": "src/content/appearances/television-academy-interview.yaml",
+          "field": "video_url"
+        },
+        {
           "owner": "src/content/sources/television-academy-interview.yaml",
+          "field": "url"
+        }
+      ]
+    },
+    "https://www.wtfpod.com/podcast/episodes/episode_233_-_anthony_bourdain": {
+      "url": "https://www.wtfpod.com/podcast/episodes/episode_233_-_anthony_bourdain",
+      "latest_url": "https://web.archive.org/web/2/https://www.wtfpod.com/podcast/episodes/episode_233_-_anthony_bourdain",
+      "calendar_url": "https://web.archive.org/web/*/https://www.wtfpod.com/podcast/episodes/episode_233_-_anthony_bourdain",
+      "save_url": "https://web.archive.org/save/https://www.wtfpod.com/podcast/episodes/episode_233_-_anthony_bourdain",
+      "refs": [
+        {
+          "owner": "src/content/appearances/wtf-with-marc-maron.yaml",
+          "field": "official_url"
+        },
+        {
+          "owner": "src/content/sources/wtf-233-bourdain.yaml",
           "field": "url"
         }
       ]
@@ -103,6 +203,10 @@
         {
           "owner": "src/content/literature/anthony-bourdain-and-the-wisdom-of-talking-to-strangers-thrillist.json",
           "field": "availability.official_url"
+        },
+        {
+          "owner": "src/content/sources/anthony-bourdain-and-the-wisdom-of-talking-to-strangers-thrillist.yaml",
+          "field": "url"
         }
       ]
     },
@@ -115,6 +219,10 @@
         {
           "owner": "src/content/literature/anthony-bourdain-dead-at-61-pitchfork.json",
           "field": "availability.official_url"
+        },
+        {
+          "owner": "src/content/sources/anthony-bourdain-dead-at-61-pitchfork.yaml",
+          "field": "url"
         }
       ]
     },
@@ -151,6 +259,10 @@
         {
           "owner": "src/content/literature/anthony-bourdain-found-dead-at-61-from-apparent-suicide-time.json",
           "field": "availability.official_url"
+        },
+        {
+          "owner": "src/content/sources/anthony-bourdain-found-dead-at-61-from-apparent-suicide-time.yaml",
+          "field": "url"
         }
       ]
     },
@@ -163,6 +275,10 @@
         {
           "owner": "src/content/literature/anthony-bourdain-globe-trotting-chef-dies-at-61-los-angeles-times.json",
           "field": "availability.official_url"
+        },
+        {
+          "owner": "src/content/sources/anthony-bourdain-globe-trotting-chef-dies-at-61-los-angeles-times.yaml",
+          "field": "url"
         }
       ]
     },
@@ -223,6 +339,10 @@
         {
           "owner": "src/content/literature/anthony-bourdain-s-childhood-photos-bon-appetit.json",
           "field": "availability.official_url"
+        },
+        {
+          "owner": "src/content/sources/anthony-bourdain-s-childhood-photos-bon-appetit.yaml",
+          "field": "url"
         }
       ]
     },
@@ -259,6 +379,10 @@
         {
           "owner": "src/content/literature/anthony-bourdain-s-la-a-q-and-a-with-a-legend-thrillist.json",
           "field": "availability.official_url"
+        },
+        {
+          "owner": "src/content/sources/anthony-bourdain-s-la-a-q-and-a-with-a-legend-thrillist.yaml",
+          "field": "url"
         }
       ]
     },
@@ -319,6 +443,10 @@
         {
           "owner": "src/content/literature/anthony-bourdain-the-thrillist-interview-thrillist.json",
           "field": "availability.official_url"
+        },
+        {
+          "owner": "src/content/sources/anthony-bourdain-the-thrillist-interview-thrillist.yaml",
+          "field": "url"
         }
       ]
     },
@@ -331,6 +459,10 @@
         {
           "owner": "src/content/literature/anthony-bourdain-thinks-you-re-crazy-for-eating-airplane-food-bon-appetit.json",
           "field": "availability.official_url"
+        },
+        {
+          "owner": "src/content/sources/anthony-bourdain-thinks-you-re-crazy-for-eating-airplane-food-bon-appetit.yaml",
+          "field": "url"
         }
       ]
     },
@@ -343,6 +475,10 @@
         {
           "owner": "src/content/literature/books-were-good-to-anthony-bourdain-but-tv-was-even-better-los-angeles-times.json",
           "field": "availability.official_url"
+        },
+        {
+          "owner": "src/content/sources/books-were-good-to-anthony-bourdain-but-tv-was-even-better-los-angeles-times.yaml",
+          "field": "url"
         }
       ]
     },
@@ -367,6 +503,10 @@
         {
           "owner": "src/content/literature/chef-angela-dimayuga-on-her-last-conversation-with-anthony-bourdain-bon-appetit.json",
           "field": "availability.official_url"
+        },
+        {
+          "owner": "src/content/sources/chef-angela-dimayuga-anthony-bourdain-bon-appetit.yaml",
+          "field": "url"
         }
       ]
     },
@@ -415,6 +555,10 @@
         {
           "owner": "src/content/literature/eric-ripert-speaks-out-after-finding-anthony-bourdain-dead-time.json",
           "field": "availability.official_url"
+        },
+        {
+          "owner": "src/content/sources/eric-ripert-statement-anthony-bourdain-death-time.yaml",
+          "field": "url"
         }
       ]
     },
@@ -427,6 +571,10 @@
         {
           "owner": "src/content/literature/how-anthony-bourdain-became-an-instant-sensation-rolling-stone.json",
           "field": "availability.official_url"
+        },
+        {
+          "owner": "src/content/sources/anthony-bourdain-chef-author-sensation-rolling-stone.yaml",
+          "field": "url"
         }
       ]
     },
@@ -451,6 +599,10 @@
         {
           "owner": "src/content/literature/how-anthony-bourdain-s-longtime-assistant-made-his-new-book-a-reality-eater.json",
           "field": "availability.official_url"
+        },
+        {
+          "owner": "src/content/sources/anthony-bourdain-world-travel-book-laurie-woolever-interview-eater.yaml",
+          "field": "url"
         }
       ]
     },
@@ -499,6 +651,10 @@
         {
           "owner": "src/content/literature/it-s-not-often-that-you-meet-people-who-are-funny-clever-and-kind-and-anthony-wa.json",
           "field": "availability.official_url"
+        },
+        {
+          "owner": "src/content/sources/bourdain-the-definitive-oral-biography-bon-appetit.yaml",
+          "field": "url"
         }
       ]
     },
@@ -523,6 +679,10 @@
         {
           "owner": "src/content/literature/laurie-woolever-reveals-his-final-texts-in-memoir-people.json",
           "field": "availability.official_url"
+        },
+        {
+          "owner": "src/content/sources/anthony-bourdain-assistant-laurie-woolever-final-texts-people.yaml",
+          "field": "url"
         }
       ]
     },
@@ -583,6 +743,10 @@
         {
           "owner": "src/content/literature/the-enormous-life-of-anthony-bourdain-according-to-those-who-knew-him-gq.json",
           "field": "availability.official_url"
+        },
+        {
+          "owner": "src/content/sources/anthony-bourdain-men-of-the-year-tribute-gq.yaml",
+          "field": "url"
         }
       ]
     },
@@ -607,6 +771,10 @@
         {
           "owner": "src/content/literature/the-latest-anthony-bourdain-biography-is-already-controversial-bon-appetit.json",
           "field": "availability.official_url"
+        },
+        {
+          "owner": "src/content/sources/anthony-bourdain-biography-controversy-bon-appetit.yaml",
+          "field": "url"
         }
       ]
     },
@@ -619,6 +787,10 @@
         {
           "owner": "src/content/literature/travels-with-anthony-bourdain-the-new-yorker.json",
           "field": "availability.official_url"
+        },
+        {
+          "owner": "src/content/sources/travels-with-anthony-bourdain-new-yorker.yaml",
+          "field": "url"
         }
       ]
     },
@@ -643,6 +815,10 @@
         {
           "owner": "src/content/literature/what-anthony-bourdain-s-early-crime-fiction-novels-reveal-eater.json",
           "field": "availability.official_url"
+        },
+        {
+          "owner": "src/content/sources/eater-fiction-confidential.yaml",
+          "field": "url"
         }
       ]
     },
@@ -655,6 +831,10 @@
         {
           "owner": "src/content/literature/who-knows-anthony-bourdain-eater.json",
           "field": "availability.official_url"
+        },
+        {
+          "owner": "src/content/sources/anthony-bourdain-biography-laurie-woolever-book-review-eater.yaml",
+          "field": "url"
         }
       ]
     },
@@ -667,6 +847,18 @@
         {
           "owner": "src/content/literature/who-was-bourdain-day-for-eater.json",
           "field": "availability.official_url"
+        }
+      ]
+    },
+    "https://92ytalks.libsyn.com/webpage/2016/10": {
+      "url": "https://92ytalks.libsyn.com/webpage/2016/10",
+      "latest_url": "https://web.archive.org/web/2/https://92ytalks.libsyn.com/webpage/2016/10",
+      "calendar_url": "https://web.archive.org/web/*/https://92ytalks.libsyn.com/webpage/2016/10",
+      "save_url": "https://web.archive.org/save/https://92ytalks.libsyn.com/webpage/2016/10",
+      "refs": [
+        {
+          "owner": "src/content/sources/92ny-talks-shep-gordon-bourdain.yaml",
+          "field": "url"
         }
       ]
     },
@@ -738,6 +930,18 @@
       "refs": [
         {
           "owner": "src/content/sources/anthony-bourdain-world-map.yaml",
+          "field": "url"
+        }
+      ]
+    },
+    "https://audioboom.com/posts/3661976-episode-48-anthony-bourdain": {
+      "url": "https://audioboom.com/posts/3661976-episode-48-anthony-bourdain",
+      "latest_url": "https://web.archive.org/web/2/https://audioboom.com/posts/3661976-episode-48-anthony-bourdain",
+      "calendar_url": "https://web.archive.org/web/*/https://audioboom.com/posts/3661976-episode-48-anthony-bourdain",
+      "save_url": "https://web.archive.org/save/https://audioboom.com/posts/3661976-episode-48-anthony-bourdain",
+      "refs": [
+        {
+          "owner": "src/content/sources/audioboom-episode-48-anthony-bourdain.yaml",
           "field": "url"
         }
       ]
@@ -874,6 +1078,18 @@
         }
       ]
     },
+    "http://cnn.com/2016/09/22/travel/bourdain-parts-unknown-obama-hanoi/index.html": {
+      "url": "http://cnn.com/2016/09/22/travel/bourdain-parts-unknown-obama-hanoi/index.html",
+      "latest_url": "https://web.archive.org/web/2/http://cnn.com/2016/09/22/travel/bourdain-parts-unknown-obama-hanoi/index.html",
+      "calendar_url": "https://web.archive.org/web/*/http://cnn.com/2016/09/22/travel/bourdain-parts-unknown-obama-hanoi/index.html",
+      "save_url": "https://web.archive.org/save/http://cnn.com/2016/09/22/travel/bourdain-parts-unknown-obama-hanoi/index.html",
+      "refs": [
+        {
+          "owner": "src/content/sources/cnn-obama-hanoi-hot-dogs.yaml",
+          "field": "url"
+        }
+      ]
+    },
     "https://www.commonwealthclub.org/events/archive/podcast/anthony-bourdain-tv-host-chef-author-kitchen-confidential-6162006": {
       "url": "https://www.commonwealthclub.org/events/archive/podcast/anthony-bourdain-tv-host-chef-author-kitchen-confidential-6162006",
       "latest_url": "https://web.archive.org/web/2/https://www.commonwealthclub.org/events/archive/podcast/anthony-bourdain-tv-host-chef-author-kitchen-confidential-6162006",
@@ -910,6 +1126,18 @@
         },
         {
           "owner": "src/content/sources/field-notes-detroit.yaml",
+          "field": "url"
+        }
+      ]
+    },
+    "https://explorepartsunknown.com/armenia/he-didnt-buy-hypocrisy": {
+      "url": "https://explorepartsunknown.com/armenia/he-didnt-buy-hypocrisy",
+      "latest_url": "https://web.archive.org/web/2/https://explorepartsunknown.com/armenia/he-didnt-buy-hypocrisy",
+      "calendar_url": "https://web.archive.org/web/*/https://explorepartsunknown.com/armenia/he-didnt-buy-hypocrisy",
+      "save_url": "https://web.archive.org/save/https://explorepartsunknown.com/armenia/he-didnt-buy-hypocrisy",
+      "refs": [
+        {
+          "owner": "src/content/sources/explore-parts-unknown-serj-tankian-bourdain.yaml",
           "field": "url"
         }
       ]
@@ -2006,6 +2234,30 @@
         }
       ]
     },
+    "http://gq-magazine.co.uk/article/iggy-pop-anthony-bourdain-interview": {
+      "url": "http://gq-magazine.co.uk/article/iggy-pop-anthony-bourdain-interview",
+      "latest_url": "https://web.archive.org/web/2/http://gq-magazine.co.uk/article/iggy-pop-anthony-bourdain-interview",
+      "calendar_url": "https://web.archive.org/web/*/http://gq-magazine.co.uk/article/iggy-pop-anthony-bourdain-interview",
+      "save_url": "https://web.archive.org/save/http://gq-magazine.co.uk/article/iggy-pop-anthony-bourdain-interview",
+      "refs": [
+        {
+          "owner": "src/content/sources/gq-iggy-pop-bourdain-interview.yaml",
+          "field": "url"
+        }
+      ]
+    },
+    "https://hbr.org/2002/07/management-by-fire-a-conversation-with-chef-anthony-bourdain": {
+      "url": "https://hbr.org/2002/07/management-by-fire-a-conversation-with-chef-anthony-bourdain",
+      "latest_url": "https://web.archive.org/web/2/https://hbr.org/2002/07/management-by-fire-a-conversation-with-chef-anthony-bourdain",
+      "calendar_url": "https://web.archive.org/web/*/https://hbr.org/2002/07/management-by-fire-a-conversation-with-chef-anthony-bourdain",
+      "save_url": "https://web.archive.org/save/https://hbr.org/2002/07/management-by-fire-a-conversation-with-chef-anthony-bourdain",
+      "refs": [
+        {
+          "owner": "src/content/sources/hbr-management-by-fire-bourdain.yaml",
+          "field": "url"
+        }
+      ]
+    },
     "https://archive.jamesbeard.org/chef/anthony-bourdain": {
       "url": "https://archive.jamesbeard.org/chef/anthony-bourdain",
       "latest_url": "https://web.archive.org/web/2/https://archive.jamesbeard.org/chef/anthony-bourdain",
@@ -2966,6 +3218,18 @@
         }
       ]
     },
+    "http://mensjournal.com/magazine/print-view/anthony-bourdains-world-domination-20150914": {
+      "url": "http://mensjournal.com/magazine/print-view/anthony-bourdains-world-domination-20150914",
+      "latest_url": "https://web.archive.org/web/2/http://mensjournal.com/magazine/print-view/anthony-bourdains-world-domination-20150914",
+      "calendar_url": "https://web.archive.org/web/*/http://mensjournal.com/magazine/print-view/anthony-bourdains-world-domination-20150914",
+      "save_url": "https://web.archive.org/save/http://mensjournal.com/magazine/print-view/anthony-bourdains-world-domination-20150914",
+      "refs": [
+        {
+          "owner": "src/content/sources/mens-journal-bourdain-world-domination.yaml",
+          "field": "url"
+        }
+      ]
+    },
     "https://www.pbs.org/show/mind-chef/": {
       "url": "https://www.pbs.org/show/mind-chef/",
       "latest_url": "https://web.archive.org/web/2/https://www.pbs.org/show/mind-chef/",
@@ -2998,6 +3262,18 @@
       "refs": [
         {
           "owner": "src/content/sources/new-york-times-bourdain-obit.yaml",
+          "field": "url"
+        }
+      ]
+    },
+    "https://newyorker.com/magazine/2017/02/13/anthony-bourdains-moveable-feast": {
+      "url": "https://newyorker.com/magazine/2017/02/13/anthony-bourdains-moveable-feast",
+      "latest_url": "https://web.archive.org/web/2/https://newyorker.com/magazine/2017/02/13/anthony-bourdains-moveable-feast",
+      "calendar_url": "https://web.archive.org/web/*/https://newyorker.com/magazine/2017/02/13/anthony-bourdains-moveable-feast",
+      "save_url": "https://web.archive.org/save/https://newyorker.com/magazine/2017/02/13/anthony-bourdains-moveable-feast",
+      "refs": [
+        {
+          "owner": "src/content/sources/new-yorker-bourdain-moveable-feast.yaml",
           "field": "url"
         }
       ]
@@ -3046,6 +3322,18 @@
       "refs": [
         {
           "owner": "src/content/sources/no-reservations-tvdb.yaml",
+          "field": "url"
+        }
+      ]
+    },
+    "https://www.nytimes.com/1997/09/10/garden/potboiler-dreams-chef-hopes-to-write-his-way-out-of-the-kitchen.html": {
+      "url": "https://www.nytimes.com/1997/09/10/garden/potboiler-dreams-chef-hopes-to-write-his-way-out-of-the-kitchen.html",
+      "latest_url": "https://web.archive.org/web/2/https://www.nytimes.com/1997/09/10/garden/potboiler-dreams-chef-hopes-to-write-his-way-out-of-the-kitchen.html",
+      "calendar_url": "https://web.archive.org/web/*/https://www.nytimes.com/1997/09/10/garden/potboiler-dreams-chef-hopes-to-write-his-way-out-of-the-kitchen.html",
+      "save_url": "https://web.archive.org/save/https://www.nytimes.com/1997/09/10/garden/potboiler-dreams-chef-hopes-to-write-his-way-out-of-the-kitchen.html",
+      "refs": [
+        {
+          "owner": "src/content/sources/nyt-potboiler-dreams-chef-write-way-out-kitchen.yaml",
           "field": "url"
         }
       ]
@@ -3146,6 +3434,30 @@
         }
       ]
     },
+    "http://reddit.com/r/IAmA/comments/197ji0/i_am_anthony_bourdain_ask_me_anything": {
+      "url": "http://reddit.com/r/IAmA/comments/197ji0/i_am_anthony_bourdain_ask_me_anything",
+      "latest_url": "https://web.archive.org/web/2/http://reddit.com/r/IAmA/comments/197ji0/i_am_anthony_bourdain_ask_me_anything",
+      "calendar_url": "https://web.archive.org/web/*/http://reddit.com/r/IAmA/comments/197ji0/i_am_anthony_bourdain_ask_me_anything",
+      "save_url": "https://web.archive.org/save/http://reddit.com/r/IAmA/comments/197ji0/i_am_anthony_bourdain_ask_me_anything",
+      "refs": [
+        {
+          "owner": "src/content/sources/reddit-ama-2013-bourdain.yaml",
+          "field": "url"
+        }
+      ]
+    },
+    "https://www.reddit.com/r/IAmA/comments/53p6kb/i_am_anthony_bourdain_and_im_really_good_at/": {
+      "url": "https://www.reddit.com/r/IAmA/comments/53p6kb/i_am_anthony_bourdain_and_im_really_good_at/",
+      "latest_url": "https://web.archive.org/web/2/https://www.reddit.com/r/IAmA/comments/53p6kb/i_am_anthony_bourdain_and_im_really_good_at/",
+      "calendar_url": "https://web.archive.org/web/*/https://www.reddit.com/r/IAmA/comments/53p6kb/i_am_anthony_bourdain_and_im_really_good_at/",
+      "save_url": "https://web.archive.org/save/https://www.reddit.com/r/IAmA/comments/53p6kb/i_am_anthony_bourdain_and_im_really_good_at/",
+      "refs": [
+        {
+          "owner": "src/content/sources/reddit-ama-2016.yaml",
+          "field": "url"
+        }
+      ]
+    },
     "https://www.reddit.com/r/AnthonyBourdain/comments/ai45r3/anthony_bourdain_archival_megathread/": {
       "url": "https://www.reddit.com/r/AnthonyBourdain/comments/ai45r3/anthony_bourdain_archival_megathread/",
       "latest_url": "https://web.archive.org/web/2/https://www.reddit.com/r/AnthonyBourdain/comments/ai45r3/anthony_bourdain_archival_megathread/",
@@ -3174,6 +3486,18 @@
         }
       ]
     },
+    "https://ruhlman.com/so-you-wanna-be-a-chef-by-bourdain-2": {
+      "url": "https://ruhlman.com/so-you-wanna-be-a-chef-by-bourdain-2",
+      "latest_url": "https://web.archive.org/web/2/https://ruhlman.com/so-you-wanna-be-a-chef-by-bourdain-2",
+      "calendar_url": "https://web.archive.org/web/*/https://ruhlman.com/so-you-wanna-be-a-chef-by-bourdain-2",
+      "save_url": "https://web.archive.org/save/https://ruhlman.com/so-you-wanna-be-a-chef-by-bourdain-2",
+      "refs": [
+        {
+          "owner": "src/content/sources/ruhlman-so-you-wanna-be-a-chef-bourdain.yaml",
+          "field": "url"
+        }
+      ]
+    },
     "https://github.com/cnlowery/anthony-bourdain-shows-by-country": {
       "url": "https://github.com/cnlowery/anthony-bourdain-shows-by-country",
       "latest_url": "https://web.archive.org/web/2/https://github.com/cnlowery/anthony-bourdain-shows-by-country",
@@ -3187,6 +3511,18 @@
         {
           "owner": "archive/sources.json",
           "field": "shows-by-country-readme.canonical_url"
+        }
+      ]
+    },
+    "https://www.spin.com/2018/06/anthony-bourdain-punk-essay/": {
+      "url": "https://www.spin.com/2018/06/anthony-bourdain-punk-essay/",
+      "latest_url": "https://web.archive.org/web/2/https://www.spin.com/2018/06/anthony-bourdain-punk-essay/",
+      "calendar_url": "https://web.archive.org/web/*/https://www.spin.com/2018/06/anthony-bourdain-punk-essay/",
+      "save_url": "https://web.archive.org/save/https://www.spin.com/2018/06/anthony-bourdain-punk-essay/",
+      "refs": [
+        {
+          "owner": "src/content/sources/spin-anthony-bourdain-punk-essay.yaml",
+          "field": "url"
         }
       ]
     },
@@ -3270,6 +3606,18 @@
       "refs": [
         {
           "owner": "src/content/sources/the-layover-tvdb.yaml",
+          "field": "url"
+        }
+      ]
+    },
+    "https://watch.travelchannel.com/show/anthony-bourdain-no-reservations-travel-channel": {
+      "url": "https://watch.travelchannel.com/show/anthony-bourdain-no-reservations-travel-channel",
+      "latest_url": "https://web.archive.org/web/2/https://watch.travelchannel.com/show/anthony-bourdain-no-reservations-travel-channel",
+      "calendar_url": "https://web.archive.org/web/*/https://watch.travelchannel.com/show/anthony-bourdain-no-reservations-travel-channel",
+      "save_url": "https://web.archive.org/save/https://watch.travelchannel.com/show/anthony-bourdain-no-reservations-travel-channel",
+      "refs": [
+        {
+          "owner": "src/content/sources/travel-channel-no-reservations-watch.yaml",
           "field": "url"
         }
       ]
@@ -5198,6 +5546,18 @@
         }
       ]
     },
+    "https://www.stitcher.com/podcast/turned-out-a-punk/e/54829398": {
+      "url": "https://www.stitcher.com/podcast/turned-out-a-punk/e/54829398",
+      "latest_url": "https://web.archive.org/web/2/https://www.stitcher.com/podcast/turned-out-a-punk/e/54829398",
+      "calendar_url": "https://web.archive.org/web/*/https://www.stitcher.com/podcast/turned-out-a-punk/e/54829398",
+      "save_url": "https://web.archive.org/save/https://www.stitcher.com/podcast/turned-out-a-punk/e/54829398",
+      "refs": [
+        {
+          "owner": "src/content/sources/turned-out-a-punk-anthony-bourdain-stitcher.yaml",
+          "field": "url"
+        }
+      ]
+    },
     "https://www.vogue.com/article/anthony-bourdain-food-hall-manhattan-waterfront-new-york": {
       "url": "https://www.vogue.com/article/anthony-bourdain-food-hall-manhattan-waterfront-new-york",
       "latest_url": "https://web.archive.org/web/2/https://www.vogue.com/article/anthony-bourdain-food-hall-manhattan-waterfront-new-york",
@@ -5222,6 +5582,18 @@
         }
       ]
     },
+    "https://wealthsimple.com/en-us/magazine/money-diary-anthony-bourdain-3": {
+      "url": "https://wealthsimple.com/en-us/magazine/money-diary-anthony-bourdain-3",
+      "latest_url": "https://web.archive.org/web/2/https://wealthsimple.com/en-us/magazine/money-diary-anthony-bourdain-3",
+      "calendar_url": "https://web.archive.org/web/*/https://wealthsimple.com/en-us/magazine/money-diary-anthony-bourdain-3",
+      "save_url": "https://web.archive.org/save/https://wealthsimple.com/en-us/magazine/money-diary-anthony-bourdain-3",
+      "refs": [
+        {
+          "owner": "src/content/sources/wealthsimple-money-diary-anthony-bourdain.yaml",
+          "field": "url"
+        }
+      ]
+    },
     "https://search.worldcat.org/title/Kitchen-confidential-%3A-adventures-in-the-culinary-underbelly/oclc/44104645": {
       "url": "https://search.worldcat.org/title/Kitchen-confidential-%3A-adventures-in-the-culinary-underbelly/oclc/44104645",
       "latest_url": "https://web.archive.org/web/2/https://search.worldcat.org/title/Kitchen-confidential-%253A-adventures-in-the-culinary-underbelly/oclc/44104645",
@@ -5230,6 +5602,30 @@
       "refs": [
         {
           "owner": "src/content/sources/worldcat-kitchen-confidential.yaml",
+          "field": "url"
+        }
+      ]
+    },
+    "https://www.wtfpod.com/podcast/episode-752-ritch-shydner-anthony-bourdain": {
+      "url": "https://www.wtfpod.com/podcast/episode-752-ritch-shydner-anthony-bourdain",
+      "latest_url": "https://web.archive.org/web/2/https://www.wtfpod.com/podcast/episode-752-ritch-shydner-anthony-bourdain",
+      "calendar_url": "https://web.archive.org/web/*/https://www.wtfpod.com/podcast/episode-752-ritch-shydner-anthony-bourdain",
+      "save_url": "https://web.archive.org/save/https://www.wtfpod.com/podcast/episode-752-ritch-shydner-anthony-bourdain",
+      "refs": [
+        {
+          "owner": "src/content/sources/wtf-752-bourdain.yaml",
+          "field": "url"
+        }
+      ]
+    },
+    "https://www.wtfpod.com/podcast/repost-anthony-bourdain-from-2011": {
+      "url": "https://www.wtfpod.com/podcast/repost-anthony-bourdain-from-2011",
+      "latest_url": "https://web.archive.org/web/2/https://www.wtfpod.com/podcast/repost-anthony-bourdain-from-2011",
+      "calendar_url": "https://web.archive.org/web/*/https://www.wtfpod.com/podcast/repost-anthony-bourdain-from-2011",
+      "save_url": "https://web.archive.org/save/https://www.wtfpod.com/podcast/repost-anthony-bourdain-from-2011",
+      "refs": [
+        {
+          "owner": "src/content/sources/wtfpod-repost-anthony-bourdain-2011.yaml",
           "field": "url"
         }
       ]

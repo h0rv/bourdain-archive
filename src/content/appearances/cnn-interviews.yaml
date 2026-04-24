@@ -1,12 +1,14 @@
 id: cnn-interviews
 title: CNN interviews
 type: interview
-date_precision: unknown
-summary: Placeholder grouping for CNN interview segments and promotional appearances connected to Parts Unknown and Bourdain's public commentary.
+date: "2013-04-10"
+date_precision: day
+summary: CNN interview and promotional segments connected to Parts Unknown and Bourdain's public commentary, represented by Brooke Baldwin's April 10, 2013 CNN Newsroom interview before the series premiere.
 tags: [interview, television, food-media]
 people: [anthony-bourdain]
 places: []
-sources: [explore-parts-unknown, reddit-archival-megathread]
+sources: [cnn-newsroom-parts-unknown-2013, explore-parts-unknown, parts-unknown-cnn-transcripts]
 related: [parts-unknown-show]
-status: needs-review
-availability: {}
+status: partial
+availability:
+  transcript_url: https://transcripts.cnn.com/show/cnr/date/2013-04-10/segment/10

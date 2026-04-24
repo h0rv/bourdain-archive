@@ -2,40 +2,13 @@
 import { getCollection } from 'astro:content';
 import archiveRegistry from '../../../archive/derived/web-archive-registry.json';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { entryHref } from '../../lib/content';
+import { entryHref, sourceGroupFor, sourceGroupLabels, sourceGroups as allSourceGroups } from '../../lib/content';
 
 const sources = (await getCollection('sources')).sort((a, b) => a.data.title.localeCompare(b.data.title));
 const highlighted = sources.find((entry) => entry.data.id === 'anthony-bourdain-world-map');
-const sourceGroups = [
-  { id: 'tumblr', label: 'Tumblr' },
-  { id: 'medium', label: 'Medium' },
-  { id: 'list', label: 'Li.st' },
-  { id: 'field-notes', label: 'Field notes' },
-  { id: 'tv', label: 'TV' },
-  { id: 'interviews', label: 'Interviews' },
-  { id: 'articles', label: 'Articles' },
-  { id: 'catalogs', label: 'Catalogs' },
-  { id: 'socials', label: 'Socials' },
-  { id: 'other', label: 'Other' },
-];
-const sourceGroupLabels = Object.fromEntries(sourceGroups.map((group) => [group.id, group.label]));
-const sourceGroupFor = (entry: any) => {
-  const id = entry.data.id;
-  const type = entry.data.type;
-  const url = entry.data.url;
-  if (id.startsWith('tumblr-') || url.includes('anthonybourdain.tumblr.com')) return 'tumblr';
-  if (id.startsWith('medium-') || url.includes('medium.com/')) return 'medium';
-  if (id.startsWith('list-') || id.startsWith('bourdain-list') || url.includes('li.st/') || url.includes('bourdain.greg.technology')) return 'list';
-  if (type === 'field-note' || (url.includes('explorepartsunknown.com') && url.includes('field-notes'))) return 'field-notes';
-  if (['episode-guide', 'official-show-page', 'official-video', 'video-series', 'dead-official-page', 'official-archive', 'dataset', 'fan-index', 'transcript-index'].includes(type)) return 'tv';
-  if (type.includes('interview') || ['podcast', 'panel', 'radio-archive', 'audio-archive', 'audio-interview'].includes(type)) return 'interviews';
-  if (['article', 'essay', 'profile', 'review', 'obituary'].includes(type)) return 'articles';
-  if (type.includes('awards') || type.includes('library') || type.includes('catalog') || type.includes('authority') || type === 'publisher-page') return 'catalogs';
-  if (type === 'social-profile') return 'socials';
-  return 'other';
-};
+const sourceGroups = allSourceGroups.filter((group) => group.id !== 'curated');
 const sourceEntries = sources.map((entry) => {
-  const group = sourceGroupFor(entry);
+  const group = sourceGroupFor(entry.data);
   const archive = archiveRegistry.registry[entry.data.url as keyof typeof archiveRegistry.registry];
   return {
     entry,

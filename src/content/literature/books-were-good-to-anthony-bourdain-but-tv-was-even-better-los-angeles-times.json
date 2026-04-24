@@ -2,8 +2,8 @@
   "id": "books-were-good-to-anthony-bourdain-but-tv-was-even-better-los-angeles-times",
   "title": "Books were good to Anthony Bourdain — but TV was even better",
   "type": "essay",
-  "date": null,
-  "date_precision": "unknown",
+  "date": "2018-06-08",
+  "date_precision": "day",
   "summary": "Books/legacy — Los Angeles Times.",
   "publication": "Los Angeles Times",
   "bucket": "Books/legacy",
@@ -16,12 +16,14 @@
     "anthony-bourdain"
   ],
   "places": [],
-  "sources": [],
+  "sources": [
+    "books-were-good-to-anthony-bourdain-but-tv-was-even-better-los-angeles-times"
+  ],
   "related": [],
-  "status": "needs-review",
+  "status": "confirmed",
   "availability": {
     "official_url": "https://www.latimes.com/books/la-et-jc-bourdain-books-20180608-story.html",
-    "archive_url": null,
+    "archive_url": "https://web.archive.org/web/2/https://www.latimes.com/books/la-et-jc-bourdain-books-20180608-story.html",
     "library_url": null,
     "audio_url": null,
     "video_url": null,

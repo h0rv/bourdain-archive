@@ -2,8 +2,8 @@
   "id": "the-enormous-life-of-anthony-bourdain-according-to-those-who-knew-him-gq",
   "title": "The Enormous Life of Anthony Bourdain, According to Those Who Knew Him",
   "type": "tribute",
-  "date": null,
-  "date_precision": "unknown",
+  "date": "2018-12-04",
+  "date_precision": "day",
   "summary": "Profile/tribute — GQ.",
   "publication": "GQ",
   "bucket": "Profile/tribute",
@@ -16,12 +16,14 @@
     "anthony-bourdain"
   ],
   "places": [],
-  "sources": [],
+  "sources": [
+    "anthony-bourdain-men-of-the-year-tribute-gq"
+  ],
   "related": [],
   "status": "needs-review",
   "availability": {
     "official_url": "https://www.gq.com/story/anthony-bourdain-men-of-the-year-tribute",
-    "archive_url": null,
+    "archive_url": "https://web.archive.org/web/2/https://www.gq.com/story/anthony-bourdain-men-of-the-year-tribute",
     "library_url": null,
     "audio_url": null,
     "video_url": null,

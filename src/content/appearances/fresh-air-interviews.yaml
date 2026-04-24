@@ -1,14 +1,15 @@
 id: fresh-air-interviews
 title: Fresh Air interviews
 type: radio
-date_precision: unknown
+date: "2016-10-27"
+date_precision: day
 host: Terry Gross
-summary: Fresh Air archive grouping for Bourdain's interviews about books, television, restaurants, and public life.
+summary: Fresh Air archive grouping for Bourdain's 2016 interview about books, television, restaurants, and public life, plus a 2018 remembrance segment.
 tags: [radio, books, food-media]
 people: [anthony-bourdain, terry-gross]
 places: []
 sources: [fresh-air-archive]
 related: [kitchen-confidential, medium-raw]
-status: needs-review
+status: confirmed
 availability:
   official_url: https://freshairarchive.org/guests/anthony-bourdain

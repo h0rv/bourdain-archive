@@ -1,12 +1,14 @@
 id: 92ny-talks
 title: 92NY talks
 type: panel
-date_precision: unknown
-summary: Placeholder for Anthony Bourdain talks and public conversations hosted by 92NY.
+date: "2015-11-19"
+date_precision: day
+summary: 92NY Talks podcast appearances with Bourdain, represented by the November 19, 2015 Jacques Pepin conversation; a 2016 Shep Gordon conversation with Bourdain is also sourced.
 tags: [panel, books, food-media]
 people: [anthony-bourdain]
 places: [new-york-city]
-sources: [reddit-archival-megathread]
+sources: [92ny-talks-pepin-bourdain, 92ny-talks-shep-gordon-bourdain, reddit-archival-megathread]
 related: []
-status: needs-review
-availability: {}
+status: partial
+availability:
+  official_url: https://92ytalks.libsyn.com/webpage/2015/11

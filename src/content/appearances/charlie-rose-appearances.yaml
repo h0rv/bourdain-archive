@@ -1,13 +1,15 @@
 id: charlie-rose-appearances
 title: Charlie Rose appearances
 type: interview
-date_precision: unknown
+date: "2011-07-08"
+date_precision: day
 host: Charlie Rose
-summary: Placeholder for Anthony Bourdain interviews on Charlie Rose.
+summary: Charlie Rose interview appearances by Bourdain, represented by the July 8, 2011 segment; the Charlie Rose archive lists six Bourdain appearances through November 2017.
 tags: [interview, television, food-media]
 people: [anthony-bourdain, charlie-rose]
 places: []
-sources: [reddit-archival-megathread]
+sources: [charlie-rose-bourdain-guest, charlie-rose-last-magnificent, reddit-archival-megathread]
 related: []
-status: needs-review
-availability: {}
+status: partial
+availability:
+  official_url: https://charlierose.com/guests/5158

@@ -1,6 +1,6 @@
 ---
 import linkPreviewCache from '../../archive/derived/link-previews.json';
-import { availabilityBadges, entryHref, entryTitle, formatDate, formatType, previewForEntry, statusClass } from '../lib/content';
+import { availabilityBadges, entryHref, entryTitle, formatDate, formatType, previewForEntry, sourceTimelineDate, statusClass } from '../lib/content';
 
 interface Props {
   entry: any;
@@ -11,9 +11,12 @@ interface Props {
 const { entry, collection, showSummary = true } = Astro.props;
 const data = entry.data;
 const href = entryHref(collection, data.id);
-const badges = availabilityBadges(data.availability);
+const badges = collection === 'sources' ? [{ field: 'source', label: 'Source', url: data.url }] : availabilityBadges(data.availability);
 const preview = previewForEntry(entry, linkPreviewCache.previews);
 const isWebPreview = !data.image_url && Boolean(preview.url);
+const timelineDate = collection === 'sources' ? sourceTimelineDate(data) : { date: data.date, precision: data.date_precision };
+const summary = data.summary ?? data.notes ?? 'Source record.';
+const status = data.status ?? 'confirmed';
 ---
 <article class="card" data-entry data-type={data.type} data-collection={collection}>
   <a class={`card-media ${isWebPreview ? 'is-web-preview' : ''}`} href={href} aria-label={entryTitle(entry)}>
@@ -30,9 +33,9 @@ const isWebPreview = !data.image_url && Boolean(preview.url);
   <div class="card-body">
     <h2><a href={href}>{entryTitle(entry)}</a></h2>
     <p class="meta">
-      {formatType(data.type)} · {formatDate(data.date, data.date_precision)} · <span class={`badge ${statusClass(data.status)}`}>{data.status}</span>
+      {formatType(data.type)} · {formatDate(timelineDate.date, timelineDate.precision)} · <span class={`badge ${statusClass(status)}`}>{status}</span>
     </p>
-    {showSummary && <p class="summary">{data.summary}</p>}
+    {showSummary && <p class="summary">{summary}</p>}
     {data.tags?.length > 0 && (
       <ul class="tag-list" aria-label="Tags">
         {data.tags.slice(0, 6).map((tag: string) => <li class="tag">{tag}</li>)}

@@ -1,13 +1,15 @@
 id: television-academy-interview
 title: Television Academy interview
 type: interview
-date_precision: unknown
+date: "2015-08-14"
+date_precision: day
 summary: Long-form career interview covering Bourdain's path through restaurants, books, and television.
 tags: [interview, television, food-media]
 people: [anthony-bourdain]
 places: []
 sources: [television-academy-interview]
 related: [kitchen-confidential, parts-unknown-show]
-status: needs-review
+status: confirmed
 availability:
   official_url: https://interviews.televisionacademy.com/interviews/anthony-bourdain
+  video_url: https://interviews.televisionacademy.com/interviews/anthony-bourdain

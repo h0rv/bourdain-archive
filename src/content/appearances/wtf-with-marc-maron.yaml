@@ -1,13 +1,15 @@
 id: wtf-with-marc-maron
 title: WTF with Marc Maron
 type: podcast
-date_precision: unknown
+date: "2011-12-05"
+date_precision: day
 host: Marc Maron
-summary: Podcast appearance with Marc Maron covering Bourdain's career, personality, restaurants, media, and life in public.
+summary: WTF with Marc Maron appearance represented by Episode 233, with Bourdain discussing food, drugs, truth, and travel; a 2016 return segment with Ritch Shydner is also sourced.
 tags: [podcast, fame, food-media]
 people: [anthony-bourdain, marc-maron]
 places: []
-sources: [reddit-archival-megathread]
+sources: [wtf-233-bourdain, wtf-752-bourdain, reddit-archival-megathread]
 related: []
-status: needs-review
-availability: {}
+status: partial
+availability:
+  official_url: https://www.wtfpod.com/podcast/episodes/episode_233_-_anthony_bourdain

@@ -1,12 +1,14 @@
 id: late-show-appearances
 title: Late Show appearances
 type: video
-date_precision: unknown
-summary: Placeholder for late-night television appearances by Anthony Bourdain.
+date: "2015-10-27"
+date_precision: day
+summary: Late Show franchise appearances by Bourdain, represented by the October 27, 2015 Late Show with Stephen Colbert guest lineup; earlier David Letterman appearances are listed in third-party episode guides.
 tags: [television, fame, food-media]
 people: [anthony-bourdain]
 places: []
-sources: [reddit-archival-megathread]
+sources: [paramount-press-late-show-bourdain-2015, reddit-archival-megathread]
 related: []
-status: needs-review
-availability: {}
+status: partial
+availability:
+  official_url: https://www.paramountpressexpress.com/cbs-entertainment/shows/the-late-show-with-stephen-colbert/releases/view?id=43761

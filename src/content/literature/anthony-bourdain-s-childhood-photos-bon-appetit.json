@@ -2,8 +2,8 @@
   "id": "anthony-bourdain-s-childhood-photos-bon-appetit",
   "title": "Anthony Bourdain’s Childhood Photos",
   "type": "essay",
-  "date": null,
-  "date_precision": "unknown",
+  "date": "2018-06-08",
+  "date_precision": "day",
   "summary": "Photo/essay archive — Bon Appétit.",
   "publication": "Bon Appétit",
   "bucket": "Photo/essay archive",
@@ -16,12 +16,14 @@
     "anthony-bourdain"
   ],
   "places": [],
-  "sources": [],
+  "sources": [
+    "anthony-bourdain-s-childhood-photos-bon-appetit"
+  ],
   "related": [],
-  "status": "needs-review",
+  "status": "confirmed",
   "availability": {
     "official_url": "https://www.bonappetit.com/gallery/anthony-bourdain-childhood-photos",
-    "archive_url": null,
+    "archive_url": "https://web.archive.org/web/2/https://www.bonappetit.com/gallery/anthony-bourdain-childhood-photos",
     "library_url": null,
     "audio_url": null,
     "video_url": null,

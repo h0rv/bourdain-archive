@@ -2,8 +2,8 @@
   "id": "laurie-woolever-reveals-his-final-texts-in-memoir-people",
   "title": "Laurie Woolever Reveals His Final Texts in Memoir",
   "type": "article",
-  "date": null,
-  "date_precision": "unknown",
+  "date": "2025-02-28",
+  "date_precision": "day",
   "summary": "Personal memoir/Bourdain-adjacent — People.",
   "publication": "People",
   "bucket": "Personal memoir/Bourdain-adjacent",
@@ -16,12 +16,14 @@
     "anthony-bourdain"
   ],
   "places": [],
-  "sources": [],
+  "sources": [
+    "anthony-bourdain-assistant-laurie-woolever-final-texts-people"
+  ],
   "related": [],
   "status": "needs-review",
   "availability": {
     "official_url": "https://people.com/anthony-bourdain-assistant-laurie-woolever-reveals-his-eerie-final-texts-memoir-care-and-feeding-exclusive-11685428",
-    "archive_url": null,
+    "archive_url": "https://web.archive.org/web/2/https://people.com/anthony-bourdain-assistant-laurie-woolever-reveals-his-eerie-final-texts-memoir-care-and-feeding-exclusive-11685428",
     "library_url": null,
     "audio_url": null,
     "video_url": null,

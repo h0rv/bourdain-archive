@@ -1,12 +1,14 @@
 id: reddit-ama
 title: Reddit AMA appearances
 type: interview
-date_precision: unknown
-summary: Placeholder for Reddit question-and-answer appearances and archival fan references involving Bourdain.
+date: "2013-02-25"
+date_precision: day
+summary: Reddit question-and-answer appearances by Bourdain, represented by his February 25, 2013 r/IAmA thread; a September 20, 2016 r/IAmA thread is also sourced.
 tags: [interview, internet, food-media]
 people: [anthony-bourdain]
 places: []
-sources: [reddit-archival-megathread]
+sources: [reddit-ama-2013, reddit-ama-2016, reddit-archival-megathread]
 related: []
-status: needs-review
-availability: {}
+status: partial
+availability:
+  official_url: https://www.reddit.com/r/IAmA/comments/197ji0/i_am_anthony_bourdain_ask_me_anything/

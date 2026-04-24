@@ -2,8 +2,8 @@
   "id": "travels-with-anthony-bourdain-the-new-yorker",
   "title": "Travels with Anthony Bourdain",
   "type": "tribute",
-  "date": null,
-  "date_precision": "unknown",
+  "date": "2018-06-08",
+  "date_precision": "day",
   "summary": "Remembrance — The New Yorker.",
   "publication": "The New Yorker",
   "bucket": "Remembrance",
@@ -16,12 +16,14 @@
     "anthony-bourdain"
   ],
   "places": [],
-  "sources": [],
+  "sources": [
+    "travels-with-anthony-bourdain-new-yorker"
+  ],
   "related": [],
   "status": "needs-review",
   "availability": {
     "official_url": "https://www.newyorker.com/news/postscript/travels-with-anthony-bourdain",
-    "archive_url": null,
+    "archive_url": "https://web.archive.org/web/2/https://www.newyorker.com/news/postscript/travels-with-anthony-bourdain",
     "library_url": null,
     "audio_url": null,
     "video_url": null,

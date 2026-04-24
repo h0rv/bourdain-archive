@@ -2,8 +2,8 @@
   "id": "anthony-bourdain-and-the-wisdom-of-talking-to-strangers-thrillist",
   "title": "Anthony Bourdain and the Wisdom of Talking to Strangers",
   "type": "tribute",
-  "date": null,
-  "date_precision": "unknown",
+  "date": "2018-06-11",
+  "date_precision": "day",
   "summary": "Tribute/legacy — Thrillist.",
   "publication": "Thrillist",
   "bucket": "Tribute/legacy",
@@ -16,12 +16,14 @@
     "anthony-bourdain"
   ],
   "places": [],
-  "sources": [],
+  "sources": [
+    "anthony-bourdain-and-the-wisdom-of-talking-to-strangers-thrillist"
+  ],
   "related": [],
-  "status": "needs-review",
+  "status": "confirmed",
   "availability": {
     "official_url": "https://www.thrillist.com/eat/nation/remembering-anthony-bourdain",
-    "archive_url": null,
+    "archive_url": "https://web.archive.org/web/2/https://www.thrillist.com/eat/nation/remembering-anthony-bourdain",
     "library_url": null,
     "audio_url": null,
     "video_url": null,

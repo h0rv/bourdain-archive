@@ -106,6 +106,8 @@ export const collections = {
       id: z.string(),
       title: z.string(),
       type: z.string(),
+      date: z.string().nullable().optional(),
+      date_precision: datePrecisionSchema.default('unknown'),
       url: z.url(),
       accessed: z.string(),
       notes: z.string().nullable().optional(),
