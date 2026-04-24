@@ -1,0 +1,75 @@
+{
+  "source": {
+    "id": "socials",
+    "raw_path": "archive/raw/socials.md",
+    "notes": "Manually collected social and defunct-social accounts/resources."
+  },
+  "records": [
+    {
+      "type": "X / Twitter",
+      "title": "Anthony Bourdain @Bourdain",
+      "url": "https://x.com/Bourdain",
+      "notes": "Personal account; profile lists location “In transit” and links Facebook. ([X (formerly Twitter)][1])"
+    },
+    {
+      "type": "Instagram",
+      "title": "Anthony Bourdain @anthonybourdain",
+      "url": "https://www.instagram.com/anthonybourdain/",
+      "notes": "Personal account; search result shows 923 posts and bio: “Enthusiast. Frequent flyer. Used to cook for a living.” ([Instagram][2])"
+    },
+    {
+      "type": "Facebook",
+      "title": "Anthony Bourdain",
+      "url": "https://www.facebook.com/AnthonyBourdain/",
+      "notes": "Official Facebook page; page text says “accept no substitutes.” ([Facebook][3])"
+    },
+    {
+      "type": "Tumblr",
+      "title": "Anthony Bourdain",
+      "url": "https://anthonybourdain.tumblr.com/",
+      "notes": "Old official-ish blog; Tumblr pages link to Facebook/Twitter and describe it as “A continuous dribble…” ([Tumblr][4])"
+    },
+    {
+      "type": "Tumblr mirror/profile",
+      "title": "Anthony Bourdain on Tumblr",
+      "url": "https://www.tumblr.com/anthonybourdain",
+      "notes": "Tumblr profile version of same account. ([Tumblr][5])"
+    },
+    {
+      "type": "Medium",
+      "title": "Parts Unknown publication",
+      "url": "https://medium.com/parts-unknown",
+      "notes": "Parts Unknown-era writing; includes Bourdain-authored pieces and links to Twitter/Facebook/Instagram/Tumblr. ([Medium][6])"
+    },
+    {
+      "type": "YouTube",
+      "title": "Anthony Bourdain: Parts Unknown",
+      "url": "https://www.youtube.com/@AnthonyBourdainPartsUnknown",
+      "notes": "Official/show channel; page links Facebook. ([YouTube][7])"
+    },
+    {
+      "type": "Facebook",
+      "title": "Anthony Bourdain: Parts Unknown",
+      "url": "https://www.facebook.com/PartsUnknownCNN/",
+      "notes": "Official show page for *Parts Unknown*. ([Facebook][8])"
+    },
+    {
+      "type": "Defunct social archive",
+      "title": "Bourdain’s Li.st archive",
+      "url": "https://bourdain.greg.technology/",
+      "notes": "Partial archive of his defunct Li.st posts/lists; found via recent Reddit/HN discussion. ([Reddit][9])"
+    },
+    {
+      "type": "Reddit research thread",
+      "title": "Hunt for Bourdain’s Li.st content",
+      "url": "https://www.reddit.com/r/AnthonyBourdain/comments/u7yjit/the_hunt_for_bourdains_long_lost_list_app_content/",
+      "notes": "Useful context on recovering Li.st material. ([Reddit][10])"
+    },
+    {
+      "type": "Reddit research thread",
+      "title": "Bourdain archive of lists",
+      "url": "https://www.reddit.com/r/KitchenConfidential/comments/1pa3uki/anthony_bourdains_archive_of_lists/",
+      "notes": "Points to recovered list archive. ([Reddit][9])"
+    }
+  ]
+}

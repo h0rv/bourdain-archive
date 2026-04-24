@@ -1,0 +1,309 @@
+{
+  "source": {
+    "id": "literature-about-bourdain",
+    "raw_path": "archive/raw/literature-about-bourdain.md",
+    "notes": "Manually collected articles, profiles, reviews, tributes, and criticism about Anthony Bourdain."
+  },
+  "records": [
+    {
+      "bucket": "Profile",
+      "title": "Anthony Bourdain’s Moveable Feast",
+      "publication": "The New Yorker",
+      "url": "https://www.newyorker.com/magazine/2017/02/13/anthony-bourdains-moveable-feast"
+    },
+    {
+      "bucket": "Remembrance",
+      "title": "Travels with Anthony Bourdain",
+      "publication": "The New Yorker",
+      "url": "https://www.newyorker.com/news/postscript/travels-with-anthony-bourdain"
+    },
+    {
+      "bucket": "Literary analysis",
+      "title": "What Anthony Bourdain’s Early Crime Fiction Novels Reveal",
+      "publication": "Eater",
+      "url": "https://www.eater.com/2017/1/25/14376996/anthony-bourdain-novels-fiction"
+    },
+    {
+      "bucket": "Literary legacy",
+      "title": "Anthony Bourdain’s Literary Legacy in 13 Books",
+      "publication": "Eater",
+      "url": "https://www.eater.com/2018/6/13/16774768/anthony-bourdain-books"
+    },
+    {
+      "bucket": "Biography review",
+      "title": "Who Knows Anthony Bourdain?",
+      "publication": "Eater",
+      "url": "https://www.eater.com/22747424/anthony-bourdain-biography-laurie-woolever-book-review"
+    },
+    {
+      "bucket": "Tribute/interview",
+      "title": "Andrew Zimmern on Bourdain: “You Don’t Know Which of Your Friends Is Suffering”",
+      "publication": "Eater",
+      "url": "https://www.eater.com/2018/6/8/17441550/andrew-zimmern-mourns-anthony-bourdain"
+    },
+    {
+      "bucket": "Legacy essay",
+      "title": "Anthony Bourdain Rewrote the Rules for Food and Travel TV",
+      "publication": "Eater",
+      "url": "https://www.eater.com/2018/6/8/17441262/anthony-bourdain-food-and-travel-shows-legacy"
+    },
+    {
+      "bucket": "Tributes",
+      "title": "Chefs and Food Writers Remember Anthony Bourdain",
+      "publication": "Eater",
+      "url": "https://www.eater.com/2018/6/8/17442084/anthony-bourdain-remembered"
+    },
+    {
+      "bucket": "Grief/fandom",
+      "title": "Who Was Bourdain Day For?",
+      "publication": "Eater",
+      "url": "https://www.eater.com/2019/6/27/18761641/anthony-bourdain-day-june-25-grief-mourning-fans"
+    },
+    {
+      "bucket": "TV legacy interview",
+      "title": "“Parts Unknown” Producer Sandra Zweig on Anthony Bourdain’s TV Legacy",
+      "publication": "Eater",
+      "url": "https://www.eater.com/2018/11/9/18080354/anthony-bourdain-parts-unknown-sandra-zweig-interview"
+    },
+    {
+      "bucket": "Book/interview",
+      "title": "How Anthony Bourdain’s Longtime Assistant Made His New Book a Reality",
+      "publication": "Eater",
+      "url": "https://www.eater.com/22388507/anthony-bourdain-world-travel-book-laurie-woolever-interview"
+    },
+    {
+      "bucket": "Legacy commentary",
+      "title": "Samin Nosrat Discusses Anthony Bourdain’s Complicated Legacy",
+      "publication": "Eater",
+      "url": "https://www.eater.com/2018/11/1/18049550/samin-nosrat-on-anthony-bourdain-netflix-podcast"
+    },
+    {
+      "bucket": "Profile/tribute",
+      "title": "The Enormous Life of Anthony Bourdain, According to Those Who Knew Him",
+      "publication": "GQ",
+      "url": "https://www.gq.com/story/anthony-bourdain-men-of-the-year-tribute"
+    },
+    {
+      "bucket": "Obit/essay",
+      "title": "Remembering Anthony Bourdain",
+      "publication": "The Atlantic",
+      "url": "https://www.theatlantic.com/entertainment/archive/2018/06/remembering-anthony-bourdain/562388/"
+    },
+    {
+      "bucket": "Origin story",
+      "title": "How Anthony Bourdain Became an Instant Sensation",
+      "publication": "Rolling Stone",
+      "url": "https://www.rollingstone.com/culture/culture-features/anthony-bourdain-chef-author-sensation-1234615054/"
+    },
+    {
+      "bucket": "Excerpt/oral bio",
+      "title": "Anthony Bourdain’s Longtime Director and Producer Remembers Him",
+      "publication": "Vanity Fair",
+      "url": "https://www.vanityfair.com/style/2021/09/anthony-bourdain-director-producer-exclusive-excerpt"
+    },
+    {
+      "bucket": "Excerpt/oral bio",
+      "title": "Inside Anthony Bourdain’s All-Consuming Relationship",
+      "publication": "Vanity Fair",
+      "url": "https://www.vanityfair.com/style/2021/09/inside-anthony-bourdains-all-consuming-relationship"
+    },
+    {
+      "bucket": "Interview/profile",
+      "title": "Anthony Bourdain: The Thrillist Interview",
+      "publication": "Thrillist",
+      "url": "https://www.thrillist.com/entertainment/nation/anthony-bourdain-interview-appetites-cookbook"
+    },
+    {
+      "bucket": "Tribute/legacy",
+      "title": "Anthony Bourdain and the Wisdom of Talking to Strangers",
+      "publication": "Thrillist",
+      "url": "https://www.thrillist.com/eat/nation/remembering-anthony-bourdain"
+    },
+    {
+      "bucket": "Interview",
+      "title": "Anthony Bourdain’s LA: A Q&A With a Legend",
+      "publication": "Thrillist",
+      "url": "https://www.thrillist.com/eat/los-angeles/anthony-bourdain-los-angeles-interview"
+    },
+    {
+      "bucket": "Legacy essay",
+      "title": "Anthony Bourdain’s Crusade for Fine-Dining Democracy",
+      "publication": "Grub Street",
+      "url": "https://www.grubstreet.com/2018/06/anthony-bourdain-restaurant-democracy-legacy.html"
+    },
+    {
+      "bucket": "Legacy essay",
+      "title": "How Anthony Bourdain Forever Changed Food Writing",
+      "publication": "Grub Street",
+      "url": "https://www.grubstreet.com/2018/06/anthony-bourdain-food-writing-legacy.html"
+    },
+    {
+      "bucket": "Essay",
+      "title": "Anthony Bourdain, Addiction, and Hoping for a Better Life",
+      "publication": "Grub Street",
+      "url": "https://www.grubstreet.com/2019/06/anthony-bourdain-addiction.html"
+    },
+    {
+      "bucket": "Documentary interview",
+      "title": "How Do You Tell the Story of Anthony Bourdain?",
+      "publication": "Grub Street",
+      "url": "https://www.grubstreet.com/2021/07/director-morgan-neville-roadrunner-anthony-bourdain-documentary.html"
+    },
+    {
+      "bucket": "Media/brand essay",
+      "title": "The Feeding Tube: The Anthony Bourdain Brand",
+      "publication": "Grub Street",
+      "url": "https://www.grubstreet.com/2012/04/the-appeal-of-anthony-bourdain.html"
+    },
+    {
+      "bucket": "Bio news",
+      "title": "Anthony Bourdain’s Biography Will Be Released in 2019",
+      "publication": "Grub Street",
+      "url": "https://www.grubstreet.com/2018/06/anthony-bourdains-biography-will-be-released-in-2019.html"
+    },
+    {
+      "bucket": "Interview",
+      "title": "Anthony Bourdain Thinks You’re Crazy for Eating Airplane Food",
+      "publication": "Bon Appétit",
+      "url": "https://www.bonappetit.com/people/celebrities/article/anthony-bourdain-parts-unknown"
+    },
+    {
+      "bucket": "Personal tribute",
+      "title": "Chef Angela Dimayuga on Her Last Conversation with Anthony Bourdain",
+      "publication": "Bon Appétit",
+      "url": "https://www.bonappetit.com/story/angela-dimayuga-anthony-bourdain"
+    },
+    {
+      "bucket": "Oral bio excerpt",
+      "title": "“It’s Not Often That You Meet People Who Are Funny, Clever, and Kind. And Anthony Was”",
+      "publication": "Bon Appétit",
+      "url": "https://www.bonappetit.com/story/bourdain-the-definitive-oral-biography"
+    },
+    {
+      "bucket": "Photo/essay archive",
+      "title": "Anthony Bourdain’s Childhood Photos",
+      "publication": "Bon Appétit",
+      "url": "https://www.bonappetit.com/gallery/anthony-bourdain-childhood-photos"
+    },
+    {
+      "bucket": "Bio controversy",
+      "title": "The Latest Anthony Bourdain Biography Is Already Controversial",
+      "publication": "Bon Appétit",
+      "url": "https://www.bonappetit.com/story/anthony-bourdain-biography-controversy"
+    },
+    {
+      "bucket": "Book/comic article",
+      "title": "Anthony Bourdain’s “Hungry Ghosts”",
+      "publication": "Eater",
+      "url": "https://www.eater.com/2018/10/3/17929834/anthony-bourdains-hungry-ghosts-comic-book"
+    },
+    {
+      "bucket": "Book review",
+      "title": "Bourdain oral biography review",
+      "publication": "Washington Post",
+      "url": "https://www.washingtonpost.com/food/2021/09/30/bourdain-oral-biography-review/"
+    },
+    {
+      "bucket": "Book/interview",
+      "title": "“We were all grieving”: Laurie Woolever on compiling Bourdain’s travel book",
+      "publication": "Washington Post",
+      "url": "https://www.washingtonpost.com/food/2021/04/21/bourdain-travel-book/"
+    },
+    {
+      "bucket": "Literary essay",
+      "title": "Don’t discount “Typhoid Mary”",
+      "publication": "Washington Post",
+      "url": "https://www.washingtonpost.com/news/food/wp/2019/07/30/when-listing-anthony-bourdains-greatest-literary-hits-dont-discount-typhoid-mary/"
+    },
+    {
+      "bucket": "Legacy/politics",
+      "title": "Anthony Bourdain hated Henry Kissinger",
+      "publication": "Washington Post",
+      "url": "https://www.washingtonpost.com/food/2023/11/30/henry-kissinger-anthony-bourdain-cambodia/"
+    },
+    {
+      "bucket": "Book controversy",
+      "title": "“I am lonely”: controversial book reveals Anthony Bourdain’s final days",
+      "publication": "The Guardian",
+      "url": "https://www.theguardian.com/food/2022/oct/01/i-am-lonely-controversial-book-reveals-anthony-bourdains-final-days"
+    },
+    {
+      "bucket": "Book review",
+      "title": "Down and Out in Paradise review",
+      "publication": "The Guardian",
+      "url": "https://www.theguardian.com/books/2022/oct/14/down-and-out-in-paradise-review-a-disservice-to-anthony-bourdain"
+    },
+    {
+      "bucket": "Documentary/AI",
+      "title": "Anthony Bourdain documentary sparks backlash for using AI voiceover",
+      "publication": "The Guardian",
+      "url": "https://www.theguardian.com/food/2021/jul/16/anthony-bourdain-documentary-ai-voiceover-roadrunner"
+    },
+    {
+      "bucket": "Documentary review",
+      "title": "The Bourdain AI furore shouldn’t overshadow Roadrunner",
+      "publication": "The Guardian",
+      "url": "https://www.theguardian.com/film/2021/jul/21/anthony-bourdain-documentary-roadrunner-ai-deepfake-furore"
+    },
+    {
+      "bucket": "Personal/family",
+      "title": "Anthony Bourdain: My family values",
+      "publication": "The Guardian",
+      "url": "https://www.theguardian.com/lifeandstyle/2013/sep/27/anthony-bourdain-parts-unknown-family-values"
+    },
+    {
+      "bucket": "Obit",
+      "title": "Anthony Bourdain, globe-trotting chef, dies at 61",
+      "publication": "Los Angeles Times",
+      "url": "https://www.latimes.com/business/hollywood/la-fi-ct-bourdain-obit-20180608-story.html"
+    },
+    {
+      "bucket": "Books/legacy",
+      "title": "Books were good to Anthony Bourdain — but TV was even better",
+      "publication": "Los Angeles Times",
+      "url": "https://www.latimes.com/books/la-et-jc-bourdain-books-20180608-story.html"
+    },
+    {
+      "bucket": "Interview",
+      "title": "Anthony Bourdain dishes on “The Layover” and life as a TV foodie",
+      "publication": "Los Angeles Times",
+      "url": "https://www.latimes.com/archives/blogs/show-tracker/story/2011-11-23/anthony-bourdain-dishes-on-the-layover-and-life-as-a-tv-foodie"
+    },
+    {
+      "bucket": "Politics/legacy",
+      "title": "Anthony Bourdain’s scathing Henry Kissinger remarks resurface",
+      "publication": "Los Angeles Times",
+      "url": "https://www.latimes.com/entertainment-arts/story/2023-11-30/anthony-bourdain-henry-kissinger-remarks"
+    },
+    {
+      "bucket": "Obit/news",
+      "title": "Anthony Bourdain Found Dead at 61 From Apparent Suicide",
+      "publication": "Time",
+      "url": "https://time.com/5305838/anthony-bourdain-dead/"
+    },
+    {
+      "bucket": "Memorial statement",
+      "title": "Eric Ripert Speaks Out After Finding Anthony Bourdain Dead",
+      "publication": "Time",
+      "url": "https://time.com/5306636/eric-ripert-statement-anthony-bourdain-death/"
+    },
+    {
+      "bucket": "Music/culture obit",
+      "title": "Anthony Bourdain Dead at 61",
+      "publication": "Pitchfork",
+      "url": "https://pitchfork.com/news/anthony-bourdain-dead-at-61"
+    },
+    {
+      "bucket": "Personal memoir/Bourdain-adjacent",
+      "title": "Laurie Woolever on food, addiction, and working with Anthony Bourdain",
+      "publication": "The Guardian",
+      "url": "https://www.theguardian.com/food/2025/apr/06/working-with-nys-hottest-chefs-took-its-toll-on-laurie-woolever-but-nothing-prepared-her-for-anthony-bourdains-death"
+    },
+    {
+      "bucket": "Personal memoir/Bourdain-adjacent",
+      "title": "Laurie Woolever Reveals His Final Texts in Memoir",
+      "publication": "People",
+      "url": "https://people.com/anthony-bourdain-assistant-laurie-woolever-reveals-his-eerie-final-texts-memoir-care-and-feeding-exclusive-11685428"
+    }
+  ]
+}

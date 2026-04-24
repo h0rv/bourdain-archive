@@ -4,7 +4,7 @@
     "type": "markdown_episode_country_index",
     "url": "https://raw.githubusercontent.com/cnlowery/anthony-bourdain-shows-by-country/master/README.md",
     "raw_path": "archive/raw/shows-by-country-readme.md",
-    "derived_path": "archive/derived/shows-by-country.yaml",
+    "derived_path": "archive/derived/shows-by-country.json",
     "canonical_url": "https://github.com/cnlowery/anthony-bourdain-shows-by-country",
     "notes": "Episode index grouped by country/region. Source README says data gathered from TheTVDB."
   },
@@ -21,7 +21,7 @@
     "type": "csv_travel_places",
     "url": "https://raw.githubusercontent.com/underthecurve/bourdain-travel-places/master/Map_data.csv",
     "raw_path": "archive/raw/travel-places-map-data.csv",
-    "derived_path": "archive/derived/travel-places.yaml",
+    "derived_path": "archive/derived/travel-places.json",
     "canonical_url": "https://github.com/underthecurve/bourdain-travel-places/blob/master/Map_data.csv",
     "license": "CC BY 4.0"
   },
@@ -30,8 +30,28 @@
     "type": "reddit_thread_json",
     "url": "https://www.reddit.com/r/AnthonyBourdain/comments/ai45r3/anthony_bourdain_archival_megathread/.json?raw_json=1",
     "raw_path": "archive/raw/reddit-anthony-bourdain-archival-megathread.json",
-    "derived_path": "archive/derived/reddit-archival-megathread-links.yaml",
+    "derived_path": "archive/derived/reddit-archival-megathread-links.json",
     "canonical_url": "https://www.reddit.com/r/AnthonyBourdain/comments/ai45r3/anthony_bourdain_archival_megathread/",
     "notes": "Raw Reddit JSON snapshot plus derived outbound-link index."
+  },
+  {
+    "id": "literature-about-bourdain",
+    "type": "curated_json",
+    "path": "archive/derived/literature-about-bourdain.json",
+    "notes": "Manually collected articles, profiles, reviews, tributes, and criticism about Anthony Bourdain."
+  },
+  {
+    "id": "socials",
+    "type": "curated_json",
+    "path": "archive/derived/socials.json",
+    "notes": "Manually collected social and defunct-social accounts/resources."
+  },
+  {
+    "id": "filming-locations-bourdain",
+    "type": "csv_filming_locations",
+    "raw_path": "archive/raw/filming-locations-bourdain.csv",
+    "derived_path": "archive/derived/filming-locations-bourdain.json",
+    "canonical_url": "https://docs.google.com/spreadsheets/d/14l07iFQMr5eNfYSqDjq8dyMwxsrPI0RjD7QY4muRpNU/edit?usp=sharing",
+    "notes": "User-provided CSV export of filming locations. Columns inferred as country, city, region/state, show, season, episode, title, location."
   }
 ]

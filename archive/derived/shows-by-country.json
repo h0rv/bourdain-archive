@@ -1,0 +1,2654 @@
+{
+  "source": {
+    "id": "shows-by-country-readme",
+    "url": "https://github.com/cnlowery/anthony-bourdain-shows-by-country",
+    "raw_path": "archive/raw/shows-by-country-readme.md"
+  },
+  "records": [
+    {
+      "country_region": "Antarctica",
+      "title": "Antarctica",
+      "show": "Parts Unknown",
+      "episode_code": "S09E05",
+      "season": 9,
+      "episode": 5,
+      "raw": "Antarctica - _Parts Unknown_ S09E05",
+      "parsed": true
+    },
+    {
+      "country_region": "Argentina",
+      "title": "Argentina",
+      "show": "No Reservations",
+      "episode_code": "S03E13",
+      "season": 3,
+      "episode": 13,
+      "raw": "Argentina - _No Reservations_ S03E13",
+      "parsed": true
+    },
+    {
+      "country_region": "Argentina",
+      "title": "Buenos Aires",
+      "show": "Parts Unknown",
+      "episode_code": "S08E07",
+      "season": 8,
+      "episode": 7,
+      "raw": "Buenos Aires - _Parts Unknown_ S08E07",
+      "parsed": true
+    },
+    {
+      "country_region": "Armenia",
+      "title": "Armenia",
+      "show": "Parts Unknown",
+      "episode_code": "S11E04",
+      "season": 11,
+      "episode": 4,
+      "raw": "Armenia - _Parts Unknown_ S11E04",
+      "parsed": true
+    },
+    {
+      "country_region": "Australia",
+      "title": "Mad Tony: The Food Warrior",
+      "show": "A Cook's Tour",
+      "episode_code": "S02E08",
+      "season": 2,
+      "episode": 8,
+      "raw": "Mad Tony: The Food Warrior - _A Cook's Tour_ S02E08",
+      "parsed": true
+    },
+    {
+      "country_region": "Australia",
+      "title": "Down Under: The Wild West of Cooking",
+      "show": "A Cook's Tour",
+      "episode_code": "S02E09",
+      "season": 2,
+      "episode": 9,
+      "raw": "Down Under: The Wild West of Cooking - _A Cook's Tour_ S02E09",
+      "parsed": true
+    },
+    {
+      "country_region": "Australia",
+      "title": "Australia",
+      "show": "No Reservations",
+      "episode_code": "S05E12",
+      "season": 5,
+      "episode": 12,
+      "raw": "Australia - _No Reservations_ S05E12",
+      "parsed": true
+    },
+    {
+      "country_region": "Australia",
+      "title": "Sydney",
+      "show": "No Reservations",
+      "episode_code": "S08E10",
+      "season": 8,
+      "episode": 10,
+      "raw": "Sydney - _No Reservations_ S08E10",
+      "parsed": true
+    },
+    {
+      "country_region": "Austria",
+      "title": "Vienna",
+      "show": "No Reservations",
+      "episode_code": "S07E04",
+      "season": 7,
+      "episode": 4,
+      "raw": "Vienna - _No Reservations_ S07E04",
+      "parsed": true
+    },
+    {
+      "country_region": "Bhutan",
+      "title": "Bhutan",
+      "show": "Parts Unknown",
+      "episode_code": "S11E08",
+      "season": 11,
+      "episode": 8,
+      "raw": "Bhutan - _Parts Unknown_ S11E08",
+      "parsed": true
+    },
+    {
+      "country_region": "Brazil",
+      "title": "A Mystical World",
+      "show": "A Cook's Tour",
+      "episode_code": "S02E03",
+      "season": 2,
+      "episode": 3,
+      "raw": "A Mystical World - _A Cook's Tour_ S02E03",
+      "parsed": true
+    },
+    {
+      "country_region": "Brazil",
+      "title": "How to Be a Carioca",
+      "show": "A Cook's Tour",
+      "episode_code": "S02E04",
+      "season": 2,
+      "episode": 4,
+      "raw": "How to Be a Carioca - _A Cook's Tour_ S02E04",
+      "parsed": true
+    },
+    {
+      "country_region": "Brazil",
+      "title": "Brazil",
+      "show": "No Reservations",
+      "episode_code": "S03E09",
+      "season": 3,
+      "episode": 9,
+      "raw": "Brazil - _No Reservations_ S03E09",
+      "parsed": true
+    },
+    {
+      "country_region": "Brazil",
+      "title": "Brazil",
+      "show": "No Reservations",
+      "episode_code": "S07E06",
+      "season": 7,
+      "episode": 6,
+      "raw": "Brazil - _No Reservations_ S07E06",
+      "parsed": true
+    },
+    {
+      "country_region": "Brazil",
+      "title": "Rio",
+      "show": "No Reservations",
+      "episode_code": "S08E15",
+      "season": 8,
+      "episode": 15,
+      "raw": "Rio - _No Reservations_ S08E15",
+      "parsed": true
+    },
+    {
+      "country_region": "Brazil",
+      "title": "Bahia, Brazil",
+      "show": "Parts Unknown",
+      "episode_code": "S03E08",
+      "season": 3,
+      "episode": 8,
+      "raw": "Bahia, Brazil - _Parts Unknown_ S03E08",
+      "parsed": true
+    },
+    {
+      "country_region": "Brazil",
+      "title": "Minas Gerais, Brazil",
+      "show": "Parts Unknown",
+      "episode_code": "S08E08",
+      "season": 8,
+      "episode": 8,
+      "raw": "Minas Gerais, Brazil - _Parts Unknown_ S08E08",
+      "parsed": true
+    },
+    {
+      "country_region": "Cambodia",
+      "title": "Wild Delicacies",
+      "show": "A Cook's Tour",
+      "episode_code": "S01E05",
+      "season": 1,
+      "episode": 5,
+      "raw": "Wild Delicacies - _A Cook's Tour_ S01E05",
+      "parsed": true
+    },
+    {
+      "country_region": "Cambodia",
+      "title": "Eating on the Edge of Nowhere",
+      "show": "A Cook's Tour",
+      "episode_code": "S01E06",
+      "season": 1,
+      "episode": 6,
+      "raw": "Eating on the Edge of Nowhere - _A Cook's Tour_ S01E06",
+      "parsed": true
+    },
+    {
+      "country_region": "Cambodia",
+      "title": "Cambodia",
+      "show": "No Reservations",
+      "episode_code": "S07E02",
+      "season": 7,
+      "episode": 2,
+      "raw": "Cambodia - _No Reservations_ S07E02",
+      "parsed": true
+    },
+    {
+      "country_region": "Canada",
+      "title": "Quebec",
+      "show": "No Reservations",
+      "episode_code": "S02E05",
+      "season": 2,
+      "episode": 5,
+      "raw": "Quebec - _No Reservations_ S02E05",
+      "parsed": true
+    },
+    {
+      "country_region": "Canada",
+      "title": "Vancouver, BC",
+      "show": "No Reservations",
+      "episode_code": "S04E03",
+      "season": 4,
+      "episode": 3,
+      "raw": "Vancouver, BC - _No Reservations_ S04E03",
+      "parsed": true
+    },
+    {
+      "country_region": "Canada",
+      "title": "Quebec",
+      "show": "Parts Unknown",
+      "episode_code": "S01E04",
+      "season": 1,
+      "episode": 4,
+      "raw": "Quebec - _Parts Unknown_ S01E04",
+      "parsed": true
+    },
+    {
+      "country_region": "Canada",
+      "title": "Newfoundland",
+      "show": "Parts Unknown",
+      "episode_code": "S11E03",
+      "season": 11,
+      "episode": 3,
+      "raw": "Newfoundland - _Parts Unknown_ S11E03",
+      "parsed": true
+    },
+    {
+      "country_region": "Caribbean",
+      "title": "Caribbean Island Hopping",
+      "show": "No Reservations",
+      "episode_code": "S06E14",
+      "season": 6,
+      "episode": 14,
+      "raw": "Caribbean Island Hopping - _No Reservations_ S06E14",
+      "parsed": true
+    },
+    {
+      "country_region": "Caribbean",
+      "title": "Trinidad",
+      "show": "Parts Unknown",
+      "episode_code": "S09E07",
+      "season": 9,
+      "episode": 7,
+      "raw": "Trinidad - _Parts Unknown_ S09E07",
+      "parsed": true
+    },
+    {
+      "country_region": "Chile",
+      "title": "Chile",
+      "show": "No Reservations",
+      "episode_code": "S05E11",
+      "season": 5,
+      "episode": 11,
+      "raw": "Chile - _No Reservations_ S05E11",
+      "parsed": true
+    },
+    {
+      "country_region": "China",
+      "title": "Asia Special",
+      "show": "No Reservations",
+      "episode_code": "S02E01/Special",
+      "season": 2,
+      "episode": 1,
+      "raw": "Asia Special - _No Reservations_ S02E01/Special",
+      "parsed": true
+    },
+    {
+      "country_region": "China",
+      "title": "Shanghai",
+      "show": "No Reservations",
+      "episode_code": "S03E07",
+      "season": 3,
+      "episode": 7,
+      "raw": "Shanghai - _No Reservations_ S03E07",
+      "parsed": true
+    },
+    {
+      "country_region": "China",
+      "title": "Hong Kong",
+      "show": "No Reservations",
+      "episode_code": "S03E12",
+      "season": 3,
+      "episode": 12,
+      "raw": "Hong Kong - _No Reservations_ S03E12",
+      "parsed": true
+    },
+    {
+      "country_region": "China",
+      "raw": "Harbin, China -  _No Reservations_ S06E08",
+      "parsed": false
+    },
+    {
+      "country_region": "China",
+      "title": "Macau",
+      "show": "No Reservations",
+      "episode_code": "S07E10",
+      "season": 7,
+      "episode": 10,
+      "raw": "Macau - _No Reservations_ S07E10",
+      "parsed": true
+    },
+    {
+      "country_region": "China",
+      "title": "Shanghai",
+      "show": "Parts Unknown",
+      "episode_code": "S04E01",
+      "season": 4,
+      "episode": 1,
+      "raw": "Shanghai - _Parts Unknown_ S04E01",
+      "parsed": true
+    },
+    {
+      "country_region": "China",
+      "title": "Sichuan with Eric Ripert",
+      "show": "Parts Unknown",
+      "episode_code": "S08E03",
+      "season": 8,
+      "episode": 3,
+      "raw": "Sichuan with Eric Ripert - _Parts Unknown_ S08E03",
+      "parsed": true
+    },
+    {
+      "country_region": "China",
+      "title": "Hong Kong",
+      "show": "Parts Unknown",
+      "episode_code": "S11E05",
+      "season": 11,
+      "episode": 5,
+      "raw": "Hong Kong - _Parts Unknown_ S11E05",
+      "parsed": true
+    },
+    {
+      "country_region": "Colombia",
+      "title": "Colombia",
+      "show": "No Reservations",
+      "episode_code": "S04E12",
+      "season": 4,
+      "episode": 12,
+      "raw": "Colombia - _No Reservations_ S04E12",
+      "parsed": true
+    },
+    {
+      "country_region": "Colombia",
+      "title": "Colombia",
+      "show": "Parts Unknown",
+      "episode_code": "S01E03",
+      "season": 1,
+      "episode": 3,
+      "raw": "Colombia - _Parts Unknown_ S01E03",
+      "parsed": true
+    },
+    {
+      "country_region": "Croatia",
+      "title": "Croatian Cost",
+      "show": "No Reservations",
+      "episode_code": "S08E03",
+      "season": 8,
+      "episode": 3,
+      "raw": "Croatian Cost - _No Reservations_ S08E03",
+      "parsed": true
+    },
+    {
+      "country_region": "Cuba",
+      "title": "Cuba",
+      "show": "No Reservations",
+      "episode_code": "S07E09",
+      "season": 7,
+      "episode": 9,
+      "raw": "Cuba - _No Reservations_ S07E09",
+      "parsed": true
+    },
+    {
+      "country_region": "Cuba",
+      "title": "Cuba",
+      "show": "Parts Unknown",
+      "episode_code": "S06E01",
+      "season": 6,
+      "episode": 1,
+      "raw": "Cuba - _Parts Unknown_ S06E01",
+      "parsed": true
+    },
+    {
+      "country_region": "Czech Republic",
+      "raw": "Prague -  _No Reservations_ S06E04",
+      "parsed": false
+    },
+    {
+      "country_region": "Democratic Republish of the Congo",
+      "title": "Congo",
+      "show": "Parts Unknown",
+      "episode_code": "S01E08",
+      "season": 1,
+      "episode": 8,
+      "raw": "Congo - _Parts Unknown_ S01E08",
+      "parsed": true
+    },
+    {
+      "country_region": "Denmark",
+      "title": "Copenhagen",
+      "show": "Parts Unknown",
+      "episode_code": "S02E04",
+      "season": 2,
+      "episode": 4,
+      "raw": "Copenhagen - _Parts Unknown_ S02E04",
+      "parsed": true
+    },
+    {
+      "country_region": "Dominican Republic",
+      "title": "Dominican Republic",
+      "show": "No Reservations",
+      "episode_code": "S08E17",
+      "season": 8,
+      "episode": 17,
+      "raw": "Dominican Republic - _No Reservations_ S08E17",
+      "parsed": true
+    },
+    {
+      "country_region": "Ecuador",
+      "raw": "Ecuador -  _No Reservations_ S06E06",
+      "parsed": false
+    },
+    {
+      "country_region": "Egypt",
+      "title": "Egypt",
+      "show": "No Reservations",
+      "episode_code": "S04E18",
+      "season": 4,
+      "episode": 18,
+      "raw": "Egypt - _No Reservations_ S04E18",
+      "parsed": true
+    },
+    {
+      "country_region": "England",
+      "title": "A Pleasing Palate",
+      "show": "A Cook's Tour",
+      "episode_code": "S01E22",
+      "season": 1,
+      "episode": 22,
+      "raw": "A Pleasing Palate - _A Cook's Tour_ S01E22",
+      "parsed": true
+    },
+    {
+      "country_region": "England",
+      "title": "London/Edinburgh",
+      "show": "No Reservations",
+      "episode_code": "S04E06",
+      "season": 4,
+      "episode": 6,
+      "raw": "London/Edinburgh - _No Reservations_ S04E06",
+      "parsed": true
+    },
+    {
+      "country_region": "England",
+      "title": "London",
+      "show": "Parts Unknown",
+      "episode_code": "S08E04",
+      "season": 8,
+      "episode": 4,
+      "raw": "London - _Parts Unknown_ S08E04",
+      "parsed": true
+    },
+    {
+      "country_region": "Ethiopia",
+      "title": "Ethiopia",
+      "show": "Parts Unknown",
+      "episode_code": "S06E05",
+      "season": 6,
+      "episode": 5,
+      "raw": "Ethiopia - _Parts Unknown_ S06E05",
+      "parsed": true
+    },
+    {
+      "country_region": "Finland",
+      "title": "Finland",
+      "show": "No Reservations",
+      "episode_code": "S08E06",
+      "season": 8,
+      "episode": 6,
+      "raw": "Finland - _No Reservations_ S08E06",
+      "parsed": true
+    },
+    {
+      "country_region": "France",
+      "title": "Childhood Flavors",
+      "show": "A Cook's Tour",
+      "episode_code": "S01E09",
+      "season": 1,
+      "episode": 9,
+      "raw": "Childhood Flavors - _A Cook's Tour_ S01E09",
+      "parsed": true
+    },
+    {
+      "country_region": "France",
+      "title": "In Paris",
+      "show": "No Reservations",
+      "episode_code": "S01E01",
+      "season": 1,
+      "episode": 1,
+      "raw": "In Paris - _No Reservations_ S01E01",
+      "parsed": true
+    },
+    {
+      "country_region": "France",
+      "raw": "Brittany -  _No Reservations_ S06E03",
+      "parsed": false
+    },
+    {
+      "country_region": "France",
+      "raw": "Provence -  _No Reservations_ S06E09",
+      "parsed": false
+    },
+    {
+      "country_region": "France",
+      "title": "Paris",
+      "show": "No Reservations",
+      "episode_code": "S06E24",
+      "season": 6,
+      "episode": 24,
+      "raw": "Paris - _No Reservations_ S06E24",
+      "parsed": true
+    },
+    {
+      "country_region": "France",
+      "title": "Burgundy",
+      "show": "No Reservations",
+      "episode_code": "S08E13",
+      "season": 8,
+      "episode": 13,
+      "raw": "Burgundy - _No Reservations_ S08E13",
+      "parsed": true
+    },
+    {
+      "country_region": "France",
+      "title": "Lyon, France",
+      "show": "Parts Unknown",
+      "episode_code": "S03E03",
+      "season": 3,
+      "episode": 3,
+      "raw": "Lyon, France - _Parts Unknown_ S03E03",
+      "parsed": true
+    },
+    {
+      "country_region": "France",
+      "title": "Marseille",
+      "show": "Parts Unknown",
+      "episode_code": "S06E02",
+      "season": 6,
+      "episode": 2,
+      "raw": "Marseille - _Parts Unknown_ S06E02",
+      "parsed": true
+    },
+    {
+      "country_region": "France",
+      "title": "French Alps",
+      "show": "Parts Unknown",
+      "episode_code": "S10E02",
+      "season": 10,
+      "episode": 2,
+      "raw": "French Alps - _Parts Unknown_ S10E02",
+      "parsed": true
+    },
+    {
+      "country_region": "French Polynesia",
+      "title": "French Polynesia",
+      "show": "No Reservations",
+      "episode_code": "S03E10",
+      "season": 3,
+      "episode": 10,
+      "raw": "French Polynesia - _No Reservations_ S03E10",
+      "parsed": true
+    },
+    {
+      "country_region": "Georgia",
+      "title": "Tblisi, Georgia",
+      "show": "Parts Unknown",
+      "episode_code": "S07E05",
+      "season": 7,
+      "episode": 5,
+      "raw": "Tblisi, Georgia - _Parts Unknown_ S07E05",
+      "parsed": true
+    },
+    {
+      "country_region": "Germany",
+      "title": "Berlin",
+      "show": "No Reservations",
+      "episode_code": "S04E02",
+      "season": 4,
+      "episode": 2,
+      "raw": "Berlin - _No Reservations_ S04E02",
+      "parsed": true
+    },
+    {
+      "country_region": "Germany",
+      "title": "Cologne, Germany",
+      "show": "Parts Unknown",
+      "episode_code": "S07E07",
+      "season": 7,
+      "episode": 7,
+      "raw": "Cologne, Germany - _Parts Unknown_ S07E07",
+      "parsed": true
+    },
+    {
+      "country_region": "Germany",
+      "title": "Berlin",
+      "show": "Parts Unknown",
+      "episode_code": "S11E06",
+      "season": 11,
+      "episode": 6,
+      "raw": "Berlin - _Parts Unknown_ S11E06",
+      "parsed": true
+    },
+    {
+      "country_region": "Ghana",
+      "title": "Ghana",
+      "show": "No Reservations",
+      "episode_code": "S03E02",
+      "season": 3,
+      "episode": 2,
+      "raw": "Ghana - _No Reservations_ S03E02",
+      "parsed": true
+    },
+    {
+      "country_region": "Greece",
+      "title": "Greek Islands",
+      "show": "No Reservations",
+      "episode_code": "S04E04",
+      "season": 4,
+      "episode": 4,
+      "raw": "Greek Islands - _No Reservations_ S04E04",
+      "parsed": true
+    },
+    {
+      "country_region": "Greece",
+      "title": "The Greek Islands",
+      "show": "Parts Unknown",
+      "episode_code": "S07E03",
+      "season": 7,
+      "episode": 3,
+      "raw": "The Greek Islands - _Parts Unknown_ S07E03",
+      "parsed": true
+    },
+    {
+      "country_region": "Haiti",
+      "title": "Haiti",
+      "show": "No Reservations",
+      "episode_code": "S07E01",
+      "season": 7,
+      "episode": 1,
+      "raw": "Haiti - _No Reservations_ S07E01",
+      "parsed": true
+    },
+    {
+      "country_region": "Hungary",
+      "title": "Budapest",
+      "show": "Parts Unknown",
+      "episode_code": "S05E06",
+      "season": 5,
+      "episode": 6,
+      "raw": "Budapest - _Parts Unknown_ S05E06",
+      "parsed": true
+    },
+    {
+      "country_region": "Iceland",
+      "title": "Iceland (Hello Darkness My Old Friend)",
+      "show": "No Reservations",
+      "episode_code": "S01E02",
+      "season": 1,
+      "episode": 2,
+      "raw": "Iceland (Hello Darkness My Old Friend) - _No Reservations_ S01E02",
+      "parsed": true
+    },
+    {
+      "country_region": "Iceland",
+      "title": "Iceland Special Edition",
+      "show": "No Reservations",
+      "episode_code": "Special",
+      "season": null,
+      "episode": null,
+      "raw": "Iceland Special Edition - _No Reservations_ Special",
+      "parsed": false
+    },
+    {
+      "country_region": "India",
+      "title": "India (Rajasthan)",
+      "show": "No Reservations",
+      "episode_code": "S02E09",
+      "season": 2,
+      "episode": 9,
+      "raw": "India (Rajasthan) - _No Reservations_ S02E09",
+      "parsed": true
+    },
+    {
+      "country_region": "India",
+      "title": "India (Kolkata/Mumbai)",
+      "show": "No Reservations",
+      "episode_code": "S02E10",
+      "season": 2,
+      "episode": 10,
+      "raw": "India (Kolkata/Mumbai) - _No Reservations_ S02E10",
+      "parsed": true
+    },
+    {
+      "country_region": "India",
+      "title": "Kerala, India",
+      "show": "No Reservations",
+      "episode_code": "S06E17",
+      "season": 6,
+      "episode": 17,
+      "raw": "Kerala, India - _No Reservations_ S06E17",
+      "parsed": true
+    },
+    {
+      "country_region": "India",
+      "title": "Punjab, India",
+      "show": "Parts Unknown",
+      "episode_code": "S03E01",
+      "season": 3,
+      "episode": 1,
+      "raw": "Punjab, India - _Parts Unknown_ S03E01",
+      "parsed": true
+    },
+    {
+      "country_region": "Indonesia",
+      "title": "Indonesia",
+      "show": "No Reservations",
+      "episode_code": "S02E12",
+      "season": 2,
+      "episode": 12,
+      "raw": "Indonesia - _No Reservations_ S02E12",
+      "parsed": true
+    },
+    {
+      "country_region": "Indonesia",
+      "title": "Borneo",
+      "show": "Parts Unknown",
+      "episode_code": "S06E06",
+      "season": 6,
+      "episode": 6,
+      "raw": "Borneo - _Parts Unknown_ S06E06",
+      "parsed": true
+    },
+    {
+      "country_region": "Italy",
+      "title": "Sicily",
+      "show": "No Reservations",
+      "episode_code": "S01E06",
+      "season": 1,
+      "episode": 6,
+      "raw": "Sicily - _No Reservations_ S01E06",
+      "parsed": true
+    },
+    {
+      "country_region": "Italy",
+      "title": "Tuscany",
+      "show": "No Reservations",
+      "episode_code": "S03E15",
+      "season": 3,
+      "episode": 15,
+      "raw": "Tuscany - _No Reservations_ S03E15",
+      "parsed": true
+    },
+    {
+      "country_region": "Italy",
+      "title": "Venice",
+      "show": "No Reservations",
+      "episode_code": "S05E02",
+      "season": 5,
+      "episode": 2,
+      "raw": "Venice - _No Reservations_ S05E02",
+      "parsed": true
+    },
+    {
+      "country_region": "Italy",
+      "title": "Sardinia",
+      "show": "No Reservations",
+      "episode_code": "S05E20",
+      "season": 5,
+      "episode": 20,
+      "raw": "Sardinia - _No Reservations_ S05E20",
+      "parsed": true
+    },
+    {
+      "country_region": "Italy",
+      "title": "Rome",
+      "show": "No Reservations",
+      "episode_code": "S06E20",
+      "season": 6,
+      "episode": 20,
+      "raw": "Rome - _No Reservations_ S06E20",
+      "parsed": true
+    },
+    {
+      "country_region": "Italy",
+      "title": "Naples",
+      "show": "No Reservations",
+      "episode_code": "S07E11",
+      "season": 7,
+      "episode": 11,
+      "raw": "Naples - _No Reservations_ S07E11",
+      "parsed": true
+    },
+    {
+      "country_region": "Italy",
+      "title": "Emilia Romagna",
+      "show": "No Reservations",
+      "episode_code": "S08E12",
+      "season": 8,
+      "episode": 12,
+      "raw": "Emilia Romagna - _No Reservations_ S08E12",
+      "parsed": true
+    },
+    {
+      "country_region": "Italy",
+      "title": "Sicily",
+      "show": "Parts Unknown",
+      "episode_code": "S02E05",
+      "season": 2,
+      "episode": 5,
+      "raw": "Sicily - _Parts Unknown_ S02E05",
+      "parsed": true
+    },
+    {
+      "country_region": "Italy",
+      "title": "Rome",
+      "show": "Parts Unknown",
+      "episode_code": "S08E09",
+      "season": 8,
+      "episode": 9,
+      "raw": "Rome - _Parts Unknown_ S08E09",
+      "parsed": true
+    },
+    {
+      "country_region": "Italy",
+      "title": "Southern Italy",
+      "show": "Parts Unknown",
+      "episode_code": "S10E08",
+      "season": 10,
+      "episode": 8,
+      "raw": "Southern Italy - _Parts Unknown_ S10E08",
+      "parsed": true
+    },
+    {
+      "country_region": "Iran",
+      "title": "Iran",
+      "show": "Parts Unknown",
+      "episode_code": "S04E06",
+      "season": 4,
+      "episode": 6,
+      "raw": "Iran - _Parts Unknown_ S04E06",
+      "parsed": true
+    },
+    {
+      "country_region": "Iraq",
+      "title": "Kurdistan",
+      "show": "No Reservations",
+      "episode_code": "S07E15",
+      "season": 7,
+      "episode": 15,
+      "raw": "Kurdistan - _No Reservations_ S07E15",
+      "parsed": true
+    },
+    {
+      "country_region": "Ireland",
+      "title": "Ireland",
+      "show": "No Reservations",
+      "episode_code": "S03E01",
+      "season": 3,
+      "episode": 1,
+      "raw": "Ireland - _No Reservations_ S03E01",
+      "parsed": true
+    },
+    {
+      "country_region": "Israel",
+      "title": "Jerusalem",
+      "show": "Parts Unknown",
+      "episode_code": "S02E01",
+      "season": 2,
+      "episode": 1,
+      "raw": "Jerusalem - _Parts Unknown_ S02E01",
+      "parsed": true
+    },
+    {
+      "country_region": "Jamaica",
+      "title": "Jamaica",
+      "show": "No Reservations",
+      "episode_code": "S04E07",
+      "season": 4,
+      "episode": 7,
+      "raw": "Jamaica - _No Reservations_ S04E07",
+      "parsed": true
+    },
+    {
+      "country_region": "Jamaica",
+      "title": "Jamaica",
+      "show": "Parts Unknown",
+      "episode_code": "S04E08",
+      "season": 4,
+      "episode": 8,
+      "raw": "Jamaica - _Parts Unknown_ S04E08",
+      "parsed": true
+    },
+    {
+      "country_region": "Japan",
+      "title": "A Taste of Tokyo",
+      "show": "A Cook's Tour",
+      "episode_code": "S01E01",
+      "season": 1,
+      "episode": 1,
+      "raw": "A Taste of Tokyo - _A Cook's Tour_ S01E01",
+      "parsed": true
+    },
+    {
+      "country_region": "Japan",
+      "title": "Dining with Geishas",
+      "show": "A Cook's Tour",
+      "episode_code": "S01E02",
+      "season": 1,
+      "episode": 2,
+      "raw": "Dining with Geishas - _A Cook's Tour_ S01E02",
+      "parsed": true
+    },
+    {
+      "country_region": "Japan",
+      "title": "Asia Special",
+      "show": "No Reservations",
+      "episode_code": "S02E02/Special",
+      "season": 2,
+      "episode": 2,
+      "raw": "Asia Special - _No Reservations_ S02E02/Special",
+      "parsed": true
+    },
+    {
+      "country_region": "Japan",
+      "title": "Tokyo",
+      "show": "No Reservations",
+      "episode_code": "S04E16",
+      "season": 4,
+      "episode": 16,
+      "raw": "Tokyo - _No Reservations_ S04E16",
+      "parsed": true
+    },
+    {
+      "country_region": "Japan",
+      "title": "Japan: Hokkaido",
+      "show": "No Reservations",
+      "episode_code": "S07E08",
+      "season": 7,
+      "episode": 8,
+      "raw": "Japan: Hokkaido - _No Reservations_ S07E08",
+      "parsed": true
+    },
+    {
+      "country_region": "Japan",
+      "title": "Japan: Cook It Raw",
+      "show": "No Reservations",
+      "episode_code": "S08E05",
+      "season": 8,
+      "episode": 5,
+      "raw": "Japan: Cook It Raw - _No Reservations_ S08E05",
+      "parsed": true
+    },
+    {
+      "country_region": "Japan",
+      "title": "Tokyo",
+      "show": "Parts Unknown",
+      "episode_code": "S02E07",
+      "season": 2,
+      "episode": 7,
+      "raw": "Tokyo - _Parts Unknown_ S02E07",
+      "parsed": true
+    },
+    {
+      "country_region": "Japan",
+      "title": "Okinawa",
+      "show": "Parts Unknown",
+      "episode_code": "S06E03",
+      "season": 6,
+      "episode": 3,
+      "raw": "Okinawa - _Parts Unknown_ S06E03",
+      "parsed": true
+    },
+    {
+      "country_region": "Japan",
+      "title": "Japan with Masa",
+      "show": "Parts Unknown",
+      "episode_code": "S08E06",
+      "season": 8,
+      "episode": 6,
+      "raw": "Japan with Masa - _Parts Unknown_ S08E06",
+      "parsed": true
+    },
+    {
+      "country_region": "Laos",
+      "title": "Laos",
+      "show": "No Reservations",
+      "episode_code": "S04E11",
+      "season": 4,
+      "episode": 11,
+      "raw": "Laos - _No Reservations_ S04E11",
+      "parsed": true
+    },
+    {
+      "country_region": "Laos",
+      "title": "Laos",
+      "show": "Parts Unknown",
+      "episode_code": "S09E03",
+      "season": 9,
+      "episode": 3,
+      "raw": "Laos - _Parts Unknown_ S09E03",
+      "parsed": true
+    },
+    {
+      "country_region": "Lebanon",
+      "title": "Anthony Bourdain in Beirut",
+      "show": "No Reservations",
+      "episode_code": "Special",
+      "season": null,
+      "episode": null,
+      "raw": "Anthony Bourdain in Beirut - _No Reservations_ Special",
+      "parsed": false
+    },
+    {
+      "country_region": "Lebanon",
+      "title": "Back to Beirut",
+      "show": "No Reservations",
+      "episode_code": "S06E21",
+      "season": 6,
+      "episode": 21,
+      "raw": "Back to Beirut - _No Reservations_ S06E21",
+      "parsed": true
+    },
+    {
+      "country_region": "Lebanon",
+      "title": "Beirut",
+      "show": "Parts Unknown",
+      "episode_code": "S05E08",
+      "season": 5,
+      "episode": 8,
+      "raw": "Beirut - _Parts Unknown_ S05E08",
+      "parsed": true
+    },
+    {
+      "country_region": "Liberia",
+      "title": "Liberia",
+      "show": "No Reservations",
+      "episode_code": "S06E16",
+      "season": 6,
+      "episode": 16,
+      "raw": "Liberia - _No Reservations_ S06E16",
+      "parsed": true
+    },
+    {
+      "country_region": "Libya",
+      "title": "Libya",
+      "show": "Parts Unknown",
+      "episode_code": "S01E06",
+      "season": 1,
+      "episode": 6,
+      "raw": "Libya - _Parts Unknown_ S01E06",
+      "parsed": true
+    },
+    {
+      "country_region": "Madagascar",
+      "title": "Madagascar",
+      "show": "Parts Unknown",
+      "episode_code": "S05E04",
+      "season": 5,
+      "episode": 4,
+      "raw": "Madagascar - _Parts Unknown_ S05E04",
+      "parsed": true
+    },
+    {
+      "country_region": "Malaysia",
+      "raw": "Malaysia (Into the Jungle) -  _No Reservations_ S01E05",
+      "parsed": false
+    },
+    {
+      "country_region": "Malaysia",
+      "title": "Penang",
+      "show": "No Reservations",
+      "episode_code": "S08E08",
+      "season": 8,
+      "episode": 8,
+      "raw": "Penang - _No Reservations_ S08E08",
+      "parsed": true
+    },
+    {
+      "country_region": "Malaysia",
+      "title": "Borneo",
+      "show": "Parts Unknown",
+      "episode_code": "S06E06",
+      "season": 6,
+      "episode": 6,
+      "raw": "Borneo - _Parts Unknown_ S06E06",
+      "parsed": true
+    },
+    {
+      "country_region": "Mexico",
+      "title": "Tamales and Iguana, Oaxacan Style",
+      "show": "A Cook's Tour",
+      "episode_code": "S01E15",
+      "season": 1,
+      "episode": 15,
+      "raw": "Tamales and Iguana, Oaxacan Style - _A Cook's Tour_ S01E15",
+      "parsed": true
+    },
+    {
+      "country_region": "Mexico",
+      "title": "Puebla, Where the Good Cooks Are From",
+      "show": "A Cook's Tour",
+      "episode_code": "S01E16",
+      "season": 1,
+      "episode": 16,
+      "raw": "Puebla, Where the Good Cooks Are From - _A Cook's Tour_ S01E16",
+      "parsed": true
+    },
+    {
+      "country_region": "Mexico",
+      "title": "Mexico & US Border",
+      "show": "No Reservations",
+      "episode_code": "S02E08",
+      "season": 2,
+      "episode": 8,
+      "raw": "Mexico & US Border - _No Reservations_ S02E08",
+      "parsed": true
+    },
+    {
+      "country_region": "Mexico",
+      "title": "Mexico",
+      "show": "No Reservations",
+      "episode_code": "S05E01",
+      "season": 5,
+      "episode": 1,
+      "raw": "Mexico - _No Reservations_ S05E01",
+      "parsed": true
+    },
+    {
+      "country_region": "Mexico",
+      "title": "Baja",
+      "show": "No Reservations",
+      "episode_code": "S08E07",
+      "season": 8,
+      "episode": 7,
+      "raw": "Baja - _No Reservations_ S08E07",
+      "parsed": true
+    },
+    {
+      "country_region": "Mexico",
+      "title": "Mexico City",
+      "show": "Parts Unknown",
+      "episode_code": "S03E04",
+      "season": 3,
+      "episode": 4,
+      "raw": "Mexico City - _Parts Unknown_ S03E04",
+      "parsed": true
+    },
+    {
+      "country_region": "Morocco",
+      "title": "Desert Feast",
+      "show": "A Cook's Tour",
+      "episode_code": "S01E11",
+      "season": 1,
+      "episode": 11,
+      "raw": "Desert Feast - _A Cook's Tour_ S01E11",
+      "parsed": true
+    },
+    {
+      "country_region": "Morocco",
+      "title": "Traditional Tastes",
+      "show": "A Cook's Tour",
+      "episode_code": "S01E12",
+      "season": 1,
+      "episode": 12,
+      "raw": "Traditional Tastes - _A Cook's Tour_ S01E12",
+      "parsed": true
+    },
+    {
+      "country_region": "Morocco",
+      "title": "Morocco (Tangier)",
+      "show": "Parts Unknown",
+      "episode_code": "S01E05",
+      "season": 1,
+      "episode": 5,
+      "raw": "Morocco (Tangier) - _Parts Unknown_ S01E05",
+      "parsed": true
+    },
+    {
+      "country_region": "Mozambique",
+      "title": "Mozambique",
+      "show": "No Reservations",
+      "episode_code": "S08E01",
+      "season": 8,
+      "episode": 1,
+      "raw": "Mozambique - _No Reservations_ S08E01",
+      "parsed": true
+    },
+    {
+      "country_region": "Myanmar",
+      "title": "Myanmar",
+      "show": "Parts Unknown",
+      "episode_code": "S01E01",
+      "season": 1,
+      "episode": 1,
+      "raw": "Myanmar - _Parts Unknown_ S01E01",
+      "parsed": true
+    },
+    {
+      "country_region": "Namibia",
+      "title": "Namibia",
+      "show": "No Reservations",
+      "episode_code": "S03E04",
+      "season": 3,
+      "episode": 4,
+      "raw": "Namibia - _No Reservations_ S03E04",
+      "parsed": true
+    },
+    {
+      "country_region": "New Zealand",
+      "title": "New Zealand (Down Under the Down Under)",
+      "show": "No Reservations",
+      "episode_code": "S01E09",
+      "season": 1,
+      "episode": 9,
+      "raw": "New Zealand (Down Under the Down Under) - _No Reservations_ S01E09",
+      "parsed": true
+    },
+    {
+      "country_region": "Nicaragua",
+      "title": "Nicaragua",
+      "show": "No Reservations",
+      "episode_code": "S07E03",
+      "season": 7,
+      "episode": 3,
+      "raw": "Nicaragua - _No Reservations_ S07E03",
+      "parsed": true
+    },
+    {
+      "country_region": "Nigeria",
+      "title": "Lagos, Nigeria",
+      "show": "Parts Unknown",
+      "episode_code": "S10E03",
+      "season": 10,
+      "episode": 3,
+      "raw": "Lagos, Nigeria - _Parts Unknown_ S10E03",
+      "parsed": true
+    },
+    {
+      "country_region": "Oman",
+      "title": "Oman",
+      "show": "Parts Unknown",
+      "episode_code": "S09E06",
+      "season": 9,
+      "episode": 6,
+      "raw": "Oman - _Parts Unknown_ S09E06",
+      "parsed": true
+    },
+    {
+      "country_region": "Panama",
+      "title": "Panama",
+      "show": "No Reservations",
+      "episode_code": "S06E01",
+      "season": 6,
+      "episode": 1,
+      "raw": "Panama - _No Reservations_ S06E01",
+      "parsed": true
+    },
+    {
+      "country_region": "Paraguay",
+      "title": "Paraguay",
+      "show": "Parts Unknown",
+      "episode_code": "S04E03",
+      "season": 4,
+      "episode": 3,
+      "raw": "Paraguay - _Parts Unknown_ S04E03",
+      "parsed": true
+    },
+    {
+      "country_region": "Peru",
+      "title": "Peru",
+      "show": "No Reservations",
+      "episode_code": "S02E04",
+      "season": 2,
+      "episode": 4,
+      "raw": "Peru - _No Reservations_ S02E04",
+      "parsed": true
+    },
+    {
+      "country_region": "Peru",
+      "title": "Peru",
+      "show": "Parts Unknown",
+      "episode_code": "S01E07",
+      "season": 1,
+      "episode": 7,
+      "raw": "Peru - _Parts Unknown_ S01E07",
+      "parsed": true
+    },
+    {
+      "country_region": "Philippines",
+      "title": "Philippines",
+      "show": "No Reservations",
+      "episode_code": "S05E07",
+      "season": 5,
+      "episode": 7,
+      "raw": "Philippines - _No Reservations_ S05E07",
+      "parsed": true
+    },
+    {
+      "country_region": "Philippines",
+      "title": "Manila, Philippines",
+      "show": "Parts Unknown",
+      "episode_code": "S07E01",
+      "season": 7,
+      "episode": 1,
+      "raw": "Manila, Philippines - _Parts Unknown_ S07E01",
+      "parsed": true
+    },
+    {
+      "country_region": "Portugal",
+      "title": "Cod Crazy",
+      "show": "A Cook's Tour",
+      "episode_code": "S01E07",
+      "season": 1,
+      "episode": 7,
+      "raw": "Cod Crazy - _A Cook's Tour_ S01E07",
+      "parsed": true
+    },
+    {
+      "country_region": "Portugal",
+      "title": "Stuffed Like a Pig",
+      "show": "A Cook's Tour",
+      "episode_code": "S01E10",
+      "season": 1,
+      "episode": 10,
+      "raw": "Stuffed Like a Pig - _A Cook's Tour_ S01E10",
+      "parsed": true
+    },
+    {
+      "country_region": "Portugal",
+      "title": "Azores",
+      "show": "No Reservations",
+      "episode_code": "S05E04",
+      "season": 5,
+      "episode": 4,
+      "raw": "Azores - _No Reservations_ S05E04",
+      "parsed": true
+    },
+    {
+      "country_region": "Portugal",
+      "title": "Lisbon",
+      "show": "No Reservations",
+      "episode_code": "S08E04",
+      "season": 8,
+      "episode": 4,
+      "raw": "Lisbon - _No Reservations_ S08E04",
+      "parsed": true
+    },
+    {
+      "country_region": "Portugal",
+      "title": "Porto, Portugal",
+      "show": "Parts Unknown",
+      "episode_code": "S09E08",
+      "season": 9,
+      "episode": 8,
+      "raw": "Porto, Portugal - _Parts Unknown_ S09E08",
+      "parsed": true
+    },
+    {
+      "country_region": "Puerto Rico",
+      "title": "Puerto Rico",
+      "show": "No Reservations",
+      "episode_code": "S02E07",
+      "season": 2,
+      "episode": 7,
+      "raw": "Puerto Rico - _No Reservations_ S02E07",
+      "parsed": true
+    },
+    {
+      "country_region": "Puerto Rico",
+      "title": "Puerto Rico",
+      "show": "Parts Unknown",
+      "episode_code": "S10E06",
+      "season": 10,
+      "episode": 6,
+      "raw": "Puerto Rico - _Parts Unknown_ S10E06",
+      "parsed": true
+    },
+    {
+      "country_region": "Romania",
+      "title": "Romania",
+      "show": "No Reservations",
+      "episode_code": "S04E08",
+      "season": 4,
+      "episode": 8,
+      "raw": "Romania - _No Reservations_ S04E08",
+      "parsed": true
+    },
+    {
+      "country_region": "Russia",
+      "title": "The Cook Who Came In From the Cold",
+      "show": "A Cook's Tour",
+      "episode_code": "S01E13",
+      "season": 1,
+      "episode": 13,
+      "raw": "The Cook Who Came In From the Cold - _A Cook's Tour_ S01E13",
+      "parsed": true
+    },
+    {
+      "country_region": "Russia",
+      "title": "So Much Vodka, So Little Time",
+      "show": "A Cook's Tour",
+      "episode_code": "S01E14",
+      "season": 1,
+      "episode": 14,
+      "raw": "So Much Vodka, So Little Time - _A Cook's Tour_ S01E14",
+      "parsed": true
+    },
+    {
+      "country_region": "Russia",
+      "title": "Russia",
+      "show": "No Reservations",
+      "episode_code": "S03E05",
+      "season": 3,
+      "episode": 5,
+      "raw": "Russia - _No Reservations_ S03E05",
+      "parsed": true
+    },
+    {
+      "country_region": "Russia",
+      "title": "Russia",
+      "show": "Parts Unknown",
+      "episode_code": "S03E05",
+      "season": 3,
+      "episode": 5,
+      "raw": "Russia - _Parts Unknown_ S03E05",
+      "parsed": true
+    },
+    {
+      "country_region": "Saint Martin",
+      "title": "Food Tastes Better with Sand Between Your Toes",
+      "show": "A Cook's Tour",
+      "episode_code": "S02E01",
+      "season": 2,
+      "episode": 1,
+      "raw": "Food Tastes Better with Sand Between Your Toes - _A Cook's Tour_ S02E01",
+      "parsed": true
+    },
+    {
+      "country_region": "Saudi Arabia",
+      "title": "Saudi Arabia",
+      "show": "No Reservations",
+      "episode_code": "S04E13",
+      "season": 4,
+      "episode": 13,
+      "raw": "Saudi Arabia - _No Reservations_ S04E13",
+      "parsed": true
+    },
+    {
+      "country_region": "Scotland",
+      "title": "Highland Grub",
+      "show": "A Cook's Tour",
+      "episode_code": "S01E21",
+      "season": 1,
+      "episode": 21,
+      "raw": "Highland Grub - _A Cook's Tour_ S01E21",
+      "parsed": true
+    },
+    {
+      "country_region": "Scotland",
+      "title": "London/Edinburgh",
+      "show": "No Reservations",
+      "episode_code": "S04E06",
+      "season": 4,
+      "episode": 6,
+      "raw": "London/Edinburgh - _No Reservations_ S04E06",
+      "parsed": true
+    },
+    {
+      "country_region": "Scotland",
+      "title": "Scotland",
+      "show": "Parts Unknown",
+      "episode_code": "S05E03",
+      "season": 5,
+      "episode": 3,
+      "raw": "Scotland - _Parts Unknown_ S05E03",
+      "parsed": true
+    },
+    {
+      "country_region": "Senegal",
+      "title": "Senegal",
+      "show": "Parts Unknown",
+      "episode_code": "S07E06",
+      "season": 7,
+      "episode": 6,
+      "raw": "Senegal - _Parts Unknown_ S07E06",
+      "parsed": true
+    },
+    {
+      "country_region": "Singapore",
+      "title": "Singapore: New York in Twenty Years",
+      "show": "A Cook's Tour",
+      "episode_code": "S02E10",
+      "season": 2,
+      "episode": 10,
+      "raw": "Singapore: New York in Twenty Years - _A Cook's Tour_ S02E10",
+      "parsed": true
+    },
+    {
+      "country_region": "Singapore",
+      "title": "Singapore",
+      "show": "No Reservations",
+      "episode_code": "S04E01",
+      "season": 4,
+      "episode": 1,
+      "raw": "Singapore - _No Reservations_ S04E01",
+      "parsed": true
+    },
+    {
+      "country_region": "Singapore",
+      "title": "Singapore",
+      "show": "Parts Unknown",
+      "episode_code": "S10E01",
+      "season": 10,
+      "episode": 1,
+      "raw": "Singapore - _Parts Unknown_ S10E01",
+      "parsed": true
+    },
+    {
+      "country_region": "South Africa",
+      "title": "South Africa",
+      "show": "Parts Unknown",
+      "episode_code": "S02E06",
+      "season": 2,
+      "episode": 6,
+      "raw": "South Africa - _Parts Unknown_ S02E06",
+      "parsed": true
+    },
+    {
+      "country_region": "South Korea",
+      "title": "Korea",
+      "show": "No Reservations",
+      "episode_code": "S02E11",
+      "season": 2,
+      "episode": 11,
+      "raw": "Korea - _No Reservations_ S02E11",
+      "parsed": true
+    },
+    {
+      "country_region": "South Korea",
+      "title": "Korea",
+      "show": "Parts Unknown",
+      "episode_code": "S05E01",
+      "season": 5,
+      "episode": 1,
+      "raw": "Korea - _Parts Unknown_ S05E01",
+      "parsed": true
+    },
+    {
+      "country_region": "Spain",
+      "title": "San Sebastian: A Food Lover's Town",
+      "show": "A Cook's Tour",
+      "episode_code": "S01E08",
+      "season": 1,
+      "episode": 8,
+      "raw": "San Sebastian: A Food Lover's Town - _A Cook's Tour_ S01E08",
+      "parsed": true
+    },
+    {
+      "country_region": "Spain",
+      "title": "Spain",
+      "show": "No Reservations",
+      "episode_code": "S04E17",
+      "season": 4,
+      "episode": 17,
+      "raw": "Spain - _No Reservations_ S04E17",
+      "parsed": true
+    },
+    {
+      "country_region": "Spain",
+      "title": "Madrid",
+      "show": "No Reservations",
+      "episode_code": "S06E25",
+      "season": 6,
+      "episode": 25,
+      "raw": "Madrid - _No Reservations_ S06E25",
+      "parsed": true
+    },
+    {
+      "country_region": "Spain",
+      "title": "Spain",
+      "show": "Parts Unknown",
+      "episode_code": "S02E02",
+      "season": 2,
+      "episode": 2,
+      "raw": "Spain - _Parts Unknown_ S02E02",
+      "parsed": true
+    },
+    {
+      "country_region": "Spain",
+      "title": "San Sebastian",
+      "show": "Parts Unknown",
+      "episode_code": "S09E02",
+      "season": 9,
+      "episode": 2,
+      "raw": "San Sebastian - _Parts Unknown_ S09E02",
+      "parsed": true
+    },
+    {
+      "country_region": "Sri Lanka",
+      "title": "Sri Lanka",
+      "show": "No Reservations",
+      "episode_code": "S05E09",
+      "season": 5,
+      "episode": 9,
+      "raw": "Sri Lanka - _No Reservations_ S05E09",
+      "parsed": true
+    },
+    {
+      "country_region": "Sri Lanka",
+      "title": "Sri Lanka",
+      "show": "Parts Unknown",
+      "episode_code": "S10E05",
+      "season": 10,
+      "episode": 5,
+      "raw": "Sri Lanka - _Parts Unknown_ S10E05",
+      "parsed": true
+    },
+    {
+      "country_region": "Sweden",
+      "title": "Sweden",
+      "show": "No Reservations",
+      "episode_code": "S02E06",
+      "season": 2,
+      "episode": 6,
+      "raw": "Sweden - _No Reservations_ S02E06",
+      "parsed": true
+    },
+    {
+      "country_region": "Tanzania",
+      "title": "Tanzania",
+      "show": "Parts Unknown",
+      "episode_code": "S04E05",
+      "season": 4,
+      "episode": 5,
+      "raw": "Tanzania - _Parts Unknown_ S04E05",
+      "parsed": true
+    },
+    {
+      "country_region": "Thailand",
+      "title": "Let's Get Lost",
+      "show": "A Cook's Tour",
+      "episode_code": "S02E11",
+      "season": 2,
+      "episode": 11,
+      "raw": "Let's Get Lost - _A Cook's Tour_ S02E11",
+      "parsed": true
+    },
+    {
+      "country_region": "Thailand",
+      "title": "Thailand: One Night in Bangkok",
+      "show": "A Cook's Tour",
+      "episode_code": "S02E13",
+      "season": 2,
+      "episode": 13,
+      "raw": "Thailand: One Night in Bangkok - _A Cook's Tour_ S02E13",
+      "parsed": true
+    },
+    {
+      "country_region": "Thailand",
+      "title": "Thailand",
+      "show": "No Reservations",
+      "episode_code": "S05E16",
+      "season": 5,
+      "episode": 16,
+      "raw": "Thailand - _No Reservations_ S05E16",
+      "parsed": true
+    },
+    {
+      "country_region": "Thailand",
+      "title": "Thailand",
+      "show": "Parts Unknown",
+      "episode_code": "S03E07",
+      "season": 3,
+      "episode": 7,
+      "raw": "Thailand - _Parts Unknown_ S03E07",
+      "parsed": true
+    },
+    {
+      "country_region": "Turkey",
+      "title": "Istanbul",
+      "show": "No Reservations",
+      "episode_code": "S06E02",
+      "season": 6,
+      "episode": 2,
+      "raw": "Istanbul - _No Reservations_ S06E02",
+      "parsed": true
+    },
+    {
+      "country_region": "Turkey",
+      "title": "Istanbul",
+      "show": "Parts Unknown",
+      "episode_code": "S06E07",
+      "season": 6,
+      "episode": 7,
+      "raw": "Istanbul - _Parts Unknown_ S06E07",
+      "parsed": true
+    },
+    {
+      "country_region": "Ukraine",
+      "title": "Ukraine",
+      "show": "No Reservations",
+      "episode_code": "S07E14",
+      "season": 7,
+      "episode": 14,
+      "raw": "Ukraine - _No Reservations_ S07E14",
+      "parsed": true
+    },
+    {
+      "country_region": "United Arab Emirates",
+      "title": "Dubai",
+      "show": "No Reservations",
+      "episode_code": "S06E19",
+      "season": 6,
+      "episode": 19,
+      "raw": "Dubai - _No Reservations_ S06E19",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Los Angeles, My Own Heart of Darkness",
+      "show": "A Cook's Tour",
+      "episode_code": "S01E17",
+      "season": 1,
+      "episode": 17,
+      "raw": "Los Angeles, My Own Heart of Darkness - _A Cook's Tour_ S01E17",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "The French Laundry Experience",
+      "show": "A Cook's Tour",
+      "episode_code": "S01E18",
+      "season": 1,
+      "episode": 18,
+      "raw": "The French Laundry Experience - _A Cook's Tour_ S01E18",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "MY Hometown Favorites",
+      "show": "A Cook's Tour",
+      "episode_code": "S01E19",
+      "season": 1,
+      "episode": 19,
+      "raw": "MY Hometown Favorites - _A Cook's Tour_ S01E19",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "My Life As a Cook-NYC",
+      "show": "A Cook's Tour",
+      "episode_code": "S01E20",
+      "season": 1,
+      "episode": 20,
+      "raw": "My Life As a Cook-NYC - _A Cook's Tour_ S01E20",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "No Beads, No Babes, No Bourbon Street",
+      "show": "A Cook's Tour",
+      "episode_code": "S02E02",
+      "season": 2,
+      "episode": 2,
+      "raw": "No Beads, No Babes, No Bourbon Street - _A Cook's Tour_ S02E02",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Elements of a Great Bar",
+      "show": "A Cook's Tour",
+      "episode_code": "S02E05",
+      "season": 2,
+      "episode": 5,
+      "raw": "Elements of a Great Bar - _A Cook's Tour_ S02E05",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "The Struggle for the Soul of America",
+      "show": "A Cook's Tour",
+      "episode_code": "S02E06",
+      "season": 2,
+      "episode": 6,
+      "raw": "The Struggle for the Soul of America - _A Cook's Tour_ S02E06",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "The BBQ Triangle",
+      "show": "A Cook's Tour",
+      "episode_code": "S02E07",
+      "season": 2,
+      "episode": 7,
+      "raw": "The BBQ Triangle - _A Cook's Tour_ S02E07",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "New Jersey (Off the Jersey Turnpike)",
+      "show": "No Reservations",
+      "episode_code": "S01E03",
+      "season": 1,
+      "episode": 3,
+      "raw": "New Jersey (Off the Jersey Turnpike) - _No Reservations_ S01E03",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Las Vegas",
+      "show": "No Reservations",
+      "episode_code": "S01E07",
+      "season": 1,
+      "episode": 7,
+      "raw": "Las Vegas - _No Reservations_ S01E07",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Florida",
+      "show": "No Reservations",
+      "episode_code": "S02E03",
+      "season": 2,
+      "episode": 3,
+      "raw": "Florida - _No Reservations_ S02E03",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Mexico & US Border",
+      "show": "No Reservations",
+      "episode_code": "S02E08",
+      "season": 2,
+      "episode": 8,
+      "raw": "Mexico & US Border - _No Reservations_ S02E08",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Pacific Northwest",
+      "show": "No Reservations",
+      "episode_code": "S03E03",
+      "season": 3,
+      "episode": 3,
+      "raw": "Pacific Northwest - _No Reservations_ S03E03",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Los Angeles",
+      "show": "No Reservations",
+      "episode_code": "S03E06",
+      "season": 3,
+      "episode": 6,
+      "raw": "Los Angeles - _No Reservations_ S03E06",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "New York City",
+      "show": "No Reservations",
+      "episode_code": "S03E08",
+      "season": 3,
+      "episode": 8,
+      "raw": "New York City - _No Reservations_ S03E08",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Cleveland",
+      "show": "No Reservations",
+      "episode_code": "S03E11",
+      "season": 3,
+      "episode": 11,
+      "raw": "Cleveland - _No Reservations_ S03E11",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "South Carolina",
+      "show": "No Reservations",
+      "episode_code": "S03E14",
+      "season": 3,
+      "episode": 14,
+      "raw": "South Carolina - _No Reservations_ S03E14",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Connecticut",
+      "show": "No Reservations",
+      "episode_code": "Special",
+      "season": null,
+      "episode": null,
+      "raw": "Connecticut - _No Reservations_ Special",
+      "parsed": false
+    },
+    {
+      "country_region": "United States of America",
+      "title": "New Orleans",
+      "show": "No Reservations",
+      "episode_code": "S04E05",
+      "season": 4,
+      "episode": 5,
+      "raw": "New Orleans - _No Reservations_ S04E05",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Hawaii",
+      "show": "No Reservations",
+      "episode_code": "S04E09",
+      "season": 4,
+      "episode": 9,
+      "raw": "Hawaii - _No Reservations_ S04E09",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Into the Fire NY",
+      "show": "No Reservations",
+      "episode_code": "S04E10",
+      "season": 4,
+      "episode": 10,
+      "raw": "Into the Fire NY - _No Reservations_ S04E10",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "U.S. Southwest",
+      "show": "No Reservations",
+      "episode_code": "S04E15",
+      "season": 4,
+      "episode": 15,
+      "raw": "U.S. Southwest - _No Reservations_ S04E15",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Washington D.C.",
+      "show": "No Reservations",
+      "episode_code": "S05E03",
+      "season": 5,
+      "episode": 3,
+      "raw": "Washington D.C. - _No Reservations_ S05E03",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Chicago",
+      "show": "No Reservations",
+      "episode_code": "S05E05",
+      "season": 5,
+      "episode": 5,
+      "raw": "Chicago - _No Reservations_ S05E05",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Disappearing Manhattan",
+      "show": "No Reservations",
+      "episode_code": "S05E08",
+      "season": 5,
+      "episode": 8,
+      "raw": "Disappearing Manhattan - _No Reservations_ S05E08",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Rust Belt",
+      "show": "No Reservations",
+      "episode_code": "S05E13",
+      "season": 5,
+      "episode": 13,
+      "raw": "Rust Belt - _No Reservations_ S05E13",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "San Francisco",
+      "show": "No Reservations",
+      "episode_code": "S05E15",
+      "season": 5,
+      "episode": 15,
+      "raw": "San Francisco - _No Reservations_ S05E15",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Montana",
+      "show": "No Reservations",
+      "episode_code": "S05E17",
+      "season": 5,
+      "episode": 17,
+      "raw": "Montana - _No Reservations_ S05E17",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "New York Outer Boroughs",
+      "show": "No Reservations",
+      "episode_code": "S05E19",
+      "season": 5,
+      "episode": 19,
+      "raw": "New York Outer Boroughs - _No Reservations_ S05E19",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "raw": "New York - Hudson Valley -  _No Reservations_ S06E05",
+      "parsed": false
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Maine",
+      "show": "No Reservations",
+      "episode_code": "S06E12",
+      "season": 6,
+      "episode": 12,
+      "raw": "Maine - _No Reservations_ S06E12",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Heartland",
+      "show": "No Reservations",
+      "episode_code": "S06E15",
+      "season": 6,
+      "episode": 15,
+      "raw": "Heartland - _No Reservations_ S06E15",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Ozarks",
+      "show": "No Reservations",
+      "episode_code": "S07E05",
+      "season": 7,
+      "episode": 5,
+      "raw": "Ozarks - _No Reservations_ S07E05",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Boston",
+      "show": "No Reservations",
+      "episode_code": "S07E07",
+      "season": 7,
+      "episode": 7,
+      "raw": "Boston - _No Reservations_ S07E07",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "U.S. Desert",
+      "show": "No Reservations",
+      "episode_code": "S07E13",
+      "season": 7,
+      "episode": 13,
+      "raw": "U.S. Desert - _No Reservations_ S07E13",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Cajun Country",
+      "show": "No Reservations",
+      "episode_code": "S07E16",
+      "season": 7,
+      "episode": 16,
+      "raw": "Cajun Country - _No Reservations_ S07E16",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Kansas City",
+      "show": "No Reservations",
+      "episode_code": "S08E02",
+      "season": 8,
+      "episode": 2,
+      "raw": "Kansas City - _No Reservations_ S08E02",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Austin",
+      "show": "No Reservations",
+      "episode_code": "S08E09",
+      "season": 8,
+      "episode": 9,
+      "raw": "Austin - _No Reservations_ S08E09",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Brooklyn",
+      "show": "No Reservations",
+      "episode_code": "S08E18",
+      "season": 8,
+      "episode": 18,
+      "raw": "Brooklyn - _No Reservations_ S08E18",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Los Angeles",
+      "show": "Parts Unknown",
+      "episode_code": "S01E02",
+      "season": 1,
+      "episode": 2,
+      "raw": "Los Angeles - _Parts Unknown_ S01E02",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "New Mexico",
+      "show": "Parts Unknown",
+      "episode_code": "S02E03",
+      "season": 2,
+      "episode": 3,
+      "raw": "New Mexico - _Parts Unknown_ S02E03",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Detroit",
+      "show": "Parts Unknown",
+      "episode_code": "S02E08",
+      "season": 2,
+      "episode": 8,
+      "raw": "Detroit - _Parts Unknown_ S02E08",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Las Vegas",
+      "show": "Parts Unknown",
+      "episode_code": "S03E02",
+      "season": 3,
+      "episode": 2,
+      "raw": "Las Vegas - _Parts Unknown_ S03E02",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Mississippi Delta",
+      "show": "Parts Unknown",
+      "episode_code": "S03E06",
+      "season": 3,
+      "episode": 6,
+      "raw": "Mississippi Delta - _Parts Unknown_ S03E06",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "The Bronx",
+      "show": "Parts Unknown",
+      "episode_code": "S04E02",
+      "season": 4,
+      "episode": 2,
+      "raw": "The Bronx - _Parts Unknown_ S04E02",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Massachusetts",
+      "show": "Parts Unknown",
+      "episode_code": "S04E07",
+      "season": 4,
+      "episode": 7,
+      "raw": "Massachusetts - _Parts Unknown_ S04E07",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Miami",
+      "show": "Parts Unknown",
+      "episode_code": "S05E02",
+      "season": 5,
+      "episode": 2,
+      "raw": "Miami - _Parts Unknown_ S05E02",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "New Jersey",
+      "show": "Parts Unknown",
+      "episode_code": "S05E05",
+      "season": 5,
+      "episode": 5,
+      "raw": "New Jersey - _Parts Unknown_ S05E05",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Hawaii",
+      "show": "Parts Unknown",
+      "episode_code": "S05E07",
+      "season": 5,
+      "episode": 7,
+      "raw": "Hawaii - _Parts Unknown_ S05E07",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Bay Area",
+      "show": "Parts Unknown",
+      "episode_code": "S06E04",
+      "season": 6,
+      "episode": 4,
+      "raw": "Bay Area - _Parts Unknown_ S06E04",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "raw": "Charleston, S.C. _Parts Unknown_ S06E08",
+      "parsed": false
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Chicago",
+      "show": "Parts Unknown",
+      "episode_code": "S07E02",
+      "season": 7,
+      "episode": 2,
+      "raw": "Chicago - _Parts Unknown_ S07E02",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Montana",
+      "show": "Parts Unknown",
+      "episode_code": "S07E04",
+      "season": 7,
+      "episode": 4,
+      "raw": "Montana - _Parts Unknown_ S07E04",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Nashville",
+      "show": "Parts Unknown",
+      "episode_code": "S08E02",
+      "season": 8,
+      "episode": 2,
+      "raw": "Nashville - _Parts Unknown_ S08E02",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Houston",
+      "show": "Parts Unknown",
+      "episode_code": "S08E05",
+      "season": 8,
+      "episode": 5,
+      "raw": "Houston - _Parts Unknown_ S08E05",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Los Angeles",
+      "show": "Parts Unknown",
+      "episode_code": "S09E01",
+      "season": 9,
+      "episode": 1,
+      "raw": "Los Angeles - _Parts Unknown_ S09E01",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Queens",
+      "show": "Parts Unknown",
+      "episode_code": "S09E04",
+      "season": 9,
+      "episode": 4,
+      "raw": "Queens - _Parts Unknown_ S09E04",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Pittsburgh",
+      "show": "Parts Unknown",
+      "episode_code": "S10E04",
+      "season": 10,
+      "episode": 4,
+      "raw": "Pittsburgh - _Parts Unknown_ S10E04",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Seattle",
+      "show": "Parts Unknown",
+      "episode_code": "S10E07",
+      "season": 10,
+      "episode": 7,
+      "raw": "Seattle - _Parts Unknown_ S10E07",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "West Virginia",
+      "show": "Parts Unknown",
+      "episode_code": "S11E01",
+      "season": 11,
+      "episode": 1,
+      "raw": "West Virginia - _Parts Unknown_ S11E01",
+      "parsed": true
+    },
+    {
+      "country_region": "United States of America",
+      "title": "Cajun Mardi Gras",
+      "show": "Parts Unknown",
+      "episode_code": "S11E07",
+      "season": 11,
+      "episode": 7,
+      "raw": "Cajun Mardi Gras - _Parts Unknown_ S11E07",
+      "parsed": true
+    },
+    {
+      "country_region": "Uruguay",
+      "title": "Uruguay",
+      "show": "No Reservations",
+      "episode_code": "S04E14",
+      "season": 4,
+      "episode": 14,
+      "raw": "Uruguay - _No Reservations_ S04E14",
+      "parsed": true
+    },
+    {
+      "country_region": "Uruguay",
+      "title": "Uruguay",
+      "show": "Parts Unknown",
+      "episode_code": "S11E02",
+      "season": 11,
+      "episode": 2,
+      "raw": "Uruguay - _Parts Unknown_ S11E02",
+      "parsed": true
+    },
+    {
+      "country_region": "Uzbekistan",
+      "title": "Uzbekistan",
+      "show": "No Reservations",
+      "episode_code": "S01E08",
+      "season": 1,
+      "episode": 8,
+      "raw": "Uzbekistan - _No Reservations_ S01E08",
+      "parsed": true
+    },
+    {
+      "country_region": "Vietnam",
+      "title": "Cobra Heart-Food That Makes You Manly",
+      "show": "A Cook's Tour",
+      "episode_code": "S01E03",
+      "season": 1,
+      "episode": 3,
+      "raw": "Cobra Heart-Food That Makes You Manly - _A Cook's Tour_ S01E03",
+      "parsed": true
+    },
+    {
+      "country_region": "Vietnam",
+      "title": "Eating on the Mekong",
+      "show": "A Cook's Tour",
+      "episode_code": "S01E04",
+      "season": 1,
+      "episode": 4,
+      "raw": "Eating on the Mekong - _A Cook's Tour_ S01E04",
+      "parsed": true
+    },
+    {
+      "country_region": "Vietnam",
+      "title": "My Friend Linh",
+      "show": "A Cook's Tour",
+      "episode_code": "S02E12",
+      "season": 2,
+      "episode": 12,
+      "raw": "My Friend Linh - _A Cook's Tour_ S02E12",
+      "parsed": true
+    },
+    {
+      "country_region": "Vietnam",
+      "title": "Vietnam (The Island of Mr. Sang)",
+      "show": "No Reservations",
+      "episode_code": "S01E04",
+      "season": 1,
+      "episode": 4,
+      "raw": "Vietnam (The Island of Mr. Sang) - _No Reservations_ S01E04",
+      "parsed": true
+    },
+    {
+      "country_region": "Vietnam",
+      "title": "Vietnam: There's No Place Like Home",
+      "show": "No Reservations",
+      "episode_code": "S05E10",
+      "season": 5,
+      "episode": 10,
+      "raw": "Vietnam: There's No Place Like Home - _No Reservations_ S05E10",
+      "parsed": true
+    },
+    {
+      "country_region": "Vietnam",
+      "raw": "Vietnam Central Highlands -  _No Reservations_ S06E10",
+      "parsed": false
+    },
+    {
+      "country_region": "Vietnam",
+      "title": "Vietnam",
+      "show": "Parts Unknown",
+      "episode_code": "S04E04",
+      "season": 4,
+      "episode": 4,
+      "raw": "Vietnam - _Parts Unknown_ S04E04",
+      "parsed": true
+    },
+    {
+      "country_region": "Vietnam",
+      "title": "Hanoi",
+      "show": "Parts Unknown",
+      "episode_code": "S08E01",
+      "season": 8,
+      "episode": 1,
+      "raw": "Hanoi - _Parts Unknown_ S08E01",
+      "parsed": true
+    },
+    {
+      "country_region": "Other",
+      "title": "Leftovers [1]",
+      "show": "No Reservations",
+      "episode_code": "Special",
+      "season": null,
+      "episode": null,
+      "raw": "Leftovers [1] - _No Reservations_ Special",
+      "parsed": false
+    },
+    {
+      "country_region": "Other",
+      "title": "Leftovers [2]",
+      "show": "No Reservations",
+      "episode_code": "Special",
+      "season": null,
+      "episode": null,
+      "raw": "Leftovers [2] - _No Reservations_ Special",
+      "parsed": false
+    },
+    {
+      "country_region": "Other",
+      "title": "Decoding Ferran Adria",
+      "show": "No Reservations",
+      "episode_code": "Special",
+      "season": null,
+      "episode": null,
+      "raw": "Decoding Ferran Adria - _No Reservations_ Special",
+      "parsed": false
+    },
+    {
+      "country_region": "Other",
+      "title": "So Long Summer",
+      "show": "No Reservations",
+      "episode_code": "S04E19",
+      "season": 4,
+      "episode": 19,
+      "raw": "So Long Summer - _No Reservations_ S04E19",
+      "parsed": true
+    },
+    {
+      "country_region": "Other",
+      "title": "At the Table with Anthony Bourdain",
+      "show": "No Reservations",
+      "episode_code": "Special",
+      "season": null,
+      "episode": null,
+      "raw": "At the Table with Anthony Bourdain - _No Reservations_ Special",
+      "parsed": false
+    },
+    {
+      "country_region": "Other",
+      "title": "Food Porn",
+      "show": "No Reservations",
+      "episode_code": "S05E06",
+      "season": 5,
+      "episode": 6,
+      "raw": "Food Porn - _No Reservations_ S05E06",
+      "parsed": true
+    },
+    {
+      "country_region": "Other",
+      "title": "On the Street",
+      "show": "No Reservations",
+      "episode_code": "S05E14",
+      "season": 5,
+      "episode": 14,
+      "raw": "On the Street - _No Reservations_ S05E14",
+      "parsed": true
+    },
+    {
+      "country_region": "Other",
+      "title": "Burning Questions",
+      "show": "No Reservations",
+      "episode_code": "S05E18",
+      "season": 5,
+      "episode": 18,
+      "raw": "Burning Questions - _No Reservations_ S05E18",
+      "parsed": true
+    },
+    {
+      "country_region": "Other",
+      "raw": "Obsessed -  _No Reservations_ S06E07",
+      "parsed": false
+    },
+    {
+      "country_region": "Other",
+      "title": "Techniques",
+      "show": "No Reservations",
+      "episode_code": "S06E11",
+      "season": 6,
+      "episode": 11,
+      "raw": "Techniques - _No Reservations_ S06E11",
+      "parsed": true
+    },
+    {
+      "country_region": "Other",
+      "title": "Food Porn 2",
+      "show": "No Reservations",
+      "episode_code": "S06E13",
+      "season": 6,
+      "episode": 13,
+      "raw": "Food Porn 2 - _No Reservations_ S06E13",
+      "parsed": true
+    },
+    {
+      "country_region": "Other",
+      "title": "Where It All Began",
+      "show": "No Reservations",
+      "episode_code": "S06E18",
+      "season": 6,
+      "episode": 18,
+      "raw": "Where It All Began - _No Reservations_ S06E18",
+      "parsed": true
+    },
+    {
+      "country_region": "Other",
+      "title": "Making of India",
+      "show": "No Reservations",
+      "episode_code": "S06E22",
+      "season": 6,
+      "episode": 22,
+      "raw": "Making of India - _No Reservations_ S06E22",
+      "parsed": true
+    },
+    {
+      "country_region": "Other",
+      "title": "What Were We Thinking Special",
+      "show": "No Reservations",
+      "episode_code": "S06E23",
+      "season": 6,
+      "episode": 23,
+      "raw": "What Were We Thinking Special - _No Reservations_ S06E23",
+      "parsed": true
+    },
+    {
+      "country_region": "Other",
+      "title": "Holiday Special",
+      "show": "No Reservations",
+      "episode_code": "S06E26",
+      "season": 6,
+      "episode": 26,
+      "raw": "Holiday Special - _No Reservations_ S06E26",
+      "parsed": true
+    },
+    {
+      "country_region": "Other",
+      "title": "El Bulli",
+      "show": "No Reservations",
+      "episode_code": "S07E12",
+      "season": 7,
+      "episode": 12,
+      "raw": "El Bulli - _No Reservations_ S07E12",
+      "parsed": true
+    },
+    {
+      "country_region": "Other",
+      "title": "Holiday Special 2011",
+      "show": "No Reservations",
+      "episode_code": "S07 Special",
+      "season": null,
+      "episode": null,
+      "raw": "Holiday Special 2011 - _No Reservations_ S07 Special",
+      "parsed": false
+    },
+    {
+      "country_region": "Other",
+      "title": "Sex, Drugs, and Rock & Roll",
+      "show": "No Reservations",
+      "episode_code": "S08E11",
+      "season": 8,
+      "episode": 11,
+      "raw": "Sex, Drugs, and Rock & Roll - _No Reservations_ S08E11",
+      "parsed": true
+    },
+    {
+      "country_region": "Other",
+      "title": "Seven Deadly Sins",
+      "show": "No Reservations",
+      "episode_code": "S08E14",
+      "season": 8,
+      "episode": 14,
+      "raw": "Seven Deadly Sins - _No Reservations_ S08E14",
+      "parsed": true
+    },
+    {
+      "country_region": "Other",
+      "title": "Off The Charts",
+      "show": "No Reservations",
+      "episode_code": "S08E16",
+      "season": 8,
+      "episode": 16,
+      "raw": "Off The Charts - _No Reservations_ S08E16",
+      "parsed": true
+    },
+    {
+      "country_region": "Other",
+      "raw": "Tony visited 17 different countries for _A Cook's Tour_",
+      "parsed": false
+    }
+  ]
+}

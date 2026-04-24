@@ -21,54 +21,10 @@ const MANIFEST = resolve(ROOT, 'archive/sources.json');
 const SNAPSHOTS = resolve(ROOT, 'archive/snapshots.json');
 const USER_AGENT = 'bourdain-index/0.1 metadata archiver';
 
-function yamlScalar(value) {
-  if (value === null || value === undefined || value === '') return 'null';
-  if (typeof value === 'boolean') return value ? 'true' : 'false';
-  if (typeof value === 'number') return Number.isFinite(value) ? String(value) : 'null';
-  const text = String(value);
-  if (text.includes('\n')) {
-    return `|\n${text.split('\n').map((line) => `    ${line}`).join('\n')}`;
-  }
-  return `"${text.replaceAll('"', '\\"')}"`;
-}
-
-function toYaml(doc) {
-  const lines = [];
-
-  function emit(key, value, indent = 0) {
-    const pad = ' '.repeat(indent);
-    if (Array.isArray(value)) {
-      lines.push(`${pad}${key}:`);
-      for (const item of value) {
-        if (item && typeof item === 'object' && !Array.isArray(item)) {
-          lines.push(`${pad}  -`);
-          for (const [childKey, childValue] of Object.entries(item)) {
-            emit(childKey, childValue, indent + 4);
-          }
-        } else {
-          lines.push(`${pad}  - ${yamlScalar(item)}`);
-        }
-      }
-      return;
-    }
-    if (value && typeof value === 'object') {
-      lines.push(`${pad}${key}:`);
-      for (const [childKey, childValue] of Object.entries(value)) {
-        emit(childKey, childValue, indent + 2);
-      }
-      return;
-    }
-    lines.push(`${pad}${key}: ${yamlScalar(value)}`);
-  }
-
-  for (const [key, value] of Object.entries(doc)) emit(key, value);
-  return `${lines.join('\n')}\n`;
-}
-
-async function writeYaml(path, doc) {
+async function writeJson(path, doc) {
   const fullPath = resolve(ROOT, path);
   await mkdir(dirname(fullPath), { recursive: true });
-  await writeFile(fullPath, toYaml(doc), 'utf8');
+  await writeFile(fullPath, `${JSON.stringify(doc, null, 2)}\n`, 'utf8');
 }
 
 async function loadSources() {
@@ -80,10 +36,25 @@ function sha256(buffer) {
 }
 
 async function fetchSource(source) {
+  const localPath = source.raw_path ?? source.path ?? source.derived_path;
+  const rawPath = localPath ? resolve(ROOT, localPath) : null;
+
+  if (!source.url) {
+    const buffer = await readFile(rawPath);
+    return {
+      id: source.id,
+      url: null,
+      path: localPath,
+      fetched_at: null,
+      bytes: buffer.length,
+      sha256: sha256(buffer),
+      local: true,
+    };
+  }
+
   const response = await fetch(source.url, { headers: { 'user-agent': USER_AGENT } });
   if (!response.ok) throw new Error(`${source.url} -> ${response.status} ${response.statusText}`);
   const buffer = Buffer.from(await response.arrayBuffer());
-  const rawPath = resolve(ROOT, source.raw_path);
   await mkdir(dirname(rawPath), { recursive: true });
   await writeFile(rawPath, buffer);
   return {
@@ -188,7 +159,7 @@ async function deriveShowsByCountry(source) {
     });
   }
 
-  await writeYaml(source.derived_path, {
+  await writeJson(source.derived_path, {
     source: { id: source.id, url: source.canonical_url, raw_path: source.raw_path },
     records,
   });
@@ -214,12 +185,37 @@ async function deriveTravelPlaces(source) {
     description: row.Description || null,
   }));
 
-  await writeYaml(source.derived_path, {
+  await writeJson(source.derived_path, {
     source: {
       id: source.id,
       url: source.canonical_url,
       raw_path: source.raw_path,
       license: source.license,
+    },
+    records,
+  });
+}
+
+async function deriveFilmingLocations(source) {
+  const raw = await readFile(resolve(ROOT, source.raw_path), 'utf8');
+  const rows = parseCsv(`country,city,region,show,season,episode,title,location\n${raw.replace(/^\uFEFF/, '')}`);
+  const records = rows.map((row) => ({
+    country: row.country || null,
+    city: row.city || null,
+    region: row.region || null,
+    show: row.show || null,
+    season: numberOrNull(row.season),
+    episode: numberOrNull(row.episode),
+    title: (row.title || '').replace(/^"+|"+$/g, '') || null,
+    location: row.location || null,
+  }));
+
+  await writeJson(source.derived_path, {
+    source: {
+      id: source.id,
+      url: source.canonical_url,
+      raw_path: source.raw_path,
+      notes: source.notes,
     },
     records,
   });
@@ -286,10 +282,69 @@ async function deriveRedditThread(source) {
     }
   }
 
-  await writeYaml(source.derived_path, {
+  await writeJson(source.derived_path, {
     source: { id: source.id, url: source.canonical_url, raw_path: source.raw_path },
     thread,
     links,
+  });
+}
+
+function splitMarkdownTableRow(line) {
+  return line
+    .trim()
+    .replace(/^\|/, '')
+    .replace(/\|$/, '')
+    .split('|')
+    .map((cell) => cell.trim());
+}
+
+function extractMarkdownUrl(value) {
+  const match = value.match(/\[[^\]]+\]\((https?:\/\/[^)]+)\)/);
+  return match ? match[1] : value;
+}
+
+function stripMarkdown(value) {
+  return value
+    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1')
+    .replace(/\(\[[^\]]+\]\)/g, '')
+    .replace(/`/g, '')
+    .trim();
+}
+
+async function parseMarkdownTable(rawPath) {
+  const raw = await readFile(resolve(ROOT, rawPath), 'utf8');
+  const rows = raw.split('\n').filter((line) => line.trim().startsWith('|'));
+  if (rows.length < 2) return [];
+  const headers = splitMarkdownTableRow(rows[0]).map((header) => header.toLowerCase().replaceAll(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, ''));
+  return rows.slice(2).map((line) => {
+    const cells = splitMarkdownTableRow(line);
+    return Object.fromEntries(headers.map((header, index) => [header, cells[index] ?? '']));
+  });
+}
+
+async function deriveLiteratureTable(source) {
+  const records = (await parseMarkdownTable(source.raw_path)).map((row) => ({
+    bucket: stripMarkdown(row.bucket),
+    title: stripMarkdown(row.title),
+    publication: stripMarkdown(row.source),
+    url: extractMarkdownUrl(row.url),
+  }));
+  await writeJson(source.derived_path, {
+    source: { id: source.id, raw_path: source.raw_path, notes: source.notes },
+    records,
+  });
+}
+
+async function deriveSocialsTable(source) {
+  const records = (await parseMarkdownTable(source.raw_path)).map((row) => ({
+    type: stripMarkdown(row.type),
+    title: stripMarkdown(row.account_resource),
+    url: extractMarkdownUrl(row.url),
+    notes: stripMarkdown(row.notes),
+  }));
+  await writeJson(source.derived_path, {
+    source: { id: source.id, raw_path: source.raw_path, notes: source.notes },
+    records,
   });
 }
 
@@ -297,6 +352,9 @@ async function derive(source) {
   if (source.type === 'markdown_episode_country_index') await deriveShowsByCountry(source);
   if (source.type === 'csv_travel_places') await deriveTravelPlaces(source);
   if (source.type === 'reddit_thread_json') await deriveRedditThread(source);
+  if (source.type === 'markdown_literature_table') await deriveLiteratureTable(source);
+  if (source.type === 'markdown_socials_table') await deriveSocialsTable(source);
+  if (source.type === 'csv_filming_locations') await deriveFilmingLocations(source);
 }
 
 async function main() {

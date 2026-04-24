@@ -13,6 +13,14 @@ const entries = [
   ...appearances.map((entry) => ({ entry, collection: 'appearances' })),
 ].sort((a, b) => sortByDateDesc(a.entry, b.entry));
 const filters = Array.from(new Set(entries.map(({ entry }) => entry.data.type))).sort();
+const deathDate = '2018-06-08';
+const isPosthumous = (entry) => {
+  if (entry.data.tags?.includes('posthumous')) return true;
+  if (!entry.data.date) return false;
+  if (entry.data.date_precision === 'year') return entry.data.date > '2018';
+  if (entry.data.date_precision === 'month') return entry.data.date > '2018-06';
+  return entry.data.date > deathDate;
+};
 ---
 <BaseLayout title="Bourdain Index">
   <section class="hero">
@@ -21,9 +29,10 @@ const filters = Array.from(new Set(entries.map(({ entry }) => entry.data.type)))
 
   <div class="controls" aria-label="View controls">
     <div class="pill-row" aria-label="Filters">
-      <button class="pill is-active" type="button" data-filter="all">All</button>
+      <button class="pill is-active" type="button" data-filter-clear>All</button>
+      <button class="pill" type="button" data-filter-facet="posthumous">Posthumous</button>
       {filters.map((filter) => (
-        <button class="pill" type="button" data-filter={filter}>{formatType(filter)}</button>
+        <button class="pill" type="button" data-filter-type={filter}>{formatType(filter)}</button>
       ))}
     </div>
     <div class="pill-row" aria-label="Layout">
@@ -34,7 +43,7 @@ const filters = Array.from(new Set(entries.map(({ entry }) => entry.data.type)))
 
   <ol class="stream" data-stream data-view="timeline">
     {entries.map(({ entry, collection }) => (
-      <li class="stream-item" data-type={entry.data.type}>
+      <li class="stream-item" data-type={entry.data.type} data-posthumous={isPosthumous(entry) ? 'true' : 'false'}>
         <EntryCard entry={entry} collection={collection} />
       </li>
     ))}
@@ -42,16 +51,39 @@ const filters = Array.from(new Set(entries.map(({ entry }) => entry.data.type)))
 
   <script>
     const stream = document.querySelector('[data-stream]');
-    const filterButtons = document.querySelectorAll('[data-filter]');
+    const clearButton = document.querySelector('[data-filter-clear]');
+    const typeButtons = document.querySelectorAll('[data-filter-type]');
+    const facetButtons = document.querySelectorAll('[data-filter-facet]');
     const viewButtons = document.querySelectorAll('[data-view]');
 
-    filterButtons.forEach((button) => {
+    const updateFilters = () => {
+      const activeTypes = Array.from(typeButtons)
+        .filter((button) => button.classList.contains('is-active'))
+        .map((button) => button.getAttribute('data-filter-type'));
+      const posthumousOnly = Array.from(facetButtons).some(
+        (button) => button.getAttribute('data-filter-facet') === 'posthumous' && button.classList.contains('is-active'),
+      );
+      const hasFilters = activeTypes.length > 0 || posthumousOnly;
+
+      clearButton?.classList.toggle('is-active', !hasFilters);
+
+      document.querySelectorAll('.stream-item').forEach((item) => {
+        const matchesType = activeTypes.length === 0 || activeTypes.includes(item.getAttribute('data-type'));
+        const matchesPosthumous = !posthumousOnly || item.getAttribute('data-posthumous') === 'true';
+        item.hidden = !matchesType || !matchesPosthumous;
+      });
+    };
+
+    clearButton?.addEventListener('click', () => {
+      typeButtons.forEach((button) => button.classList.remove('is-active'));
+      facetButtons.forEach((button) => button.classList.remove('is-active'));
+      updateFilters();
+    });
+
+    [...typeButtons, ...facetButtons].forEach((button) => {
       button.addEventListener('click', () => {
-        const filter = button.getAttribute('data-filter');
-        filterButtons.forEach((item) => item.classList.toggle('is-active', item === button));
-        document.querySelectorAll('.stream-item').forEach((item) => {
-          item.hidden = filter !== 'all' && item.getAttribute('data-type') !== filter;
-        });
+        button.classList.toggle('is-active');
+        updateFilters();
       });
     });
 
