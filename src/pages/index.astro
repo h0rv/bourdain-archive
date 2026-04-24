@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import EntryCard from '../components/EntryCard.astro';
-import { formatType, sortByDateDesc } from '../lib/content';
+import { entryTitle, formatDate, formatType, sortByDateDesc } from '../lib/content';
 
 const works = await getCollection('works');
 const shows = (await getCollection('episodes')).filter((entry) => entry.data.type === 'show');
@@ -18,52 +18,142 @@ const entries = [
 ].sort((a, b) => sortByDateDesc(a.entry, b.entry));
 const filters = Array.from(new Set(entries.map(({ entry }) => entry.data.type))).sort();
 const deathDate = '2018-06-08';
-const isPosthumous = (entry) => {
+const isPosthumous = (entry: any) => {
   if (entry.data.tags?.includes('posthumous')) return true;
   if (!entry.data.date) return false;
   if (entry.data.date_precision === 'year') return entry.data.date > '2018';
   if (entry.data.date_precision === 'month') return entry.data.date > '2018-06';
   return entry.data.date > deathDate;
 };
+const yearForEntry = (entry: any) => entry.data.date?.slice(0, 4) ?? 'Undated';
+const searchableText = (entry: any, collection: string, authorship: string) =>
+  [
+    entryTitle(entry),
+    entry.data.summary,
+    entry.data.type,
+    entry.data.publication,
+    entry.data.host,
+    collection,
+    authorship,
+    entry.data.date,
+    ...(entry.data.tags ?? []),
+    ...(entry.data.people ?? []),
+    ...(entry.data.places ?? []),
+  ]
+    .filter(Boolean)
+    .join(' ')
+    .toLowerCase();
 ---
 <BaseLayout title="Bourdain Archive">
-  <section class="hero">
-    <h1>Bourdain Archive</h1>
+  <section class="hero home-hero">
+    <p class="eyebrow">Archive timeline</p>
+    <h1>Timeline</h1>
+    <p>Search works, shows, interviews, appearances, and writing about Bourdain.</p>
   </section>
 
-  <div class="controls" aria-label="View controls">
-    <div class="pill-row" aria-label="Filters">
-      <button class="pill" type="button" data-filter-clear>All</button>
-      <button class="pill is-active" type="button" data-filter-author="by">By Bourdain</button>
-      <button class="pill" type="button" data-filter-author="about">About Bourdain</button>
-      <button class="pill" type="button" data-filter-facet="posthumous">Posthumous</button>
-      {filters.map((filter) => (
-        <button class="pill" type="button" data-filter-type={filter}>{formatType(filter)}</button>
-      ))}
+  <div class="controls" aria-label="Search, filter, sort, and view controls">
+    <div class="search-control">
+      <label for="archive-search">Search</label>
+      <div class="search-box">
+        <span aria-hidden="true">⌕</span>
+        <input id="archive-search" type="search" placeholder="Search titles, summaries, tags, places…" data-search />
+      </div>
+      <p class="result-count" data-result-count>{entries.length} entries</p>
     </div>
-    <div class="pill-row" aria-label="Layout">
-      <button class="pill is-active" type="button" data-view="timeline">Timeline</button>
-      <button class="pill" type="button" data-view="cards">Cards</button>
+
+    <div class="control-groups">
+      <div class="filter-group" aria-label="Scope filters">
+        <span class="filter-label">Scope</span>
+        <div class="pill-row">
+          <button class="pill is-active" type="button" data-filter-clear>All</button>
+          <button class="pill" type="button" data-filter-author="by">By Bourdain</button>
+          <button class="pill" type="button" data-filter-author="about">About Bourdain</button>
+          <button class="pill" type="button" data-filter-facet="posthumous">Posthumous</button>
+        </div>
+      </div>
+      <div class="filter-group" aria-label="Type filters">
+        <span class="filter-label">Type</span>
+        <div class="pill-row">
+          {filters.map((filter) => (
+            <button class="pill" type="button" data-filter-type={filter}>{formatType(filter)}</button>
+          ))}
+        </div>
+      </div>
+      <div class="filter-group compact-controls" aria-label="Sort and view controls">
+        <span class="filter-label">Order</span>
+        <div class="pill-row">
+          <button class="pill is-active" type="button" data-sort="desc">Newest</button>
+          <button class="pill" type="button" data-sort="asc">Oldest</button>
+        </div>
+        <span class="filter-label">View</span>
+        <div class="pill-row">
+          <button class="pill is-active" type="button" data-view="timeline">Timeline</button>
+          <button class="pill" type="button" data-view="cards">Cards</button>
+        </div>
+      </div>
     </div>
   </div>
 
   <ol class="stream" data-stream data-view="timeline">
     {entries.map(({ entry, collection, authorship }) => (
-      <li class="stream-item" data-type={entry.data.type} data-author={authorship} data-posthumous={isPosthumous(entry) ? 'true' : 'false'}>
+      <li
+        class="stream-item"
+        data-type={entry.data.type}
+        data-author={authorship}
+        data-posthumous={isPosthumous(entry) ? 'true' : 'false'}
+        data-date={entry.data.date ?? ''}
+        data-date-label={formatDate(entry.data.date, entry.data.date_precision)}
+        data-year={yearForEntry(entry)}
+        data-search-text={searchableText(entry, collection, authorship)}
+      >
         <EntryCard entry={entry} collection={collection} />
       </li>
     ))}
   </ol>
+  <p class="no-results" data-no-results hidden>No matches. Clear filters or try a broader search.</p>
 
   <script>
-    const stream = document.querySelector('[data-stream]');
-    const clearButton = document.querySelector('[data-filter-clear]');
-    const typeButtons = document.querySelectorAll('[data-filter-type]');
-    const authorButtons = document.querySelectorAll('[data-filter-author]');
-    const facetButtons = document.querySelectorAll('[data-filter-facet]');
-    const viewButtons = document.querySelectorAll('[data-view]');
+    const stream = document.querySelector<HTMLOListElement>('[data-stream]');
+    const searchInput = document.querySelector<HTMLInputElement>('[data-search]');
+    const countLabel = document.querySelector<HTMLElement>('[data-result-count]');
+    const noResults = document.querySelector<HTMLElement>('[data-no-results]');
+    const clearButton = document.querySelector<HTMLButtonElement>('[data-filter-clear]');
+    const typeButtons = document.querySelectorAll<HTMLButtonElement>('[data-filter-type]');
+    const authorButtons = document.querySelectorAll<HTMLButtonElement>('[data-filter-author]');
+    const facetButtons = document.querySelectorAll<HTMLButtonElement>('[data-filter-facet]');
+    const sortButtons = document.querySelectorAll<HTMLButtonElement>('[data-sort]');
+    const viewButtons = document.querySelectorAll<HTMLButtonElement>('[data-view]');
+    const items = Array.from(document.querySelectorAll<HTMLElement>('.stream-item'));
+    const totalItems = items.length;
+    let sortDirection = 'desc';
 
-    const updateFilters = () => {
+    const compareItems = (left: HTMLElement, right: HTMLElement) => {
+      const leftDate = left.getAttribute('data-date') ?? '';
+      const rightDate = right.getAttribute('data-date') ?? '';
+      if (!leftDate && !rightDate) return 0;
+      if (!leftDate) return 1;
+      if (!rightDate) return -1;
+      return sortDirection === 'asc' ? leftDate.localeCompare(rightDate) : rightDate.localeCompare(leftDate);
+    };
+
+    const renderYearMarkers = () => {
+      stream?.querySelectorAll('.timeline-year').forEach((marker) => marker.remove());
+      if (stream?.getAttribute('data-view') !== 'timeline') return;
+
+      let activeYear = '';
+      items.forEach((item) => {
+        if (item.hidden) return;
+        const year = item.getAttribute('data-year') || 'Undated';
+        if (year === activeYear) return;
+        activeYear = year;
+        const marker = document.createElement('li');
+        marker.className = 'timeline-year';
+        marker.textContent = year;
+        stream?.insertBefore(marker, item);
+      });
+    };
+
+    const updateControls = () => {
       const activeTypes = Array.from(typeButtons)
         .filter((button) => button.classList.contains('is-active'))
         .map((button) => button.getAttribute('data-filter-type'));
@@ -73,40 +163,63 @@ const isPosthumous = (entry) => {
       const posthumousOnly = Array.from(facetButtons).some(
         (button) => button.getAttribute('data-filter-facet') === 'posthumous' && button.classList.contains('is-active'),
       );
-      const hasFilters = activeTypes.length > 0 || activeAuthors.length > 0 || posthumousOnly;
+      const query = searchInput?.value.trim().toLowerCase() ?? '';
+      const hasFilters = activeTypes.length > 0 || activeAuthors.length > 0 || posthumousOnly || query.length > 0;
 
       clearButton?.classList.toggle('is-active', !hasFilters);
+      stream?.querySelectorAll('.timeline-year').forEach((marker) => marker.remove());
+      items.sort(compareItems).forEach((item) => stream?.append(item));
 
-      document.querySelectorAll('.stream-item').forEach((item) => {
+      let visibleCount = 0;
+      items.forEach((item) => {
         const matchesType = activeTypes.length === 0 || activeTypes.includes(item.getAttribute('data-type'));
         const matchesAuthor = activeAuthors.length === 0 || activeAuthors.includes(item.getAttribute('data-author'));
         const matchesPosthumous = !posthumousOnly || item.getAttribute('data-posthumous') === 'true';
-        item.hidden = !matchesType || !matchesAuthor || !matchesPosthumous;
+        const matchesQuery = !query || (item.getAttribute('data-search-text') ?? '').includes(query);
+        const isVisible = matchesType && matchesAuthor && matchesPosthumous && matchesQuery;
+        item.hidden = !isVisible;
+        if (isVisible) visibleCount += 1;
       });
+
+      renderYearMarkers();
+      if (countLabel) countLabel.textContent = `${visibleCount} of ${totalItems} entries`;
+      if (noResults) noResults.hidden = visibleCount > 0;
     };
 
     clearButton?.addEventListener('click', () => {
       typeButtons.forEach((button) => button.classList.remove('is-active'));
       authorButtons.forEach((button) => button.classList.remove('is-active'));
       facetButtons.forEach((button) => button.classList.remove('is-active'));
-      updateFilters();
+      if (searchInput) searchInput.value = '';
+      updateControls();
     });
 
     [...typeButtons, ...authorButtons, ...facetButtons].forEach((button) => {
       button.addEventListener('click', () => {
         button.classList.toggle('is-active');
-        updateFilters();
+        updateControls();
       });
     });
 
-    updateFilters();
+    searchInput?.addEventListener('input', updateControls);
+
+    sortButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        sortDirection = button.getAttribute('data-sort') ?? 'desc';
+        sortButtons.forEach((item) => item.classList.toggle('is-active', item === button));
+        updateControls();
+      });
+    });
 
     viewButtons.forEach((button) => {
       button.addEventListener('click', () => {
         const view = button.getAttribute('data-view');
         viewButtons.forEach((item) => item.classList.toggle('is-active', item === button));
         stream?.setAttribute('data-view', view ?? 'timeline');
+        renderYearMarkers();
       });
     });
+
+    updateControls();
   </script>
 </BaseLayout>
