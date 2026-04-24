@@ -1,0 +1,128 @@
+/* Timeline stream, year markers, and timeline-specific card layout. */
+.card-list,
+.stream {
+  display: grid;
+  gap: 0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.stream-item[hidden] {
+  display: none !important;
+}
+
+.stream-item,
+.card,
+.detail-box {
+  position: relative;
+}
+
+.stream-item::before,
+.card-list > .card::before,
+.detail-box::before {
+  content: "";
+  display: block;
+  height: 1px;
+  margin-bottom: 1.05rem;
+  background: linear-gradient(90deg, var(--ink), transparent 72%);
+  opacity: 0.18;
+}
+
+.stream[data-view="timeline"] {
+  gap: 0;
+}
+
+.timeline-year {
+  margin: 2rem 0 0.35rem;
+  color: var(--accent);
+  font-family: var(--display);
+  font-size: clamp(2.2rem, 8vw, 5.25rem);
+  font-weight: 900;
+  letter-spacing: -0.075em;
+  line-height: 0.8;
+  list-style: none;
+  text-transform: uppercase;
+}
+
+.timeline-year:first-child {
+  margin-top: 0;
+}
+
+.stream[data-view="timeline"] .stream-item {
+  display: grid;
+  grid-template-columns: minmax(5.25rem, 7.5rem) minmax(0, 1fr);
+  gap: 0 clamp(0.85rem, 3vw, 1.4rem);
+  align-items: start;
+}
+
+.stream[data-view="timeline"] .stream-item::before {
+  content: attr(data-date-label);
+  display: block;
+  height: auto;
+  margin: 1.35rem 0 0;
+  color: var(--muted);
+  background: transparent;
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  font-weight: 850;
+  letter-spacing: 0.045em;
+  line-height: 1.15;
+  opacity: 1;
+  text-transform: uppercase;
+}
+
+.stream[data-view="timeline"] .card {
+  grid-template-columns: clamp(4.25rem, 10vw, 5.75rem) minmax(0, 1fr);
+  min-width: 0;
+  padding-left: clamp(0.85rem, 3vw, 1.35rem);
+  padding-bottom: 1.35rem;
+  border-left: 1px solid rgba(17, 16, 14, 0.22);
+}
+
+.stream[data-view="timeline"] .card-media,
+.stream[data-view="timeline"] .card-media.is-web-preview {
+  width: 100%;
+  min-height: 0;
+  aspect-ratio: 1 / 1;
+}
+
+.stream[data-view="timeline"] .card h2 {
+  font-size: clamp(1.05rem, 2vw, 1.45rem);
+}
+
+.stream[data-view="timeline"] .summary {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
+.stream[data-view="timeline"] .badges,
+.stream[data-view="timeline"] .tag-list {
+  margin-top: 0.55rem;
+}
+
+.stream[data-view="timeline"] .card::before {
+  content: "";
+  position: absolute;
+  top: 1.55rem;
+  left: -0.38rem;
+  width: 0.7rem;
+  height: 0.7rem;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+  border-radius: 999px;
+}
+
+.no-results {
+  margin: 1.5rem 0 0;
+  padding: 1rem;
+  color: var(--muted);
+  border: 1px dashed rgba(17, 16, 14, 0.28);
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}

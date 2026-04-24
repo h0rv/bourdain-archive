@@ -1,0 +1,38 @@
+/* Reset-ish base elements and global text/link behavior. */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 8% 0%, rgba(168, 50, 29, 0.08), transparent 28rem),
+    linear-gradient(180deg, #f7f0e2 0, var(--bg) 28rem);
+  font-family: var(--sans);
+  font-size: 17px;
+  line-height: 1.55;
+  text-rendering: optimizeLegibility;
+}
+
+body::selection {
+  color: var(--cream);
+  background: var(--ink);
+}
+
+a {
+  color: inherit;
+  text-decoration-color: rgba(168, 50, 29, 0.55);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--accent);
+  text-decoration-color: currentColor;
+}

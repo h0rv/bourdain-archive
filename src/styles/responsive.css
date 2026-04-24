@@ -1,0 +1,76 @@
+/* Narrow viewport adjustments. Keep last. */
+@media (max-width: 980px) {
+  .controls {
+    grid-template-columns: 1fr;
+  }
+
+  .control-groups {
+    justify-content: flex-start;
+  }
+
+  .compact-controls {
+    justify-content: flex-start;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  body {
+    font-size: 16px;
+  }
+
+  .site-header {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .site-nav {
+    justify-content: flex-start;
+  }
+
+  .brand {
+    grid-template-columns: 3.3rem auto;
+  }
+
+  .brand-mark {
+    width: 3.3rem;
+    height: 3.3rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(3.2rem, 18vw, 6rem);
+  }
+
+  .page-title {
+    font-size: clamp(2rem, 11vw, 3.8rem);
+  }
+
+  .home-hero h1 {
+    font-size: clamp(2rem, 10vw, 3.5rem);
+    line-height: 0.95;
+  }
+
+  .controls {
+    padding-block: 0.55rem;
+  }
+
+  .search-control {
+    grid-template-columns: 1fr;
+  }
+
+  .result-count {
+    order: -1;
+  }
+
+  .pill {
+    white-space: nowrap;
+  }
+
+  .stream[data-view="timeline"] .stream-item {
+    grid-template-columns: 1fr;
+  }
+
+  .stream[data-view="timeline"] .stream-item::before {
+    margin: 0.95rem 0 0.35rem;
+  }
+}

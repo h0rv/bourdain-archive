@@ -1,0 +1,19 @@
+/*
+  Flat editorial skin: cream paper, black ink, hard type, no bubbly cards.
+*/
+:root {
+  color-scheme: light;
+  --bg: #f1eadc;
+  --ink: #11100e;
+  --muted: #746b5f;
+  --faint: #d8ccba;
+  --accent: #a8321d;
+  --accent-dark: #711f12;
+  --cream: #fbf4e7;
+  --wash: #e8decd;
+  --max: 1080px;
+  --gutter: clamp(1rem, 4vw, 2rem);
+  --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --display: "Arial Black", Impact, Haettenschweiler, "Franklin Gothic Heavy", var(--sans);
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
