@@ -1,0 +1,48 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const siteName = 'Bourdain Index';
+const { title = siteName, description = 'A lean open-source index of Anthony Bourdain’s work, travels, appearances, and sources.' } = Astro.props;
+const pageTitle = title === siteName ? siteName : `${title} · ${siteName}`;
+const withBase = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
+const navItems = [
+  { href: withBase('/'), label: 'Timeline' },
+  { href: withBase('/works/'), label: 'Works' },
+  { href: withBase('/tv/'), label: 'TV' },
+  { href: withBase('/appearances/'), label: 'Appearances' },
+  { href: withBase('/places/'), label: 'Places' },
+  { href: withBase('/themes/'), label: 'Themes' },
+  { href: withBase('/sources/'), label: 'Sources' },
+  { href: withBase('/about/'), label: 'About' },
+];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href={withBase('/')}>Bourdain Index</a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+      </nav>
+    </header>
+    <main class="site-main">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <p>
+        Open-source metadata index. No copyrighted books, full articles, episode mirrors, or unauthorized transcripts.
+      </p>
+    </footer>
+  </body>
+</html>
