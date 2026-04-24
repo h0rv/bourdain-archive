@@ -175,9 +175,9 @@ const searchableText = (entry: any, collection: string, authorship: string) =>
         (button) => button.getAttribute('data-filter-facet') === 'posthumous' && button.classList.contains('is-active'),
       );
       const query = searchInput?.value.trim().toLowerCase() ?? '';
-      const hasFilters = activeTypes.length > 0 || activeAuthors.length > 0 || posthumousOnly || query.length > 0;
+      const hasScopeFilters = activeAuthors.length > 0;
 
-      clearButton?.classList.toggle('is-active', !hasFilters);
+      clearButton?.classList.toggle('is-active', !hasScopeFilters);
       stream?.querySelectorAll('.timeline-year').forEach((marker) => marker.remove());
       items.sort(compareItems).forEach((item) => stream?.append(item));
 
