@@ -134,9 +134,67 @@ const searchableText = (entry: any, collection: string, authorship: string) =>
     const facetButtons = document.querySelectorAll<HTMLButtonElement>('[data-filter-facet]');
     const sortButtons = document.querySelectorAll<HTMLButtonElement>('[data-sort]');
     const viewButtons = document.querySelectorAll<HTMLButtonElement>('[data-view]');
+    const advancedFilters = document.querySelector<HTMLDetailsElement>('.advanced-filters');
     const items = Array.from(document.querySelectorAll<HTMLElement>('.stream-item'));
     const totalItems = items.length;
+    const STORAGE_KEY = 'bourdain-archive.timeline-controls.v1';
     let sortDirection = 'desc';
+
+    const activeValues = (buttons: NodeListOf<HTMLButtonElement>, attribute: string) =>
+      Array.from(buttons)
+        .filter((button) => button.classList.contains('is-active'))
+        .map((button) => button.getAttribute(attribute))
+        .filter(Boolean);
+
+    const setActiveValues = (buttons: NodeListOf<HTMLButtonElement>, attribute: string, values: unknown) => {
+      if (!Array.isArray(values)) return;
+      buttons.forEach((button) => button.classList.toggle('is-active', values.includes(button.getAttribute(attribute))));
+    };
+
+    const readSavedControls = () => {
+      try {
+        return JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '{}');
+      } catch {
+        return {};
+      }
+    };
+
+    const saveControls = () => {
+      try {
+        localStorage.setItem(
+          STORAGE_KEY,
+          JSON.stringify({
+            query: searchInput?.value ?? '',
+            types: activeValues(typeButtons, 'data-filter-type'),
+            authors: activeValues(authorButtons, 'data-filter-author'),
+            facets: activeValues(facetButtons, 'data-filter-facet'),
+            sort: sortDirection,
+            view: stream?.getAttribute('data-view') ?? 'timeline',
+            advancedOpen: advancedFilters?.open ?? false,
+          }),
+        );
+      } catch {}
+    };
+
+    const applySavedControls = () => {
+      const saved = readSavedControls();
+      if (searchInput && typeof saved.query === 'string') searchInput.value = saved.query;
+      setActiveValues(typeButtons, 'data-filter-type', saved.types);
+      setActiveValues(authorButtons, 'data-filter-author', saved.authors);
+      setActiveValues(facetButtons, 'data-filter-facet', saved.facets);
+
+      if (saved.sort === 'asc' || saved.sort === 'desc') {
+        sortDirection = saved.sort;
+        sortButtons.forEach((button) => button.classList.toggle('is-active', button.getAttribute('data-sort') === sortDirection));
+      }
+
+      if (saved.view === 'timeline' || saved.view === 'cards') {
+        stream?.setAttribute('data-view', saved.view);
+        viewButtons.forEach((button) => button.classList.toggle('is-active', button.getAttribute('data-view') === saved.view));
+      }
+
+      if (advancedFilters) advancedFilters.open = Boolean(saved.advancedOpen || saved.types?.length || saved.facets?.length);
+    };
 
     const compareItems = (left: HTMLElement, right: HTMLElement) => {
       const leftDate = left.getAttribute('data-date') ?? '';
@@ -165,15 +223,10 @@ const searchableText = (entry: any, collection: string, authorship: string) =>
     };
 
     const updateControls = () => {
-      const activeTypes = Array.from(typeButtons)
-        .filter((button) => button.classList.contains('is-active'))
-        .map((button) => button.getAttribute('data-filter-type'));
-      const activeAuthors = Array.from(authorButtons)
-        .filter((button) => button.classList.contains('is-active'))
-        .map((button) => button.getAttribute('data-filter-author'));
-      const posthumousOnly = Array.from(facetButtons).some(
-        (button) => button.getAttribute('data-filter-facet') === 'posthumous' && button.classList.contains('is-active'),
-      );
+      const activeTypes = activeValues(typeButtons, 'data-filter-type');
+      const activeAuthors = activeValues(authorButtons, 'data-filter-author');
+      const activeFacets = activeValues(facetButtons, 'data-filter-facet');
+      const posthumousOnly = activeFacets.includes('posthumous');
       const query = searchInput?.value.trim().toLowerCase() ?? '';
       const hasScopeFilters = activeAuthors.length > 0;
 
@@ -195,6 +248,7 @@ const searchableText = (entry: any, collection: string, authorship: string) =>
       renderYearMarkers();
       if (countLabel) countLabel.textContent = `${visibleCount} of ${totalItems} entries`;
       if (noResults) noResults.hidden = visibleCount > 0;
+      saveControls();
     };
 
     clearButton?.addEventListener('click', () => {
@@ -213,6 +267,7 @@ const searchableText = (entry: any, collection: string, authorship: string) =>
     });
 
     searchInput?.addEventListener('input', updateControls);
+    advancedFilters?.addEventListener('toggle', saveControls);
 
     sortButtons.forEach((button) => {
       button.addEventListener('click', () => {
@@ -228,9 +283,11 @@ const searchableText = (entry: any, collection: string, authorship: string) =>
         viewButtons.forEach((item) => item.classList.toggle('is-active', item === button));
         stream?.setAttribute('data-view', view ?? 'timeline');
         renderYearMarkers();
+        saveControls();
       });
     });
 
+    applySavedControls();
     updateControls();
   </script>
 </BaseLayout>
