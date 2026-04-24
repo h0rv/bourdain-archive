@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import archiveRegistry from '../../../archive/derived/web-archive-registry.json';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
 export async function getStaticPaths() {
@@ -8,6 +9,7 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
+const archive = archiveRegistry.registry[entry.data.url as keyof typeof archiveRegistry.registry];
 ---
 <BaseLayout title={entry.data.title} description={entry.data.notes ?? entry.data.title}>
   <article>
@@ -18,5 +20,15 @@ const { entry } = Astro.props;
       <h2>URL</h2>
       <p><a href={entry.data.url}>{entry.data.url}</a></p>
     </section>
+    {archive && (
+      <section class="detail-box">
+        <h2>Archive</h2>
+        <ul class="badges" aria-label="Archive links">
+          <li><a class="badge" href={archive.latest_url}>Latest snapshot</a></li>
+          <li><a class="badge" href={archive.calendar_url}>Calendar</a></li>
+          <li><a class="badge" href={archive.save_url}>Save snapshot</a></li>
+        </ul>
+      </section>
+    )}
   </article>
 </BaseLayout>

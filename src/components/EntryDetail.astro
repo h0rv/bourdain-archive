@@ -10,7 +10,7 @@ interface Props {
   relatedEntries: any[];
 }
 
-const { entry, collection, sources, relatedEntries } = Astro.props;
+const { entry, sources, relatedEntries } = Astro.props;
 const data = entry.data;
 const title = entryTitle(entry);
 const sourceRefs = (data.sources ?? []).map((id: string) => findByDataId(sources, id)).filter(Boolean);

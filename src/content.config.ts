@@ -1,9 +1,12 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
+import { glob } from 'astro/loaders';
+import { z } from 'astro/zod';
 
 const statusSchema = z.enum(['confirmed', 'needs-review', 'missing-source', 'dead-link', 'partial']);
 const datePrecisionSchema = z.enum(['day', 'month', 'year', 'unknown']);
-const urlField = z.string().url().nullable().optional();
-const imageField = z.union([z.string().url(), z.string().startsWith('/')]).nullable().optional();
+const urlField = z.url().nullable().optional();
+const imageField = z.union([z.url(), z.string().startsWith('/')]).nullable().optional();
+const contentFiles = (collection: string) => glob({ base: `./src/content/${collection}`, pattern: '**/*.{json,yaml,yml}' });
 
 const availabilitySchema = z.object({
   official_url: urlField,
@@ -49,13 +52,13 @@ const namedEntrySchema = z.object({
 
 export const collections = {
   works: defineCollection({
-    type: 'data',
+    loader: contentFiles('works'),
     schema: commonEntrySchema.extend({
       type: z.enum(['book', 'article', 'essay', 'field-note', 'comic']),
     }),
   }),
   episodes: defineCollection({
-    type: 'data',
+    loader: contentFiles('episodes'),
     schema: commonEntrySchema.extend({
       type: z.enum(['show', 'episode', 'video']),
       show: z.string().nullable().optional(),
@@ -64,7 +67,7 @@ export const collections = {
     }),
   }),
   appearances: defineCollection({
-    type: 'data',
+    loader: contentFiles('appearances'),
     schema: commonEntrySchema.extend({
       type: z.enum(['podcast', 'interview', 'radio', 'panel', 'video']),
       host: z.string().nullable().optional(),
@@ -72,7 +75,7 @@ export const collections = {
     }),
   }),
   literature: defineCollection({
-    type: 'data',
+    loader: contentFiles('literature'),
     schema: commonEntrySchema.extend({
       type: z.enum(['article', 'essay', 'interview', 'obit', 'profile', 'review', 'tribute']),
       publication: z.string(),
@@ -80,14 +83,17 @@ export const collections = {
     }),
   }),
   events: defineCollection({
-    type: 'data',
+    loader: contentFiles('events'),
     schema: commonEntrySchema.extend({
       type: z.literal('life-event'),
     }),
   }),
-  places: defineCollection({ type: 'data', schema: namedEntrySchema.extend({ type: z.literal('place') }) }),
+  places: defineCollection({
+    loader: contentFiles('places'),
+    schema: namedEntrySchema.extend({ type: z.literal('place') }),
+  }),
   people: defineCollection({
-    type: 'data',
+    loader: contentFiles('people'),
     schema: namedEntrySchema.extend({
       type: z.literal('person'),
       birth_date: z.string().nullable().optional(),
@@ -95,12 +101,12 @@ export const collections = {
     }),
   }),
   sources: defineCollection({
-    type: 'data',
+    loader: contentFiles('sources'),
     schema: z.object({
       id: z.string(),
       title: z.string(),
       type: z.string(),
-      url: z.string().url(),
+      url: z.url(),
       accessed: z.string(),
       notes: z.string().nullable().optional(),
     }),

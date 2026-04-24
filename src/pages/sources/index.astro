@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import archiveRegistry from '../../../archive/derived/web-archive-registry.json';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { entryHref } from '../../lib/content';
 
@@ -35,10 +36,12 @@ const sourceGroupFor = (entry: any) => {
 };
 const sourceEntries = sources.map((entry) => {
   const group = sourceGroupFor(entry);
+  const archive = archiveRegistry.registry[entry.data.url as keyof typeof archiveRegistry.registry];
   return {
     entry,
     group,
     groupLabel: sourceGroupLabels[group] ?? 'Other',
+    archive,
     searchable: [entry.data.title, entry.data.type, entry.data.notes, entry.data.url, sourceGroupLabels[group]]
       .filter(Boolean)
       .join(' ')
@@ -79,12 +82,20 @@ const sourceEntries = sources.map((entry) => {
   </div>
 
   <div class="card-list" data-source-list>
-    {sourceEntries.map(({ entry, group, groupLabel, searchable }) => (
+    {sourceEntries.map(({ entry, group, groupLabel, archive, searchable }) => (
       <article class="card" data-source-card data-source-group={group} data-source-text={searchable}>
         <h2><a href={entryHref('sources', entry.data.id)}>{entry.data.title}</a></h2>
         <p class="meta">{groupLabel} · {entry.data.type} · accessed {entry.data.accessed}</p>
         {entry.data.notes && <p class="summary">{entry.data.notes}</p>}
-        <p><a href={entry.data.url}>Open</a></p>
+        <ul class="badges" aria-label="Source links">
+          <li><a class="badge" href={entry.data.url}>Open</a></li>
+          {archive && (
+            <>
+              <li><a class="badge" href={archive.latest_url}>Wayback</a></li>
+              <li><a class="badge" href={archive.save_url}>Save</a></li>
+            </>
+          )}
+        </ul>
       </article>
     ))}
   </div>
@@ -99,6 +110,7 @@ const sourceEntries = sources.map((entry) => {
     const sourceCards = Array.from(document.querySelectorAll<HTMLElement>('[data-source-card]'));
     const totalSources = sourceCards.length;
     const STORAGE_KEY = 'bourdain-archive.source-controls.v1';
+    const knownGroups = new Set(groupButtons.map((button) => button.getAttribute('data-source-group')).filter(Boolean));
 
     const activeGroups = () =>
       groupButtons
@@ -127,6 +139,11 @@ const sourceEntries = sources.map((entry) => {
       const query = sourceSearch?.value.trim().toLowerCase() ?? '';
       let visibleCount = 0;
 
+      if (groups.length === 0) {
+        groupButtons.forEach((button) => button.classList.add('is-active'));
+        groups.push(...activeGroups());
+      }
+
       sourceCards.forEach((card) => {
         const matchesGroup = groups.includes(card.getAttribute('data-source-group'));
         const matchesSearch = !query || (card.getAttribute('data-source-text') ?? '').includes(query);
@@ -146,14 +163,16 @@ const sourceEntries = sources.map((entry) => {
         const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '{}');
         if (sourceSearch && typeof saved.query === 'string') sourceSearch.value = saved.query;
         if (Array.isArray(saved.groups)) {
-          groupButtons.forEach((button) => button.classList.toggle('is-active', saved.groups.includes(button.getAttribute('data-source-group'))));
+          const savedGroups = saved.groups.filter((group: unknown) => typeof group === 'string' && knownGroups.has(group));
+          if (savedGroups.length > 0) {
+            groupButtons.forEach((button) => button.classList.toggle('is-active', savedGroups.includes(button.getAttribute('data-source-group') ?? '')));
+          }
         }
       } catch {}
     };
 
     allButton?.addEventListener('click', () => {
-      const shouldEnableAll = activeGroups().length !== groupButtons.length;
-      groupButtons.forEach((button) => button.classList.toggle('is-active', shouldEnableAll));
+      groupButtons.forEach((button) => button.classList.add('is-active'));
       updateSources();
     });
 
