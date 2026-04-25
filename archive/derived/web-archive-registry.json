@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-24T20:27:31.370Z",
-  "count": 547,
+  "generated_at": "2026-04-25T13:57:58.099Z",
+  "count": 522,
   "registry": {
     "https://92ytalks.libsyn.com/webpage/2015/11": {
       "url": "https://92ytalks.libsyn.com/webpage/2015/11",
@@ -218,22 +218,6 @@
         }
       ]
     },
-    "https://pitchfork.com/news/anthony-bourdain-dead-at-61": {
-      "url": "https://pitchfork.com/news/anthony-bourdain-dead-at-61",
-      "latest_url": "https://web.archive.org/web/2/https://pitchfork.com/news/anthony-bourdain-dead-at-61",
-      "calendar_url": "https://web.archive.org/web/*/https://pitchfork.com/news/anthony-bourdain-dead-at-61",
-      "save_url": "https://web.archive.org/save/https://pitchfork.com/news/anthony-bourdain-dead-at-61",
-      "refs": [
-        {
-          "owner": "src/content/literature/anthony-bourdain-dead-at-61-pitchfork.json",
-          "field": "availability.official_url"
-        },
-        {
-          "owner": "src/content/sources/anthony-bourdain-dead-at-61-pitchfork.yaml",
-          "field": "url"
-        }
-      ]
-    },
     "https://www.latimes.com/archives/blogs/show-tracker/story/2011-11-23/anthony-bourdain-dishes-on-the-layover-and-life-as-a-tv-foodie": {
       "url": "https://www.latimes.com/archives/blogs/show-tracker/story/2011-11-23/anthony-bourdain-dishes-on-the-layover-and-life-as-a-tv-foodie",
       "latest_url": "https://web.archive.org/web/2/https://www.latimes.com/archives/blogs/show-tracker/story/2011-11-23/anthony-bourdain-dishes-on-the-layover-and-life-as-a-tv-foodie",
@@ -246,54 +230,6 @@
         },
         {
           "owner": "src/content/sources/anthony-bourdain-dishes-on-the-layover-and-life-as-a-tv-foodie-los-angeles-times.yaml",
-          "field": "url"
-        }
-      ]
-    },
-    "https://www.theguardian.com/food/2021/jul/16/anthony-bourdain-documentary-ai-voiceover-roadrunner": {
-      "url": "https://www.theguardian.com/food/2021/jul/16/anthony-bourdain-documentary-ai-voiceover-roadrunner",
-      "latest_url": "https://web.archive.org/web/2/https://www.theguardian.com/food/2021/jul/16/anthony-bourdain-documentary-ai-voiceover-roadrunner",
-      "calendar_url": "https://web.archive.org/web/*/https://www.theguardian.com/food/2021/jul/16/anthony-bourdain-documentary-ai-voiceover-roadrunner",
-      "save_url": "https://web.archive.org/save/https://www.theguardian.com/food/2021/jul/16/anthony-bourdain-documentary-ai-voiceover-roadrunner",
-      "refs": [
-        {
-          "owner": "src/content/literature/anthony-bourdain-documentary-sparks-backlash-for-using-ai-voiceover-the-guardian.json",
-          "field": "availability.official_url"
-        },
-        {
-          "owner": "src/content/sources/anthony-bourdain-documentary-sparks-backlash-for-using-ai-voiceover-the-guardian.yaml",
-          "field": "url"
-        }
-      ]
-    },
-    "https://time.com/5305838/anthony-bourdain-dead/": {
-      "url": "https://time.com/5305838/anthony-bourdain-dead/",
-      "latest_url": "https://web.archive.org/web/2/https://time.com/5305838/anthony-bourdain-dead/",
-      "calendar_url": "https://web.archive.org/web/*/https://time.com/5305838/anthony-bourdain-dead/",
-      "save_url": "https://web.archive.org/save/https://time.com/5305838/anthony-bourdain-dead/",
-      "refs": [
-        {
-          "owner": "src/content/literature/anthony-bourdain-found-dead-at-61-from-apparent-suicide-time.json",
-          "field": "availability.official_url"
-        },
-        {
-          "owner": "src/content/sources/anthony-bourdain-found-dead-at-61-from-apparent-suicide-time.yaml",
-          "field": "url"
-        }
-      ]
-    },
-    "https://www.latimes.com/business/hollywood/la-fi-ct-bourdain-obit-20180608-story.html": {
-      "url": "https://www.latimes.com/business/hollywood/la-fi-ct-bourdain-obit-20180608-story.html",
-      "latest_url": "https://web.archive.org/web/2/https://www.latimes.com/business/hollywood/la-fi-ct-bourdain-obit-20180608-story.html",
-      "calendar_url": "https://web.archive.org/web/*/https://www.latimes.com/business/hollywood/la-fi-ct-bourdain-obit-20180608-story.html",
-      "save_url": "https://web.archive.org/save/https://www.latimes.com/business/hollywood/la-fi-ct-bourdain-obit-20180608-story.html",
-      "refs": [
-        {
-          "owner": "src/content/literature/anthony-bourdain-globe-trotting-chef-dies-at-61-los-angeles-times.json",
-          "field": "availability.official_url"
-        },
-        {
-          "owner": "src/content/sources/anthony-bourdain-globe-trotting-chef-dies-at-61-los-angeles-times.yaml",
           "field": "url"
         }
       ]
@@ -694,22 +630,6 @@
         }
       ]
     },
-    "https://www.theguardian.com/food/2022/oct/01/i-am-lonely-controversial-book-reveals-anthony-bourdains-final-days": {
-      "url": "https://www.theguardian.com/food/2022/oct/01/i-am-lonely-controversial-book-reveals-anthony-bourdains-final-days",
-      "latest_url": "https://web.archive.org/web/2/https://www.theguardian.com/food/2022/oct/01/i-am-lonely-controversial-book-reveals-anthony-bourdains-final-days",
-      "calendar_url": "https://web.archive.org/web/*/https://www.theguardian.com/food/2022/oct/01/i-am-lonely-controversial-book-reveals-anthony-bourdains-final-days",
-      "save_url": "https://web.archive.org/save/https://www.theguardian.com/food/2022/oct/01/i-am-lonely-controversial-book-reveals-anthony-bourdains-final-days",
-      "refs": [
-        {
-          "owner": "src/content/literature/i-am-lonely-controversial-book-reveals-anthony-bourdain-s-final-days-the-guardia.json",
-          "field": "availability.official_url"
-        },
-        {
-          "owner": "src/content/sources/i-am-lonely-controversial-book-reveals-anthony-bourdain-s-final-days-the-guardia.yaml",
-          "field": "url"
-        }
-      ]
-    },
     "https://www.vanityfair.com/style/2021/09/inside-anthony-bourdains-all-consuming-relationship": {
       "url": "https://www.vanityfair.com/style/2021/09/inside-anthony-bourdains-all-consuming-relationship",
       "latest_url": "https://web.archive.org/web/2/https://www.vanityfair.com/style/2021/09/inside-anthony-bourdains-all-consuming-relationship",
@@ -758,22 +678,6 @@
         }
       ]
     },
-    "https://people.com/anthony-bourdain-assistant-laurie-woolever-reveals-his-eerie-final-texts-memoir-care-and-feeding-exclusive-11685428": {
-      "url": "https://people.com/anthony-bourdain-assistant-laurie-woolever-reveals-his-eerie-final-texts-memoir-care-and-feeding-exclusive-11685428",
-      "latest_url": "https://web.archive.org/web/2/https://people.com/anthony-bourdain-assistant-laurie-woolever-reveals-his-eerie-final-texts-memoir-care-and-feeding-exclusive-11685428",
-      "calendar_url": "https://web.archive.org/web/*/https://people.com/anthony-bourdain-assistant-laurie-woolever-reveals-his-eerie-final-texts-memoir-care-and-feeding-exclusive-11685428",
-      "save_url": "https://web.archive.org/save/https://people.com/anthony-bourdain-assistant-laurie-woolever-reveals-his-eerie-final-texts-memoir-care-and-feeding-exclusive-11685428",
-      "refs": [
-        {
-          "owner": "src/content/literature/laurie-woolever-reveals-his-final-texts-in-memoir-people.json",
-          "field": "availability.official_url"
-        },
-        {
-          "owner": "src/content/sources/anthony-bourdain-assistant-laurie-woolever-final-texts-people.yaml",
-          "field": "url"
-        }
-      ]
-    },
     "https://www.eater.com/2018/11/9/18080354/anthony-bourdain-parts-unknown-sandra-zweig-interview": {
       "url": "https://www.eater.com/2018/11/9/18080354/anthony-bourdain-parts-unknown-sandra-zweig-interview",
       "latest_url": "https://web.archive.org/web/2/https://www.eater.com/2018/11/9/18080354/anthony-bourdain-parts-unknown-sandra-zweig-interview",
@@ -818,22 +722,6 @@
         },
         {
           "owner": "src/content/sources/samin-nosrat-discusses-anthony-bourdain-s-complicated-legacy-eater.yaml",
-          "field": "url"
-        }
-      ]
-    },
-    "https://www.theguardian.com/film/2021/jul/21/anthony-bourdain-documentary-roadrunner-ai-deepfake-furore": {
-      "url": "https://www.theguardian.com/film/2021/jul/21/anthony-bourdain-documentary-roadrunner-ai-deepfake-furore",
-      "latest_url": "https://web.archive.org/web/2/https://www.theguardian.com/film/2021/jul/21/anthony-bourdain-documentary-roadrunner-ai-deepfake-furore",
-      "calendar_url": "https://web.archive.org/web/*/https://www.theguardian.com/film/2021/jul/21/anthony-bourdain-documentary-roadrunner-ai-deepfake-furore",
-      "save_url": "https://web.archive.org/save/https://www.theguardian.com/film/2021/jul/21/anthony-bourdain-documentary-roadrunner-ai-deepfake-furore",
-      "refs": [
-        {
-          "owner": "src/content/literature/the-bourdain-ai-furore-shouldn-t-overshadow-roadrunner-the-guardian.json",
-          "field": "availability.official_url"
-        },
-        {
-          "owner": "src/content/sources/the-bourdain-ai-furore-shouldn-t-overshadow-roadrunner-the-guardian.yaml",
           "field": "url"
         }
       ]
@@ -966,30 +854,6 @@
         }
       ]
     },
-    "https://1millionarr.substack.com/p/the-first-sip-of-beer": {
-      "url": "https://1millionarr.substack.com/p/the-first-sip-of-beer",
-      "latest_url": "https://web.archive.org/web/2/https://1millionarr.substack.com/p/the-first-sip-of-beer",
-      "calendar_url": "https://web.archive.org/web/*/https://1millionarr.substack.com/p/the-first-sip-of-beer",
-      "save_url": "https://web.archive.org/save/https://1millionarr.substack.com/p/the-first-sip-of-beer",
-      "refs": [
-        {
-          "owner": "src/content/sources/1millionarr-meaningful-work-anthony-bourdain-late-nights-and-the-first-sip-of-beer.yaml",
-          "field": "url"
-        }
-      ]
-    },
-    "https://25iq.com/2017/10/07/a-dozen-lessons-about-business-from-anthony-bourdain": {
-      "url": "https://25iq.com/2017/10/07/a-dozen-lessons-about-business-from-anthony-bourdain",
-      "latest_url": "https://web.archive.org/web/2/https://25iq.com/2017/10/07/a-dozen-lessons-about-business-from-anthony-bourdain",
-      "calendar_url": "https://web.archive.org/web/*/https://25iq.com/2017/10/07/a-dozen-lessons-about-business-from-anthony-bourdain",
-      "save_url": "https://web.archive.org/save/https://25iq.com/2017/10/07/a-dozen-lessons-about-business-from-anthony-bourdain",
-      "refs": [
-        {
-          "owner": "src/content/sources/25iq-a-dozen-lessons-about-business-from-anthony-bourdain.yaml",
-          "field": "url"
-        }
-      ]
-    },
     "https://92ytalks.libsyn.com/webpage/2016/10": {
       "url": "https://92ytalks.libsyn.com/webpage/2016/10",
       "latest_url": "https://web.archive.org/web/2/https://92ytalks.libsyn.com/webpage/2016/10",
@@ -1070,30 +934,6 @@
       "refs": [
         {
           "owner": "src/content/sources/anthony-bourdain-world-map.yaml",
-          "field": "url"
-        }
-      ]
-    },
-    "https://atvbt.com/bourdain-statements": {
-      "url": "https://atvbt.com/bourdain-statements",
-      "latest_url": "https://web.archive.org/web/2/https://atvbt.com/bourdain-statements",
-      "calendar_url": "https://web.archive.org/web/*/https://atvbt.com/bourdain-statements",
-      "save_url": "https://web.archive.org/save/https://atvbt.com/bourdain-statements",
-      "refs": [
-        {
-          "owner": "src/content/sources/atvbt-loud-and-wrong.yaml",
-          "field": "url"
-        }
-      ]
-    },
-    "https://bbc.com/news/world-us-canada-44414747": {
-      "url": "https://bbc.com/news/world-us-canada-44414747",
-      "latest_url": "https://web.archive.org/web/2/https://bbc.com/news/world-us-canada-44414747",
-      "calendar_url": "https://web.archive.org/web/*/https://bbc.com/news/world-us-canada-44414747",
-      "save_url": "https://web.archive.org/save/https://bbc.com/news/world-us-canada-44414747",
-      "refs": [
-        {
-          "owner": "src/content/sources/bbc-anthony-bourdain-has-died.yaml",
           "field": "url"
         }
       ]
@@ -1266,18 +1106,6 @@
         }
       ]
     },
-    "http://cnbc.com/2017/03/15/anthony-bourdain-didnt-have-a-savings-account-until-he-was-44.html": {
-      "url": "http://cnbc.com/2017/03/15/anthony-bourdain-didnt-have-a-savings-account-until-he-was-44.html",
-      "latest_url": "https://web.archive.org/web/2/http://cnbc.com/2017/03/15/anthony-bourdain-didnt-have-a-savings-account-until-he-was-44.html",
-      "calendar_url": "https://web.archive.org/web/*/http://cnbc.com/2017/03/15/anthony-bourdain-didnt-have-a-savings-account-until-he-was-44.html",
-      "save_url": "https://web.archive.org/save/http://cnbc.com/2017/03/15/anthony-bourdain-didnt-have-a-savings-account-until-he-was-44.html",
-      "refs": [
-        {
-          "owner": "src/content/sources/cnbc-anthony-bourdain-didn-t-have-a-savings-account-until-he-was-44-years-old.yaml",
-          "field": "url"
-        }
-      ]
-    },
     "https://amp.cnn.com/cnn/2018/06/08/us/anthony-bourdain-obit": {
       "url": "https://amp.cnn.com/cnn/2018/06/08/us/anthony-bourdain-obit",
       "latest_url": "https://web.archive.org/web/2/https://amp.cnn.com/cnn/2018/06/08/us/anthony-bourdain-obit",
@@ -1298,18 +1126,6 @@
       "refs": [
         {
           "owner": "src/content/sources/cnn-obama-hanoi-hot-dogs.yaml",
-          "field": "url"
-        }
-      ]
-    },
-    "https://commondreams.org/news/2018/06/08/anthony-bourdain-honest-and-fearless-his-words-he-was-his-travels-dead-61-apparent": {
-      "url": "https://commondreams.org/news/2018/06/08/anthony-bourdain-honest-and-fearless-his-words-he-was-his-travels-dead-61-apparent",
-      "latest_url": "https://web.archive.org/web/2/https://commondreams.org/news/2018/06/08/anthony-bourdain-honest-and-fearless-his-words-he-was-his-travels-dead-61-apparent",
-      "calendar_url": "https://web.archive.org/web/*/https://commondreams.org/news/2018/06/08/anthony-bourdain-honest-and-fearless-his-words-he-was-his-travels-dead-61-apparent",
-      "save_url": "https://web.archive.org/save/https://commondreams.org/news/2018/06/08/anthony-bourdain-honest-and-fearless-his-words-he-was-his-travels-dead-61-apparent",
-      "refs": [
-        {
-          "owner": "src/content/sources/common-dreams-anthony-bourdain-as-honest-and-fearless-in-his-words-as-he-was-in-his-tr.yaml",
           "field": "url"
         }
       ]
@@ -1382,18 +1198,6 @@
       "refs": [
         {
           "owner": "src/content/sources/david-simon-real-profanity-and-disease-on-the-internet-is-untouched-while-you-police.yaml",
-          "field": "url"
-        }
-      ]
-    },
-    "https://deadline.com/2022/09/anthony-bourdain-asia-argento-charles-leerhsen-biography-down-and-out-in-paradise-1235127832": {
-      "url": "https://deadline.com/2022/09/anthony-bourdain-asia-argento-charles-leerhsen-biography-down-and-out-in-paradise-1235127832",
-      "latest_url": "https://web.archive.org/web/2/https://deadline.com/2022/09/anthony-bourdain-asia-argento-charles-leerhsen-biography-down-and-out-in-paradise-1235127832",
-      "calendar_url": "https://web.archive.org/web/*/https://deadline.com/2022/09/anthony-bourdain-asia-argento-charles-leerhsen-biography-down-and-out-in-paradise-1235127832",
-      "save_url": "https://web.archive.org/save/https://deadline.com/2022/09/anthony-bourdain-asia-argento-charles-leerhsen-biography-down-and-out-in-paradise-1235127832",
-      "refs": [
-        {
-          "owner": "src/content/sources/deadline-anthony-bourdain-s-texts-i-hate-my-fans-i-hate-being-famous-i-hate-my-jo.yaml",
           "field": "url"
         }
       ]
@@ -2578,18 +2382,6 @@
         }
       ]
     },
-    "http://grubstreet.com/2018/06/anthony-bourdain-and-the-silent-epidemic-of-male-suicide.html": {
-      "url": "http://grubstreet.com/2018/06/anthony-bourdain-and-the-silent-epidemic-of-male-suicide.html",
-      "latest_url": "https://web.archive.org/web/2/http://grubstreet.com/2018/06/anthony-bourdain-and-the-silent-epidemic-of-male-suicide.html",
-      "calendar_url": "https://web.archive.org/web/*/http://grubstreet.com/2018/06/anthony-bourdain-and-the-silent-epidemic-of-male-suicide.html",
-      "save_url": "https://web.archive.org/save/http://grubstreet.com/2018/06/anthony-bourdain-and-the-silent-epidemic-of-male-suicide.html",
-      "refs": [
-        {
-          "owner": "src/content/sources/grubstreet-anthony-bourdain-and-the-silent-epidemic-of-male-suicide.yaml",
-          "field": "url"
-        }
-      ]
-    },
     "https://theguardian.com/lifeandstyle/gallery/2018/jun/08/anthony-bourdain-a-life-in-pictures": {
       "url": "https://theguardian.com/lifeandstyle/gallery/2018/jun/08/anthony-bourdain-a-life-in-pictures",
       "latest_url": "https://web.archive.org/web/2/https://theguardian.com/lifeandstyle/gallery/2018/jun/08/anthony-bourdain-a-life-in-pictures",
@@ -2614,18 +2406,6 @@
         }
       ]
     },
-    "https://huffingtonpost.com/entry/suicide-survivor-bourdain-spade-news-cycle_us_5b200681e4b0bbb7a0e22b8b?29f=": {
-      "url": "https://huffingtonpost.com/entry/suicide-survivor-bourdain-spade-news-cycle_us_5b200681e4b0bbb7a0e22b8b?29f=",
-      "latest_url": "https://web.archive.org/web/2/https://huffingtonpost.com/entry/suicide-survivor-bourdain-spade-news-cycle_us_5b200681e4b0bbb7a0e22b8b?29f=",
-      "calendar_url": "https://web.archive.org/web/*/https://huffingtonpost.com/entry/suicide-survivor-bourdain-spade-news-cycle_us_5b200681e4b0bbb7a0e22b8b?29f=",
-      "save_url": "https://web.archive.org/save/https://huffingtonpost.com/entry/suicide-survivor-bourdain-spade-news-cycle_us_5b200681e4b0bbb7a0e22b8b?29f=",
-      "refs": [
-        {
-          "owner": "src/content/sources/huffingtonpost-my-suicide-week.yaml",
-          "field": "url"
-        }
-      ]
-    },
     "https://independent.co.uk/arts-entertainment/books/features/anthony-bourdain-laurie-woolever-book-b1832641.html": {
       "url": "https://independent.co.uk/arts-entertainment/books/features/anthony-bourdain-laurie-woolever-book-b1832641.html",
       "latest_url": "https://web.archive.org/web/2/https://independent.co.uk/arts-entertainment/books/features/anthony-bourdain-laurie-woolever-book-b1832641.html",
@@ -2634,18 +2414,6 @@
       "refs": [
         {
           "owner": "src/content/sources/independent-anthony-bourdain-s-lieutenant-on-finishing-his-travel-guide-without-him.yaml",
-          "field": "url"
-        }
-      ]
-    },
-    "https://inputmag.com/culture/an-ai-model-of-anthony-bourdains-voice-says-lines-he-never-uttered-in-new-documentary": {
-      "url": "https://inputmag.com/culture/an-ai-model-of-anthony-bourdains-voice-says-lines-he-never-uttered-in-new-documentary",
-      "latest_url": "https://web.archive.org/web/2/https://inputmag.com/culture/an-ai-model-of-anthony-bourdains-voice-says-lines-he-never-uttered-in-new-documentary",
-      "calendar_url": "https://web.archive.org/web/*/https://inputmag.com/culture/an-ai-model-of-anthony-bourdains-voice-says-lines-he-never-uttered-in-new-documentary",
-      "save_url": "https://web.archive.org/save/https://inputmag.com/culture/an-ai-model-of-anthony-bourdains-voice-says-lines-he-never-uttered-in-new-documentary",
-      "refs": [
-        {
-          "owner": "src/content/sources/inputmag-an-a-i-model-of-anthony-bourdain-s-voice-says-lines-he-never-uttered.yaml",
           "field": "url"
         }
       ]
@@ -2682,18 +2450,6 @@
       "refs": [
         {
           "owner": "src/content/sources/james-beard-bourdain-awards.yaml",
-          "field": "url"
-        }
-      ]
-    },
-    "http://jseliger.com/2010/09/20/so-you-wanna-be-a-writer-what-anthony-bourdain-can-tell-you-even-when-hes-not-talking-about-writing": {
-      "url": "http://jseliger.com/2010/09/20/so-you-wanna-be-a-writer-what-anthony-bourdain-can-tell-you-even-when-hes-not-talking-about-writing",
-      "latest_url": "https://web.archive.org/web/2/http://jseliger.com/2010/09/20/so-you-wanna-be-a-writer-what-anthony-bourdain-can-tell-you-even-when-hes-not-talking-about-writing",
-      "calendar_url": "https://web.archive.org/web/*/http://jseliger.com/2010/09/20/so-you-wanna-be-a-writer-what-anthony-bourdain-can-tell-you-even-when-hes-not-talking-about-writing",
-      "save_url": "https://web.archive.org/save/http://jseliger.com/2010/09/20/so-you-wanna-be-a-writer-what-anthony-bourdain-can-tell-you-even-when-hes-not-talking-about-writing",
-      "refs": [
-        {
-          "owner": "src/content/sources/jseliger-so-you-wanna-be-a-writer-what-anthony-bourdain-can-tell-you.yaml",
           "field": "url"
         }
       ]
@@ -3826,18 +3582,6 @@
         }
       ]
     },
-    "https://nytimes.com/2018/06/09/us/suicide-rates-increasing-bourdain.html": {
-      "url": "https://nytimes.com/2018/06/09/us/suicide-rates-increasing-bourdain.html",
-      "latest_url": "https://web.archive.org/web/2/https://nytimes.com/2018/06/09/us/suicide-rates-increasing-bourdain.html",
-      "calendar_url": "https://web.archive.org/web/*/https://nytimes.com/2018/06/09/us/suicide-rates-increasing-bourdain.html",
-      "save_url": "https://web.archive.org/save/https://nytimes.com/2018/06/09/us/suicide-rates-increasing-bourdain.html",
-      "refs": [
-        {
-          "owner": "src/content/sources/nyt-5-takeaways-on-america-s-increasing-suicide-rate.yaml",
-          "field": "url"
-        }
-      ]
-    },
     "https://www.nytimes.com/1997/09/10/garden/potboiler-dreams-chef-hopes-to-write-his-way-out-of-the-kitchen.html": {
       "url": "https://www.nytimes.com/1997/09/10/garden/potboiler-dreams-chef-hopes-to-write-his-way-out-of-the-kitchen.html",
       "latest_url": "https://web.archive.org/web/2/https://www.nytimes.com/1997/09/10/garden/potboiler-dreams-chef-hopes-to-write-his-way-out-of-the-kitchen.html",
@@ -3858,18 +3602,6 @@
       "refs": [
         {
           "owner": "src/content/sources/nyt-the-insatiable-and-unknowable-anthony-bourdain.yaml",
-          "field": "url"
-        }
-      ]
-    },
-    "https://nytimes.com/2022/09/27/dining/anthony-bourdain-biography.html": {
-      "url": "https://nytimes.com/2022/09/27/dining/anthony-bourdain-biography.html",
-      "latest_url": "https://web.archive.org/web/2/https://nytimes.com/2022/09/27/dining/anthony-bourdain-biography.html",
-      "calendar_url": "https://web.archive.org/web/*/https://nytimes.com/2022/09/27/dining/anthony-bourdain-biography.html",
-      "save_url": "https://web.archive.org/save/https://nytimes.com/2022/09/27/dining/anthony-bourdain-biography.html",
-      "refs": [
-        {
-          "owner": "src/content/sources/nyt-the-last-painful-days-of-anthony-bourdain.yaml",
           "field": "url"
         }
       ]
@@ -4082,18 +3814,6 @@
         }
       ]
     },
-    "https://rollingstone.com/culture/news/anthony-bourdain-dead-at-61-of-apparent-suicide-w521275": {
-      "url": "https://rollingstone.com/culture/news/anthony-bourdain-dead-at-61-of-apparent-suicide-w521275",
-      "latest_url": "https://web.archive.org/web/2/https://rollingstone.com/culture/news/anthony-bourdain-dead-at-61-of-apparent-suicide-w521275",
-      "calendar_url": "https://web.archive.org/web/*/https://rollingstone.com/culture/news/anthony-bourdain-dead-at-61-of-apparent-suicide-w521275",
-      "save_url": "https://web.archive.org/save/https://rollingstone.com/culture/news/anthony-bourdain-dead-at-61-of-apparent-suicide-w521275",
-      "refs": [
-        {
-          "owner": "src/content/sources/rolling-stone-anthony-bourdain-dead-at-61-of-apparent-suicide.yaml",
-          "field": "url"
-        }
-      ]
-    },
     "https://rollingstone.com/culture/culture-features/anthony-bourdain-jiujitsu-secret-reddit-posts-1268801": {
       "url": "https://rollingstone.com/culture/culture-features/anthony-bourdain-jiujitsu-secret-reddit-posts-1268801",
       "latest_url": "https://web.archive.org/web/2/https://rollingstone.com/culture/culture-features/anthony-bourdain-jiujitsu-secret-reddit-posts-1268801",
@@ -4143,18 +3863,6 @@
         {
           "owner": "archive/sources.json",
           "field": "shows-by-country-readme.canonical_url"
-        }
-      ]
-    },
-    "https://softwine.ai/use-of-ai-in-resurrecting-anthony-bourdains-voice-for-roadrunner": {
-      "url": "https://softwine.ai/use-of-ai-in-resurrecting-anthony-bourdains-voice-for-roadrunner",
-      "latest_url": "https://web.archive.org/web/2/https://softwine.ai/use-of-ai-in-resurrecting-anthony-bourdains-voice-for-roadrunner",
-      "calendar_url": "https://web.archive.org/web/*/https://softwine.ai/use-of-ai-in-resurrecting-anthony-bourdains-voice-for-roadrunner",
-      "save_url": "https://web.archive.org/save/https://softwine.ai/use-of-ai-in-resurrecting-anthony-bourdains-voice-for-roadrunner",
-      "refs": [
-        {
-          "owner": "src/content/sources/softwine-anthony-bourdain-s-voice-was-ai-generated-in-the-roadrunner-movie.yaml",
-          "field": "url"
         }
       ]
     },
@@ -6226,30 +5934,6 @@
         }
       ]
     },
-    "https://variety.com/2021/artisans/news/anthony-bourdain-fake-voice-roadrunner-documentary-backlash-1235020878": {
-      "url": "https://variety.com/2021/artisans/news/anthony-bourdain-fake-voice-roadrunner-documentary-backlash-1235020878",
-      "latest_url": "https://web.archive.org/web/2/https://variety.com/2021/artisans/news/anthony-bourdain-fake-voice-roadrunner-documentary-backlash-1235020878",
-      "calendar_url": "https://web.archive.org/web/*/https://variety.com/2021/artisans/news/anthony-bourdain-fake-voice-roadrunner-documentary-backlash-1235020878",
-      "save_url": "https://web.archive.org/save/https://variety.com/2021/artisans/news/anthony-bourdain-fake-voice-roadrunner-documentary-backlash-1235020878",
-      "refs": [
-        {
-          "owner": "src/content/sources/variety-anthony-bourdain-s-ai-faked-voice-in-new-documentary-sparks-backlash.yaml",
-          "field": "url"
-        }
-      ]
-    },
-    "https://theverge.com/2021/7/15/22578707/anthony-bourdain-documentary-deepfake-voice": {
-      "url": "https://theverge.com/2021/7/15/22578707/anthony-bourdain-documentary-deepfake-voice",
-      "latest_url": "https://web.archive.org/web/2/https://theverge.com/2021/7/15/22578707/anthony-bourdain-documentary-deepfake-voice",
-      "calendar_url": "https://web.archive.org/web/*/https://theverge.com/2021/7/15/22578707/anthony-bourdain-documentary-deepfake-voice",
-      "save_url": "https://web.archive.org/save/https://theverge.com/2021/7/15/22578707/anthony-bourdain-documentary-deepfake-voice",
-      "refs": [
-        {
-          "owner": "src/content/sources/verge-new-anthony-bourdain-documentary-deepfakes-his-voice.yaml",
-          "field": "url"
-        }
-      ]
-    },
     "https://theverge.com/2018/6/12/17448816/newsweek-anthony-bourdain-seo-headlines-suicide-contagion": {
       "url": "https://theverge.com/2018/6/12/17448816/newsweek-anthony-bourdain-seo-headlines-suicide-contagion",
       "latest_url": "https://web.archive.org/web/2/https://theverge.com/2018/6/12/17448816/newsweek-anthony-bourdain-seo-headlines-suicide-contagion",
@@ -6330,18 +6014,6 @@
       "refs": [
         {
           "owner": "src/content/sources/wtf-752-bourdain.yaml",
-          "field": "url"
-        }
-      ]
-    },
-    "https://yahoo.com/news/anthony-bourdain-slams-privileged-liberals-for-utter-contempt-of-working-class-151215285.html": {
-      "url": "https://yahoo.com/news/anthony-bourdain-slams-privileged-liberals-for-utter-contempt-of-working-class-151215285.html",
-      "latest_url": "https://web.archive.org/web/2/https://yahoo.com/news/anthony-bourdain-slams-privileged-liberals-for-utter-contempt-of-working-class-151215285.html",
-      "calendar_url": "https://web.archive.org/web/*/https://yahoo.com/news/anthony-bourdain-slams-privileged-liberals-for-utter-contempt-of-working-class-151215285.html",
-      "save_url": "https://web.archive.org/save/https://yahoo.com/news/anthony-bourdain-slams-privileged-liberals-for-utter-contempt-of-working-class-151215285.html",
-      "refs": [
-        {
-          "owner": "src/content/sources/yahoo-anthony-bourdain-slams-privileged-liberals.yaml",
           "field": "url"
         }
       ]

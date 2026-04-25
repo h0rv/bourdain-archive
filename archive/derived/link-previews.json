@@ -75,29 +75,6 @@
       "image": "https://interviews.televisionacademy.com/media/785/download?inline",
       "fetched_at": "2026-04-24T16:50:48.933Z"
     },
-    "https://people.com/anthony-bourdain-assistant-laurie-woolever-reveals-his-eerie-final-texts-memoir-care-and-feeding-exclusive-11685428": {
-      "url": "https://people.com/anthony-bourdain-assistant-laurie-woolever-reveals-his-eerie-final-texts-memoir-care-and-feeding-exclusive-11685428",
-      "ok": false,
-      "status": 403,
-      "fetched_at": "2026-04-24T16:50:50.808Z"
-    },
-    "https://pitchfork.com/news/anthony-bourdain-dead-at-61": {
-      "url": "https://pitchfork.com/news/anthony-bourdain-dead-at-61",
-      "final_url": "https://pitchfork.com/news/anthony-bourdain-dead-at-61/",
-      "ok": true,
-      "status": 200,
-      "title": "Anthony Bourdain Dead at 61",
-      "description": "Celebrated chef, TV host, and music lover has died by suicide",
-      "image": "https://media.pitchfork.com/photos/5b1a746179b0b354fe8938a8/16:9/w_1280,c_limit/Anthony_Bourdain.jpg",
-      "site_name": "Pitchfork",
-      "fetched_at": "2026-04-24T16:50:53.458Z"
-    },
-    "https://time.com/5305838/anthony-bourdain-dead/": {
-      "url": "https://time.com/5305838/anthony-bourdain-dead/",
-      "ok": false,
-      "status": 406,
-      "fetched_at": "2026-04-24T16:50:50.864Z"
-    },
     "https://time.com/5306636/eric-ripert-statement-anthony-bourdain-death/": {
       "url": "https://time.com/5306636/eric-ripert-statement-anthony-bourdain-death/",
       "ok": false,
@@ -386,17 +363,6 @@
       "site_name": "Los Angeles Times",
       "fetched_at": "2026-04-24T16:50:55.452Z"
     },
-    "https://www.latimes.com/business/hollywood/la-fi-ct-bourdain-obit-20180608-story.html": {
-      "url": "https://www.latimes.com/business/hollywood/la-fi-ct-bourdain-obit-20180608-story.html",
-      "final_url": "https://www.latimes.com/business/hollywood/la-fi-ct-bourdain-obit-20180608-story.html",
-      "ok": true,
-      "status": 200,
-      "title": "Anthony Bourdain, globe-trotting chef who explored culture through cuisine, dies at 61 in apparent suicide",
-      "description": "For all his gastronomic globe-trotting, Anthony Bourdain remained, in his words, “a man of simple needs.”",
-      "image": "https://ca-times.brightspotcdn.com/dims4/default/b1b6b9c/2147483647/strip/true/crop/2048x1075+0+237/resize/1200x630!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F96%2Fbf%2Fb9bc7d99774794cd2ce919735922%2Fla-fo-anthony-bourdain-pictures-012",
-      "site_name": "Los Angeles Times",
-      "fetched_at": "2026-04-24T16:50:55.632Z"
-    },
     "https://www.latimes.com/entertainment-arts/story/2023-11-30/anthony-bourdain-henry-kissinger-remarks": {
       "url": "https://www.latimes.com/entertainment-arts/story/2023-11-30/anthony-bourdain-henry-kissinger-remarks",
       "final_url": "https://www.latimes.com/entertainment-arts/story/2023-11-30/anthony-bourdain-henry-kissinger-remarks",
@@ -470,39 +436,6 @@
       "image": "https://i.guim.co.uk/img/media/32151c6a5a6a076874e6d5a5411c1713699306cb/0_78_2468_1480/master/2468.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctYWdlLTIwMjIucG5n&enable=upscale&s=4db54142d3dd202f61a55d036952db36",
       "site_name": "the Guardian",
       "fetched_at": "2026-04-24T16:50:56.409Z"
-    },
-    "https://www.theguardian.com/film/2021/jul/21/anthony-bourdain-documentary-roadrunner-ai-deepfake-furore": {
-      "url": "https://www.theguardian.com/film/2021/jul/21/anthony-bourdain-documentary-roadrunner-ai-deepfake-furore",
-      "final_url": "https://www.theguardian.com/film/2021/jul/21/anthony-bourdain-documentary-roadrunner-ai-deepfake-furore",
-      "ok": true,
-      "status": 200,
-      "title": "The Bourdain AI furore shouldn’t overshadow an effective, complicated film | Adrian Horton",
-      "description": "Despite anger over a decision to deepfake the voice of the much-loved star in a new documentary it’s a haunting and difficult film that deserves to be seen",
-      "image": "https://i.guim.co.uk/img/media/1293f26cefda42cc765ebd04e1adf322b6336d7a/0_0_3600_2160/master/3600.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctb3BpbmlvbnMtYWdlLTIwMjEucG5n&enable=upscale&s=51493bb3bed607ed7a852d30ff8b88c8",
-      "site_name": "the Guardian",
-      "fetched_at": "2026-04-24T16:50:56.496Z"
-    },
-    "https://www.theguardian.com/food/2021/jul/16/anthony-bourdain-documentary-ai-voiceover-roadrunner": {
-      "url": "https://www.theguardian.com/food/2021/jul/16/anthony-bourdain-documentary-ai-voiceover-roadrunner",
-      "final_url": "https://www.theguardian.com/food/2021/jul/16/anthony-bourdain-documentary-ai-voiceover-roadrunner",
-      "ok": true,
-      "status": 200,
-      "title": "Anthony Bourdain documentary sparks backlash for using AI to fake voice",
-      "description": "Roadrunner director Morgan Neville revealed he used AI to create three lines of voiceover by the late celebrity chef",
-      "image": "https://i.guim.co.uk/img/media/ff234b77c9dfc2e2e3a38651f434397b0d60bca6/0_32_1835_1100/master/1835.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctYWdlLTIwMjEucG5n&enable=upscale&s=d2967b7d83acd306ad7e070be9471b36",
-      "site_name": "the Guardian",
-      "fetched_at": "2026-04-24T16:50:56.556Z"
-    },
-    "https://www.theguardian.com/food/2022/oct/01/i-am-lonely-controversial-book-reveals-anthony-bourdains-final-days": {
-      "url": "https://www.theguardian.com/food/2022/oct/01/i-am-lonely-controversial-book-reveals-anthony-bourdains-final-days",
-      "final_url": "https://www.theguardian.com/food/2022/oct/01/i-am-lonely-controversial-book-reveals-anthony-bourdains-final-days",
-      "ok": true,
-      "status": 200,
-      "title": "‘I am lonely’: controversial book reveals Anthony Bourdain’s final days",
-      "description": "Family and friends are upset by new biography divulging Bourdain’s moods – and texts – in the lead-up to his death",
-      "image": "https://i.guim.co.uk/img/media/6b66744a3f5cf41be3d13bc2db64a0ab860af67b/0_12_3556_2135/master/3556.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdG8tYWdlLTIwMjIucG5n&enable=upscale&s=06998156268d2703ffa4de5c32922473",
-      "site_name": "the Guardian",
-      "fetched_at": "2026-04-24T16:50:56.731Z"
     },
     "https://www.theguardian.com/food/2025/apr/06/working-with-nys-hottest-chefs-took-its-toll-on-laurie-woolever-but-nothing-prepared-her-for-anthony-bourdains-death": {
       "url": "https://www.theguardian.com/food/2025/apr/06/working-with-nys-hottest-chefs-took-its-toll-on-laurie-woolever-but-nothing-prepared-her-for-anthony-bourdains-death",
