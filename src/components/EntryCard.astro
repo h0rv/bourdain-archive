@@ -8,14 +8,13 @@ interface Props {
   showSummary?: boolean;
 }
 
-const { entry, collection, showSummary = true } = Astro.props;
+const { entry, collection, showSummary = false } = Astro.props;
 const data = entry.data;
 const href = entryHref(collection, data.id);
 const badges = collection === 'sources' ? [{ field: 'source', label: 'Source', url: data.url }] : availabilityBadges(data.availability);
 const preview = previewForEntry(entry, linkPreviewCache.previews);
 const isWebPreview = !data.image_url && Boolean(preview.url);
 const timelineDate = collection === 'sources' ? sourceTimelineDate(data) : { date: data.date, precision: data.date_precision };
-const summary = data.summary ?? data.notes ?? 'Source record.';
 const status = data.status ?? 'confirmed';
 const displayStatus = visibleStatus(status);
 ---

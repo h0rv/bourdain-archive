@@ -153,7 +153,11 @@
   background: var(--accent);
 }
 
-.stream[data-view="cards"],
+.stream[data-view="cards"] {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 16rem), 1fr));
+  gap: 0.75rem;
+}
+
 .card-list {
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 18rem), 1fr));
   gap: 1rem 1.25rem;
@@ -165,33 +169,84 @@
   display: none;
 }
 
-.stream[data-view="cards"] .card,
+.stream[data-view="cards"] .card {
+  grid-template-columns: clamp(3.9rem, 28%, 5.1rem) minmax(0, 1fr);
+  gap: 0.65rem;
+  height: 100%;
+  padding: 0.65rem;
+  border: 1px solid rgba(17, 16, 14, 0.12);
+}
+
 .card-list > .card {
   display: block;
   padding: 0;
 }
 
-.stream[data-view="cards"] .card-media,
+.stream[data-view="cards"] .card-media {
+  width: 100%;
+  max-height: 6.25rem;
+  margin: 0;
+}
+
 .card-list > .card .card-media {
   margin-bottom: 0.85rem;
 }
 
-.stream[data-view="cards"] .card-media.is-web-preview,
+.stream[data-view="cards"] .card-media.is-web-preview {
+  aspect-ratio: 1 / 1;
+}
+
 .card-list > .card .card-media.is-web-preview {
   aspect-ratio: 16 / 9;
 }
 
-.stream[data-view="cards"] .media-fallback,
+.stream[data-view="cards"] .card h2 {
+  margin-bottom: 0.18rem;
+  font-size: clamp(0.98rem, 1.7vw, 1.16rem);
+  line-height: 1.03;
+}
+
+.stream[data-view="cards"] .meta {
+  font-size: 0.58rem;
+  line-height: 1.2;
+}
+
+.stream[data-view="cards"] .badges,
+.stream[data-view="cards"] .tag-list {
+  gap: 0.2rem;
+  margin-top: 0.42rem;
+}
+
+.stream[data-view="cards"] .tag-list {
+  display: none;
+}
+
+.stream[data-view="cards"] .badge {
+  min-height: 1.1rem;
+  padding: 0.12rem 0.3rem;
+  font-size: 0.5rem;
+}
+
+.stream[data-view="cards"] .media-fallback {
+  padding: 0.45rem;
+}
+
 .card-list > .card .media-fallback {
   padding: 0.9rem;
 }
 
-.stream[data-view="cards"] .media-label,
+.stream[data-view="cards"] .media-label {
+  font-size: 0.48rem;
+}
+
 .card-list > .card .media-label {
   font-size: 0.7rem;
 }
 
-.stream[data-view="cards"] .media-url,
+.stream[data-view="cards"] .media-url {
+  display: none;
+}
+
 .card-list > .card .media-url {
   display: block;
 }

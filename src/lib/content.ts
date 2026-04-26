@@ -37,6 +37,20 @@ export const sourceGroups = [
 
 export const sourceGroupLabels = Object.fromEntries(sourceGroups.map((group) => [group.id, group.label]));
 
+export const mediaTypes = [
+  { id: 'book-print', label: 'Book / print' },
+  { id: 'article-essay', label: 'Article / essay' },
+  { id: 'tv-video', label: 'TV / video' },
+  { id: 'audio', label: 'Audio' },
+  { id: 'interview-talk', label: 'Interview / talk' },
+  { id: 'social-web', label: 'Social / web' },
+  { id: 'reference', label: 'Reference' },
+  { id: 'life-event', label: 'Life event' },
+  { id: 'other', label: 'Other' },
+] as const;
+
+export const mediaTypeLabels = Object.fromEntries(mediaTypes.map((group) => [group.id, group.label]));
+
 export function sourceGroupFor(data: any): string {
   const id = data.id ?? '';
   const type = data.type ?? '';
@@ -67,6 +81,22 @@ const monthNumbers: Record<string, string> = {
   november: '11',
   december: '12',
 };
+
+export function mediaTypeFor(data: any, collection?: string, sourceGroup?: string): string {
+  const type = data.type ?? '';
+  const group = sourceGroup ?? sourceGroupFor(data);
+
+  if (type === 'life-event') return 'life-event';
+  if (['book', 'comic'].includes(type)) return 'book-print';
+  if (['article', 'essay', 'field-note', 'profile', 'review', 'obituary', 'obit', 'tribute', 'photo-essay', 'official-article', 'press-release'].includes(type)) return 'article-essay';
+  if (['show', 'episode', 'video', 'official-video', 'video-series', 'episode-guide', 'official-show-page', 'dead-official-page', 'television-archive', 'social-video'].includes(type)) return 'tv-video';
+  if (['podcast', 'radio', 'radio-archive', 'audio-archive', 'audio-interview', 'radio-interview', 'dead-podcast-page'].includes(type)) return 'audio';
+  if (type.includes('interview') || ['panel'].includes(type)) return 'interview-talk';
+  if (['tumblr', 'medium', 'list', 'socials'].includes(group) || type === 'social-profile') return 'social-web';
+  if (['catalogs'].includes(group) || type.includes('library') || type.includes('catalog') || type.includes('authority') || type === 'dataset' || type === 'fan-index' || type === 'publisher-page' || type === 'transcript' || type === 'transcript-index' || type === 'awards-record' || type === 'recovered-archive') return 'reference';
+  if (collection === 'sources' && group === 'tv') return 'tv-video';
+  return 'other';
+}
 
 export function sourceTimelineDate(data: any): { date?: string; precision: string } {
   if (data.date) return { date: data.date, precision: data.date_precision ?? 'unknown' };

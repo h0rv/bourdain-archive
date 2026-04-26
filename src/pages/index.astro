@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import EntryCard from '../components/EntryCard.astro';
-import { entryTitle, formatDate, formatType, sortByDateDesc, sourceGroupFor, sourceGroups, sourceGroupLabels, sourceTimelineDate } from '../lib/content';
+import { entryTitle, formatDate, formatType, mediaTypeFor, mediaTypeLabels, sortByDateDesc, sourceGroupFor, sourceGroups, sourceGroupLabels, sourceTimelineDate } from '../lib/content';
 
 const works = await getCollection('works');
 const shows = (await getCollection('episodes')).filter((entry) => entry.data.type === 'show');
@@ -19,19 +19,39 @@ const curatedEntries = [
 ];
 const curatedSourceIds = new Set(curatedEntries.flatMap((entry) => entry.data.sources ?? []));
 const timelineSources = sources.filter((entry) => !curatedSourceIds.has(entry.data.id));
+const sourceAuthorshipFor = (entry: any, sourceGroup: string) => {
+  const type = entry.data.type ?? '';
+  if (['tumblr', 'medium', 'list', 'socials'].includes(sourceGroup)) return 'by';
+  if (['tv', 'field-notes'].includes(sourceGroup)) return 'by';
+  if (type.includes('interview') || ['podcast', 'panel', 'radio-interview', 'video', 'official-video', 'social-video', 'social-photo'].includes(type)) return 'by';
+  return 'about';
+};
 const entries = [
   ...events.map((entry) => ({ entry, collection: 'events', authorship: 'by', sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
   ...works.map((entry) => ({ entry, collection: 'works', authorship: 'by', sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
   ...shows.map((entry) => ({ entry, collection: 'episodes', authorship: 'by', sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
   ...appearances.map((entry) => ({ entry, collection: 'appearances', authorship: 'by', sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
   ...literature.map((entry) => ({ entry, collection: 'literature', authorship: 'about', sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
-  ...timelineSources.map((entry) => ({ entry, collection: 'sources', authorship: 'by', sourceGroup: sourceGroupFor(entry.data), timelineDate: sourceTimelineDate(entry.data) })),
+  ...timelineSources.map((entry) => {
+    const sourceGroup = sourceGroupFor(entry.data);
+    return { entry, collection: 'sources', authorship: sourceAuthorshipFor(entry, sourceGroup), sourceGroup, timelineDate: sourceTimelineDate(entry.data) };
+  }),
 ].sort((a, b) => {
   const left = { data: { date: a.timelineDate.date } };
   const right = { data: { date: b.timelineDate.date } };
   return sortByDateDesc(left, right);
 });
-const filters = Array.from(new Set(entries.map(({ entry }) => entry.data.type))).sort();
+const entriesWithFacets = entries.map((item) => {
+  const mediaType = mediaTypeFor(item.entry.data, item.collection, item.sourceGroup);
+  return { ...item, mediaType };
+});
+const countBy = (values: string[]) => values.reduce((counts, value) => ({ ...counts, [value]: (counts[value] ?? 0) + 1 }), {} as Record<string, number>);
+const typeCounts = countBy(entriesWithFacets.map(({ entry }) => entry.data.type));
+const mediaCounts = countBy(entriesWithFacets.map(({ mediaType }) => mediaType));
+const sourceCounts = countBy(entriesWithFacets.map(({ sourceGroup }) => sourceGroup));
+const authorCounts = countBy(entriesWithFacets.map(({ authorship }) => authorship));
+const filters = Object.keys(typeCounts).sort();
+const mediaFilters = Object.keys(mediaCounts).sort((a, b) => (mediaTypeLabels[a] ?? a).localeCompare(mediaTypeLabels[b] ?? b));
 const deathDate = '2018-06-08';
 const isPosthumous = (entry: any) => {
   if (entry.data.tags?.includes('posthumous')) return true;
@@ -41,10 +61,9 @@ const isPosthumous = (entry: any) => {
   return entry.data.date > deathDate;
 };
 const yearForEntry = (date?: string | null) => date?.slice(0, 4) ?? 'Undated';
-const searchableText = (entry: any, collection: string, authorship: string, sourceGroup: string) =>
+const searchableText = (entry: any, collection: string, authorship: string, sourceGroup: string, mediaType: string) =>
   [
     entryTitle(entry),
-    entry.data.summary,
     entry.data.notes,
     entry.data.type,
     entry.data.publication,
@@ -53,6 +72,7 @@ const searchableText = (entry: any, collection: string, authorship: string, sour
     collection,
     authorship,
     sourceGroupLabels[sourceGroup],
+    mediaTypeLabels[mediaType],
     entry.data.date,
     ...(entry.data.tags ?? []),
     ...(entry.data.people ?? []),
@@ -64,112 +84,134 @@ const searchableText = (entry: any, collection: string, authorship: string, sour
 ---
 <BaseLayout title="Bourdain Archive">
   <section class="hero home-hero">
-    <p class="eyebrow">Archive timeline</p>
-    <h1>Timeline</h1>
-    <p>Search works, shows, interviews, appearances, and writing about Bourdain.</p>
+    <p class="eyebrow">Digital archive</p>
+    <h1>Browse the collection</h1>
+    <p>Search works, television, interviews, appearances, primary web material, and writing about Bourdain. Timeline now optional; catalog view comes first.</p>
   </section>
 
-  <div class="controls" aria-label="Search, filter, sort, and view controls">
-    <div class="search-control">
-      <label for="archive-search">Search</label>
-      <div class="search-box">
-        <span aria-hidden="true">⌕</span>
-        <input id="archive-search" type="search" placeholder="Search titles, summaries, tags, places…" data-search />
+  <div class="archive-shell">
+    <aside class="controls archive-sidebar" aria-label="Search, filter, sort, and view controls">
+      <div class="search-control">
+        <label for="archive-search">Search collection</label>
+        <div class="search-box">
+          <span aria-hidden="true">⌕</span>
+          <input id="archive-search" type="search" placeholder="Search title, source, date, tag, place…" data-search />
+        </div>
+        <p class="result-count" data-result-count>{entriesWithFacets.length} records</p>
       </div>
-      <p class="result-count" data-result-count>{entries.length} entries</p>
-    </div>
 
-    <div class="control-groups">
-      <div class="filter-group main-filters" aria-label="Scope filters">
-        <span class="filter-label">Scope</span>
-        <div class="pill-row">
-          <button class="pill is-active" type="button" data-filter-clear>All</button>
-          <button class="pill" type="button" data-filter-author="by">By Bourdain</button>
-          <button class="pill" type="button" data-filter-author="about">About Bourdain</button>
+      <div class="sidebar-section" aria-label="Sort and view controls">
+        <h2 class="filter-heading">Display</h2>
+        <label class="select-control" for="archive-sort">
+          <span>Sort by</span>
+          <select id="archive-sort" data-sort-select>
+            <option value="date-desc">Date, newest first</option>
+            <option value="date-asc">Date, oldest first</option>
+            <option value="title-asc">Title A–Z</option>
+            <option value="media-asc">Media type</option>
+            <option value="author-asc">Authorship</option>
+          </select>
+        </label>
+        <div class="view-control" aria-label="View controls">
+          <button class="pill is-active" type="button" data-view="cards">Cards</button>
+          <button class="pill" type="button" data-view="timeline">Timeline</button>
         </div>
       </div>
-      <div class="filter-group compact-controls" aria-label="Sort and view controls">
-        <span class="filter-label">Order</span>
-        <div class="pill-row">
-          <button class="pill is-active" type="button" data-sort="desc">Newest</button>
-          <button class="pill" type="button" data-sort="asc">Oldest</button>
-        </div>
-        <span class="filter-label">View</span>
-        <div class="pill-row">
-          <button class="pill is-active" type="button" data-view="timeline">Timeline</button>
-          <button class="pill" type="button" data-view="cards">Cards</button>
-        </div>
-      </div>
-    </div>
 
-    <details class="advanced-filters">
-      <summary>Advanced filters</summary>
-      <div class="advanced-filter-grid">
-        <div class="filter-group" aria-label="Type filters">
-          <span class="filter-label">Type</span>
-          <div class="pill-row">
-            {filters.map((filter) => (
-              <button class="pill" type="button" data-filter-type={filter}>{formatType(filter)}</button>
-            ))}
-          </div>
-        </div>
-        <div class="filter-group" aria-label="Facet filters">
-          <span class="filter-label">Flags</span>
-          <div class="pill-row">
-            <button class="pill" type="button" data-filter-facet="posthumous">Posthumous</button>
-          </div>
-        </div>
-        <div class="filter-group" aria-label="Source filters">
-          <span class="filter-label">Sources</span>
-          <div class="pill-row">
-            <button class="pill is-active" type="button" data-source-all>All sources</button>
-            {sourceGroups.map((group) => (
-              <button class="pill is-active" type="button" data-filter-source={group.id}>{group.label}</button>
-            ))}
-          </div>
+      <div class="sidebar-section" aria-label="Authorship filters">
+        <h2 class="filter-heading">Authorship</h2>
+        <div class="facet-list">
+          <button class="facet-button" type="button" data-filter-author="by"><span>Bourdain-authored / featuring</span><span>{authorCounts.by ?? 0}</span></button>
+          <button class="facet-button" type="button" data-filter-author="about"><span>About Bourdain</span><span>{authorCounts.about ?? 0}</span></button>
         </div>
       </div>
-    </details>
+
+      <div class="sidebar-section" aria-label="Media type filters">
+        <h2 class="filter-heading">Media type</h2>
+        <div class="facet-list">
+          {mediaFilters.map((filter) => (
+            <button class="facet-button" type="button" data-filter-media={filter}><span>{mediaTypeLabels[filter] ?? formatType(filter)}</span><span>{mediaCounts[filter] ?? 0}</span></button>
+          ))}
+        </div>
+      </div>
+
+      <details class="sidebar-section" open>
+        <summary class="filter-heading">Record type</summary>
+        <div class="facet-list">
+          {filters.map((filter) => (
+            <button class="facet-button" type="button" data-filter-type={filter}><span>{formatType(filter)}</span><span>{typeCounts[filter] ?? 0}</span></button>
+          ))}
+        </div>
+      </details>
+
+      <details class="sidebar-section" open>
+        <summary class="filter-heading">Collection/source</summary>
+        <div class="facet-list">
+          <button class="facet-button is-active" type="button" data-source-all><span>Any source</span><span>{entriesWithFacets.length}</span></button>
+          {sourceGroups.map((group) => (
+            <button class="facet-button" type="button" data-filter-source={group.id}><span>{group.label}</span><span>{sourceCounts[group.id] ?? 0}</span></button>
+          ))}
+        </div>
+      </details>
+
+      <div class="sidebar-section" aria-label="Flag filters">
+        <h2 class="filter-heading">Flags</h2>
+        <div class="facet-list">
+          <button class="facet-button" type="button" data-filter-facet="posthumous">Posthumous</button>
+        </div>
+      </div>
+
+      <button class="reset-button" type="button" data-filter-clear>Reset filters</button>
+    </aside>
+
+    <section class="archive-results" aria-label="Archive results">
+      <div class="results-toolbar">
+        <p class="result-count" data-result-count>{entriesWithFacets.length} records</p>
+        <p class="results-note">Faceted catalog, American university archive style. Use timeline only for chronology.</p>
+      </div>
+
+      <ol class="stream" data-stream data-view="cards">
+        {entriesWithFacets.map(({ entry, collection, authorship, sourceGroup, timelineDate, mediaType }) => (
+          <li
+            class="stream-item"
+            data-type={entry.data.type}
+            data-media-type={mediaType}
+            data-author={authorship}
+            data-posthumous={isPosthumous(entry) ? 'true' : 'false'}
+            data-source-group={sourceGroup}
+            data-date={timelineDate.date ?? ''}
+            data-date-label={formatDate(timelineDate.date, timelineDate.precision)}
+            data-year={yearForEntry(timelineDate.date)}
+            data-title={entryTitle(entry).toLowerCase()}
+            data-search-text={searchableText(entry, collection, authorship, sourceGroup, mediaType)}
+          >
+            <EntryCard entry={entry} collection={collection} />
+          </li>
+        ))}
+      </ol>
+      <p class="no-results" data-no-results hidden>No matches. Clear filters or try broader search.</p>
+    </section>
   </div>
-
-  <ol class="stream" data-stream data-view="timeline">
-    {entries.map(({ entry, collection, authorship, sourceGroup, timelineDate }) => (
-      <li
-        class="stream-item"
-        data-type={entry.data.type}
-        data-author={authorship}
-        data-posthumous={isPosthumous(entry) ? 'true' : 'false'}
-        data-source-group={sourceGroup}
-        data-date={timelineDate.date ?? ''}
-        data-date-label={formatDate(timelineDate.date, timelineDate.precision)}
-        data-year={yearForEntry(timelineDate.date)}
-        data-search-text={searchableText(entry, collection, authorship, sourceGroup)}
-      >
-        <EntryCard entry={entry} collection={collection} />
-      </li>
-    ))}
-  </ol>
-  <p class="no-results" data-no-results hidden>No matches. Clear filters or try a broader search.</p>
 
   <script>
     const stream = document.querySelector<HTMLOListElement>('[data-stream]');
     const searchInput = document.querySelector<HTMLInputElement>('[data-search]');
-    const countLabel = document.querySelector<HTMLElement>('[data-result-count]');
+    const countLabels = document.querySelectorAll<HTMLElement>('[data-result-count]');
     const noResults = document.querySelector<HTMLElement>('[data-no-results]');
     const clearButton = document.querySelector<HTMLButtonElement>('[data-filter-clear]');
     const typeButtons = document.querySelectorAll<HTMLButtonElement>('[data-filter-type]');
+    const mediaButtons = document.querySelectorAll<HTMLButtonElement>('[data-filter-media]');
     const authorButtons = document.querySelectorAll<HTMLButtonElement>('[data-filter-author]');
     const facetButtons = document.querySelectorAll<HTMLButtonElement>('[data-filter-facet]');
     const sourceButtons = document.querySelectorAll<HTMLButtonElement>('[data-filter-source]');
     const sourceAllButton = document.querySelector<HTMLButtonElement>('[data-source-all]');
-    const sortButtons = document.querySelectorAll<HTMLButtonElement>('[data-sort]');
+    const sortSelect = document.querySelector<HTMLSelectElement>('[data-sort-select]');
     const viewButtons = document.querySelectorAll<HTMLButtonElement>('[data-view]');
-    const advancedFilters = document.querySelector<HTMLDetailsElement>('.advanced-filters');
     const items = Array.from(document.querySelectorAll<HTMLElement>('.stream-item'));
     const totalItems = items.length;
-    const STORAGE_KEY = 'bourdain-archive.timeline-controls.v2';
-    let sortDirection = 'desc';
-    let renderedSortDirection = '';
+    const STORAGE_KEY = 'bourdain-archive.catalog-controls.v2';
+    let sortMode = 'date-desc';
+    let renderedSortMode = '';
 
     const activeValues = (buttons: NodeListOf<HTMLButtonElement>, attribute: string) =>
       Array.from(buttons)
@@ -180,6 +222,28 @@ const searchableText = (entry: any, collection: string, authorship: string, sour
     const setActiveValues = (buttons: NodeListOf<HTMLButtonElement>, attribute: string, values: unknown) => {
       if (!Array.isArray(values)) return;
       buttons.forEach((button) => button.classList.toggle('is-active', values.includes(button.getAttribute(attribute))));
+    };
+
+    const textValue = (item: HTMLElement, attr: string) => item.getAttribute(attr) ?? '';
+
+    const compareDate = (left: HTMLElement, right: HTMLElement, direction: 'asc' | 'desc') => {
+      const leftDate = textValue(left, 'data-date');
+      const rightDate = textValue(right, 'data-date');
+      if (!leftDate && !rightDate) return 0;
+      if (!leftDate) return 1;
+      if (!rightDate) return -1;
+      return direction === 'asc' ? leftDate.localeCompare(rightDate) : rightDate.localeCompare(leftDate);
+    };
+
+    const compareTextThenDate = (attr: string) => (left: HTMLElement, right: HTMLElement) =>
+      textValue(left, attr).localeCompare(textValue(right, attr)) || compareDate(left, right, 'desc');
+
+    const compareItems = (left: HTMLElement, right: HTMLElement) => {
+      if (sortMode === 'date-asc') return compareDate(left, right, 'asc');
+      if (sortMode === 'title-asc') return compareTextThenDate('data-title')(left, right);
+      if (sortMode === 'media-asc') return compareTextThenDate('data-media-type')(left, right);
+      if (sortMode === 'author-asc') return compareTextThenDate('data-author')(left, right);
+      return compareDate(left, right, 'desc');
     };
 
     const readSavedControls = () => {
@@ -197,12 +261,12 @@ const searchableText = (entry: any, collection: string, authorship: string, sour
           JSON.stringify({
             query: searchInput?.value ?? '',
             types: activeValues(typeButtons, 'data-filter-type'),
+            mediaTypes: activeValues(mediaButtons, 'data-filter-media'),
             authors: activeValues(authorButtons, 'data-filter-author'),
             facets: activeValues(facetButtons, 'data-filter-facet'),
             sources: activeValues(sourceButtons, 'data-filter-source'),
-            sort: sortDirection,
-            view: stream?.getAttribute('data-view') ?? 'timeline',
-            advancedOpen: advancedFilters?.open ?? false,
+            sort: sortMode,
+            view: stream?.getAttribute('data-view') ?? 'cards',
           }),
         );
       } catch {}
@@ -212,31 +276,21 @@ const searchableText = (entry: any, collection: string, authorship: string, sour
       const saved = readSavedControls();
       if (searchInput && typeof saved.query === 'string') searchInput.value = saved.query;
       setActiveValues(typeButtons, 'data-filter-type', saved.types);
-      const savedAuthors = Array.isArray(saved.authors) ? saved.authors.filter((value: unknown) => value === 'by' || value === 'about') : [];
-      authorButtons.forEach((button) => button.classList.toggle('is-active', savedAuthors.length === 1 && button.getAttribute('data-filter-author') === savedAuthors[0]));
+      setActiveValues(mediaButtons, 'data-filter-media', saved.mediaTypes);
       setActiveValues(facetButtons, 'data-filter-facet', saved.facets);
+
+      const savedAuthors = Array.isArray(saved.authors) ? saved.authors.filter((value: unknown) => value === 'by' || value === 'about') : [];
+      authorButtons.forEach((button) => button.classList.toggle('is-active', savedAuthors.includes(button.getAttribute('data-filter-author'))));
       if (Array.isArray(saved.sources) && saved.sources.length > 0) setActiveValues(sourceButtons, 'data-filter-source', saved.sources);
 
-      if (saved.sort === 'asc' || saved.sort === 'desc') {
-        sortDirection = saved.sort;
-        sortButtons.forEach((button) => button.classList.toggle('is-active', button.getAttribute('data-sort') === sortDirection));
-      }
+      const savedSort = saved.sort === 'asc' ? 'date-asc' : saved.sort === 'desc' ? 'date-desc' : saved.sort;
+      if (['date-desc', 'date-asc', 'title-asc', 'media-asc', 'author-asc'].includes(savedSort)) sortMode = savedSort;
+      if (sortSelect) sortSelect.value = sortMode;
 
       if (saved.view === 'timeline' || saved.view === 'cards') {
         stream?.setAttribute('data-view', saved.view);
         viewButtons.forEach((button) => button.classList.toggle('is-active', button.getAttribute('data-view') === saved.view));
       }
-
-      if (advancedFilters) advancedFilters.open = Boolean(saved.advancedOpen || saved.types?.length || saved.facets?.length);
-    };
-
-    const compareItems = (left: HTMLElement, right: HTMLElement) => {
-      const leftDate = left.getAttribute('data-date') ?? '';
-      const rightDate = right.getAttribute('data-date') ?? '';
-      if (!leftDate && !rightDate) return 0;
-      if (!leftDate) return 1;
-      if (!rightDate) return -1;
-      return sortDirection === 'asc' ? leftDate.localeCompare(rightDate) : rightDate.localeCompare(leftDate);
     };
 
     const renderYearMarkers = () => {
@@ -257,58 +311,54 @@ const searchableText = (entry: any, collection: string, authorship: string, sour
     };
 
     const renderSortedItems = () => {
-      if (!stream || renderedSortDirection === sortDirection) return;
+      if (!stream || renderedSortMode === sortMode) return;
+      stream.querySelectorAll('.timeline-year').forEach((marker) => marker.remove());
       items.sort(compareItems).forEach((item) => stream.append(item));
-      renderedSortDirection = sortDirection;
+      renderedSortMode = sortMode;
     };
 
     const updateControls = () => {
       const activeTypes = activeValues(typeButtons, 'data-filter-type');
+      const activeMediaTypes = activeValues(mediaButtons, 'data-filter-media');
       const activeAuthors = activeValues(authorButtons, 'data-filter-author');
       const activeFacets = activeValues(facetButtons, 'data-filter-facet');
       const activeSources = activeValues(sourceButtons, 'data-filter-source');
       const posthumousOnly = activeFacets.includes('posthumous');
       const query = searchInput?.value.trim().toLowerCase() ?? '';
-      const hasScopeFilters = activeAuthors.length > 0;
 
-      if (activeSources.length === 0) {
-        sourceButtons.forEach((button) => button.classList.add('is-active'));
-        activeSources.push(...activeValues(sourceButtons, 'data-filter-source'));
-      }
-
-      clearButton?.classList.toggle('is-active', !hasScopeFilters);
-      sourceAllButton?.classList.toggle('is-active', activeSources.length === sourceButtons.length);
-      stream?.querySelectorAll('.timeline-year').forEach((marker) => marker.remove());
+      sourceAllButton?.classList.toggle('is-active', activeSources.length === 0);
       renderSortedItems();
 
       let visibleCount = 0;
       items.forEach((item) => {
         const matchesType = activeTypes.length === 0 || activeTypes.includes(item.getAttribute('data-type'));
+        const matchesMedia = activeMediaTypes.length === 0 || activeMediaTypes.includes(item.getAttribute('data-media-type'));
         const matchesAuthor = activeAuthors.length === 0 || activeAuthors.includes(item.getAttribute('data-author'));
         const matchesSource = activeSources.length === 0 || activeSources.includes(item.getAttribute('data-source-group'));
         const matchesPosthumous = !posthumousOnly || item.getAttribute('data-posthumous') === 'true';
         const matchesQuery = !query || (item.getAttribute('data-search-text') ?? '').includes(query);
-        const isVisible = matchesType && matchesAuthor && matchesSource && matchesPosthumous && matchesQuery;
+        const isVisible = matchesType && matchesMedia && matchesAuthor && matchesSource && matchesPosthumous && matchesQuery;
         item.hidden = !isVisible;
         if (isVisible) visibleCount += 1;
       });
 
       renderYearMarkers();
-      if (countLabel) countLabel.textContent = `${visibleCount} of ${totalItems} entries`;
+      countLabels.forEach((label) => (label.textContent = `${visibleCount} of ${totalItems} records`));
       if (noResults) noResults.hidden = visibleCount > 0;
       saveControls();
     };
 
     clearButton?.addEventListener('click', () => {
-      typeButtons.forEach((button) => button.classList.remove('is-active'));
-      authorButtons.forEach((button) => button.classList.remove('is-active'));
-      facetButtons.forEach((button) => button.classList.remove('is-active'));
-      sourceButtons.forEach((button) => button.classList.add('is-active'));
+      [...typeButtons, ...mediaButtons, ...authorButtons, ...facetButtons].forEach((button) => button.classList.remove('is-active'));
+      sourceButtons.forEach((button) => button.classList.remove('is-active'));
       if (searchInput) searchInput.value = '';
+      sortMode = 'date-desc';
+      if (sortSelect) sortSelect.value = sortMode;
+      renderedSortMode = '';
       updateControls();
     });
 
-    [...typeButtons, ...facetButtons].forEach((button) => {
+    [...typeButtons, ...mediaButtons, ...authorButtons, ...facetButtons].forEach((button) => {
       button.addEventListener('click', () => {
         button.classList.toggle('is-active');
         updateControls();
@@ -316,7 +366,7 @@ const searchableText = (entry: any, collection: string, authorship: string, sour
     });
 
     sourceAllButton?.addEventListener('click', () => {
-      sourceButtons.forEach((button) => button.classList.add('is-active'));
+      sourceButtons.forEach((button) => button.classList.remove('is-active'));
       updateControls();
     });
 
@@ -327,31 +377,19 @@ const searchableText = (entry: any, collection: string, authorship: string, sour
       });
     });
 
-    authorButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-        const wasActive = button.classList.contains('is-active');
-        authorButtons.forEach((item) => item.classList.remove('is-active'));
-        button.classList.toggle('is-active', !wasActive);
-        updateControls();
-      });
-    });
-
     searchInput?.addEventListener('input', updateControls);
-    advancedFilters?.addEventListener('toggle', saveControls);
 
-    sortButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-        sortDirection = button.getAttribute('data-sort') ?? 'desc';
-        sortButtons.forEach((item) => item.classList.toggle('is-active', item === button));
-        updateControls();
-      });
+    sortSelect?.addEventListener('change', () => {
+      sortMode = sortSelect.value;
+      renderedSortMode = '';
+      updateControls();
     });
 
     viewButtons.forEach((button) => {
       button.addEventListener('click', () => {
         const view = button.getAttribute('data-view');
         viewButtons.forEach((item) => item.classList.toggle('is-active', item === button));
-        stream?.setAttribute('data-view', view ?? 'timeline');
+        stream?.setAttribute('data-view', view ?? 'cards');
         renderYearMarkers();
         saveControls();
       });
