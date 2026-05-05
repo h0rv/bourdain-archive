@@ -3,15 +3,32 @@
  * Promote curated literature metadata from archive/derived into src/content.
  *
  * archive/derived/literature-about-bourdain.json is the source snapshot we edit/import.
- * src/content/literature/*.json is the curated site-facing projection.
+ * src/content/literature/*.yaml is the curated site-facing projection.
  */
 
 import { mkdir, readFile, readdir, rm, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
+import YAML from 'yaml';
 
 const SOURCE = 'archive/derived/literature-about-bourdain.json';
 const OUT_DIR = 'src/content/literature';
+const SOURCES_DIR = 'src/content/sources';
 const DEATH_DATE = '2018-06-08';
+
+function stringifyYaml(value) {
+  return YAML.stringify(value, { lineWidth: 0 }).replace(/^(date|accessed): (\d{4}(?:-\d{2})?(?:-\d{2})?)$/gm, '$1: "$2"');
+}
+
+function canonicalUrl(value) {
+  try {
+    const url = new URL(value);
+    url.hostname = url.hostname.replace(/^www\./, '');
+    url.hash = '';
+    return url.toString().replace(/\/$/, '');
+  } catch {
+    return value;
+  }
+}
 
 function slugify(value) {
   return value
@@ -49,6 +66,10 @@ function isPosthumous(date, precision) {
   return date >= DEATH_DATE;
 }
 
+function mediaTypeFor(type) {
+  return type === 'interview' ? 'interview-talk' : 'article-essay';
+}
+
 function inferType(bucket) {
   const normalized = bucket.toLowerCase();
   if (normalized.includes('interview')) return 'interview';
@@ -60,27 +81,45 @@ function inferType(bucket) {
   return 'article';
 }
 
-function entryFromRecord(record, id) {
-  const { date, date_precision } = inferDate(record.url);
+async function loadSourceMap() {
+  const byUrl = new Map();
+  for (const file of await readdir(SOURCES_DIR)) {
+    if (!file.endsWith('.yaml') && !file.endsWith('.yml') && !file.endsWith('.json')) continue;
+    const text = await readFile(join(SOURCES_DIR, file), 'utf8');
+    const source = file.endsWith('.json') ? JSON.parse(text) : YAML.parse(text);
+    if (source.url) byUrl.set(source.url, source);
+    if (source.url) byUrl.set(canonicalUrl(source.url), source);
+  }
+  return byUrl;
+}
+
+function entryFromRecord(record, id, sourceByUrl) {
+  const inferredDate = inferDate(record.url);
+  const source = sourceByUrl.get(record.url) ?? sourceByUrl.get(canonicalUrl(record.url));
+  const date = inferredDate.date ?? source?.date ?? null;
+  const date_precision = inferredDate.date_precision !== 'unknown' ? inferredDate.date_precision : source?.date_precision ?? 'unknown';
   const bucketTag = slugify(record.bucket);
   const tags = ['about-bourdain', 'literature', bucketTag];
   if (isPosthumous(date, date_precision)) tags.push('posthumous');
 
+  const type = inferType(record.bucket);
   return {
     id,
     title: record.title,
-    type: inferType(record.bucket),
+    type,
+    record_type: 'literature',
+    media_type: mediaTypeFor(type),
+    relation_to_bourdain: 'about',
     date,
     date_precision,
-    summary: `${record.bucket} — ${record.publication}.`,
     publication: record.publication,
     bucket: record.bucket,
     tags: Array.from(new Set(tags)),
     people: ['anthony-bourdain'],
     places: [],
-    sources: [],
+    sources: source?.id ? [source.id] : [],
     related: [],
-    status: 'needs-review',
+    status: source?.id ? 'confirmed' : 'needs-review',
     availability: {
       official_url: record.url,
       archive_url: null,
@@ -96,6 +135,7 @@ function entryFromRecord(record, id) {
 
 async function main() {
   const source = JSON.parse(await readFile(SOURCE, 'utf8'));
+  const sourceByUrl = await loadSourceMap();
   const seen = new Set();
   const entries = source.records.map((record) => {
     let id = slugify(`${record.title}-${record.publication}`);
@@ -103,12 +143,12 @@ async function main() {
     let count = 2;
     while (seen.has(id)) id = `${base}-${count++}`;
     seen.add(id);
-    return entryFromRecord(record, id);
+    return entryFromRecord(record, id, sourceByUrl);
   });
 
   await rm(OUT_DIR, { recursive: true, force: true });
   await mkdir(OUT_DIR, { recursive: true });
-  await Promise.all(entries.map((entry) => writeFile(join(OUT_DIR, `${entry.id}.json`), `${JSON.stringify(entry, null, 2)}\n`)));
+  await Promise.all(entries.map((entry) => writeFile(join(OUT_DIR, `${entry.id}.yaml`), stringifyYaml(entry))));
 
   const files = await readdir(OUT_DIR);
   console.log(`wrote ${files.length} literature entries`);

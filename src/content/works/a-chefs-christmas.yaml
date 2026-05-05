@@ -1,0 +1,26 @@
+id: a-chefs-christmas
+title: A Chef's Christmas
+type: short-story
+record_type: work
+media_type: audio
+relation_to_bourdain: authored
+creator:
+  - anthony-bourdain
+date: "2002-11-12"
+date_precision: day
+summary: Original Bourdain short story released as a Random House Audio audiobook.
+tags:
+  - fiction
+  - kitchens
+  - audio
+people:
+  - anthony-bourdain
+places: []
+sources:
+  - a-chefs-christmas-prh
+related:
+  - kitchen-confidential
+status: confirmed
+availability:
+  official_url: https://www.penguinrandomhouse.com/books/16500/a-chefs-christmas-by-anthony-bourdain/
+  audio_url: https://www.penguinrandomhouse.com/books/16500/a-chefs-christmas-by-anthony-bourdain/

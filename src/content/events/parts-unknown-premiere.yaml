@@ -1,15 +1,25 @@
 id: parts-unknown-premiere
 title: Parts Unknown premieres
 type: life-event
+record_type: event
+media_type: life-event
+relation_to_bourdain: featured
+contributors:
+  - anthony-bourdain
 date: "2013-04-14"
 date_precision: day
 summary: Parts Unknown premieres on CNN, extending Bourdain's television work into politics, history, conflict, labor, and place.
 image_url: /images/events/parts-unknown-premiere.jpg
-tags: [television, parts-unknown]
-people: [anthony-bourdain]
+tags:
+  - television
+  - parts-unknown
+people:
+  - anthony-bourdain
 places: []
-sources: [explore-parts-unknown]
-related: [parts-unknown-show]
-status: needs-review
+sources:
+  - explore-parts-unknown
+related:
+  - parts-unknown-show
+status: confirmed
 availability:
   official_url: https://explorepartsunknown.com/

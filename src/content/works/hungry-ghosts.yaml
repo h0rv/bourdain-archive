@@ -1,15 +1,26 @@
 id: hungry-ghosts
 title: Hungry Ghosts
 type: comic
+record_type: work
+media_type: book-print
+relation_to_bourdain: authored
+creator:
+  - anthony-bourdain
+  - joel-rose
 date: "2018"
 date_precision: year
 summary: Horror anthology comic organized around food, storytelling, appetite, and folklore.
 image_url: https://covers.openlibrary.org/b/isbn/9781506706696-M.jpg
-tags: [comic, horror, storytelling]
-people: [anthony-bourdain]
+tags:
+  - comic
+  - horror
+  - storytelling
+people:
+  - anthony-bourdain
 places: []
-sources: [open-library-bourdain-author]
+sources:
+  - open-library-bourdain-author
 related: []
-status: needs-review
+status: confirmed
 availability:
   library_url: https://openlibrary.org/search?q=Hungry+Ghosts+Anthony+Bourdain

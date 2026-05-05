@@ -1,0 +1,27 @@
+id: hells-kitchen-new-yorker
+title: Hell's Kitchen
+type: essay
+record_type: work
+media_type: article-essay
+relation_to_bourdain: authored
+creator:
+  - anthony-bourdain
+date: "2000-04-17"
+date_precision: day
+summary: New Yorker account of one day and night in the kitchen at Les Halles.
+tags:
+  - kitchens
+  - les-halles
+  - essay
+people:
+  - anthony-bourdain
+places:
+  - new-york-city
+  - les-halles
+sources:
+  - hells-kitchen-new-yorker
+related:
+  - kitchen-confidential
+status: confirmed
+availability:
+  official_url: https://www.newyorker.com/magazine/2000/04/17/hells-kitchen

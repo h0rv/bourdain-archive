@@ -1,15 +1,24 @@
 id: gone-bamboo
 title: Gone Bamboo
 type: book
+record_type: work
+media_type: book-print
+relation_to_bourdain: authored
+creator:
+  - anthony-bourdain
 date: "1997"
 date_precision: year
 summary: Crime novel involving an ex-hitman, the Caribbean, violence, and Bourdain's dark comic sensibility.
 image_url: https://covers.openlibrary.org/b/isbn/9781582341033-M.jpg
-tags: [fiction, travel]
-people: [anthony-bourdain]
+tags:
+  - fiction
+  - travel
+people:
+  - anthony-bourdain
 places: []
-sources: [open-library-bourdain-author]
+sources:
+  - open-library-bourdain-author
 related: []
-status: needs-review
+status: confirmed
 availability:
   library_url: https://openlibrary.org/search?q=Gone+Bamboo+Anthony+Bourdain

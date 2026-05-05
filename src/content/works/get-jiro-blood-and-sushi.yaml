@@ -1,15 +1,27 @@
 id: get-jiro-blood-and-sushi
 title: "Get Jiro: Blood and Sushi"
 type: comic
+record_type: work
+media_type: book-print
+relation_to_bourdain: authored
+creator:
+  - anthony-bourdain
+  - joel-rose
 date: "2015"
 date_precision: year
 summary: Prequel graphic novel expanding the violent food-world satire of Get Jiro!.
 image_url: https://covers.openlibrary.org/b/isbn/9781401252267-M.jpg
-tags: [comic, food-media, violence]
-people: [anthony-bourdain]
+tags:
+  - comic
+  - food-media
+  - violence
+people:
+  - anthony-bourdain
 places: []
-sources: [open-library-bourdain-author]
-related: [get-jiro]
-status: needs-review
+sources:
+  - open-library-bourdain-author
+related:
+  - get-jiro
+status: confirmed
 availability:
   library_url: https://openlibrary.org/search?q=Get+Jiro+Blood+and+Sushi

@@ -1,15 +1,27 @@
 id: jre-138
 title: "Joe Rogan Experience #138: Anthony Bourdain"
 type: podcast
+record_type: appearance
+media_type: audio
+relation_to_bourdain: featured
+contributors:
+  - anthony-bourdain
 date: "2011-09-11"
 date_precision: day
 host: Joe Rogan
 duration_minutes: 150
 summary: Long-form podcast appearance with Anthony Bourdain.
-tags: [podcast, travel, food-media, fame]
-people: [anthony-bourdain, joe-rogan]
+tags:
+  - podcast
+  - travel
+  - food-media
+  - fame
+people:
+  - anthony-bourdain
+  - joe-rogan
 places: []
-sources: [youtube-jre-138-bourdain]
+sources:
+  - youtube-jre-138-bourdain
 related: []
-status: needs-review
+status: confirmed
 availability: {}

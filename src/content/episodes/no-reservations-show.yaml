@@ -1,13 +1,23 @@
 id: no-reservations-show
 title: No Reservations
 type: show
+record_type: television
+media_type: tv-video
+relation_to_bourdain: featured
+contributors:
+  - anthony-bourdain
 date: "2005"
 date_precision: year
 summary: Travel Channel series that established Bourdain's long-form travel television voice.
-tags: [travel, food-media]
-people: [anthony-bourdain]
+tags:
+  - travel
+  - food-media
+people:
+  - anthony-bourdain
 places: []
-sources: [shows-by-country-github]
-related: [no-reservations-book]
-status: needs-review
+sources:
+  - shows-by-country-github
+related:
+  - no-reservations-book
+status: confirmed
 availability: {}

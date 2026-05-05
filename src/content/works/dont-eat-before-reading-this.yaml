@@ -1,0 +1,26 @@
+id: dont-eat-before-reading-this-work
+title: Don't Eat Before Reading This
+type: essay
+record_type: work
+media_type: article-essay
+relation_to_bourdain: authored
+creator:
+  - anthony-bourdain
+date: "1999-04-19"
+date_precision: day
+summary: The New Yorker essay that became the launch point for Kitchen Confidential and Bourdain's public writing career.
+tags:
+  - kitchens
+  - essay
+  - breakout
+people:
+  - anthony-bourdain
+places:
+  - new-york-city
+sources:
+  - dont-eat-before-reading-this-new-yorker
+related:
+  - kitchen-confidential
+status: confirmed
+availability:
+  official_url: https://www.newyorker.com/magazine/1999/04/19/dont-eat-before-reading-this

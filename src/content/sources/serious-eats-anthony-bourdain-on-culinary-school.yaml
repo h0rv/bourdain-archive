@@ -5,4 +5,9 @@ url: http://seriouseats.com/2010/09/anthony-bourdain-on-culinary-school.html
 accessed: "2026-04-24"
 date: "2010-09"
 date_precision: month
-notes: "Essay related to Anthony Bourdain. Found via Hacker News submissions: HN 1716328 (2010-09-22, 1 points, 0 comments)."
+record_type: source
+media_type: article-essay
+relation_to_bourdain: authored
+creator:
+  - anthony-bourdain
+notes: Bourdain-authored Serious Eats essay on culinary school; promoted from Hacker News discovery.

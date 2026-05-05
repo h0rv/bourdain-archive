@@ -1,14 +1,28 @@
 id: anthony-bourdain-reader
 title: The Anthony Bourdain Reader
 type: book
-date: "2024"
-date_precision: year
-summary: Posthumous collection gathering selected writing from across Bourdain's career.
-tags: [posthumous, kitchens, travel]
-people: [anthony-bourdain]
+record_type: work
+media_type: book-print
+relation_to_bourdain: authored
+creator:
+  - anthony-bourdain
+contributors:
+  - kimberly-witherspoon
+  - patrick-radden-keefe
+date: "2025-10-28"
+date_precision: day
+summary: Posthumous collection of classic, rediscovered, and previously unpublished Bourdain writing, edited by Kimberly Witherspoon with a foreword by Patrick Radden Keefe.
+tags:
+  - posthumous
+  - kitchens
+  - travel
+people:
+  - anthony-bourdain
 places: []
-sources: [open-library-bourdain-author]
+sources:
+  - anthony-bourdain-reader-harperacademic
 related: []
-status: needs-review
+status: confirmed
 availability:
+  official_url: https://www.harperacademic.com/book/9780062863959/the-anthony-bourdain-reader/
   library_url: https://openlibrary.org/search?q=The+Anthony+Bourdain+Reader

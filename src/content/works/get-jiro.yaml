@@ -1,15 +1,26 @@
 id: get-jiro
 title: Get Jiro!
 type: comic
+record_type: work
+media_type: book-print
+relation_to_bourdain: authored
+creator:
+  - anthony-bourdain
+  - joel-rose
 date: "2012"
 date_precision: year
 summary: Graphic novel set in a food-obsessed dystopia, co-written by Bourdain.
 image_url: https://covers.openlibrary.org/b/isbn/9781401228279-M.jpg
-tags: [comic, food-media, violence]
-people: [anthony-bourdain]
+tags:
+  - comic
+  - food-media
+  - violence
+people:
+  - anthony-bourdain
 places: []
-sources: [open-library-bourdain-author]
+sources:
+  - open-library-bourdain-author
 related: []
-status: needs-review
+status: confirmed
 availability:
   library_url: https://openlibrary.org/search?q=Get+Jiro+Anthony+Bourdain

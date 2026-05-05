@@ -1,13 +1,22 @@
 id: raw-craft-show
 title: Raw Craft
 type: show
+record_type: television
+media_type: tv-video
+relation_to_bourdain: featured
+contributors:
+  - anthony-bourdain
 date: "2015"
 date_precision: year
 summary: Short-form series hosted by Bourdain about makers, craft, and skilled manual work.
-tags: [craft, labor]
-people: [anthony-bourdain]
+tags:
+  - craft
+  - labor
+people:
+  - anthony-bourdain
 places: []
-sources: [reddit-archival-megathread]
+sources:
+  - reddit-archival-megathread
 related: []
-status: needs-review
+status: confirmed
 availability: {}

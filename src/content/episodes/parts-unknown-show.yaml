@@ -1,14 +1,26 @@
 id: parts-unknown-show
 title: Parts Unknown
 type: show
+record_type: television
+media_type: tv-video
+relation_to_bourdain: featured
+contributors:
+  - anthony-bourdain
 date: "2013"
 date_precision: year
 summary: CNN travel and culture series connecting food with politics, history, conflict, labor, and place.
-tags: [travel, war, class, food-media]
-people: [anthony-bourdain]
+tags:
+  - travel
+  - war
+  - class
+  - food-media
+people:
+  - anthony-bourdain
 places: []
-sources: [explore-parts-unknown, shows-by-country-github]
+sources:
+  - explore-parts-unknown
+  - shows-by-country-github
 related: []
-status: needs-review
+status: confirmed
 availability:
   official_url: https://explorepartsunknown.com/

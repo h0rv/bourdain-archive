@@ -1,0 +1,31 @@
+id: the-enormous-life-of-anthony-bourdain-according-to-those-who-knew-him-gq
+title: The Enormous Life of Anthony Bourdain, According to Those Who Knew Him
+type: tribute
+record_type: literature
+media_type: article-essay
+relation_to_bourdain: about
+date: "2018-12-04"
+date_precision: day
+publication: GQ
+bucket: Profile/tribute
+tags:
+  - about-bourdain
+  - literature
+  - profile-tribute
+  - posthumous
+people:
+  - anthony-bourdain
+places: []
+sources:
+  - anthony-bourdain-men-of-the-year-tribute-gq
+related: []
+status: confirmed
+availability:
+  official_url: https://www.gq.com/story/anthony-bourdain-men-of-the-year-tribute
+  archive_url: null
+  library_url: null
+  audio_url: null
+  video_url: null
+  transcript_url: null
+  streaming_url: null
+  purchase_url: null

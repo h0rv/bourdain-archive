@@ -9,6 +9,7 @@
 
 import { mkdir, readFile, readdir, writeFile } from 'node:fs/promises';
 import { dirname, extname, join, resolve } from 'node:path';
+import YAML from 'yaml';
 
 const CONTENT_ROOT = 'src/content';
 const ARCHIVE_SOURCES = 'archive/sources.json';
@@ -16,14 +17,6 @@ const OUT = 'archive/derived/web-archive-registry.json';
 const USER_AGENT = 'bourdain-archive/0.1 web archive registrar';
 const SHOULD_SAVE = process.argv.includes('--save');
 const SAVE_DELAY_MS = 3000;
-
-function parseYamlUrls(text) {
-  const urls = [];
-  for (const match of text.matchAll(/^\s*([A-Za-z0-9_]*url):\s*(https?:\/\/\S+)\s*$/gm)) {
-    urls.push({ field: match[1], url: match[2].replace(/^['"]|['"]$/g, '') });
-  }
-  return urls;
-}
 
 function collectJsonUrls(value, refs = [], prefix = '') {
   if (typeof value === 'string') {
@@ -63,7 +56,7 @@ function archiveTargets(url) {
 function isArchiveUrl(url) {
   try {
     const host = new URL(url).hostname.replace(/^www\./, '');
-    return host === 'web.archive.org' || host === 'archive.org';
+    return host === 'web.archive.org';
   } catch {
     return false;
   }
@@ -74,7 +67,7 @@ async function contentRefs() {
   for (const file of await walk(CONTENT_ROOT)) {
     const ext = extname(file);
     const text = await readFile(file, 'utf8');
-    const sourceRefs = ext === '.json' ? collectJsonUrls(JSON.parse(text)) : parseYamlUrls(text);
+    const sourceRefs = ext === '.json' ? collectJsonUrls(JSON.parse(text)) : collectJsonUrls(YAML.parse(text));
     for (const ref of sourceRefs) refs.push({ ...ref, owner: file });
   }
   return refs;

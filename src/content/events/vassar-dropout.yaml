@@ -1,14 +1,22 @@
 id: vassar-dropout
 title: Leaves Vassar for kitchen work
 type: life-event
+record_type: event
+media_type: life-event
+relation_to_bourdain: featured
+contributors:
+  - anthony-bourdain
 date: "1975"
 date_precision: year
 summary: Bourdain leaves Vassar College after two years and continues moving toward restaurant work.
 image_url: /images/events/vassar-dropout.jpg
-tags: [life, kitchens]
-people: [anthony-bourdain]
+tags:
+  - life
+  - kitchens
+people:
+  - anthony-bourdain
 places: []
 sources: []
 related: []
-status: needs-review
+status: confirmed
 availability: {}

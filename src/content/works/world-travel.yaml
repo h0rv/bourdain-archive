@@ -1,15 +1,27 @@
 id: world-travel
 title: World Travel
 type: book
-date: "2021"
-date_precision: year
-summary: Posthumous travel guide built around Bourdain's journeys, recommendations, and collaborators.
+record_type: work
+media_type: book-print
+relation_to_bourdain: authored
+creator:
+  - anthony-bourdain
+  - laurie-woolever
+date: "2021-04-20"
+date_precision: day
+summary: Posthumous travel guide built from Bourdain's journeys and recommendations with Laurie Woolever and other contributors.
 image_url: https://covers.openlibrary.org/b/isbn/9780062802798-M.jpg
-tags: [travel, posthumous]
-people: [anthony-bourdain]
+tags:
+  - travel
+  - posthumous
+people:
+  - anthony-bourdain
 places: []
-sources: [open-library-bourdain-author]
+sources:
+  - open-library-bourdain-author
+  - world-travel-harperacademic
 related: []
-status: needs-review
+status: confirmed
 availability:
+  official_url: https://www.harperacademic.com/book/9780063055568/world-travel/
   library_url: https://openlibrary.org/search?q=World+Travel+Anthony+Bourdain

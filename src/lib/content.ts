@@ -83,6 +83,7 @@ const monthNumbers: Record<string, string> = {
 };
 
 export function mediaTypeFor(data: any, collection?: string, sourceGroup?: string): string {
+  if (data.media_type) return data.media_type;
   const type = data.type ?? '';
   const group = sourceGroup ?? sourceGroupFor(data);
 
@@ -96,6 +97,10 @@ export function mediaTypeFor(data: any, collection?: string, sourceGroup?: strin
   if (['catalogs'].includes(group) || type.includes('library') || type.includes('catalog') || type.includes('authority') || type === 'dataset' || type === 'fan-index' || type === 'publisher-page' || type === 'transcript' || type === 'transcript-index' || type === 'awards-record' || type === 'recovered-archive') return 'reference';
   if (collection === 'sources' && group === 'tv') return 'tv-video';
   return 'other';
+}
+
+export function relationToAuthorship(relation?: string): 'by' | 'about' {
+  return relation === 'authored' || relation === 'featured' ? 'by' : 'about';
 }
 
 export function sourceTimelineDate(data: any): { date?: string; precision: string } {

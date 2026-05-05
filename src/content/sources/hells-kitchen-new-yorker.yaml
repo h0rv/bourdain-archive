@@ -1,0 +1,13 @@
+id: hells-kitchen-new-yorker
+title: Hell's Kitchen
+type: article
+url: https://www.newyorker.com/magazine/2000/04/17/hells-kitchen
+accessed: "2026-05-05"
+date: "2000-04-17"
+date_precision: day
+record_type: source
+media_type: article-essay
+relation_to_bourdain: authored
+creator:
+  - anthony-bourdain
+notes: Bourdain-authored New Yorker article about a day and night in the Les Halles kitchen; metadata only, no mirrored article text.

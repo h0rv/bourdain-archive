@@ -3,4 +3,11 @@ title: A Chef's Christmas
 type: publisher-page
 url: https://www.penguinrandomhouse.com/books/16500/a-chefs-christmas-by-anthony-bourdain/
 accessed: "2026-04-24"
-notes: Publisher page for Bourdain's original short story released as an audiobook.
+date: "2002-11-12"
+date_precision: day
+record_type: source
+media_type: audio
+relation_to_bourdain: authored
+creator:
+  - anthony-bourdain
+notes: Official Penguin Random House page for Bourdain's original short story audiobook; confirms publication date, length, publisher, and ISBN.

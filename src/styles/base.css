@@ -12,7 +12,11 @@ body {
   margin: 0;
   color: var(--ink);
   background:
-    radial-gradient(circle at 8% 0%, rgba(168, 50, 29, 0.08), transparent 28rem),
+    radial-gradient(
+      circle at 8% 0%,
+      rgba(168, 50, 29, 0.08),
+      transparent 28rem
+    ),
     linear-gradient(180deg, #f7f0e2 0, var(--bg) 28rem);
   font-family: var(--sans);
   font-size: 17px;

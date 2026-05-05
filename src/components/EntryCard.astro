@@ -15,6 +15,7 @@ const badges = collection === 'sources' ? [{ field: 'source', label: 'Source', u
 const preview = previewForEntry(entry, linkPreviewCache.previews);
 const isWebPreview = !data.image_url && Boolean(preview.url);
 const timelineDate = collection === 'sources' ? sourceTimelineDate(data) : { date: data.date, precision: data.date_precision };
+const summary = data.summary ?? data.notes;
 const status = data.status ?? 'confirmed';
 const displayStatus = visibleStatus(status);
 ---
@@ -36,7 +37,7 @@ const displayStatus = visibleStatus(status);
       {formatType(data.type)} · {formatDate(timelineDate.date, timelineDate.precision)}
       {displayStatus && <> · <span class={`badge ${statusClass(displayStatus)}`}>{displayStatus}</span></>}
     </p>
-    {showSummary && <p class="summary">{summary}</p>}
+    {showSummary && summary && <p class="summary">{summary}</p>}
     {data.tags?.length > 0 && (
       <ul class="tag-list" aria-label="Tags">
         {data.tags.slice(0, 6).map((tag: string) => <li class="tag">{tag}</li>)}

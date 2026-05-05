@@ -1,15 +1,25 @@
 id: no-reservations-book
 title: No Reservations
 type: book
+record_type: work
+media_type: book-print
+relation_to_bourdain: authored
+creator:
+  - anthony-bourdain
 date: "2007"
 date_precision: year
 summary: Illustrated companion book connected to Bourdain's travel television series No Reservations.
 image_url: https://covers.openlibrary.org/b/isbn/9781596914476-M.jpg
-tags: [travel, food-media]
-people: [anthony-bourdain]
+tags:
+  - travel
+  - food-media
+people:
+  - anthony-bourdain
 places: []
-sources: [open-library-bourdain-author]
-related: [no-reservations-show]
-status: needs-review
+sources:
+  - open-library-bourdain-author
+related:
+  - no-reservations-show
+status: confirmed
 availability:
   library_url: https://openlibrary.org/search?q=No+Reservations+Anthony+Bourdain

@@ -1,14 +1,22 @@
 id: death
 title: Anthony Bourdain dies
 type: life-event
+record_type: event
+media_type: life-event
+relation_to_bourdain: featured
+contributors:
+  - anthony-bourdain
 date: "2018-06-08"
 date_precision: day
 summary: Bourdain dies in Kaysersberg, France while filming Parts Unknown.
 image_url: /images/events/death.jpg
-tags: [life, death]
-people: [anthony-bourdain]
+tags:
+  - life
+  - death
+people:
+  - anthony-bourdain
 places: []
 sources: []
 related: []
-status: needs-review
+status: confirmed
 availability: {}

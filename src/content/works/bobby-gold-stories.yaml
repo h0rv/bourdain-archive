@@ -1,0 +1,27 @@
+id: bobby-gold-stories
+title: The Bobby Gold Stories
+type: book
+record_type: work
+media_type: book-print
+relation_to_bourdain: authored
+creator:
+  - anthony-bourdain
+date: "2004-06-19"
+date_precision: day
+summary: Bourdain crime novel about a club-scene enforcer, a cook, and a botched robbery.
+tags:
+  - fiction
+  - crime
+  - kitchens
+people:
+  - anthony-bourdain
+places: []
+sources:
+  - bobby-gold-stories-bloomsbury
+related:
+  - bone-in-the-throat
+  - gone-bamboo
+status: confirmed
+availability:
+  official_url: https://www.bloomsbury.com/us/bobby-gold-stories-9781582344096/
+  library_url: https://openlibrary.org/search?q=The+Bobby+Gold+Stories+Anthony+Bourdain

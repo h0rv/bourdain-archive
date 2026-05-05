@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import EntryCard from '../components/EntryCard.astro';
-import { entryTitle, formatDate, formatType, mediaTypeFor, mediaTypeLabels, sortByDateDesc, sourceGroupFor, sourceGroups, sourceGroupLabels, sourceTimelineDate } from '../lib/content';
+import { entryTitle, formatDate, formatType, mediaTypeFor, mediaTypeLabels, relationToAuthorship, sortByDateDesc, sourceGroupFor, sourceGroups, sourceGroupLabels, sourceTimelineDate } from '../lib/content';
 
 const works = await getCollection('works');
 const shows = (await getCollection('episodes')).filter((entry) => entry.data.type === 'show');
@@ -20,6 +20,7 @@ const curatedEntries = [
 const curatedSourceIds = new Set(curatedEntries.flatMap((entry) => entry.data.sources ?? []));
 const timelineSources = sources.filter((entry) => !curatedSourceIds.has(entry.data.id));
 const sourceAuthorshipFor = (entry: any, sourceGroup: string) => {
+  if (entry.data.relation_to_bourdain) return relationToAuthorship(entry.data.relation_to_bourdain);
   const type = entry.data.type ?? '';
   if (['tumblr', 'medium', 'list', 'socials'].includes(sourceGroup)) return 'by';
   if (['tv', 'field-notes'].includes(sourceGroup)) return 'by';
@@ -27,11 +28,11 @@ const sourceAuthorshipFor = (entry: any, sourceGroup: string) => {
   return 'about';
 };
 const entries = [
-  ...events.map((entry) => ({ entry, collection: 'events', authorship: 'by', sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
-  ...works.map((entry) => ({ entry, collection: 'works', authorship: 'by', sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
-  ...shows.map((entry) => ({ entry, collection: 'episodes', authorship: 'by', sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
-  ...appearances.map((entry) => ({ entry, collection: 'appearances', authorship: 'by', sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
-  ...literature.map((entry) => ({ entry, collection: 'literature', authorship: 'about', sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
+  ...events.map((entry) => ({ entry, collection: 'events', authorship: relationToAuthorship(entry.data.relation_to_bourdain ?? 'featured'), sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
+  ...works.map((entry) => ({ entry, collection: 'works', authorship: relationToAuthorship(entry.data.relation_to_bourdain ?? 'authored'), sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
+  ...shows.map((entry) => ({ entry, collection: 'episodes', authorship: relationToAuthorship(entry.data.relation_to_bourdain ?? 'featured'), sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
+  ...appearances.map((entry) => ({ entry, collection: 'appearances', authorship: relationToAuthorship(entry.data.relation_to_bourdain ?? 'featured'), sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
+  ...literature.map((entry) => ({ entry, collection: 'literature', authorship: relationToAuthorship(entry.data.relation_to_bourdain ?? 'about'), sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
   ...timelineSources.map((entry) => {
     const sourceGroup = sourceGroupFor(entry.data);
     return { entry, collection: 'sources', authorship: sourceAuthorshipFor(entry, sourceGroup), sourceGroup, timelineDate: sourceTimelineDate(entry.data) };
@@ -209,7 +210,7 @@ const searchableText = (entry: any, collection: string, authorship: string, sour
     const viewButtons = document.querySelectorAll<HTMLButtonElement>('[data-view]');
     const items = Array.from(document.querySelectorAll<HTMLElement>('.stream-item'));
     const totalItems = items.length;
-    const STORAGE_KEY = 'bourdain-archive.catalog-controls.v2';
+    const STORAGE_KEY = 'bourdain-archive.catalog-controls.v3';
     let sortMode = 'date-desc';
     let renderedSortMode = '';
 

@@ -19,7 +19,7 @@ const badges = availabilityBadges(data.availability);
 const availabilityPreviews = badges.map((badge) => ({ ...badge, preview: previewForUrl(badge.url, linkPreviewCache.previews) }));
 const displayStatus = visibleStatus(data.status);
 ---
-<BaseLayout title={title} description={data.summary}>
+<BaseLayout title={title} description={data.summary ?? title}>
   <article>
     <h1 class="page-title">{title}</h1>
     <p class="meta">
@@ -28,7 +28,7 @@ const displayStatus = visibleStatus(data.status);
       {displayStatus && <> · <span class={`badge ${statusClass(displayStatus)}`}>{displayStatus}</span></>}
     </p>
 
-    <p class="lede">{data.summary}</p>
+    {data.summary && <p class="lede">{data.summary}</p>}
 
     <div class="detail-grid">
       <section class="detail-box availability-box">

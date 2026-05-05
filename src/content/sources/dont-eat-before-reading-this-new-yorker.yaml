@@ -5,4 +5,9 @@ url: https://www.newyorker.com/magazine/1999/04/19/dont-eat-before-reading-this
 accessed: "2026-04-24"
 date: "1999-04-19"
 date_precision: day
+record_type: source
+media_type: article-essay
+relation_to_bourdain: authored
+creator:
+  - anthony-bourdain
 notes: Breakout New Yorker essay that led to Kitchen Confidential; cite metadata only, do not mirror article text.

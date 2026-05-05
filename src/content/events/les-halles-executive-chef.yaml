@@ -1,14 +1,27 @@
 id: les-halles-executive-chef
 title: Executive chef at Les Halles
 type: life-event
+record_type: event
+media_type: life-event
+relation_to_bourdain: featured
+contributors:
+  - anthony-bourdain
 date: "1998"
 date_precision: year
 summary: Bourdain becomes executive chef at Brasserie Les Halles, the New York restaurant later tied closely to Kitchen Confidential.
 image_url: /images/events/les-halles-executive-chef.jpg
-tags: [life, kitchens, new-york]
-people: [anthony-bourdain]
-places: [les-halles, new-york-city]
+tags:
+  - life
+  - kitchens
+  - new-york
+people:
+  - anthony-bourdain
+places:
+  - les-halles
+  - new-york-city
 sources: []
-related: [kitchen-confidential, les-halles-cookbook]
-status: needs-review
+related:
+  - kitchen-confidential
+  - les-halles-cookbook
+status: confirmed
 availability: {}

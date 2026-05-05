@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-24T19:07:25.781Z",
+  "generated_at": "2026-05-05T14:15:02.826Z",
   "previews": {
     "https://archive.org/details/The_Nerdist_Podcast_528": {
       "url": "https://archive.org/details/The_Nerdist_Podcast_528",
@@ -120,17 +120,6 @@
       "image": "https://assets.bonappetit.com/photos/5b1e91299731de29fe912127/16:9/w_1280,c_limit/bourdain.jpg",
       "site_name": "Bon Appétit",
       "fetched_at": "2026-04-24T16:50:52.134Z"
-    },
-    "https://www.bonappetit.com/story/anthony-bourdain-biography-controversy": {
-      "url": "https://www.bonappetit.com/story/anthony-bourdain-biography-controversy",
-      "final_url": "https://www.bonappetit.com/story/anthony-bourdain-biography-controversy",
-      "ok": true,
-      "status": 200,
-      "title": "The Latest Anthony Bourdain Biography Is Already Controversial",
-      "description": "The biography, \"Down and Out in Paradise,\" is being criticized by some of the late chef&#x27;s friends and family for being inaccurate",
-      "image": "https://assets.bonappetit.com/photos/63336dec0e39c893410d3237/16:9/w_1280,c_limit/h_10.01141760.jpg",
-      "site_name": "Bon Appétit",
-      "fetched_at": "2026-04-24T16:50:51.905Z"
     },
     "https://www.bonappetit.com/story/bourdain-the-definitive-oral-biography": {
       "url": "https://www.bonappetit.com/story/bourdain-the-definitive-oral-biography",
@@ -308,17 +297,6 @@
       "site_name": "Grub Street",
       "fetched_at": "2026-04-24T16:50:54.100Z"
     },
-    "https://www.grubstreet.com/2018/06/anthony-bourdains-biography-will-be-released-in-2019.html": {
-      "url": "https://www.grubstreet.com/2018/06/anthony-bourdains-biography-will-be-released-in-2019.html",
-      "final_url": "https://www.grubstreet.com/2018/06/anthony-bourdains-biography-will-be-released-in-2019.html",
-      "ok": true,
-      "status": 200,
-      "title": "Anthony Bourdain’s Biography Will Be Released in 2019",
-      "description": "Expect stories from the “people who knew him best.”",
-      "image": "https://pyxis.nymag.com/v1/imgs/48f/1c9/cd7a12893edc5a5949f9f0f090a63245b0-29-anthony-bourdain.1x.rsocial.w1200.jpg",
-      "site_name": "Grub Street",
-      "fetched_at": "2026-04-24T16:50:54.503Z"
-    },
     "https://www.grubstreet.com/2019/06/anthony-bourdain-addiction.html": {
       "url": "https://www.grubstreet.com/2019/06/anthony-bourdain-addiction.html",
       "final_url": "https://www.grubstreet.com/2019/06/anthony-bourdain-addiction.html",
@@ -362,17 +340,6 @@
       "image": "https://ca-times.brightspotcdn.com/dims4/default/9dbce2b/2147483647/strip/true/crop/2047x1075+0+38/resize/1200x630!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F15%2Fc3%2F5fd68ebfb99184d511eeba674462%2Fla-1528498461-kovvnscut6-snap-image",
       "site_name": "Los Angeles Times",
       "fetched_at": "2026-04-24T16:50:55.452Z"
-    },
-    "https://www.latimes.com/entertainment-arts/story/2023-11-30/anthony-bourdain-henry-kissinger-remarks": {
-      "url": "https://www.latimes.com/entertainment-arts/story/2023-11-30/anthony-bourdain-henry-kissinger-remarks",
-      "final_url": "https://www.latimes.com/entertainment-arts/story/2023-11-30/anthony-bourdain-henry-kissinger-remarks",
-      "ok": true,
-      "status": 200,
-      "title": "Anthony Bourdain&#x27;s scathing Henry Kissinger remarks resurface after foreign policy figure&#x27;s death",
-      "description": "Anthony Bourdain&#x27;s remarks on Henry Kissinger go viral in the wake of the former secretary of State&#x27;s death.",
-      "image": "https://ca-times.brightspotcdn.com/dims4/default/95ce2df/2147483647/strip/true/crop/2374x1246+0+0/resize/1200x630!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fc0%2F8c%2Ff9e98a744368bab744bee4f375b3%2Fbourdain-kissinger.jpg",
-      "site_name": "Los Angeles Times",
-      "fetched_at": "2026-04-24T16:50:55.320Z"
     },
     "https://www.newyorker.com/magazine/2017/02/13/anthony-bourdains-moveable-feast": {
       "url": "https://www.newyorker.com/magazine/2017/02/13/anthony-bourdains-moveable-feast",
@@ -425,17 +392,6 @@
       "image": "https://cdn.theatlantic.com/thumbor/3w8DTn2Wl_uDJpEP_pTcmAqOQWg=/0x50:3686x1970/1200x625/media/img/mt/2018/06/AP_18130641163102/original.jpg",
       "site_name": "The Atlantic",
       "fetched_at": "2026-04-24T16:50:56.588Z"
-    },
-    "https://www.theguardian.com/books/2022/oct/14/down-and-out-in-paradise-review-a-disservice-to-anthony-bourdain": {
-      "url": "https://www.theguardian.com/books/2022/oct/14/down-and-out-in-paradise-review-a-disservice-to-anthony-bourdain",
-      "final_url": "https://www.theguardian.com/books/2022/oct/14/down-and-out-in-paradise-review-a-disservice-to-anthony-bourdain",
-      "ok": true,
-      "status": 200,
-      "title": "Down and Out in Paradise review – a disservice to Anthony Bourdain",
-      "description": "An engrossing but tasteless portrait of the Parts Unknown host lets his death overshadow a complex and varied life",
-      "image": "https://i.guim.co.uk/img/media/32151c6a5a6a076874e6d5a5411c1713699306cb/0_78_2468_1480/master/2468.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctYWdlLTIwMjIucG5n&enable=upscale&s=4db54142d3dd202f61a55d036952db36",
-      "site_name": "the Guardian",
-      "fetched_at": "2026-04-24T16:50:56.409Z"
     },
     "https://www.theguardian.com/food/2025/apr/06/working-with-nys-hottest-chefs-took-its-toll-on-laurie-woolever-but-nothing-prepared-her-for-anthony-bourdains-death": {
       "url": "https://www.theguardian.com/food/2025/apr/06/working-with-nys-hottest-chefs-took-its-toll-on-laurie-woolever-but-nothing-prepared-her-for-anthony-bourdains-death",
@@ -503,17 +459,6 @@
       "site_name": "Vanity Fair",
       "fetched_at": "2026-04-24T16:50:57.399Z"
     },
-    "https://www.vanityfair.com/style/2021/09/inside-anthony-bourdains-all-consuming-relationship": {
-      "url": "https://www.vanityfair.com/style/2021/09/inside-anthony-bourdains-all-consuming-relationship",
-      "final_url": "https://www.vanityfair.com/style/2021/09/inside-anthony-bourdains-all-consuming-relationship",
-      "ok": true,
-      "status": 200,
-      "title": "“I Knew It Was Doomed; I Knew Someone Was Doomed”: Inside Anthony Bourdain’s All-Consuming Relationship",
-      "description": "In an excerpt from ‘Bourdain: The Definitive Oral Biography,’ friends, family, and colleagues describe the titan of the food world’s obsessive love affair with Asia Argento.",
-      "image": "https://media.vanityfair.com/photos/614a3c48e0676d8136718393/16:9/w_1280,c_limit/Bourdain-Oral-Biography-Tout-Lede.jpg",
-      "site_name": "Vanity Fair",
-      "fetched_at": "2026-04-24T16:50:57.644Z"
-    },
     "https://www.washingtonpost.com/food/2021/04/21/bourdain-travel-book/": {
       "url": "https://www.washingtonpost.com/food/2021/04/21/bourdain-travel-book/",
       "ok": false,
@@ -525,12 +470,6 @@
       "ok": false,
       "error": "timeout",
       "fetched_at": "2026-04-24T16:51:06.886Z"
-    },
-    "https://www.washingtonpost.com/food/2023/11/30/henry-kissinger-anthony-bourdain-cambodia/": {
-      "url": "https://www.washingtonpost.com/food/2023/11/30/henry-kissinger-anthony-bourdain-cambodia/",
-      "ok": false,
-      "error": "timeout",
-      "fetched_at": "2026-04-24T16:51:07.400Z"
     },
     "https://www.washingtonpost.com/news/food/wp/2019/07/30/when-listing-anthony-bourdains-greatest-literary-hits-dont-discount-typhoid-mary/": {
       "url": "https://www.washingtonpost.com/news/food/wp/2019/07/30/when-listing-anthony-bourdains-greatest-literary-hits-dont-discount-typhoid-mary/",

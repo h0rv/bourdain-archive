@@ -1,14 +1,24 @@
 id: born
 title: Anthony Bourdain born
 type: life-event
+record_type: event
+media_type: life-event
+relation_to_bourdain: featured
+contributors:
+  - anthony-bourdain
 date: "1956-06-25"
 date_precision: day
 summary: Anthony Michael Bourdain is born in New York City and raised in Leonia, New Jersey.
 image_url: /images/events/born.jpg
-tags: [life, origin]
-people: [anthony-bourdain]
-places: [new-york-city, new-jersey]
+tags:
+  - life
+  - origin
+people:
+  - anthony-bourdain
+places:
+  - new-york-city
+  - new-jersey
 sources: []
 related: []
-status: needs-review
+status: confirmed
 availability: {}
