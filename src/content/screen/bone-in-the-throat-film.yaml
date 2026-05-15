@@ -1,0 +1,24 @@
+id: bone-in-the-throat-film
+title: Bone in the Throat
+type: adaptation
+record_type: screen
+media_type: tv-video
+relation_to_bourdain: featured
+contributors:
+  - anthony-bourdain
+date: "2015"
+date_precision: year
+summary: Film adaptation of Bourdain's debut crime novel, with Bourdain credited as executive producer.
+tags:
+  - film
+  - adaptation
+  - kitchens
+people:
+  - anthony-bourdain
+places: []
+sources:
+  - rotten-tomatoes-bourdain-filmography
+related:
+  - bone-in-the-throat
+status: confirmed
+availability: {}

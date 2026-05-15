@@ -89,6 +89,7 @@ export const collections = {
         "essay",
         "field-note",
         "comic",
+        "film",
         "short-story",
       ]),
     }),
@@ -108,6 +109,20 @@ export const collections = {
       type: z.enum(["podcast", "interview", "radio", "panel", "video"]),
       host: z.string().nullable().optional(),
       duration_minutes: z.number().nullable().optional(),
+    }),
+  }),
+  screen: defineCollection({
+    loader: contentFiles("screen"),
+    schema: commonEntrySchema.extend({
+      type: z.enum([
+        "film",
+        "documentary",
+        "television",
+        "voice-role",
+        "acted-role",
+        "adaptation",
+      ]),
+      role: z.string().nullable().optional(),
     }),
   }),
   literature: defineCollection({

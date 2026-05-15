@@ -11,27 +11,16 @@
   display: grid;
   grid-template-columns: minmax(16rem, 1fr) auto;
   gap: 1rem 2rem;
-  align-items: end;
+  align-items: baseline;
   padding-block: 1.25rem 1rem;
+  border-bottom: 1px solid rgba(17, 16, 14, 0.18);
 }
 
 .brand {
-  display: inline-grid;
-  grid-template-columns: 4.25rem auto;
-  gap: 0.9rem;
-  align-items: center;
+  display: inline-block;
   width: fit-content;
   color: var(--ink);
   text-decoration: none;
-}
-
-.brand-mark {
-  display: block;
-  width: 4.25rem;
-  height: 4.25rem;
-  object-fit: contain;
-  filter: grayscale(1) contrast(1.35);
-  mix-blend-mode: multiply;
 }
 
 .brand-copy {
@@ -43,13 +32,13 @@
 .hero h1 {
   font-family: var(--display);
   font-weight: 900;
-  letter-spacing: -0.075em;
+  letter-spacing: 0;
   text-transform: uppercase;
 }
 
 .brand-name {
   font-size: clamp(1.25rem, 3vw, 1.8rem);
-  line-height: 0.9;
+  line-height: 0.95;
 }
 
 .brand-kicker,
@@ -90,7 +79,7 @@
 }
 
 .site-main {
-  padding-block: clamp(1.75rem, 5vw, 4.5rem) 4rem;
+  padding-block: clamp(1.5rem, 4vw, 3rem) 4rem;
 }
 
 .site-footer {
@@ -120,6 +109,7 @@
   margin: 0;
   font-size: clamp(3.5rem, 13vw, 9.5rem);
   line-height: 0.78;
+  letter-spacing: 0;
 }
 
 .page-title {
@@ -128,7 +118,7 @@
   font-family: var(--sans);
   font-size: clamp(2rem, 6vw, 4.75rem);
   font-weight: 900;
-  letter-spacing: -0.065em;
+  letter-spacing: 0;
   line-height: 0.92;
   text-transform: none;
 }
@@ -136,10 +126,10 @@
 .home-hero h1 {
   max-width: 22ch;
   font-family: var(--sans);
-  font-size: clamp(2rem, 5.8vw, 5rem);
+  font-size: clamp(2rem, 5.8vw, 4.5rem);
   font-weight: 900;
-  letter-spacing: -0.07em;
-  line-height: 0.92;
+  letter-spacing: 0;
+  line-height: 0.98;
   text-transform: none;
 }
 

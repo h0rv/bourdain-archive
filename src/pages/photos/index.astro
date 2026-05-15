@@ -1,0 +1,146 @@
+---
+import { getCollection } from 'astro:content';
+import linkPreviewCache from '../../../archive/derived/link-previews.json';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { entryHref, entryTitle, formatDate, hostnameForUrl, previewForEntry, sourceGroupFor, sourceGroupLabels, sourceTimelineDate } from '../../lib/content';
+
+const collections = [
+  ['works', await getCollection('works')],
+  ['episodes', await getCollection('episodes')],
+  ['screen', await getCollection('screen')],
+  ['appearances', await getCollection('appearances')],
+  ['events', await getCollection('events')],
+  ['literature', await getCollection('literature')],
+] as const;
+const curatedImages = collections.flatMap(([collection, entries]) =>
+  entries
+    .map((entry) => {
+      const preview = previewForEntry(entry, linkPreviewCache.previews);
+      const date = collection === 'events' ? { date: entry.data.date, precision: entry.data.date_precision } : { date: entry.data.date, precision: entry.data.date_precision };
+      return {
+        id: `${collection}-${entry.data.id}`,
+        title: entryTitle(entry),
+        image: preview.image,
+        href: entryHref(collection, entry.data.id),
+        source: preview.host ?? 'entry image',
+        group: collection,
+        date,
+        policy: entry.data.image_url?.startsWith('/') ? 'self-hosted' : 'remote preview',
+        searchable: [entryTitle(entry), entry.data.type, entry.data.summary, preview.host, ...(entry.data.tags ?? [])].filter(Boolean).join(' ').toLowerCase(),
+      };
+    })
+    .filter((item) => Boolean(item.image)),
+);
+
+const sources = await getCollection('sources');
+const sourceImages = sources
+  .map((entry) => {
+    const preview = previewForEntry(entry, linkPreviewCache.previews);
+    const timelineDate = sourceTimelineDate(entry.data);
+    const group = sourceGroupFor(entry.data);
+    return {
+      id: `source-${entry.data.id}`,
+      title: entry.data.title,
+      image: preview.image,
+      href: entryHref('sources', entry.data.id),
+      source: hostnameForUrl(entry.data.url) ?? sourceGroupLabels[group] ?? 'source',
+      group,
+      date: timelineDate,
+      policy: 'remote preview',
+      searchable: [entry.data.title, entry.data.type, entry.data.notes, entry.data.url, sourceGroupLabels[group]].filter(Boolean).join(' ').toLowerCase(),
+    };
+  })
+  .filter((item) => Boolean(item.image));
+
+const images = [...curatedImages, ...sourceImages].sort((a, b) => (b.date.date ?? '').localeCompare(a.date.date ?? ''));
+const groups = Array.from(new Set(images.map((image) => image.group))).sort();
+---
+<BaseLayout title="Photos">
+  <section class="hero home-hero">
+    <p class="eyebrow">Visual index</p>
+    <h1>Photos and covers</h1>
+    <p>{images.length} sourced visuals from entries and link previews. Remote images stay attached to their original source.</p>
+  </section>
+
+  <section class="archive-index" aria-label="Visual archive">
+    <div class="archive-controls photo-controls">
+      <div class="search-control archive-search">
+        <label for="photo-search">Search</label>
+        <div class="search-box">
+          <span aria-hidden="true">⌕</span>
+          <input id="photo-search" type="search" placeholder="Search photos, covers, source..." data-photo-search />
+        </div>
+      </div>
+      <div class="quick-filters" aria-label="Photo filters">
+        <button class="pill is-active" type="button" data-photo-all>All</button>
+        {groups.map((group) => (
+          <button class="pill" type="button" data-photo-group={group}>{sourceGroupLabels[group] ?? group}</button>
+        ))}
+      </div>
+    </div>
+
+    <div class="results-toolbar compact-toolbar">
+      <p class="result-count" data-photo-count>{images.length} images</p>
+    </div>
+
+    <div class="photo-grid" data-photo-grid>
+      {images.map((image) => (
+        <article class="photo-card" data-photo-card data-photo-group={image.group} data-photo-text={image.searchable}>
+          <a href={image.href}>
+            <img src={image.image} alt="" loading="lazy" />
+            <span class="photo-caption">
+              <strong>{image.title}</strong>
+              <span>{formatDate(image.date.date, image.date.precision)} · {image.source} · {image.policy}</span>
+            </span>
+          </a>
+        </article>
+      ))}
+    </div>
+    <p class="no-results" data-photo-no-results hidden>No matches. Clear filters or try a broader search.</p>
+  </section>
+
+  <script>
+    const photoSearch = document.querySelector<HTMLInputElement>('[data-photo-search]');
+    const photoCount = document.querySelector<HTMLElement>('[data-photo-count]');
+    const photoNoResults = document.querySelector<HTMLElement>('[data-photo-no-results]');
+    const photoAllButton = document.querySelector<HTMLButtonElement>('[data-photo-all]');
+    const photoButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-photo-group]'));
+    const photoCards = Array.from(document.querySelectorAll<HTMLElement>('[data-photo-card]'));
+    const totalPhotos = photoCards.length;
+
+    const activePhotoGroups = () =>
+      photoButtons
+        .filter((button) => button.classList.contains('is-active'))
+        .map((button) => button.getAttribute('data-photo-group'))
+        .filter(Boolean);
+
+    const updatePhotos = () => {
+      const groups = activePhotoGroups();
+      const query = photoSearch?.value.trim().toLowerCase() ?? '';
+      photoAllButton?.classList.toggle('is-active', groups.length === 0);
+      let visible = 0;
+      photoCards.forEach((card) => {
+        const matchesGroup = groups.length === 0 || groups.includes(card.getAttribute('data-photo-group'));
+        const matchesSearch = !query || (card.getAttribute('data-photo-text') ?? '').includes(query);
+        const isVisible = matchesGroup && matchesSearch;
+        card.hidden = !isVisible;
+        if (isVisible) visible += 1;
+      });
+      if (photoCount) photoCount.textContent = `${visible} of ${totalPhotos} images`;
+      if (photoNoResults) photoNoResults.hidden = visible > 0;
+    };
+
+    photoAllButton?.addEventListener('click', () => {
+      photoButtons.forEach((button) => button.classList.remove('is-active'));
+      updatePhotos();
+    });
+    photoButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        button.classList.toggle('is-active');
+        updatePhotos();
+      });
+    });
+    photoSearch?.addEventListener('input', updatePhotos);
+    updatePhotos();
+  </script>
+</BaseLayout>

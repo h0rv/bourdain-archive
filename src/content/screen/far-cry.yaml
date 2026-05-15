@@ -1,0 +1,22 @@
+id: far-cry
+title: Far Cry
+type: acted-role
+record_type: screen
+media_type: tv-video
+relation_to_bourdain: featured
+contributors:
+  - anthony-bourdain
+date: "2008"
+date_precision: year
+summary: Feature film appearance by Bourdain in an acted role.
+tags:
+  - film
+  - acting
+people:
+  - anthony-bourdain
+places: []
+sources:
+  - rotten-tomatoes-bourdain-filmography
+related: []
+status: partial
+availability: {}

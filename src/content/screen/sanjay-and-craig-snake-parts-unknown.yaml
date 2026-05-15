@@ -1,0 +1,24 @@
+id: sanjay-and-craig-snake-parts-unknown
+title: "Sanjay and Craig: Snake Parts Unknown"
+type: voice-role
+record_type: screen
+media_type: tv-video
+relation_to_bourdain: featured
+contributors:
+  - anthony-bourdain
+date: "2015"
+date_precision: year
+summary: Animated Parts Unknown parody with Bourdain voicing a Bourdain-like food/travel figure.
+tags:
+  - television
+  - voice
+  - cameo
+people:
+  - anthony-bourdain
+places: []
+sources:
+  - sanjay-and-craig-snake-parts-unknown
+related:
+  - parts-unknown-show
+status: partial
+availability: {}

@@ -3,6 +3,7 @@ import { withBase } from './site';
 const collectionPaths: Record<string, string> = {
   works: 'works',
   episodes: 'tv',
+  screen: 'screen',
   appearances: 'appearances',
   literature: 'literature',
   events: 'events',
@@ -59,10 +60,10 @@ export function sourceGroupFor(data: any): string {
   if (id.startsWith('medium-') || url.includes('medium.com/')) return 'medium';
   if (id.startsWith('list-') || id.startsWith('bourdain-list') || url.includes('li.st/') || url.includes('bourdain.greg.technology')) return 'list';
   if (type === 'field-note' || (url.includes('explorepartsunknown.com') && url.includes('field-notes'))) return 'field-notes';
-  if (['episode-guide', 'official-show-page', 'official-video', 'video-series', 'dead-official-page', 'official-archive', 'dataset', 'fan-index', 'transcript-index'].includes(type)) return 'tv';
+  if (['episode-guide', 'official-show-page', 'official-video', 'video-series', 'dead-official-page', 'official-archive', 'official-film-page', 'tv-catalog', 'streaming-catalog', 'dataset', 'fan-index', 'transcript-index'].includes(type)) return 'tv';
   if (type.includes('interview') || ['podcast', 'panel', 'radio-archive', 'audio-archive', 'audio-interview'].includes(type)) return 'interviews';
   if (['article', 'essay', 'profile', 'review', 'obituary'].includes(type)) return 'articles';
-  if (type.includes('awards') || type.includes('library') || type.includes('catalog') || type.includes('authority') || type === 'publisher-page') return 'catalogs';
+  if (type.includes('awards') || type.includes('library') || type.includes('catalog') || type.includes('authority') || type === 'publisher-page' || type === 'filmography') return 'catalogs';
   if (type === 'social-profile') return 'socials';
   return 'other';
 }
@@ -90,7 +91,7 @@ export function mediaTypeFor(data: any, collection?: string, sourceGroup?: strin
   if (type === 'life-event') return 'life-event';
   if (['book', 'comic'].includes(type)) return 'book-print';
   if (['article', 'essay', 'field-note', 'profile', 'review', 'obituary', 'obit', 'tribute', 'photo-essay', 'official-article', 'press-release'].includes(type)) return 'article-essay';
-  if (['show', 'episode', 'video', 'official-video', 'video-series', 'episode-guide', 'official-show-page', 'dead-official-page', 'television-archive', 'social-video'].includes(type)) return 'tv-video';
+  if (['show', 'episode', 'video', 'film', 'documentary', 'television', 'voice-role', 'acted-role', 'adaptation', 'official-video', 'video-series', 'episode-guide', 'official-show-page', 'official-film-page', 'dead-official-page', 'television-archive', 'social-video'].includes(type)) return 'tv-video';
   if (['podcast', 'radio', 'radio-archive', 'audio-archive', 'audio-interview', 'radio-interview', 'dead-podcast-page'].includes(type)) return 'audio';
   if (type.includes('interview') || ['panel'].includes(type)) return 'interview-talk';
   if (['tumblr', 'medium', 'list', 'socials'].includes(group) || type === 'social-profile') return 'social-web';

@@ -1,0 +1,24 @@
+id: treme
+title: Treme
+type: television
+record_type: screen
+media_type: tv-video
+relation_to_bourdain: authored
+creator:
+  - anthony-bourdain
+date: "2011"
+date_precision: year
+summary: HBO drama series where Bourdain contributed writing and restaurant-world consulting.
+tags:
+  - television
+  - writing
+  - new-orleans
+people:
+  - anthony-bourdain
+places: []
+sources:
+  - treme-television-academy
+related: []
+status: confirmed
+availability:
+  official_url: https://interviews.televisionacademy.com/shows/treme

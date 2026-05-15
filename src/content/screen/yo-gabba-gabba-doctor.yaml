@@ -1,0 +1,22 @@
+id: yo-gabba-gabba-doctor
+title: "Yo Gabba Gabba!: Doctor"
+type: acted-role
+record_type: screen
+media_type: tv-video
+relation_to_bourdain: featured
+contributors:
+  - anthony-bourdain
+date: "2010-03-10"
+date_precision: day
+summary: Children's television guest appearance by Bourdain as Doctor Tony.
+tags:
+  - television
+  - cameo
+people:
+  - anthony-bourdain
+places: []
+sources:
+  - yo-gabba-gabba-doctor
+related: []
+status: confirmed
+availability: {}

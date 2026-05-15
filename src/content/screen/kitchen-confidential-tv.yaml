@@ -1,0 +1,25 @@
+id: kitchen-confidential-tv
+title: Kitchen Confidential
+type: adaptation
+record_type: screen
+media_type: tv-video
+relation_to_bourdain: about
+contributors:
+  - anthony-bourdain
+date: "2005"
+date_precision: year
+summary: Fox sitcom adapted from Bourdain's Kitchen Confidential, starring Bradley Cooper as a fictionalized chef figure.
+tags:
+  - adaptation
+  - television
+  - kitchens
+people:
+  - anthony-bourdain
+places: []
+sources:
+  - kitchen-confidential-tv-metacritic
+related:
+  - kitchen-confidential
+status: confirmed
+availability:
+  official_url: https://www.metacritic.com/tv/kitchen-confidential/credits/

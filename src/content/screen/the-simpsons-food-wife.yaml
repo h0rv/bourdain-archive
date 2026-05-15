@@ -1,0 +1,23 @@
+id: the-simpsons-food-wife
+title: "The Simpsons: The Food Wife"
+type: voice-role
+record_type: screen
+media_type: tv-video
+relation_to_bourdain: featured
+contributors:
+  - anthony-bourdain
+date: "2011"
+date_precision: year
+summary: Animated cameo with Bourdain appearing as himself in The Simpsons episode The Food Wife.
+tags:
+  - television
+  - voice
+  - cameo
+people:
+  - anthony-bourdain
+places: []
+sources:
+  - simpsons-the-food-wife
+related: []
+status: partial
+availability: {}

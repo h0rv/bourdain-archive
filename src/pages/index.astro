@@ -1,11 +1,11 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import EntryCard from '../components/EntryCard.astro';
-import { entryTitle, formatDate, formatType, mediaTypeFor, mediaTypeLabels, relationToAuthorship, sortByDateDesc, sourceGroupFor, sourceGroups, sourceGroupLabels, sourceTimelineDate } from '../lib/content';
+import { entryHref, entryTitle, formatDate, formatType, mediaTypeFor, mediaTypeLabels, relationToAuthorship, sortByDateDesc, sourceGroupFor, sourceGroupLabels, sourceTimelineDate } from '../lib/content';
 
 const works = await getCollection('works');
 const shows = (await getCollection('episodes')).filter((entry) => entry.data.type === 'show');
+const screen = await getCollection('screen');
 const appearances = await getCollection('appearances');
 const literature = await getCollection('literature');
 const events = await getCollection('events');
@@ -14,6 +14,7 @@ const curatedEntries = [
   ...events,
   ...works,
   ...shows,
+  ...screen,
   ...appearances,
   ...literature,
 ];
@@ -31,6 +32,7 @@ const entries = [
   ...events.map((entry) => ({ entry, collection: 'events', authorship: relationToAuthorship(entry.data.relation_to_bourdain ?? 'featured'), sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
   ...works.map((entry) => ({ entry, collection: 'works', authorship: relationToAuthorship(entry.data.relation_to_bourdain ?? 'authored'), sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
   ...shows.map((entry) => ({ entry, collection: 'episodes', authorship: relationToAuthorship(entry.data.relation_to_bourdain ?? 'featured'), sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
+  ...screen.map((entry) => ({ entry, collection: 'screen', authorship: relationToAuthorship(entry.data.relation_to_bourdain ?? 'featured'), sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
   ...appearances.map((entry) => ({ entry, collection: 'appearances', authorship: relationToAuthorship(entry.data.relation_to_bourdain ?? 'featured'), sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
   ...literature.map((entry) => ({ entry, collection: 'literature', authorship: relationToAuthorship(entry.data.relation_to_bourdain ?? 'about'), sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
   ...timelineSources.map((entry) => {
@@ -47,11 +49,8 @@ const entriesWithFacets = entries.map((item) => {
   return { ...item, mediaType };
 });
 const countBy = (values: string[]) => values.reduce((counts, value) => ({ ...counts, [value]: (counts[value] ?? 0) + 1 }), {} as Record<string, number>);
-const typeCounts = countBy(entriesWithFacets.map(({ entry }) => entry.data.type));
 const mediaCounts = countBy(entriesWithFacets.map(({ mediaType }) => mediaType));
-const sourceCounts = countBy(entriesWithFacets.map(({ sourceGroup }) => sourceGroup));
 const authorCounts = countBy(entriesWithFacets.map(({ authorship }) => authorship));
-const filters = Object.keys(typeCounts).sort();
 const mediaFilters = Object.keys(mediaCounts).sort((a, b) => (mediaTypeLabels[a] ?? a).localeCompare(mediaTypeLabels[b] ?? b));
 const deathDate = '2018-06-08';
 const isPosthumous = (entry: any) => {
@@ -82,99 +81,68 @@ const searchableText = (entry: any, collection: string, authorship: string, sour
     .filter(Boolean)
     .join(' ')
     .toLowerCase();
+const featuredImageFor = (entry: any) => entry.data.image_url ?? '';
+const statusFor = (entry: any) => entry.data.status;
 ---
 <BaseLayout title="Bourdain Archive">
-  <section class="hero home-hero">
-    <p class="eyebrow">Digital archive</p>
-    <h1>Browse the collection</h1>
-    <p>Search works, television, interviews, appearances, primary web material, and writing about Bourdain. Timeline now optional; catalog view comes first.</p>
+  <section class="hero home-hero archive-intro">
+    <p class="eyebrow">Index</p>
+    <h1>Anthony Bourdain Archive</h1>
+    <p>{entriesWithFacets.length} records: writing, books, television, talks, web posts, sources, and references.</p>
   </section>
 
-  <div class="archive-shell">
-    <aside class="controls archive-sidebar" aria-label="Search, filter, sort, and view controls">
-      <div class="search-control">
-        <label for="archive-search">Search collection</label>
+  <section class="archive-index" aria-label="Archive index">
+    <div class="archive-controls" aria-label="Search and filter controls">
+      <div class="search-control archive-search">
+        <label for="archive-search">Search</label>
         <div class="search-box">
           <span aria-hidden="true">⌕</span>
-          <input id="archive-search" type="search" placeholder="Search title, source, date, tag, place…" data-search />
-        </div>
-        <p class="result-count" data-result-count>{entriesWithFacets.length} records</p>
-      </div>
-
-      <div class="sidebar-section" aria-label="Sort and view controls">
-        <h2 class="filter-heading">Display</h2>
-        <label class="select-control" for="archive-sort">
-          <span>Sort by</span>
-          <select id="archive-sort" data-sort-select>
-            <option value="date-desc">Date, newest first</option>
-            <option value="date-asc">Date, oldest first</option>
-            <option value="title-asc">Title A–Z</option>
-            <option value="media-asc">Media type</option>
-            <option value="author-asc">Authorship</option>
-          </select>
-        </label>
-        <div class="view-control" aria-label="View controls">
-          <button class="pill is-active" type="button" data-view="cards">Cards</button>
-          <button class="pill" type="button" data-view="timeline">Timeline</button>
+          <input id="archive-search" type="search" placeholder="Search title, place, source, tag..." data-search />
         </div>
       </div>
 
-      <div class="sidebar-section" aria-label="Authorship filters">
-        <h2 class="filter-heading">Authorship</h2>
-        <div class="facet-list">
-          <button class="facet-button" type="button" data-filter-author="by"><span>Bourdain-authored / featuring</span><span>{authorCounts.by ?? 0}</span></button>
-          <button class="facet-button" type="button" data-filter-author="about"><span>About Bourdain</span><span>{authorCounts.about ?? 0}</span></button>
-        </div>
+      <div class="quick-filters" aria-label="Media filters">
+        <button class="pill is-active" type="button" data-filter-all>All</button>
+        {mediaFilters.map((filter) => (
+          <button class="pill" type="button" data-filter-media={filter}>
+            {mediaTypeLabels[filter] ?? formatType(filter)} <span>{mediaCounts[filter] ?? 0}</span>
+          </button>
+        ))}
       </div>
 
-      <div class="sidebar-section" aria-label="Media type filters">
-        <h2 class="filter-heading">Media type</h2>
-        <div class="facet-list">
-          {mediaFilters.map((filter) => (
-            <button class="facet-button" type="button" data-filter-media={filter}><span>{mediaTypeLabels[filter] ?? formatType(filter)}</span><span>{mediaCounts[filter] ?? 0}</span></button>
-          ))}
-        </div>
-      </div>
+      <label class="select-control compact-select" for="archive-author">
+        <span>Relation</span>
+        <select id="archive-author" data-author-select>
+          <option value="">All</option>
+          <option value="by">By / featuring ({authorCounts.by ?? 0})</option>
+          <option value="about">About ({authorCounts.about ?? 0})</option>
+        </select>
+      </label>
 
-      <details class="sidebar-section" open>
-        <summary class="filter-heading">Record type</summary>
-        <div class="facet-list">
-          {filters.map((filter) => (
-            <button class="facet-button" type="button" data-filter-type={filter}><span>{formatType(filter)}</span><span>{typeCounts[filter] ?? 0}</span></button>
-          ))}
-        </div>
-      </details>
+      <label class="select-control compact-select" for="archive-sort">
+        <span>Sort</span>
+        <select id="archive-sort" data-sort-select>
+          <option value="date-desc">Newest</option>
+          <option value="date-asc">Oldest</option>
+          <option value="title-asc">Title</option>
+        </select>
+      </label>
 
-      <details class="sidebar-section" open>
-        <summary class="filter-heading">Collection/source</summary>
-        <div class="facet-list">
-          <button class="facet-button is-active" type="button" data-source-all><span>Any source</span><span>{entriesWithFacets.length}</span></button>
-          {sourceGroups.map((group) => (
-            <button class="facet-button" type="button" data-filter-source={group.id}><span>{group.label}</span><span>{sourceCounts[group.id] ?? 0}</span></button>
-          ))}
-        </div>
-      </details>
+      <label class="toggle-control">
+        <input type="checkbox" data-image-toggle />
+        <span>Images</span>
+      </label>
+    </div>
 
-      <div class="sidebar-section" aria-label="Flag filters">
-        <h2 class="filter-heading">Flags</h2>
-        <div class="facet-list">
-          <button class="facet-button" type="button" data-filter-facet="posthumous">Posthumous</button>
-        </div>
-      </div>
+    <div class="results-toolbar compact-toolbar">
+      <p class="result-count" data-result-count>{entriesWithFacets.length} records</p>
+      <button class="text-button" type="button" data-filter-clear>Reset</button>
+    </div>
 
-      <button class="reset-button" type="button" data-filter-clear>Reset filters</button>
-    </aside>
-
-    <section class="archive-results" aria-label="Archive results">
-      <div class="results-toolbar">
-        <p class="result-count" data-result-count>{entriesWithFacets.length} records</p>
-        <p class="results-note">Faceted catalog, American university archive style. Use timeline only for chronology.</p>
-      </div>
-
-      <ol class="stream" data-stream data-view="cards">
+    <ol class="archive-list" data-stream>
         {entriesWithFacets.map(({ entry, collection, authorship, sourceGroup, timelineDate, mediaType }) => (
           <li
-            class="stream-item"
+            class="archive-row"
             data-type={entry.data.type}
             data-media-type={mediaType}
             data-author={authorship}
@@ -184,15 +152,28 @@ const searchableText = (entry: any, collection: string, authorship: string, sour
             data-date-label={formatDate(timelineDate.date, timelineDate.precision)}
             data-year={yearForEntry(timelineDate.date)}
             data-title={entryTitle(entry).toLowerCase()}
+            data-source-label={sourceGroupLabels[sourceGroup] ?? sourceGroup}
             data-search-text={searchableText(entry, collection, authorship, sourceGroup, mediaType)}
           >
-            <EntryCard entry={entry} collection={collection} />
+            <a class="row-main" href={entryHref(collection, entry.data.id)}>
+              <span class="row-date">{formatDate(timelineDate.date, timelineDate.precision)}</span>
+              <span class="row-title">{entryTitle(entry)}</span>
+              <span class="row-meta">{mediaTypeLabels[mediaType] ?? formatType(mediaType)} · {formatType(entry.data.type)} · {sourceGroupLabels[sourceGroup] ?? sourceGroup}</span>
+            </a>
+            <span class="row-flags">
+              {isPosthumous(entry) && <span class="row-flag">Posthumous</span>}
+              {statusFor(entry) && statusFor(entry) !== 'confirmed' && <span class="row-flag">{statusFor(entry)}</span>}
+            </span>
+            {featuredImageFor(entry) && (
+              <a class="row-image" href={entryHref(collection, entry.data.id)} tabindex="-1" aria-hidden="true">
+                <img src={featuredImageFor(entry)} alt="" loading="lazy" />
+              </a>
+            )}
           </li>
         ))}
-      </ol>
-      <p class="no-results" data-no-results hidden>No matches. Clear filters or try broader search.</p>
-    </section>
-  </div>
+    </ol>
+    <p class="no-results" data-no-results hidden>No matches. Clear filters or try a broader search.</p>
+  </section>
 
   <script>
     const stream = document.querySelector<HTMLOListElement>('[data-stream]');
@@ -200,17 +181,14 @@ const searchableText = (entry: any, collection: string, authorship: string, sour
     const countLabels = document.querySelectorAll<HTMLElement>('[data-result-count]');
     const noResults = document.querySelector<HTMLElement>('[data-no-results]');
     const clearButton = document.querySelector<HTMLButtonElement>('[data-filter-clear]');
-    const typeButtons = document.querySelectorAll<HTMLButtonElement>('[data-filter-type]');
     const mediaButtons = document.querySelectorAll<HTMLButtonElement>('[data-filter-media]');
-    const authorButtons = document.querySelectorAll<HTMLButtonElement>('[data-filter-author]');
-    const facetButtons = document.querySelectorAll<HTMLButtonElement>('[data-filter-facet]');
-    const sourceButtons = document.querySelectorAll<HTMLButtonElement>('[data-filter-source]');
-    const sourceAllButton = document.querySelector<HTMLButtonElement>('[data-source-all]');
+    const allButton = document.querySelector<HTMLButtonElement>('[data-filter-all]');
+    const authorSelect = document.querySelector<HTMLSelectElement>('[data-author-select]');
     const sortSelect = document.querySelector<HTMLSelectElement>('[data-sort-select]');
-    const viewButtons = document.querySelectorAll<HTMLButtonElement>('[data-view]');
-    const items = Array.from(document.querySelectorAll<HTMLElement>('.stream-item'));
+    const imageToggle = document.querySelector<HTMLInputElement>('[data-image-toggle]');
+    const items = Array.from(document.querySelectorAll<HTMLElement>('.archive-row'));
     const totalItems = items.length;
-    const STORAGE_KEY = 'bourdain-archive.catalog-controls.v3';
+    const STORAGE_KEY = 'bourdain-archive.index-controls.v1';
     let sortMode = 'date-desc';
     let renderedSortMode = '';
 
@@ -219,11 +197,6 @@ const searchableText = (entry: any, collection: string, authorship: string, sour
         .filter((button) => button.classList.contains('is-active'))
         .map((button) => button.getAttribute(attribute))
         .filter(Boolean);
-
-    const setActiveValues = (buttons: NodeListOf<HTMLButtonElement>, attribute: string, values: unknown) => {
-      if (!Array.isArray(values)) return;
-      buttons.forEach((button) => button.classList.toggle('is-active', values.includes(button.getAttribute(attribute))));
-    };
 
     const textValue = (item: HTMLElement, attr: string) => item.getAttribute(attr) ?? '';
 
@@ -261,13 +234,10 @@ const searchableText = (entry: any, collection: string, authorship: string, sour
           STORAGE_KEY,
           JSON.stringify({
             query: searchInput?.value ?? '',
-            types: activeValues(typeButtons, 'data-filter-type'),
             mediaTypes: activeValues(mediaButtons, 'data-filter-media'),
-            authors: activeValues(authorButtons, 'data-filter-author'),
-            facets: activeValues(facetButtons, 'data-filter-facet'),
-            sources: activeValues(sourceButtons, 'data-filter-source'),
+            author: authorSelect?.value ?? '',
             sort: sortMode,
-            view: stream?.getAttribute('data-view') ?? 'cards',
+            images: Boolean(imageToggle?.checked),
           }),
         );
       } catch {}
@@ -276,102 +246,64 @@ const searchableText = (entry: any, collection: string, authorship: string, sour
     const applySavedControls = () => {
       const saved = readSavedControls();
       if (searchInput && typeof saved.query === 'string') searchInput.value = saved.query;
-      setActiveValues(typeButtons, 'data-filter-type', saved.types);
-      setActiveValues(mediaButtons, 'data-filter-media', saved.mediaTypes);
-      setActiveValues(facetButtons, 'data-filter-facet', saved.facets);
-
-      const savedAuthors = Array.isArray(saved.authors) ? saved.authors.filter((value: unknown) => value === 'by' || value === 'about') : [];
-      authorButtons.forEach((button) => button.classList.toggle('is-active', savedAuthors.includes(button.getAttribute('data-filter-author'))));
-      if (Array.isArray(saved.sources) && saved.sources.length > 0) setActiveValues(sourceButtons, 'data-filter-source', saved.sources);
+      if (Array.isArray(saved.mediaTypes)) {
+        mediaButtons.forEach((button) => button.classList.toggle('is-active', saved.mediaTypes.includes(button.getAttribute('data-filter-media'))));
+      }
+      if (authorSelect && (saved.author === 'by' || saved.author === 'about')) authorSelect.value = saved.author;
+      if (imageToggle) imageToggle.checked = Boolean(saved.images);
 
       const savedSort = saved.sort === 'asc' ? 'date-asc' : saved.sort === 'desc' ? 'date-desc' : saved.sort;
-      if (['date-desc', 'date-asc', 'title-asc', 'media-asc', 'author-asc'].includes(savedSort)) sortMode = savedSort;
+      if (['date-desc', 'date-asc', 'title-asc'].includes(savedSort)) sortMode = savedSort;
       if (sortSelect) sortSelect.value = sortMode;
-
-      if (saved.view === 'timeline' || saved.view === 'cards') {
-        stream?.setAttribute('data-view', saved.view);
-        viewButtons.forEach((button) => button.classList.toggle('is-active', button.getAttribute('data-view') === saved.view));
-      }
-    };
-
-    const renderYearMarkers = () => {
-      stream?.querySelectorAll('.timeline-year').forEach((marker) => marker.remove());
-      if (stream?.getAttribute('data-view') !== 'timeline') return;
-
-      let activeYear = '';
-      items.forEach((item) => {
-        if (item.hidden) return;
-        const year = item.getAttribute('data-year') || 'Undated';
-        if (year === activeYear) return;
-        activeYear = year;
-        const marker = document.createElement('li');
-        marker.className = 'timeline-year';
-        marker.textContent = year;
-        stream?.insertBefore(marker, item);
-      });
     };
 
     const renderSortedItems = () => {
       if (!stream || renderedSortMode === sortMode) return;
-      stream.querySelectorAll('.timeline-year').forEach((marker) => marker.remove());
       items.sort(compareItems).forEach((item) => stream.append(item));
       renderedSortMode = sortMode;
     };
 
     const updateControls = () => {
-      const activeTypes = activeValues(typeButtons, 'data-filter-type');
       const activeMediaTypes = activeValues(mediaButtons, 'data-filter-media');
-      const activeAuthors = activeValues(authorButtons, 'data-filter-author');
-      const activeFacets = activeValues(facetButtons, 'data-filter-facet');
-      const activeSources = activeValues(sourceButtons, 'data-filter-source');
-      const posthumousOnly = activeFacets.includes('posthumous');
+      const activeAuthor = authorSelect?.value ?? '';
       const query = searchInput?.value.trim().toLowerCase() ?? '';
 
-      sourceAllButton?.classList.toggle('is-active', activeSources.length === 0);
+      allButton?.classList.toggle('is-active', activeMediaTypes.length === 0);
+      stream?.classList.toggle('show-images', Boolean(imageToggle?.checked));
       renderSortedItems();
 
       let visibleCount = 0;
       items.forEach((item) => {
-        const matchesType = activeTypes.length === 0 || activeTypes.includes(item.getAttribute('data-type'));
         const matchesMedia = activeMediaTypes.length === 0 || activeMediaTypes.includes(item.getAttribute('data-media-type'));
-        const matchesAuthor = activeAuthors.length === 0 || activeAuthors.includes(item.getAttribute('data-author'));
-        const matchesSource = activeSources.length === 0 || activeSources.includes(item.getAttribute('data-source-group'));
-        const matchesPosthumous = !posthumousOnly || item.getAttribute('data-posthumous') === 'true';
+        const matchesAuthor = !activeAuthor || activeAuthor === item.getAttribute('data-author');
         const matchesQuery = !query || (item.getAttribute('data-search-text') ?? '').includes(query);
-        const isVisible = matchesType && matchesMedia && matchesAuthor && matchesSource && matchesPosthumous && matchesQuery;
+        const isVisible = matchesMedia && matchesAuthor && matchesQuery;
         item.hidden = !isVisible;
         if (isVisible) visibleCount += 1;
       });
 
-      renderYearMarkers();
       countLabels.forEach((label) => (label.textContent = `${visibleCount} of ${totalItems} records`));
       if (noResults) noResults.hidden = visibleCount > 0;
       saveControls();
     };
 
     clearButton?.addEventListener('click', () => {
-      [...typeButtons, ...mediaButtons, ...authorButtons, ...facetButtons].forEach((button) => button.classList.remove('is-active'));
-      sourceButtons.forEach((button) => button.classList.remove('is-active'));
+      mediaButtons.forEach((button) => button.classList.remove('is-active'));
       if (searchInput) searchInput.value = '';
+      if (authorSelect) authorSelect.value = '';
+      if (imageToggle) imageToggle.checked = false;
       sortMode = 'date-desc';
       if (sortSelect) sortSelect.value = sortMode;
       renderedSortMode = '';
       updateControls();
     });
 
-    [...typeButtons, ...mediaButtons, ...authorButtons, ...facetButtons].forEach((button) => {
-      button.addEventListener('click', () => {
-        button.classList.toggle('is-active');
-        updateControls();
-      });
-    });
-
-    sourceAllButton?.addEventListener('click', () => {
-      sourceButtons.forEach((button) => button.classList.remove('is-active'));
+    allButton?.addEventListener('click', () => {
+      mediaButtons.forEach((button) => button.classList.remove('is-active'));
       updateControls();
     });
 
-    sourceButtons.forEach((button) => {
+    mediaButtons.forEach((button) => {
       button.addEventListener('click', () => {
         button.classList.toggle('is-active');
         updateControls();
@@ -379,21 +311,13 @@ const searchableText = (entry: any, collection: string, authorship: string, sour
     });
 
     searchInput?.addEventListener('input', updateControls);
+    authorSelect?.addEventListener('change', updateControls);
+    imageToggle?.addEventListener('change', updateControls);
 
     sortSelect?.addEventListener('change', () => {
       sortMode = sortSelect.value;
       renderedSortMode = '';
       updateControls();
-    });
-
-    viewButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-        const view = button.getAttribute('data-view');
-        viewButtons.forEach((item) => item.classList.toggle('is-active', item === button));
-        stream?.setAttribute('data-view', view ?? 'cards');
-        renderYearMarkers();
-        saveControls();
-      });
     });
 
     applySavedControls();

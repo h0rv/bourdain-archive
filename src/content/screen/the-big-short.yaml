@@ -1,0 +1,23 @@
+id: the-big-short
+title: The Big Short
+type: film
+record_type: screen
+media_type: tv-video
+relation_to_bourdain: featured
+contributors:
+  - anthony-bourdain
+date: "2015"
+date_precision: year
+summary: Feature film cameo with Bourdain appearing as himself to explain collateralized debt obligations through a kitchen metaphor.
+tags:
+  - film
+  - cameo
+  - finance
+people:
+  - anthony-bourdain
+places: []
+sources:
+  - rotten-tomatoes-bourdain-filmography
+related: []
+status: confirmed
+availability: {}

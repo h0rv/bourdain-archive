@@ -4,6 +4,15 @@
     grid-template-columns: 1fr;
   }
 
+  .archive-controls {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .archive-search,
+  .quick-filters {
+    grid-column: 1 / -1;
+  }
+
   .archive-sidebar {
     position: static;
     max-height: none;
@@ -36,15 +45,6 @@
     justify-content: flex-start;
   }
 
-  .brand {
-    grid-template-columns: 3.3rem auto;
-  }
-
-  .brand-mark {
-    width: 3.3rem;
-    height: 3.3rem;
-  }
-
   .hero h1 {
     font-size: clamp(3.2rem, 18vw, 6rem);
   }
@@ -60,6 +60,28 @@
 
   .archive-sidebar {
     margin-inline: calc(var(--gutter) * -0.25);
+  }
+
+  .archive-controls {
+    grid-template-columns: 1fr;
+  }
+
+  .row-main {
+    grid-template-columns: 1fr;
+    gap: 0.18rem;
+  }
+
+  .archive-row,
+  .archive-list.show-images .archive-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .row-flags {
+    align-self: start;
+  }
+
+  .archive-list.show-images .row-image {
+    display: none;
   }
 
   .facet-list {

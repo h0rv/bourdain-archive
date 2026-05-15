@@ -1,0 +1,23 @@
+id: archer-live-and-let-dine
+title: "Archer: Live and Let Dine"
+type: voice-role
+record_type: screen
+media_type: tv-video
+relation_to_bourdain: featured
+contributors:
+  - anthony-bourdain
+date: "2013"
+date_precision: year
+summary: Animated voice role by Bourdain as Lance Casteau on Archer.
+tags:
+  - television
+  - voice
+  - cameo
+people:
+  - anthony-bourdain
+places: []
+sources:
+  - archer-live-and-let-dine
+related: []
+status: partial
+availability: {}

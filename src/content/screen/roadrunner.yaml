@@ -1,0 +1,24 @@
+id: roadrunner
+title: "Roadrunner: A Film About Anthony Bourdain"
+type: documentary
+record_type: screen
+media_type: tv-video
+relation_to_bourdain: about
+contributors:
+  - anthony-bourdain
+date: "2021"
+date_precision: year
+summary: Posthumous documentary about Bourdain built from interviews and archival material; included as legacy/about, not active participation.
+tags:
+  - documentary
+  - posthumous
+  - legacy
+people:
+  - anthony-bourdain
+places: []
+sources:
+  - roadrunner-review-eater
+  - rotten-tomatoes-bourdain-filmography
+related: []
+status: confirmed
+availability: {}
