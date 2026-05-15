@@ -6,8 +6,8 @@ on:
   workflow_dispatch:
 
 env:
-  SITE: https://horv.co
-  BASE_PATH: /bourdain-archive
+  SITE: https://bourda.in
+  BASE_PATH: /
   NODE_VERSION: 24.15.0
 
 permissions:
