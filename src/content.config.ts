@@ -34,6 +34,14 @@ const availabilitySchema = z
   })
   .default({});
 
+const imageUsagePolicySchema = z.enum([
+  "self-hosted",
+  "remote-preview",
+  "link-only",
+  "permission-required",
+  "do-not-display",
+]);
+
 const commonEntrySchema = z.object({
   id: z.string(),
   title: z.string(),
@@ -157,6 +165,33 @@ export const collections = {
       type: z.literal("person"),
       birth_date: z.string().nullable().optional(),
       death_date: z.string().nullable().optional(),
+    }),
+  }),
+  images: defineCollection({
+    loader: contentFiles("images"),
+    schema: z.object({
+      id: z.string(),
+      title: z.string(),
+      type: z.enum(["photo", "photo-essay", "portrait", "social-photo", "cover", "poster"]),
+      date: z.string().nullable().optional(),
+      date_precision: datePrecisionSchema.default("unknown"),
+      source_url: z.url(),
+      image_url: imageField,
+      provider: z.string(),
+      creator: z.array(z.string()).default([]),
+      credit_line: z.string().optional(),
+      license: z.string().optional(),
+      license_url: urlField,
+      rights_status: z.string(),
+      usage_policy: imageUsagePolicySchema,
+      alt: z.string().optional(),
+      caption: z.string().optional(),
+      tags: z.array(z.string()).default([]),
+      people: z.array(z.string()).default([]),
+      places: z.array(z.string()).default([]),
+      sources: z.array(z.string()).default([]),
+      related: z.array(z.string()).default([]),
+      status: statusSchema.default("needs-review"),
     }),
   }),
   sources: defineCollection({

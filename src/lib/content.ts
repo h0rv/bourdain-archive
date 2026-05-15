@@ -209,6 +209,22 @@ export function youtubeId(url?: string | null): string | undefined {
   return undefined;
 }
 
+const blockedPreviewImageHosts = new Set([
+  'interviews.televisionacademy.com',
+]);
+
+export function isUsablePreviewImage(url?: string | null): boolean {
+  if (!url) return false;
+  try {
+    const parsed = new URL(url);
+    const host = parsed.hostname.replace(/^www\./, '');
+    if (blockedPreviewImageHosts.has(host)) return false;
+    return true;
+  } catch {
+    return url.startsWith('/');
+  }
+}
+
 export function archiveTargetsForUrl(url?: string | null) {
   if (!url) return undefined;
   const encoded = encodeURI(url);
@@ -223,11 +239,12 @@ export function previewForUrl(url?: string | null, cache?: Record<string, any>) 
   const host = hostnameForUrl(url);
   const videoId = youtubeId(url);
   const cached = url ? cache?.[url] : undefined;
+  const cachedImage = isUsablePreviewImage(cached?.image) ? cached?.image : undefined;
   return {
     host,
     title: cached?.title,
     description: cached?.description,
-    image: videoId ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` : cached?.image,
+    image: videoId ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` : cachedImage,
     favicon: host ? `https://www.google.com/s2/favicons?domain=${host}&sz=128` : undefined,
     archive: archiveTargetsForUrl(url),
   };
@@ -235,6 +252,7 @@ export function previewForUrl(url?: string | null, cache?: Record<string, any>) 
 
 export function siteAssetUrl(url?: string | null): string | undefined {
   if (!url) return undefined;
+  if (!isUsablePreviewImage(url)) return undefined;
   return url.startsWith('/') ? withBase(url) : url;
 }
 

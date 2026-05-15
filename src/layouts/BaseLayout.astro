@@ -11,10 +11,8 @@ const { title = siteName, description = 'Anthony Bourdain archive.' } = Astro.pr
 const pageTitle = title === siteName ? siteName : `${title} · ${siteName}`;
 const withBase = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`;
 const navItems = [
-  { href: withBase('/'), label: 'Archive' },
+  { href: withBase('/'), label: 'Browse' },
   { href: withBase('/photos/'), label: 'Photos' },
-  { href: withBase('/sources/'), label: 'Sources' },
-  { href: withBase('/about/'), label: 'About' },
 ];
 ---
 <!doctype html>
@@ -31,9 +29,15 @@ const navItems = [
   <body>
     <header class="site-header">
       <a class="brand" href={withBase('/')} aria-label="Bourdain Archive home">
+        <img
+          class="brand-mark"
+          src="https://d1w8c6s6gmwlek.b-cdn.net/trendyteeshop.com/overlays/389/644/38964494.png"
+          alt=""
+          width="96"
+          height="96"
+        />
         <span class="brand-copy">
           <span class="brand-name">Bourdain Archive</span>
-          <span class="brand-kicker">index, not mirror</span>
         </span>
       </a>
       <nav class="site-nav" aria-label="Primary navigation">
@@ -43,6 +47,8 @@ const navItems = [
     <main class="site-main">
       <slot />
     </main>
-
+    <footer class="site-footer">
+      <a href="https://github.com/h0rv/bourdain-archive">About / GitHub</a>
+    </footer>
   </body>
 </html>

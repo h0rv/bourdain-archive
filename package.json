@@ -9,11 +9,14 @@
     "archive:links": "node scripts/register-web-archives.mjs",
     "preview:links": "node scripts/cache-link-previews.mjs",
     "audit:links": "node scripts/audit-links.mjs",
+    "audit:generated": "node scripts/audit-generated.mjs",
+    "check:duplicates": "node scripts/check-duplicates.mjs",
     "import:literature": "node scripts/import-literature.mjs",
     "validate:data": "node scripts/validate-data.mjs",
     "build": "astro build",
     "preview": "astro preview",
-    "check": "astro check"
+    "check": "astro check",
+    "test": "npm run check && npm run validate:data && npm run build && npm run audit:generated && npm run check:duplicates"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.8",

@@ -17,15 +17,26 @@
 }
 
 .brand {
-  display: inline-block;
+  display: inline-grid;
+  grid-template-columns: 4.25rem auto;
+  gap: 0.9rem;
+  align-items: center;
   width: fit-content;
   color: var(--ink);
   text-decoration: none;
 }
 
+.brand-mark {
+  display: block;
+  width: 4.25rem;
+  height: 4.25rem;
+  object-fit: contain;
+  filter: grayscale(1) contrast(1.35);
+  mix-blend-mode: multiply;
+}
+
 .brand-copy {
-  display: grid;
-  gap: 0.08rem;
+  display: block;
 }
 
 .brand-name,
@@ -52,13 +63,6 @@
   letter-spacing: 0.045em;
 }
 
-.brand-kicker {
-  color: var(--accent);
-  font-size: 0.7rem;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
 .site-nav {
   display: flex;
   flex-wrap: wrap;
@@ -83,12 +87,18 @@
 }
 
 .site-footer {
+  display: flex;
+  justify-content: flex-end;
   padding-block: 1.25rem 2rem;
   color: var(--muted);
   font-family: var(--mono);
   font-size: 0.72rem;
   text-transform: uppercase;
   letter-spacing: 0.035em;
+}
+
+.site-footer a {
+  text-decoration: none;
 }
 
 .hero {

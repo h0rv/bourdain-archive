@@ -1,4 +1,4 @@
-/* Archive catalog controls: left sidebar facets, search, sort, and view toggles. */
+/* Search and filters. */
 .archive-shell {
   display: grid;
   grid-template-columns: minmax(14rem, 18rem) minmax(0, 1fr);

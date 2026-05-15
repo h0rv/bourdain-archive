@@ -38,8 +38,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Check Astro and content data
+        run: npm run check && npm run validate:data
+
       - name: Build
         run: npm run build
+
+      - name: Audit generated archive
+        run: npm run audit:generated
+
+      - name: Check duplicate candidates
+        run: npm run check:duplicates
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5.0.0

@@ -1,7 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
+import linkPreviewCache from '../../archive/derived/link-previews.json';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { entryHref, entryTitle, formatDate, formatType, mediaTypeFor, mediaTypeLabels, relationToAuthorship, sortByDateDesc, sourceGroupFor, sourceGroupLabels, sourceTimelineDate } from '../lib/content';
+import { entryHref, entryTitle, formatDate, formatType, mediaTypeFor, mediaTypeLabels, previewForEntry, relationToAuthorship, sortByDateDesc, sourceGroupFor, sourceGroupLabels, sourceTimelineDate } from '../lib/content';
 
 const works = await getCollection('works');
 const shows = (await getCollection('episodes')).filter((entry) => entry.data.type === 'show');
@@ -81,14 +82,13 @@ const searchableText = (entry: any, collection: string, authorship: string, sour
     .filter(Boolean)
     .join(' ')
     .toLowerCase();
-const featuredImageFor = (entry: any) => entry.data.image_url ?? '';
+const featuredImageFor = (entry: any) => previewForEntry(entry, linkPreviewCache.previews).image ?? '';
 const statusFor = (entry: any) => entry.data.status;
 ---
 <BaseLayout title="Bourdain Archive">
   <section class="hero home-hero archive-intro">
-    <p class="eyebrow">Index</p>
-    <h1>Anthony Bourdain Archive</h1>
-    <p>{entriesWithFacets.length} records: writing, books, television, talks, web posts, sources, and references.</p>
+    <h1>Anthony Bourdain</h1>
+    <p>{entriesWithFacets.length} records.</p>
   </section>
 
   <section class="archive-index" aria-label="Archive index">
