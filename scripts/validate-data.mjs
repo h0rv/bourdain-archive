@@ -10,7 +10,7 @@ import { readdir, readFile, stat } from 'node:fs/promises';
 import { join } from 'node:path';
 
 const CONTENT_ROOT = 'src/content';
-const COLLECTIONS = ['works', 'episodes', 'appearances', 'literature', 'places', 'people', 'sources'];
+const COLLECTIONS = ['works', 'episodes', 'appearances', 'screen', 'literature', 'events', 'places', 'people', 'sources'];
 const DATE_PRECISIONS = new Set(['day', 'month', 'year', 'unknown']);
 const STATUS_VALUES = new Set(['confirmed', 'needs-review', 'missing-source', 'dead-link', 'partial']);
 const URL_FIELD_RE = /(^|_)url$/;
@@ -111,6 +111,7 @@ function asArray(value) {
 
 function checkUrl(value, path, field) {
   if (!value) return;
+  if (String(value).startsWith('/')) return;
   try {
     new URL(value);
   } catch {

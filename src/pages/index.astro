@@ -11,6 +11,7 @@ const appearances = await getCollection('appearances');
 const literature = await getCollection('literature');
 const events = await getCollection('events');
 const sources = await getCollection('sources');
+const sourceById = new Map(sources.map((entry) => [entry.data.id, entry]));
 const curatedEntries = [
   ...events,
   ...works,
@@ -82,17 +83,27 @@ const searchableText = (entry: any, collection: string, authorship: string, sour
     .filter(Boolean)
     .join(' ')
     .toLowerCase();
-const featuredImageFor = (entry: any) => previewForEntry(entry, linkPreviewCache.previews).image ?? '';
+const previewForArchiveEntry = (entry: any) => {
+  const ownPreview = previewForEntry(entry, linkPreviewCache.previews);
+  if (ownPreview.image) return ownPreview;
+
+  for (const sourceId of entry.data.sources ?? []) {
+    const source = sourceById.get(sourceId);
+    if (!source) continue;
+    const sourcePreview = previewForEntry(source, linkPreviewCache.previews);
+    if (sourcePreview.image) return { ...ownPreview, image: sourcePreview.image, host: sourcePreview.host, url: sourcePreview.url };
+  }
+
+  return ownPreview;
+};
+const featuredImageFor = (entry: any) => previewForArchiveEntry(entry).image ?? '';
 const statusFor = (entry: any) => entry.data.status;
 ---
 <BaseLayout title="Bourdain Archive">
-  <section class="hero home-hero archive-intro">
-    <h1>Anthony Bourdain</h1>
-    <p>{entriesWithFacets.length} records.</p>
-  </section>
-
   <section class="archive-index" aria-label="Archive index">
-    <div class="archive-controls" aria-label="Search and filter controls">
+    <h1 class="sr-only">Anthony Bourdain Archive</h1>
+
+    <div class="archive-topbar" aria-label="Search and view controls">
       <div class="search-control archive-search">
         <label for="archive-search">Search</label>
         <div class="search-box">
@@ -101,45 +112,49 @@ const statusFor = (entry: any) => entry.data.status;
         </div>
       </div>
 
-      <div class="quick-filters" aria-label="Media filters">
-        <button class="pill is-active" type="button" data-filter-all>All</button>
-        {mediaFilters.map((filter) => (
-          <button class="pill" type="button" data-filter-media={filter}>
-            {mediaTypeLabels[filter] ?? formatType(filter)} <span>{mediaCounts[filter] ?? 0}</span>
-          </button>
-        ))}
+      <div class="view-control" aria-label="View">
+        <button class="pill is-active" type="button" data-view="rows">Rows</button>
+        <button class="pill" type="button" data-view="cards">Cards</button>
       </div>
 
-      <label class="select-control compact-select" for="archive-author">
-        <span>Relation</span>
-        <select id="archive-author" data-author-select>
-          <option value="">All</option>
-          <option value="by">By / featuring ({authorCounts.by ?? 0})</option>
-          <option value="about">About ({authorCounts.about ?? 0})</option>
-        </select>
-      </label>
-
-      <label class="select-control compact-select" for="archive-sort">
-        <span>Sort</span>
-        <select id="archive-sort" data-sort-select>
-          <option value="date-desc">Newest</option>
-          <option value="date-asc">Oldest</option>
-          <option value="title-asc">Title</option>
-        </select>
-      </label>
-
-      <label class="toggle-control">
-        <input type="checkbox" data-image-toggle />
-        <span>Images</span>
-      </label>
-    </div>
-
-    <div class="results-toolbar compact-toolbar">
       <p class="result-count" data-result-count>{entriesWithFacets.length} records</p>
-      <button class="text-button" type="button" data-filter-clear>Reset</button>
     </div>
 
-    <ol class="archive-list" data-stream>
+    <details class="filter-drawer">
+      <summary>Filter</summary>
+      <div class="archive-controls" aria-label="Filter controls">
+        <div class="quick-filters" aria-label="Media filters">
+          <button class="pill is-active" type="button" data-filter-all>All</button>
+          {mediaFilters.map((filter) => (
+            <button class="pill" type="button" data-filter-media={filter}>
+              {mediaTypeLabels[filter] ?? formatType(filter)} <span>{mediaCounts[filter] ?? 0}</span>
+            </button>
+          ))}
+        </div>
+
+        <label class="select-control compact-select" for="archive-author">
+          <span>Relation</span>
+          <select id="archive-author" data-author-select>
+            <option value="">All</option>
+            <option value="by">By / featuring ({authorCounts.by ?? 0})</option>
+            <option value="about">About ({authorCounts.about ?? 0})</option>
+          </select>
+        </label>
+
+        <label class="select-control compact-select" for="archive-sort">
+          <span>Sort</span>
+          <select id="archive-sort" data-sort-select>
+            <option value="date-desc">Newest</option>
+            <option value="date-asc">Oldest</option>
+            <option value="title-asc">Title</option>
+          </select>
+        </label>
+
+        <button class="text-button" type="button" data-filter-clear>Reset</button>
+      </div>
+    </details>
+
+    <ol class="archive-list" data-stream data-view="rows">
         {entriesWithFacets.map(({ entry, collection, authorship, sourceGroup, timelineDate, mediaType }) => (
           <li
             class="archive-row"
@@ -155,6 +170,13 @@ const statusFor = (entry: any) => entry.data.status;
             data-source-label={sourceGroupLabels[sourceGroup] ?? sourceGroup}
             data-search-text={searchableText(entry, collection, authorship, sourceGroup, mediaType)}
           >
+            {featuredImageFor(entry) ? (
+              <a class="row-image" href={entryHref(collection, entry.data.id)} tabindex="-1" aria-hidden="true">
+                <img src={featuredImageFor(entry)} alt="" loading="lazy" />
+              </a>
+            ) : (
+              <span class="row-image row-image-empty" aria-hidden="true"></span>
+            )}
             <a class="row-main" href={entryHref(collection, entry.data.id)}>
               <span class="row-date">{formatDate(timelineDate.date, timelineDate.precision)}</span>
               <span class="row-title">{entryTitle(entry)}</span>
@@ -164,11 +186,6 @@ const statusFor = (entry: any) => entry.data.status;
               {isPosthumous(entry) && <span class="row-flag">Posthumous</span>}
               {statusFor(entry) && statusFor(entry) !== 'confirmed' && <span class="row-flag">{statusFor(entry)}</span>}
             </span>
-            {featuredImageFor(entry) && (
-              <a class="row-image" href={entryHref(collection, entry.data.id)} tabindex="-1" aria-hidden="true">
-                <img src={featuredImageFor(entry)} alt="" loading="lazy" />
-              </a>
-            )}
           </li>
         ))}
     </ol>
@@ -185,7 +202,7 @@ const statusFor = (entry: any) => entry.data.status;
     const allButton = document.querySelector<HTMLButtonElement>('[data-filter-all]');
     const authorSelect = document.querySelector<HTMLSelectElement>('[data-author-select]');
     const sortSelect = document.querySelector<HTMLSelectElement>('[data-sort-select]');
-    const imageToggle = document.querySelector<HTMLInputElement>('[data-image-toggle]');
+    const viewButtons = document.querySelectorAll<HTMLButtonElement>('[data-view]');
     const items = Array.from(document.querySelectorAll<HTMLElement>('.archive-row'));
     const totalItems = items.length;
     const STORAGE_KEY = 'bourdain-archive.index-controls.v1';
@@ -237,7 +254,7 @@ const statusFor = (entry: any) => entry.data.status;
             mediaTypes: activeValues(mediaButtons, 'data-filter-media'),
             author: authorSelect?.value ?? '',
             sort: sortMode,
-            images: Boolean(imageToggle?.checked),
+            view: stream?.getAttribute('data-view') ?? 'rows',
           }),
         );
       } catch {}
@@ -250,7 +267,10 @@ const statusFor = (entry: any) => entry.data.status;
         mediaButtons.forEach((button) => button.classList.toggle('is-active', saved.mediaTypes.includes(button.getAttribute('data-filter-media'))));
       }
       if (authorSelect && (saved.author === 'by' || saved.author === 'about')) authorSelect.value = saved.author;
-      if (imageToggle) imageToggle.checked = Boolean(saved.images);
+      if (saved.view === 'rows' || saved.view === 'cards') {
+        stream?.setAttribute('data-view', saved.view);
+        viewButtons.forEach((button) => button.classList.toggle('is-active', button.getAttribute('data-view') === saved.view));
+      }
 
       const savedSort = saved.sort === 'asc' ? 'date-asc' : saved.sort === 'desc' ? 'date-desc' : saved.sort;
       if (['date-desc', 'date-asc', 'title-asc'].includes(savedSort)) sortMode = savedSort;
@@ -269,7 +289,6 @@ const statusFor = (entry: any) => entry.data.status;
       const query = searchInput?.value.trim().toLowerCase() ?? '';
 
       allButton?.classList.toggle('is-active', activeMediaTypes.length === 0);
-      stream?.classList.toggle('show-images', Boolean(imageToggle?.checked));
       renderSortedItems();
 
       let visibleCount = 0;
@@ -291,7 +310,6 @@ const statusFor = (entry: any) => entry.data.status;
       mediaButtons.forEach((button) => button.classList.remove('is-active'));
       if (searchInput) searchInput.value = '';
       if (authorSelect) authorSelect.value = '';
-      if (imageToggle) imageToggle.checked = false;
       sortMode = 'date-desc';
       if (sortSelect) sortSelect.value = sortMode;
       renderedSortMode = '';
@@ -312,7 +330,15 @@ const statusFor = (entry: any) => entry.data.status;
 
     searchInput?.addEventListener('input', updateControls);
     authorSelect?.addEventListener('change', updateControls);
-    imageToggle?.addEventListener('change', updateControls);
+
+    viewButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const view = button.getAttribute('data-view') ?? 'rows';
+        stream?.setAttribute('data-view', view);
+        viewButtons.forEach((item) => item.classList.toggle('is-active', item === button));
+        saveControls();
+      });
+    });
 
     sortSelect?.addEventListener('change', () => {
       sortMode = sortSelect.value;

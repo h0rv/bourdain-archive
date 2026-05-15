@@ -4,6 +4,7 @@
     grid-template-columns: 1fr;
   }
 
+  .archive-topbar,
   .archive-controls {
     grid-template-columns: 1fr 1fr;
   }
@@ -71,6 +72,7 @@
     margin-inline: calc(var(--gutter) * -0.25);
   }
 
+  .archive-topbar,
   .archive-controls {
     grid-template-columns: 1fr;
   }
@@ -80,17 +82,17 @@
     gap: 0.18rem;
   }
 
-  .archive-row,
-  .archive-list.show-images .archive-row {
-    grid-template-columns: minmax(0, 1fr) auto;
+  .archive-row {
+    grid-template-columns: 3.75rem minmax(0, 1fr);
+  }
+
+  .row-image {
+    width: 3.75rem;
   }
 
   .row-flags {
-    align-self: start;
-  }
-
-  .archive-list.show-images .row-image {
-    display: none;
+    grid-column: 2;
+    justify-content: flex-start;
   }
 
   .facet-list {

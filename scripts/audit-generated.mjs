@@ -15,8 +15,9 @@ const PUBLIC_ROOT = process.env.PUBLIC_DIR ?? 'public';
 const CONTENT_ROOT = process.env.CONTENT_DIR ?? 'src/content';
 const BASE_PATH = normalizeBase(process.env.BASE_PATH ?? '/');
 const IMAGE_EXTENSIONS = new Set(['.avif', '.gif', '.jpeg', '.jpg', '.png', '.svg', '.webp']);
-const HTML_ATTR_RE = /\s(?:href|src|poster)=["']([^"']+)["']/gi;
-const SRCSET_RE = /\ssrcset=["']([^"']+)["']/gi;
+const REPO_BASE_SEGMENT = path.basename(process.cwd());
+const HTML_ATTR_RE = /<([a-z][a-z0-9:-]*)\b[^>]*?\s(href|src|poster)=["']([^"']+)["'][^>]*?>/gi;
+const SRCSET_RE = /<(img|source)\b[^>]*?\ssrcset=["']([^"']+)["'][^>]*?>/gi;
 const IMAGE_FIELD_RE = /(^|_)(asset|cover|image|photo|poster)(_|$)|thumbnail/i;
 
 const errors = [];
@@ -106,13 +107,20 @@ function generatedCandidates(pathname) {
   const relative = pathname.replace(/^\/+/, '');
   if (relative === '') return [path.join(DIST_ROOT, 'index.html')];
 
-  const extension = path.extname(relative);
-  if (extension) return [path.join(DIST_ROOT, relative)];
+  const candidatesFor = (target) => {
+    if (target === '') return [path.join(DIST_ROOT, 'index.html')];
+    const extension = path.extname(target);
+    if (extension) return [path.join(DIST_ROOT, target)];
+    return [
+      path.join(DIST_ROOT, target, 'index.html'),
+      path.join(DIST_ROOT, `${target}.html`),
+    ];
+  };
 
-  return [
-    path.join(DIST_ROOT, relative, 'index.html'),
-    path.join(DIST_ROOT, `${relative}.html`),
-  ];
+  const candidates = candidatesFor(relative);
+  const parts = relative.split('/');
+  if (parts[0] === REPO_BASE_SEGMENT) candidates.push(...candidatesFor(parts.slice(1).join('/')));
+  return candidates;
 }
 
 async function assertGeneratedTarget(rawValue, htmlFile, kind) {
@@ -149,14 +157,15 @@ async function auditHtmlFile(filePath) {
   }
 
   for (const match of html.matchAll(HTML_ATTR_RE)) {
-    const rawValue = match[1];
-    const attr = match[0].trim().split('=')[0];
-    if (attr === 'href') await assertGeneratedTarget(rawValue, filePath, 'route');
-    if (attr === 'src' || attr === 'poster') await assertGeneratedTarget(rawValue, filePath, 'local asset');
+    const [, tagName, attr, rawValue] = match;
+    if (tagName === 'a' && attr === 'href') await assertGeneratedTarget(rawValue, filePath, 'route');
+    if ((tagName === 'img' || tagName === 'source' || attr === 'poster') && (attr === 'src' || attr === 'poster')) {
+      await assertGeneratedTarget(rawValue, filePath, 'local asset');
+    }
   }
 
   for (const match of html.matchAll(SRCSET_RE)) {
-    for (const url of srcsetUrls(match[1])) {
+    for (const url of srcsetUrls(match[2])) {
       await assertGeneratedTarget(url, filePath, 'local asset');
     }
   }

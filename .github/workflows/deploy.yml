@@ -41,6 +41,9 @@ jobs:
       - name: Check Astro and content data
         run: npm run check && npm run validate:data
 
+      - name: Audit image metadata
+        run: npm run audit:images
+
       - name: Build
         run: npm run build
 

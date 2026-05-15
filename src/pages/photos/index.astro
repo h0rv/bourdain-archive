@@ -12,10 +12,25 @@ const collections = [
   ['events', await getCollection('events')],
   ['literature', await getCollection('literature')],
 ] as const;
+const sources = await getCollection('sources');
+const sourceById = new Map(sources.map((entry) => [entry.data.id, entry]));
+const previewForVisualEntry = (entry: any) => {
+  const ownPreview = previewForEntry(entry, linkPreviewCache.previews);
+  if (ownPreview.image) return ownPreview;
+
+  for (const sourceId of entry.data.sources ?? []) {
+    const source = sourceById.get(sourceId);
+    if (!source) continue;
+    const sourcePreview = previewForEntry(source, linkPreviewCache.previews);
+    if (sourcePreview.image) return { ...ownPreview, image: sourcePreview.image, host: sourcePreview.host, url: sourcePreview.url };
+  }
+
+  return ownPreview;
+};
 const curatedImages = collections.flatMap(([collection, entries]) =>
   entries
     .map((entry) => {
-      const preview = previewForEntry(entry, linkPreviewCache.previews);
+      const preview = previewForVisualEntry(entry);
       const date = collection === 'events' ? { date: entry.data.date, precision: entry.data.date_precision } : { date: entry.data.date, precision: entry.data.date_precision };
       return {
         id: `${collection}-${entry.data.id}`,
@@ -32,7 +47,6 @@ const curatedImages = collections.flatMap(([collection, entries]) =>
     .filter((item) => Boolean(item.image)),
 );
 
-const sources = await getCollection('sources');
 const sourceImages = sources
   .map((entry) => {
     const preview = previewForEntry(entry, linkPreviewCache.previews);

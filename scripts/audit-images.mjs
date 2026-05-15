@@ -83,13 +83,22 @@ function primaryAvailabilityUrl(data) {
   );
 }
 
-function previewImageFor(data, cache) {
+function previewImageFor(data, cache, sourceById = new Map()) {
   if (data.image_url) return data.image_url;
   const url = primaryAvailabilityUrl(data);
   const videoId = youtubeId(url);
   if (videoId) return `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
   const image = url ? cache[url]?.image : undefined;
-  return isBlockedRemoteImage(image) ? undefined : image;
+  if (image && !isBlockedRemoteImage(image)) return image;
+
+  for (const sourceId of data.sources ?? []) {
+    const source = sourceById.get(sourceId);
+    if (!source) continue;
+    const sourceImage = previewImageFor(source, cache);
+    if (sourceImage) return sourceImage;
+  }
+
+  return undefined;
 }
 
 function localAssetPath(url) {
@@ -116,6 +125,7 @@ for (const file of files) {
   const collection = file.split('/')[2];
   entries.push({ file, collection, data });
 }
+const sourceById = new Map(entries.filter((entry) => entry.collection === 'sources').map((entry) => [entry.data.id, entry.data]));
 
 for (const [url, preview] of Object.entries(previewCache)) {
   if (isBlockedRemoteImage(preview?.image)) {
@@ -136,7 +146,7 @@ for (const { file, collection, data } of entries) {
   }
 
   if (!COLLECTIONS_EXPECTING_VISUALS.has(collection)) continue;
-  const previewImage = previewImageFor(data, previewCache);
+  const previewImage = previewImageFor(data, previewCache, sourceById);
   if (!previewImage) {
     const count = missingByCollection.get(collection) ?? 0;
     missingByCollection.set(collection, count + 1);
