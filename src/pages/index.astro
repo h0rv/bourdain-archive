@@ -113,8 +113,8 @@ const statusFor = (entry: any) => entry.data.status;
       </div>
 
       <div class="view-control" aria-label="View">
-        <button class="pill is-active" type="button" data-view="rows">Rows</button>
-        <button class="pill" type="button" data-view="cards">Cards</button>
+        <button class="pill is-active" type="button" data-view="cards">Cards</button>
+        <button class="pill" type="button" data-view="rows">Rows</button>
       </div>
 
       <p class="result-count" data-result-count>{entriesWithFacets.length} records</p>
@@ -154,7 +154,7 @@ const statusFor = (entry: any) => entry.data.status;
       </div>
     </details>
 
-    <ol class="archive-list" data-stream data-view="rows">
+    <ol class="archive-list" data-stream data-view="cards">
         {entriesWithFacets.map(({ entry, collection, authorship, sourceGroup, timelineDate, mediaType }) => (
           <li
             class="archive-row"
@@ -205,7 +205,7 @@ const statusFor = (entry: any) => entry.data.status;
     const viewButtons = document.querySelectorAll<HTMLButtonElement>('[data-view]');
     const items = Array.from(document.querySelectorAll<HTMLElement>('.archive-row'));
     const totalItems = items.length;
-    const STORAGE_KEY = 'bourdain-archive.index-controls.v1';
+    const STORAGE_KEY = 'bourdain-archive.index-controls.v2';
     let sortMode = 'date-desc';
     let renderedSortMode = '';
 
@@ -254,7 +254,7 @@ const statusFor = (entry: any) => entry.data.status;
             mediaTypes: activeValues(mediaButtons, 'data-filter-media'),
             author: authorSelect?.value ?? '',
             sort: sortMode,
-            view: stream?.getAttribute('data-view') ?? 'rows',
+            view: stream?.getAttribute('data-view') ?? 'cards',
           }),
         );
       } catch {}

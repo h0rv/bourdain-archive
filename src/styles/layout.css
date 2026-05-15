@@ -1,4 +1,4 @@
-/* Site frame: header, brand, nav, hero, and headings. */
+/* Site frame: header, brand, hero, and headings. */
 .site-header,
 .site-footer,
 .site-main {
@@ -8,11 +8,9 @@
 }
 
 .site-header {
-  display: grid;
-  grid-template-columns: minmax(16rem, 1fr) auto;
-  gap: 1rem 2rem;
-  align-items: baseline;
-  padding-block: 1.25rem 1rem;
+  display: flex;
+  align-items: center;
+  padding-block: 0.85rem;
   border-bottom: 1px solid rgba(17, 16, 14, 0.18);
 }
 
@@ -55,7 +53,6 @@
 .brand-kicker,
 .eyebrow,
 .section-heading,
-.site-nav,
 .meta,
 .badge,
 .tag {
@@ -63,27 +60,8 @@
   letter-spacing: 0.045em;
 }
 
-.site-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 0.35rem 0.9rem;
-  font-size: 0.73rem;
-  font-weight: 800;
-  text-transform: uppercase;
-}
-
-.site-nav a {
-  color: var(--muted);
-  text-decoration: none;
-}
-
-.site-nav a:hover {
-  color: var(--ink);
-}
-
 .site-main {
-  padding-block: clamp(1.5rem, 4vw, 3rem) 4rem;
+  padding-block: clamp(0.9rem, 2vw, 1.35rem) 4rem;
 }
 
 .site-footer {

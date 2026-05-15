@@ -10,10 +10,6 @@ interface Props {
 const siteName = 'Bourdain Archive';
 const { title = siteName, description = 'Anthony Bourdain archive.' } = Astro.props;
 const pageTitle = title === siteName ? siteName : `${title} · ${siteName}`;
-const navItems = [
-  { href: withBase('/'), label: 'Browse' },
-  { href: withBase('/photos/'), label: 'Photos' },
-];
 ---
 <!doctype html>
 <html lang="en">
@@ -40,9 +36,6 @@ const navItems = [
           <span class="brand-name">Bourdain Archive</span>
         </span>
       </a>
-      <nav class="site-nav" aria-label="Primary navigation">
-        {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
-      </nav>
     </header>
     <main class="site-main">
       <slot />

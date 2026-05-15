@@ -38,12 +38,7 @@
   }
 
   .site-header {
-    grid-template-columns: 1fr;
     align-items: start;
-  }
-
-  .site-nav {
-    justify-content: flex-start;
   }
 
   .brand {
