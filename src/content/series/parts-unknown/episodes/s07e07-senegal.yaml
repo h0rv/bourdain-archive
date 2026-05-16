@@ -1,0 +1,31 @@
+id: "parts-unknown-s07e07-senegal"
+title: "Senegal"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 7
+episode: 7
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2016-05-29"
+date_precision: "day"
+summary: "Bourdain explores the distinct culture of the West African nation Senegal, which despite its deep-rooted religious beliefs, is known for its nightlife, global musical influence, vibrant fashion scene, rich food culture and history of tolerance. Featured guides on this journey include Chef Pierre Thiam, NPR Africa correspondent Ofeibea Quist Arcton, and famed musician Youssou N'Dour, for conversation and a taste of maffe, a much loved rich beef stew, popular throughout West Africa."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "dakar-senegal"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

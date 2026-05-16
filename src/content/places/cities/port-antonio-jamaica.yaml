@@ -1,0 +1,15 @@
+id: port-antonio-jamaica
+name: Port Antonio, Jamaica
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with Parts Unknown.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - jamaica
+sources:
+  - travel-places-github
+status: needs-review

@@ -1,0 +1,31 @@
+id: "no-reservations-s07e12-el-bulli"
+title: "El Bulli"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 7
+episode: 12
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2011-08-01"
+date_precision: "day"
+summary: "Tony visits elBulli, a renowned restaurant in Spain, and cooks and dines with chef Ferran Adrià."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "roses-spain"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

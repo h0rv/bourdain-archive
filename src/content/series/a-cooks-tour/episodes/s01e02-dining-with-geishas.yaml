@@ -1,0 +1,31 @@
+id: "a-cooks-tour-s01e02-dining-with-geishas"
+title: "Dining with Geishas"
+kind: "episode"
+index_mode: "child"
+parent_id: "a-cooks-tour-show"
+type: "episode"
+show: "A Cook's Tour"
+season: 1
+episode: 2
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2002-01-12"
+date_precision: "day"
+summary: "Rural Japan: Tony decides to look for a more relaxing, traditional Japanese culinary experience in the countryside. Tony travels to an old-style Japanese inn that specializes in kaiseki cuisine, ancient tea ceremony, and local ingredients. He then returns to busy Tokyo to brave the blowfish served at the famous Nibiki restaurant."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "atami-japan"
+sources:
+  - "travel-places-github"
+  - "a-cooks-tour-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.cookingchanneltv.com/shows/a-cooks-tour/episodes/dining-with-geishas"

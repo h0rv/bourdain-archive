@@ -1,0 +1,31 @@
+id: "no-reservations-s03e08-new-york-city"
+title: "New York City"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 3
+episode: 8
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2007-08-06"
+date_precision: "day"
+summary: "Tony visits the late-night haunts of his hometown of New York City, including a Russian-style night out in Brighton Beach with author Gary Shteyngart, Gray's Papaya, a Japanese izakaya, Siberia Bar with fellow food travel show host Andrew Zimmern, and a favorite of after-work chefs, The Spotted Pig. He also takes a trip to Yankee Stadium."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "new-york-united-states"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

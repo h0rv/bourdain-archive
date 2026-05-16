@@ -1,0 +1,26 @@
+id: the-taste-show
+title: The Taste
+kind: series
+index_mode: rollup
+type: show
+record_type: television
+media_type: tv-video
+relation_to_bourdain: featured
+contributors:
+  - anthony-bourdain
+date: "2013"
+date_precision: year
+summary: Competitive cooking series with Bourdain as a mentor and judge.
+tags:
+  - television
+  - food-media
+  - competition
+people:
+  - anthony-bourdain
+places: []
+sources:
+  - the-taste-apple-tv
+related: []
+status: confirmed
+availability:
+  streaming_url: https://tv.apple.com/us/show/the-taste/umc.cmc.58j29oizobpexm1wr8360u800

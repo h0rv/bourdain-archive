@@ -1,0 +1,37 @@
+id: "no-reservations-s02e08-us-mexico-border"
+title: "US/Mexico Border"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 2
+episode: 8
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2006-05-22"
+date_precision: "day"
+summary: "Tony visits Piedras Negras, Mexico, and border towns in Texas, where he sees the influences that the countries have had on each other. He also visits the Mexican restaurant credited with inventing nachos."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "del-rio-united-states"
+  - "rio-grande-united-states"
+  - "laredo-united-states"
+  - "eagle-pass-united-states"
+  - "coahuila-mexico"
+  - "monterrey-mexico"
+  - "tamaulipas-mexico"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.imdb.com/title/tt0988175/locations?ref_=tt_dt_dt"

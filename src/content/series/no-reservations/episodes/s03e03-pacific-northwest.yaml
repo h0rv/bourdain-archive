@@ -1,0 +1,33 @@
+id: "no-reservations-s03e03-pacific-northwest"
+title: "Pacific Northwest"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 3
+episode: 3
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2007-01-15"
+date_precision: "day"
+summary: "In Portland, Tony samples unique donuts and pizza, explores the history of the underground, and goes camping with some old friends. He takes in the sights of Pike Place Market, enjoys a Gypsy dinner, tries some Puget Sound geoduck, and spends time with a meat curer friend in Seattle."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "portland-united-states"
+  - "seattle-united-states"
+  - "shelton-united-states"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.imdb.com/title/tt0943559/locations?ref_=tt_dt_dt"

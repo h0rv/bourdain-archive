@@ -1,0 +1,31 @@
+id: "a-cooks-tour-s02e02-no-beads-no-babes-no-bourbon-street"
+title: "No Beads, No Babes, No Bourbon Street"
+kind: "episode"
+index_mode: "child"
+parent_id: "a-cooks-tour-show"
+type: "episode"
+show: "A Cook's Tour"
+season: 2
+episode: 2
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2003-01-19"
+date_precision: "day"
+summary: "Tony has traveled to the Big Easy and wants to find the New Orleans that tourists never see. He gets that -- and much more than he bargained for."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "new-orleans-united-states"
+sources:
+  - "travel-places-github"
+  - "a-cooks-tour-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.cookingchanneltv.com/shows/a-cooks-tour/episodes/no-beads-no-babes-no-bourbon-street"

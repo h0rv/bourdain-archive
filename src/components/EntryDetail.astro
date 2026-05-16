@@ -1,20 +1,25 @@
 ---
 import linkPreviewCache from '../../archive/derived/link-previews.json';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { availabilityBadges, entryHref, entryTitle, findByDataId, formatDate, formatType, previewForUrl, statusClass, visibleStatus } from '../lib/content';
+import { availabilityBadges, entryHref, entryTitle, formatDate, formatType, kindFor, previewForUrl, statusClass, visibleStatus } from '../lib/content';
 
 interface Props {
   entry: any;
   collection: string;
-  sources: any[];
+  sources?: any[];
   relatedEntries: any[];
+  childEntries?: any[];
 }
 
-const { entry, sources, relatedEntries } = Astro.props;
+const { entry, collection, relatedEntries, childEntries = [] } = Astro.props;
 const data = entry.data;
 const title = entryTitle(entry);
-const sourceRefs = (data.sources ?? []).map((id: string) => findByDataId(sources, id)).filter(Boolean);
 const relatedRefs = (data.related ?? []).map((id: string) => relatedEntries.find((item: any) => item.entry.data.id === id)).filter(Boolean);
+const sortedChildEntries = [...childEntries].sort((left: any, right: any) =>
+  (left.entry.data.season ?? 0) - (right.entry.data.season ?? 0) ||
+  (left.entry.data.episode ?? 0) - (right.entry.data.episode ?? 0) ||
+  entryTitle(left.entry).localeCompare(entryTitle(right.entry))
+);
 const badges = availabilityBadges(data.availability);
 const availabilityPreviews = badges.map((badge) => ({ ...badge, preview: previewForUrl(badge.url, linkPreviewCache.previews) }));
 const displayStatus = visibleStatus(data.status);
@@ -23,7 +28,8 @@ const displayStatus = visibleStatus(data.status);
   <article>
     <h1 class="page-title">{title}</h1>
     <p class="meta">
-      {formatType(data.type)}
+      {formatType(kindFor(data, collection))}
+      {data.season && data.episode ? ` · S${String(data.season).padStart(2, '0')}E${String(data.episode).padStart(2, '0')}` : ''}
       {data.date ? ` · ${formatDate(data.date, data.date_precision)}` : ''}
       {displayStatus && <> · <span class={`badge ${statusClass(displayStatus)}`}>{displayStatus}</span></>}
     </p>
@@ -91,18 +97,22 @@ const displayStatus = visibleStatus(data.status);
       )}
     </div>
 
-    <section class="detail-box">
-      <h2>Sources</h2>
-      {sourceRefs.length > 0 ? (
+    {sortedChildEntries.length > 0 && (
+      <section class="detail-box">
+        <h2>Episodes</h2>
         <ul class="clean-list">
-          {sourceRefs.map((source: any) => (
-            <li><a href={entryHref('sources', source.data.id)}>{source.data.title}</a> <span class="meta">({source.data.type})</span></li>
+          {sortedChildEntries.map((item: any) => (
+            <li>
+              <a href={entryHref(item.collection, item.entry.data.id)}>{entryTitle(item.entry)}</a>
+              <span class="meta">
+                {item.entry.data.season && item.entry.data.episode ? ` S${String(item.entry.data.season).padStart(2, '0')}E${String(item.entry.data.episode).padStart(2, '0')}` : ''}
+                {item.entry.data.date ? ` · ${formatDate(item.entry.data.date, item.entry.data.date_precision)}` : ''}
+              </span>
+            </li>
           ))}
         </ul>
-      ) : (
-        <p class="meta">Unsourced.</p>
-      )}
-    </section>
+      </section>
+    )}
 
     <section class="detail-box">
       <h2>Related</h2>

@@ -1,0 +1,15 @@
+id: rangiroa-tuamotu-archipelago-french-polynesia
+name: Rangiroa, Tuamotu Archipelago, French Polynesia
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with No Reservations.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - french-polynesia
+sources:
+  - travel-places-github
+status: needs-review

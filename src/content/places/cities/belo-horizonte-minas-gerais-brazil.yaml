@@ -1,0 +1,15 @@
+id: belo-horizonte-minas-gerais-brazil
+name: Belo Horizonte, Minas Gerais, Brazil
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with Parts Unknown.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - brazil
+sources:
+  - travel-places-github
+status: needs-review

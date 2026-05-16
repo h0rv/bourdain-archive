@@ -1,0 +1,31 @@
+id: "the-layover-s02e06-dublin"
+title: "Dublin"
+kind: "episode"
+index_mode: "child"
+parent_id: "the-layover-show"
+type: "episode"
+show: "The Layover"
+season: 2
+episode: 6
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2013-01-07"
+date_precision: "day"
+summary: "Anthony Bourdain finds that Dublin’s food scene is keeping up with its famed drinking scene. From sweetbreads and lamb to a home-cooked bowl of pork stew, Tony covers all of what Dublin does best in a few short hours."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "dublin-united-kingdom"
+sources:
+  - "travel-places-github"
+  - "the-layover-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/The_Layover"

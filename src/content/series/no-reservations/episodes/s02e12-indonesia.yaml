@@ -1,0 +1,32 @@
+id: "no-reservations-s02e12-indonesia"
+title: "Indonesia"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 2
+episode: 12
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2006-06-19"
+date_precision: "day"
+summary: "Bourdain visit Jakarta where he is entertained by Pencak Silat martial art where performers showcased their ability to withstood torture, which shocked Bourdain. Then he enjoyed Padang cuisine, including the famed Rendang. During the shooting, the cameraman accidentally wrecked the stacked food plates on display. He then visit Garut where he watch Ram fighting, joining traditional dance and enjoying local cuisine, before relaxing at id:Kampung Sampireun Hotel Garut. He then travel to Bali to enjoy its famous delicacy Babi Guling."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "bali-indonesia"
+  - "jakarta-indonesia"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

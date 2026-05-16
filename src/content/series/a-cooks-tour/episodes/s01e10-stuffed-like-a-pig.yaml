@@ -1,0 +1,31 @@
+id: "a-cooks-tour-s01e10-stuffed-like-a-pig"
+title: "Stuffed Like a Pig"
+kind: "episode"
+index_mode: "child"
+parent_id: "a-cooks-tour-show"
+type: "episode"
+show: "A Cook's Tour"
+season: 1
+episode: 10
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2002-02-26"
+date_precision: "day"
+summary: "French local, Jose, takes Chef Tony Bourdain to the family farm, where they have been fattening a pig all year. The feast of the pig ensues and the entire village joins in the celebration. Then Tony's off to France to meet his brother Chris in Arcachon, the seaside town where Tony and his family spent the summers of his childhood."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "amarante-portugal"
+sources:
+  - "travel-places-github"
+  - "a-cooks-tour-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.cookingchanneltv.com/shows/a-cooks-tour/episodes/stuffed-like-a-pig-france-tour"

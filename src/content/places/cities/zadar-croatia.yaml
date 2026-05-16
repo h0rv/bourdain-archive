@@ -1,0 +1,15 @@
+id: zadar-croatia
+name: Zadar, Croatia
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with No Reservations.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - croatia
+sources:
+  - travel-places-github
+status: needs-review

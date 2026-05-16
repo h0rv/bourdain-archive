@@ -1,0 +1,31 @@
+id: "parts-unknown-s09e09-porto-portugal"
+title: "Porto, Portugal"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 9
+episode: 9
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2017-07-02"
+date_precision: "day"
+summary: "Food takes center stage in this tour of the northern Portugal city by Bourdain, whose local travel companions include his former Les Halles boss Jose Meirelles. A sumptuous pig tripe dinner at A Cozinha do Martinho, an at-home meal of sea lamprey and a stop at Café O Afonso for local specialty Francesinha highlight the trip which culminates with a traditional food celebration in the Douro Valley countryside."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "porto-portugal"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

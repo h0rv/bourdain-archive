@@ -1,0 +1,15 @@
+id: christchurch-new-zealand
+name: Christchurch, New Zealand
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with No Reservations.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - new-zealand
+sources:
+  - travel-places-github
+status: needs-review

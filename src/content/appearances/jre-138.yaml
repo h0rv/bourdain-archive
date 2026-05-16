@@ -24,4 +24,5 @@ sources:
   - youtube-jre-138-bourdain
 related: []
 status: confirmed
-availability: {}
+availability:
+  video_url: https://www.youtube.com/watch?v=28Qzxz5wsA0

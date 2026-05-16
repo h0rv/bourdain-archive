@@ -1,0 +1,26 @@
+id: tony-2026
+title: Tony
+type: film
+record_type: screen
+media_type: tv-video
+relation_to_bourdain: about
+contributors:
+  - matt-johnson
+  - dominic-sessa
+date: "2026-08"
+date_precision: month
+summary: Upcoming posthumous A24 biopic about a 19-year-old Anthony Bourdain in Provincetown, directed by Matt Johnson and starring Dominic Sessa.
+image_url: "https://atwenty-four.transforms.svdcdn.com/production/images/TNY_POSTER_FULL-SIZE.jpg?w=2025&auto=compress%2Cformat&fit=crop&dm=1777927831&s=6f6924c876e90cef65226664c5cb05df"
+tags:
+  - film
+  - posthumous
+  - legacy
+people:
+  - anthony-bourdain
+places: []
+sources:
+  - a24-tony-film
+related: []
+status: confirmed
+availability:
+  official_url: https://a24films.com/films/tony

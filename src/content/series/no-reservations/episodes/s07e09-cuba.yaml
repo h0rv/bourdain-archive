@@ -1,0 +1,31 @@
+id: "no-reservations-s07e09-cuba"
+title: "Cuba"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 7
+episode: 9
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2011-07-11"
+date_precision: "day"
+summary: "Tony travels to Cuba in the search of the island's heart and soul where beauty abounds in the people, the food and the architecture and streets that are riddled with cars from before the revolution."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "havana-cuba"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

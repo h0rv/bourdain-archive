@@ -1,0 +1,31 @@
+id: "a-cooks-tour-s01e12-traditional-tastes"
+title: "Traditional Tastes"
+kind: "episode"
+index_mode: "child"
+parent_id: "a-cooks-tour-show"
+type: "episode"
+show: "A Cook's Tour"
+season: 1
+episode: 12
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2002-03-12"
+date_precision: "day"
+summary: "In Fes, a British ex-pat shows Tony the real culinary traditions of Morocco, which revolve around home kitchens that cook pigeon bastilla, couscous with vegetables and salads. At the local market, Tony samples beef kefta balls."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "fes-morocco"
+sources:
+  - "travel-places-github"
+  - "a-cooks-tour-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.cookingchanneltv.com/shows/a-cooks-tour/episodes/traditional-tastes"

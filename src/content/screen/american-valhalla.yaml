@@ -1,0 +1,22 @@
+id: american-valhalla
+title: American Valhalla
+type: documentary
+record_type: screen
+media_type: tv-video
+relation_to_bourdain: featured
+contributors:
+  - anthony-bourdain
+date: "2017"
+date_precision: year
+summary: Music documentary appearance by Bourdain connected to Iggy Pop, Josh Homme, and creative collaboration.
+tags:
+  - documentary
+  - music
+people:
+  - anthony-bourdain
+places: []
+sources:
+  - rotten-tomatoes-bourdain-filmography
+related: []
+status: confirmed
+availability: {}

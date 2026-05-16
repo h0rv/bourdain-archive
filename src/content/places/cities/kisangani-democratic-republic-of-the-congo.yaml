@@ -1,0 +1,15 @@
+id: kisangani-democratic-republic-of-the-congo
+name: Kisangani, Democratic Republic of the Congo
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with Parts Unknown.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - democratic-republic-of-the-congo
+sources:
+  - travel-places-github
+status: needs-review

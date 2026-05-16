@@ -1,0 +1,15 @@
+id: philadelphia-united-states
+name: Philadelphia, United States
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with The Layover.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - united-states
+sources:
+  - travel-places-github
+status: needs-review

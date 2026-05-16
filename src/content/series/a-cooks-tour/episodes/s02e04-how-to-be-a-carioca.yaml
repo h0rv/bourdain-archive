@@ -1,0 +1,31 @@
+id: "a-cooks-tour-s02e04-how-to-be-a-carioca"
+title: "How to be a Carioca"
+kind: "episode"
+index_mode: "child"
+parent_id: "a-cooks-tour-show"
+type: "episode"
+show: "A Cook's Tour"
+season: 2
+episode: 4
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2003-02-02"
+date_precision: "day"
+summary: "Tony Bourdain's under the tutelage of an exemplary Carioca and willing to give this freestyle lifestyle a try -- minus the Speedo! A killer tan, a Brazilian barbecue and one too many Caipirinhas."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "rio-de-janeiro-brazil"
+sources:
+  - "travel-places-github"
+  - "a-cooks-tour-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.cookingchanneltv.com/shows/a-cooks-tour/episodes/how-to-be-a-carioca"

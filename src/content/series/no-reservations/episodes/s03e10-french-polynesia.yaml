@@ -1,0 +1,33 @@
+id: "no-reservations-s03e10-french-polynesia"
+title: "French Polynesia"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 3
+episode: 10
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2007-08-20"
+date_precision: "day"
+summary: "Tony retraces French post-Impressionist artist Paul Gauguin's travels through Tahiti, Tuamotu Archipelago, and the Marquesas Islands to see what drew the him there. During Tony's stay, he wrangles a shark, learns about Marquesan art such as tikis, and get inked with a Marquesan tattoo."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "pape-ete-tahiti-french-polynesia"
+  - "rangiroa-tuamotu-archipelago-french-polynesia"
+  - "hiva-oa-tahuata-marquesas-islands-french-polynesia"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

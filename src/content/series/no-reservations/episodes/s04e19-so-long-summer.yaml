@@ -1,0 +1,31 @@
+id: "no-reservations-s04e19-so-long-summer"
+title: "So Long, Summer"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 4
+episode: 19
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2008-09-01"
+date_precision: "day"
+summary: "In honor of Labor Day, Tony throws a backyard and poolside barbecue for his production crew as they reminisce about shows gone by, from its interesting guests to scenes never broadcast on domestic (North American) television. Nari Kye appears in this episode."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "manhattan-united-states"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

@@ -1,0 +1,31 @@
+id: "no-reservations-s06e08-harbin-china"
+title: "Harbin, China"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 6
+episode: 8
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2010-03-15"
+date_precision: "day"
+summary: "Tony visits the city of Harbin in northeastern China and experiences the mix of Chinese and Russian cultures there. He also visits an eccentric local entrepreneur who enjoys karaoke and all things American."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "harbin-china"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

@@ -1,0 +1,31 @@
+id: "no-reservations-s01e01-france-why-the-french-don-t-suck"
+title: "France: Why the French Don't Suck"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 1
+episode: 1
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2005-07-25"
+date_precision: "day"
+summary: "Tony's debut episode of this new series has him visiting Paris. He explores the city's famous catacombs, tries some absinthe, checks out one of the city's major meat markets, and spends the night in the room where Oscar Wilde died."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "paris"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

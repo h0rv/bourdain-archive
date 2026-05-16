@@ -1,0 +1,31 @@
+id: "the-layover-s01e07-amsterdam"
+title: "Amsterdam"
+kind: "episode"
+index_mode: "child"
+parent_id: "the-layover-show"
+type: "episode"
+show: "The Layover"
+season: 1
+episode: 7
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2012-01-02"
+date_precision: "day"
+summary: "The last time Anthony Bourdain was in Amsterdam was 40 years ago, and he slept in the park. Tony has just 36 hours to explore the city… this time with a slightly different mindset."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "amsterdam-netherlands"
+sources:
+  - "travel-places-github"
+  - "the-layover-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/The_Layover"

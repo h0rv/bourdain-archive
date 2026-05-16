@@ -1,0 +1,31 @@
+id: "no-reservations-s03e16-holiday-special"
+title: "Holiday Special"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 3
+episode: 16
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2007-12-10"
+date_precision: "day"
+summary: "Bourdain visits his brother's family in Connecticut for the holidays, with special guests Queens of the Stone Age. Tony gives a cooking tutorial on how to prepare the holiday meal. This episode was produced and directed by Rennik Soholt."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "danbury-united-states"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "http://www2.readingeagle.com/article.aspx?id=70789"

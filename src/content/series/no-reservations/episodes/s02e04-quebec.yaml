@@ -1,0 +1,34 @@
+id: "no-reservations-s02e04-quebec"
+title: "Quebec"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 2
+episode: 4
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2006-04-17"
+date_precision: "day"
+summary: "Tony visits the province of Quebec in Canada. He visits a duck farm with famed chef Martin Picard, then enjoys a decadent, foie gras-heavy meal at Picard's restaurant, Au Pied de Cochon in Montreal. He flies north to go seal hunting with the Inuit. He also enjoys poutine at La Banquise, sausages with maple syrup at a sugar house, and Montreal-style bagels, and learns to play hockey."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "inukjuak-canada"
+  - "marieville-canada"
+  - "montreal-canada"
+  - "rigaud-canada"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.imdb.com/title/tt0933410/locations?ref_=tt_dt_dt"

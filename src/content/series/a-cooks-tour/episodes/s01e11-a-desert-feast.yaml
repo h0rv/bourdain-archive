@@ -1,0 +1,31 @@
+id: "a-cooks-tour-s01e11-a-desert-feast"
+title: "A Desert Feast"
+kind: "episode"
+index_mode: "child"
+parent_id: "a-cooks-tour-show"
+type: "episode"
+show: "A Cook's Tour"
+season: 1
+episode: 11
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2002-03-05"
+date_precision: "day"
+summary: "Tony arrives in Morocco with one goal -- to eat roast sheep in the desert. On the edge of the Sahara, Berbers in blue lead him on a camel odyssey. Finally, the sheep roasts in a mud oven, eaten with hrira, a traditional soup eaten on special occasions."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "rissani-morocco"
+sources:
+  - "travel-places-github"
+  - "a-cooks-tour-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.cookingchanneltv.com/shows/a-cooks-tour/episodes/desert-feast"

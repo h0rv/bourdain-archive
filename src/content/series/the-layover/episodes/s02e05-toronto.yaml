@@ -1,0 +1,31 @@
+id: "the-layover-s02e05-toronto"
+title: "Toronto"
+kind: "episode"
+index_mode: "child"
+parent_id: "the-layover-show"
+type: "episode"
+show: "The Layover"
+season: 2
+episode: 5
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2012-12-17"
+date_precision: "day"
+summary: "Tony finds that there’s more to Toronto than what meets the eye. From nose-to-tail cuisine to authentic dim sum, Toronto has one of the most diverse food scenes in the world, and Tony attempts to see as much of it as he can in the little time he has."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "toronto-canada"
+sources:
+  - "travel-places-github"
+  - "the-layover-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/The_Layover"

@@ -1,0 +1,31 @@
+id: "no-reservations-s08e06-finland"
+title: "Finland"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 8
+episode: 6
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2012-05-14"
+date_precision: "day"
+summary: "Heeding the calls of his Finnish Facebook fans, Tony takes a trip to Helsinki, Finland. He joins musician Sami Yaffa for a liquored-up tour of the world's only pub tram, a bloody sauna and an unexpectedly exciting dinner with a cabbie's mother."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "helsinki-finland"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

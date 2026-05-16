@@ -1,0 +1,31 @@
+id: "no-reservations-s05e08-disappearing-manhattan"
+title: "Disappearing Manhattan"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 5
+episode: 8
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2009-02-23"
+date_precision: "day"
+summary: "Tony visits old establishments in Manhattan that are becoming a rarity in the city. He visits several old food stores in Hell's Kitchen with chef Michael Lomonaco, Keens Steakhouse with food writer Joshua Ozersky, Russ & Daughters and Katz's Delicatessen with novelist Joel Rose, Eisenberg's Sandwich and some of the German establishments in the Yorkville neighborhood with tour guide \"Famous Fat Dave\", Hop Kee in Chinatown with chef Chris Cheung, Le Veau d'Or with food writer Michael Batterberry, and dive bar Sophie's with writer Nick Tosches."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "manhattan-united-states"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

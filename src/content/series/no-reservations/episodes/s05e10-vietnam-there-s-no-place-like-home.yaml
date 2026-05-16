@@ -1,0 +1,32 @@
+id: "no-reservations-s05e10-vietnam-there-s-no-place-like-home"
+title: "Vietnam: There's No Place Like Home"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 5
+episode: 10
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2009-03-09"
+date_precision: "day"
+summary: "Tony visits Vietnam, accompanied by his former boss, Les Halles owner Philippe Lajaunie. He is there to pay his respects to the family of Madame Ngoc, an old friend and restaurateur whose kindness and warmth touched Tony during his past visits. He visits the countryside, street markets and newly upscale areas of Ho Chi Minh City. At the end of the episode, he considers moving there."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "ho-chi-minh-city-vietnam"
+  - "hoi-an-vietnam"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.imdb.com/title/tt1566960/locations?ref_=tt_dt_dt"

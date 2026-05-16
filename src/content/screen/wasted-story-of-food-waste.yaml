@@ -1,0 +1,23 @@
+id: wasted-story-of-food-waste
+title: "Wasted! The Story of Food Waste"
+type: documentary
+record_type: screen
+media_type: tv-video
+relation_to_bourdain: featured
+contributors:
+  - anthony-bourdain
+date: "2017"
+date_precision: year
+summary: Food-waste documentary featuring Bourdain and his advocacy around cooking, waste, and food systems.
+tags:
+  - documentary
+  - food-systems
+  - producer
+people:
+  - anthony-bourdain
+places: []
+sources:
+  - rotten-tomatoes-bourdain-filmography
+related: []
+status: confirmed
+availability: {}

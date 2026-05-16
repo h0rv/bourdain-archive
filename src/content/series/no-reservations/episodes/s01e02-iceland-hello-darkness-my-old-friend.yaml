@@ -1,0 +1,31 @@
+id: "no-reservations-s01e02-iceland-hello-darkness-my-old-friend"
+title: "Iceland: Hello Darkness My Old Friend"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 1
+episode: 2
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2005-08-01"
+date_precision: "day"
+summary: "This week Anthony travels to Reykjavík, Iceland, where in winter the volcanic islands see only about four hours of sunlight a day. Anthony finds the darkness comforting and learns how the Icelanders contend with the dark days - eating, drinking, spending time at the spa, and pumping iron! Tony tries Hákarl (fermented shark). Later, he visits the famous Blue Lagoon."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "reykjavik-iceland"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

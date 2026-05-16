@@ -1,0 +1,27 @@
+id: harvey-pekar-cleveland-comic
+title: Harvey Pekar / Gary Dumm Cleveland comic
+type: comic
+record_type: work
+media_type: book-print
+relation_to_bourdain: authored
+creator:
+  - anthony-bourdain
+  - harvey-pekar
+  - gary-dumm
+date: "2012-07-10"
+date_precision: day
+summary: Short Bourdain/Pekar/Dumm comic published around the Cleveland episode of No Reservations.
+tags:
+  - comic
+  - no-reservations
+  - cleveland
+people:
+  - anthony-bourdain
+places: []
+sources:
+  - tumblr-harvey-pekar-comic
+related:
+  - no-reservations-show
+status: partial
+availability:
+  official_url: https://anthonybourdain.tumblr.com/post/26934473398/heres-a-joint-comic-i-did-with-harvey-pekar-and

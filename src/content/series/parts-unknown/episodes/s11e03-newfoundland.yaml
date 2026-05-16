@@ -1,0 +1,33 @@
+id: "parts-unknown-s11e03-newfoundland"
+title: "Newfoundland"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 11
+episode: 3
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2018-05-13"
+date_precision: "day"
+summary: "An exploration of this rocky, east coast Canadian island by Bourdain reveals a magical place abundant in fish and wild game and steeped in distinctive traditions. Guided by prominent chefs Frederic Moran, Jeremy Charles and David McMillan, the host takes part in cod fishing, moose hunting, and axe throwing and dines on charred whelk with brasciola, caribou tartare, and Newfoundland classic Jiggs Dinner (boiled meat & vegetables). A side trip to the nearby French archipelago of St. Pierre is the setting for a home cooked meal of sea urchin pâté, stuffed squid over rice and braised halibut."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "petty-harbour-canada"
+  - "st-john-s-canada"
+  - "st-pierre-and-miquelon-france"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.cntraveler.com/story/recap-anthony-bourdains-parts-unknown-visits-newfoundland"

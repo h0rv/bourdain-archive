@@ -1,0 +1,31 @@
+id: "no-reservations-s09e02-sydney"
+title: "Sydney"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 9
+episode: 2
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2012-09-10"
+date_precision: "day"
+summary: "Tony travels to Sydney, Australia. Tony dives with sharks at Oceanworld Manly in Sydney, visits the sheep farms of the Blue Mountains and the chic innovative restaurants of the big city, samples fresh seafood, old school charcuterie, and the ubiquitous Australian barbie."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "sydney-australia"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

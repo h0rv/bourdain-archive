@@ -1,0 +1,15 @@
+id: addis-ababa-ethiopia
+name: Addis Ababa, Ethiopia
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with Parts Unknown.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - ethiopia
+sources:
+  - travel-places-github
+status: needs-review

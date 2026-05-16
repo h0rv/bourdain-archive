@@ -1,0 +1,31 @@
+id: "no-reservations-s05e02-venice"
+title: "Venice"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 5
+episode: 2
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2009-01-12"
+date_precision: "day"
+summary: "Tony goes in search of the less-touristy side of Venice, Italy, and meets locals and enjoys deep-fried crabs, baccalà and boiled calves' heads."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "venice-italy"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

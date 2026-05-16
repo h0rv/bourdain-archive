@@ -1,0 +1,33 @@
+id: "no-reservations-s08e01-mozambique"
+title: "Mozambique"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 8
+episode: 1
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2012-04-09"
+date_precision: "day"
+summary: "Tony travels to Mozambique and finds himself in a mysterious, post-colonial Africa. From Portuguese ruins on Mozambique Island to the vibrant metropolis of Maputo, Mozambique doesn't look like anywhere Tony has been so far."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "beira-mozambique"
+  - "maputo-mozambique"
+  - "mozambique-island-mozambique"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

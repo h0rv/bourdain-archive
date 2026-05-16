@@ -1,0 +1,31 @@
+id: "no-reservations-s07e05-ozarks"
+title: "Ozarks"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 7
+episode: 5
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2011-03-28"
+date_precision: "day"
+summary: "Tony visits West Plains, Missouri, backdrop of the book and film Winter's Bone, and eats at Fred and Red's. There, Tony explores the Ozark region and samples local specialties such as raccoon, venison and squirrel pot pie. He also goes fishing with novelist Daniel Woodrell, who breaks his shoulder on film."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "west-plains-united-states"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

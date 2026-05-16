@@ -1,0 +1,36 @@
+id: "no-reservations-s01e03-new-jersey"
+title: "New Jersey"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 1
+episode: 3
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2005-08-08"
+date_precision: "day"
+summary: "Tony visits the state of New Jersey. He takes us on a trip through his birthplace trying to dispel some common misconceptions of the Garden State. We learn about The Sopranos and other NJ landmarks as Tony reminisces. He also meets up with Nari Kye, an assistant, who teaches him Korean food."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "fort-lee-united-states"
+  - "barnegat-light-united-states"
+  - "atlantic-city-united-states"
+  - "camden-united-states"
+  - "warren-grove-united-states"
+  - "asbury-park-united-states"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "http://ethnicnj.com/bourdains-new-jersey-the-restaurants/"

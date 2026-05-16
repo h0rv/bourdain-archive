@@ -1,0 +1,35 @@
+id: "no-reservations-s01e06-sicily"
+title: "Sicily"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 1
+episode: 6
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2005-10-10"
+date_precision: "day"
+summary: "While on the island of Sicily, Tony is treated to tripe at the II Capo Market. He tries a spleen sandwich with the Governor of Sicily (Salvatore Cuffaro). Tony is persuaded to try a cliff dive and attempts to determine where you can find the greatest cannoli."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "agrigento-italy"
+  - "catania-italy"
+  - "parlermo-italy"
+  - "taormina-italy"
+  - "trapani-italy"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.imdb.com/title/tt0513622/locations?ref_=tt_dt_dt"

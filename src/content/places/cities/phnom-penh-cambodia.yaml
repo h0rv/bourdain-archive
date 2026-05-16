@@ -1,0 +1,15 @@
+id: phnom-penh-cambodia
+name: Phnom Penh, Cambodia
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with A Cook's Tour.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - cambodia
+sources:
+  - travel-places-github
+status: needs-review

@@ -1,0 +1,34 @@
+id: "no-reservations-s08e05-japan-cook-it-raw"
+title: "Japan: Cook It Raw"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 8
+episode: 5
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2012-05-07"
+date_precision: "day"
+summary: "Tony heads to Japan for the gastronomic event that is \"Cook it Raw\", which brings together some of the best chefs in the world to forage for local ingredients and serve the results to culinary experts."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "hakusan-city-japan"
+  - "kaga-japan"
+  - "kanazawa-japan"
+  - "tokyo"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.imdb.com/title/tt2375989/locations?ref_=tt_dt_dt"

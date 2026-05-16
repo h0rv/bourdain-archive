@@ -1,0 +1,34 @@
+id: "parts-unknown-s11e07-cajun-mardi-gras"
+title: "Cajun Mardi Gras"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 11
+episode: 7
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2018-06-17"
+date_precision: "day"
+summary: "In this celebration of Louisiana's Cajun culture, complete with Zydeco music and a crawfish boil, Bourdain goes off the beaten path and takes part in the less familiar Mardi Gras traditions of the region's history stemming from the French Middle Ages. Donning a conical hat, mask and colorful fringed costume, the host participates in the day long Courir de Mardi Gras in Mamou. Meals include a home cooked meal in Grand Coteau, lunch at Laura's 2 in Lafayette with creole cowboys, and boudin & cracklings at Billy's in Opelousas."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "mamou-united-states"
+  - "grand-coteau-united-states"
+  - "lafayette-united-states"
+  - "opelousas-united-states"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "http://cnnpressroom.blogs.cnn.com/2018/04/09/season-11-of-cnn-original-series-anthony-bourdain-parts-unknown-launches-sunday-april-29-at-9pm-with-a-tour-of-west-virginia-in-an-extended-episode/"

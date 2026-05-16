@@ -1,0 +1,35 @@
+id: "parts-unknown-s01e03-colombia"
+title: "Colombia"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 1
+episode: 3
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2013-04-28"
+date_precision: "day"
+summary: "The public face of Colombia has changed immensely over the past ten years and is still changing for the better. Tony will explore several regions of the country from the mountains down to the Caribbean coast to the coca leaf growing inland formerly controlled by drug cartels."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "bogota-colombia"
+  - "guaviare-colombia"
+  - "la-guajira-colombia"
+  - "meta-colombia"
+  - "valle-del-cauca-colombia"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.imdb.com/title/tt2849394/locations?ref_=tt_dt_dt"

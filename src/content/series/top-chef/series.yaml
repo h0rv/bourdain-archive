@@ -1,0 +1,26 @@
+id: top-chef-appearances
+title: Top Chef appearances
+kind: series
+index_mode: rollup
+type: show
+record_type: television
+media_type: tv-video
+relation_to_bourdain: featured
+contributors:
+  - anthony-bourdain
+date: "2006"
+date_precision: year
+summary: Grouped record for Bourdain's recurring guest judge appearances on Top Chef, represented by the Thanksgiving episode.
+tags:
+  - television
+  - competition
+  - judging
+people:
+  - anthony-bourdain
+places: []
+sources:
+  - top-chef-thanksgiving-apple-tv
+related: []
+status: partial
+availability:
+  streaming_url: https://tv.apple.com/us/episode/thanksgiving/umc.cmc.1wefemsv8xha4t28fykyo5ffc

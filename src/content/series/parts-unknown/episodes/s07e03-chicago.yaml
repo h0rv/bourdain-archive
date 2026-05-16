@@ -1,0 +1,31 @@
+id: "parts-unknown-s07e03-chicago"
+title: "Chicago"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 7
+episode: 3
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2016-05-01"
+date_precision: "day"
+summary: "Anthony and company explore the Windy City's culture, regarding its history, professional sports, as well as the city's notorious murder rate, including sit-downs with rapper Kendrick Lamar and his mother, as well as Punk icon and record producer Steve Albini."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "chicago-united-states"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

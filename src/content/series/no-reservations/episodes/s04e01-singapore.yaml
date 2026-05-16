@@ -1,0 +1,31 @@
+id: "no-reservations-s04e01-singapore"
+title: "Singapore"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 4
+episode: 1
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2008-01-07"
+date_precision: "day"
+summary: "Tony discovers the \"Hawker Centers\" (Singapore style food courts) featuring the local specialty chicken rice, sweet & spicy bone marrow soup, a shark fin dish, and spicy crab. Tony dines in a medical themed restaurant."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "singapore"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

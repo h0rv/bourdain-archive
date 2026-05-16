@@ -1,0 +1,15 @@
+id: dakar-senegal
+name: Dakar, Senegal
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with Parts Unknown.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - senegal
+sources:
+  - travel-places-github
+status: needs-review

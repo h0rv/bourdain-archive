@@ -3,6 +3,8 @@ import { withBase } from './site';
 const collectionPaths: Record<string, string> = {
   works: 'works',
   episodes: 'tv',
+  series: 'tv',
+  screen: 'screen',
   appearances: 'appearances',
   literature: 'literature',
   events: 'events',
@@ -59,10 +61,10 @@ export function sourceGroupFor(data: any): string {
   if (id.startsWith('medium-') || url.includes('medium.com/')) return 'medium';
   if (id.startsWith('list-') || id.startsWith('bourdain-list') || url.includes('li.st/') || url.includes('bourdain.greg.technology')) return 'list';
   if (type === 'field-note' || (url.includes('explorepartsunknown.com') && url.includes('field-notes'))) return 'field-notes';
-  if (['episode-guide', 'official-show-page', 'official-video', 'video-series', 'dead-official-page', 'official-archive', 'dataset', 'fan-index', 'transcript-index'].includes(type)) return 'tv';
+  if (['episode-guide', 'official-show-page', 'official-video', 'video-series', 'dead-official-page', 'official-archive', 'official-film-page', 'tv-catalog', 'streaming-catalog', 'dataset', 'fan-index', 'transcript-index'].includes(type)) return 'tv';
   if (type.includes('interview') || ['podcast', 'panel', 'radio-archive', 'audio-archive', 'audio-interview'].includes(type)) return 'interviews';
   if (['article', 'essay', 'profile', 'review', 'obituary'].includes(type)) return 'articles';
-  if (type.includes('awards') || type.includes('library') || type.includes('catalog') || type.includes('authority') || type === 'publisher-page') return 'catalogs';
+  if (type.includes('awards') || type.includes('library') || type.includes('catalog') || type.includes('authority') || type === 'publisher-page' || type === 'filmography') return 'catalogs';
   if (type === 'social-profile') return 'socials';
   return 'other';
 }
@@ -90,7 +92,7 @@ export function mediaTypeFor(data: any, collection?: string, sourceGroup?: strin
   if (type === 'life-event') return 'life-event';
   if (['book', 'comic'].includes(type)) return 'book-print';
   if (['article', 'essay', 'field-note', 'profile', 'review', 'obituary', 'obit', 'tribute', 'photo-essay', 'official-article', 'press-release'].includes(type)) return 'article-essay';
-  if (['show', 'episode', 'video', 'official-video', 'video-series', 'episode-guide', 'official-show-page', 'dead-official-page', 'television-archive', 'social-video'].includes(type)) return 'tv-video';
+  if (['show', 'episode', 'video', 'film', 'documentary', 'television', 'voice-role', 'acted-role', 'adaptation', 'official-video', 'video-series', 'episode-guide', 'official-show-page', 'official-film-page', 'dead-official-page', 'television-archive', 'social-video'].includes(type)) return 'tv-video';
   if (['podcast', 'radio', 'radio-archive', 'audio-archive', 'audio-interview', 'radio-interview', 'dead-podcast-page'].includes(type)) return 'audio';
   if (type.includes('interview') || ['panel'].includes(type)) return 'interview-talk';
   if (['tumblr', 'medium', 'list', 'socials'].includes(group) || type === 'social-profile') return 'social-web';
@@ -101,6 +103,22 @@ export function mediaTypeFor(data: any, collection?: string, sourceGroup?: strin
 
 export function relationToAuthorship(relation?: string): 'by' | 'about' {
   return relation === 'authored' || relation === 'featured' ? 'by' : 'about';
+}
+
+export function indexModeFor(data: any, collection?: string): 'rollup' | 'child' | 'hidden' {
+  if (data.index_mode === 'rollup' || data.index_mode === 'child' || data.index_mode === 'hidden') return data.index_mode;
+  if (collection === 'sources') return 'hidden';
+  if (data.parent_id) return 'child';
+  if (data.type === 'episode' || data.kind === 'episode') return 'child';
+  return 'rollup';
+}
+
+export function kindFor(data: any, collection?: string): string {
+  if (data.kind) return data.kind;
+  if (collection === 'series' && data.type === 'show') return 'series';
+  if (collection === 'sources') return 'source';
+  if (collection === 'images') return 'image';
+  return data.type ?? collection ?? 'record';
 }
 
 export function sourceTimelineDate(data: any): { date?: string; precision: string } {
@@ -208,6 +226,29 @@ export function youtubeId(url?: string | null): string | undefined {
   return undefined;
 }
 
+const blockedPreviewImageHosts = new Set([
+  'opengraph.githubassets.com',
+  'interviews.televisionacademy.com',
+]);
+
+const blockedPreviewImagePaths = [
+  /^archive\.org\/services\/img\/The_Nerdist_Podcast_528$/i,
+];
+
+export function isUsablePreviewImage(url?: string | null): boolean {
+  if (!url) return false;
+  try {
+    const parsed = new URL(url);
+    const host = parsed.hostname.replace(/^www\./, '');
+    if (blockedPreviewImageHosts.has(host)) return false;
+    const hostAndPath = `${host}${parsed.pathname}`;
+    if (blockedPreviewImagePaths.some((pattern) => pattern.test(hostAndPath))) return false;
+    return true;
+  } catch {
+    return url.startsWith('/');
+  }
+}
+
 export function archiveTargetsForUrl(url?: string | null) {
   if (!url) return undefined;
   const encoded = encodeURI(url);
@@ -222,11 +263,12 @@ export function previewForUrl(url?: string | null, cache?: Record<string, any>) 
   const host = hostnameForUrl(url);
   const videoId = youtubeId(url);
   const cached = url ? cache?.[url] : undefined;
+  const cachedImage = isUsablePreviewImage(cached?.image) ? cached?.image : undefined;
   return {
     host,
     title: cached?.title,
     description: cached?.description,
-    image: videoId ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` : cached?.image,
+    image: videoId ? `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg` : cachedImage,
     favicon: host ? `https://www.google.com/s2/favicons?domain=${host}&sz=128` : undefined,
     archive: archiveTargetsForUrl(url),
   };
@@ -234,6 +276,7 @@ export function previewForUrl(url?: string | null, cache?: Record<string, any>) 
 
 export function siteAssetUrl(url?: string | null): string | undefined {
   if (!url) return undefined;
+  if (!isUsablePreviewImage(url)) return undefined;
   return url.startsWith('/') ? withBase(url) : url;
 }
 

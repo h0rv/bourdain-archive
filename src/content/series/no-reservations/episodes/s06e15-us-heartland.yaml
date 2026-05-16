@@ -1,0 +1,36 @@
+id: "no-reservations-s06e15-us-heartland"
+title: "US Heartland"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 6
+episode: 15
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2010-07-12"
+date_precision: "day"
+summary: "While on a speaking tour through the United States, Tony visits the cities Livonia, Michigan, Columbus, Ohio, Minneapolis, Denver, Austin and Milwaukee and searches out high-end and innovative dining to counter a perception some have that the middle of the United States represents a culinary wasteland."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "denver-united-states"
+  - "livonia-united-states"
+  - "minneapolis-united-states"
+  - "columbus-united-states"
+  - "austin-united-states"
+  - "milwaukee-united-states"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

@@ -1,0 +1,32 @@
+id: "parts-unknown-s06e09-charleston-sc"
+title: "Charleston, SC"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 6
+episode: 9
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2015-11-15"
+date_precision: "day"
+summary: "Bourdain visits Charleston, home to renowned Chef Sean Brock, who takes Bourdain to the Waffle House where the duo enjoy a late-night sampling of Waffle House fare. Later, they attend a Charleston RiverDogs game with actor Bill Murray; Murray accompanies them to Brock's restaurant Husk where the restaurant's innovative-yet-traditional Southern cooking is put on display. They also explore traditional Gullah cuisine on James Island. Brock introduces Bourdain to a unique commercial fishing venture based in Charleston harbor, as well as Scott's Pit BBQ owned and operated by Rodney Scott in Hemingway, South Carolina."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "charleston-united-states"
+  - "hemingway-united-states"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

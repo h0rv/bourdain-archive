@@ -1,0 +1,31 @@
+id: "no-reservations-s05e15-san-francisco"
+title: "San Francisco"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 5
+episode: 15
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2009-08-10"
+date_precision: "day"
+summary: "Tony's adventures takes him to the city of San Francisco, a city of districts and contradictions. So paying an homage to Steve McQueen's iconic 1968 film Bullitt; Tony takes his rented Ford Mustang through the streets of San Francisco, from Fisherman's Wharf, to Haight-Ashbury, to Chinatown, and across the bridge into Oakland, California. Tony dines with poet August Kleinzahler, and then off to chef Chris Cosentino's restaurant for an offal tasting."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "san-francisco-united-states"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

@@ -1,0 +1,32 @@
+id: "parts-unknown-s01e07-peru"
+title: "Peru"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 1
+episode: 7
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2013-06-02"
+date_precision: "day"
+summary: "Tony and his friend, world-renowned chef Eric Ripert, explore the far reaches of indigenous Andes in search of a rare variety of wild cocoa that is said to be the best in the world. They move from hip, modern Lima back in time into pre-Columbian Peru."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "chiclayo-peru"
+  - "lima-peru"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.imdb.com/title/tt2849408/locations?ref_=tt_dt_dt"

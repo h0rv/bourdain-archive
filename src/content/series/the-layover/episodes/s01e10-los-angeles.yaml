@@ -1,0 +1,31 @@
+id: "the-layover-s01e10-los-angeles"
+title: "Los Angeles"
+kind: "episode"
+index_mode: "child"
+parent_id: "the-layover-show"
+type: "episode"
+show: "The Layover"
+season: 1
+episode: 10
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2012-01-23"
+date_precision: "day"
+summary: "Anthony Bourdain has 48 hours to eat the best food that LA has to offer. He stays at one of Hollywood's most luxurious and legendary hotels, Chateau Marmont."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "los-angeles-united-states"
+sources:
+  - "travel-places-github"
+  - "the-layover-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/The_Layover"

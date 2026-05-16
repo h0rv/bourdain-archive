@@ -1,0 +1,15 @@
+id: luang-prabang-laos
+name: Luang Prabang, Laos
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with Parts Unknown.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - laos
+sources:
+  - travel-places-github
+status: needs-review

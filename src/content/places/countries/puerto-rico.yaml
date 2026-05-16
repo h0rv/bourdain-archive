@@ -1,0 +1,14 @@
+id: puerto-rico
+name: Puerto Rico
+kind: place
+index_mode: child
+type: place
+summary: Country associated with Bourdain travel programming.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places: []
+sources:
+  - travel-places-github
+status: needs-review

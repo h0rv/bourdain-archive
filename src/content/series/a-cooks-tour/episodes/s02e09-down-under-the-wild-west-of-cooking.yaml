@@ -1,0 +1,31 @@
+id: "a-cooks-tour-s02e09-down-under-the-wild-west-of-cooking"
+title: "Down Under: The Wild West of Cooking"
+kind: "episode"
+index_mode: "child"
+parent_id: "a-cooks-tour-show"
+type: "episode"
+show: "A Cook's Tour"
+season: 2
+episode: 9
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2003-03-09"
+date_precision: "day"
+summary: "Melbourne is the food-craziest, English-speaking city in the world. From the wild man of Australian cheese to breeders of rare English pigs, in Melbourne, chefs rule! These food lovers are Tony's kind of folk -- gun slinging chefs in a real foodie town!"
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "melbourne-australia"
+sources:
+  - "travel-places-github"
+  - "a-cooks-tour-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.cookingchanneltv.com/shows/a-cooks-tour/episodes/down-under-the-wild-west-of-cooking"

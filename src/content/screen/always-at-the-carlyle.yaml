@@ -1,0 +1,23 @@
+id: always-at-the-carlyle
+title: Always at the Carlyle
+type: documentary
+record_type: screen
+media_type: tv-video
+relation_to_bourdain: featured
+contributors:
+  - anthony-bourdain
+date: "2018"
+date_precision: year
+summary: Documentary appearance by Bourdain about the Carlyle Hotel and New York cultural life.
+tags:
+  - documentary
+  - new-york
+people:
+  - anthony-bourdain
+places:
+  - new-york-city
+sources:
+  - rotten-tomatoes-bourdain-filmography
+related: []
+status: confirmed
+availability: {}

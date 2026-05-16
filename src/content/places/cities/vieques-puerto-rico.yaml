@@ -1,0 +1,15 @@
+id: vieques-puerto-rico
+name: Vieques, Puerto Rico
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with Parts Unknown.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - puerto-rico
+sources:
+  - travel-places-github
+status: needs-review

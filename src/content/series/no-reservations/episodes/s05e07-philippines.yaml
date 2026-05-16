@@ -1,0 +1,33 @@
+id: "no-reservations-s05e07-philippines"
+title: "Philippines"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 5
+episode: 7
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2009-02-16"
+date_precision: "day"
+summary: "Tony visits Manila, Pampanga, and Cebu in the Philippines, traveling around with one of the runners-up of his \"FANatic\" contest, Augusto Elefano, to figure out \"just who are the Filipino people\". After tasting Cebu's famous Lechon, he considered it as the \"best pig ever.\""
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "cebu-philippines"
+  - "manila-philippines"
+  - "pampanga-philippines"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

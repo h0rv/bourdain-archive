@@ -1,0 +1,31 @@
+id: "the-layover-s02e03-philadelphia"
+title: "Philadelphia"
+kind: "episode"
+index_mode: "child"
+parent_id: "the-layover-show"
+type: "episode"
+show: "The Layover"
+season: 2
+episode: 3
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2012-12-03"
+date_precision: "day"
+summary: "Tony goes beyond the cheesesteak in Philadelphia. He dines on modern Israeli food with Marc Vetri, throws back the citywide special at Dirty Frank's & learns the real story behind the drinking & carousing of our Founding Fathers."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "philadelphia-united-states"
+sources:
+  - "travel-places-github"
+  - "the-layover-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/The_Layover"

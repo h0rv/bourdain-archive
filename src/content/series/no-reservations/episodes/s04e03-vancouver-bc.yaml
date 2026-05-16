@@ -1,0 +1,31 @@
+id: "no-reservations-s04e03-vancouver-bc"
+title: "Vancouver, BC"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 4
+episode: 3
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2008-01-21"
+date_precision: "day"
+summary: "Tony visits Vancouver, British Columbia, Canada, and explores the city's restaurant culture with three chef friends: Pino Posteraro, Hidekazu Tojo, and Vikram Vij. He also attempts to ski at Whistler, visits with the video gaming developers at EA Canada, and films a small role in the Uwe Boll action movie Far Cry. He also meets up with Nari Kye again."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "vancouver-canada"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

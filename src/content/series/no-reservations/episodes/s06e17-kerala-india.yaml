@@ -1,0 +1,31 @@
+id: "no-reservations-s06e17-kerala-india"
+title: "Kerala, India"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 6
+episode: 17
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2010-07-26"
+date_precision: "day"
+summary: "Tony visits the state of Kerala in India, where he enjoys the local cuisine, such as Malabar Matthi curry, and meets local film star Mammootty on the set of the film Pokkiri Raja."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "kerala-india"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

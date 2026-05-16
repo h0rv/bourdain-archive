@@ -1,0 +1,31 @@
+id: "parts-unknown-s06e05-bay-area"
+title: "Bay Area"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 6
+episode: 5
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2015-10-18"
+date_precision: "day"
+summary: "Bourdain visits the Bay Areas of San Francisco, Oakland and San Jose to take a personal journey - in martial arts training with Brazilian Jiu Jitsu instructor Kurt Osiander, and healing through food, featuring dinner at the original Trader Vic's with author Sean Wilsey (Oh the Glory of it All) and at soul food restaurant Real Miss Ollie's with Bobby Seale (Black Panthers founding member)."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "san-francisco-united-states"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

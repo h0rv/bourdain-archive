@@ -1,0 +1,31 @@
+id: "no-reservations-s07e06-brazil-the-amazon"
+title: "Brazil (the Amazon)"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 7
+episode: 6
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2011-04-11"
+date_precision: "day"
+summary: "Tony visits the city of Belém and the Amazon Rainforest in search of the undiscovered parts of Brazilian and more specifically Amazonian cuisine."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "belem-brazil"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

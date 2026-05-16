@@ -1,0 +1,15 @@
+id: jeddah-saudi-arabia
+name: Jeddah, Saudi Arabia
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with No Reservations.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - saudi-arabia
+sources:
+  - travel-places-github
+status: needs-review

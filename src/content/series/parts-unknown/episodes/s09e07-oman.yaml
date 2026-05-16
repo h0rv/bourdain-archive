@@ -1,0 +1,32 @@
+id: "parts-unknown-s09e07-oman"
+title: "Oman"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 9
+episode: 7
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2017-06-11"
+date_precision: "day"
+summary: "Bourdain takes his first journey to the Sultanate of Oman and finds a peaceful land of remarkable beauty that defies expectations. His travels include the capital city Muscat, as well as port city Muttrah to restaurant Bait Al Luban for shuwa, a special dish made from the complex process of cooking meat buried in the ground for days over hot coals, and Sharqiya Sands, on the edge of the Empty Quarter, to dine with the local Bedouins who inhabit the world's largest sand desert."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "jebel-akhdar-oman"
+  - "muscat-oman"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://explorepartsunknown.com/oman/bourdains-field-notes-oman/"

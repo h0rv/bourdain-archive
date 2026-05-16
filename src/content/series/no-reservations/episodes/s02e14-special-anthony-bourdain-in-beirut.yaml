@@ -1,0 +1,31 @@
+id: "no-reservations-s02e14-special-anthony-bourdain-in-beirut"
+title: "Special: Anthony Bourdain in Beirut"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 2
+episode: 14
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2006-08-21"
+date_precision: "day"
+summary: "Anthony Bourdain and his crew travel to Lebanon. They discover a beautiful country filled with proud, generous people and delicious food. However, they find themselves in the middle of a tense, uncertain, and violent conflict., the Israel-Lebanon War."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "beirut"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

@@ -1,0 +1,35 @@
+id: "no-reservations-s06e14-caribbean-island-hopping"
+title: "Caribbean Island Hopping"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 6
+episode: 14
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2010-07-05"
+date_precision: "day"
+summary: "Tony visits St. Vincent and the Grenadines. He meets with chef Norman van Aken, a fusion pioneer, and they visit the Tobago Cays. He also participates in an opossum hunt and eats the resulting stew. He goes scuba diving and eats at a cafeteria-style restaurant in the capital city, Kingstown."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "petit-saint-vincent-saint-vincent-and-the-grenadines"
+  - "happy-island-saint-vincent-and-the-grenadines"
+  - "union-island-saint-vincent-and-the-grenadines"
+  - "bequai-saint-vincent-and-the-grenadines"
+  - "saint-vincent-and-the-grenadines"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "http://www.noreservationslocations.com/caribbean-island-hopping-episode.html"

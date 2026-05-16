@@ -1,0 +1,31 @@
+id: "no-reservations-s05e04-pico-island"
+title: "Pico Island"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 5
+episode: 4
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2009-01-26"
+date_precision: "day"
+summary: "After years of working alongside Azorean Portuguese immigrants in his early cooking career in New England, Tony travels to the Portuguese islands of the Azores. There, he visits a boiling geyser, and island hops to find out how the history, the region, and the food, all shaped and molded, the people with Azorean heritage of New England."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "azores-portugal"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

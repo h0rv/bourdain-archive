@@ -1,0 +1,33 @@
+id: "no-reservations-s09e04-emilia-romagna"
+title: "Emilia Romagna"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 9
+episode: 4
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2012-09-24"
+date_precision: "day"
+summary: "Tony travels to the Emilia-Romagna region of Northern Italy with American expat chef Michael White. Tony races a Ferrari around the Autodromo Enzo e Dino Ferrari racing circuit in nearby Imola."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "bologna-italy"
+  - "modena-italy"
+  - "polesine-parmense-italy"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.imdb.com/title/tt2388838/locations?ref_=tt_dt_dt"

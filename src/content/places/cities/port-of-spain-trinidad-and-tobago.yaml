@@ -1,0 +1,15 @@
+id: port-of-spain-trinidad-and-tobago
+name: Port Of Spain, Trinidad and Tobago
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with Parts Unknown.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - trinidad-and-tobago
+sources:
+  - travel-places-github
+status: needs-review

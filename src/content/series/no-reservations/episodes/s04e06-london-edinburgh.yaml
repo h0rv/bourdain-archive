@@ -1,0 +1,32 @@
+id: "no-reservations-s04e06-london-edinburgh"
+title: "London/Edinburgh"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 4
+episode: 6
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2008-02-11"
+date_precision: "day"
+summary: "Tony visits London, and Edinburgh, United Kingdom, and meets with local chefs and raconteurs, including chefs Fergus Henderson, Marco Pierre White and Tom Kitchin. He also records a spoken-word track with the band Morcheeba."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "london-united-kingdom"
+  - "edinburgh-united-kingdom"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

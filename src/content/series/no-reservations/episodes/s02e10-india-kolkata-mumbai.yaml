@@ -1,0 +1,32 @@
+id: "no-reservations-s02e10-india-kolkata-mumbai"
+title: "India (Kolkata/Mumbai)"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 2
+episode: 10
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2006-06-05"
+date_precision: "day"
+summary: "Over the years, Tony Bourdain has fallen in love with India. The culture, the cuisine, the communities - it's all delicious and enchanting. Tony travels to Kolkata and Mumbai, formerly Calcutta and Bombay, to rediscover the magic of this beautiful land. While on his journey here he learns how to play cricket."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "kolkata-india"
+  - "mumbai-india"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

@@ -1,0 +1,31 @@
+id: "the-layover-s01e01-singapore"
+title: "Singapore"
+kind: "episode"
+index_mode: "child"
+parent_id: "the-layover-show"
+type: "episode"
+show: "The Layover"
+season: 1
+episode: 1
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2011-11-21"
+date_precision: "day"
+summary: "Tony's first 24-hour layover lands him in Singapore, a melting pot of cultures and ethnicities that all come together over a national obsession with food. Tony's friends take him on a tour of the hyper-modern city that manages to stay true to its culinary roots."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "singapore"
+sources:
+  - "travel-places-github"
+  - "the-layover-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/The_Layover"

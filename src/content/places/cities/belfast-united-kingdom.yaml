@@ -1,0 +1,15 @@
+id: belfast-united-kingdom
+name: Belfast, United Kingdom
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with No Reservations.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - united-kingdom
+sources:
+  - travel-places-github
+status: needs-review

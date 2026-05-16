@@ -1,0 +1,31 @@
+id: "a-cooks-tour-s01e13-the-cook-who-came-in-from-the-cold"
+title: "The Cook Who Came In From the Cold"
+kind: "episode"
+index_mode: "child"
+parent_id: "a-cooks-tour-show"
+type: "episode"
+show: "A Cook's Tour"
+season: 1
+episode: 13
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2002-03-19"
+date_precision: "day"
+summary: "Growing up during the Cold War, chef Tony Bourdain secretly longed to be a spy. Now, he has to settle for a guided tour of St. Petersburg. His guide, Zamir, shows him the best blini and borscht in town plus braised reindeer and pickled salad."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "st-petersburg-russia"
+sources:
+  - "travel-places-github"
+  - "a-cooks-tour-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.cookingchanneltv.com/shows/a-cooks-tour/episodes/the-cook-who-came-in-from-the-cold"

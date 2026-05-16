@@ -1,0 +1,15 @@
+id: saint-martin-saint-martin
+name: Saint-Martin, Saint-Martin
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with A Cook's Tour.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - saint-martin
+sources:
+  - travel-places-github
+status: needs-review

@@ -1,0 +1,31 @@
+id: "no-reservations-s04e13-saudi-arabia"
+title: "Saudi Arabia"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 4
+episode: 13
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2008-07-21"
+date_precision: "day"
+summary: "In a special episode of No Reservations, the show ran a \"FANatic contest\", in which viewers were asked to submit a tape nominating their home town or country as a destination for a future episode of the show. The winner of the contest was Danya Alhamrani, and in this episode, Bourdain and crew visit her hometown of Jeddah, Saudi Arabia."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "jeddah-saudi-arabia"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

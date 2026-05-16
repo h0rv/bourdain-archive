@@ -1,0 +1,31 @@
+id: "no-reservations-s04e16-tokyo"
+title: "Tokyo"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 4
+episode: 16
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2008-08-11"
+date_precision: "day"
+summary: "Tony jets to Tokyo, Japan, to look for a perfect piece of sushi and a perfect knife blade. He enjoys soba, yakitori, and designer cocktail drinks. He meets up with famed chef Masaharu Morimoto and tries to learn the martial art of kendo and the subtleties of Japanese flower arranging known as ikebana."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "tokyo"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

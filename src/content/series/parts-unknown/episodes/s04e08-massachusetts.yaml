@@ -1,0 +1,32 @@
+id: "parts-unknown-s04e08-massachusetts"
+title: "Massachusetts"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 4
+episode: 8
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2014-11-09"
+date_precision: "day"
+summary: "Anthony Bourdain explores an oft-overlooked Massachusetts, meets up with some old friends, and makes some new ones along the way. Bourdain visits Provincetown on Cape Cod and reminisces about the time he spent there as a young adult. He then travels to Franklin County in western Massachusetts for an exploration of the heroin epidemic in the area."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "provincetown-united-states"
+  - "franklin-county-united-states"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

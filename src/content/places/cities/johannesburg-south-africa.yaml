@@ -1,0 +1,15 @@
+id: johannesburg-south-africa
+name: Johannesburg, South Africa
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with Parts Unknown.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - south-africa
+sources:
+  - travel-places-github
+status: needs-review

@@ -1,0 +1,36 @@
+id: "no-reservations-s04e14-uruguay"
+title: "Uruguay"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 4
+episode: 14
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2008-07-28"
+date_precision: "day"
+summary: "Tony travels to Uruguay with his brother to research their roots after learning that they have family connections there. They enjoy chivitos, and other local specialties."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "cabo-polonio-uruguay"
+  - "garzon-uruguay"
+  - "jose-ignacio-uruguay"
+  - "lavalleja-uruguay"
+  - "maldonado-uruguay"
+  - "montevideo-uruguay"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.imdb.com/title/tt1277182/locations?ref_=tt_dt_dt"

@@ -20,6 +20,7 @@ const REFRESH = process.argv.includes('--refresh');
 const CONCURRENCY = 4;
 const TIMEOUT_MS = 10_000;
 const HTML_TYPES = ['text/html', 'application/xhtml+xml'];
+const BLOCKED_IMAGE_HOSTS = new Set(['interviews.televisionacademy.com']);
 
 function htmlDecode(value) {
   return value
@@ -114,6 +115,17 @@ function absolutize(url, base) {
   }
 }
 
+function usablePreviewImage(url) {
+  if (!url) return undefined;
+  try {
+    const host = new URL(url).hostname.replace(/^www\./, '');
+    if (BLOCKED_IMAGE_HOSTS.has(host)) return undefined;
+    return url;
+  } catch {
+    return undefined;
+  }
+}
+
 async function fetchPreview(url) {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), TIMEOUT_MS);
@@ -131,13 +143,13 @@ async function fetchPreview(url) {
 
     const html = await response.text();
     const finalUrl = response.url || url;
-    const image = absolutize(
+    const image = usablePreviewImage(absolutize(
       metaContent(html, 'og:image:secure_url') ??
       metaContent(html, 'og:image') ??
       metaContent(html, 'twitter:image') ??
       metaContent(html, 'twitter:image:src'),
       finalUrl,
-    );
+    ));
     const title = metaContent(html, 'og:title') ?? metaContent(html, 'twitter:title') ?? titleContent(html);
     const description = metaContent(html, 'og:description') ?? metaContent(html, 'description') ?? metaContent(html, 'twitter:description');
 

@@ -1,0 +1,33 @@
+id: "parts-unknown-s04e06-tanzania"
+title: "Tanzania"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 4
+episode: 6
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2014-10-26"
+date_precision: "day"
+summary: "Leaving behind the Africa we've come to know in the news — full of corruption, poverty and conflict — Tony embraces the wild, untamed continent of mystery, adventure and exoticism during a visit to Tanzania. Bourdain visits Zanzibar, a one-time slave trade hub, and enjoys the island's famous foods, from mandazi to street food including grilled seafood and the famous Zanzibari pizza. On an excursion to the Serengeti and Ngorongoro Crater, Bourdain comes face to face with lions, elephants, and the great migration."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "ngorongoro-crater-tanzania"
+  - "serengeti-tanzania"
+  - "zanzibar-tanzania"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.imdb.com/title/tt4129732/plotsummary?ref_=tt_ov_pl"

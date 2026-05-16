@@ -1,0 +1,15 @@
+id: kampot-cambodia
+name: Kampot, Cambodia
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with No Reservations.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - cambodia
+sources:
+  - travel-places-github
+status: needs-review

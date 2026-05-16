@@ -1,0 +1,42 @@
+id: "no-reservations-s04e15-u-s-southwest"
+title: "U.S. Southwest"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 4
+episode: 15
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2008-08-04"
+date_precision: "day"
+summary: "Tony travels through the US states of California, Arizona, New Mexico and Texas. In Phoenix, Arizona, Tony meets with rock legend Alice Cooper at Cooper's restaurant. In Texas, he shoots machine guns and dines with another rock legend, Ted Nugent."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "green-valley-united-states"
+  - "phoenix-united-states"
+  - "indio-united-states"
+  - "salton-sea-united-states"
+  - "niland-united-states"
+  - "palm-springs-united-states"
+  - "bombay-beach-united-states"
+  - "abiquiu-united-states"
+  - "hatch-united-states"
+  - "amarillo-united-states"
+  - "woodway-united-states"
+  - "waco-united-states"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.imdb.com/title/tt1591672/locations?ref_=tt_dt_dt"

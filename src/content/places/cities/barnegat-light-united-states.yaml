@@ -1,0 +1,15 @@
+id: barnegat-light-united-states
+name: Barnegat Light, United States
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with No Reservations.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - united-states
+sources:
+  - travel-places-github
+status: needs-review

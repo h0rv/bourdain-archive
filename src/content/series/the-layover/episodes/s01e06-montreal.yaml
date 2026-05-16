@@ -1,0 +1,31 @@
+id: "the-layover-s01e06-montreal"
+title: "Montreal"
+kind: "episode"
+index_mode: "child"
+parent_id: "the-layover-show"
+type: "episode"
+show: "The Layover"
+season: 1
+episode: 6
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2011-12-26"
+date_precision: "day"
+summary: "A Montreal Layover for Tony means calling up local friends like Martin Picard to explore the city's hot spots that can't be found in any guidebook. He sees first hand how intrinsic the local environment is to food and fun."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "montreal-canada"
+sources:
+  - "travel-places-github"
+  - "the-layover-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/The_Layover"

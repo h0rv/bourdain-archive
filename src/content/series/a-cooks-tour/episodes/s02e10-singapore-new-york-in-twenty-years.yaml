@@ -1,0 +1,31 @@
+id: "a-cooks-tour-s02e10-singapore-new-york-in-twenty-years"
+title: "Singapore: New York in Twenty Years"
+kind: "episode"
+index_mode: "child"
+parent_id: "a-cooks-tour-show"
+type: "episode"
+show: "A Cook's Tour"
+season: 2
+episode: 10
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2003-03-16"
+date_precision: "day"
+summary: "Singapore is filled with food, food, food! Naturally, Tony Bourdain feels right at home there. From chicken congee served with root beer floats, to stunning \"wet markets\" and a red light district right nearby, this is surely the land of plenty! Surrounded by this rich bounty, Tony wants nothing more than to lose himself in this city!"
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "singapore"
+sources:
+  - "travel-places-github"
+  - "a-cooks-tour-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.cookingchanneltv.com/shows/a-cooks-tour/episodes/singapore-new-york-in-twenty-years"

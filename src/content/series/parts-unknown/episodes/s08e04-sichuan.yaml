@@ -1,0 +1,32 @@
+id: "parts-unknown-s08e04-sichuan"
+title: "Sichuan"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 8
+episode: 4
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2016-10-16"
+date_precision: "day"
+summary: "Michelin star chef Éric Ripert is introduced to China and Sichuan province by good friend Bourdain who intentionally tortures with mouth-numbing, sinisterly spicy meals such as Hot pots, green peppercorn fish...etc. and tests his endurance and adaptability to Chinese cooking skills with friendliness.They also visit the world's largest stone Buddha, seek out a local favorite rabbit head snack, and visit a legendary distillery for some Baijiu, a fermented sorghum wine. Ripert will never forget this trip."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "chengdu-china"
+  - "leshan-china"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://explorepartsunknown.com/sichuan/eat-like-bourdain-sichuan/"

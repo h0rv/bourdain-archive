@@ -1,0 +1,35 @@
+id: "parts-unknown-s11e01-west-virginia"
+title: "West Virginia"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 11
+episode: 1
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2018-04-29"
+date_precision: "day"
+summary: "Bourdain digs deep into the proud, often misunderstood culture of West Virginia, as he traverses a 5,000 foot mine, observes the demolition derby-like sport of rock-bouncing and dines on signature Appalachian dishes. Bourdain's own preconceptions are dashed as he finds the West Virginian attitude to be a remarkable dichotomy, both resolute and open-minded. Over an assortment of local dishes - snapping turtle patties, squirrel gravy, pawpaw ice cream, spaghetti pie, and bear meat - residents candidly discuss their staunch views on the second amendment, Donald Trump, life beyond the coal industry, and the reclamation of West Virginian cuisine."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "war-united-states"
+  - "man-united-states"
+  - "lost-creek-united-states"
+  - "welch-united-states"
+  - "philippi-united-states"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

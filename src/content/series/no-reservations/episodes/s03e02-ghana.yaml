@@ -1,0 +1,36 @@
+id: "no-reservations-s03e02-ghana"
+title: "Ghana"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 3
+episode: 2
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2007-01-08"
+date_precision: "day"
+summary: "Tony visits Ghana for the first time. In Accra, he samples food such as kenkey and palm wine at the bustling Makola Market, and meets tourism minister Jacob Otanka Obetsebi-Lamptey at the beach, where they help bring in a fish haul and enjoy prepared seafood such as barracuda. He then goes on a tour of the countryside, meeting shea nut harvesters, enjoying the highlife music of Koo Nimo, and seeing kente cloth spinners in action."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "accra-ghana"
+  - "adanwomase-ghana"
+  - "ashanti-ghana"
+  - "beyin-ghana"
+  - "mole-game-reserve-ghana"
+  - "nzulezo-ghana"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.imdb.com/title/tt0943556/locations?ref_=tt_dt_dt"

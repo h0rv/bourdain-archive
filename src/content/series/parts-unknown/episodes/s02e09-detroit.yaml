@@ -1,0 +1,31 @@
+id: "parts-unknown-s02e09-detroit"
+title: "Detroit"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 2
+episode: 9
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2013-11-10"
+date_precision: "day"
+summary: "Few cities have experienced such a dramatic economic rise and fall of Detroit. In this episode of Parts Unknown, Bourdain explores the past, present and future of the Motor City. He steps into the lives of Detroit natives and sees the glory days of the past at the famed Packard Plant, the current state of the city's urban decay, and the promise of the future in the citizens who are rebuilding their communities."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "detroit"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

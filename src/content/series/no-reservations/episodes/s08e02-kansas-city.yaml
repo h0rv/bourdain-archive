@@ -1,0 +1,31 @@
+id: "no-reservations-s08e02-kansas-city"
+title: "Kansas City"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 8
+episode: 2
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2012-04-16"
+date_precision: "day"
+summary: "Tony travels to Kansas City, the BBQ capital of the world, with pal Zamir Gotta, in search of the best barbecue. While there, Tony meets up with musicians Dan and Patrick of The Black Keys for some serious finger licking meat. Zamir has his own adventures, visiting Leila's Hair Museum and attending his first-ever tailgate party."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "kansas-city-united-states"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

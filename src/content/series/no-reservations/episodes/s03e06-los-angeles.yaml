@@ -1,0 +1,31 @@
+id: "no-reservations-s03e06-los-angeles"
+title: "Los Angeles"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 3
+episode: 6
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2007-02-05"
+date_precision: "day"
+summary: "Tony visits Los Angeles, in search of the local culture, away from the glitz and glamor of Hollywood. He dines at Roscoe's Chicken and Waffles with writer and screenwriter Jerry Stahl. He meets a women's roller derby team, and has French dip sandwiches with them at Philippe's, which claims to have invented the French dip sandwich. He eats at a Mexican restaurant with a mariachi band, and visits the neighborhood of Thai Town. Tony trains with the Hawthorne SWAT team."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "los-angeles-united-states"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

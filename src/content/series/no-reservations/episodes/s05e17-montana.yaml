@@ -1,0 +1,31 @@
+id: "no-reservations-s05e17-montana"
+title: "Montana"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 5
+episode: 17
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2009-08-24"
+date_precision: "day"
+summary: "Tony travels to the state of Montana in the United States, where he visits a ranch and learns the struggles of being a rancher. He eats local specialties like beef, pasty, trout, and buffalo. Tony gets an understanding of why fly fishing is so addictive and meets with writer and local legend Jim Harrison, and artist Russell Chatham."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "livingston-united-states"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.imdb.com/title/tt1591666/?ref_=ttep_ep17"

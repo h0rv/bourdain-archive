@@ -1,0 +1,15 @@
+id: salvador-de-bahia-brazil
+name: Salvador de Bahia, Brazil
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with A Cook's Tour.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - brazil
+sources:
+  - travel-places-github
+status: needs-review

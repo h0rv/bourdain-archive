@@ -1,0 +1,33 @@
+id: "no-reservations-s01e04-vietnam-the-island-of-mr-sang"
+title: "Vietnam: The Island of Mr. Sang"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 1
+episode: 4
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2005-08-15"
+date_precision: "day"
+summary: "Responding to an invitation from an old friend, Linh. Tony travels to Hanoi, Mai Châu and Tuần Châu, Vietnam with the feeling of James Bond-ish intrigue, discovering its food like squeasel, its customs, and the not-so-sinister plans for international tourism."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "hanoi-vietnam"
+  - "mai-chau-vietnam"
+  - "tuan-chau-vietnam"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

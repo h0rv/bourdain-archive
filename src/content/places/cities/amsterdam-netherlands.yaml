@@ -1,0 +1,15 @@
+id: amsterdam-netherlands
+name: Amsterdam, Netherlands
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with The Layover.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - netherlands
+sources:
+  - travel-places-github
+status: needs-review

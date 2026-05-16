@@ -1,0 +1,32 @@
+id: "no-reservations-s06e10-vietnam-central-highlands"
+title: "Vietnam: Central Highlands"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 6
+episode: 10
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2010-03-29"
+date_precision: "day"
+summary: "Tony returns to Vietnam to explore the Central Highlands (Vietnam). His stops include the cities of Da Lat and Hanoi. Tony learns about the french history of region, and the former emperor Bảo Đại. Tony tries more woodland creatures like Java mouse-deer; eats a Hanoi delicacy: fried giant water bugs and water bugs extract; and teaches his friends the difference between wine and liquor."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "dalat-vietnam"
+  - "hanoi-vietnam"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

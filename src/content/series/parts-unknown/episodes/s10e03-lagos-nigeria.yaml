@@ -1,0 +1,31 @@
+id: "parts-unknown-s10e03-lagos-nigeria"
+title: "Lagos, Nigeria"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 10
+episode: 3
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2017-10-15"
+date_precision: "day"
+summary: "Once considered the most dangerous city in the world, Lagos is, in many ways, the epicenter of modern Africa. The driving force of the city is a pervasive, almost pathologically positive outlook, a sincerely entrenched \"can do\" spirit. The ingenuity of the Nigerian people is the focus of Bourdain's travels as he explores its food, music, and rich cultural diversity. Among the food offerings are fresh fish dishes, spicy soups, a great deal of beef, and the ubiquitous pounded yam. Bourdain also spends time with Femi, Seun and Yeni Kuti, the children of Fela Kuti, a family that is still at the heart of Lagos' creative, political and cultural scene."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "lagos-nigeria"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

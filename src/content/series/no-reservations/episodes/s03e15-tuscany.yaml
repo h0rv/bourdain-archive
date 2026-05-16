@@ -1,0 +1,31 @@
+id: "no-reservations-s03e15-tuscany"
+title: "Tuscany"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 3
+episode: 15
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2007-09-24"
+date_precision: "day"
+summary: "Tony visits Tuscany, Italy, where he samples the local wine and cheese and encounters the world's most famous butcher, The Butcher of Panzano Dario Cecchini. He also clashes with the episode's director, the Italian auteur Vincenzo Tripodo, who dreams of making the episode an homage to Dante's Inferno."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "tuscany-italy"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

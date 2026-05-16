@@ -1,0 +1,31 @@
+id: "parts-unknown-s11e05-hong-kong"
+title: "Hong Kong"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 11
+episode: 5
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2018-06-03"
+date_precision: "day"
+summary: "Hong Kong, a city that's always in transition and unapologetically modern has another side... a beautiful one that's in danger of disappearing entirely. Bourdain experiences this city through the eyes and lens of legendary cinematographer and longtime Hong Kong resident Christopher Doyle (Chungking Express, In the Mood for Love, The White Girl)."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "hong-kong"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

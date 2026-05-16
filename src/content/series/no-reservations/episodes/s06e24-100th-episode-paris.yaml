@@ -1,0 +1,31 @@
+id: "no-reservations-s06e24-100th-episode-paris"
+title: "100th Episode - Paris"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 6
+episode: 24
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2010-09-06"
+date_precision: "day"
+summary: "For the 100th episode, Tony travels to Paris and meets with Éric Ripert and various local chefs, and they discuss the past and future of French cooking."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "paris"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

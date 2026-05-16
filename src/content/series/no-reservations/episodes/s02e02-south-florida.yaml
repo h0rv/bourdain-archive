@@ -1,0 +1,32 @@
+id: "no-reservations-s02e02-south-florida"
+title: "South Florida"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 2
+episode: 2
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2006-04-03"
+date_precision: "day"
+summary: "Anthony Bourdain begins his outer Miami exploration in the vibrant Creole enclave of Little Haiti. He heads to the vast subtropical preserves of the Everglades. In South Beach, he visits a dive bar, Club Deuce and Loco Taqueria."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "miami-united-states"
+  - "key-west-united-states"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

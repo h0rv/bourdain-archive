@@ -1,0 +1,33 @@
+id: "parts-unknown-s07e05-montana"
+title: "Montana"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 7
+episode: 5
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2016-05-15"
+date_precision: "day"
+summary: "Anthony travels to \"Big Sky Country\" Montana, and its tranquil lifestyle. Tony visits the Crow Indian Reservation to view a traditional horse relay race. Later, Tony goes on a pheasant hunt with comedian/MMA color commentator Joe Rogan. From there, Bourdain takes part in a Butte institution the Supper club, then traverses the Orphan Boy mine. Bourdain spends time with an old friend, the late American writer Jim Harrison, whom the episode is dedicated to."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "butte-united-states"
+  - "powell-county-united-states"
+  - "crow-indian-reservation-united-states"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

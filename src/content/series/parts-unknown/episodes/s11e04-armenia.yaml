@@ -1,0 +1,31 @@
+id: "parts-unknown-s11e04-armenia"
+title: "Armenia"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 11
+episode: 4
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2018-05-20"
+date_precision: "day"
+summary: "Bourdain takes a wide-angle look at the culture and history of this country, heavily influenced by Europe and Russia, with guides musician of Armenian descent Serj Tankian (System of a Down), and historian/Armenian resident Richard Giragosian. Breaking bread with Tankian at the restaurant Dolmama in Yerevan, during dinners with locals, the host explores the native and diaspora Armenian populations' survival and achievements against the odds."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "yerevan-armenia"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "http://cnnpressroom.blogs.cnn.com/2018/04/09/season-11-of-cnn-original-series-anthony-bourdain-parts-unknown-launches-sunday-april-29-at-9pm-with-a-tour-of-west-virginia-in-an-extended-episode/"

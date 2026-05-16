@@ -1,0 +1,15 @@
+id: toronto-canada
+name: Toronto, Canada
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with The Layover.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - canada
+sources:
+  - travel-places-github
+status: needs-review

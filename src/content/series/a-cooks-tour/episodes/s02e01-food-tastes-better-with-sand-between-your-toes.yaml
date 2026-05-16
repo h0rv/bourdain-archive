@@ -1,0 +1,31 @@
+id: "a-cooks-tour-s02e01-food-tastes-better-with-sand-between-your-toes"
+title: "Food Tastes Better with Sand Between your Toes"
+kind: "episode"
+index_mode: "child"
+parent_id: "a-cooks-tour-show"
+type: "episode"
+show: "A Cook's Tour"
+season: 2
+episode: 1
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2003-01-12"
+date_precision: "day"
+summary: "Tony's at his home away from home, the Caribbean island of St. Martin, seeking refuge from his beloved concrete jungle, Manhattan. And there, just like in New York, he's got food on the brain. Join him for a feast that's served up in island style."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "saint-martin"
+sources:
+  - "travel-places-github"
+  - "a-cooks-tour-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.cookingchanneltv.com/shows/a-cooks-tour/episodes/food-tastes-better-with-sand-between-your-toes"

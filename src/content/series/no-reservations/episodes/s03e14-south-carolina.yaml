@@ -1,0 +1,30 @@
+id: "no-reservations-s03e14-south-carolina"
+title: "South Carolina"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 3
+episode: 14
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2007-09-17"
+date_precision: "day"
+summary: "Tony visits South Carolina, where he enjoys local favorites like shrimp, grits and barbecue. He also participates in a Civil War reenactment."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "charleston-united-states"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability: {}

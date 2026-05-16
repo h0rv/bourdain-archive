@@ -1,0 +1,15 @@
+id: bogota-colombia
+name: Bogotá, Colombia
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with Parts Unknown.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - colombia
+sources:
+  - travel-places-github
+status: needs-review
