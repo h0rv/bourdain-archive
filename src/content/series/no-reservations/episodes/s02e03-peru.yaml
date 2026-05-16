@@ -1,0 +1,34 @@
+id: "no-reservations-s02e03-peru"
+title: "Peru"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 2
+episode: 3
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2006-04-10"
+date_precision: "day"
+summary: "Tony meets famous Peruvian chef Gastón Acurio, tries Peruvian Ceviche and goes sightseeing in the capital city, Lima. Then he travels to a village in Tambopata, the Peruvian jungle, and tries piranhas and goes through unique experiences. Finally he visits the city of Cusco to try new stuff in a local market and Machu Picchu, where he tries to find peace of mind."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "cusco-peru"
+  - "lima-peru"
+  - "machu-picchu-peru"
+  - "tambopata-peru"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

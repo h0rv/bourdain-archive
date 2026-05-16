@@ -1,0 +1,31 @@
+id: "parts-unknown-s03e04-lyon"
+title: "Lyon"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 3
+episode: 4
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2014-04-27"
+date_precision: "day"
+summary: "In this food-centric episode, Bourdain accompanies world-renowned chef/restaurateur Daniel Boulud as they travel back to Boulud's hometown of Lyon, France for a \"once-in-a-lifetime\" pilgrimage to the so-called Mecca of French cuisine's rich food culture and legendary chefs, with a focus on Nouvelle Cuisine innovator Paul Bocuse."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "lyon-france"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

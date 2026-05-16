@@ -1,0 +1,15 @@
+id: crete-greece
+name: Crete, Greece
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with No Reservations.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - greece
+sources:
+  - travel-places-github
+status: needs-review

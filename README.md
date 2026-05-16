@@ -28,11 +28,31 @@ Raw snapshots live in `archive/raw/`. Converted data lives in `archive/derived/`
 
 ## Data
 
-One YAML file per entry under `src/content/`.
+One YAML file per entry under `src/content/`. The archive is moving toward
+canonical records with nested child records:
+
+- `series/{show}/series.yaml` is the visible show rollup.
+- `series/{show}/episodes/*.yaml` stores granular episode records.
+- `works/field-notes/field-notes.yaml` is the field-notes rollup.
+- `sources/` records are citations/evidence by default, not primary browse
+  records.
+- `places/countries/` and `places/cities/` hold normalized place records for
+  episode/location work.
+
+Use `index_mode` to control visibility:
+
+- `rollup`: visible in the main archive.
+- `child`: searchable and shown under a parent, but not shown by default.
+- `hidden`: supporting source/citation material.
+
+Useful shared fields:
 
 ```yaml
 id: kitchen-confidential
 title: Kitchen Confidential
+kind: book
+index_mode: rollup
+parent_id:
 type: book
 date: "2000"
 date_precision: year
@@ -41,8 +61,15 @@ image_url: https://covers.openlibrary.org/b/isbn/9780060899226-M.jpg
 tags: []
 people: []
 places: []
+images: []
 sources: []
 related: []
+identifiers:
+  imdb:
+  tvdb:
+  openlibrary:
+  wikidata:
+  worldcat:
 status: needs-review
 availability:
   official_url:

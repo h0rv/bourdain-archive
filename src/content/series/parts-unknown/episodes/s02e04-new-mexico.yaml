@@ -1,0 +1,33 @@
+id: "parts-unknown-s02e04-new-mexico"
+title: "New Mexico"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 2
+episode: 4
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2013-09-29"
+date_precision: "day"
+summary: "The show takes a close look at the mash-up of cultures that comprise this uniquely American state. Tony and crew sample New Mexico's food — a combination of Spanish, Mediterranean, Mexican, Pueblo and even chuck-wagon influences. New Mexico is also a land of drugs, guns, monster vehicles, and possibly extraterrestrials. It may also be the perfect place to investigate the underside of the Western cowboy ideal."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "santa-fe-united-states"
+  - "zia-pueblo-united-states"
+  - "alberquerque-united-states"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

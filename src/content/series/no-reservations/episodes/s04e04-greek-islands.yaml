@@ -1,0 +1,32 @@
+id: "no-reservations-s04e04-greek-islands"
+title: "Greek Islands"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 4
+episode: 4
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2008-01-28"
+date_precision: "day"
+summary: "Tony travels through the Greek Islands, from Crete to Zakynthos, in search of his own Odyssey. There, he tries sardines, sweetbread, lamb, snails, sea urchins and rakı. He also hunts, and eats, quail."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "crete-greece"
+  - "zakynthos-greece"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.imdb.com/title/tt1189463/locations?ref_=tt_dt_dt"

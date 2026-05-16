@@ -1,0 +1,31 @@
+id: "parts-unknown-s07e02-manila-philippines"
+title: "Manila, Philippines"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 7
+episode: 2
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2016-04-24"
+date_precision: "day"
+summary: "It is Christmas time, and a typhoon has forced Tony and crew to stay in Manila instead of venturing further out. Tony enjoys local specialties like sizzling sisig and halo-halo, explores the phenomenon of the Phiippines' internationally-famous cover bands, and meets with the former nanny of one of the show's producers, who, though now retired, spent much of her life abroad caring for other people's children in order to provide for her own family. The episode is notable for a Tagalog-language cover of the series' intro theme."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "manila-philippines"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

@@ -1,0 +1,15 @@
+id: samana-dominican-republic
+name: Samaná, Dominican Republic
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with No Reservations.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - dominican-republic
+sources:
+  - travel-places-github
+status: needs-review

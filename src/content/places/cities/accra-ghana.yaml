@@ -1,0 +1,15 @@
+id: accra-ghana
+name: Accra, Ghana
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with No Reservations.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - ghana
+sources:
+  - travel-places-github
+status: needs-review

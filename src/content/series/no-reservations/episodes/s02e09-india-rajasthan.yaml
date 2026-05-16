@@ -1,0 +1,33 @@
+id: "no-reservations-s02e09-india-rajasthan"
+title: "India (Rajasthan)"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 2
+episode: 9
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2006-05-29"
+date_precision: "day"
+summary: "Tony visits the state of Rajasthan in India. He visits the city of Udaipur and enjoys a vegetarian thali, then attends a dinner and lavish party hosted by the Maharana of Udaipur. He visits a local chef for a home-cooked meal and spends time with a guru in an ashram in the city of Jodhpur. He takes a long bus ride to the city of Jaisalmer and experiences the Jaisalmer Desert Festival."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "jaisalmer-india"
+  - "jodhpur-india"
+  - "udaipur-india"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

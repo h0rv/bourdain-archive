@@ -1,0 +1,31 @@
+id: "parts-unknown-s05e04-scotland"
+title: "Scotland"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 5
+episode: 4
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2015-05-10"
+date_precision: "day"
+summary: "Tony visits one of his favorite cities in Europe, Glasgow. He makes his first stop at the Old College Bar for a pint, learns knife defense techniques from instructor Mark Davies, and tests his physical endurance while stalking red stag with writer A.A. Gill in the Scottish Highlands. Along the way he indulges in some surprising Scottish fare including deep-fried haggis, roasted grouse with bread sauce, and fresh venison."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "glasgow-united-kingdom"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

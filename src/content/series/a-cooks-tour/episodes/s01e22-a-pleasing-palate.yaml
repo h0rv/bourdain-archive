@@ -1,0 +1,31 @@
+id: "a-cooks-tour-s01e22-a-pleasing-palate"
+title: "A Pleasing Palate"
+kind: "episode"
+index_mode: "child"
+parent_id: "a-cooks-tour-show"
+type: "episode"
+show: "A Cook's Tour"
+season: 1
+episode: 22
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2002-04-30"
+date_precision: "day"
+summary: "Tony is in search of the best British food, so it's off to London. In London, Tony attempts to dispel the myth that all English food is disgusting and over-boiled. Tony tries Nose to Tail Eating, explores traditional fare at Pie and Mash Shoppes and then visits a predominantly Indian community."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "london-united-kingdom"
+sources:
+  - "travel-places-github"
+  - "a-cooks-tour-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.cookingchanneltv.com/shows/a-cooks-tour/episodes/a-pleasing-palate"

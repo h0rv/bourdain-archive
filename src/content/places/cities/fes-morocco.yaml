@@ -1,0 +1,15 @@
+id: fes-morocco
+name: Fes, Morocco
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with A Cook's Tour.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - morocco
+sources:
+  - travel-places-github
+status: needs-review

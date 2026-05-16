@@ -2,45 +2,23 @@
 import { getCollection } from 'astro:content';
 import linkPreviewCache from '../../archive/derived/link-previews.json';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { entryHref, entryTitle, formatDate, formatType, mediaTypeFor, mediaTypeLabels, previewForEntry, relationToAuthorship, sortByDateDesc, sourceGroupFor, sourceGroupLabels, sourceTimelineDate } from '../lib/content';
+import { entryHref, entryTitle, formatDate, formatType, indexModeFor, mediaTypeFor, mediaTypeLabels, previewForEntry, relationToAuthorship, sortByDateDesc, sourceGroupLabels } from '../lib/content';
 
 const works = await getCollection('works');
-const shows = (await getCollection('episodes')).filter((entry) => entry.data.type === 'show');
+const series = await getCollection('series');
 const screen = await getCollection('screen');
 const appearances = await getCollection('appearances');
 const literature = await getCollection('literature');
 const events = await getCollection('events');
 const sources = await getCollection('sources');
 const sourceById = new Map(sources.map((entry) => [entry.data.id, entry]));
-const curatedEntries = [
-  ...events,
-  ...works,
-  ...shows,
-  ...screen,
-  ...appearances,
-  ...literature,
-];
-const curatedSourceIds = new Set(curatedEntries.flatMap((entry) => entry.data.sources ?? []));
-const timelineSources = sources.filter((entry) => !curatedSourceIds.has(entry.data.id));
-const sourceAuthorshipFor = (entry: any, sourceGroup: string) => {
-  if (entry.data.relation_to_bourdain) return relationToAuthorship(entry.data.relation_to_bourdain);
-  const type = entry.data.type ?? '';
-  if (['tumblr', 'medium', 'list', 'socials'].includes(sourceGroup)) return 'by';
-  if (['tv', 'field-notes'].includes(sourceGroup)) return 'by';
-  if (type.includes('interview') || ['podcast', 'panel', 'radio-interview', 'video', 'official-video', 'social-video', 'social-photo'].includes(type)) return 'by';
-  return 'about';
-};
 const entries = [
   ...events.map((entry) => ({ entry, collection: 'events', authorship: relationToAuthorship(entry.data.relation_to_bourdain ?? 'featured'), sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
   ...works.map((entry) => ({ entry, collection: 'works', authorship: relationToAuthorship(entry.data.relation_to_bourdain ?? 'authored'), sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
-  ...shows.map((entry) => ({ entry, collection: 'episodes', authorship: relationToAuthorship(entry.data.relation_to_bourdain ?? 'featured'), sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
+  ...series.map((entry) => ({ entry, collection: 'series', authorship: relationToAuthorship(entry.data.relation_to_bourdain ?? 'featured'), sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
   ...screen.map((entry) => ({ entry, collection: 'screen', authorship: relationToAuthorship(entry.data.relation_to_bourdain ?? 'featured'), sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
   ...appearances.map((entry) => ({ entry, collection: 'appearances', authorship: relationToAuthorship(entry.data.relation_to_bourdain ?? 'featured'), sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
   ...literature.map((entry) => ({ entry, collection: 'literature', authorship: relationToAuthorship(entry.data.relation_to_bourdain ?? 'about'), sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
-  ...timelineSources.map((entry) => {
-    const sourceGroup = sourceGroupFor(entry.data);
-    return { entry, collection: 'sources', authorship: sourceAuthorshipFor(entry, sourceGroup), sourceGroup, timelineDate: sourceTimelineDate(entry.data) };
-  }),
 ].sort((a, b) => {
   const left = { data: { date: a.timelineDate.date } };
   const right = { data: { date: b.timelineDate.date } };
@@ -48,11 +26,13 @@ const entries = [
 });
 const entriesWithFacets = entries.map((item) => {
   const mediaType = mediaTypeFor(item.entry.data, item.collection, item.sourceGroup);
-  return { ...item, mediaType };
+  const indexMode = indexModeFor(item.entry.data, item.collection);
+  return { ...item, mediaType, indexMode };
 });
+const defaultVisibleEntries = entriesWithFacets.filter((item) => item.indexMode === 'rollup');
 const countBy = (values: string[]) => values.reduce((counts, value) => ({ ...counts, [value]: (counts[value] ?? 0) + 1 }), {} as Record<string, number>);
-const mediaCounts = countBy(entriesWithFacets.map(({ mediaType }) => mediaType));
-const authorCounts = countBy(entriesWithFacets.map(({ authorship }) => authorship));
+const mediaCounts = countBy(defaultVisibleEntries.map(({ mediaType }) => mediaType));
+const authorCounts = countBy(defaultVisibleEntries.map(({ authorship }) => authorship));
 const mediaFilters = Object.keys(mediaCounts).sort((a, b) => (mediaTypeLabels[a] ?? a).localeCompare(mediaTypeLabels[b] ?? b));
 const deathDate = '2018-06-08';
 const isPosthumous = (entry: any) => {
@@ -117,7 +97,7 @@ const statusFor = (entry: any) => entry.data.status;
         <button class="pill" type="button" data-view="rows">Rows</button>
       </div>
 
-      <p class="result-count" data-result-count>{entriesWithFacets.length} records</p>
+      <p class="result-count" data-result-count>{defaultVisibleEntries.length} records</p>
     </div>
 
     <details class="filter-drawer">
@@ -155,12 +135,15 @@ const statusFor = (entry: any) => entry.data.status;
     </details>
 
     <ol class="archive-list" data-stream data-view="cards">
-        {entriesWithFacets.map(({ entry, collection, authorship, sourceGroup, timelineDate, mediaType }) => (
+        {entriesWithFacets.map(({ entry, collection, authorship, sourceGroup, timelineDate, mediaType, indexMode }) => {
+          const featuredImage = featuredImageFor(entry);
+          return (
           <li
-            class="archive-row"
+            class={`archive-row ${featuredImage ? 'has-image' : 'no-image'}`}
             data-type={entry.data.type}
             data-media-type={mediaType}
             data-author={authorship}
+            data-index-mode={indexMode}
             data-posthumous={isPosthumous(entry) ? 'true' : 'false'}
             data-source-group={sourceGroup}
             data-date={timelineDate.date ?? ''}
@@ -170,13 +153,11 @@ const statusFor = (entry: any) => entry.data.status;
             data-source-label={sourceGroupLabels[sourceGroup] ?? sourceGroup}
             data-search-text={searchableText(entry, collection, authorship, sourceGroup, mediaType)}
           >
-            {featuredImageFor(entry) ? (
+            {featuredImage ? (
               <a class="row-image" href={entryHref(collection, entry.data.id)} tabindex="-1" aria-hidden="true">
-                <img src={featuredImageFor(entry)} alt="" loading="lazy" />
+                <img src={featuredImage} alt="" loading="lazy" />
               </a>
-            ) : (
-              <span class="row-image row-image-empty" aria-hidden="true"></span>
-            )}
+            ) : null}
             <a class="row-main" href={entryHref(collection, entry.data.id)}>
               <span class="row-date">{formatDate(timelineDate.date, timelineDate.precision)}</span>
               <span class="row-title">{entryTitle(entry)}</span>
@@ -187,7 +168,7 @@ const statusFor = (entry: any) => entry.data.status;
               {statusFor(entry) && statusFor(entry) !== 'confirmed' && <span class="row-flag">{statusFor(entry)}</span>}
             </span>
           </li>
-        ))}
+        )})}
     </ol>
     <p class="no-results" data-no-results hidden>No matches. Clear filters or try a broader search.</p>
   </section>
@@ -208,6 +189,7 @@ const statusFor = (entry: any) => entry.data.status;
     const STORAGE_KEY = 'bourdain-archive.index-controls.v2';
     let sortMode = 'date-desc';
     let renderedSortMode = '';
+    let cardLayoutFrame = 0;
 
     const activeValues = (buttons: NodeListOf<HTMLButtonElement>, attribute: string) =>
       Array.from(buttons)
@@ -283,6 +265,37 @@ const statusFor = (entry: any) => entry.data.status;
       renderedSortMode = sortMode;
     };
 
+    const layoutCards = () => {
+      if (!stream || stream.getAttribute('data-view') !== 'cards') {
+        items.forEach((item) => (item.style.gridRowEnd = ''));
+        return;
+      }
+
+      const styles = window.getComputedStyle(stream);
+      const rowHeight = Number.parseFloat(styles.gridAutoRows) || 4;
+      const rowGap = Number.parseFloat(styles.rowGap) || 0;
+
+      items.forEach((item) => {
+        if (item.hidden) {
+          item.style.gridRowEnd = '';
+          return;
+        }
+        item.style.gridRowEnd = '';
+        const rect = item.getBoundingClientRect();
+        const height = Math.max(item.scrollHeight, rect.height);
+        const span = Math.max(1, Math.ceil((height + rowGap + 2) / (rowHeight + rowGap)));
+        item.style.gridRowEnd = `span ${span}`;
+      });
+    };
+
+    const scheduleCardLayout = () => {
+      if (cardLayoutFrame) window.cancelAnimationFrame(cardLayoutFrame);
+      cardLayoutFrame = window.requestAnimationFrame(() => {
+        cardLayoutFrame = 0;
+        layoutCards();
+      });
+    };
+
     const updateControls = () => {
       const activeMediaTypes = activeValues(mediaButtons, 'data-filter-media');
       const activeAuthor = authorSelect?.value ?? '';
@@ -293,10 +306,12 @@ const statusFor = (entry: any) => entry.data.status;
 
       let visibleCount = 0;
       items.forEach((item) => {
+        const indexMode = item.getAttribute('data-index-mode');
+        const matchesIndexMode = indexMode === 'rollup' || (indexMode === 'child' && Boolean(query));
         const matchesMedia = activeMediaTypes.length === 0 || activeMediaTypes.includes(item.getAttribute('data-media-type'));
         const matchesAuthor = !activeAuthor || activeAuthor === item.getAttribute('data-author');
         const matchesQuery = !query || (item.getAttribute('data-search-text') ?? '').includes(query);
-        const isVisible = matchesMedia && matchesAuthor && matchesQuery;
+        const isVisible = matchesIndexMode && matchesMedia && matchesAuthor && matchesQuery;
         item.hidden = !isVisible;
         if (isVisible) visibleCount += 1;
       });
@@ -304,6 +319,7 @@ const statusFor = (entry: any) => entry.data.status;
       countLabels.forEach((label) => (label.textContent = `${visibleCount} of ${totalItems} records`));
       if (noResults) noResults.hidden = visibleCount > 0;
       saveControls();
+      scheduleCardLayout();
     };
 
     clearButton?.addEventListener('click', () => {
@@ -337,6 +353,7 @@ const statusFor = (entry: any) => entry.data.status;
         stream?.setAttribute('data-view', view);
         viewButtons.forEach((item) => item.classList.toggle('is-active', item === button));
         saveControls();
+        scheduleCardLayout();
       });
     });
 
@@ -345,6 +362,33 @@ const statusFor = (entry: any) => entry.data.status;
       renderedSortMode = '';
       updateControls();
     });
+
+    document.querySelectorAll<HTMLImageElement>('.row-image img').forEach((image) => {
+      const collapseImage = () => {
+        const row = image.closest<HTMLElement>('.archive-row');
+        image.closest('.row-image')?.remove();
+        row?.classList.remove('has-image');
+        row?.classList.add('no-image');
+        scheduleCardLayout();
+      };
+
+      image.addEventListener('load', () => {
+        if (image.naturalWidth < 12 || image.naturalHeight < 12) {
+          collapseImage();
+          return;
+        }
+        scheduleCardLayout();
+      });
+      image.addEventListener('error', collapseImage);
+    });
+
+    if ('ResizeObserver' in window) {
+      const observer = new ResizeObserver(scheduleCardLayout);
+      items.forEach((item) => observer.observe(item));
+    }
+
+    window.addEventListener('resize', scheduleCardLayout);
+    document.fonts?.ready.then(scheduleCardLayout).catch(() => {});
 
     applySavedControls();
     updateControls();

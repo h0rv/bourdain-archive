@@ -1,0 +1,31 @@
+id: "no-reservations-s01e05-malaysia-into-the-jungle"
+title: "Malaysia: Into the Jungle"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 1
+episode: 5
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2005-08-22"
+date_precision: "day"
+summary: "Tony has always had an interest in \"natural fusion\" or the way cuisines intertwine with cultures over the course of history. In Kuala Lumpur, Malaysia, this is particularly true as a variety of cultures have blended. Chef Wan gives Tony a tour of a wet market and hawker stalls in Kuala Lumpur. Inspired to find his own Heart of Darkness and live out his inner Kurtz, Tony rides up the Skrang River to visit with an Iban village."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "kuala-lumpur-malaysia"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

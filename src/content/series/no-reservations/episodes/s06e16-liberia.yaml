@@ -1,0 +1,32 @@
+id: "no-reservations-s06e16-liberia"
+title: "Liberia"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 6
+episode: 16
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2010-07-19"
+date_precision: "day"
+summary: "Tony visits Liberia, the first independent nation in Africa."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "monrovia-liberia"
+  - "robertsport-liberia"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "http://www.noreservationslocations.com/liberia-episode.html"

@@ -7,7 +7,7 @@ export async function getStaticPaths() {
   const sources = await getCollection('sources');
   const relatedEntries = [
     ...(await getCollection('works')).map((entry) => ({ entry, collection: 'works' })),
-    ...(await getCollection('episodes')).map((entry) => ({ entry, collection: 'episodes' })),
+    ...(await getCollection('series')).map((entry) => ({ entry, collection: 'series' })),
     ...(await getCollection('screen')).map((entry) => ({ entry, collection: 'screen' })),
     ...(await getCollection('appearances')).map((entry) => ({ entry, collection: 'appearances' })),
     ...(await getCollection('literature')).map((entry) => ({ entry, collection: 'literature' })),

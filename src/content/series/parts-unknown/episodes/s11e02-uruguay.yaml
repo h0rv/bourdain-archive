@@ -1,0 +1,33 @@
+id: "parts-unknown-s11e02-uruguay"
+title: "Uruguay"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 11
+episode: 2
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2018-05-06"
+date_precision: "day"
+summary: "Bourdain returns to Uruguay after a decade away and finds a progressive nation in the midst of social change, but with evident fragments of its colonial past, most notably in its local cuisine. Accompanied by Uruguayan native and restaurateur/chef Ignacio \"Nacho\" Mattos, the two visit his hometown of Santa Lucia for a home cooked Italian family meal made by his grandmother, head for a night out in Montevideo with local band Hablan Por La Espalda, sample drive-thru steaks, and cap off the trip with an asado (barbecue) with friends on a small island in Jose Ignacio."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "jose-ignacio-uruguay"
+  - "montevideo-uruguay"
+  - "santa-lucia-uruguay"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "http://cnnpressroom.blogs.cnn.com/2018/04/09/season-11-of-cnn-original-series-anthony-bourdain-parts-unknown-launches-sunday-april-29-at-9pm-with-a-tour-of-west-virginia-in-an-extended-episode/"

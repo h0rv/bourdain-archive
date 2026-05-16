@@ -1,0 +1,31 @@
+id: "a-cooks-tour-s01e09-childhood-flavors"
+title: "Childhood Flavors"
+kind: "episode"
+index_mode: "child"
+parent_id: "a-cooks-tour-show"
+type: "episode"
+show: "A Cook's Tour"
+season: 1
+episode: 9
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2002-02-19"
+date_precision: "day"
+summary: "Arcachon France is where Tony's ancestral home is and where he learned to love food as a child. He and his brother take a trip back to remember steak frites, waffles and fishermen's soup, and remembers how one oyster shaped his destiny."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "arcachon-france"
+sources:
+  - "travel-places-github"
+  - "a-cooks-tour-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.cookingchanneltv.com/shows/a-cooks-tour/episodes/childhood-flavors"

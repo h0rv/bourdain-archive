@@ -1,0 +1,31 @@
+id: "no-reservations-s06e20-rome"
+title: "Rome"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 6
+episode: 20
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2010-08-16"
+date_precision: "day"
+summary: "Tony visits Rome, Italy and meets artisans of pasta, cheese and other local specialties. The episode was filmed entirely in black and white and is intended as an homage to Federico Fellini's films, especially La Dolce Vita."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "rome-italy"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

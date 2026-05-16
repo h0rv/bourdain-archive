@@ -1,0 +1,31 @@
+id: "no-reservations-s04e05-new-orleans"
+title: "New Orleans"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 4
+episode: 5
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2008-02-04"
+date_precision: "day"
+summary: "New Orleans, with emphasis on post-Katrina recovery, both by locals generally and by the local food industry in particular. Includes a visit with Emeril Lagasse, who is acknowledged in the episode as a favorite target of ridicule in Bourdain's early career. Local writer Chris Rose offers commentary on the city's conditions."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "new-orleans-united-states"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

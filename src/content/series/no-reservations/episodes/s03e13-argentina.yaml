@@ -1,0 +1,31 @@
+id: "no-reservations-s03e13-argentina"
+title: "Argentina"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 3
+episode: 13
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2007-09-10"
+date_precision: "day"
+summary: "In Buenos Aires, Argentina, Tony meets with reggae rock band Los Pericos and visits pioneering conceptual artist Marta Minujín at her studio. He then travels to Patagonia, where he visits the Swiss-style town of Bariloche, tries his hand at paragliding, and spends time with some gauchos, learning their lifestyle."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "buenos-aires-argentina"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

@@ -1,0 +1,31 @@
+id: "a-cooks-tour-s01e08-san-sebastian-a-food-lover-s-town"
+title: "San Sebastian: A Food Lover's Town"
+kind: "episode"
+index_mode: "child"
+parent_id: "a-cooks-tour-show"
+type: "episode"
+show: "A Cook's Tour"
+season: 1
+episode: 8
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2002-02-12"
+date_precision: "day"
+summary: "Tony explores the Basque food culture, rich in history and taste. Tony's guide, Chef Luis Irizar, takes Tony into the underworld of Basque gastronomic societies. Later, Tony explores the citys tapas bars for some everyday pleasures."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "san-sebastian-spain"
+sources:
+  - "travel-places-github"
+  - "a-cooks-tour-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.cookingchanneltv.com/shows/a-cooks-tour/episodes/san-sebastian-a-food-lovers-town"

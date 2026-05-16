@@ -14,7 +14,7 @@ import YAML from 'yaml';
 const CONTENT_ROOT = 'src/content';
 const PUBLIC_ROOT = 'public';
 const PREVIEW_CACHE = 'archive/derived/link-previews.json';
-const COLLECTIONS_EXPECTING_VISUALS = new Set(['works', 'episodes', 'appearances', 'screen', 'events', 'literature']);
+const COLLECTIONS_EXPECTING_VISUALS = new Set(['works', 'episodes', 'series', 'appearances', 'screen', 'events', 'literature']);
 const BLOCKED_IMAGE_HOSTS = new Set(['interviews.televisionacademy.com']);
 
 const errors = [];
@@ -83,22 +83,31 @@ function primaryAvailabilityUrl(data) {
   );
 }
 
-function previewImageFor(data, cache, sourceById = new Map()) {
-  if (data.image_url) return data.image_url;
+function previewImageFor(data, cache, sourceById = new Map(), seen = new Set()) {
+  if (data.image_url) return { image: data.image_url, reason: 'explicit image_url' };
   const url = primaryAvailabilityUrl(data);
   const videoId = youtubeId(url);
-  if (videoId) return `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+  if (videoId) return { image: `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`, reason: 'YouTube thumbnail fallback' };
   const image = url ? cache[url]?.image : undefined;
-  if (image && !isBlockedRemoteImage(image)) return image;
+  if (image && !isBlockedRemoteImage(image)) return { image, reason: `cached preview image for ${url}` };
+  if (image && isBlockedRemoteImage(image)) return { image: undefined, reason: `cached preview image is blocked: ${image}` };
 
   for (const sourceId of data.sources ?? []) {
+    if (seen.has(sourceId)) continue;
+    seen.add(sourceId);
     const source = sourceById.get(sourceId);
     if (!source) continue;
-    const sourceImage = previewImageFor(source, cache);
-    if (sourceImage) return sourceImage;
+    const sourceImage = previewImageFor(source, cache, sourceById, seen);
+    if (sourceImage.image) return { ...sourceImage, reason: `source ${sourceId}: ${sourceImage.reason}` };
   }
 
-  return undefined;
+  const reasons = [];
+  if (!data.image_url) reasons.push('no image_url');
+  if (!url) reasons.push('no availability/source URL to preview');
+  else if (!cache[url]) reasons.push(`no cached preview for ${url}`);
+  else if (!cache[url]?.image) reasons.push(`cached preview has no image for ${url}`);
+  if ((data.sources ?? []).length === 0) reasons.push('no source refs with fallback previews');
+  return { image: undefined, reason: reasons.join('; ') };
 }
 
 function localAssetPath(url) {
@@ -145,12 +154,12 @@ for (const { file, collection, data } of entries) {
     errors.push(`${file}: local image_url is missing: ${data.image_url}`);
   }
 
-  if (!COLLECTIONS_EXPECTING_VISUALS.has(collection)) continue;
+  if (!COLLECTIONS_EXPECTING_VISUALS.has(collection) || data.index_mode === 'child') continue;
   const previewImage = previewImageFor(data, previewCache, sourceById);
-  if (!previewImage) {
+  if (!previewImage.image) {
     const count = missingByCollection.get(collection) ?? 0;
     missingByCollection.set(collection, count + 1);
-    warnings.push(`${file}: no safe image_url or preview image`);
+    warnings.push(`${file}: no safe image_url or preview image (${previewImage.reason})`);
   }
 }
 

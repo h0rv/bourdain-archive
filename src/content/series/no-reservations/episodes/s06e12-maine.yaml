@@ -1,0 +1,32 @@
+id: "no-reservations-s06e12-maine"
+title: "Maine"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 6
+episode: 12
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2010-04-12"
+date_precision: "day"
+summary: "Tony travels to Maine, guided by one of his cameramen, Maine native Zach Zamboni."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "rockland-united-states"
+  - "portland-united-states"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "http://www.noreservationslocations.com/maine-episode.html"

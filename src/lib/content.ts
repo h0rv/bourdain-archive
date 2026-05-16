@@ -3,6 +3,7 @@ import { withBase } from './site';
 const collectionPaths: Record<string, string> = {
   works: 'works',
   episodes: 'tv',
+  series: 'tv',
   screen: 'screen',
   appearances: 'appearances',
   literature: 'literature',
@@ -102,6 +103,22 @@ export function mediaTypeFor(data: any, collection?: string, sourceGroup?: strin
 
 export function relationToAuthorship(relation?: string): 'by' | 'about' {
   return relation === 'authored' || relation === 'featured' ? 'by' : 'about';
+}
+
+export function indexModeFor(data: any, collection?: string): 'rollup' | 'child' | 'hidden' {
+  if (data.index_mode === 'rollup' || data.index_mode === 'child' || data.index_mode === 'hidden') return data.index_mode;
+  if (collection === 'sources') return 'hidden';
+  if (data.parent_id) return 'child';
+  if (data.type === 'episode' || data.kind === 'episode') return 'child';
+  return 'rollup';
+}
+
+export function kindFor(data: any, collection?: string): string {
+  if (data.kind) return data.kind;
+  if (collection === 'series' && data.type === 'show') return 'series';
+  if (collection === 'sources') return 'source';
+  if (collection === 'images') return 'image';
+  return data.type ?? collection ?? 'record';
 }
 
 export function sourceTimelineDate(data: any): { date?: string; precision: string } {
@@ -210,8 +227,13 @@ export function youtubeId(url?: string | null): string | undefined {
 }
 
 const blockedPreviewImageHosts = new Set([
+  'opengraph.githubassets.com',
   'interviews.televisionacademy.com',
 ]);
+
+const blockedPreviewImagePaths = [
+  /^archive\.org\/services\/img\/The_Nerdist_Podcast_528$/i,
+];
 
 export function isUsablePreviewImage(url?: string | null): boolean {
   if (!url) return false;
@@ -219,6 +241,8 @@ export function isUsablePreviewImage(url?: string | null): boolean {
     const parsed = new URL(url);
     const host = parsed.hostname.replace(/^www\./, '');
     if (blockedPreviewImageHosts.has(host)) return false;
+    const hostAndPath = `${host}${parsed.pathname}`;
+    if (blockedPreviewImagePaths.some((pattern) => pattern.test(hostAndPath))) return false;
     return true;
   } catch {
     return url.startsWith('/');

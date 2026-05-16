@@ -1,0 +1,31 @@
+id: "no-reservations-s06e01-panama"
+title: "Panama"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 6
+episode: 1
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2010-01-11"
+date_precision: "day"
+summary: "Tony visits Panama, including a trip to Manuel Noriega's old house, and a trip into the rainforest, where he meets some local tribespeople. He also watches as the police set fire to a multi-million-dollar seized stash of cocaine."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "panama-city-panama"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "http://www.noreservationslocations.com/panama-episode.html"

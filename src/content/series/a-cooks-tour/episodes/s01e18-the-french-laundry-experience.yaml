@@ -1,0 +1,32 @@
+id: "a-cooks-tour-s01e18-the-french-laundry-experience"
+title: "The French Laundry Experience"
+kind: "episode"
+index_mode: "child"
+parent_id: "a-cooks-tour-show"
+type: "episode"
+show: "A Cook's Tour"
+season: 1
+episode: 18
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2002-04-09"
+date_precision: "day"
+summary: "Marooned in San Francisco, Tony tastes local shellfish and durian ice cream before embarking on a pilgrimage to experience the genius of Thomas Keller, chef and owner of The French Laundry."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "napa-valley-united-states"
+  - "san-francisco-united-states"
+sources:
+  - "travel-places-github"
+  - "a-cooks-tour-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.cookingchanneltv.com/shows/a-cooks-tour/episodes/the-french-laundry-experience"

@@ -1,0 +1,15 @@
+id: isfana-iran
+name: Isfana, Iran
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with Parts Unknown.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - iran
+sources:
+  - travel-places-github
+status: needs-review

@@ -1,0 +1,31 @@
+id: "a-cooks-tour-s02e11-let-s-get-lost"
+title: "Let's Get Lost"
+kind: "episode"
+index_mode: "child"
+parent_id: "a-cooks-tour-show"
+type: "episode"
+show: "A Cook's Tour"
+season: 2
+episode: 11
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2003-03-23"
+date_precision: "day"
+summary: "Tony Bourdain tries to get lost in Chang Mai, Thailand. His journey entails an impromptu elephant ride through the jungle, amazing meals with a wonderful Thai family on a farm, taking in some kick-boxing and trying out the traditional Thai massage."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "chiang-mai-thailand"
+sources:
+  - "travel-places-github"
+  - "a-cooks-tour-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.cookingchanneltv.com/shows/a-cooks-tour/episodes/lets-get-lost"

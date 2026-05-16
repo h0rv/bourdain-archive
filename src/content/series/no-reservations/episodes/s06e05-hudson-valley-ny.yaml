@@ -1,0 +1,31 @@
+id: "no-reservations-s06e05-hudson-valley-ny"
+title: "Hudson Valley, NY"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 6
+episode: 5
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2010-02-08"
+date_precision: "day"
+summary: "Tony visits cities in Hudson Valley in New York State, accompanied at times by food writer Michael Ruhlman. He enjoys local crabs, visits his alma mater The Culinary Institute of America and Mohonk Mountain House, and has lunch with actor Bill Murray in Yonkers. He also meets his biggest challenge, the 10 year old daughter of Michael Pardus, Sierra."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "hudson-valley-united-states"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

@@ -1,0 +1,34 @@
+id: "no-reservations-s07e13-us-desert"
+title: "US Desert"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 7
+episode: 13
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2011-08-08"
+date_precision: "day"
+summary: "Tony explores the Mojave Desert of southern California with Josh Homme of Queens of the Stone Age."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "pioneertown-united-states"
+  - "joshua-tree-united-states"
+  - "rancho-mirage-united-states"
+  - "coachella-united-states"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

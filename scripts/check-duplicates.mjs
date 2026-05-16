@@ -15,7 +15,7 @@ const STRICT_FUZZY = process.env.DUPLICATE_STRICT === '1';
 const CANDIDATE_LIMIT = Number.parseInt(process.env.DUPLICATE_LIMIT ?? '80', 10);
 const HIGH_SIMILARITY = Number.parseFloat(process.env.DUPLICATE_HIGH_SIMILARITY ?? '0.94');
 const REPORT_SIMILARITY = Number.parseFloat(process.env.DUPLICATE_REPORT_SIMILARITY ?? '0.88');
-const EXACT_COLLECTIONS = new Set(['works', 'episodes', 'screen', 'appearances', 'literature', 'events', 'places', 'people']);
+const EXACT_COLLECTIONS = new Set(['works', 'episodes', 'series', 'screen', 'appearances', 'literature', 'events', 'places', 'people', 'images']);
 
 const errors = [];
 const warnings = [];
@@ -45,6 +45,7 @@ async function loadContentFile(filePath) {
     precision: data.date_precision ?? 'unknown',
     mediaType: data.media_type ?? '',
     url: data.url ?? '',
+    indexMode: data.index_mode ?? (collection === 'sources' ? 'hidden' : data.parent_id ? 'child' : 'rollup'),
   };
 }
 
@@ -117,6 +118,8 @@ function datesCompatible(left, right) {
 
 function comparable(left, right) {
   if (left.id === right.id && left.collection === right.collection) return false;
+  if (left.collection === 'sources' && right.collection !== 'sources') return false;
+  if (right.collection === 'sources' && left.collection !== 'sources') return false;
   if (typeBucket(left) !== typeBucket(right)) return false;
   if (!datesCompatible(left, right)) return false;
   return true;
@@ -133,6 +136,7 @@ const exact = new Map();
 
 for (const entry of entries) {
   if (!EXACT_COLLECTIONS.has(entry.collection)) continue;
+  if (entry.indexMode === 'hidden') continue;
   const signature = exactSignature(entry);
   if (!signature.split('|')[0]) continue;
   const matches = exact.get(signature) ?? [];

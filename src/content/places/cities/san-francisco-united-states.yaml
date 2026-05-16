@@ -1,0 +1,15 @@
+id: san-francisco-united-states
+name: San Francisco, United States
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with A Cook's Tour.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - united-states
+sources:
+  - travel-places-github
+status: needs-review

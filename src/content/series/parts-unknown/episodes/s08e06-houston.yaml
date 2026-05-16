@@ -1,0 +1,31 @@
+id: "parts-unknown-s08e06-houston"
+title: "Houston"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 8
+episode: 6
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2016-10-30"
+date_precision: "day"
+summary: "Looking beyond oil, NASA, and football, Tony showcases the extreme ethnic diversity of Houston, Texas. Anthony visits the Little India neighborhood; attends a quinceañera, meets with refugee students at Lee High School, as well as the principal, himself a former Vietnamese refugee; explores African-American \"slab\" car culture with rapper Slim Thug; meets Vietnamese fishermen and Congolese farmers; and attends an Indian cricket game."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "houston-united-states"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

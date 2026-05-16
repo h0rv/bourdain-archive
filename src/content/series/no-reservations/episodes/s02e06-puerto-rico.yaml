@@ -1,0 +1,37 @@
+id: "no-reservations-s02e06-puerto-rico"
+title: "Puerto Rico"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 2
+episode: 6
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2006-05-01"
+date_precision: "day"
+summary: "Tony visits Puerto Rico and tries to see the less-touristic side of the island. After a bad start drinking a piña colada at the bar where the drink was invented, he enjoys roast pork at a lechonera, as well as mofongo, goes scuba-diving in an unsuccessful attempt to catch a giant lobster, and tries horseback riding. He also searches for the mythical chupacabra and goes sparring with boxing champion Miguel Cotto. He visits a music festival and enjoys chicharrón in Bayamón."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "bayam-puerto-rico"
+  - "caguas-puerto-rico"
+  - "cayey-puerto-rico"
+  - "isabela-puerto-rico"
+  - "ponce-puerto-rico"
+  - "san-juan-puerto-rico"
+  - "vega-baja-puerto-rico"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.imdb.com/title/tt0933412/locations?ref_=tt_dt_dt"

@@ -3,18 +3,28 @@ import { getCollection } from 'astro:content';
 import EntryDetail from '../../components/EntryDetail.astro';
 
 export async function getStaticPaths() {
-  const entries = await getCollection('episodes');
+  const entries = await getCollection('series');
   const sources = await getCollection('sources');
   const relatedEntries = [
     ...(await getCollection('works')).map((entry) => ({ entry, collection: 'works' })),
-    ...(await getCollection('episodes')).map((entry) => ({ entry, collection: 'episodes' })),
+    ...(await getCollection('series')).map((entry) => ({ entry, collection: 'series' })),
     ...(await getCollection('screen')).map((entry) => ({ entry, collection: 'screen' })),
     ...(await getCollection('appearances')).map((entry) => ({ entry, collection: 'appearances' })),
     ...(await getCollection('places')).map((entry) => ({ entry, collection: 'places' })),
   ];
-  return entries.map((entry) => ({ params: { id: entry.data.id }, props: { entry, sources, relatedEntries } }));
+  return entries.map((entry) => ({
+    params: { id: entry.data.id },
+    props: {
+      entry,
+      sources,
+      relatedEntries,
+      childEntries: entries
+        .filter((candidate) => candidate.data.parent_id === entry.data.id)
+        .map((candidate) => ({ entry: candidate, collection: 'series' })),
+    },
+  }));
 }
 
-const { entry, sources, relatedEntries } = Astro.props;
+const { entry, sources, relatedEntries, childEntries } = Astro.props;
 ---
-<EntryDetail entry={entry} collection="episodes" sources={sources} relatedEntries={relatedEntries} />
+<EntryDetail entry={entry} collection="series" sources={sources} relatedEntries={relatedEntries} childEntries={childEntries} />

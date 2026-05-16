@@ -1,0 +1,31 @@
+id: "parts-unknown-s05e02-korea"
+title: "Korea"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 5
+episode: 2
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2015-04-26"
+date_precision: "day"
+summary: "Reverse chronology is used to tell the story of Tony’s return trip to South Korea after a 10-year absence. He experiences the nuances of hyper-modern Seoul which has its sights set on becoming the world’s top exporter of popular culture. Food options include Korean fried chicken, and a vintage Korean “army” stew, budae jjigae, with Spam, canned baked beans, frankfurters, ramen noodles and Kimchi."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "seoul-south-korea"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

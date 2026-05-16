@@ -1,0 +1,31 @@
+id: "a-cooks-tour-s01e03-cobra-heart-foods-that-make-you-manly"
+title: "Cobra Heart - Foods That Make You Manly"
+kind: "episode"
+index_mode: "child"
+parent_id: "a-cooks-tour-show"
+type: "episode"
+show: "A Cook's Tour"
+season: 1
+episode: 3
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2002-01-15"
+date_precision: "day"
+summary: "Travel with Tony Bourdain to Ho Chi Minh City to an exotic market that features some extraordinary choices for breakfast including duck eggs. And for dinner in this exotic locale, Tony travels to a specialized cafe that serves up some wild \"flavors of the forest.\""
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "ho-chi-minh-city-vietnam"
+sources:
+  - "travel-places-github"
+  - "a-cooks-tour-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.cookingchanneltv.com/shows/a-cooks-tour/episodes/vietnam-food-that-makes-you-manly"

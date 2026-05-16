@@ -1,0 +1,32 @@
+id: "parts-unknown-s01e01-myanmar"
+title: "Myanmar"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 1
+episode: 1
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2013-04-14"
+date_precision: "day"
+summary: "With the slight relaxation of control by the government of Myanmar (Burma), Tony is finally able to explore one of the most fabled and beautiful areas of Asia."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "bagan-myanmar"
+  - "yangon-myanmar"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.pogdesign.co.uk/cat/Anthony-Bourdain-Parts-Unknown/Season-1/Episode-1"

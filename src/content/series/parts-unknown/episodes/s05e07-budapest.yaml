@@ -1,0 +1,31 @@
+id: "parts-unknown-s05e07-budapest"
+title: "Budapest"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 5
+episode: 7
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2015-06-07"
+date_precision: "day"
+summary: "Drawing inspiration from iconic Hungarian born cinematographer Vilmos Zsigmond, Bourdain explores the beauty, culture, history, architecture and food of Budapest. The culinary dishes sampled during his journey include goulash, fisherman’s soup, blood sausage, stuffed cabbage and, during a stop at restaurant Pleh Csarda, a golden brown pancake heaped with chicken liver and bone marrow, fried schnitzel and venison stew."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "budapest-hungary"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

@@ -1,0 +1,34 @@
+id: "parts-unknown-s10e02-french-alps"
+title: "French Alps"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 10
+episode: 2
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2017-10-08"
+date_precision: "day"
+summary: "The gloves are off and the rivalry continues as Bourdain and his long time friend, three-Michelin-starred chef Eric Ripert, embark on a ski-and-cheese-filled journey through the French Alps - home advantage Ripert? Bourdain gets a glimpse into Ripert's early life while tending a little too closely to cows, and overindulging in delicious cheese dishes. The pair team up to prepare a French meal, featuring caviar and steak au poivre, with the help of Ripert's mentor Maurice Guillouet. Bourdain and Ripert also venture across the Italian border to La Maison Rose and surrender to Bourdain's love of pasta with gnocchi, ravioli, and polenta."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "argentiere-france"
+  - "chamonix-mont-blanc-france"
+  - "nus-italy"
+  - "vallorcine-france"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://explorepartsunknown.com/french-alps/eat-like-bourdain-2/"

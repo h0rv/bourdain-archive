@@ -1,0 +1,32 @@
+id: "no-reservations-s05e01-mexico"
+title: "Mexico"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 5
+episode: 1
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2009-01-05"
+date_precision: "day"
+summary: "Tony travels to Mexico with Carlos, the Mexican executive chef of Les Halles, and the two visit Puebla, Carlos's home town, and Mexico City. Tony eats Mexican foods like tortillas and roast pork and drinks pulque, an alcoholic beverage. He also attends a lucha libre school."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "mexico-city-mexico"
+  - "puebla-mexico"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

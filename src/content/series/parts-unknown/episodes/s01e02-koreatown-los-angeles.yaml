@@ -1,0 +1,34 @@
+id: "parts-unknown-s01e02-koreatown-los-angeles"
+title: "Koreatown, Los Angeles"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 1
+episode: 2
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2013-04-21"
+date_precision: "day"
+summary: "Tony visits the three square-mile area of Los Angeles known as Koreatown, where he finds a tight-knit community still marked by the 1992 Rodney King riots. Tony travels throughout the community with chef Roy Choi and artist David Choe to see how much the town has evolved and how other cultures have integrated into Koreatown, and to see what it was like to grow up Korean American."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "koreatown-united-states"
+  - "venice-united-states"
+  - "los-feliz-united-states"
+  - "whittier-boulevard-united-states"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

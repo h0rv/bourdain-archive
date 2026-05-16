@@ -1,0 +1,31 @@
+id: "the-layover-s02e01-chicago"
+title: "Chicago"
+kind: "episode"
+index_mode: "child"
+parent_id: "the-layover-show"
+type: "episode"
+show: "The Layover"
+season: 2
+episode: 1
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2012-11-19"
+date_precision: "day"
+summary: "Tony cruises around the Windy City, has a damn-good hot dog, has a drink with painter and blogger Bruce Cameron Elliott, and dines with Top Chef champion Stephanie Izard."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "chicago-united-states"
+sources:
+  - "travel-places-github"
+  - "the-layover-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/The_Layover"

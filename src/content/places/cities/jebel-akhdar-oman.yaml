@@ -1,0 +1,15 @@
+id: jebel-akhdar-oman
+name: Jebel Akhdar, Oman
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with Parts Unknown.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - oman
+sources:
+  - travel-places-github
+status: needs-review

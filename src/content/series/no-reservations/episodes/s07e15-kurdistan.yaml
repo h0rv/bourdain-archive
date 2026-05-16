@@ -1,0 +1,34 @@
+id: "no-reservations-s07e15-kurdistan"
+title: "Kurdistan"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 7
+episode: 15
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2011-08-22"
+date_precision: "day"
+summary: "Tony and his crew venture to the war zone of Iraqi Kurdistan, as well as Turkish Kurdistan, to explore the tragic history and hopeful future of the Kurds."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "chester-united-states"
+  - "soran-iraqi-kurdistan-iraq"
+  - "erbil-iraqi-kurdistan-iraq"
+  - "derik-turkish-kurdistan-turkey"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

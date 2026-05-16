@@ -1,0 +1,32 @@
+id: "no-reservations-s04e12-colombia"
+title: "Colombia"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 4
+episode: 12
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2008-07-14"
+date_precision: "day"
+summary: "Tony visits the cities of Medellín and Cartagena in Colombia, and learns about its tragic past as a drug capital, as well as its more hopeful future."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "medellin-colombia"
+  - "cartagena-colombia"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

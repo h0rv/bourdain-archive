@@ -1,0 +1,15 @@
+id: amarante-portugal
+name: Amarante, Portugal
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with A Cook's Tour.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - portugal
+sources:
+  - travel-places-github
+status: needs-review

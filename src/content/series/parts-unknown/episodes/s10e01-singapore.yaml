@@ -1,0 +1,31 @@
+id: "parts-unknown-s10e01-singapore"
+title: "Singapore"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 10
+episode: 1
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2017-10-01"
+date_precision: "day"
+summary: "Bourdain tours the historically rich streets of Singapore and immerses himself in the vast array of multicultural foods found throughout this island city-state. An old-school style prawn mee lunch with his go-to Singaporean food guide, KF Seetoh, and a trip down to the Muslim quarter for a soup-like dish of wontons, rice cake, coconut gravy, vegetables, and hard boiled eggs are included in the host's cuisine-driven excursion. Bourdain also explores the dichotomy of Singapore society that is known for its tolerance of diverse cultures, generous social services, and sanctioned diversions (ex. legalized brothels, casinos), and the restriction of such basic civil liberties as freedom of the press and privacy."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "singapore"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

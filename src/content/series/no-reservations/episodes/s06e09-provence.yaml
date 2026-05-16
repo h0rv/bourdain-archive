@@ -1,0 +1,31 @@
+id: "no-reservations-s06e09-provence"
+title: "Provence"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 6
+episode: 9
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2010-03-22"
+date_precision: "day"
+summary: "Tony and crew stay at a villa in Provence, France, and Tony tries daube, aioli, terrine and Ricard Pastis, and plays pétanque. He then attempts to cook a provençal meal for some of the locals."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "provence-france"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

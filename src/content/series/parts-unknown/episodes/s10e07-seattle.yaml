@@ -1,0 +1,31 @@
+id: "parts-unknown-s10e07-seattle"
+title: "Seattle"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 10
+episode: 7
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2017-11-19"
+date_precision: "day"
+summary: "Bourdain immerses himself in the \"boom or bust\" city of Seattle. Two industries are reshaping the city and its culture - tech and the newly legalized cannabis industry. Bourdain gets the skinny on the \"tech bro\" invasion of Capitol Hill, throws back a dozen succulent oysters at the Taylor Shellfish Company and enjoys fish & chips at the Pacific Inn Pub with band members of The Gods Themselves. Along the way, he also hangs out with legendary Seattle rocker, Mark Lanegan and mad food scientist, Nathan Myhrvold."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "seattle-united-states"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

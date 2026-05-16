@@ -1,0 +1,15 @@
+id: mcmurdo-station-antarctica
+name: McMurdo Station, Antarctica
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with Parts Unknown.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - antarctica
+sources:
+  - travel-places-github
+status: needs-review

@@ -1,0 +1,32 @@
+id: "no-reservations-s08e07-baja"
+title: "Baja"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 8
+episode: 7
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2012-05-28"
+date_precision: "day"
+summary: "Tony gets a taste of the food, wine and culture of Tijuana, Mexico, and the Baja Peninsula. He tries Mexican fish tacos and then checks out local street food with chef Javier Plascencia."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "ensenada-mexico"
+  - "tijuana-mexico"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.imdb.com/title/tt2155960/locations?ref_=tt_dt_dt"

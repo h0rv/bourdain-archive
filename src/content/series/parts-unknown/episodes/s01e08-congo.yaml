@@ -1,0 +1,32 @@
+id: "parts-unknown-s01e08-congo"
+title: "Congo"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 1
+episode: 8
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2013-06-09"
+date_precision: "day"
+summary: "Tony visits Congo, the setting of one of his favorite books, Joseph Conrad's Heart of Darkness, and the basis for one of his favorite movies, Apocalypse Now."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "goma-democratic-republic-of-the-congo"
+  - "kisangani-democratic-republic-of-the-congo"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.imdb.com/title/tt2849384/locations?ref_=tt_dt_dt"

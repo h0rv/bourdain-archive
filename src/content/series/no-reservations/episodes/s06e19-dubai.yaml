@@ -1,0 +1,31 @@
+id: "no-reservations-s06e19-dubai"
+title: "Dubai"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 6
+episode: 19
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2010-08-09"
+date_precision: "day"
+summary: "Tony visits Dubai and samples some of the local highlights, including fine dining and the indoor ski resort Ski Dubai. He also meets and eats with some of the locals, including young sheiks and foreign workers."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "dubai-united-arab-emirates"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

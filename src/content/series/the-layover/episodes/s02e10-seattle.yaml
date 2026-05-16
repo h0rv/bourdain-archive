@@ -1,0 +1,31 @@
+id: "the-layover-s02e10-seattle"
+title: "Seattle"
+kind: "episode"
+index_mode: "child"
+parent_id: "the-layover-show"
+type: "episode"
+show: "The Layover"
+season: 2
+episode: 10
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2013-02-04"
+date_precision: "day"
+summary: "Who doesn't love a layover in Seattle? Bourdain indulges in runny and smelly cheeses at Calf and Kid, checks out the aerial view of the city from a seaplane and gets a not-so-family-friendly tour of Seattle's historical underbelly."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "seattle-united-states"
+sources:
+  - "travel-places-github"
+  - "the-layover-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/The_Layover"

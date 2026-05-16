@@ -1,0 +1,32 @@
+id: "no-reservations-s07e14-ukraine"
+title: "Ukraine"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 7
+episode: 14
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2011-08-15"
+date_precision: "day"
+summary: "Tony and Zamir travel through the abandoned city of Chernobyl in Ukraine, site of a nuclear accident 25 years earlier. They then travel elsewhere in Ukraine including the Crimea and sample local food like green borscht."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "chernobyl-ukraine"
+  - "crimea-ukraine"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

@@ -1,0 +1,15 @@
+id: bucharest-romania
+name: Bucharest, Romania
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with No Reservations.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - romania
+sources:
+  - travel-places-github
+status: needs-review

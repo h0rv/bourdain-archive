@@ -10,6 +10,7 @@ const statusSchema = z.enum([
   "partial",
 ]);
 const datePrecisionSchema = z.enum(["day", "month", "year", "unknown"]);
+const indexModeSchema = z.enum(["rollup", "child", "hidden"]);
 const urlField = z.url().nullable().optional();
 const imageField = z
   .union([z.url(), z.string().startsWith("/")])
@@ -42,9 +43,28 @@ const imageUsagePolicySchema = z.enum([
   "do-not-display",
 ]);
 
+const identifiersSchema = z
+  .object({
+    imdb: z.string().nullable().optional(),
+    tvdb: z.string().nullable().optional(),
+    openlibrary: z.string().nullable().optional(),
+    wikidata: z.string().nullable().optional(),
+    worldcat: z.string().nullable().optional(),
+  })
+  .default({});
+
+const roleSchema = z.object({
+  person: z.string(),
+  role: z.string(),
+  credited_as: z.string().optional(),
+});
+
 const commonEntrySchema = z.object({
   id: z.string(),
   title: z.string(),
+  kind: z.string().optional(),
+  index_mode: indexModeSchema.optional(),
+  parent_id: z.string().nullable().optional(),
   type: z.string(),
   date: z.string().nullable().optional(),
   date_precision: datePrecisionSchema.default("unknown"),
@@ -59,8 +79,11 @@ const commonEntrySchema = z.object({
   tags: z.array(z.string()).default([]),
   people: z.array(z.string()).default([]),
   places: z.array(z.string()).default([]),
+  images: z.array(z.string()).default([]),
   sources: z.array(z.string()).default([]),
   related: z.array(z.string()).default([]),
+  identifiers: identifiersSchema,
+  roles: z.array(roleSchema).default([]),
   status: statusSchema.default("needs-review"),
   image_url: imageField,
   availability: availabilitySchema,
@@ -69,6 +92,9 @@ const commonEntrySchema = z.object({
 const namedEntrySchema = z.object({
   id: z.string(),
   name: z.string(),
+  kind: z.string().optional(),
+  index_mode: indexModeSchema.optional(),
+  parent_id: z.string().nullable().optional(),
   type: z.string(),
   summary: z.string().optional(),
   record_type: z.string().optional(),
@@ -81,8 +107,11 @@ const namedEntrySchema = z.object({
   tags: z.array(z.string()).default([]),
   people: z.array(z.string()).default([]),
   places: z.array(z.string()).default([]),
+  images: z.array(z.string()).default([]),
   sources: z.array(z.string()).default([]),
   related: z.array(z.string()).default([]),
+  identifiers: identifiersSchema,
+  roles: z.array(roleSchema).default([]),
   status: statusSchema.default("needs-review"),
   availability: availabilitySchema.optional(),
 });
@@ -102,13 +131,16 @@ export const collections = {
       ]),
     }),
   }),
-  episodes: defineCollection({
-    loader: contentFiles("episodes"),
+  series: defineCollection({
+    loader: contentFiles("series"),
     schema: commonEntrySchema.extend({
-      type: z.enum(["show", "episode", "video"]),
+      type: z.enum(["show", "season", "episode", "field-note"]),
+      kind: z.enum(["series", "season", "episode", "field-note"]).optional(),
       show: z.string().nullable().optional(),
       season: z.number().nullable().optional(),
       episode: z.number().nullable().optional(),
+      region: z.string().nullable().optional(),
+      source_url: urlField,
     }),
   }),
   appearances: defineCollection({
@@ -172,6 +204,9 @@ export const collections = {
     schema: z.object({
       id: z.string(),
       title: z.string(),
+      kind: z.literal("image").optional(),
+      index_mode: indexModeSchema.optional(),
+      parent_id: z.string().nullable().optional(),
       type: z.enum(["photo", "photo-essay", "portrait", "social-photo", "cover", "poster"]),
       date: z.string().nullable().optional(),
       date_precision: datePrecisionSchema.default("unknown"),
@@ -189,8 +224,10 @@ export const collections = {
       tags: z.array(z.string()).default([]),
       people: z.array(z.string()).default([]),
       places: z.array(z.string()).default([]),
+      images: z.array(z.string()).default([]),
       sources: z.array(z.string()).default([]),
       related: z.array(z.string()).default([]),
+      identifiers: identifiersSchema,
       status: statusSchema.default("needs-review"),
     }),
   }),
@@ -199,6 +236,9 @@ export const collections = {
     schema: z.object({
       id: z.string(),
       title: z.string(),
+      kind: z.literal("source").optional(),
+      index_mode: indexModeSchema.default("hidden"),
+      parent_id: z.string().nullable().optional(),
       type: z.string(),
       date: z.string().nullable().optional(),
       date_precision: datePrecisionSchema.default("unknown"),
@@ -212,6 +252,10 @@ export const collections = {
         .optional(),
       creator: z.array(z.string()).default([]),
       contributors: z.array(z.string()).default([]),
+      sources: z.array(z.string()).default([]),
+      related: z.array(z.string()).default([]),
+      identifiers: identifiersSchema,
+      status: statusSchema.default("confirmed"),
     }),
   }),
 };

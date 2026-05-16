@@ -1,0 +1,31 @@
+id: "no-reservations-s03e11-cleveland"
+title: "Cleveland"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 3
+episode: 11
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2007-08-27"
+date_precision: "day"
+summary: "Tony travels with food writer Michael Ruhlman to Cleveland, Ruhlman's home town. They have Cincinnati chili at Skyline Chili. Tony meets comic-book artist Harvey Pekar. He also visits the Rock and Roll Hall of Fame with Marky Ramone and spends time with chef Michael Symon, both at Symon's restaurant Lola and at a soul food restaurant. Parts of the episode are illustrated in Pekar's comic-book style."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "cleveland-united-states"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

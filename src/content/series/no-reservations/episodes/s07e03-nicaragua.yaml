@@ -1,0 +1,33 @@
+id: "no-reservations-s07e03-nicaragua"
+title: "Nicaragua"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 7
+episode: 3
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2011-03-14"
+date_precision: "day"
+summary: "Tony visits Nicaragua to sample the cuisine, and in the process discovers the determination necessary to live in modern-day Nicaragua."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "esteli-nicaragua"
+  - "granada-nicaragua"
+  - "managua-nicaragua"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

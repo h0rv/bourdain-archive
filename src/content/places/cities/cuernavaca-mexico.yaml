@@ -1,0 +1,15 @@
+id: cuernavaca-mexico
+name: Cuernavaca, Mexico
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with Parts Unknown.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - mexico
+sources:
+  - travel-places-github
+status: needs-review

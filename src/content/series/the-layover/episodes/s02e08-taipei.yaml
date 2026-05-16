@@ -1,0 +1,31 @@
+id: "the-layover-s02e08-taipei"
+title: "Taipei"
+kind: "episode"
+index_mode: "child"
+parent_id: "the-layover-show"
+type: "episode"
+show: "The Layover"
+season: 2
+episode: 8
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2013-01-21"
+date_precision: "day"
+summary: "In Taipei, Anthony Bourdain visits the second-tallest building in the world. There he discovers pork carved out of jade, learns he can't have a plan in a bar scuffle and sees why scantily-clad women attend funerals."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "taipei-taiwan"
+sources:
+  - "travel-places-github"
+  - "the-layover-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/The_Layover"

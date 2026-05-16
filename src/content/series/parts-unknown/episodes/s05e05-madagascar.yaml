@@ -1,0 +1,31 @@
+id: "parts-unknown-s05e05-madagascar"
+title: "Madagascar"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 5
+episode: 5
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2015-05-17"
+date_precision: "day"
+summary: "With acclaimed film director Darren Aronofsky as his travel companion, Tony explores this island nation off the southeastern coast of Africa. Starting the journey in the chaotic, crowded capital city Tana, they sample the cuisine of legendary Malagasy chef Mariette Andrianjaka."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "antananarivo-madagascar"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

@@ -1,0 +1,31 @@
+id: "parts-unknown-s03e02-punjab-india"
+title: "Punjab, India"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 3
+episode: 2
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2014-04-13"
+date_precision: "day"
+summary: "In the season premiere, the host dives into the ever-changing state of Punjab with a trip to Amritsar, sampling cuisine at the dhabas (roadside restaurants), a gurpurb festival (Sikh celebration), Chapslee Estate and a free community vegetarian restaurant, while meeting with local residents who give their perspectives on life in this sometimes contentious region of India, bordering Pakistan."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "amritsar-india"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

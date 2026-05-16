@@ -1,0 +1,32 @@
+id: "no-reservations-s04e08-romania"
+title: "Romania"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 4
+episode: 8
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2008-02-25"
+date_precision: "day"
+summary: "Tony visits Transylvania and Bucharest, Romania. He is accompanied by Zamir Gotta, who is celebrating his 50th birthday. Along the way, they learn about vampires, the communist regime, and the strong cultural history of Romania. They attend a tourist-oriented Dracula-themed Halloween dinner at a castle in Transylvania, which Tony hates."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "bucharest-romania"
+  - "brasov-romania"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.imdb.com/title/tt1189467/locations?ref_=tt_dt_dt"

@@ -1,0 +1,31 @@
+id: "no-reservations-s05e03-washington-d-c"
+title: "Washington, D.C."
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 5
+episode: 3
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2009-01-19"
+date_precision: "day"
+summary: "Tony visits Washington, D.C. and explores the diversity of its culinary options, including Irish, Mexican and Ethiopian food, as well as local landmark Ben's Chili Bowl. He visits the International Spy Museum and practices one espionage technique, the dead drop. He then meets up with renown chef and restauranteur José Andrés for a tour of a Penn Quarter market and Andrés famed minibar."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "washington-united-states"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

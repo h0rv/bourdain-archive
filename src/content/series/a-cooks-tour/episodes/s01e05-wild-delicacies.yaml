@@ -1,0 +1,31 @@
+id: "a-cooks-tour-s01e05-wild-delicacies"
+title: "Wild Delicacies"
+kind: "episode"
+index_mode: "child"
+parent_id: "a-cooks-tour-show"
+type: "episode"
+show: "A Cook's Tour"
+season: 1
+episode: 5
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2002-01-22"
+date_precision: "day"
+summary: "With a friend along for the ride, Tony travels to Phnom Penh, Cambodia, where he explores a food culture that is both pleasing to the palette and slightly frightening."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "phnom-penh-cambodia"
+sources:
+  - "travel-places-github"
+  - "a-cooks-tour-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.cookingchanneltv.com/shows/a-cooks-tour/episodes/wild-delicacies"

@@ -1,14 +1,13 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { entryHref, entryTitle, findByDataId, formatDate, formatType, statusClass, visibleStatus } from '../../lib/content';
+import { entryHref, entryTitle, formatDate, formatType, statusClass, visibleStatus } from '../../lib/content';
 
 export async function getStaticPaths() {
   const places = await getCollection('places');
-  const sources = await getCollection('sources');
   const referencedEntries = [
     ...(await getCollection('works')).map((entry) => ({ entry, collection: 'works' })),
-    ...(await getCollection('episodes')).map((entry) => ({ entry, collection: 'episodes' })),
+    ...(await getCollection('series')).map((entry) => ({ entry, collection: 'series' })),
     ...(await getCollection('appearances')).map((entry) => ({ entry, collection: 'appearances' })),
   ];
 
@@ -16,15 +15,13 @@ export async function getStaticPaths() {
     params: { id: entry.data.id },
     props: {
       entry,
-      sources,
       linkedEntries: referencedEntries.filter((item) => item.entry.data.places?.includes(entry.data.id)),
     },
   }));
 }
 
-const { entry, sources, linkedEntries } = Astro.props;
+const { entry, linkedEntries } = Astro.props;
 const data = entry.data;
-const sourceRefs = (data.sources ?? []).map((id: string) => findByDataId(sources, id)).filter(Boolean);
 const displayStatus = visibleStatus(data.status);
 ---
 <BaseLayout title={data.name} description={data.summary}>
@@ -58,17 +55,5 @@ const displayStatus = visibleStatus(data.status);
       )}
     </section>
 
-    <section class="detail-box">
-      <h2>Sources</h2>
-      {sourceRefs.length > 0 ? (
-        <ul class="clean-list">
-          {sourceRefs.map((source: any) => (
-            <li><a href={entryHref('sources', source.data.id)}>{source.data.title}</a> <span class="meta">({source.data.type})</span></li>
-          ))}
-        </ul>
-      ) : (
-        <p class="meta">Unsourced.</p>
-      )}
-    </section>
   </article>
 </BaseLayout>

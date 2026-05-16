@@ -1,0 +1,31 @@
+id: "a-cooks-tour-s02e08-mad-tony-the-food-warrior"
+title: "Mad Tony: The Food Warrior"
+kind: "episode"
+index_mode: "child"
+parent_id: "a-cooks-tour-show"
+type: "episode"
+show: "A Cook's Tour"
+season: 2
+episode: 8
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2003-03-02"
+date_precision: "day"
+summary: "Tony Bourdain's in pursuit of the planet's finest meals so he's traveled halfway around the world to Sydney, Australia's esteemed Tetsuya restaurant. But before he can feast on Chef Tets' cuisine, Tony's got to eat his way out of the outback, dining on authentic bush fare!"
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "sydney-australia"
+sources:
+  - "travel-places-github"
+  - "a-cooks-tour-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.cookingchanneltv.com/shows/a-cooks-tour/episodes/mad-tony-the-food-warrior"

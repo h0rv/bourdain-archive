@@ -1,0 +1,15 @@
+id: taipei-taiwan
+name: Taipei, Taiwan
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with The Layover.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - taiwan
+sources:
+  - travel-places-github
+status: needs-review

@@ -1,0 +1,34 @@
+id: "no-reservations-s03e07-from-shanghai-to-shangri-la"
+title: "From Shanghai to Shangri-la"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 3
+episode: 7
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2007-07-30"
+date_precision: "day"
+summary: "Tony heads back to China and visits Shanghai, a budding economic superpower, where he discovers that Shanghai is considered the dumpling capital of the world made famous by its soup dumpling. Tony then heads to Yunnan province. In Dali, he learns from the Bai ethnic minority people a unique way of catching fish. From there, he works his way north to Lijiang, then to Zhongdian, an ethnically Tibetan area, in search of the valley of Shangri-La as described in British author James Hilton's novel Lost Horizon. The Lijiang/Zhongdian area is believed by many to have been the inspiration for the mythical Shangri-la."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "dali-china"
+  - "lijiang-china"
+  - "shanghai-china"
+  - "zhangdian-china"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

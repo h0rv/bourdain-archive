@@ -1,0 +1,32 @@
+id: "no-reservations-s05e16-thailand"
+title: "Thailand"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 5
+episode: 16
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2009-08-17"
+date_precision: "day"
+summary: "Tony travels to Thailand and catches the beginning of the 2009 political unrest there. He also enjoys street food in Bangkok and explores Phuket. Later, Tony meets up with another runner-up of the \"FANatic\" contest, Eric Rivera, who is training for his Muay Thai fight."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "bangkok-thailand"
+  - "phuket-thailand"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

@@ -1,0 +1,34 @@
+id: "no-reservations-s03e04-namibia"
+title: "Namibia"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 3
+episode: 4
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2007-01-22"
+date_precision: "day"
+summary: "In Namibia, Tony's friend and guide, Garrett, introduces Tony to the fine art of sandboarding. German immigrant Hans takes Tony on a hunt for famous Namibian truffles and then for the poster-animal for Namibia."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "katutura-namibia"
+  - "khomas-namibia"
+  - "walvis-bay-namibia"
+  - "windhoek-namibia"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.imdb.com/title/tt0943558/locations?ref_=tt_dt_dt"

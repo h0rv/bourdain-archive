@@ -1,0 +1,34 @@
+id: "no-reservations-s04e09-hawaii"
+title: "Hawaii"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 4
+episode: 9
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2008-03-03"
+date_precision: "day"
+summary: "Tony gets a taste of paradise as he visits the Hawaiian islands, from jet skiing on the North Shore, to a visit to Kīlauea, the world's most active volcano. He learns all about the diverse use of SPAM in Hawaiian cuisine and participates in a luau and is enjoying it."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "honolulu-united-states"
+  - "kapolei-united-states"
+  - "north-shore-united-states"
+  - "koloa-united-states"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.imdb.com/title/tt1189464/locations?ref_=tt_dt_dt"

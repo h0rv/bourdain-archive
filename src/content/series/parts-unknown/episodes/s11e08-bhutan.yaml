@@ -1,0 +1,33 @@
+id: "parts-unknown-s11e08-bhutan"
+title: "Bhutan"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 11
+episode: 8
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2018-06-24"
+date_precision: "day"
+summary: "Bourdain and film director Darren Aronofsky (Requiem for a Dream, Black Swan) tour the remote South Asian Kingdom of Bhutan and travel on the winding East/West highway known for its spectacular views of the Himalayan Mountains. The seasoned explorers share a meal with yak herders, visit the capitol city of Thimphu for traditional Bhutanese cuisine, drive to Punakha to explore the village of legendary divine monk Drupka Kinley, and visit Bumthang for a bamboo archery competition."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "bumthang-bhutan"
+  - "punakha-bhutan"
+  - "thimphu-bhutan"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "http://cnnpressroom.blogs.cnn.com/2018/04/09/season-11-of-cnn-original-series-anthony-bourdain-parts-unknown-launches-sunday-april-29-at-9pm-with-a-tour-of-west-virginia-in-an-extended-episode/"

@@ -81,6 +81,10 @@
     grid-template-columns: 3.75rem minmax(0, 1fr);
   }
 
+  .archive-row.no-image {
+    grid-template-columns: 1fr;
+  }
+
   .row-image {
     width: 3.75rem;
   }
@@ -88,6 +92,10 @@
   .row-flags {
     grid-column: 2;
     justify-content: flex-start;
+  }
+
+  .archive-row.no-image .row-flags {
+    grid-column: 1;
   }
 
   .facet-list {

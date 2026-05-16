@@ -1,0 +1,32 @@
+id: "no-reservations-s03e01-ireland"
+title: "Ireland"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 3
+episode: 1
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2007-01-01"
+date_precision: "day"
+summary: "Tony visits Dublin and Belfast in Ireland, where he explores the legacy of The Troubles. He samples Irish stew, Guinness and some high-end restaurants, including those of chefs Paul Rankin and Seamus O'Connell."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "belfast-united-kingdom"
+  - "dublin-united-kingdom"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

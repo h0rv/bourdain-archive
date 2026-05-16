@@ -1,0 +1,31 @@
+id: "no-reservations-s07e10-macau"
+title: "Macau"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 7
+episode: 10
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2011-07-18"
+date_precision: "day"
+summary: "Tony visits Macau, a former Portuguese colony south of Hong Kong now known as the \"Vegas of Asia\", and tries his hand at some casino games. He also visits the Macau Tower bungee jump, the largest in the world, and takes the ultimate plunge."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "macau-china"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

@@ -1,0 +1,15 @@
+id: hue-vietnam
+name: Huế, Vietnam
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with Parts Unknown.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - vietnam
+sources:
+  - travel-places-github
+status: needs-review

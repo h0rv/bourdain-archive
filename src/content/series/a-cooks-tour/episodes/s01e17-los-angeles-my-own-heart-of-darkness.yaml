@@ -1,0 +1,31 @@
+id: "a-cooks-tour-s01e17-los-angeles-my-own-heart-of-darkness"
+title: "Los Angeles, My Own Heart of Darkness"
+kind: "episode"
+index_mode: "child"
+parent_id: "a-cooks-tour-show"
+type: "episode"
+show: "A Cook's Tour"
+season: 1
+episode: 17
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2002-04-09"
+date_precision: "day"
+summary: "New York chef, Anthony Bourdain, descends into the culinary underbelly of his metropolitan nemesis, Los Angeles, where he experiences the trials of celebrity fame and the joys of West Coast cuisine."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "los-angeles-united-states"
+sources:
+  - "travel-places-github"
+  - "a-cooks-tour-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.cookingchanneltv.com/shows/a-cooks-tour/episodes/heart-of-darkness"

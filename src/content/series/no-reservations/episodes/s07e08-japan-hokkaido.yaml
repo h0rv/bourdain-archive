@@ -1,0 +1,31 @@
+id: "no-reservations-s07e08-japan-hokkaido"
+title: "Japan: Hokkaido"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 7
+episode: 8
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2011-04-25"
+date_precision: "day"
+summary: "Weeks before the March 2011 quake, Tony visits Hokkaido, Japan. In Sapporo, he tries Hokkaido style ramen, waikanae crab, and Uni-ikura Don (salmon roe & sea urchin over rice). He visits with the indigenous people of Hokkaido, the Ainu. Tony ends his trip dining at a ryokan enjoying a formal robatayaki. In the international edition, viewers saw Tony visit the Sapporo Beer Garden for the “Genghis Khan” which is a specialty of Hokkaido."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "sapporo-japan"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

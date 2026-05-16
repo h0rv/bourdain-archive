@@ -1,0 +1,31 @@
+id: "a-cooks-tour-s01e19-my-hometown-favorites"
+title: "My Hometown Favorites"
+kind: "episode"
+index_mode: "child"
+parent_id: "a-cooks-tour-show"
+type: "episode"
+show: "A Cook's Tour"
+season: 1
+episode: 19
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2002-04-16"
+date_precision: "day"
+summary: "Chef Tony Bourdain loves his local New York haunts and wants to share them with you. For breakfast, Barney Greengrass is the tops in lox and bagels, and then it's off to Veritas where wine is paired with food. Last it's off to Murray's Cheese Shop and hot dogs at Gray's Papaya. It is New York at its finest."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "new-york-city"
+sources:
+  - "travel-places-github"
+  - "a-cooks-tour-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.cookingchanneltv.com/shows/a-cooks-tour/episodes/my-hometown-favorites"

@@ -1,0 +1,31 @@
+id: "a-cooks-tour-s01e04-eating-on-the-mekong"
+title: "Eating on the Mekong"
+kind: "episode"
+index_mode: "child"
+parent_id: "a-cooks-tour-show"
+type: "episode"
+show: "A Cook's Tour"
+season: 1
+episode: 4
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2002-01-15"
+date_precision: "day"
+summary: "On the river, Tony drinks a lot of Mekong moonshine with the welcoming owners of a duck farm. Although seduced by his Vietnam experience, Tony is not sure the royal dish Birds Nest Soup is all its cracked up to be."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "mekong-river-vietnam"
+sources:
+  - "travel-places-github"
+  - "a-cooks-tour-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.cookingchanneltv.com/shows/a-cooks-tour/episodes/eating-on-the-mekong"

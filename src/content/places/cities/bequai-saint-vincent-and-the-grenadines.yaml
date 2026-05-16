@@ -1,0 +1,15 @@
+id: bequai-saint-vincent-and-the-grenadines
+name: Bequai, Saint Vincent and the Grenadines
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with No Reservations.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - saint-vincent-and-the-grenadines
+sources:
+  - travel-places-github
+status: needs-review

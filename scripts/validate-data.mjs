@@ -10,9 +10,10 @@ import { readdir, readFile, stat } from 'node:fs/promises';
 import { join } from 'node:path';
 
 const CONTENT_ROOT = 'src/content';
-const COLLECTIONS = ['works', 'episodes', 'appearances', 'screen', 'literature', 'events', 'places', 'people', 'sources'];
+const COLLECTIONS = ['works', 'series', 'appearances', 'screen', 'literature', 'events', 'places', 'people', 'images', 'sources'];
 const DATE_PRECISIONS = new Set(['day', 'month', 'year', 'unknown']);
 const STATUS_VALUES = new Set(['confirmed', 'needs-review', 'missing-source', 'dead-link', 'partial']);
+const INDEX_MODES = new Set(['rollup', 'child', 'hidden']);
 const URL_FIELD_RE = /(^|_)url$/;
 
 const errors = [];
@@ -94,13 +95,24 @@ async function loadCollection(collection) {
   const dir = join(CONTENT_ROOT, collection);
   if (!(await exists(dir))) return [];
 
-  const files = (await readdir(dir)).filter((file) => file.endsWith('.json') || file.endsWith('.yaml') || file.endsWith('.yml'));
+  async function listFiles(root) {
+    const names = await readdir(root);
+    const nested = await Promise.all(names.map(async (name) => {
+      const path = join(root, name);
+      const details = await stat(path);
+      if (details.isDirectory()) return listFiles(path);
+      return path;
+    }));
+    return nested.flat();
+  }
+
+  const files = (await listFiles(dir)).filter((file) => file.endsWith('.json') || file.endsWith('.yaml') || file.endsWith('.yml'));
   return Promise.all(
     files.map(async (file) => {
-      const path = join(dir, file);
+      const path = file;
       const text = await readFile(path, 'utf8');
       const data = file.endsWith('.json') ? JSON.parse(text) : parseYamlLite(text);
-      return { collection, file, path, data };
+      return { collection, file: file.slice(dir.length + 1), path, data };
     }),
   );
 }
@@ -153,6 +165,7 @@ for (const entry of entries) {
   if (!data.type) errors.push(`${path}: missing type`);
   if (!data.title && !data.name) errors.push(`${path}: missing title/name`);
   if (data.status && !STATUS_VALUES.has(data.status)) errors.push(`${path}: invalid status: ${data.status}`);
+  if (data.index_mode && !INDEX_MODES.has(data.index_mode)) errors.push(`${path}: invalid index_mode: ${data.index_mode}`);
 
   if (data.id) {
     if (collection !== 'sources') {
@@ -168,6 +181,12 @@ for (const entry of entries) {
 
 for (const entry of entries) {
   const { data, path, collection } = entry;
+  const defaultIndexMode = collection === 'sources' ? 'hidden' : data.parent_id ? 'child' : 'rollup';
+  const indexMode = data.index_mode ?? defaultIndexMode;
+
+  if (data.parent_id && !byId.has(data.parent_id)) errors.push(`${path}: missing parent_id ref ${data.parent_id}`);
+  if (indexMode === 'rollup' && data.parent_id) errors.push(`${path}: rollup record cannot also have parent_id ${data.parent_id}`);
+
   if (collection !== 'sources') {
     for (const id of asArray(data.people)) {
       if (!byCollection.get('people')?.has(id)) errors.push(`${path}: missing person ref ${id}`);
@@ -177,6 +196,9 @@ for (const entry of entries) {
     }
     for (const id of asArray(data.sources)) {
       if (!byCollection.get('sources')?.has(id)) errors.push(`${path}: missing source ref ${id}`);
+    }
+    for (const id of asArray(data.images)) {
+      if (!byCollection.get('images')?.has(id)) errors.push(`${path}: missing image ref ${id}`);
     }
     for (const id of asArray(data.related)) {
       if (!byId.has(id)) errors.push(`${path}: missing related ref ${id}`);

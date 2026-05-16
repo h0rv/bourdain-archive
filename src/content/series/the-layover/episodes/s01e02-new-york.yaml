@@ -1,0 +1,31 @@
+id: "the-layover-s01e02-new-york"
+title: "New York"
+kind: "episode"
+index_mode: "child"
+parent_id: "the-layover-show"
+type: "episode"
+show: "The Layover"
+season: 1
+episode: 2
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2011-11-28"
+date_precision: "day"
+summary: "Tony takes on his hometown of NYC. Having lived and explored the city for years, instead of the typical tourist traps, he visits some of the city's hidden gems while hanging with his chef friends, David Chang and Eddie Huang."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "new-york-united-states"
+sources:
+  - "travel-places-github"
+  - "the-layover-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/The_Layover"

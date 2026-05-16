@@ -1,0 +1,15 @@
+id: ponce-puerto-rico
+name: Ponce, Puerto Rico
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with No Reservations.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - puerto-rico
+sources:
+  - travel-places-github
+status: needs-review

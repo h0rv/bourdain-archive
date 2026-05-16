@@ -1,0 +1,31 @@
+id: "the-layover-s01e08-san-francisco"
+title: "San Francisco"
+kind: "episode"
+index_mode: "child"
+parent_id: "the-layover-show"
+type: "episode"
+show: "The Layover"
+season: 1
+episode: 8
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2012-01-09"
+date_precision: "day"
+summary: "Tony Bourdain finds himself in San Francisco, a city known by vegan and vegetarian lovers alike. He discovers that San Francisco is actually a \"bare-knuckled, 2-fisted drinking town,\" where you can get a great meal of raw juicy meat for under $20."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "san-francisco-united-states"
+sources:
+  - "travel-places-github"
+  - "the-layover-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/The_Layover"

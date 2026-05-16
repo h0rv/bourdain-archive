@@ -1,0 +1,15 @@
+id: jaffna-sri-lanka
+name: Jaffna, Sri Lanka
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with Parts Unknown.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - sri-lanka
+sources:
+  - travel-places-github
+status: needs-review

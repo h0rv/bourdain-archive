@@ -1,0 +1,31 @@
+id: "a-cooks-tour-s01e14-so-much-vodka-so-little-time"
+title: "So Much Vodka, So Little Time"
+kind: "episode"
+index_mode: "child"
+parent_id: "a-cooks-tour-show"
+type: "episode"
+show: "A Cook's Tour"
+season: 1
+episode: 14
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2002-03-26"
+date_precision: "day"
+summary: "Tony and Zamir tour the working class foods of St. Petersburg. First they meet ice fishermen on the river. Tony tries his hand at ice-fishing, drinks a lot of vodka, feasts on Russian foods, eats smoked fish and ends the outing with a dip in the outdoor cold pool. To end on a high note, Tony dines on caviar in high luxury."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "st-petersburg-russia"
+sources:
+  - "travel-places-github"
+  - "a-cooks-tour-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.cookingchanneltv.com/shows/a-cooks-tour/episodes/so-much-vodka-so-little-time"

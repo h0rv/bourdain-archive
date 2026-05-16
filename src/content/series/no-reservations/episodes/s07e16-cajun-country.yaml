@@ -1,0 +1,33 @@
+id: "no-reservations-s07e16-cajun-country"
+title: "Cajun Country"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 7
+episode: 16
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2011-08-29"
+date_precision: "day"
+summary: "Tony goes to New Orleans and meets up with some of the crew of TV show Treme. He then continues west into the bayou and Cajun country."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "new-orleans-united-states"
+  - "breaux-bridge-united-states"
+  - "metairie-united-states"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

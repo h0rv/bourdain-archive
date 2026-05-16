@@ -1,0 +1,32 @@
+id: "parts-unknown-s01e04-quebec"
+title: "Quebec"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 1
+episode: 4
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2013-05-05"
+date_precision: "day"
+summary: "Bourdain travels to the province of Quebec where he samples local delicacies in Montreal and Quebec City and explores ice fishing and beaver hunting and spends time with two of the funniest and most brilliant chefs/restaurateurs in Canada, Joe Beef's Dave McMillan and Fred Morin."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "montreal-canada"
+  - "quebec-city-canada"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

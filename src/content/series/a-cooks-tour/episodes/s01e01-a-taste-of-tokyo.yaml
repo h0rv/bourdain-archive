@@ -1,0 +1,31 @@
+id: "a-cooks-tour-s01e01-a-taste-of-tokyo"
+title: "A Taste of Tokyo"
+kind: "episode"
+index_mode: "child"
+parent_id: "a-cooks-tour-show"
+type: "episode"
+show: "A Cook's Tour"
+season: 1
+episode: 1
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2002-01-08"
+date_precision: "day"
+summary: "Join Tony in Tokyo as he learns about the Japanese respect for food. A world-renowned sushi chef takes him to the Tsujiki market (Tokyo's largest fresh fish market) for ingredients for dinner and Tony chows down with sumo wrestlers to see how they maintain their weight."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "tokyo"
+sources:
+  - "travel-places-github"
+  - "a-cooks-tour-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.cookingchanneltv.com/shows/a-cooks-tour/episodes/a-taste-of-tokyo"

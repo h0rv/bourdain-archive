@@ -1,0 +1,33 @@
+id: "no-reservations-s08e03-croatian-coast"
+title: "Croatian Coast"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 8
+episode: 3
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2012-04-23"
+date_precision: "day"
+summary: "Tony visits the Croatian coast to swim with bluefin tuna and hunt for a prized white truffle. He literally gets knocked off his feet as he is treated to the finest Mediterranean cuisine."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "motovun-croatia"
+  - "skradin-croatia"
+  - "zadar-croatia"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "http://www.noreservationslocations.com/croatian-coast-episode.html"

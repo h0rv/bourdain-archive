@@ -1,0 +1,31 @@
+id: "parts-unknown-s08e05-london"
+title: "London"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 8
+episode: 5
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2016-10-23"
+date_precision: "day"
+summary: "Tony returns to London, a bastion of pro-European Union sentiment, now facing an uncertain future after the dramatic Brexit vote. Bourdain delves into the traditional strengths of London food culture with chefs like Nigella Lawson, Marco Pierre White and Fergus and Margot Henderson. Cartoonist Ralph Steadman discusses his work, as well as his thoughts on Brexit. Bourdain enjoys a chip butty for the first time with Marco, and has a late-night snack with guitarist Jamie Hince of The Kills."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "london-united-kingdom"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

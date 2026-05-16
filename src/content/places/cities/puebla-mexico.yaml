@@ -1,0 +1,15 @@
+id: puebla-mexico
+name: Puebla, Mexico
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with A Cook's Tour.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - mexico
+sources:
+  - travel-places-github
+status: needs-review

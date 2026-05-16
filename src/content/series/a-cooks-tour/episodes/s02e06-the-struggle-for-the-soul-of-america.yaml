@@ -1,0 +1,31 @@
+id: "a-cooks-tour-s02e06-the-struggle-for-the-soul-of-america"
+title: "The Struggle for the Soul of America"
+kind: "episode"
+index_mode: "child"
+parent_id: "a-cooks-tour-show"
+type: "episode"
+show: "A Cook's Tour"
+season: 2
+episode: 6
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2003-02-16"
+date_precision: "day"
+summary: "Tony Bourdain's gone to the heart of the heartland, Minneapolis, to figure out what the heck America is eating. He contemplates the country's biggest food court, then meets up with some local restaurateurs who are working hard to expand the American palate."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "minneapolis-united-states"
+sources:
+  - "travel-places-github"
+  - "a-cooks-tour-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.cookingchanneltv.com/shows/a-cooks-tour/episodes/the-struggle-for-the-soul-of-america"

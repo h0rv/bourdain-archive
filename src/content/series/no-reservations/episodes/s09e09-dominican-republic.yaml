@@ -1,0 +1,33 @@
+id: "no-reservations-s09e09-dominican-republic"
+title: "Dominican Republic"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 9
+episode: 9
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2012-10-29"
+date_precision: "day"
+summary: "Nearing toward the end of his final tour, Anthony Bourdain travels to the Caribbean for fresh fish and more in the Dominican Republic. Also, a helicopter ride to SamanÃ¡ Peninsula for lunch."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "playa-rincon-dominican-republic"
+  - "samana-dominican-republic"
+  - "santo-domingo-dominican-republic"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.imdb.com/title/tt2388854/locations?ref_=tt_dt_dt"

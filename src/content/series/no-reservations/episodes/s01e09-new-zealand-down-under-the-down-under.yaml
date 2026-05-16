@@ -1,0 +1,31 @@
+id: "no-reservations-s01e09-new-zealand-down-under-the-down-under"
+title: "New Zealand: Down Under the Down Under"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 1
+episode: 9
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2005-11-07"
+date_precision: "day"
+summary: "Tony is invited to New Zealand to lecture at a gourmet food convention. But after receiving a lukewarm reception from the crowd, he decides to search for real Kiwi culture outside the city of Christchurch. Tony's ride on an ATV becomes a little harrowing. Tony is invited to visit the Māori."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "christchurch-new-zealand"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

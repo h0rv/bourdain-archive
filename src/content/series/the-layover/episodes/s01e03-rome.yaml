@@ -1,0 +1,31 @@
+id: "the-layover-s01e03-rome"
+title: "Rome"
+kind: "episode"
+index_mode: "child"
+parent_id: "the-layover-show"
+type: "episode"
+show: "The Layover"
+season: 1
+episode: 3
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2011-12-05"
+date_precision: "day"
+summary: "Tony has just over 30 hours to explore the Eternal City. He sets off on a whirlwind tour, from the banks of the Tiber River to deep into the crooked ancient alleyways, sampling as much cuisine as he can along the way."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "rome-italy"
+sources:
+  - "travel-places-github"
+  - "the-layover-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/The_Layover"

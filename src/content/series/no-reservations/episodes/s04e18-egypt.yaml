@@ -1,0 +1,33 @@
+id: "no-reservations-s04e18-egypt"
+title: "Egypt"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 4
+episode: 18
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2008-08-25"
+date_precision: "day"
+summary: "Tony is determined to avoid doing the \"tourist thing\" and visiting the Egyptian pyramids, but rather explore what it means to be Egyptian; to spending an evening at a men's cafe smoking Shisha, to a boat ride down the Nile and spending time in the desert with a group of Bedouin men."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "cairo-egypt"
+  - "luxor-egypt"
+  - "seds-egypt"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

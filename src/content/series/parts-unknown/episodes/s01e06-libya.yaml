@@ -1,0 +1,34 @@
+id: "parts-unknown-s01e06-libya"
+title: "Libya"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 1
+episode: 6
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2013-05-19"
+date_precision: "day"
+summary: "Libyan hip-hop, Italian restaurants, tribal allegiances and post-war uncertainty in Libya. Bourdain looks at the country through personal stories, food—and the music of anti-Qaddafi rapper expats who returned to fight."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "al-khums-libya"
+  - "misrata-libya"
+  - "murqub-libya"
+  - "tripoli-libya"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.imdb.com/title/tt2849400/locations?ref_=tt_dt_dt"

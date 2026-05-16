@@ -1,0 +1,15 @@
+id: minneapolis-united-states
+name: Minneapolis, United States
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with A Cook's Tour.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - united-states
+sources:
+  - travel-places-github
+status: needs-review

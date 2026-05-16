@@ -1,0 +1,31 @@
+id: "no-reservations-s02e13-special-decoding-ferran-adria"
+title: "Special: Decoding Ferran Adria"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 2
+episode: 13
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2006-07-03"
+date_precision: "day"
+summary: "Bourdain travels to Spain and visits the research laboratory of Ferran Adrià, renowned chef of el Bulli."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "barcelona-spain"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.travelchannel.com/shows/anthony-bourdain/episodes/anthony-bourdain-no-reservations-decoding-ferran-adria"

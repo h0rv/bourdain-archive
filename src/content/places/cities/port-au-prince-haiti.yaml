@@ -1,0 +1,15 @@
+id: port-au-prince-haiti
+name: Port-au-Prince, Haiti
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with No Reservations.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - haiti
+sources:
+  - travel-places-github
+status: needs-review

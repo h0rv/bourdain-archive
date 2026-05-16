@@ -1,0 +1,31 @@
+id: "the-layover-s01e04-miami"
+title: "Miami"
+kind: "episode"
+index_mode: "child"
+parent_id: "the-layover-show"
+type: "episode"
+show: "The Layover"
+season: 1
+episode: 4
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2011-12-12"
+date_precision: "day"
+summary: "Paying homage to his love for Miami Vice, Tony Bourdain's Layover in Miami is full of hilarity as he takes in the South Beach Art Deco architecture scene and spots bikini clad roller bladers while cruising around in his red convertible."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "miami-united-states"
+sources:
+  - "travel-places-github"
+  - "the-layover-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/The_Layover"

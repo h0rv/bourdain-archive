@@ -1,0 +1,31 @@
+id: "a-cooks-tour-s01e21-highland-grub"
+title: "Highland Grub"
+kind: "episode"
+index_mode: "child"
+parent_id: "a-cooks-tour-show"
+type: "episode"
+show: "A Cook's Tour"
+season: 1
+episode: 21
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2002-04-23"
+date_precision: "day"
+summary: "Chef adventurer, Tony Bourdain goes to Scotland to show that it DOES have great food. He starts with an all deep-fried breakfast: pizza, eggs and Mars bars. Lunch is a traditional hearty haggis, and then he fishes and hunts for his dinner at serene Cawdor Estate."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "glasgow-united-kingdom"
+sources:
+  - "travel-places-github"
+  - "a-cooks-tour-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.cookingchanneltv.com/shows/a-cooks-tour/episodes/highland-grub"

@@ -12,6 +12,7 @@
     "audit:images": "node scripts/audit-images.mjs",
     "audit:generated": "node scripts/audit-generated.mjs",
     "check:duplicates": "node scripts/check-duplicates.mjs",
+    "import:series": "node scripts/import-series-episodes.mjs",
     "import:literature": "node scripts/import-literature.mjs",
     "validate:data": "node scripts/validate-data.mjs",
     "build": "astro build",

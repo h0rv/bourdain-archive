@@ -1,0 +1,31 @@
+id: "the-layover-s02e02-paris"
+title: "Paris"
+kind: "episode"
+index_mode: "child"
+parent_id: "the-layover-show"
+type: "episode"
+show: "The Layover"
+season: 2
+episode: 2
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2012-11-26"
+date_precision: "day"
+summary: "In Paris, Tony does as the French do. He sips coffee at Le Pure Café, sits down at Le Dome for an enormous shellfish tower, discovers the lost art of bread baking and indulges in a guilty pleasure: a duck press."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "paris"
+sources:
+  - "travel-places-github"
+  - "the-layover-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/The_Layover"

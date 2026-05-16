@@ -1,0 +1,31 @@
+id: "no-reservations-s07e01-haiti"
+title: "Haiti"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 7
+episode: 1
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2011-02-28"
+date_precision: "day"
+summary: "Tony visits Haiti, a country still recovering from the 2010 earthquake and dealing with a cholera epidemic in and an impending hurricane. He visits a relief camp run by Sean Penn's J/P Haitian Relief Organization."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "port-au-prince-haiti"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

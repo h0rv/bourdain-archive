@@ -1,0 +1,34 @@
+id: "parts-unknown-s10e06-puerto-rico"
+title: "Puerto Rico"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 10
+episode: 6
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2017-11-05"
+date_precision: "day"
+summary: "When Bourdain heads to Puerto Rico to check out the reality behind the piña coladas and fancy resorts, he finds natural splendor, delicious food and warm people, all against the background of a seemingly insurmountable economic crisis. Bourdain also learns why Puerto Ricans are so devoted to their homeland, and so determined to stay there. He samples 'grandma food' at a restaurant that evokes a simple traditional Puerto Rican home, cracks open the freshest crabs at a rustic spot on the beach, joins singer Tito Auger for a meal with friends and enjoys some of the best lechon (roast pork) around. A trip to the small island of Vieques rounds out his experience, with a meal at a sustainable farm and an optimistic discussion about strategies for a better future for the region and its people."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "ciales-puerto-rico"
+  - "san-juan-puerto-rico"
+  - "valle-costero-puerto-rico"
+  - "vieques-puerto-rico"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.cntraveler.com/story/recap-anthony-bourdains-parts-unknown-visits-puerto-rico"

@@ -1,0 +1,31 @@
+id: "no-reservations-s08e04-lisbon"
+title: "Lisbon"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 8
+episode: 4
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2012-04-30"
+date_precision: "day"
+summary: "Once the center of the richest empire in Europe, Lisbon now faces one of the worst financial crises in the EU. But even as it struggles with rising debt and unemployment, Tony finds out that Lisbon is experiencing a cultural and culinary renaissance. Tony shares a meal and Fado performance with writer António Lobo Antunes. The music of Dead Combo is used throughout the episode and the band is featured in the episode as well, eating at a restaurant specialising in gourmet canned fish."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "lisbon-portugal"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

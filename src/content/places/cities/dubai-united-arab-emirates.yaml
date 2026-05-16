@@ -1,0 +1,15 @@
+id: dubai-united-arab-emirates
+name: Dubai, United Arab Emirates
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with No Reservations.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - united-arab-emirates
+sources:
+  - travel-places-github
+status: needs-review
