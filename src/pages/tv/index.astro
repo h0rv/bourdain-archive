@@ -1,0 +1,82 @@
+---
+import { getCollection } from 'astro:content';
+import linkPreviewCache from '../../../archive/derived/link-previews.json';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { entryHref, entryTitle, formatDate, previewForEntry, archiveTargetsForUrl, primaryAvailabilityUrl } from '../../lib/content';
+import { withBase } from '../../lib/site';
+
+const series = await getCollection('series');
+const sources = await getCollection('sources');
+const sourceById = new Map(sources.map((e) => [e.data.id, e]));
+const shows = series.filter((s) => s.data.type === 'show').sort((a,b) => (a.data.date ?? '').localeCompare(b.data.date ?? ''));
+const episodes = series.filter((s) => s.data.type === 'episode').sort((a,b) => (a.data.season ?? 0) - (b.data.season ?? 0) || (a.data.episode ?? 0) - (b.data.episode ?? 0));
+const episodesByShow = new Map();
+for (const ep of episodes) {
+  const key = ep.data.parent_id ?? 'unknown';
+  if (!episodesByShow.has(key)) episodesByShow.set(key, []);
+  episodesByShow.get(key)!.push(ep);
+}
+const previewFor = (entry: any) => {
+  const own = previewForEntry(entry, linkPreviewCache.previews);
+  if (own.image) return own;
+  for (const sid of entry.data.sources ?? []) {
+    const src = sourceById.get(sid);
+    if (!src) continue;
+    const pv = previewForEntry(src, linkPreviewCache.previews);
+    if (pv.image) return { ...own, image: pv.image, host: pv.host, url: pv.url, archive: pv.archive };
+  }
+  return own;
+};
+const imgFor = (entry: any) => previewFor(entry).image ?? '';
+const officialFor = (entry: any) => previewFor(entry).url ?? primaryAvailabilityUrl(entry.data);
+const archiveFor = (entry: any) => previewFor(entry).archive ?? archiveTargetsForUrl(officialFor(entry));
+---
+<BaseLayout title="TV + Movies">
+  <h1 class="page-title">TV + Movies</h1>
+  <div class="show-groups" style="content-visibility:auto; contain-intrinsic-size: 2000px;">
+    {shows.map((show, idx) => {
+      const eps = episodesByShow.get(show.data.id) ?? [];
+      const seasons = new Map();
+      for (const ep of eps) {
+        const s = ep.data.season ?? 0;
+        if (!seasons.has(s)) seasons.set(s, []);
+        seasons.get(s)!.push(ep);
+      }
+      const showImg = imgFor(show);
+      const showOfficial = officialFor(show);
+      const showArchive = archiveFor(show);
+      const showTitle = entryTitle(show);
+      return (
+        <details class="show-group">
+          <summary class="show-summary">
+            <h2 class="show-title">{showTitle}</h2>
+            <span class="show-chevron" aria-hidden="true">▾</span>
+          </summary>
+          <div class="show-body">
+            <p class="show-blurb">{show.data.summary} <a href={entryHref('series', show.data.id)}>Series page →</a> · <a href={showOfficial}>Source</a>{showArchive && <> · <a href={showArchive.latest_url}>Archive</a></>}</p>
+            <img src={showImg || withBase('/images/placeholder.svg')} alt={`${showTitle} cover`} loading={idx === 0 ? "eager" : "lazy"} fetchpriority={idx === 0 ? "high" : undefined} decoding="async" width="640" height="360" style="width:100%; max-width:22rem; aspect-ratio:16/9; object-fit:cover; margin:0.5rem 0; border:1px solid rgba(17,16,14,0.08)" />
+            {[...seasons.entries()].sort(([a],[b]) => a-b).map(([season, list]) => (
+              <details class="season-group">
+                <summary><h3 style="display:inline; font:inherit; margin:0">Season {String(season).padStart(2,'0')}</h3></summary>
+                <ol class="episode-list">
+                  {list.map((ep: any) => {
+                    const official = officialFor(ep);
+                    const arch = archiveFor(ep);
+                    return (
+                      <li>
+                        <a href={entryHref('series', ep.data.id)}>{entryTitle(ep)} S{String(ep.data.season).padStart(2,'0')}E{String(ep.data.episode).padStart(2,'0')}</a>
+                        <span class="meta">{formatDate(ep.data.date, ep.data.date_precision)}{ep.data.places?.length ? ` · ${ep.data.places.join(', ')}` : ''} · <a href={official}>Watch/Source</a>{arch && <> · <a href={arch.latest_url}>Archive</a></>}</span>
+                      </li>
+                    );
+                  })}
+                </ol>
+              </details>
+            ))}
+          </div>
+        </details>
+      );
+    })}
+  </div>
+
+
+</BaseLayout>

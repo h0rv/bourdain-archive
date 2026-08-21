@@ -5,6 +5,7 @@ index_mode: rollup
 type: show
 record_type: television
 media_type: tv-video
+image_url: https://image.tmdb.org/t/p/w500/d1kfFPiMwppDaOgrEYLGn122jL7.jpg
 relation_to_bourdain: featured
 contributors:
   - anthony-bourdain

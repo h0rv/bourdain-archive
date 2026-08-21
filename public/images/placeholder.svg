@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="500" viewBox="0 0 400 500">
+  <rect width="400" height="500" fill="#e8decd"/>
+  <rect x="1.5" y="1.5" width="397" height="497" fill="none" stroke="#11100e" stroke-opacity="0.12"/>
+  <text x="200" y="240" text-anchor="middle" font-family="monospace" font-size="13" font-weight="700" fill="#746b5f" letter-spacing="0.08em">NO IMAGE</text>
+  <text x="200" y="260" text-anchor="middle" font-family="monospace" font-size="10" fill="#746b5f">BOURDAIN ARCHIVE</text>
+</svg>

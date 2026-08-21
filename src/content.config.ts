@@ -71,9 +71,7 @@ const commonEntrySchema = z.object({
   summary: z.string().optional(),
   record_type: z.string().optional(),
   media_type: z.string().optional(),
-  relation_to_bourdain: z
-    .enum(["authored", "featured", "about", "reference"])
-    .optional(),
+  relation_to_bourdain: z.enum(["authored", "featured", "about", "reference"]).optional(),
   creator: z.array(z.string()).default([]),
   contributors: z.array(z.string()).default([]),
   tags: z.array(z.string()).default([]),
@@ -99,9 +97,7 @@ const namedEntrySchema = z.object({
   summary: z.string().optional(),
   record_type: z.string().optional(),
   media_type: z.string().optional(),
-  relation_to_bourdain: z
-    .enum(["authored", "featured", "about", "reference"])
-    .optional(),
+  relation_to_bourdain: z.enum(["authored", "featured", "about", "reference"]).optional(),
   creator: z.array(z.string()).default([]),
   contributors: z.array(z.string()).default([]),
   tags: z.array(z.string()).default([]),
@@ -120,15 +116,7 @@ export const collections = {
   works: defineCollection({
     loader: contentFiles("works"),
     schema: commonEntrySchema.extend({
-      type: z.enum([
-        "book",
-        "article",
-        "essay",
-        "field-note",
-        "comic",
-        "film",
-        "short-story",
-      ]),
+      type: z.enum(["book", "article", "essay", "field-note", "comic", "film", "short-story"]),
     }),
   }),
   series: defineCollection({
@@ -154,29 +142,14 @@ export const collections = {
   screen: defineCollection({
     loader: contentFiles("screen"),
     schema: commonEntrySchema.extend({
-      type: z.enum([
-        "film",
-        "documentary",
-        "television",
-        "voice-role",
-        "acted-role",
-        "adaptation",
-      ]),
+      type: z.enum(["film", "documentary", "television", "voice-role", "acted-role", "adaptation"]),
       role: z.string().nullable().optional(),
     }),
   }),
   literature: defineCollection({
     loader: contentFiles("literature"),
     schema: commonEntrySchema.extend({
-      type: z.enum([
-        "article",
-        "essay",
-        "interview",
-        "obit",
-        "profile",
-        "review",
-        "tribute",
-      ]),
+      type: z.enum(["article", "essay", "interview", "obit", "profile", "review", "tribute"]),
       publication: z.string(),
       bucket: z.string(),
     }),
@@ -247,9 +220,7 @@ export const collections = {
       notes: z.string().nullable().optional(),
       record_type: z.string().optional(),
       media_type: z.string().optional(),
-      relation_to_bourdain: z
-        .enum(["authored", "featured", "about", "reference"])
-        .optional(),
+      relation_to_bourdain: z.enum(["authored", "featured", "about", "reference"]).optional(),
       creator: z.array(z.string()).default([]),
       contributors: z.array(z.string()).default([]),
       sources: z.array(z.string()).default([]),

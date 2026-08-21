@@ -5,6 +5,7 @@ index_mode: rollup
 type: show
 record_type: television
 media_type: tv-video
+image_url: https://i.ytimg.com/vi/J50mKbnKHas/hqdefault.jpg
 relation_to_bourdain: featured
 contributors:
   - anthony-bourdain

@@ -18,12 +18,24 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
-    "test": "npm run check && npm run validate:data && npm run audit:images && npm run build && npm run audit:generated && npm run check:duplicates"
+    "lint": "oxlint src",
+    "lint:fix": "oxlint --fix src",
+    "fmt": "oxfmt src",
+    "fmt:check": "oxfmt --check src",
+    "review": "node scripts/review-pages.mjs",
+    "review:uv": "uvx --from playwright python -m playwright --help || node scripts/review-pages.mjs",
+    "test": "npm run check && npm run lint && npm run fmt:check && npm run validate:data && npm run audit:images && npm run build && npm run audit:generated && npm run check:duplicates"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.8",
     "astro": "^6.1.9",
     "typescript": "^5.9.3",
     "yaml": "^2.8.3"
+  },
+  "devDependencies": {
+    "oxfmt": "^0.64.0",
+    "oxlint": "^1.79.0",
+    "oxlint-tsgolint": "^7.0.2001",
+    "playwright": "^1.62.1"
   }
 }

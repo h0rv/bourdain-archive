@@ -6,6 +6,8 @@
 html {
   min-height: 100%;
   background: var(--bg);
+  scroll-behavior: auto;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -14,8 +16,9 @@ body {
   background: var(--bg);
   font-family: var(--sans);
   font-size: 17px;
-  line-height: 1.55;
+  line-height: 1.6;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 body::selection {
@@ -33,6 +36,100 @@ a {
 a:hover {
   color: var(--accent);
   text-decoration-color: currentColor;
+}
+
+/* Visible focus — WCAG 2.4.7, 3px indicator, 3:1 contrast on --bg / --cream */
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+[role="button"]:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Fallback for browsers without :focus-visible */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+#main-content:focus {
+  outline: none;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  z-index: 100;
+  padding: 0.7rem 1rem;
+  background: var(--ink);
+  color: var(--cream);
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  font-weight: 850;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid var(--ink);
+}
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  left: 0.75rem;
+  top: 0.75rem;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  outline-color: var(--cream);
+  outline-offset: 3px;
+}
+
+/* Readability: prose max 70ch, enforced per block; body stays fluid for layout */
+p,
+li,
+dd,
+.summary,
+.lede,
+.show-blurb,
+.shelf-section-blurb,
+.tony-copy p {
+  overflow-wrap: break-word;
+}
+
+.summary,
+.lede,
+.show-blurb,
+.shelf-section-blurb,
+.hero p {
+  max-width: 70ch;
+}
+
+/* Ensure 17px base never shrinks below 17px on mobile — keep legible */
+@media (max-width: 720px) {
+  body {
+    font-size: 17px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 .sr-only {

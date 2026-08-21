@@ -5,6 +5,7 @@ index_mode: rollup
 type: show
 record_type: television
 media_type: tv-video
+image_url: "https://image.pbs.org/contentchannels/yTRMsaa-background-P8OgmsY.jpg?focalcrop=1200x630x50x10&format=auto"
 relation_to_bourdain: featured
 contributors:
   - anthony-bourdain

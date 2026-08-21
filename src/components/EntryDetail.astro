@@ -1,7 +1,7 @@
 ---
 import linkPreviewCache from '../../archive/derived/link-previews.json';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { availabilityBadges, entryHref, entryTitle, formatDate, formatType, kindFor, previewForUrl, statusClass, visibleStatus } from '../lib/content';
+import { availabilityBadges, entryHref, entryTitle, formatDate, formatType, kindFor, previewForUrl } from '../lib/content';
 
 interface Props {
   entry: any;
@@ -22,7 +22,6 @@ const sortedChildEntries = [...childEntries].sort((left: any, right: any) =>
 );
 const badges = availabilityBadges(data.availability);
 const availabilityPreviews = badges.map((badge) => ({ ...badge, preview: previewForUrl(badge.url, linkPreviewCache.previews) }));
-const displayStatus = visibleStatus(data.status);
 ---
 <BaseLayout title={title} description={data.summary ?? title}>
   <article>
@@ -31,7 +30,6 @@ const displayStatus = visibleStatus(data.status);
       {formatType(kindFor(data, collection))}
       {data.season && data.episode ? ` · S${String(data.season).padStart(2, '0')}E${String(data.episode).padStart(2, '0')}` : ''}
       {data.date ? ` · ${formatDate(data.date, data.date_precision)}` : ''}
-      {displayStatus && <> · <span class={`badge ${statusClass(displayStatus)}`}>{displayStatus}</span></>}
     </p>
 
     {data.summary && <p class="lede">{data.summary}</p>}
@@ -43,13 +41,13 @@ const displayStatus = visibleStatus(data.status);
           {availabilityPreviews.map((badge) => (
             badge.url ? (
               <div class="link-preview">
-                <span class="link-preview-media">
+                <span class="link-preview-media" aria-hidden="true">
                   {badge.preview.image ? (
-                    <img src={badge.preview.image} alt="" loading="lazy" />
+                    <img src={badge.preview.image} alt="" loading="lazy" decoding="async" />
                   ) : badge.preview.favicon ? (
-                    <img class="link-preview-favicon" src={badge.preview.favicon} alt="" loading="lazy" />
+                    <img class="link-preview-favicon" src={badge.preview.favicon} alt="" loading="lazy" decoding="async" />
                   ) : (
-                    <span>{badge.label}</span>
+                    <span aria-hidden="true">{badge.label}</span>
                   )}
                 </span>
                 <span class="link-preview-copy">

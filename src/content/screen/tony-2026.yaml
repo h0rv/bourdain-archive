@@ -9,7 +9,7 @@ contributors:
   - dominic-sessa
 date: "2026-08"
 date_precision: month
-summary: Upcoming posthumous A24 biopic about a 19-year-old Anthony Bourdain in Provincetown, directed by Matt Johnson and starring Dominic Sessa.
+summary: A24 biopic about 19-year-old Anthony Bourdain's Provincetown kitchen summer that shaped him — directed by Matt Johnson, starring Dominic Sessa as Tony with Antonio Banderas as the Chef mentor. In theaters Aug 7 limited / Aug 21 wide 2026. Posthumous — about, not authored.
 image_url: "https://atwenty-four.transforms.svdcdn.com/production/images/TNY_POSTER_FULL-SIZE.jpg?w=2025&auto=compress%2Cformat&fit=crop&dm=1777927831&s=6f6924c876e90cef65226664c5cb05df"
 tags:
   - film
@@ -20,7 +20,15 @@ people:
 places: []
 sources:
   - a24-tony-film
-related: []
+  - a24-tony-trailer
+  - variety-tony-review
+  - hollywood-reporter-tony-review
+  - deadline-tony-review
+  - vanity-fair-tony-fact-fiction
+related:
+  - kitchen-confidential
 status: confirmed
 availability:
   official_url: https://a24films.com/films/tony
+  video_url: https://www.youtube.com/watch?v=k1MVnzd2aVc
+  streaming_url: https://www.rottentomatoes.com/m/tony_2026

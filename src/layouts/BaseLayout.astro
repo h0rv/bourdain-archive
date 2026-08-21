@@ -17,31 +17,38 @@ const pageTitle = title === siteName ? siteName : `${title} · ${siteName}`;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    <link rel="preconnect" href="https://covers.openlibrary.org" crossorigin />
+    <link rel="preconnect" href="https://placehold.co" crossorigin />
+    <link rel="preconnect" href="https://64.media.tumblr.com" crossorigin />
+    <link rel="preconnect" href="https://i.ytimg.com" crossorigin />
+    <link rel="dns-prefetch" href="https://covers.openlibrary.org" />
+    <link rel="dns-prefetch" href="https://placehold.co" />
+    <link rel="dns-prefetch" href="https://64.media.tumblr.com" />
+    <link rel="dns-prefetch" href="https://i.ytimg.com" />
     <link rel="icon" href={withBase('/favicon.ico')} sizes="any" />
     <link rel="icon" href={withBase('/favicon.png')} type="image/png" />
     <link rel="apple-touch-icon" href={withBase('/apple-touch-icon.png')} />
     <title>{pageTitle}</title>
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href={withBase('/')} aria-label="Bourdain Archive home">
-        <img
-          class="brand-mark"
-          src="https://d1w8c6s6gmwlek.b-cdn.net/trendyteeshop.com/overlays/389/644/38964494.png"
-          alt=""
-          width="96"
-          height="96"
-        />
-        <span class="brand-copy">
-          <span class="brand-name">Bourdain Archive</span>
-        </span>
-      </a>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header>
+      <nav class="top-bar" aria-label="Primary">
+        <a href={withBase('/')} class="top-bar-brand" aria-label="Bourdain Archive home">
+          <img src={withBase('/images/cook-free-or-die.png')} alt="" width="56" height="56" loading="eager" decoding="async" />
+          <span>Bourdain Archive</span>
+        </a>
+        <span class="top-bar-spacer" aria-hidden="true"></span>
+        <ul class="top-bar-links" role="list">
+          <li><a href={withBase('/writings/')}>Writings</a></li>
+          <li><a href={withBase('/tv/')}>TV + Movies</a></li>
+          <li><a href={withBase('/map/')}>Map / Places</a></li>
+          <li><a href="https://github.com/h0rv/bourdain-archive">About</a></li>
+        </ul>
+      </nav>
     </header>
-    <main class="site-main">
+    <main id="main-content" class="site-main" tabindex="-1">
       <slot />
     </main>
-    <footer class="site-footer">
-      <a href="https://github.com/h0rv/bourdain-archive">About / GitHub</a>
-    </footer>
   </body>
 </html>

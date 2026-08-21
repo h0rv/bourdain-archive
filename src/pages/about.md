@@ -6,8 +6,4 @@ description: About Bourdain Archive.
 
 # About
 
-Metadata only.
-
-No book text. No article mirrors. No episode uploads. No transcripts.
-
-Add sources. Mark uncertain entries `needs-review`.
+[github.com/h0rv/bourdain-archive](https://github.com/h0rv/bourdain-archive)

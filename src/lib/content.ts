@@ -1,140 +1,248 @@
-import { withBase } from './site';
+import { withBase } from "./site";
 
 const collectionPaths: Record<string, string> = {
-  works: 'works',
-  episodes: 'tv',
-  series: 'tv',
-  screen: 'screen',
-  appearances: 'appearances',
-  literature: 'literature',
-  events: 'events',
-  places: 'places',
-  sources: 'sources',
+  works: "works",
+  episodes: "tv",
+  series: "tv",
+  screen: "screen",
+  appearances: "appearances",
+  literature: "literature",
+  events: "events",
+  places: "places",
+  sources: "sources",
 };
 
 const availabilityFields = [
-  ['official_url', 'Official'],
-  ['archive_url', 'Archive'],
-  ['library_url', 'Library'],
-  ['audio_url', 'Audio'],
-  ['video_url', 'Video'],
-  ['transcript_url', 'Transcript'],
-  ['streaming_url', 'Streaming'],
-  ['purchase_url', 'Purchase'],
+  ["official_url", "Official"],
+  ["archive_url", "Archive"],
+  ["library_url", "Library"],
+  ["audio_url", "Audio"],
+  ["video_url", "Video"],
+  ["transcript_url", "Transcript"],
+  ["streaming_url", "Streaming"],
+  ["purchase_url", "Purchase"],
 ] as const;
 
 export const sourceGroups = [
-  { id: 'curated', label: 'Curated entries' },
-  { id: 'tumblr', label: 'Tumblr' },
-  { id: 'medium', label: 'Medium' },
-  { id: 'list', label: 'Li.st' },
-  { id: 'field-notes', label: 'Field notes' },
-  { id: 'tv', label: 'TV' },
-  { id: 'interviews', label: 'Interviews' },
-  { id: 'articles', label: 'Articles' },
-  { id: 'catalogs', label: 'Catalogs' },
-  { id: 'socials', label: 'Socials' },
-  { id: 'other', label: 'Other' },
+  { id: "curated", label: "Curated entries" },
+  { id: "tumblr", label: "Tumblr" },
+  { id: "medium", label: "Medium" },
+  { id: "list", label: "Li.st" },
+  { id: "field-notes", label: "Field notes" },
+  { id: "tv", label: "TV" },
+  { id: "interviews", label: "Interviews" },
+  { id: "articles", label: "Articles" },
+  { id: "catalogs", label: "Catalogs" },
+  { id: "socials", label: "Socials" },
+  { id: "other", label: "Other" },
 ] as const;
 
-export const sourceGroupLabels = Object.fromEntries(sourceGroups.map((group) => [group.id, group.label]));
+export const sourceGroupLabels = Object.fromEntries(
+  sourceGroups.map((group) => [group.id, group.label]),
+);
 
 export const mediaTypes = [
-  { id: 'book-print', label: 'Book / print' },
-  { id: 'article-essay', label: 'Article / essay' },
-  { id: 'tv-video', label: 'TV / video' },
-  { id: 'audio', label: 'Audio' },
-  { id: 'interview-talk', label: 'Interview / talk' },
-  { id: 'social-web', label: 'Social / web' },
-  { id: 'reference', label: 'Reference' },
-  { id: 'life-event', label: 'Life event' },
-  { id: 'other', label: 'Other' },
+  { id: "book-print", label: "Book / print" },
+  { id: "article-essay", label: "Article / essay" },
+  { id: "tv-video", label: "TV / video" },
+  { id: "audio", label: "Audio" },
+  { id: "interview-talk", label: "Interview / talk" },
+  { id: "social-web", label: "Social / web" },
+  { id: "reference", label: "Reference" },
+  { id: "life-event", label: "Life event" },
+  { id: "other", label: "Other" },
 ] as const;
 
-export const mediaTypeLabels = Object.fromEntries(mediaTypes.map((group) => [group.id, group.label]));
+export const mediaTypeLabels = Object.fromEntries(
+  mediaTypes.map((group) => [group.id, group.label]),
+);
 
 export function sourceGroupFor(data: any): string {
-  const id = data.id ?? '';
-  const type = data.type ?? '';
-  const url = data.url ?? '';
-  if (id.startsWith('tumblr-') || url.includes('anthonybourdain.tumblr.com')) return 'tumblr';
-  if (id.startsWith('medium-') || url.includes('medium.com/')) return 'medium';
-  if (id.startsWith('list-') || id.startsWith('bourdain-list') || url.includes('li.st/') || url.includes('bourdain.greg.technology')) return 'list';
-  if (type === 'field-note' || (url.includes('explorepartsunknown.com') && url.includes('field-notes'))) return 'field-notes';
-  if (['episode-guide', 'official-show-page', 'official-video', 'video-series', 'dead-official-page', 'official-archive', 'official-film-page', 'tv-catalog', 'streaming-catalog', 'dataset', 'fan-index', 'transcript-index'].includes(type)) return 'tv';
-  if (type.includes('interview') || ['podcast', 'panel', 'radio-archive', 'audio-archive', 'audio-interview'].includes(type)) return 'interviews';
-  if (['article', 'essay', 'profile', 'review', 'obituary'].includes(type)) return 'articles';
-  if (type.includes('awards') || type.includes('library') || type.includes('catalog') || type.includes('authority') || type === 'publisher-page' || type === 'filmography') return 'catalogs';
-  if (type === 'social-profile') return 'socials';
-  return 'other';
+  const id = data.id ?? "";
+  const type = data.type ?? "";
+  const url = data.url ?? "";
+  if (id.startsWith("tumblr-") || url.includes("anthonybourdain.tumblr.com")) return "tumblr";
+  if (id.startsWith("medium-") || url.includes("medium.com/")) return "medium";
+  if (
+    id.startsWith("list-") ||
+    id.startsWith("bourdain-list") ||
+    url.includes("li.st/") ||
+    url.includes("bourdain.greg.technology")
+  )
+    return "list";
+  if (
+    type === "field-note" ||
+    (url.includes("explorepartsunknown.com") && url.includes("field-notes"))
+  )
+    return "field-notes";
+  if (
+    [
+      "episode-guide",
+      "official-show-page",
+      "official-video",
+      "video-series",
+      "dead-official-page",
+      "official-archive",
+      "official-film-page",
+      "tv-catalog",
+      "streaming-catalog",
+      "dataset",
+      "fan-index",
+      "transcript-index",
+    ].includes(type)
+  )
+    return "tv";
+  if (
+    type.includes("interview") ||
+    ["podcast", "panel", "radio-archive", "audio-archive", "audio-interview"].includes(type)
+  )
+    return "interviews";
+  if (["article", "essay", "profile", "review", "obituary"].includes(type)) return "articles";
+  if (
+    type.includes("awards") ||
+    type.includes("library") ||
+    type.includes("catalog") ||
+    type.includes("authority") ||
+    type === "publisher-page" ||
+    type === "filmography"
+  )
+    return "catalogs";
+  if (type === "social-profile") return "socials";
+  return "other";
 }
 
 const monthNumbers: Record<string, string> = {
-  january: '01',
-  february: '02',
-  march: '03',
-  april: '04',
-  may: '05',
-  june: '06',
-  july: '07',
-  august: '08',
-  september: '09',
-  october: '10',
-  november: '11',
-  december: '12',
+  january: "01",
+  february: "02",
+  march: "03",
+  april: "04",
+  may: "05",
+  june: "06",
+  july: "07",
+  august: "08",
+  september: "09",
+  october: "10",
+  november: "11",
+  december: "12",
 };
 
 export function mediaTypeFor(data: any, collection?: string, sourceGroup?: string): string {
   if (data.media_type) return data.media_type;
-  const type = data.type ?? '';
+  const type = data.type ?? "";
   const group = sourceGroup ?? sourceGroupFor(data);
 
-  if (type === 'life-event') return 'life-event';
-  if (['book', 'comic'].includes(type)) return 'book-print';
-  if (['article', 'essay', 'field-note', 'profile', 'review', 'obituary', 'obit', 'tribute', 'photo-essay', 'official-article', 'press-release'].includes(type)) return 'article-essay';
-  if (['show', 'episode', 'video', 'film', 'documentary', 'television', 'voice-role', 'acted-role', 'adaptation', 'official-video', 'video-series', 'episode-guide', 'official-show-page', 'official-film-page', 'dead-official-page', 'television-archive', 'social-video'].includes(type)) return 'tv-video';
-  if (['podcast', 'radio', 'radio-archive', 'audio-archive', 'audio-interview', 'radio-interview', 'dead-podcast-page'].includes(type)) return 'audio';
-  if (type.includes('interview') || ['panel'].includes(type)) return 'interview-talk';
-  if (['tumblr', 'medium', 'list', 'socials'].includes(group) || type === 'social-profile') return 'social-web';
-  if (['catalogs'].includes(group) || type.includes('library') || type.includes('catalog') || type.includes('authority') || type === 'dataset' || type === 'fan-index' || type === 'publisher-page' || type === 'transcript' || type === 'transcript-index' || type === 'awards-record' || type === 'recovered-archive') return 'reference';
-  if (collection === 'sources' && group === 'tv') return 'tv-video';
-  return 'other';
+  if (type === "life-event") return "life-event";
+  if (["book", "comic"].includes(type)) return "book-print";
+  if (
+    [
+      "article",
+      "essay",
+      "field-note",
+      "profile",
+      "review",
+      "obituary",
+      "obit",
+      "tribute",
+      "photo-essay",
+      "official-article",
+      "press-release",
+    ].includes(type)
+  )
+    return "article-essay";
+  if (
+    [
+      "show",
+      "episode",
+      "video",
+      "film",
+      "documentary",
+      "television",
+      "voice-role",
+      "acted-role",
+      "adaptation",
+      "official-video",
+      "video-series",
+      "episode-guide",
+      "official-show-page",
+      "official-film-page",
+      "dead-official-page",
+      "television-archive",
+      "social-video",
+    ].includes(type)
+  )
+    return "tv-video";
+  if (
+    [
+      "podcast",
+      "radio",
+      "radio-archive",
+      "audio-archive",
+      "audio-interview",
+      "radio-interview",
+      "dead-podcast-page",
+    ].includes(type)
+  )
+    return "audio";
+  if (type.includes("interview") || ["panel"].includes(type)) return "interview-talk";
+  if (["tumblr", "medium", "list", "socials"].includes(group) || type === "social-profile")
+    return "social-web";
+  if (
+    ["catalogs"].includes(group) ||
+    type.includes("library") ||
+    type.includes("catalog") ||
+    type.includes("authority") ||
+    type === "dataset" ||
+    type === "fan-index" ||
+    type === "publisher-page" ||
+    type === "transcript" ||
+    type === "transcript-index" ||
+    type === "awards-record" ||
+    type === "recovered-archive"
+  )
+    return "reference";
+  if (collection === "sources" && group === "tv") return "tv-video";
+  return "other";
 }
 
-export function relationToAuthorship(relation?: string): 'by' | 'about' {
-  return relation === 'authored' || relation === 'featured' ? 'by' : 'about';
+export function relationToAuthorship(relation?: string): "by" | "about" {
+  return relation === "authored" || relation === "featured" ? "by" : "about";
 }
 
-export function indexModeFor(data: any, collection?: string): 'rollup' | 'child' | 'hidden' {
-  if (data.index_mode === 'rollup' || data.index_mode === 'child' || data.index_mode === 'hidden') return data.index_mode;
-  if (collection === 'sources') return 'hidden';
-  if (data.parent_id) return 'child';
-  if (data.type === 'episode' || data.kind === 'episode') return 'child';
-  return 'rollup';
+export function indexModeFor(data: any, collection?: string): "rollup" | "child" | "hidden" {
+  if (data.index_mode === "rollup" || data.index_mode === "child" || data.index_mode === "hidden")
+    return data.index_mode;
+  if (collection === "sources") return "hidden";
+  if (data.parent_id) return "child";
+  if (data.type === "episode" || data.kind === "episode") return "child";
+  return "rollup";
 }
 
 export function kindFor(data: any, collection?: string): string {
   if (data.kind) return data.kind;
-  if (collection === 'series' && data.type === 'show') return 'series';
-  if (collection === 'sources') return 'source';
-  if (collection === 'images') return 'image';
-  return data.type ?? collection ?? 'record';
+  if (collection === "series" && data.type === "show") return "series";
+  if (collection === "sources") return "source";
+  if (collection === "images") return "image";
+  return data.type ?? collection ?? "record";
 }
 
 export function sourceTimelineDate(data: any): { date?: string; precision: string } {
-  if (data.date) return { date: data.date, precision: data.date_precision ?? 'unknown' };
+  if (data.date) return { date: data.date, precision: data.date_precision ?? "unknown" };
 
-  const notes = data.notes ?? '';
+  const notes = data.notes ?? "";
   const isoPageDate = notes.match(/Page date:\s*(\d{4}-\d{2}-\d{2})/i);
-  if (isoPageDate) return { date: isoPageDate[1], precision: 'day' };
+  if (isoPageDate) return { date: isoPageDate[1], precision: "day" };
 
   const publishedDate = notes.match(/Published\s+([A-Za-z]+)\s+(\d{1,2}),\s+(\d{4})/i);
   if (publishedDate) {
     const month = monthNumbers[publishedDate[1].toLowerCase()];
-    if (month) return { date: `${publishedDate[3]}-${month}-${publishedDate[2].padStart(2, '0')}`, precision: 'day' };
+    if (month)
+      return {
+        date: `${publishedDate[3]}-${month}-${publishedDate[2].padStart(2, "0")}`,
+        precision: "day",
+      };
   }
 
-  return { date: undefined, precision: 'unknown' };
+  return { date: undefined, precision: "unknown" };
 }
 
 export function entryTitle(entry: any): string {
@@ -147,7 +255,7 @@ export function entryHref(collection: string, id: string): string {
 }
 
 export function formatType(type: string): string {
-  return type.replace(/-/g, ' ').replace(/\b\w/g, (letter) => letter.toUpperCase());
+  return type.replace(/-/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
 }
 
 export function statusClass(status: string): string {
@@ -155,20 +263,20 @@ export function statusClass(status: string): string {
 }
 
 export function visibleStatus(status?: string | null): string | undefined {
-  if (!status || status === 'confirmed') return undefined;
+  if (!status || status === "confirmed") return undefined;
   return status;
 }
 
 export function formatDate(date?: string | null, precision?: string): string {
-  if (!date) return 'Undated';
-  if (precision === 'year') return date.slice(0, 4);
-  if (precision === 'month') return date.slice(0, 7);
+  if (!date) return "Undated";
+  if (precision === "year") return date.slice(0, 4);
+  if (precision === "month") return date.slice(0, 7);
   return date;
 }
 
 export function sortByDateDesc(a: any, b: any): number {
-  const left = a.data.date ?? '';
-  const right = b.data.date ?? '';
+  const left = a.data.date ?? "";
+  const right = b.data.date ?? "";
   return right.localeCompare(left);
 }
 
@@ -177,7 +285,7 @@ export function availabilityBadges(availability?: Record<string, string | null |
     .map(([field, label]) => ({ field, label, url: availability?.[field] }))
     .filter((badge) => Boolean(badge.url));
 
-  return badges.length > 0 ? badges : [{ field: 'unknown', label: 'Unknown', url: undefined }];
+  return badges.length > 0 ? badges : [{ field: "unknown", label: "Unknown", url: undefined }];
 }
 
 export function findByDataId(entries: any[], id: string) {
@@ -203,7 +311,7 @@ export function primaryAvailabilityUrl(data: any): string | undefined {
 export function hostnameForUrl(url?: string | null): string | undefined {
   if (!url) return undefined;
   try {
-    return new URL(url).hostname.replace(/^www\./, '');
+    return new URL(url).hostname.replace(/^www\./, "");
   } catch {
     return undefined;
   }
@@ -213,12 +321,12 @@ export function youtubeId(url?: string | null): string | undefined {
   if (!url) return undefined;
   try {
     const parsed = new URL(url);
-    const host = parsed.hostname.replace(/^www\./, '');
-    if (host === 'youtu.be') return parsed.pathname.split('/').filter(Boolean)[0];
-    if (host.endsWith('youtube.com')) {
-      if (parsed.searchParams.get('v')) return parsed.searchParams.get('v') ?? undefined;
-      const parts = parsed.pathname.split('/').filter(Boolean);
-      if (['embed', 'shorts', 'live'].includes(parts[0])) return parts[1];
+    const host = parsed.hostname.replace(/^www\./, "");
+    if (host === "youtu.be") return parsed.pathname.split("/").filter(Boolean)[0];
+    if (host.endsWith("youtube.com")) {
+      if (parsed.searchParams.get("v")) return parsed.searchParams.get("v") ?? undefined;
+      const parts = parsed.pathname.split("/").filter(Boolean);
+      if (["embed", "shorts", "live"].includes(parts[0])) return parts[1];
     }
   } catch {
     return undefined;
@@ -227,25 +335,24 @@ export function youtubeId(url?: string | null): string | undefined {
 }
 
 const blockedPreviewImageHosts = new Set([
-  'opengraph.githubassets.com',
-  'interviews.televisionacademy.com',
+  "opengraph.githubassets.com",
+  "interviews.televisionacademy.com",
+  "s0.wp.com",
 ]);
 
-const blockedPreviewImagePaths = [
-  /^archive\.org\/services\/img\/The_Nerdist_Podcast_528$/i,
-];
+const blockedPreviewImagePaths = [/^archive\.org\/services\/img\/The_Nerdist_Podcast_528$/i];
 
 export function isUsablePreviewImage(url?: string | null): boolean {
   if (!url) return false;
   try {
     const parsed = new URL(url);
-    const host = parsed.hostname.replace(/^www\./, '');
+    const host = parsed.hostname.replace(/^www\./, "");
     if (blockedPreviewImageHosts.has(host)) return false;
     const hostAndPath = `${host}${parsed.pathname}`;
     if (blockedPreviewImagePaths.some((pattern) => pattern.test(hostAndPath))) return false;
     return true;
   } catch {
-    return url.startsWith('/');
+    return url.startsWith("/");
   }
 }
 
@@ -277,7 +384,7 @@ export function previewForUrl(url?: string | null, cache?: Record<string, any>) 
 export function siteAssetUrl(url?: string | null): string | undefined {
   if (!url) return undefined;
   if (!isUsablePreviewImage(url)) return undefined;
-  return url.startsWith('/') ? withBase(url) : url;
+  return url.startsWith("/") ? withBase(url) : url;
 }
 
 export function previewForEntry(entry: any, cache?: Record<string, any>) {
@@ -292,6 +399,11 @@ export function previewForEntry(entry: any, cache?: Record<string, any>) {
     image: siteAssetUrl(data.image_url) ?? urlPreview.image,
     favicon: urlPreview.favicon,
     archive: urlPreview.archive,
-    label: data.publication ?? data.title ?? urlPreview.title ?? urlPreview.host ?? formatType(data.type),
+    label:
+      data.publication ??
+      data.title ??
+      urlPreview.title ??
+      urlPreview.host ??
+      formatType(data.type),
   };
 }

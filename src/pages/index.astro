@@ -2,395 +2,120 @@
 import { getCollection } from 'astro:content';
 import linkPreviewCache from '../../archive/derived/link-previews.json';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { entryHref, entryTitle, formatDate, formatType, indexModeFor, mediaTypeFor, mediaTypeLabels, previewForEntry, relationToAuthorship, sortByDateDesc, sourceGroupLabels } from '../lib/content';
+import { entryHref, entryTitle, formatDate, formatType, previewForEntry, archiveTargetsForUrl, primaryAvailabilityUrl } from '../lib/content';
+import { withBase } from '../lib/site';
 
 const works = await getCollection('works');
 const series = await getCollection('series');
 const screen = await getCollection('screen');
 const appearances = await getCollection('appearances');
 const literature = await getCollection('literature');
+const places = await getCollection('places');
 const events = await getCollection('events');
 const sources = await getCollection('sources');
-const sourceById = new Map(sources.map((entry) => [entry.data.id, entry]));
-const entries = [
-  ...events.map((entry) => ({ entry, collection: 'events', authorship: relationToAuthorship(entry.data.relation_to_bourdain ?? 'featured'), sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
-  ...works.map((entry) => ({ entry, collection: 'works', authorship: relationToAuthorship(entry.data.relation_to_bourdain ?? 'authored'), sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
-  ...series.map((entry) => ({ entry, collection: 'series', authorship: relationToAuthorship(entry.data.relation_to_bourdain ?? 'featured'), sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
-  ...screen.map((entry) => ({ entry, collection: 'screen', authorship: relationToAuthorship(entry.data.relation_to_bourdain ?? 'featured'), sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
-  ...appearances.map((entry) => ({ entry, collection: 'appearances', authorship: relationToAuthorship(entry.data.relation_to_bourdain ?? 'featured'), sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
-  ...literature.map((entry) => ({ entry, collection: 'literature', authorship: relationToAuthorship(entry.data.relation_to_bourdain ?? 'about'), sourceGroup: 'curated', timelineDate: { date: entry.data.date, precision: entry.data.date_precision } })),
-].sort((a, b) => {
-  const left = { data: { date: a.timelineDate.date } };
-  const right = { data: { date: b.timelineDate.date } };
-  return sortByDateDesc(left, right);
-});
-const entriesWithFacets = entries.map((item) => {
-  const mediaType = mediaTypeFor(item.entry.data, item.collection, item.sourceGroup);
-  const indexMode = indexModeFor(item.entry.data, item.collection);
-  return { ...item, mediaType, indexMode };
-});
-const defaultVisibleEntries = entriesWithFacets.filter((item) => item.indexMode === 'rollup');
-const countBy = (values: string[]) => values.reduce((counts, value) => ({ ...counts, [value]: (counts[value] ?? 0) + 1 }), {} as Record<string, number>);
-const mediaCounts = countBy(defaultVisibleEntries.map(({ mediaType }) => mediaType));
-const authorCounts = countBy(defaultVisibleEntries.map(({ authorship }) => authorship));
-const mediaFilters = Object.keys(mediaCounts).sort((a, b) => (mediaTypeLabels[a] ?? a).localeCompare(mediaTypeLabels[b] ?? b));
-const deathDate = '2018-06-08';
-const isPosthumous = (entry: any) => {
-  if (entry.data.tags?.includes('posthumous')) return true;
-  if (!entry.data.date) return false;
-  if (entry.data.date_precision === 'year') return entry.data.date > '2018';
-  if (entry.data.date_precision === 'month') return entry.data.date > '2018-06';
-  return entry.data.date > deathDate;
-};
-const yearForEntry = (date?: string | null) => date?.slice(0, 4) ?? 'Undated';
-const searchableText = (entry: any, collection: string, authorship: string, sourceGroup: string, mediaType: string) =>
-  [
-    entryTitle(entry),
-    entry.data.notes,
-    entry.data.type,
-    entry.data.publication,
-    entry.data.host,
-    entry.data.url,
-    collection,
-    authorship,
-    sourceGroupLabels[sourceGroup],
-    mediaTypeLabels[mediaType],
-    entry.data.date,
-    ...(entry.data.tags ?? []),
-    ...(entry.data.people ?? []),
-    ...(entry.data.places ?? []),
-  ]
-    .filter(Boolean)
-    .join(' ')
-    .toLowerCase();
-const previewForArchiveEntry = (entry: any) => {
-  const ownPreview = previewForEntry(entry, linkPreviewCache.previews);
-  if (ownPreview.image) return ownPreview;
 
-  for (const sourceId of entry.data.sources ?? []) {
-    const source = sourceById.get(sourceId);
-    if (!source) continue;
-    const sourcePreview = previewForEntry(source, linkPreviewCache.previews);
-    if (sourcePreview.image) return { ...ownPreview, image: sourcePreview.image, host: sourcePreview.host, url: sourcePreview.url };
+const sourceById = new Map(sources.map((e) => [e.data.id, e]));
+
+const shows = series.filter((s) => s.data.type === 'show').sort((a,b) => (a.data.date ?? '').localeCompare(b.data.date ?? ''));
+const writingsPreview = works.filter((w) => w.data.relation_to_bourdain === 'authored').sort((a,b) => (a.data.date ?? '').localeCompare(b.data.date ?? '')).slice(0,6);
+
+const previewFor = (entry: any) => {
+  const own = previewForEntry(entry, linkPreviewCache.previews);
+  if (own.image) return own;
+  for (const sid of entry.data.sources ?? []) {
+    const src = sourceById.get(sid);
+    if (!src) continue;
+    const pv = previewForEntry(src, linkPreviewCache.previews);
+    if (pv.image) return { ...own, image: pv.image, host: pv.host, url: pv.url, archive: pv.archive };
   }
-
-  return ownPreview;
+  return own;
 };
-const featuredImageFor = (entry: any) => previewForArchiveEntry(entry).image ?? '';
-const statusFor = (entry: any) => entry.data.status;
+const imgFor = (entry: any) => previewFor(entry).image ?? '';
+const officialFor = (entry: any) => previewFor(entry).url ?? primaryAvailabilityUrl(entry.data);
+const archiveFor = (entry: any) => previewFor(entry).archive ?? archiveTargetsForUrl(officialFor(entry));
+
+const topPlaces = [...places].slice(0, 36);
+
+
 ---
 <BaseLayout title="Bourdain Archive">
-  <section class="archive-index" aria-label="Archive index">
+  <section class="archive-index" aria-label="Bourdain Archive index">
     <h1 class="sr-only">Anthony Bourdain Archive</h1>
 
-    <div class="archive-topbar" aria-label="Search and view controls">
-      <div class="search-control archive-search">
-        <label for="archive-search">Search</label>
-        <div class="search-box">
-          <span aria-hidden="true">⌕</span>
-          <input id="archive-search" type="search" placeholder="Search title, place, source, tag..." data-search />
-        </div>
-      </div>
 
-      <div class="view-control" aria-label="View">
-        <button class="pill is-active" type="button" data-view="cards">Cards</button>
-        <button class="pill" type="button" data-view="rows">Rows</button>
-      </div>
 
-      <p class="result-count" data-result-count>{defaultVisibleEntries.length} records</p>
-    </div>
+        <section id="writings" aria-labelledby="writings-heading">
+          <h2 id="writings-heading" class="section-heading">Writings</h2>
+          <ol class="shelf-grid">
+            {writingsPreview.map((entry, idx) => {
+              const isWork = works.some(w=>w.data.id===entry.data.id);
+              const href = isWork ? entryHref('works', entry.data.id) : entryHref('literature', entry.data.id);
+              const img = imgFor(entry);
+              const title = entryTitle(entry);
+              return (
+                <li class="shelf-card">
+                  <a href={href}>
+                    <span class="shelf-card-media"><img src={img || withBase('/images/placeholder.svg')} alt={img ? `${title} cover` : ""} loading={idx === 0 ? "eager" : "lazy"} fetchpriority={idx === 0 ? "high" : undefined} decoding="async" width="400" height="500" /></span>
+                    <span class="shelf-card-title">{entryTitle(entry)}</span>
+                    <span class="shelf-card-meta">{formatDate(entry.data.date, entry.data.date_precision)} · {formatType(entry.data.type)}</span>
+                  </a>
+                </li>
+              );
+            })}
+          </ol>
+          <p class="meta"><a href={withBase('/writings/')}>All writings →</a></p>
+        </section>
 
-    <details class="filter-drawer">
-      <summary>Filter</summary>
-      <div class="archive-controls" aria-label="Filter controls">
-        <div class="quick-filters" aria-label="Media filters">
-          <button class="pill is-active" type="button" data-filter-all>All</button>
-          {mediaFilters.map((filter) => (
-            <button class="pill" type="button" data-filter-media={filter}>
-              {mediaTypeLabels[filter] ?? formatType(filter)} <span>{mediaCounts[filter] ?? 0}</span>
-            </button>
-          ))}
-        </div>
+        <section id="tv" aria-labelledby="tv-heading">
+          <h2 id="tv-heading" class="section-heading">TV Shows</h2>
+          <ol class="shelf-grid">
+            {shows.slice(0,6).map((show) => {
+              const img = imgFor(show);
+              const title = entryTitle(show);
+              return (
+                <li class="shelf-card">
+                  <a href={entryHref('series', show.data.id)}>
+                    <span class="shelf-card-media"><img src={img || withBase('/images/placeholder.svg')} alt={img ? `${title} cover` : ""} loading="lazy" decoding="async" width="400" height="500" /></span>
+                    <span class="shelf-card-title">{title}</span>
+                  </a>
+                </li>
+              );
+            })}
+          </ol>
+          <p class="meta"><a href={withBase('/tv/')}>All shows →</a></p>
+        </section>
 
-        <label class="select-control compact-select" for="archive-author">
-          <span>Relation</span>
-          <select id="archive-author" data-author-select>
-            <option value="">All</option>
-            <option value="by">By / featuring ({authorCounts.by ?? 0})</option>
-            <option value="about">About ({authorCounts.about ?? 0})</option>
-          </select>
-        </label>
+        <section id="screen" aria-labelledby="screen-heading">
+          <h2 id="screen-heading" class="section-heading">Films &amp; Appearances</h2>
+          <ol class="shelf-grid">
+            {[...appearances, ...screen].sort((a,b) => (b.data.date ?? '').localeCompare(a.data.date ?? '')).slice(0,6).map((entry) => {
+              const col = screen.some((s)=> s.data.id === entry.data.id) ? 'screen' : 'appearances';
+              const img = imgFor(entry);
+              const title = entryTitle(entry);
+              return (
+                <li class="shelf-card">
+                  <a href={entryHref(col, entry.data.id)}>
+                    <span class="shelf-card-media"><img src={img || withBase('/images/placeholder.svg')} alt={img ? `${title} cover` : ""} loading="lazy" decoding="async" width="400" height="500" /></span>
+                    <span class="shelf-card-title">{title}</span>
+                    <span class="shelf-card-meta">{formatType(entry.data.type)}</span>
+                  </a>
+                </li>
+              );
+            })}
+          </ol>
+          <p class="meta"><a href={withBase('/tv/')}>More →</a></p>
+        </section>
 
-        <label class="select-control compact-select" for="archive-sort">
-          <span>Sort</span>
-          <select id="archive-sort" data-sort-select>
-            <option value="date-desc">Newest</option>
-            <option value="date-asc">Oldest</option>
-            <option value="title-asc">Title</option>
-          </select>
-        </label>
-
-        <button class="text-button" type="button" data-filter-clear>Reset</button>
-      </div>
-    </details>
-
-    <ol class="archive-list" data-stream data-view="cards">
-        {entriesWithFacets.map(({ entry, collection, authorship, sourceGroup, timelineDate, mediaType, indexMode }) => {
-          const featuredImage = featuredImageFor(entry);
-          return (
-          <li
-            class={`archive-row ${featuredImage ? 'has-image' : 'no-image'}`}
-            data-type={entry.data.type}
-            data-media-type={mediaType}
-            data-author={authorship}
-            data-index-mode={indexMode}
-            data-posthumous={isPosthumous(entry) ? 'true' : 'false'}
-            data-source-group={sourceGroup}
-            data-date={timelineDate.date ?? ''}
-            data-date-label={formatDate(timelineDate.date, timelineDate.precision)}
-            data-year={yearForEntry(timelineDate.date)}
-            data-title={entryTitle(entry).toLowerCase()}
-            data-source-label={sourceGroupLabels[sourceGroup] ?? sourceGroup}
-            data-search-text={searchableText(entry, collection, authorship, sourceGroup, mediaType)}
-          >
-            {featuredImage ? (
-              <a class="row-image" href={entryHref(collection, entry.data.id)} tabindex="-1" aria-hidden="true">
-                <img src={featuredImage} alt="" loading="lazy" />
-              </a>
-            ) : null}
-            <a class="row-main" href={entryHref(collection, entry.data.id)}>
-              <span class="row-date">{formatDate(timelineDate.date, timelineDate.precision)}</span>
-              <span class="row-title">{entryTitle(entry)}</span>
-              <span class="row-meta">{mediaTypeLabels[mediaType] ?? formatType(mediaType)} · {formatType(entry.data.type)} · {sourceGroupLabels[sourceGroup] ?? sourceGroup}</span>
-            </a>
-            <span class="row-flags">
-              {isPosthumous(entry) && <span class="row-flag">Posthumous</span>}
-              {statusFor(entry) && statusFor(entry) !== 'confirmed' && <span class="row-flag">{statusFor(entry)}</span>}
-            </span>
-          </li>
-        )})}
-    </ol>
-    <p class="no-results" data-no-results hidden>No matches. Clear filters or try a broader search.</p>
+        <section id="map" aria-labelledby="map-heading">
+          <h2 id="map-heading" class="section-heading">Places</h2>
+          <ol class="places-list">
+            {topPlaces.slice(0,6).map((place) => (
+              <li>
+                <a href={entryHref('places', place.data.id)}>{place.data.name ?? place.data.id}</a>
+              </li>
+            ))}
+          </ol>
+          <p class="meta"><a href={withBase('/map/')}>Open interactive map →</a></p>
+        </section>
   </section>
-
-  <script>
-    const stream = document.querySelector<HTMLOListElement>('[data-stream]');
-    const searchInput = document.querySelector<HTMLInputElement>('[data-search]');
-    const countLabels = document.querySelectorAll<HTMLElement>('[data-result-count]');
-    const noResults = document.querySelector<HTMLElement>('[data-no-results]');
-    const clearButton = document.querySelector<HTMLButtonElement>('[data-filter-clear]');
-    const mediaButtons = document.querySelectorAll<HTMLButtonElement>('[data-filter-media]');
-    const allButton = document.querySelector<HTMLButtonElement>('[data-filter-all]');
-    const authorSelect = document.querySelector<HTMLSelectElement>('[data-author-select]');
-    const sortSelect = document.querySelector<HTMLSelectElement>('[data-sort-select]');
-    const viewButtons = document.querySelectorAll<HTMLButtonElement>('[data-view]');
-    const items = Array.from(document.querySelectorAll<HTMLElement>('.archive-row'));
-    const totalItems = items.length;
-    const STORAGE_KEY = 'bourdain-archive.index-controls.v2';
-    let sortMode = 'date-desc';
-    let renderedSortMode = '';
-    let cardLayoutFrame = 0;
-
-    const activeValues = (buttons: NodeListOf<HTMLButtonElement>, attribute: string) =>
-      Array.from(buttons)
-        .filter((button) => button.classList.contains('is-active'))
-        .map((button) => button.getAttribute(attribute))
-        .filter(Boolean);
-
-    const textValue = (item: HTMLElement, attr: string) => item.getAttribute(attr) ?? '';
-
-    const compareDate = (left: HTMLElement, right: HTMLElement, direction: 'asc' | 'desc') => {
-      const leftDate = textValue(left, 'data-date');
-      const rightDate = textValue(right, 'data-date');
-      if (!leftDate && !rightDate) return 0;
-      if (!leftDate) return 1;
-      if (!rightDate) return -1;
-      return direction === 'asc' ? leftDate.localeCompare(rightDate) : rightDate.localeCompare(leftDate);
-    };
-
-    const compareTextThenDate = (attr: string) => (left: HTMLElement, right: HTMLElement) =>
-      textValue(left, attr).localeCompare(textValue(right, attr)) || compareDate(left, right, 'desc');
-
-    const compareItems = (left: HTMLElement, right: HTMLElement) => {
-      if (sortMode === 'date-asc') return compareDate(left, right, 'asc');
-      if (sortMode === 'title-asc') return compareTextThenDate('data-title')(left, right);
-      if (sortMode === 'media-asc') return compareTextThenDate('data-media-type')(left, right);
-      if (sortMode === 'author-asc') return compareTextThenDate('data-author')(left, right);
-      return compareDate(left, right, 'desc');
-    };
-
-    const readSavedControls = () => {
-      try {
-        return JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '{}');
-      } catch {
-        return {};
-      }
-    };
-
-    const saveControls = () => {
-      try {
-        localStorage.setItem(
-          STORAGE_KEY,
-          JSON.stringify({
-            query: searchInput?.value ?? '',
-            mediaTypes: activeValues(mediaButtons, 'data-filter-media'),
-            author: authorSelect?.value ?? '',
-            sort: sortMode,
-            view: stream?.getAttribute('data-view') ?? 'cards',
-          }),
-        );
-      } catch {}
-    };
-
-    const applySavedControls = () => {
-      const saved = readSavedControls();
-      if (searchInput && typeof saved.query === 'string') searchInput.value = saved.query;
-      if (Array.isArray(saved.mediaTypes)) {
-        mediaButtons.forEach((button) => button.classList.toggle('is-active', saved.mediaTypes.includes(button.getAttribute('data-filter-media'))));
-      }
-      if (authorSelect && (saved.author === 'by' || saved.author === 'about')) authorSelect.value = saved.author;
-      if (saved.view === 'rows' || saved.view === 'cards') {
-        stream?.setAttribute('data-view', saved.view);
-        viewButtons.forEach((button) => button.classList.toggle('is-active', button.getAttribute('data-view') === saved.view));
-      }
-
-      const savedSort = saved.sort === 'asc' ? 'date-asc' : saved.sort === 'desc' ? 'date-desc' : saved.sort;
-      if (['date-desc', 'date-asc', 'title-asc'].includes(savedSort)) sortMode = savedSort;
-      if (sortSelect) sortSelect.value = sortMode;
-    };
-
-    const renderSortedItems = () => {
-      if (!stream || renderedSortMode === sortMode) return;
-      items.sort(compareItems).forEach((item) => stream.append(item));
-      renderedSortMode = sortMode;
-    };
-
-    const layoutCards = () => {
-      if (!stream || stream.getAttribute('data-view') !== 'cards') {
-        items.forEach((item) => (item.style.gridRowEnd = ''));
-        return;
-      }
-
-      const styles = window.getComputedStyle(stream);
-      const rowHeight = Number.parseFloat(styles.gridAutoRows) || 4;
-      const rowGap = Number.parseFloat(styles.rowGap) || 0;
-
-      items.forEach((item) => {
-        if (item.hidden) {
-          item.style.gridRowEnd = '';
-          return;
-        }
-        item.style.gridRowEnd = '';
-        const rect = item.getBoundingClientRect();
-        const height = Math.max(item.scrollHeight, rect.height);
-        const span = Math.max(1, Math.ceil((height + rowGap + 2) / (rowHeight + rowGap)));
-        item.style.gridRowEnd = `span ${span}`;
-      });
-    };
-
-    const scheduleCardLayout = () => {
-      if (cardLayoutFrame) window.cancelAnimationFrame(cardLayoutFrame);
-      cardLayoutFrame = window.requestAnimationFrame(() => {
-        cardLayoutFrame = 0;
-        layoutCards();
-      });
-    };
-
-    const updateControls = () => {
-      const activeMediaTypes = activeValues(mediaButtons, 'data-filter-media');
-      const activeAuthor = authorSelect?.value ?? '';
-      const query = searchInput?.value.trim().toLowerCase() ?? '';
-
-      allButton?.classList.toggle('is-active', activeMediaTypes.length === 0);
-      renderSortedItems();
-
-      let visibleCount = 0;
-      items.forEach((item) => {
-        const indexMode = item.getAttribute('data-index-mode');
-        const matchesIndexMode = indexMode === 'rollup' || (indexMode === 'child' && Boolean(query));
-        const matchesMedia = activeMediaTypes.length === 0 || activeMediaTypes.includes(item.getAttribute('data-media-type'));
-        const matchesAuthor = !activeAuthor || activeAuthor === item.getAttribute('data-author');
-        const matchesQuery = !query || (item.getAttribute('data-search-text') ?? '').includes(query);
-        const isVisible = matchesIndexMode && matchesMedia && matchesAuthor && matchesQuery;
-        item.hidden = !isVisible;
-        if (isVisible) visibleCount += 1;
-      });
-
-      countLabels.forEach((label) => (label.textContent = `${visibleCount} of ${totalItems} records`));
-      if (noResults) noResults.hidden = visibleCount > 0;
-      saveControls();
-      scheduleCardLayout();
-    };
-
-    clearButton?.addEventListener('click', () => {
-      mediaButtons.forEach((button) => button.classList.remove('is-active'));
-      if (searchInput) searchInput.value = '';
-      if (authorSelect) authorSelect.value = '';
-      sortMode = 'date-desc';
-      if (sortSelect) sortSelect.value = sortMode;
-      renderedSortMode = '';
-      updateControls();
-    });
-
-    allButton?.addEventListener('click', () => {
-      mediaButtons.forEach((button) => button.classList.remove('is-active'));
-      updateControls();
-    });
-
-    mediaButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-        button.classList.toggle('is-active');
-        updateControls();
-      });
-    });
-
-    searchInput?.addEventListener('input', updateControls);
-    authorSelect?.addEventListener('change', updateControls);
-
-    viewButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-        const view = button.getAttribute('data-view') ?? 'rows';
-        stream?.setAttribute('data-view', view);
-        viewButtons.forEach((item) => item.classList.toggle('is-active', item === button));
-        saveControls();
-        scheduleCardLayout();
-      });
-    });
-
-    sortSelect?.addEventListener('change', () => {
-      sortMode = sortSelect.value;
-      renderedSortMode = '';
-      updateControls();
-    });
-
-    document.querySelectorAll<HTMLImageElement>('.row-image img').forEach((image) => {
-      const collapseImage = () => {
-        const row = image.closest<HTMLElement>('.archive-row');
-        image.closest('.row-image')?.remove();
-        row?.classList.remove('has-image');
-        row?.classList.add('no-image');
-        scheduleCardLayout();
-      };
-
-      image.addEventListener('load', () => {
-        if (image.naturalWidth < 12 || image.naturalHeight < 12) {
-          collapseImage();
-          return;
-        }
-        scheduleCardLayout();
-      });
-      image.addEventListener('error', collapseImage);
-    });
-
-    if ('ResizeObserver' in window) {
-      const observer = new ResizeObserver(scheduleCardLayout);
-      items.forEach((item) => observer.observe(item));
-    }
-
-    window.addEventListener('resize', scheduleCardLayout);
-    document.fonts?.ready.then(scheduleCardLayout).catch(() => {});
-
-    applySavedControls();
-    updateControls();
-  </script>
 </BaseLayout>

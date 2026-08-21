@@ -22,10 +22,10 @@ const displayStatus = visibleStatus(status);
 <article class="card" data-entry data-type={data.type} data-collection={collection}>
   <a class={`card-media ${isWebPreview ? 'is-web-preview' : ''}`} href={href} aria-label={entryTitle(entry)}>
     {preview.image ? (
-      <img src={preview.image} alt="" loading="lazy" />
+      <img src={preview.image} alt={`${entryTitle(entry)} cover`} loading="lazy" decoding="async" width="400" height="500" />
     ) : (
       <span class="media-fallback">
-        {preview.favicon && <img class="media-favicon" src={preview.favicon} alt="" loading="lazy" />}
+        {preview.favicon && <img class="media-favicon" src={preview.favicon} alt="" loading="lazy" decoding="async" />}
         <span class="media-label">{preview.label}</span>
         {preview.url && <span class="media-url">{preview.url}</span>}
       </span>

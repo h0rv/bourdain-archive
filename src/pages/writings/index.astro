@@ -1,0 +1,80 @@
+---
+import { getCollection } from 'astro:content';
+import linkPreviewCache from '../../../archive/derived/link-previews.json';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { entryHref, entryTitle, formatDate, formatType, previewForEntry, archiveTargetsForUrl, primaryAvailabilityUrl } from '../../lib/content';
+import { withBase } from '../../lib/site';
+
+const works = await getCollection('works');
+const literature = await getCollection('literature');
+const sources = await getCollection('sources');
+const sourceById = new Map(sources.map((e) => [e.data.id, e]));
+
+const authoredWorks = works.filter((w) => w.data.relation_to_bourdain === 'authored').sort((a,b) => (a.data.date ?? '').localeCompare(b.data.date ?? ''));
+const byBourdainLit = literature.filter((l) => (l.data as any).relation_to_bourdain === 'authored');
+const writings = [...authoredWorks, ...byBourdainLit].sort((a,b) => (a.data.date ?? '').localeCompare(b.data.date ?? ''));
+
+const aboutWritings = literature.filter((l) => (l.data as any).relation_to_bourdain !== 'authored').sort((a,b) => (b.data.date ?? '').localeCompare(a.data.date ?? '')).slice(0, 12);
+
+const previewFor = (entry: any) => {
+  const own = previewForEntry(entry, linkPreviewCache.previews);
+  if (own.image) return own;
+  for (const sid of entry.data.sources ?? []) {
+    const src = sourceById.get(sid);
+    if (!src) continue;
+    const pv = previewForEntry(src, linkPreviewCache.previews);
+    if (pv.image) return { ...own, image: pv.image, host: pv.host, url: pv.url, archive: pv.archive };
+  }
+  return own;
+};
+const imgFor = (entry: any) => previewFor(entry).image ?? '';
+const officialFor = (entry: any) => previewFor(entry).url ?? primaryAvailabilityUrl(entry.data);
+const archiveFor = (entry: any) => previewFor(entry).archive ?? archiveTargetsForUrl(officialFor(entry));
+---
+<BaseLayout title="Writings">
+  <h1 class="page-title">Writings</h1>
+
+  <ol class="shelf-grid" style="content-visibility:auto; contain-intrinsic-size: 1000px;" aria-label="Writings by Bourdain">
+    {writings.map((entry, idx) => {
+      const col = (entry as any).collection ?? (entry.data.type === 'book' || entry.data.type === 'comic' || entry.data.type === 'essay' || entry.data.type === 'short-story' ? 'works' : 'literature');
+      // fallback: works vs literature based on id presence in works
+      const isWork = works.some(w=>w.data.id===entry.data.id);
+      const href = isWork ? entryHref('works', entry.data.id) : entryHref('literature', entry.data.id);
+      const img = imgFor(entry);
+      const title = entryTitle(entry);
+      const official = officialFor(entry);
+      const arch = archiveFor(entry);
+      return (
+        <li class="shelf-card">
+          <a href={href}>
+            <span class="shelf-card-media"><img src={img || withBase('/images/placeholder.svg')} alt={img ? `${title} cover` : ""} loading={idx === 0 ? "eager" : "lazy"} fetchpriority={idx === 0 ? "high" : undefined} decoding="async" width="400" height="500" /></span>
+            <span class="shelf-card-title">{title}</span>
+            <span class="shelf-card-meta">{formatDate(entry.data.date, entry.data.date_precision)} · {formatType(entry.data.type)}{(entry.data as any).publication ? ` · ${(entry.data as any).publication}` : ''}</span>
+          </a>
+          <span class="meta" style="display:flex; gap:0.4rem; flex-wrap:wrap; font-size:0.58rem"><a href={official}>Source</a>{arch && <>· <a href={arch.latest_url}>Archive</a></>}</span>
+        </li>
+      );
+    })}
+  </ol>
+
+  <h2 class="section-heading" style="margin-top:2.5rem" id="about-selected">About Bourdain — selected</h2>
+  <p class="meta">Interviews, reviews, tributes. Not by him, but useful context.</p>
+  <ol class="shelf-grid" aria-labelledby="about-selected">
+    {aboutWritings.map((entry) => {
+      const img = imgFor(entry);
+      const title = entryTitle(entry);
+      const official = officialFor(entry);
+      const arch = archiveFor(entry);
+      return (
+        <li class="shelf-card">
+          <a href={entryHref('literature', entry.data.id)}>
+            <span class="shelf-card-media"><img src={img || withBase('/images/placeholder.svg')} alt={img ? `${title} cover` : ""} loading="lazy" decoding="async" width="400" height="500" /></span>
+            <span class="shelf-card-title">{title}</span>
+            <span class="shelf-card-meta">{formatDate(entry.data.date, entry.data.date_precision)} · {formatType(entry.data.type)}</span>
+          </a>
+          <span class="meta" style="display:flex; gap:0.4rem; flex-wrap:wrap; font-size:0.58rem"><a href={official}>Source</a>{arch && <>· <a href={arch.latest_url}>Archive</a></>}</span>
+        </li>
+      );
+    })}
+  </ol>
+</BaseLayout>
