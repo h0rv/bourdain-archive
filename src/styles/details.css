@@ -41,14 +41,9 @@
   border: 1px solid rgba(17, 16, 14, 0.14);
 }
 
-.is-portrait .entry-artwork img {
-  aspect-ratio: 2 / 3;
-  object-fit: contain;
-}
-
+.is-portrait .entry-artwork img,
 .is-landscape .entry-artwork img {
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .entry-artwork figcaption {
@@ -78,10 +73,10 @@
   max-width: 18ch;
   margin: 0;
   font-family: var(--display);
-  font-size: clamp(2.35rem, 4.8vw, 4.4rem);
+  font-size: clamp(2.15rem, 4.2vw, 3.75rem);
   font-weight: 650;
   letter-spacing: -0.035em;
-  line-height: 0.92;
+  line-height: 0.98;
   text-wrap: balance;
 }
 

@@ -171,16 +171,19 @@
 .editorial-list-media {
   display: grid;
   place-items: center;
-  aspect-ratio: 16 / 10;
-  overflow: hidden;
-  background: var(--wash);
   text-decoration: none;
 }
 
 .editorial-list-media img {
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
+  border: 1px solid var(--rule);
+}
+
+.editorial-list-media > span {
+  min-height: 3rem;
 }
 
 .editorial-list h3 {

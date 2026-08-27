@@ -146,10 +146,10 @@ body > header {
   max-width: 18ch;
   margin: 0;
   font-family: var(--display);
-  font-size: clamp(2.8rem, 5.8vw, 4.65rem);
+  font-size: clamp(2.6rem, 5vw, 4rem);
   font-weight: 800;
   letter-spacing: -0.065em;
-  line-height: 0.88;
+  line-height: 0.94;
 }
 
 .home-intro {
@@ -257,7 +257,7 @@ body > header {
 }
 
 .home-section {
-  margin-top: clamp(3rem, 6vw, 5rem);
+  margin-top: clamp(2.5rem, 5vw, 4rem);
   scroll-margin-top: 2rem;
 }
 
