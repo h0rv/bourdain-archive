@@ -101,6 +101,9 @@ function primaryAvailabilityUrl(data) {
 }
 
 function previewImageFor(data, cache, sourceById = new Map(), entryById = new Map(), seen = new Set()) {
+  if (data.image_mode === 'text') {
+    return { image: undefined, reason: 'intentional text-only image mode' };
+  }
   if (data.image_url && !isBlockedRemoteImage(data.image_url) && !isPlaceholderRemoteImage(data.image_url)) {
     return { image: data.image_url, reason: 'explicit image_url' };
   }
@@ -175,6 +178,7 @@ for (const [url, preview] of Object.entries(previewCache)) {
 }
 
 const missingByCollection = new Map();
+let textOnlyCount = 0;
 
 for (const { file, collection, data } of entries) {
   if (data.image_url && isPlaceholderRemoteImage(data.image_url)) {
@@ -191,13 +195,19 @@ for (const { file, collection, data } of entries) {
   }
 
   if (!COLLECTIONS_EXPECTING_VISUALS.has(collection)) continue;
+  if (data.image_mode === 'text') {
+    const candidate = previewImageFor({ ...data, image_mode: undefined }, previewCache, sourceById, entryById);
+    if (candidate.image) {
+      errors.push(`${file}: text-only record still resolves a usable image (${candidate.reason})`);
+    }
+    textOnlyCount += 1;
+    continue;
+  }
   const previewImage = previewImageFor(data, previewCache, sourceById, entryById);
   if (!previewImage.image) {
     const count = missingByCollection.get(collection) ?? 0;
     missingByCollection.set(collection, count + 1);
-    if (data.index_mode !== 'child') {
-      errors.push(`${file}: no safe image_url or preview image (${previewImage.reason})`);
-    }
+    errors.push(`${file}: no safe image_url or preview image (${previewImage.reason})`);
   }
 }
 
@@ -210,5 +220,7 @@ if (errors.length > 0) {
   for (const error of errors) console.error(`error: ${error}`);
   process.exitCode = 1;
 } else {
-  console.log(`audited images for ${entries.length} content entries (${warnings.length} warnings)`);
+  console.log(
+    `audited images for ${entries.length} content entries (${textOnlyCount} intentional text-only, ${warnings.length} warnings)`,
+  );
 }

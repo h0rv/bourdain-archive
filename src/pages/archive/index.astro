@@ -140,7 +140,7 @@ const formatOptions = [...new Set(catalog.map((item) => item.format))]
     <ol class="catalog-list" data-catalog-list>
       {catalog.map((item) => (
         <li
-          class="catalog-row"
+          class:list={['catalog-row', item.data.image_mode === 'text' && 'is-text-only']}
           data-catalog-item
           data-relation={item.relation}
           data-format={item.format}
@@ -165,9 +165,9 @@ const formatOptions = [...new Set(catalog.map((item) => item.format))]
                 />
               )}
             </a>
-          ) : (
+          ) : item.data.image_mode !== 'text' ? (
             <span class="catalog-row-image" aria-hidden="true"></span>
-          )}
+          ) : null}
           <div class="catalog-row-copy">
             <a class="catalog-row-title" href={entryHref(item.collection, item.data.id)}>{item.title}</a>
             <span class="catalog-row-meta">

@@ -122,6 +122,10 @@
   contain-intrinsic-size: auto 6.5rem;
 }
 
+.catalog-row.is-text-only {
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
 .catalog-row-image {
   display: grid;
   place-items: center;

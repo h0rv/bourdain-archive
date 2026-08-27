@@ -14,6 +14,7 @@ const COLLECTIONS = ['works', 'series', 'appearances', 'screen', 'literature', '
 const DATE_PRECISIONS = new Set(['day', 'month', 'year', 'unknown']);
 const STATUS_VALUES = new Set(['confirmed', 'needs-review', 'missing-source', 'dead-link', 'partial']);
 const INDEX_MODES = new Set(['rollup', 'child', 'hidden']);
+const IMAGE_MODES = new Set(['text']);
 const URL_FIELD_RE = /(^|_)url$/;
 const CORE_SOURCE_REQUIRED_COLLECTIONS = new Set(['works', 'series', 'appearances', 'screen', 'literature']);
 
@@ -273,6 +274,8 @@ for (const entry of entries) {
   if (!data.title && !data.name) errors.push(`${path}: missing title/name`);
   if (data.status && !STATUS_VALUES.has(data.status)) errors.push(`${path}: invalid status: ${data.status}`);
   if (data.index_mode && !INDEX_MODES.has(data.index_mode)) errors.push(`${path}: invalid index_mode: ${data.index_mode}`);
+  if (data.image_mode && !IMAGE_MODES.has(data.image_mode)) errors.push(`${path}: invalid image_mode: ${data.image_mode}`);
+  if (data.image_mode === 'text' && data.image_url) errors.push(`${path}: text-only record cannot also set image_url`);
 
   if (data.id) {
     if (collection !== 'sources') {

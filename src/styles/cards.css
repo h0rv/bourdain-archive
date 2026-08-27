@@ -101,6 +101,51 @@
   width: var(--card-still-width);
 }
 
+.browse-card.is-text-only {
+  grid-template-rows: 1fr;
+}
+
+.browse-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  justify-content: end;
+  align-self: end;
+  width: 100%;
+  padding: 1rem;
+  color: var(--ink);
+  background: color-mix(in srgb, var(--cream) 76%, var(--wash));
+  border: 1px solid var(--rule);
+}
+
+.browse-card-text.is-portrait {
+  aspect-ratio: 2 / 3;
+}
+
+.browse-card-text.is-landscape {
+  aspect-ratio: 16 / 10;
+}
+
+.browse-card-text.is-square {
+  aspect-ratio: 1;
+}
+
+.browse-card-text > strong {
+  max-width: 15ch;
+  font-family: var(--display);
+  font-size: 1.25rem;
+  font-weight: 650;
+  line-height: 1.05;
+}
+
+.browse-card-text > span {
+  color: var(--muted);
+  font-family: var(--mono);
+  font-size: 0.62rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
 .browse-card-media {
   display: grid;
   place-items: center;
