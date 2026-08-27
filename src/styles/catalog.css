@@ -2,16 +2,21 @@
   --catalog-border: rgba(17, 16, 14, 0.16);
   display: grid;
   gap: 1rem;
+  min-width: 0;
 }
 
 .catalog-intro {
   display: grid;
   gap: 0.45rem;
+  min-width: 0;
   max-width: 72ch;
 }
 
 .catalog-intro > * {
+  min-width: 0;
+  max-width: 100%;
   margin: 0;
+  overflow-wrap: anywhere;
 }
 
 .catalog-intro p {
@@ -275,6 +280,8 @@
 
 .catalog-tile-actions a,
 .catalog-source-actions a {
+  min-width: 0;
+  overflow-wrap: anywhere;
   color: var(--accent);
   font-family: var(--mono);
   font-size: 0.64rem;

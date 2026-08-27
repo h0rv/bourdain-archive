@@ -11,13 +11,18 @@ const DIST = resolve(ROOT, process.env.AUDIT_DIST ?? "dist");
 const OUTPUT = resolve(ROOT, process.env.AUDIT_OUTPUT ?? "tmp/visual-audit");
 const CONCURRENCY = clampNumber(process.env.AUDIT_CONCURRENCY, 8, 1, 20);
 const PAGE_TIMEOUT_MS = clampNumber(process.env.AUDIT_PAGE_TIMEOUT_MS, 15_000, 2_000, 60_000);
-const IMAGE_WAIT_MS = clampNumber(process.env.AUDIT_IMAGE_WAIT_MS, 5_000, 0, 15_000);
+const MEDIA_MODE =
+  process.argv.includes("--full") || process.env.AUDIT_MEDIA_MODE === "full" ? "full" : "viewport";
+const IMAGE_WAIT_MS = clampNumber(
+  process.env.AUDIT_IMAGE_WAIT_MS,
+  MEDIA_MODE === "full" ? 15_000 : 5_000,
+  0,
+  15_000,
+);
 const MAP_WAIT_MS = clampNumber(process.env.AUDIT_MAP_WAIT_MS, 5_000, 0, 15_000);
 const CONTACT_SHEET_SIZE = clampNumber(process.env.AUDIT_CONTACT_SHEET_SIZE, 80, 20, 200);
 const FAIL_ON_WARNINGS = process.env.AUDIT_FAIL_ON_WARNINGS === "1";
 const ALLOW_FAILURES = process.env.AUDIT_ALLOW_FAILURES === "1";
-const MEDIA_MODE =
-  process.argv.includes("--full") || process.env.AUDIT_MEDIA_MODE === "full" ? "full" : "viewport";
 const BASE_PATH = normalizeBasePath(process.env.AUDIT_BASE_PATH ?? process.env.BASE_PATH ?? "/");
 const REQUESTED_ROUTES = new Set(
   (process.env.AUDIT_ROUTES ?? "")

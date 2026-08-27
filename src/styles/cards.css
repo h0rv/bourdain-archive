@@ -517,7 +517,15 @@
 
 .place-detail {
   width: min(100%, 76rem);
+  min-width: 0;
   margin-inline: auto;
+  overflow-wrap: anywhere;
+}
+
+.place-detail > *,
+.place-detail .page-intro > * {
+  min-width: 0;
+  max-width: 100%;
 }
 
 .place-detail .detail-box {
