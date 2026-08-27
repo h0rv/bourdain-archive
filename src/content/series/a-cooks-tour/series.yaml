@@ -3,7 +3,7 @@ title: A Cook's Tour
 kind: series
 index_mode: rollup
 type: show
-image_url: https://m.media-amazon.com/images/M/MV5BN2Q3ZDI5OGUtZDI1OS00NTVhLTg4OGItYmFmY2U3YTNkNzNjXkEyXkFqcGc%40._V1_FMjpg_UX1000_.jpg
+image_url: https://is1-ssl.mzstatic.com/image/thumb/_ji3F8qoeKTyTyoZLelKpQ/1400x2489.webp
 record_type: television
 media_type: tv-video
 relation_to_bourdain: featured
@@ -20,6 +20,7 @@ people:
 places: []
 sources:
   - shows-by-country-github
+  - a-cooks-tour-apple-tv
 related:
   - a-cooks-tour-book
 status: confirmed

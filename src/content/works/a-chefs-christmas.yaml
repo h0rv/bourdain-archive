@@ -9,7 +9,7 @@ creator:
 date: "2002-11-12"
 date_precision: day
 summary: Original Bourdain short story released as a Random House Audio audiobook.
-image_url: https://images1.penguinrandomhouse.com/cover/9780739304808
+image_url: https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/9f/4f/e9/9f4fe940-16f1-b690-fb38-8bec65984b77/9780739304808.d.jpg/1200x1200bb.jpg
 tags:
   - fiction
   - kitchens
@@ -19,6 +19,7 @@ people:
 places: []
 sources:
   - a-chefs-christmas-prh
+  - a-chefs-christmas-apple-books
 related:
   - kitchen-confidential
 status: confirmed

@@ -3,7 +3,7 @@ title: Bone in the Throat
 type: adaptation
 record_type: screen
 media_type: tv-video
-image_url: https://m.media-amazon.com/images/M/MV5BMTA1Mzg1NDM4NTVeQTJeQWpwZ15BbWU4MDM5NzM3NTMx._V1_FMjpg_UX1000_.jpg
+image_url: https://filmsandfestivals.britishcouncil.org/storage/project/images/BoneintheThroat.jpg
 relation_to_bourdain: featured
 contributors:
   - anthony-bourdain
@@ -19,6 +19,7 @@ people:
 places: []
 sources:
   - rotten-tomatoes-bourdain-filmography
+  - bone-in-the-throat-british-council
 related:
   - bone-in-the-throat
 status: confirmed

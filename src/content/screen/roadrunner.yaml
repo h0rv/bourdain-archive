@@ -3,7 +3,7 @@ title: "Roadrunner: A Film About Anthony Bourdain"
 type: documentary
 record_type: screen
 media_type: tv-video
-image_url: https://s3.amazonaws.com/nightjarprod/content/uploads/sites/130/2021/06/16131506/r6fX3LhPR292uvWMTxcjCsMBbAR.jpg
+image_url: "https://images.contentstack.io/v3/assets/blt223a4a92692ca457/blta63c2b428430f654/68a38672ca07921f34ff37a2/58_poster_roadrunner_poster_60b79f4c1e5b1.jpg?branch=production&width=2560"
 relation_to_bourdain: about
 contributors:
   - anthony-bourdain
@@ -20,6 +20,7 @@ places: []
 sources:
   - roadrunner-review-eater
   - rotten-tomatoes-bourdain-filmography
+  - roadrunner-focus-features
 related: []
 status: confirmed
 availability: {}

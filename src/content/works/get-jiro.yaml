@@ -10,7 +10,7 @@ creator:
 date: "2012"
 date_precision: year
 summary: Graphic novel set in a food-obsessed dystopia, co-written by Bourdain.
-image_url: https://static.dc.com/dc/files/default_images/GetJiro_HC_CVRMKT-ijzewranh2.jpg
+image_url: https://is1-ssl.mzstatic.com/image/thumb/Publication/v4/ff/b9/2b/ffb92b54-6117-e9b8-74a8-f7a48bd1c24c/GETJIRO_cover.jpg/1200x1200bb.jpg
 tags:
   - comic
   - food-media
@@ -20,6 +20,7 @@ people:
 places: []
 sources:
   - open-library-bourdain-author
+  - get-jiro-apple-books
 related: []
 status: confirmed
 availability:

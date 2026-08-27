@@ -3,7 +3,7 @@ title: No Reservations
 kind: series
 index_mode: rollup
 type: show
-image_url: https://image.tmdb.org/t/p/w500/45ZRnn0la7u6OLHlV7VCnxbeB0v.jpg
+image_url: https://is1-ssl.mzstatic.com/image/thumb/nFQqNvrH_-oGt1Sv6eaHnw/1680x2986nr.webp
 record_type: television
 media_type: tv-video
 relation_to_bourdain: featured
@@ -20,6 +20,7 @@ people:
 places: []
 sources:
   - shows-by-country-github
+  - no-reservations-apple-tv
 related:
   - no-reservations-book
 status: confirmed

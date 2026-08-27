@@ -3,7 +3,7 @@ title: "Jeremiah Tower: The Last Magnificent"
 type: documentary
 record_type: screen
 media_type: tv-video
-image_url: https://image.tmdb.org/t/p/w600_and_h900_bestv2/tHWmco3DQFfdzlxIYfW2qeXVjRg.jpg
+image_url: https://is1-ssl.mzstatic.com/image/thumb/Video211/v4/eb/e4/b3/ebe4b3f7-a7ae-64df-d6db-86e6ad935a19/pr_source.lsr/2000x3555.webp
 relation_to_bourdain: featured
 contributors:
   - anthony-bourdain
@@ -20,6 +20,7 @@ places: []
 sources:
   - rotten-tomatoes-bourdain-filmography
   - charlie-rose-last-magnificent
+  - jeremiah-tower-apple-tv
 related: []
 status: confirmed
 availability: {}

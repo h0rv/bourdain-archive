@@ -10,7 +10,7 @@ creator:
 date: "2015"
 date_precision: year
 summary: Prequel graphic novel expanding the violent food-world satire of Get Jiro!.
-image_url: https://static.dc.com/dc/files/default_images/GETJBS-%2528Cover%2529_58128cc4e7c094.02555544.jpg
+image_url: https://is1-ssl.mzstatic.com/image/thumb/Publication42/v4/7e/b7/79/7eb779f0-52b8-7aa1-0834-0365164cf013/mzm.eblxikco.jpg/1200x1200bb.jpg
 tags:
   - comic
   - food-media
@@ -20,6 +20,7 @@ people:
 places: []
 sources:
   - open-library-bourdain-author
+  - get-jiro-blood-apple-books
 related:
   - get-jiro
 status: confirmed

@@ -9,7 +9,7 @@ contributors:
 date: "2013-04-10"
 date_precision: day
 summary: CNN interviews about Parts Unknown and Bourdain's public commentary.
-image_url: https://m.media-amazon.com/images/M/MV5BYWE5ODhiMTItNDczMi00ZTEwLWFmNjctZWI5MTA4OTNmMjk0XkEyXkFqcGc%40._V1_.jpg
+image_url: https://cdn.cnn.com/cnnnext/dam/assets/130412151057-exp-bourdain-amanpour-00012930-horizontal-large-gallery.jpg
 tags:
   - interview
   - television
@@ -21,6 +21,7 @@ sources:
   - cnn-newsroom-parts-unknown-2013
   - explore-parts-unknown
   - parts-unknown-cnn-transcripts
+  - cnn-amanpour-bourdain-2013
 related:
   - parts-unknown-show
 status: partial

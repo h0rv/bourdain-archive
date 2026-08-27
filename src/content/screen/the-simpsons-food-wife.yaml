@@ -3,7 +3,7 @@ title: "The Simpsons: The Food Wife"
 type: voice-role
 record_type: screen
 media_type: tv-video
-image_url: https://www.mashed.com/img/gallery/the-simpsons-episode-you-likely-forgot-anthony-bourdain-starred-in/l-intro-1706894419.jpg
+image_url: https://is1-ssl.mzstatic.com/image/thumb/CIR4ZeMYnUhezh80CueJEQ/1920x1080.jpg
 relation_to_bourdain: featured
 contributors:
   - anthony-bourdain
@@ -19,6 +19,7 @@ people:
 places: []
 sources:
   - simpsons-the-food-wife
+  - simpsons-food-wife-apple-tv
 related: []
 status: partial
 availability: {}

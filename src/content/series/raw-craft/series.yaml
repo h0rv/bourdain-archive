@@ -5,7 +5,7 @@ index_mode: rollup
 type: show
 record_type: television
 media_type: tv-video
-image_url: https://i.ytimg.com/vi/J50mKbnKHas/hqdefault.jpg
+image_url: https://i.ytimg.com/vi/J50mKbnKHas/maxresdefault.jpg
 relation_to_bourdain: featured
 contributors:
   - anthony-bourdain
@@ -20,6 +20,7 @@ people:
 places: []
 sources:
   - reddit-archival-megathread
+  - raw-craft-youtube
 related: []
 status: confirmed
 availability: {}
