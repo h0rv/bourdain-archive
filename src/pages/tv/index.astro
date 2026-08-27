@@ -14,9 +14,29 @@ import { withBase } from '../../lib/site';
 const series = await getCollection('series');
 const sources = await getCollection('sources');
 const sourceById = new Map(sources.map((entry) => [entry.data.id, entry]));
-const shows = series
-  .filter((entry) => entry.data.type === 'show')
-  .sort((left, right) => (left.data.date ?? '').localeCompare(right.data.date ?? ''));
+const shows = series.filter((entry) => entry.data.type === 'show');
+const byId = new Map(shows.map((entry) => [entry.data.id, entry]));
+const selectShows = (ids: string[]) => ids.map((id) => byId.get(id)).filter(Boolean);
+const hostedShows = selectShows([
+  'a-cooks-tour-show',
+  'no-reservations-show',
+  'the-layover-show',
+  'parts-unknown-show',
+]);
+const otherHostedShows = selectShows(['raw-craft-show']);
+const productionShows = selectShows(['mind-of-a-chef-show', 'the-getaway-show']);
+const competitionShows = selectShows(['the-taste-show', 'top-chef-appearances']);
+const roleLabels: Record<string, string> = {
+  'a-cooks-tour-show': 'Host',
+  'no-reservations-show': 'Host',
+  'the-layover-show': 'Host',
+  'parts-unknown-show': 'Host',
+  'raw-craft-show': 'Host',
+  'mind-of-a-chef-show': 'Narrator and executive producer',
+  'the-getaway-show': 'Executive producer',
+  'the-taste-show': 'Judge and mentor',
+  'top-chef-appearances': 'Guest judge',
+};
 
 const previewFor = (entry: any) => {
   const own = previewForEntry(entry, linkPreviewCache.previews);
@@ -33,59 +53,65 @@ const previewFor = (entry: any) => {
 
 <BaseLayout
   title="Television"
-  description="Anthony Bourdain's television series and episode guides."
+  description="Television hosted, narrated, produced, or featuring Anthony Bourdain."
 >
-  <header class="page-intro split-intro">
-    <div>
-      <p class="eyebrow">Series and episode guides</p>
-      <h1 class="page-title">Television</h1>
-    </div>
-    <p class="lede">
-      Bourdain hosted, narrated, judged, or produced each series listed here. Open a series to see
-      its seasons and episodes, or <a href={withBase('/archive/?scope=child')}>search every episode</a>.
-    </p>
+  <header class="page-intro">
+    <h1 class="page-title">Television</h1>
+    <p class="lede">Hosted series come first. Narrated, produced, competition, and guest work follow.</p>
   </header>
 
-  <ol class="show-index">
-    {shows.map((show, index) => {
-      const preview = previewFor(show);
-      const officialUrl = primaryAvailabilityUrl(show.data);
-      return (
-        <li>
-          <article class="show-catalog-card">
-            <a class="show-poster" href={entryHref('series', show.data.id)}>
-              {preview.image ? (
-                <img
-                  src={preview.image}
-                  alt=""
-                  loading={index < 2 ? 'eager' : 'lazy'}
-                  decoding="async"
-                  width="400"
-                  height="600"
-                />
-              ) : (
-                <span>Television</span>
-              )}
-            </a>
-            <div class="show-catalog-copy">
-              <p class="eyebrow">
-                {formatDate(show.data.date, show.data.date_precision)}, featuring Bourdain
-              </p>
-              <h2><a href={entryHref('series', show.data.id)}>{entryTitle(show)}</a></h2>
-              <p>{show.data.summary}</p>
-              <p class="show-actions">
-                <a class="primary-action" href={entryHref('series', show.data.id)}>Browse series</a>
-                {officialUrl && <a href={officialUrl} rel="noopener noreferrer">Official site</a>}
-              </p>
-            </div>
-          </article>
-        </li>
-      );
-    })}
-  </ol>
+  {[
+    { title: 'Hosted travel series', shows: hostedShows },
+    { title: 'Other hosted work', shows: otherHostedShows },
+    { title: 'Narrated and produced', shows: productionShows },
+    { title: 'Competition and guest work', shows: competitionShows },
+  ].map((group, groupIndex) => (
+    <section class="tv-section" aria-labelledby={`tv-section-${groupIndex}`}>
+      <header class="section-header">
+        <h2 id={`tv-section-${groupIndex}`}>{group.title}</h2>
+      </header>
+      <ol class="show-index">
+        {group.shows.map((show: any, index: number) => {
+          const preview = previewFor(show);
+          const officialUrl = primaryAvailabilityUrl(show.data);
+          return (
+            <li>
+              <article class="show-catalog-card">
+                <a class="show-poster" href={entryHref('series', show.data.id)}>
+                  {preview.image ? (
+                    <img
+                      src={preview.image}
+                      alt=""
+                      loading={groupIndex === 0 && index < 2 ? 'eager' : 'lazy'}
+                      decoding="async"
+                      width="400"
+                      height="600"
+                    />
+                  ) : (
+                    <span>Television</span>
+                  )}
+                </a>
+                <div class="show-catalog-copy">
+                  <p class="eyebrow">
+                    {formatDate(show.data.date, show.data.date_precision)}, {roleLabels[show.data.id]}
+                  </p>
+                  <h3><a href={entryHref('series', show.data.id)}>{entryTitle(show)}</a></h3>
+                  <p>{show.data.summary}</p>
+                  <p class="show-actions">
+                    <a class="primary-action" href={entryHref('series', show.data.id)}>Open series</a>
+                    {officialUrl && <a href={officialUrl} rel="noopener noreferrer">Official site</a>}
+                  </p>
+                </div>
+              </article>
+            </li>
+          );
+        })}
+      </ol>
+    </section>
+  ))}
 
   <aside class="crosslink-band">
-    <h2>Films, guest roles, and interviews</h2>
-    <p><a href={withBase('/screen/')}>Browse screen and audio appearances</a></p>
+    <h2>Films, cameos, interviews, and podcasts</h2>
+    <p><a href={withBase('/screen/')}>Browse films and appearances</a></p>
   </aside>
 </BaseLayout>

@@ -13,15 +13,21 @@ import { withBase } from '../lib/site';
 
 const works = await getCollection('works');
 const series = await getCollection('series');
-const screen = await getCollection('screen');
 const literature = await getCollection('literature');
 const places = await getCollection('places');
 const sources = await getCollection('sources');
 
 const sourceById = new Map(sources.map((entry) => [entry.data.id, entry]));
-const shows = series
-  .filter((entry) => entry.data.type === 'show')
-  .sort((left, right) => (left.data.date ?? '').localeCompare(right.data.date ?? ''));
+const hostedShowIds = [
+  'a-cooks-tour-show',
+  'no-reservations-show',
+  'the-layover-show',
+  'parts-unknown-show',
+];
+const shows = hostedShowIds.flatMap((id) => {
+  const show = series.find((entry) => entry.data.id === id);
+  return show ? [show] : [];
+});
 
 const selectedWorkIds = [
   'kitchen-confidential',
@@ -35,14 +41,9 @@ const selectedWorks = selectedWorkIds
   .map((id) => works.find((entry) => entry.data.id === id))
   .filter(Boolean);
 
-const latestContext = [
-  ...screen
-    .filter((entry) => entry.data.relation_to_bourdain === 'about')
-    .map((entry) => ({ entry, collection: 'screen' })),
-  ...literature
-    .filter((entry) => entry.data.relation_to_bourdain === 'about')
-    .map((entry) => ({ entry, collection: 'literature' })),
-]
+const latestContext = literature
+  .filter((entry) => entry.data.relation_to_bourdain === 'about')
+  .map((entry) => ({ entry, collection: 'literature' }))
   .sort((left, right) => (right.entry.data.date ?? '').localeCompare(left.entry.data.date ?? ''))
   .slice(0, 6);
 
@@ -135,7 +136,7 @@ const previewFor = (entry: any) => {
     <header class="section-header">
       <div>
         <p class="eyebrow">Featuring Bourdain</p>
-        <h2 id="television-heading">Television</h2>
+        <h2 id="television-heading">Hosted television</h2>
       </div>
       <a href={withBase('/tv/')}>All television</a>
     </header>

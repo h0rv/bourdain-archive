@@ -12,20 +12,25 @@ import {
 } from '../../lib/content';
 import '../../styles/catalog.css';
 
-const screen = (await getCollection('screen')).map((entry) => ({ entry, collection: 'screen', section: 'screen' }));
+const screen = (await getCollection('screen')).map((entry) => ({ entry, collection: 'screen' }));
 const appearances = (await getCollection('appearances')).map((entry) => ({
   entry,
   collection: 'appearances',
-  section: 'appearances',
 }));
 
-const records = [...screen, ...appearances]
+const items = [...screen, ...appearances]
   .map((item) => {
     const data: any = item.entry.data;
     const title = entryTitle(item.entry);
     const preview = previewForEntry(item.entry, linkPreviewCache.previews);
     const externalUrl = primaryAvailabilityUrl(data);
     const portrait = ['adaptation', 'book', 'comic', 'documentary', 'film', 'show', 'television'].includes(data.type);
+    const group =
+      item.collection === 'appearances'
+        ? 'interviews'
+        : data.relation_to_bourdain === 'about'
+          ? 'about'
+          : 'roles';
     return {
       ...item,
       data,
@@ -33,6 +38,7 @@ const records = [...screen, ...appearances]
       preview,
       externalUrl,
       portrait,
+      group,
       searchable: [title, data.summary, data.type, data.role, data.host, ...(data.tags ?? [])]
         .filter(Boolean)
         .join(' ')
@@ -45,32 +51,49 @@ const records = [...screen, ...appearances]
       left.title.localeCompare(right.title),
   );
 
-const typeOptions = [...new Set(records.map((item) => item.data.type))].sort();
+const typeOptions = [...new Set(items.map((item) => item.data.type))].sort();
+const groups = [
+  {
+    id: 'roles',
+    title: 'On screen',
+    description: 'Acting, voice roles, cameos, and documentary appearances.',
+  },
+  {
+    id: 'about',
+    title: 'Films and adaptations about Bourdain',
+    description: 'Documentaries, films, and adaptations centered on his life or work.',
+  },
+  {
+    id: 'interviews',
+    title: 'Interviews and audio',
+    description: 'Interviews, podcasts, radio, panels, and talks.',
+  },
+];
 ---
 
 <BaseLayout
-  title="Film, television, and appearances"
-  description="Anthony Bourdain's film and television roles, cameos, interviews, podcasts, and talks."
+  title="Films and appearances"
+  description="Anthony Bourdain's film roles, cameos, documentaries, interviews, podcasts, and talks."
 >
   <div class="catalog-page" data-screen-catalog>
     <header class="catalog-intro">
-      <h1 class="page-title">Film, television, and appearances</h1>
+      <h1 class="page-title">Films and appearances</h1>
       <p>
-        Acting, voice roles, documentaries, interviews, podcasts, and talks.
+        Film and television roles, documentaries, interviews, podcasts, and talks. Hosted series
+        are under <a href="../tv/">Television</a>.
       </p>
     </header>
 
-    <form class="catalog-tools" role="search">
+    <form class="catalog-tools screen-catalog-tools" role="search">
       <label class="catalog-field">
         <span>Search</span>
         <input type="search" placeholder="Title, role, host, or subject" autocomplete="off" data-screen-search />
       </label>
       <label class="catalog-field">
-        <span>Section</span>
-        <select data-screen-section>
-          <option value="">Everything</option>
-          <option value="screen">Films, roles, and cameos</option>
-          <option value="appearances">Interviews, audio, and talks</option>
+        <span>Category</span>
+        <select data-screen-group-filter>
+          <option value="">All categories</option>
+          {groups.map((group) => <option value={group.id}>{group.title}</option>)}
         </select>
       </label>
       <label class="catalog-field">
@@ -80,73 +103,68 @@ const typeOptions = [...new Set(records.map((item) => item.data.type))].sort();
           {typeOptions.map((type) => <option value={type}>{formatType(type)}</option>)}
         </select>
       </label>
-      <label class="catalog-field">
-        <span>Order</span>
-        <select data-screen-order>
-          <option value="newest">Newest first</option>
-          <option value="oldest">Oldest first</option>
-          <option value="title">Title</option>
-        </select>
-      </label>
     </form>
 
-    <div class="catalog-toolbar">
-      <p class="catalog-count"><a href="../tv/">Hosted television</a></p>
-    </div>
-
-    <ol class="catalog-grid" data-screen-list>
-      {records.map((item, index) => (
-        <li
-          class="catalog-tile"
-          data-screen-item
-          data-section={item.section}
-          data-type={item.data.type}
-          data-date={item.data.date ?? ''}
-          data-title={item.title.toLocaleLowerCase()}
-          data-search={item.searchable}
-        >
-          {item.preview.image && (
-            <a
-              class:list={['catalog-tile-media', item.portrait ? 'is-portrait' : 'is-landscape']}
-              href={entryHref(item.collection, item.data.id)}
-              tabindex="-1"
-            >
-              <img
-                src={item.preview.image}
-                alt=""
-                loading={index < 5 ? 'eager' : 'lazy'}
-                fetchpriority={index < 2 ? 'high' : undefined}
-                decoding="async"
-                width="300"
-                height="450"
-              />
-            </a>
-          )}
-          <a class="catalog-tile-title" href={entryHref(item.collection, item.data.id)}>{item.title}</a>
-          <span class="catalog-row-meta">
-            {formatDate(item.data.date, item.data.date_precision)}, {formatType(item.data.type)}
-            {item.data.role ? `, ${item.data.role}` : ''}
-          </span>
-          <div class="catalog-tile-actions">
-            <a href={entryHref(item.collection, item.data.id)}>Details</a>
-            {item.externalUrl && (
-              <a href={item.externalUrl} target="_blank" rel="noopener noreferrer">Source</a>
-            )}
-          </div>
-        </li>
+    <div class="screen-groups">
+      {groups.map((group, groupIndex) => (
+        <section class="screen-group" data-screen-group={group.id} aria-labelledby={`screen-${group.id}`}>
+          <header>
+            <h2 id={`screen-${group.id}`}>{group.title}</h2>
+            <p>{group.description}</p>
+          </header>
+          <ol class="catalog-grid">
+            {items.filter((item) => item.group === group.id).map((item, index) => (
+              <li
+                class="catalog-tile"
+                data-screen-item
+                data-group={item.group}
+                data-type={item.data.type}
+                data-search={item.searchable}
+              >
+                {item.preview.image && (
+                  <a
+                    class:list={['catalog-tile-media', item.portrait ? 'is-portrait' : 'is-landscape']}
+                    href={entryHref(item.collection, item.data.id)}
+                    tabindex="-1"
+                  >
+                    <img
+                      src={item.preview.image}
+                      alt=""
+                      loading={groupIndex === 0 && index < 5 ? 'eager' : 'lazy'}
+                      fetchpriority={groupIndex === 0 && index < 2 ? 'high' : undefined}
+                      decoding="async"
+                      width="300"
+                      height="450"
+                    />
+                  </a>
+                )}
+                <a class="catalog-tile-title" href={entryHref(item.collection, item.data.id)}>{item.title}</a>
+                <span class="catalog-row-meta">
+                  {formatDate(item.data.date, item.data.date_precision)}, {formatType(item.data.type)}
+                  {item.data.role ? `, ${item.data.role}` : ''}
+                </span>
+                <div class="catalog-tile-actions">
+                  <a href={entryHref(item.collection, item.data.id)}>Open</a>
+                  {item.externalUrl && (
+                    <a href={item.externalUrl} target="_blank" rel="noopener noreferrer">Source</a>
+                  )}
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
       ))}
-    </ol>
+    </div>
     <p class="catalog-empty" data-screen-empty hidden>No matches.</p>
   </div>
 
   <script>
     const root = document.querySelector<HTMLElement>('[data-screen-catalog]');
     const search = root?.querySelector<HTMLInputElement>('[data-screen-search]');
-    const section = root?.querySelector<HTMLSelectElement>('[data-screen-section]');
+    const groupFilter = root?.querySelector<HTMLSelectElement>('[data-screen-group-filter]');
     const type = root?.querySelector<HTMLSelectElement>('[data-screen-type]');
-    const order = root?.querySelector<HTMLSelectElement>('[data-screen-order]');
-    const list = root?.querySelector<HTMLOListElement>('[data-screen-list]');
     const items = [...(root?.querySelectorAll<HTMLElement>('[data-screen-item]') ?? [])];
+    const groups = [...(root?.querySelectorAll<HTMLElement>('[data-screen-group]') ?? [])];
     const empty = root?.querySelector<HTMLElement>('[data-screen-empty]');
 
     const apply = () => {
@@ -155,19 +173,15 @@ const typeOptions = [...new Set(records.map((item) => item.data.type))].sort();
       for (const item of items) {
         const matches =
           (!query || item.dataset.search?.includes(query)) &&
-          (!section?.value || item.dataset.section === section.value) &&
+          (!groupFilter?.value || item.dataset.group === groupFilter.value) &&
           (!type?.value || item.dataset.type === type.value);
         item.hidden = !matches;
         if (matches) visible += 1;
       }
 
-      const direction = order?.value === 'oldest' ? 1 : -1;
-      const sorted = [...items].sort((left, right) => {
-        if (order?.value === 'title') return (left.dataset.title ?? '').localeCompare(right.dataset.title ?? '');
-        return direction * (left.dataset.date ?? '').localeCompare(right.dataset.date ?? '');
-      });
-      for (const item of sorted) list?.append(item);
-
+      for (const group of groups) {
+        group.hidden = ![...group.querySelectorAll<HTMLElement>('[data-screen-item]')].some((item) => !item.hidden);
+      }
       if (empty) empty.hidden = visible !== 0;
     };
 

@@ -179,7 +179,8 @@
     gap: 0.85rem;
   }
 
-  .show-catalog-copy h2 {
+  .show-catalog-copy h2,
+  .show-catalog-copy h3 {
     font-size: 1.55rem;
   }
 

@@ -349,7 +349,8 @@
   min-width: 0;
 }
 
-.show-catalog-copy h2 {
+.show-catalog-copy h2,
+.show-catalog-copy h3 {
   margin: 0;
   font-family: var(--display);
   font-size: clamp(1.7rem, 3vw, 2.5rem);
@@ -358,8 +359,13 @@
   line-height: 0.98;
 }
 
-.show-catalog-copy h2 a {
+.show-catalog-copy h2 a,
+.show-catalog-copy h3 a {
   text-decoration: none;
+}
+
+.tv-section + .tv-section {
+  margin-top: clamp(2.75rem, 6vw, 5rem);
 }
 
 .show-catalog-copy > p:not(.eyebrow, .show-actions) {

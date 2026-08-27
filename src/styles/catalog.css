@@ -32,6 +32,10 @@
   grid-template-columns: minmax(14rem, 2fr) minmax(10rem, 1fr);
 }
 
+.catalog-tools.screen-catalog-tools {
+  grid-template-columns: minmax(14rem, 2fr) repeat(2, minmax(10rem, 1fr));
+}
+
 .catalog-field {
   display: grid;
   gap: 0.3rem;
@@ -202,6 +206,30 @@
   gap: 1rem;
 }
 
+.screen-groups {
+  display: grid;
+  gap: clamp(2.75rem, 6vw, 5rem);
+}
+
+.screen-group > header {
+  padding-bottom: 0.7rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--catalog-border);
+}
+
+.screen-group > header h2 {
+  margin: 0;
+  font-family: var(--display);
+  font-size: clamp(1.6rem, 3vw, 2.35rem);
+  line-height: 1.05;
+}
+
+.screen-group > header p {
+  margin: 0.3rem 0 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
 .catalog-tile {
   display: grid;
   align-content: start;
@@ -347,7 +375,8 @@
 
 @media (max-width: 900px) {
   .catalog-tools,
-  .catalog-tools.catalog-tools-compact {
+  .catalog-tools.catalog-tools-compact,
+  .catalog-tools.screen-catalog-tools {
     grid-template-columns: 1fr 1fr;
   }
 
@@ -362,7 +391,8 @@
 
 @media (max-width: 620px) {
   .catalog-tools,
-  .catalog-tools.catalog-tools-compact {
+  .catalog-tools.catalog-tools-compact,
+  .catalog-tools.screen-catalog-tools {
     grid-template-columns: 1fr;
   }
 
