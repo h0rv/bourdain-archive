@@ -9,7 +9,7 @@ creator:
 date: "2004"
 date_precision: year
 summary: Cookbook tied to Bourdain's years at Brasserie Les Halles, with bistro recipes and kitchen voice.
-image_url: https://losthorizonbooks.cdn.bibliopolis.com/pictures/56401.jpeg?auto=webp&fit=bounds&height=1000&v=1748900221&width=768
+image_url: https://is1-ssl.mzstatic.com/image/thumb/Publication211/v4/5d/0f/05/5d0f0510-4b88-179b-6dca-c9fc684bd8e3/1030036162.jpg/1200x1200bb.jpg
 tags:
   - kitchens
   - new-york
@@ -21,6 +21,7 @@ places:
   - new-york-city
 sources:
   - open-library-bourdain-author
+  - apple-books-les-halles-cookbook
 related: []
 status: confirmed
 availability:

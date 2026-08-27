@@ -9,7 +9,7 @@ creator:
 date: "2010"
 date_precision: year
 summary: Follow-up memoir and essay collection reflecting on fame, food media, restaurants, fatherhood, and Bourdain's changed public life.
-image_url: https://rarebookcellar.cdn.bibliopolis.com/pictures/198123.jpg?auto=webp&fit=bounds&height=1000&v=1742250921&width=768
+image_url: https://is1-ssl.mzstatic.com/image/thumb/Publication2/v4/25/89/ec/2589ec3d-84be-1119-5a6a-05baf8aef472/cover.jpg/1200x1200bb.jpg
 tags:
   - fame
   - food-media
@@ -20,6 +20,7 @@ people:
 places: []
 sources:
   - open-library-bourdain-author
+  - apple-books-medium-raw
 related: []
 status: confirmed
 availability:
