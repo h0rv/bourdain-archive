@@ -257,16 +257,12 @@ const hasRecordDetails =
 
     {groupedEpisodes.length > 0 && (
       <section class="detail-box episodes-box" aria-labelledby="episodes-heading">
-        <div class="section-title-row">
-          <h2 id="episodes-heading">Episodes</h2>
-          <span>{sortedChildEntries.length} total</span>
-        </div>
+        <h2 id="episodes-heading">Episodes</h2>
         <div class="episode-seasons">
           {groupedEpisodes.map(([season, items], index) => (
             <details class="episode-season" open={index === 0}>
               <summary>
                 <span>{season > 0 ? `Season ${String(season).padStart(2, '0')}` : 'Episodes'}</span>
-                <small>{items.length}</small>
               </summary>
               <ol class="episode-records">
                 {items.map((item: any) => {

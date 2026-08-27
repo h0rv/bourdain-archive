@@ -77,7 +77,6 @@ for (const item of catalog) {
 const formatOptions = [...new Set(catalog.map((item) => item.format))]
   .map((id) => ({ id, label: mediaTypeLabels[id] ?? formatType(id) }))
   .sort((left, right) => left.label.localeCompare(right.label));
-const rollupCount = catalog.filter((item) => item.scope === 'rollup').length;
 ---
 
 <BaseLayout
@@ -123,19 +122,12 @@ const rollupCount = catalog.filter((item) => item.scope === 'rollup').length;
       <label class="catalog-field">
         <span>Scope</span>
         <select name="scope" data-catalog-filter="scope">
-          <option value="rollup">Main entries</option>
+          <option value="rollup">Works and appearances</option>
           <option value="">Everything and episodes</option>
           <option value="child">Episodes only</option>
         </select>
       </label>
     </form>
-
-    <div class="catalog-toolbar">
-      <p class="catalog-count" data-catalog-count aria-live="polite">
-        {rollupCount} main entries
-      </p>
-      <noscript><p class="catalog-count">All {catalog.length} entries are shown.</p></noscript>
-    </div>
 
     <ol class="catalog-list" data-catalog-list>
       {catalog.map((item) => (
@@ -180,7 +172,7 @@ const rollupCount = catalog.filter((item) => item.scope === 'rollup').length;
         </li>
       ))}
     </ol>
-    <p class="catalog-empty" data-catalog-empty hidden>No matching entries.</p>
+    <p class="catalog-empty" data-catalog-empty hidden>No matches.</p>
   </div>
 
   <script>
@@ -190,7 +182,6 @@ const rollupCount = catalog.filter((item) => item.scope === 'rollup').length;
     const format = root?.querySelector<HTMLSelectElement>('[data-catalog-filter="format"]');
     const scope = root?.querySelector<HTMLSelectElement>('[data-catalog-filter="scope"]');
     const items = [...(root?.querySelectorAll<HTMLElement>('[data-catalog-item]') ?? [])];
-    const count = root?.querySelector<HTMLElement>('[data-catalog-count]');
     const empty = root?.querySelector<HTMLElement>('[data-catalog-empty]');
 
     const apply = () => {
@@ -209,7 +200,6 @@ const rollupCount = catalog.filter((item) => item.scope === 'rollup').length;
           visible += 1;
         }
       }
-      if (count) count.textContent = `${visible} ${visible === 1 ? 'entry' : 'entries'}`;
       if (empty) empty.hidden = visible !== 0;
 
       const params = new URLSearchParams();

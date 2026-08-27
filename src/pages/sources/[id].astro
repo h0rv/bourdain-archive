@@ -26,7 +26,6 @@ const archive = archiveTargetsForUrl(data.url);
 <BaseLayout title={data.title} description={data.notes ?? data.title}>
   <article class="catalog-page">
     <header class="catalog-intro">
-      <p class="catalog-kicker">Source</p>
       <h1 class="page-title">{data.title}</h1>
       <p class="catalog-source-meta">
         {formatDate(timeline.date, timeline.precision)}, {formatType(data.type)}, {sourceGroupLabels[group] ?? formatType(group)}
@@ -38,7 +37,7 @@ const archive = archiveTargetsForUrl(data.url);
     <div class="catalog-source-actions">
       <a href={data.url} target="_blank" rel="noopener noreferrer">Open source</a>
       {archive && (
-        <a href={archive.latest_url} target="_blank" rel="noopener noreferrer">Open archived copy</a>
+        <a href={archive.latest_url} target="_blank" rel="noopener noreferrer">Open saved copy</a>
       )}
       <a href="../">All sources</a>
     </div>

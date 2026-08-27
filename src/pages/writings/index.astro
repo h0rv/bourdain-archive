@@ -156,16 +156,12 @@ const recentPrimaryWriting = sources
       <a href={withBase('/sources/')}>Browse all links</a>
     </header>
     <div class="writing-groups">
-      {webWritingGroups.map((group) => {
-        const count = sources.filter((entry) => entry.data.type === group.type).length;
-        return (
-          <article>
-            <p class="catalog-number">{count}</p>
-            <h3>{group.title}</h3>
-            <p>{group.blurb}</p>
-          </article>
-        );
-      })}
+      {webWritingGroups.map((group) => (
+        <article>
+          <h3>{group.title}</h3>
+          <p>{group.blurb}</p>
+        </article>
+      ))}
     </div>
     {recentPrimaryWriting.length > 0 && (
       <ol class="source-strip" aria-label="Recent dated primary writing">
@@ -185,7 +181,6 @@ const recentPrimaryWriting = sources
         <p class="eyebrow">About Bourdain</p>
         <h2 id="about-heading">Profiles, criticism, and remembrance</h2>
       </div>
-      <span>{about.length} works</span>
     </header>
     <ol class="editorial-list">
       {about.map((entry) => {

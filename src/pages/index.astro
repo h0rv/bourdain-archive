@@ -14,7 +14,6 @@ import { withBase } from '../lib/site';
 const works = await getCollection('works');
 const series = await getCollection('series');
 const screen = await getCollection('screen');
-const appearances = await getCollection('appearances');
 const literature = await getCollection('literature');
 const places = await getCollection('places');
 const sources = await getCollection('sources');
@@ -23,7 +22,6 @@ const sourceById = new Map(sources.map((entry) => [entry.data.id, entry]));
 const shows = series
   .filter((entry) => entry.data.type === 'show')
   .sort((left, right) => (left.data.date ?? '').localeCompare(right.data.date ?? ''));
-const episodes = series.filter((entry) => entry.data.type === 'episode');
 
 const selectedWorkIds = [
   'kitchen-confidential',
@@ -76,17 +74,6 @@ const previewFor = (entry: any) => {
   return own;
 };
 
-const stats = [
-  { value: works.length, label: 'written works', href: withBase('/writings/') },
-  { value: episodes.length, label: 'television episodes', href: withBase('/tv/') },
-  {
-    value: screen.length + appearances.length,
-    label: 'screen and audio',
-    href: withBase('/screen/'),
-  },
-  { value: literature.length, label: 'critical works', href: withBase('/writings/#about') },
-  { value: places.length, label: 'places', href: withBase('/map/') },
-];
 ---
 
 <BaseLayout title="Bourdain Archive">
@@ -102,15 +89,6 @@ const stats = [
       <a href={withBase('/about/')}>About the archive</a>
     </p>
   </section>
-
-  <dl class="archive-stats" aria-label="Archive contents">
-    {stats.map((stat) => (
-      <div>
-        <dt><a href={stat.href}>{stat.label}</a></dt>
-        <dd>{stat.value.toLocaleString('en-US')}</dd>
-      </div>
-    ))}
-  </dl>
 
   <section class="home-section" aria-labelledby="books-heading">
     <header class="section-header">
@@ -159,12 +137,11 @@ const stats = [
         <p class="eyebrow">Featuring Bourdain</p>
         <h2 id="television-heading">Television</h2>
       </div>
-      <a href={withBase('/tv/')}>{episodes.length} episodes</a>
+      <a href={withBase('/tv/')}>All television</a>
     </header>
     <ol class="shelf-grid shelf-grid-shows">
       {shows.map((show) => {
         const preview = previewFor(show);
-        const count = episodes.filter((episode) => episode.data.parent_id === show.data.id).length;
         return (
           <li class="shelf-card">
             <a href={entryHref('series', show.data.id)}>
@@ -176,9 +153,7 @@ const stats = [
                 )}
               </span>
               <span class="shelf-card-title">{entryTitle(show)}</span>
-              <span class="shelf-card-meta">
-                {formatDate(show.data.date, show.data.date_precision)}{count ? `, ${count} episodes` : ''}
-              </span>
+              <span class="shelf-card-meta">{formatDate(show.data.date, show.data.date_precision)}</span>
             </a>
           </li>
         );

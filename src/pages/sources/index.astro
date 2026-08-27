@@ -53,10 +53,7 @@ const groupOptions = sourceGroups.filter((group) => groupsPresent.has(group.id))
   <div class="catalog-page" data-source-catalog>
     <header class="catalog-intro">
       <h1 class="page-title">Sources</h1>
-      <p>
-        Original writing, interviews, publisher pages, and reporting. Each link opens the source
-        website. An archived copy is included when one is available.
-      </p>
+      <p>Original writing, interviews, publisher pages, and reporting.</p>
     </header>
 
     <form class="catalog-tools catalog-tools-compact" role="search">
@@ -72,10 +69,6 @@ const groupOptions = sourceGroups.filter((group) => groupsPresent.has(group.id))
         </select>
       </label>
     </form>
-
-    <div class="catalog-toolbar">
-      <p class="catalog-count" data-source-count aria-live="polite">{sources.length} sources</p>
-    </div>
 
     <ol class="catalog-source-list">
       {sources.map((source) => (
@@ -96,7 +89,7 @@ const groupOptions = sourceGroups.filter((group) => groupsPresent.has(group.id))
           </div>
           <div class="catalog-source-actions">
             {source.archive && (
-              <a href={source.archive.latest_url} target="_blank" rel="noopener noreferrer">Archive</a>
+              <a href={source.archive.latest_url} target="_blank" rel="noopener noreferrer">Saved copy</a>
             )}
           </div>
         </li>
@@ -110,7 +103,6 @@ const groupOptions = sourceGroups.filter((group) => groupsPresent.has(group.id))
     const search = root?.querySelector<HTMLInputElement>('[data-source-search]');
     const group = root?.querySelector<HTMLSelectElement>('[data-source-group]');
     const items = [...(root?.querySelectorAll<HTMLElement>('[data-source-item]') ?? [])];
-    const count = root?.querySelector<HTMLElement>('[data-source-count]');
     const empty = root?.querySelector<HTMLElement>('[data-source-empty]');
 
     const apply = () => {
@@ -123,7 +115,6 @@ const groupOptions = sourceGroups.filter((group) => groupsPresent.has(group.id))
         item.hidden = !matches;
         if (matches) visible += 1;
       }
-      if (count) count.textContent = `${visible} ${visible === 1 ? 'source' : 'sources'}`;
       if (empty) empty.hidden = visible !== 0;
     };
 

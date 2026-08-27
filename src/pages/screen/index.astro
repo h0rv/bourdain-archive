@@ -52,10 +52,9 @@ const typeOptions = [...new Set(records.map((item) => item.data.type))].sort();
 >
   <div class="catalog-page" data-screen-catalog>
     <header class="catalog-intro">
-      <h1 class="page-title">Film, television &amp; appearances</h1>
+      <h1 class="page-title">Film, television, and appearances</h1>
       <p>
-        Acting and voice roles, documentaries, adaptations, long-form interviews, podcasts, panels,
-        and other notable appearances.
+        Acting, voice roles, documentaries, interviews, podcasts, and talks.
       </p>
     </header>
 
@@ -68,8 +67,8 @@ const typeOptions = [...new Set(records.map((item) => item.data.type))].sort();
         <span>Section</span>
         <select data-screen-section>
           <option value="">Everything</option>
-          <option value="screen">Films, roles &amp; cameos</option>
-          <option value="appearances">Interviews, audio &amp; talks</option>
+          <option value="screen">Films, roles, and cameos</option>
+          <option value="appearances">Interviews, audio, and talks</option>
         </select>
       </label>
       <label class="catalog-field">
@@ -90,8 +89,7 @@ const typeOptions = [...new Set(records.map((item) => item.data.type))].sort();
     </form>
 
     <div class="catalog-toolbar">
-      <p class="catalog-count" data-screen-count aria-live="polite">{records.length} records</p>
-      <p class="catalog-count"><a href="../tv/">Browse hosted television →</a></p>
+      <p class="catalog-count"><a href="../tv/">Hosted television</a></p>
     </div>
 
     <ol class="catalog-grid" data-screen-list>
@@ -112,8 +110,8 @@ const typeOptions = [...new Set(records.map((item) => item.data.type))].sort();
           )}
           <a class="catalog-tile-title" href={entryHref(item.collection, item.data.id)}>{item.title}</a>
           <span class="catalog-row-meta">
-            {formatDate(item.data.date, item.data.date_precision)} · {formatType(item.data.type)}
-            {item.data.role ? ` · ${item.data.role}` : ''}
+            {formatDate(item.data.date, item.data.date_precision)}, {formatType(item.data.type)}
+            {item.data.role ? `, ${item.data.role}` : ''}
           </span>
           <div class="catalog-tile-actions">
             <a href={entryHref(item.collection, item.data.id)}>Details</a>
@@ -124,7 +122,7 @@ const typeOptions = [...new Set(records.map((item) => item.data.type))].sort();
         </li>
       ))}
     </ol>
-    <p class="catalog-empty" data-screen-empty hidden>No matching records.</p>
+    <p class="catalog-empty" data-screen-empty hidden>No matches.</p>
   </div>
 
   <script>
@@ -135,7 +133,6 @@ const typeOptions = [...new Set(records.map((item) => item.data.type))].sort();
     const order = root?.querySelector<HTMLSelectElement>('[data-screen-order]');
     const list = root?.querySelector<HTMLOListElement>('[data-screen-list]');
     const items = [...(root?.querySelectorAll<HTMLElement>('[data-screen-item]') ?? [])];
-    const count = root?.querySelector<HTMLElement>('[data-screen-count]');
     const empty = root?.querySelector<HTMLElement>('[data-screen-empty]');
 
     const apply = () => {
@@ -157,7 +154,6 @@ const typeOptions = [...new Set(records.map((item) => item.data.type))].sort();
       });
       for (const item of sorted) list?.append(item);
 
-      if (count) count.textContent = `${visible} ${visible === 1 ? 'record' : 'records'}`;
       if (empty) empty.hidden = visible !== 0;
     };
 

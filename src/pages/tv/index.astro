@@ -17,7 +17,6 @@ const sourceById = new Map(sources.map((entry) => [entry.data.id, entry]));
 const shows = series
   .filter((entry) => entry.data.type === 'show')
   .sort((left, right) => (left.data.date ?? '').localeCompare(right.data.date ?? ''));
-const episodes = series.filter((entry) => entry.data.type === 'episode');
 
 const previewFor = (entry: any) => {
   const own = previewForEntry(entry, linkPreviewCache.previews);
@@ -49,8 +48,6 @@ const previewFor = (entry: any) => {
 
   <ol class="show-index">
     {shows.map((show, index) => {
-      const showEpisodes = episodes.filter((episode) => episode.data.parent_id === show.data.id);
-      const seasons = new Set(showEpisodes.map((episode) => episode.data.season).filter(Boolean));
       const preview = previewFor(show);
       const officialUrl = primaryAvailabilityUrl(show.data);
       return (
@@ -76,10 +73,6 @@ const previewFor = (entry: any) => {
               </p>
               <h2><a href={entryHref('series', show.data.id)}>{entryTitle(show)}</a></h2>
               <p>{show.data.summary}</p>
-              <dl class="show-counts">
-                <div><dt>Seasons</dt><dd>{seasons.size || '0'}</dd></div>
-                <div><dt>Episodes</dt><dd>{showEpisodes.length || '0'}</dd></div>
-              </dl>
               <p class="show-actions">
                 <a class="primary-action" href={entryHref('series', show.data.id)}>Browse series</a>
                 {officialUrl && <a href={officialUrl} rel="noopener noreferrer">Official site</a>}

@@ -56,14 +56,13 @@ const rows = places
         <span>References</span>
         <select data-place-usage>
           <option value="">All places</option>
-          <option value="referenced">With entries</option>
-          <option value="unreferenced">Without entries</option>
+          <option value="referenced">With related work</option>
+          <option value="unreferenced">Without related work</option>
         </select>
       </label>
     </form>
 
     <div class="catalog-toolbar">
-      <p class="catalog-count" data-place-count aria-live="polite">{rows.length} places</p>
       <p class="catalog-count"><a href="../map/">Open the map</a></p>
     </div>
 
@@ -79,9 +78,6 @@ const rows = places
             <a href={entryHref('places', row.entry.data.id)}>{row.name}</a>
             {row.entry.data.summary && <span class="catalog-source-host">{row.entry.data.summary}</span>}
           </div>
-          <span class="catalog-source-meta">
-            {row.count} {row.count === 1 ? 'entry' : 'entries'}
-          </span>
         </li>
       ))}
     </ol>
@@ -93,7 +89,6 @@ const rows = places
     const search = root?.querySelector<HTMLInputElement>('[data-place-search]');
     const usage = root?.querySelector<HTMLSelectElement>('[data-place-usage]');
     const items = [...(root?.querySelectorAll<HTMLElement>('[data-place-item]') ?? [])];
-    const count = root?.querySelector<HTMLElement>('[data-place-count]');
     const empty = root?.querySelector<HTMLElement>('[data-place-empty]');
 
     const apply = () => {
@@ -109,7 +104,6 @@ const rows = places
         item.hidden = !matches;
         if (matches) visible += 1;
       }
-      if (count) count.textContent = `${visible} ${visible === 1 ? 'place' : 'places'}`;
       if (empty) empty.hidden = visible !== 0;
     };
 
