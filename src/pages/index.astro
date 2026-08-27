@@ -222,7 +222,7 @@ const featuredPlaces = places
     {shorterWorks.length > 0 && (
       <section class="browse-subsection" aria-labelledby="short-writing-heading">
         <h3 id="short-writing-heading">Essays and stories</h3>
-        <ol class="browse-grid browse-grid-wide">
+        <ol class="browse-grid">
           {shorterWorks.map((entry) => {
             const preview = previewFor(entry);
             return (
@@ -244,7 +244,7 @@ const featuredPlaces = places
 
     <section class="browse-subsection" aria-labelledby="criticism-heading">
       <h3 id="criticism-heading">Writing about Bourdain</h3>
-      <ol class="browse-grid browse-grid-wide">
+      <ol class="browse-grid">
         {selectedCriticism.map((entry) => {
           const preview = previewFor(entry);
           return (
@@ -272,7 +272,7 @@ const featuredPlaces = places
     {televisionGroups.map((group) => (
       <section class="browse-subsection" aria-labelledby={`television-${group.id}`}>
         <h3 id={`television-${group.id}`}>{group.title}</h3>
-        <ol class="browse-grid browse-grid-shows">
+        <ol class="browse-grid">
           {group.entries.map((entry) => {
             const preview = previewFor(entry);
             const isGuestRole = group.id === 'guest';
@@ -302,7 +302,7 @@ const featuredPlaces = places
     {screenGroups.map((group) => (
       <section class="browse-subsection" aria-labelledby={`film-${group.id}`}>
         <h3 id={`film-${group.id}`}>{group.title}</h3>
-        <ol class="browse-grid browse-grid-wide">
+        <ol class="browse-grid">
           {group.entries.map((entry) => {
             const preview = previewFor(entry);
             return (
@@ -328,7 +328,7 @@ const featuredPlaces = places
       <h2 id="interviews-heading">Interviews and podcasts</h2>
       <a href={withBase('/screen/#screen-interviews')}>All interviews</a>
     </header>
-    <ol class="browse-grid browse-grid-wide">
+    <ol class="browse-grid">
       {interviews.map((entry) => {
         const preview = previewFor(entry);
         return (

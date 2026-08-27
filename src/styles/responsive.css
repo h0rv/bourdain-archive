@@ -163,12 +163,23 @@
 
   .shelf-grid,
   .shelf-grid-books,
-  .shelf-grid-shows,
-  .browse-grid,
-  .browse-grid-wide,
-  .browse-grid-shows {
+  .shelf-grid-shows {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.25rem 0.75rem;
+  }
+
+  .browse-grid {
+    gap: 1.25rem 0.75rem;
+  }
+
+  .browse-grid > li {
+    flex-basis: calc(50% - 0.375rem);
+    width: calc(50% - 0.375rem);
+  }
+
+  .browse-card.is-poster-card,
+  .browse-card.is-still-card {
+    width: 100%;
   }
 
   .editorial-list > li {

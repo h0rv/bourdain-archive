@@ -154,7 +154,11 @@ const groups = [
           <ol class="catalog-grid">
             {items.filter((item) => item.group === group.id).map((item, index) => (
               <li
-                class:list={['catalog-tile', item.preview.image && 'has-media']}
+                class:list={[
+                  'catalog-tile',
+                  item.shape === 'portrait' ? 'is-poster-card' : 'is-still-card',
+                  item.preview.image && 'has-media',
+                ]}
                 data-screen-item
                 data-group={item.group}
                 data-type={item.data.type}

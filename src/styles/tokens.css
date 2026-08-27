@@ -13,6 +13,9 @@
   --rule-strong: rgba(17, 16, 14, 0.28);
   --max: 1400px;
   --gutter: clamp(1rem, 2.5vw, 2rem);
+  --card-poster-width: 10.5rem;
+  --card-still-width: 14rem;
+  --card-gap: clamp(0.8rem, 1.6vw, 1.25rem);
   --sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --display: "Newsreader", Georgia, "Times New Roman", serif;
   --mono: "IBM Plex Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace;

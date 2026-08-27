@@ -68,23 +68,17 @@
 }
 
 .browse-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 10rem), 1fr));
-  gap: clamp(1rem, 2vw, 1.6rem);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--card-gap);
+  align-items: stretch;
   padding: 0;
   margin: 0;
   list-style: none;
 }
 
-.browse-grid-wide {
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 13rem), 1fr));
-}
-
-.browse-grid-shows {
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 9.5rem), 1fr));
-}
-
 .browse-grid > li {
+  flex: 0 0 auto;
   min-width: 0;
   content-visibility: auto;
   contain-intrinsic-size: auto 18rem;
@@ -97,6 +91,14 @@
   height: 100%;
   color: var(--ink);
   text-decoration: none;
+}
+
+.browse-card.is-poster-card {
+  width: var(--card-poster-width);
+}
+
+.browse-card.is-still-card {
+  width: var(--card-still-width);
 }
 
 .browse-card-media {

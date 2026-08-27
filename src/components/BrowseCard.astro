@@ -25,9 +25,10 @@ const dimensions = {
   landscape: { width: 640, height: 400 },
   square: { width: 500, height: 500 },
 }[shape];
+const sizeMode = shape === 'portrait' ? 'poster' : 'still';
 ---
 
-<a class="browse-card" href={href}>
+<a class:list={['browse-card', `is-${sizeMode}-card`]} href={href}>
   <span class:list={['browse-card-media', `is-${shape}`]}>
     {image ? (
       <img
