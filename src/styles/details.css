@@ -455,11 +455,13 @@ article:not(.entry-detail) > .detail-box + .detail-box {
 
 @media (max-width: 820px) {
   .entry-hero.is-portrait,
-  .entry-hero.is-landscape {
+  .entry-hero.is-landscape,
+  .entry-hero.is-square {
     grid-template-columns: 1fr;
   }
 
-  .entry-hero.is-portrait .entry-artwork {
+  .entry-hero.is-portrait .entry-artwork,
+  .entry-hero.is-square .entry-artwork {
     width: min(70vw, 17rem);
   }
 
