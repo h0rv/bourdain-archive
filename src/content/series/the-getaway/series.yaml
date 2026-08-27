@@ -5,7 +5,7 @@ index_mode: rollup
 type: show
 record_type: television
 media_type: tv-video
-image_url: https://image.tmdb.org/t/p/w500/d1kfFPiMwppDaOgrEYLGn122jL7.jpg
+image_url: https://is1-ssl.mzstatic.com/image/thumb/Video/v4/aa/9c/0e/aa9c0e50-5afa-4d80-135c-ffe6ff1150f1/mzl.vtgwlfru.jpg/1200x1200bb.jpg
 relation_to_bourdain: featured
 contributors:
   - anthony-bourdain
@@ -22,7 +22,9 @@ people:
 places: []
 sources:
   - the-getaway-comcast-esquire
+  - the-getaway-apple-tv
 related: []
 status: confirmed
 availability:
   official_url: https://corporate.comcast.com/comcast-voices/esquire-network-defining-the-modern-man
+  streaming_url: https://tv.apple.com/us/show/the-getaway/umc.cmc.7fiupmbw91ziwkscb61sv762b

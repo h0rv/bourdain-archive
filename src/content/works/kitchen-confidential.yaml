@@ -9,7 +9,7 @@ creator:
 date: "2000"
 date_precision: year
 summary: Bourdain's breakout nonfiction book about restaurant work, kitchen culture, addiction, labor, and the mythology of cooks.
-image_url: https://pictures.abebooks.com/inventory/31876086864.jpg
+image_url: https://archive.org/download/kitchenconfident0000bour_u5e3/page/cover_w1000.jpg
 tags:
   - kitchens
   - new-york
@@ -22,6 +22,7 @@ places:
 sources:
   - open-library-bourdain-author
   - bloomsbury-kitchen-confidential
+  - internet-archive-kitchen-confidential-2000
 related: []
 status: confirmed
 availability:

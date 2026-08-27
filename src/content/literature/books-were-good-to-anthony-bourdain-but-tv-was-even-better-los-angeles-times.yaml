@@ -8,6 +8,7 @@ date: "2018-06-08"
 date_precision: day
 publication: Los Angeles Times
 bucket: Books/legacy
+image_url: "https://ca-times.brightspotcdn.com/dims4/default/9dbce2b/2147483647/strip/true/crop/2047x1075+0+38/resize/1200x630!/quality/75/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F15%2Fc3%2F5fd68ebfb99184d511eeba674462%2Fla-1528498461-kovvnscut6-snap-image"
 tags:
   - about-bourdain
   - literature

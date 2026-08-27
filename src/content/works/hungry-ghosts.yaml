@@ -10,7 +10,7 @@ creator:
 date: "2018"
 date_precision: year
 summary: Horror anthology comic organized around food, storytelling, appetite, and folklore.
-image_url: https://truecooks.com/cdn/shop/files/55D84488-660D-4407-9421-745AD352772B.jpg?v=1759243970
+image_url: https://images-us.bookshop.org/ingram/9781506706696.jpg
 tags:
   - comic
   - horror
@@ -20,6 +20,7 @@ people:
 places: []
 sources:
   - open-library-bourdain-author
+  - prh-hungry-ghosts
 related: []
 status: confirmed
 availability:

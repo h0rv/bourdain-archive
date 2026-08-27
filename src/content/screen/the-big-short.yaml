@@ -3,7 +3,7 @@ title: The Big Short
 type: film
 record_type: screen
 media_type: tv-video
-image_url: https://mx.web.img3.acsta.net/pictures/15/10/20/11/51/457444.jpg
+image_url: https://image.tmdb.org/t/p/original/isuQWbJPbjybBEWdcCaBUPmU0XO.jpg
 relation_to_bourdain: featured
 contributors:
   - anthony-bourdain
@@ -19,6 +19,9 @@ people:
 places: []
 sources:
   - rotten-tomatoes-bourdain-filmography
+  - paramount-the-big-short-release
+  - wired-the-big-short-cameos
 related: []
 status: confirmed
-availability: {}
+availability:
+  official_url: https://ir.paramount.com/news-releases/news-release-details/christian-bale-steve-carell-ryan-gosling-and-brad-pitt-star/

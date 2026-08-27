@@ -5,7 +5,7 @@ index_mode: rollup
 type: show
 record_type: television
 media_type: tv-video
-image_url: https://is1-ssl.mzstatic.com/image/thumb/0AYih-Y-peh8HK1hAAXHUA/1200x675.jpg
+image_url: https://www.nigella.com/assets/uploads/latest/public-full-size/the-taste-poster-561e4f6a36cd4.jpg
 relation_to_bourdain: featured
 contributors:
   - anthony-bourdain
@@ -21,6 +21,7 @@ people:
 places: []
 sources:
   - the-taste-apple-tv
+  - nigella-the-taste
 related: []
 status: confirmed
 availability:

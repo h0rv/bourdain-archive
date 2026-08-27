@@ -11,6 +11,7 @@ date_precision: day
 host: Joe Rogan
 duration_minutes: 150
 summary: Long-form podcast appearance with Anthony Bourdain.
+image_url: https://i.ytimg.com/vi/28Qzxz5wsA0/sddefault.jpg
 tags:
   - podcast
   - travel
