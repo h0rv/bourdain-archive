@@ -3,7 +3,6 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import {
   archiveTargetsForUrl,
-  entryHref,
   formatDate,
   formatType,
   hostnameForUrl,
@@ -49,15 +48,14 @@ const groupOptions = sourceGroups.filter((group) => groupsPresent.has(group.id))
 
 <BaseLayout
   title="Sources"
-  description="Evidence, primary sources, catalogs, archives, and reference links used by the Bourdain Archive."
+  description="Original writing, interviews, publisher pages, and other sources about Anthony Bourdain."
 >
   <div class="catalog-page" data-source-catalog>
     <header class="catalog-intro">
       <h1 class="page-title">Sources</h1>
       <p>
-        The evidence layer behind the archive: primary writing, interviews, official records, library
-        catalogs, recovered pages, and contextual reporting. Links open the publisher or an archived
-        capture; this site does not mirror copyrighted text.
+        Original writing, interviews, publisher pages, and reporting. Each link opens the source
+        website. An archived copy is included when one is available.
       </p>
     </header>
 
@@ -77,7 +75,6 @@ const groupOptions = sourceGroups.filter((group) => groupsPresent.has(group.id))
 
     <div class="catalog-toolbar">
       <p class="catalog-count" data-source-count aria-live="polite">{sources.length} sources</p>
-      <p class="catalog-count">Last-access dates are recorded on each evidence page.</p>
     </div>
 
     <ol class="catalog-source-list">
@@ -89,14 +86,15 @@ const groupOptions = sourceGroups.filter((group) => groupsPresent.has(group.id))
           data-search={source.searchable}
         >
           <div class="catalog-source-copy">
-            <a href={entryHref('sources', source.entry.data.id)}>{source.entry.data.title}</a>
+            <a href={source.entry.data.url} target="_blank" rel="noopener noreferrer">
+              {source.entry.data.title}
+            </a>
             <span class="catalog-source-meta">
-              {formatDate(source.timeline.date, source.timeline.precision)} · {formatType(source.entry.data.type)} · {sourceGroupLabels[source.group] ?? formatType(source.group)}
+              {formatDate(source.timeline.date, source.timeline.precision)}, {formatType(source.entry.data.type)}, {sourceGroupLabels[source.group] ?? formatType(source.group)}
             </span>
             {source.host && <span class="catalog-source-host">{source.host}</span>}
           </div>
           <div class="catalog-source-actions">
-            <a href={source.entry.data.url} target="_blank" rel="noopener noreferrer">Original</a>
             {source.archive && (
               <a href={source.archive.latest_url} target="_blank" rel="noopener noreferrer">Archive</a>
             )}
