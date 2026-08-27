@@ -5,7 +5,7 @@ index_mode: rollup
 type: show
 record_type: television
 media_type: tv-video
-image_url: https://i.ytimg.com/vi/J50mKbnKHas/maxresdefault.jpg
+image_url: https://i.ytimg.com/vi/4gT5gwsPV4U/maxresdefault.jpg
 relation_to_bourdain: featured
 contributors:
   - anthony-bourdain
@@ -21,6 +21,7 @@ places: []
 sources:
   - reddit-archival-megathread
   - raw-craft-youtube
+  - raw-craft-trailer-balvenie
 related: []
 status: confirmed
 availability: {}

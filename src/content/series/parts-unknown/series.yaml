@@ -3,7 +3,7 @@ title: Parts Unknown
 kind: series
 index_mode: rollup
 type: show
-image_url: https://is1-ssl.mzstatic.com/image/thumb/Features114/v4/d4/3c/20/d43c2060-d6ae-cae2-35fa-95015d348488/mzl.cmvbojaw.png/1680x2986nr.webp
+image_url: https://image.tmdb.org/t/p/original/h0zAr5zgye8WIqUdQrQs9ZweEsb.jpg
 record_type: television
 media_type: tv-video
 relation_to_bourdain: featured
@@ -24,6 +24,7 @@ sources:
   - explore-parts-unknown
   - shows-by-country-github
   - parts-unknown-apple-tv
+  - parts-unknown-tmdb-posters
 related: []
 status: confirmed
 availability:

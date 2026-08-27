@@ -5,7 +5,7 @@ index_mode: rollup
 type: show
 record_type: television
 media_type: tv-video
-image_url: https://is1-ssl.mzstatic.com/image/thumb/eCVUytm0pfDnJqgQHmjUTA/1200x675.jpg
+image_url: https://www.bravotv.com/sites/bravo/files/media_mpx/thumbnails/bravo-video.nbcuni.com/image/NBCU_Bravo/75/411/121031_2606473_Best_Guest_Judge_Moment__Bourdain.jpg
 relation_to_bourdain: featured
 contributors:
   - anthony-bourdain
@@ -21,6 +21,7 @@ people:
 places: []
 sources:
   - top-chef-thanksgiving-apple-tv
+  - top-chef-bourdain-bravo
 related: []
 status: partial
 availability:
