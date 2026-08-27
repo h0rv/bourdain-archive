@@ -1,68 +1,21 @@
 ---
 import { getCollection } from 'astro:content';
 import linkPreviewCache from '../../archive/derived/link-previews.json';
+import BrowseCard from '../components/BrowseCard.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import {
-  entryHref,
-  entryTitle,
-  formatDate,
-  formatType,
-  previewForEntry,
-} from '../lib/content';
+import { entryHref, entryTitle, formatDate, formatType, previewForEntry } from '../lib/content';
 import { withBase } from '../lib/site';
 
 const works = await getCollection('works');
 const series = await getCollection('series');
+const screen = await getCollection('screen');
+const appearances = await getCollection('appearances');
 const literature = await getCollection('literature');
 const places = await getCollection('places');
+const events = await getCollection('events');
 const sources = await getCollection('sources');
 
 const sourceById = new Map(sources.map((entry) => [entry.data.id, entry]));
-const hostedShowIds = [
-  'a-cooks-tour-show',
-  'no-reservations-show',
-  'the-layover-show',
-  'parts-unknown-show',
-];
-const shows = hostedShowIds.flatMap((id) => {
-  const show = series.find((entry) => entry.data.id === id);
-  return show ? [show] : [];
-});
-
-const selectedWorkIds = [
-  'kitchen-confidential',
-  'a-cooks-tour-book',
-  'medium-raw',
-  'appetites',
-  'world-travel',
-  'anthony-bourdain-reader',
-];
-const selectedWorks = selectedWorkIds
-  .map((id) => works.find((entry) => entry.data.id === id))
-  .filter(Boolean);
-
-const latestContext = literature
-  .filter((entry) => entry.data.relation_to_bourdain === 'about')
-  .map((entry) => ({ entry, collection: 'literature' }))
-  .sort((left, right) => (right.entry.data.date ?? '').localeCompare(left.entry.data.date ?? ''))
-  .slice(0, 6);
-
-const featuredPlaceIds = [
-  'new-york-city',
-  'new-jersey',
-  'queens',
-  'tokyo',
-  'vietnam',
-  'hong-kong',
-  'beirut',
-  'paris',
-  'detroit',
-  'les-halles',
-];
-const featuredPlaces = featuredPlaceIds
-  .map((id) => places.find((entry) => entry.data.id === id))
-  .filter(Boolean);
-
 const previewFor = (entry: any) => {
   const own = previewForEntry(entry, linkPreviewCache.previews);
   if (own.image) return own;
@@ -75,139 +28,318 @@ const previewFor = (entry: any) => {
   return own;
 };
 
+const byOldest = (left: any, right: any) =>
+  (left.data.date ?? '').localeCompare(right.data.date ?? '') ||
+  entryTitle(left).localeCompare(entryTitle(right));
+const byNewest = (left: any, right: any) =>
+  (right.data.date ?? '').localeCompare(left.data.date ?? '') ||
+  entryTitle(left).localeCompare(entryTitle(right));
+
+const primaryWorks = works.filter((entry) => entry.data.relation_to_bourdain === 'authored');
+const books = primaryWorks.filter((entry) => ['book', 'comic'].includes(entry.data.type)).sort(byOldest);
+const shorterWorks = primaryWorks.filter((entry) => !['book', 'comic'].includes(entry.data.type)).sort(byOldest);
+
+const selectedCriticism = literature
+  .filter(
+    (entry) =>
+      entry.data.status === 'confirmed' &&
+      entry.data.relation_to_bourdain === 'about' &&
+      ['essay', 'profile', 'review', 'obit'].includes(entry.data.type),
+  )
+  .sort(byNewest)
+  .slice(0, 12);
+
+const flagshipShowIds = [
+  'a-cooks-tour-show',
+  'no-reservations-show',
+  'the-layover-show',
+  'parts-unknown-show',
+];
+const flagshipOrder = new Map(flagshipShowIds.map((id, index) => [id, index]));
+const shows = series.filter((entry) => entry.data.type === 'show');
+
+const televisionGroupFor = (show: any) => {
+  if (flagshipOrder.has(show.data.id)) return 'travel';
+  const summary = (show.data.summary ?? '').toLocaleLowerCase();
+  if (summary.includes('hosted by bourdain')) return 'hosted';
+  if (summary.includes('judge') || summary.includes('competition')) return 'competition';
+  if (summary.includes('narrat') || summary.includes('produc')) return 'production';
+  return 'other';
+};
+
+const televisionRoleFor = (show: any) => {
+  if (flagshipOrder.has(show.data.id)) return 'Host';
+  const summary = (show.data.summary ?? '').toLocaleLowerCase();
+  if (summary.includes('guest judge')) return 'Guest judge';
+  if (summary.includes('mentor and judge')) return 'Judge and mentor';
+  if (summary.includes('narrated and executive produced')) return 'Narrator and executive producer';
+  if (summary.includes('executive produced')) return 'Executive producer';
+  if (summary.includes('hosted by bourdain')) return 'Host';
+  return 'Television';
+};
+
+const televisionGroups = [
+  {
+    id: 'travel',
+    title: 'Hosted travel series',
+    entries: shows
+      .filter((show) => televisionGroupFor(show) === 'travel')
+      .sort(
+        (left, right) =>
+          (flagshipOrder.get(left.data.id) ?? 99) - (flagshipOrder.get(right.data.id) ?? 99),
+      ),
+  },
+  {
+    id: 'hosted',
+    title: 'Other hosted work',
+    entries: shows.filter((show) => televisionGroupFor(show) === 'hosted').sort(byOldest),
+  },
+  {
+    id: 'production',
+    title: 'Narrated and produced',
+    entries: shows.filter((show) => televisionGroupFor(show) === 'production').sort(byOldest),
+  },
+  {
+    id: 'competition',
+    title: 'Competition and guest work',
+    entries: shows.filter((show) => televisionGroupFor(show) === 'competition').sort(byOldest),
+  },
+  {
+    id: 'other',
+    title: 'Other television work',
+    entries: shows.filter((show) => televisionGroupFor(show) === 'other').sort(byOldest),
+  },
+  {
+    id: 'guest',
+    title: 'Guest roles and cameos',
+    entries: screen
+      .filter((entry) => entry.data.tags?.includes('television'))
+      .sort(byNewest),
+  },
+].filter((group) => group.entries.length > 0);
+
+const filmRecords = screen.filter((entry) => !entry.data.tags?.includes('television'));
+const screenGroups = [
+  {
+    id: 'roles',
+    title: 'Films and documentaries',
+    entries: filmRecords.filter((entry) => entry.data.relation_to_bourdain !== 'about').sort(byNewest),
+  },
+  {
+    id: 'about',
+    title: 'Films about Bourdain',
+    entries: filmRecords.filter((entry) => entry.data.relation_to_bourdain === 'about').sort(byNewest),
+  },
+];
+
+const interviews = [...appearances].sort(byNewest);
+
+const mediaShapeFor = (entry: any): 'portrait' | 'landscape' | 'square' => {
+  if (['book', 'comic', 'show', 'documentary', 'film', 'adaptation', 'television'].includes(entry.data.type)) {
+    return 'portrait';
+  }
+  if (['podcast', 'radio'].includes(entry.data.type)) return 'square';
+  return 'landscape';
+};
+
+const referencedCollections = [...works, ...series, ...screen, ...appearances, ...literature, ...events];
+const placeUse = new Map<string, number>();
+for (const entry of referencedCollections) {
+  for (const placeId of new Set(entry.data.places ?? [])) {
+    placeUse.set(placeId, (placeUse.get(placeId) ?? 0) + 1);
+  }
+}
+const featuredPlaces = places
+  .filter((place) => place.data.status === 'confirmed' && (placeUse.get(place.data.id) ?? 0) > 0)
+  .sort(
+    (left, right) =>
+      (placeUse.get(right.data.id) ?? 0) - (placeUse.get(left.data.id) ?? 0) ||
+      left.data.name.localeCompare(right.data.name),
+  )
+  .slice(0, 15);
 ---
 
 <BaseLayout title="Bourdain Archive">
-  <section class="home-intro" aria-labelledby="home-title">
+  <header class="home-intro" aria-labelledby="home-title">
     <p class="eyebrow">1956 to 2018</p>
     <h1 id="home-title">Anthony Bourdain</h1>
-    <p class="home-deck">
-      His books, essays, television, films, interviews, and travels, with selected writing about
-      his life and work.
-    </p>
+    <p class="home-deck">Books, television, films, interviews, and places.</p>
     <p class="home-actions">
-      <a class="primary-action" href={withBase('/archive/')}>Search the archive</a>
-      <a href={withBase('/about/')}>About the archive</a>
+      <a class="primary-action" href={withBase('/archive/')}>Search</a>
+      <a href={withBase('/about/')}>About</a>
     </p>
-  </section>
+  </header>
 
-  <section class="home-section" aria-labelledby="books-heading">
+  <section class="home-section browse-section" id="writing" aria-labelledby="writing-heading">
     <header class="section-header">
       <div>
         <p class="eyebrow">By Bourdain</p>
-        <h2 id="books-heading">The books</h2>
+        <h2 id="writing-heading">Writing</h2>
       </div>
       <a href={withBase('/writings/')}>All writing</a>
     </header>
-    <ol class="shelf-grid shelf-grid-books">
-      {selectedWorks.map((entry: any, index) => {
-        const preview = previewFor(entry);
-        const title = entryTitle(entry);
-        return (
-          <li class="shelf-card">
-            <a href={entryHref('works', entry.data.id)}>
-              <span class="shelf-card-media is-portrait">
-                {preview.image ? (
-                  <img
-                    src={preview.image}
-                    alt=""
-                    loading={index < 2 ? 'eager' : 'lazy'}
-                    fetchpriority={index === 0 ? 'high' : undefined}
-                    decoding="async"
-                    width="400"
-                    height="600"
-                  />
-                ) : (
-                  <span class="shelf-card-fallback">{formatType(entry.data.type)}</span>
-                )}
-              </span>
-              <span class="shelf-card-title">{title}</span>
-              <span class="shelf-card-meta">
-                {formatDate(entry.data.date, entry.data.date_precision)}, {formatType(entry.data.type)}
-              </span>
-            </a>
-          </li>
-        );
-      })}
-    </ol>
+
+    <section class="browse-subsection" aria-labelledby="books-heading">
+      <h3 id="books-heading">Books and comics</h3>
+      <ol class="browse-grid">
+        {books.map((entry, index) => {
+          const preview = previewFor(entry);
+          return (
+            <li>
+              <BrowseCard
+                href={entryHref('works', entry.data.id)}
+                title={entryTitle(entry)}
+                meta={`${formatDate(entry.data.date, entry.data.date_precision)}, ${formatType(entry.data.type)}`}
+                image={preview.image}
+                shape="portrait"
+                loading={index < 2 ? 'eager' : 'lazy'}
+                priority={index === 0}
+                fallback={formatType(entry.data.type)}
+              />
+            </li>
+          );
+        })}
+      </ol>
+    </section>
+
+    {shorterWorks.length > 0 && (
+      <section class="browse-subsection" aria-labelledby="short-writing-heading">
+        <h3 id="short-writing-heading">Essays and stories</h3>
+        <ol class="browse-grid browse-grid-wide">
+          {shorterWorks.map((entry) => {
+            const preview = previewFor(entry);
+            return (
+              <li>
+                <BrowseCard
+                  href={entryHref('works', entry.data.id)}
+                  title={entryTitle(entry)}
+                  meta={`${formatDate(entry.data.date, entry.data.date_precision)}, ${formatType(entry.data.type)}`}
+                  image={preview.image}
+                  shape="landscape"
+                  fallback={formatType(entry.data.type)}
+                />
+              </li>
+            );
+          })}
+        </ol>
+      </section>
+    )}
+
+    <section class="browse-subsection" aria-labelledby="criticism-heading">
+      <h3 id="criticism-heading">Writing about Bourdain</h3>
+      <ol class="browse-grid browse-grid-wide">
+        {selectedCriticism.map((entry) => {
+          const preview = previewFor(entry);
+          return (
+            <li>
+              <BrowseCard
+                href={entryHref('literature', entry.data.id)}
+                title={entryTitle(entry)}
+                meta={`${entry.data.publication ?? formatType(entry.data.type)}, ${formatDate(entry.data.date, entry.data.date_precision)}`}
+                image={preview.image}
+                shape="landscape"
+                fallback={entry.data.publication}
+              />
+            </li>
+          );
+        })}
+      </ol>
+    </section>
   </section>
 
-  <section class="home-section" aria-labelledby="television-heading">
+  <section class="home-section browse-section" id="television" aria-labelledby="television-heading">
     <header class="section-header">
-      <div>
-        <p class="eyebrow">Featuring Bourdain</p>
-        <h2 id="television-heading">Hosted television</h2>
-      </div>
+      <h2 id="television-heading">Television</h2>
       <a href={withBase('/tv/')}>All television</a>
     </header>
-    <ol class="shelf-grid shelf-grid-shows">
-      {shows.map((show) => {
-        const preview = previewFor(show);
-        return (
-          <li class="shelf-card">
-            <a href={entryHref('series', show.data.id)}>
-              <span class="shelf-card-media is-portrait">
-                {preview.image ? (
-                  <img src={preview.image} alt="" loading="lazy" decoding="async" width="400" height="600" />
-                ) : (
-                  <span class="shelf-card-fallback">Television</span>
-                )}
-              </span>
-              <span class="shelf-card-title">{entryTitle(show)}</span>
-              <span class="shelf-card-meta">{formatDate(show.data.date, show.data.date_precision)}</span>
-            </a>
-          </li>
-        );
-      })}
-    </ol>
+    {televisionGroups.map((group) => (
+      <section class="browse-subsection" aria-labelledby={`television-${group.id}`}>
+        <h3 id={`television-${group.id}`}>{group.title}</h3>
+        <ol class="browse-grid browse-grid-shows">
+          {group.entries.map((entry) => {
+            const preview = previewFor(entry);
+            const isGuestRole = group.id === 'guest';
+            return (
+              <li>
+                <BrowseCard
+                  href={entryHref(isGuestRole ? 'screen' : 'series', entry.data.id)}
+                  title={entryTitle(entry)}
+                  meta={`${formatDate(entry.data.date, entry.data.date_precision)}, ${isGuestRole ? formatType(entry.data.type) : televisionRoleFor(entry)}`}
+                  image={preview.image}
+                  shape={mediaShapeFor(entry)}
+                  fallback="Television"
+                />
+              </li>
+            );
+          })}
+        </ol>
+      </section>
+    ))}
   </section>
 
-  <section class="home-section" aria-labelledby="context-heading">
+  <section class="home-section browse-section" id="film" aria-labelledby="film-heading">
     <header class="section-header">
-      <div>
-        <p class="eyebrow">About Bourdain</p>
-        <h2 id="context-heading">Writing about Bourdain</h2>
-      </div>
-      <a href={withBase('/writings/#about')}>Selected criticism</a>
+      <h2 id="film-heading">Film and screen</h2>
+      <a href={withBase('/screen/')}>All film</a>
     </header>
-    <ol class="editorial-list">
-      {latestContext.map(({ entry, collection }) => {
+    {screenGroups.map((group) => (
+      <section class="browse-subsection" aria-labelledby={`film-${group.id}`}>
+        <h3 id={`film-${group.id}`}>{group.title}</h3>
+        <ol class="browse-grid browse-grid-wide">
+          {group.entries.map((entry) => {
+            const preview = previewFor(entry);
+            return (
+              <li>
+                <BrowseCard
+                  href={entryHref('screen', entry.data.id)}
+                  title={entryTitle(entry)}
+                  meta={`${formatDate(entry.data.date, entry.data.date_precision)}, ${formatType(entry.data.type)}`}
+                  image={preview.image}
+                  shape={mediaShapeFor(entry)}
+                  fallback={formatType(entry.data.type)}
+                />
+              </li>
+            );
+          })}
+        </ol>
+      </section>
+    ))}
+  </section>
+
+  <section class="home-section browse-section" id="interviews" aria-labelledby="interviews-heading">
+    <header class="section-header">
+      <h2 id="interviews-heading">Interviews and audio</h2>
+      <a href={withBase('/screen/#screen-interviews')}>All interviews</a>
+    </header>
+    <ol class="browse-grid browse-grid-wide">
+      {interviews.map((entry) => {
         const preview = previewFor(entry);
         return (
           <li>
-            <a class="editorial-list-media" href={entryHref(collection, entry.data.id)}>
-              {preview.image ? (
-                <img src={preview.image} alt="" loading="lazy" decoding="async" width="320" height="200" />
-              ) : (
-                <span>{(entry.data as any).publication ?? formatType(entry.data.type)}</span>
-              )}
-            </a>
-            <div>
-              <p class="eyebrow">
-                {(entry.data as any).publication ?? formatType(entry.data.type)}, {formatDate(entry.data.date, entry.data.date_precision)}
-              </p>
-              <h3><a href={entryHref(collection, entry.data.id)}>{entryTitle(entry)}</a></h3>
-              {entry.data.summary && <p>{entry.data.summary}</p>}
-            </div>
+            <BrowseCard
+              href={entryHref('appearances', entry.data.id)}
+              title={entryTitle(entry)}
+              meta={`${formatDate(entry.data.date, entry.data.date_precision)}, ${formatType(entry.data.type)}`}
+              image={preview.image}
+              shape={mediaShapeFor(entry)}
+              fallback={formatType(entry.data.type)}
+            />
           </li>
         );
       })}
     </ol>
   </section>
 
-  <section class="home-section places-band" aria-labelledby="places-heading">
+  <section class="home-section places-band" id="places" aria-labelledby="places-heading">
     <header class="section-header">
-      <div>
-        <p class="eyebrow">The geography</p>
-        <h2 id="places-heading">Places</h2>
-      </div>
+      <h2 id="places-heading">Places</h2>
       <a href={withBase('/map/')}>Open the map</a>
     </header>
     <ul class="place-links">
-      {featuredPlaces.map((place: any) => (
+      {featuredPlaces.map((place) => (
         <li><a href={entryHref('places', place.data.id)}>{place.data.name}</a></li>
       ))}
     </ul>
-    <p class="section-tail"><a href={withBase('/places/')}>Browse the place list</a></p>
+    <p class="section-tail"><a href={withBase('/places/')}>Place list</a></p>
   </section>
 </BaseLayout>

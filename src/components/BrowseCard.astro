@@ -1,0 +1,48 @@
+---
+interface Props {
+  href: string;
+  title: string;
+  meta?: string;
+  image?: string;
+  shape?: 'portrait' | 'landscape' | 'square';
+  loading?: 'eager' | 'lazy';
+  priority?: boolean;
+  fallback?: string;
+}
+
+const {
+  href,
+  title,
+  meta,
+  image,
+  shape = 'portrait',
+  loading = 'lazy',
+  priority = false,
+  fallback,
+} = Astro.props;
+const dimensions = {
+  portrait: { width: 400, height: 600 },
+  landscape: { width: 640, height: 400 },
+  square: { width: 500, height: 500 },
+}[shape];
+---
+
+<a class="browse-card" href={href}>
+  <span class:list={['browse-card-media', `is-${shape}`]}>
+    {image ? (
+      <img
+        src={image}
+        alt=""
+        width={dimensions.width}
+        height={dimensions.height}
+        loading={loading}
+        fetchpriority={priority ? 'high' : undefined}
+        decoding="async"
+      />
+    ) : (
+      <span class="browse-card-fallback">{fallback}</span>
+    )}
+  </span>
+  <strong>{title}</strong>
+  {meta && <span class="browse-card-meta">{meta}</span>}
+</a>

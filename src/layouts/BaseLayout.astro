@@ -23,16 +23,18 @@ const socialImage = new URL(
   Astro.site ?? Astro.url.origin,
 ).href;
 const currentPath = Astro.url.pathname;
+const homeHref = withBase('/');
 const navItems = [
-  { href: withBase('/archive/'), label: 'Archive' },
-  { href: withBase('/writings/'), label: 'Writings' },
-  { href: withBase('/tv/'), label: 'Television' },
-  { href: withBase('/screen/'), label: 'Films and appearances' },
+  { href: `${homeHref}#writing`, label: 'Writing' },
+  { href: `${homeHref}#television`, label: 'Television' },
+  { href: `${homeHref}#film`, label: 'Film' },
+  { href: `${homeHref}#interviews`, label: 'Interviews' },
+  { href: withBase('/archive/'), label: 'Search' },
   { href: withBase('/map/'), label: 'Places' },
   { href: withBase('/about/'), label: 'About' },
 ];
 const isCurrent = (href: string) => {
-  if (href === withBase('/')) return currentPath === href;
+  if (href.includes('#')) return false;
   if (href === withBase('/map/')) {
     return currentPath.startsWith(withBase('/map/')) || currentPath.startsWith(withBase('/places/'));
   }
