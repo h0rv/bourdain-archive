@@ -74,9 +74,20 @@ const portraitArtwork = [
   'voice-role',
 ].includes(data.type) || Boolean(parentArtwork && !primaryPreview.image && !sourceArtwork?.preview.image);
 
-const availabilityActions = availabilityBadges(data.availability)
+const allAvailabilityActions = availabilityBadges(data.availability)
   .filter((item) => item.url)
-  .map((item) => ({ ...item, host: hostnameForUrl(item.url) }));
+  .map((item) => ({
+    ...item,
+    label:
+      data.type === 'episode' && item.field === 'official_url'
+        ? 'Episode page'
+        : data.type === 'episode' && item.field === 'reference_url'
+          ? 'Episode details'
+          : item.label,
+    host: hostnameForUrl(item.url),
+  }));
+const availabilityActions =
+  data.type === 'episode' ? allAvailabilityActions.slice(0, 1) : allAvailabilityActions;
 
 const relatedRefs = (data.related ?? [])
   .map((id: string) => relatedById.get(id))
@@ -93,6 +104,7 @@ const entityFor = (id: string) => {
 };
 
 const contributors = (data.contributors ?? []).map(entityFor);
+const showContributors = data.type !== 'episode' && contributors.length > 0;
 const roleCredits = (data.roles ?? []).map((credit: any) => {
   const person = entityFor(credit.person);
   const creditedAs = credit.credited_as ? ` as ${credit.credited_as}` : '';
@@ -122,7 +134,7 @@ const hasRecordDetails =
   Boolean(data.host) ||
   Boolean(data.role) ||
   Boolean(data.duration_minutes) ||
-  contributors.length > 0 ||
+  showContributors ||
   roleCredits.length > 0;
 ---
 <BaseLayout title={title} description={data.summary ?? title} image={heroImage} noindex={noindex}>
@@ -158,11 +170,13 @@ const hasRecordDetails =
                 </span>
               )}
             </figcaption>
-          ) : heroArtworkSource && (
+          ) : heroArtworkSource ? (
             <figcaption>
               Preview via {hostnameForUrl(heroArtworkSource.source.data.url) ?? 'cited source'}
             </figcaption>
-          )}
+          ) : parentArtwork && !primaryPreview.image ? (
+            <figcaption>Series artwork</figcaption>
+          ) : null}
         </figure>
       )}
 
@@ -170,7 +184,11 @@ const hasRecordDetails =
         <p class="entry-taxonomy">{relationLabel}</p>
         <h1 class="page-title entry-title">{title}</h1>
         <p class="entry-byline">
-          <span>{formatType(kindFor(data, collection))}</span>
+          {data.type === 'episode' && parentEntry ? (
+            <a href={entryHref(parentEntry.collection, parentEntry.entry.data.id)}>{entryTitle(parentEntry.entry)}</a>
+          ) : (
+            <span>{formatType(kindFor(data, collection))}</span>
+          )}
           {episodeCode && <span>{episodeCode}</span>}
           {data.date && <time datetime={data.date}>{formatDate(data.date, data.date_precision)}</time>}
           {displayStatus && (
@@ -203,7 +221,7 @@ const hasRecordDetails =
           {data.host && <><dt>Host</dt><dd>{data.host}</dd></>}
           {data.role && <><dt>Role</dt><dd>{data.role}</dd></>}
           {data.duration_minutes && <><dt>Duration</dt><dd>{data.duration_minutes} minutes</dd></>}
-          {contributors.length > 0 && (
+          {showContributors && (
             <>
               <dt>{contributors.length === 1 ? 'Contributor' : 'Contributors'}</dt>
               <dd class="entity-line">

@@ -264,8 +264,7 @@ export function statusClass(status: string): string {
 }
 
 export function visibleStatus(status?: string | null): string | undefined {
-  if (!status || status === "confirmed") return undefined;
-  return status;
+  return status === "dead-link" ? "unavailable" : undefined;
 }
 
 export function formatDate(date?: string | null, precision?: string): string {
