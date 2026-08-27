@@ -9,7 +9,7 @@ creator:
 date: "1995"
 date_precision: year
 summary: Bourdain's debut crime novel, set around restaurants, organized crime, and New York kitchen life.
-image_url: https://i.ebayimg.com/images/g/g5MAAeSw70FoZGe8/s-l1200.jpg
+image_url: https://res.cloudinary.com/bloomsbury-atlas/image/upload/w_1000%2Cc_scale%2Cdpr_1/jackets/9781582341026.jpg
 tags:
   - fiction
   - kitchens
@@ -20,6 +20,7 @@ places:
   - new-york-city
 sources:
   - open-library-bourdain-author
+  - bloomsbury-bone-in-the-throat
   - raptis-bone-in-the-throat-first-edition
 related: []
 status: confirmed
