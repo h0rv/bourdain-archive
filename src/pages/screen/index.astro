@@ -9,6 +9,7 @@ import {
   formatType,
   previewForEntry,
   primaryAvailabilityUrl,
+  youtubeId,
 } from '../../lib/content';
 import '../../styles/catalog.css';
 
@@ -24,7 +25,9 @@ const items = [...screen, ...appearances]
     const title = entryTitle(item.entry);
     const preview = previewForEntry(item.entry, linkPreviewCache.previews);
     const externalUrl = primaryAvailabilityUrl(data);
-    const portrait = ['adaptation', 'book', 'comic', 'documentary', 'film', 'show', 'television'].includes(data.type);
+    const portrait =
+      ['adaptation', 'book', 'comic', 'documentary', 'film', 'show', 'television'].includes(data.type) &&
+      !youtubeId(data.image_url);
     const group =
       item.collection === 'appearances'
         ? 'interviews'

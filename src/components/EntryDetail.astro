@@ -14,6 +14,7 @@ import {
   previewForEntry,
   statusClass,
   visibleStatus,
+  youtubeId,
 } from '../lib/content';
 
 interface Props {
@@ -62,17 +63,20 @@ const parentArtwork = parentEntry
   : undefined;
 const heroImage = primaryPreview.image ?? sourceArtwork?.preview.image ?? parentArtwork;
 const heroArtworkSource = primaryPreview.image ? undefined : sourceArtwork;
-const portraitArtwork = [
-  'adaptation',
-  'acted-role',
-  'book',
-  'comic',
-  'documentary',
-  'film',
-  'show',
-  'television',
-  'voice-role',
-].includes(data.type) || Boolean(parentArtwork && !primaryPreview.image && !sourceArtwork?.preview.image);
+const portraitArtwork =
+  ([
+    'adaptation',
+    'acted-role',
+    'book',
+    'comic',
+    'documentary',
+    'film',
+    'show',
+    'television',
+    'voice-role',
+  ].includes(data.type) &&
+    !youtubeId(heroImage)) ||
+  Boolean(parentArtwork && !primaryPreview.image && !sourceArtwork?.preview.image);
 
 const allAvailabilityActions = availabilityBadges(data.availability)
   .filter((item) => item.url)
