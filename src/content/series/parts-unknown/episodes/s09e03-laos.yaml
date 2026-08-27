@@ -27,5 +27,8 @@ sources:
   - "parts-unknown-tvdb"
 related: []
 status: "needs-review"
+source_url: https://explorepartsunknown.com/destination/laos/
+identifiers:
+  tmdb: "tv:56305:s9:e3"
 availability:
-  official_url: "https://explorepartsunknown.com/destination/laos/"
+  reference_url: https://www.themoviedb.org/tv/56305-anthony-bourdain-parts-unknown/season/9/episode/3

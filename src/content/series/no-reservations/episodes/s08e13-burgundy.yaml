@@ -35,5 +35,8 @@ sources:
   - "no-reservations-tvdb"
 related: []
 status: "needs-review"
+source_url: https://www.imdb.com/title/tt2388842/locations?ref_=tt_dt_dt
+identifiers:
+  tmdb: "tv:4533:s8:e13"
 availability:
-  official_url: "https://www.imdb.com/title/tt2388842/locations?ref_=tt_dt_dt"
+  reference_url: https://www.themoviedb.org/tv/4533-no-reservations/season/8/episode/13

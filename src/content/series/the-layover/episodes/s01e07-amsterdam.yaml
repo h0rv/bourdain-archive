@@ -27,5 +27,7 @@ sources:
   - "the-layover-tvdb"
 related: []
 status: "needs-review"
+identifiers:
+  tmdb: "tv:41993:s1:e7"
 availability:
-  official_url: "https://en.wikipedia.org/wiki/The_Layover"
+  reference_url: https://www.themoviedb.org/tv/41993-the-layover/season/1/episode/7

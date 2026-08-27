@@ -27,5 +27,8 @@ sources:
   - "parts-unknown-tvdb"
 related: []
 status: "needs-review"
+source_url: http://anthonybourdain.tumblr.com/post/63750682556/failure
+identifiers:
+  tmdb: "tv:56305:s2:e5"
 availability:
-  official_url: "http://anthonybourdain.tumblr.com/post/63750682556/failure"
+  reference_url: https://www.themoviedb.org/tv/56305-anthony-bourdain-parts-unknown/season/2/episode/5

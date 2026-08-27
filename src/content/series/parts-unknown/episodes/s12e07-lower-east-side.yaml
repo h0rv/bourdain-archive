@@ -31,5 +31,7 @@ sources:
   - field-notes-lower-east-side
 related: []
 status: confirmed
+identifiers:
+  tmdb: "tv:56305:s12:e7"
 availability:
   official_url: https://explorepartsunknown.com/lower-east-side/bourdains-field-notes-lower-east-side/

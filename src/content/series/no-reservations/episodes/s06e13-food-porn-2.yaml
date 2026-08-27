@@ -26,4 +26,7 @@ sources:
 related:
   - no-reservations-s05e06-food-porn
 status: confirmed
-availability: {}
+identifiers:
+  tmdb: "tv:4533:s6:e13"
+availability:
+  reference_url: https://www.themoviedb.org/tv/4533-no-reservations/season/6/episode/13

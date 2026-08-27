@@ -141,6 +141,109 @@ function collectUrlFields(value, path, prefix = '') {
   }
 }
 
+function isExactEpisodeReference(value) {
+  if (!value) return false;
+  const url = new URL(value);
+  const host = url.hostname.replace(/^www\./, '');
+  const pathname = url.pathname.replace(/\/+$/, '');
+
+  if (host === 'themoviedb.org') {
+    return /^\/tv\/\d+(?:-[^/]+)?\/season\/\d+\/episode\/\d+$/.test(pathname);
+  }
+  if (host === 'imdb.com') return /^\/title\/tt\d+$/.test(pathname);
+  if (host === 'thetvdb.com') return /^\/episodes\/\d+$/.test(pathname);
+  return false;
+}
+
+function isGenericEpisodeAction(value) {
+  if (!value) return false;
+  const url = new URL(value);
+  const host = url.hostname.replace(/^www\./, '');
+  const pathname = url.pathname.replace(/\/+$/, '');
+
+  if (host === 'wikipedia.org' || host.endsWith('.wikipedia.org')) return true;
+  if (host === 'thetvdb.com' && (pathname.includes('/allseasons/') || pathname.endsWith('/seasons/all'))) return true;
+  if (host === 'themoviedb.org' && !pathname.includes('/episode/')) return true;
+  if (host === 'imdb.com' && !/^\/title\/tt\d+$/.test(pathname)) return true;
+  return false;
+}
+
+function checkEpisodeActions(entry) {
+  const { data, path, collection } = entry;
+  if (collection !== 'series' || data.type !== 'episode') return;
+
+  const availability = data.availability ?? {};
+  const exactAction =
+    availability.official_url ??
+    availability.reference_url ??
+    availability.archive_url ??
+    availability.video_url ??
+    availability.streaming_url;
+
+  if (!exactAction) {
+    errors.push(`${path}: episode requires an exact public episode action`);
+    return;
+  }
+
+  if (availability.reference_url && !isExactEpisodeReference(availability.reference_url)) {
+    errors.push(`${path}: availability.reference_url must identify one exact episode`);
+  }
+
+  const referenceUrl = availability.reference_url ? new URL(availability.reference_url) : undefined;
+  const referenceHost = referenceUrl?.hostname.replace(/^www\./, '');
+  const tmdbIdentifier = data.identifiers?.tmdb;
+  const tmdbMatch = String(tmdbIdentifier ?? '').match(/^tv:(\d+):s(\d+):e(\d+)$/);
+  const imdbIdentifier = data.identifiers?.imdb;
+  const imdbMatch = String(imdbIdentifier ?? '').match(/^tt\d+$/);
+
+  if (!tmdbMatch && !imdbMatch) {
+    errors.push(`${path}: episode requires a canonical TMDB tuple or IMDb title identifier`);
+  }
+  if (tmdbMatch) {
+    const [, , season, episode] = tmdbMatch;
+    if (Number(season) !== Number(data.season) || Number(episode) !== Number(data.episode)) {
+      errors.push(`${path}: identifiers.tmdb season/episode does not match the record`);
+    }
+    if (referenceHost === 'themoviedb.org') {
+      const urlMatch = new URL(availability.reference_url).pathname.match(/^\/tv\/(\d+)(?:-[^/]+)?\/season\/(\d+)\/episode\/(\d+)$/);
+      if (!urlMatch || urlMatch[1] !== tmdbMatch[1] || urlMatch[2] !== season || urlMatch[3] !== episode) {
+        errors.push(`${path}: identifiers.tmdb does not match availability.reference_url`);
+      }
+    }
+  }
+  if (referenceHost === 'imdb.com') {
+    const urlIdentifier = referenceUrl.pathname.match(/^\/title\/(tt\d+)\/?$/)?.[1];
+    if (!imdbMatch || urlIdentifier !== imdbIdentifier) {
+      errors.push(`${path}: identifiers.imdb does not match availability.reference_url`);
+    }
+  }
+
+  for (const [field, value] of Object.entries(availability)) {
+    if (value && isGenericEpisodeAction(value)) {
+      errors.push(`${path}: ${field} is a generic series or season URL, not an episode action`);
+    }
+  }
+}
+
+function checkScreenOfficialAction(entry) {
+  const { data, path, collection } = entry;
+  const value = data.availability?.official_url;
+  if (collection !== 'screen' || !value) return;
+
+  const url = new URL(value);
+  const host = url.hostname.replace(/^www\./, '');
+  const researchHosts = new Set([
+    'imdb.com',
+    'metacritic.com',
+    'rottentomatoes.com',
+    'wikipedia.org',
+    'interviews.televisionacademy.com',
+  ]);
+  if (researchHosts.has(host) || host.endsWith('.wikipedia.org')) {
+    errors.push(`${path}: availability.official_url is a research source, not the screen work's official page`);
+  }
+}
+
 function checkDate(entry) {
   const { data, path } = entry;
   const precision = data.date_precision ?? 'unknown';
@@ -197,6 +300,8 @@ for (const entry of entries) {
   }
 
   checkDate(entry);
+  checkEpisodeActions(entry);
+  checkScreenOfficialAction(entry);
   collectUrlFields(data, path);
 }
 

@@ -28,5 +28,8 @@ sources:
   - "parts-unknown-tvdb"
 related: []
 status: "needs-review"
+source_url: https://www.pogdesign.co.uk/cat/Anthony-Bourdain-Parts-Unknown/Season-1/Episode-1
+identifiers:
+  tmdb: "tv:56305:s1:e1"
 availability:
-  official_url: "https://www.pogdesign.co.uk/cat/Anthony-Bourdain-Parts-Unknown/Season-1/Episode-1"
+  reference_url: https://www.themoviedb.org/tv/56305-anthony-bourdain-parts-unknown/season/1/episode/1

@@ -31,5 +31,8 @@ sources:
   - "no-reservations-tvdb"
 related: []
 status: "needs-review"
+source_url: https://www.imdb.com/title/tt0513622/locations?ref_=tt_dt_dt
+identifiers:
+  tmdb: "tv:4533:s1:e6"
 availability:
-  official_url: "https://www.imdb.com/title/tt0513622/locations?ref_=tt_dt_dt"
+  reference_url: https://www.themoviedb.org/tv/4533-no-reservations/season/1/episode/6

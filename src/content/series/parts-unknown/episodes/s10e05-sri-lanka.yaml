@@ -28,5 +28,7 @@ sources:
   - "parts-unknown-tvdb"
 related: []
 status: "needs-review"
+identifiers:
+  tmdb: "tv:56305:s10:e5"
 availability:
-  official_url: "https://explorepartsunknown.com/sri-lanka/bourdains-field-note-sri-lanka/"
+  official_url: https://explorepartsunknown.com/sri-lanka/bourdains-field-note-sri-lanka/

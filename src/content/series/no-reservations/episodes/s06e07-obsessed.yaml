@@ -26,4 +26,7 @@ sources:
   - no-reservations-tvdb
 related: []
 status: confirmed
-availability: {}
+identifiers:
+  tmdb: "tv:4533:s6:e7"
+availability:
+  reference_url: https://www.themoviedb.org/tv/4533-no-reservations/season/6/episode/7

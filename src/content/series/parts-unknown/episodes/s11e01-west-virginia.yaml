@@ -31,5 +31,7 @@ sources:
   - "parts-unknown-tvdb"
 related: []
 status: "needs-review"
+identifiers:
+  tmdb: "tv:56305:s11:e1"
 availability:
-  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"
+  reference_url: https://www.themoviedb.org/tv/56305-anthony-bourdain-parts-unknown/season/11/episode/1

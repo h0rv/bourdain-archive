@@ -27,5 +27,7 @@ sources:
   - "a-cooks-tour-tvdb"
 related: []
 status: "needs-review"
+identifiers:
+  tmdb: "tv:2361:s1:e2"
 availability:
-  official_url: "https://thetvdb.com/series/a-cooks-tour/allseasons/official"
+  reference_url: https://www.themoviedb.org/tv/2361-a-cook-s-tour/season/1/episode/2

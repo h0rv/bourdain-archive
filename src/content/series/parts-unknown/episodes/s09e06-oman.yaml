@@ -28,5 +28,7 @@ sources:
   - "parts-unknown-tvdb"
 related: []
 status: "needs-review"
+identifiers:
+  tmdb: "tv:56305:s9:e6"
 availability:
-  official_url: "https://explorepartsunknown.com/oman/bourdains-field-notes-oman/"
+  official_url: https://explorepartsunknown.com/oman/bourdains-field-notes-oman/

@@ -27,5 +27,8 @@ sources:
   - "no-reservations-tvdb"
 related: []
 status: "needs-review"
+source_url: http://www.noreservationslocations.com/panama-episode.html
+identifiers:
+  tmdb: "tv:4533:s6:e1"
 availability:
-  official_url: "http://www.noreservationslocations.com/panama-episode.html"
+  reference_url: https://www.themoviedb.org/tv/4533-no-reservations/season/6/episode/1

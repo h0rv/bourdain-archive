@@ -27,5 +27,7 @@ sources:
   - "no-reservations-tvdb"
 related: []
 status: "needs-review"
+identifiers:
+  tmdb: "tv:4533:s2:e13"
 availability:
-  official_url: "https://www.travelchannel.com/shows/anthony-bourdain/episodes/anthony-bourdain-no-reservations-decoding-ferran-adria"
+  official_url: https://www.travelchannel.com/shows/anthony-bourdain/episodes/anthony-bourdain-no-reservations-decoding-ferran-adria

@@ -29,5 +29,8 @@ sources:
   - "no-reservations-tvdb"
 related: []
 status: "needs-review"
+source_url: http://www.noreservationslocations.com/croatian-coast-episode.html
+identifiers:
+  tmdb: "tv:4533:s8:e3"
 availability:
-  official_url: "http://www.noreservationslocations.com/croatian-coast-episode.html"
+  reference_url: https://www.themoviedb.org/tv/4533-no-reservations/season/8/episode/3

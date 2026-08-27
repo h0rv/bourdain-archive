@@ -33,5 +33,8 @@ sources:
   - "parts-unknown-tvdb"
 related: []
 status: "needs-review"
+source_url: https://www.imdb.com/title/tt3285356/?ref_=ttep_ep1
+identifiers:
+  tmdb: "tv:56305:s2:e1"
 availability:
-  official_url: "https://www.imdb.com/title/tt3285356/?ref_=ttep_ep1"
+  reference_url: https://www.themoviedb.org/tv/56305-anthony-bourdain-parts-unknown/season/2/episode/1

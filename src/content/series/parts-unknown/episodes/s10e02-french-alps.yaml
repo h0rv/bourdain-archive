@@ -30,5 +30,7 @@ sources:
   - "parts-unknown-tvdb"
 related: []
 status: "needs-review"
+identifiers:
+  tmdb: "tv:56305:s10:e2"
 availability:
-  official_url: "https://explorepartsunknown.com/french-alps/eat-like-bourdain-2/"
+  official_url: https://explorepartsunknown.com/french-alps/eat-like-bourdain-2/

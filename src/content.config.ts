@@ -25,6 +25,7 @@ const contentFiles = (collection: string) =>
 const availabilitySchema = z
   .object({
     official_url: urlField,
+    reference_url: urlField,
     archive_url: urlField,
     library_url: urlField,
     audio_url: urlField,
@@ -46,6 +47,7 @@ const imageUsagePolicySchema = z.enum([
 const identifiersSchema = z
   .object({
     imdb: z.string().nullable().optional(),
+    tmdb: z.string().nullable().optional(),
     tvdb: z.string().nullable().optional(),
     openlibrary: z.string().nullable().optional(),
     wikidata: z.string().nullable().optional(),

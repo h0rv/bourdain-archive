@@ -30,5 +30,8 @@ sources:
   - "no-reservations-tvdb"
 related: []
 status: "needs-review"
+source_url: https://www.imdb.com/title/tt0933410/locations?ref_=tt_dt_dt
+identifiers:
+  tmdb: "tv:4533:s2:e5"
 availability:
-  official_url: "https://www.imdb.com/title/tt0933410/locations?ref_=tt_dt_dt"
+  reference_url: https://www.themoviedb.org/tv/4533-no-reservations/season/2/episode/5

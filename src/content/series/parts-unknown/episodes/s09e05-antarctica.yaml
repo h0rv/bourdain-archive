@@ -30,5 +30,8 @@ sources:
   - "parts-unknown-tvdb"
 related: []
 status: "needs-review"
+source_url: https://www.eater.com/2017/6/4/15732806/anthony-bourdain-antarctica-parts-unknown
+identifiers:
+  tmdb: "tv:56305:s9:e5"
 availability:
-  official_url: "https://www.eater.com/2017/6/4/15732806/anthony-bourdain-antarctica-parts-unknown"
+  reference_url: https://www.themoviedb.org/tv/56305-anthony-bourdain-parts-unknown/season/9/episode/5

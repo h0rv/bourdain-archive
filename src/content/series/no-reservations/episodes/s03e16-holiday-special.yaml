@@ -28,5 +28,8 @@ sources:
   - "no-reservations-tvdb"
 related: []
 status: "partial"
+source_url: http://www2.readingeagle.com/article.aspx?id=70789
+identifiers:
+  imdb: "tt1153743"
 availability:
-  official_url: "http://www2.readingeagle.com/article.aspx?id=70789"
+  reference_url: https://www.imdb.com/title/tt1153743/

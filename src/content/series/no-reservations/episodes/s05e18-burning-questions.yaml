@@ -26,4 +26,7 @@ sources:
   - no-reservations-tvdb
 related: []
 status: confirmed
-availability: {}
+identifiers:
+  tmdb: "tv:4533:s5:e18"
+availability:
+  reference_url: https://www.themoviedb.org/tv/4533-no-reservations/season/5/episode/18

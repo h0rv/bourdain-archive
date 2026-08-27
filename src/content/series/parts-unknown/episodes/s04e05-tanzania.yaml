@@ -29,5 +29,8 @@ sources:
   - "parts-unknown-tvdb"
 related: []
 status: "needs-review"
+source_url: https://www.imdb.com/title/tt4129732/plotsummary?ref_=tt_ov_pl
+identifiers:
+  tmdb: "tv:56305:s4:e5"
 availability:
-  official_url: "https://www.imdb.com/title/tt4129732/plotsummary?ref_=tt_ov_pl"
+  reference_url: https://www.themoviedb.org/tv/56305-anthony-bourdain-parts-unknown/season/4/episode/5

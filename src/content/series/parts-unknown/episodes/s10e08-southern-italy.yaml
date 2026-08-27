@@ -29,5 +29,8 @@ sources:
   - "parts-unknown-tvdb"
 related: []
 status: "needs-review"
+source_url: https://www.cntraveler.com/story/anthony-bourdains-parts-unknown-visits-southern-italy
+identifiers:
+  tmdb: "tv:56305:s10:e8"
 availability:
-  official_url: "https://www.cntraveler.com/story/anthony-bourdains-parts-unknown-visits-southern-italy"
+  reference_url: https://www.themoviedb.org/tv/56305-anthony-bourdain-parts-unknown/season/10/episode/8

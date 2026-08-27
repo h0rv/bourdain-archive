@@ -27,5 +27,8 @@ sources:
   - parts-unknown-tvdb
 related: []
 status: confirmed
+source_url: https://explorepartsunknown.com/destination/asturias/
+identifiers:
+  tmdb: "tv:56305:s12:e2"
 availability:
-  official_url: https://explorepartsunknown.com/destination/asturias/
+  reference_url: https://www.themoviedb.org/tv/56305-anthony-bourdain-parts-unknown/season/12/episode/2

@@ -26,4 +26,7 @@ sources:
   - no-reservations-tvdb
 related: []
 status: partial
-availability: {}
+identifiers:
+  tmdb: "tv:4533:s8:e11"
+availability:
+  reference_url: https://www.themoviedb.org/tv/4533-no-reservations/season/8/episode/11

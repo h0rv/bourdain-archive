@@ -27,5 +27,8 @@ sources:
   - "parts-unknown-tvdb"
 related: []
 status: "needs-review"
+source_url: http://cnnpressroom.blogs.cnn.com/2018/04/09/season-11-of-cnn-original-series-anthony-bourdain-parts-unknown-launches-sunday-april-29-at-9pm-with-a-tour-of-west-virginia-in-an-extended-episode/
+identifiers:
+  tmdb: "tv:56305:s11:e4"
 availability:
-  official_url: "http://cnnpressroom.blogs.cnn.com/2018/04/09/season-11-of-cnn-original-series-anthony-bourdain-parts-unknown-launches-sunday-april-29-at-9pm-with-a-tour-of-west-virginia-in-an-extended-episode/"
+  reference_url: https://www.themoviedb.org/tv/56305-anthony-bourdain-parts-unknown/season/11/episode/4

@@ -28,5 +28,7 @@ sources:
   - "no-reservations-tvdb"
 related: []
 status: "needs-review"
+identifiers:
+  tmdb: "tv:4533:s7:e14"
 availability:
-  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"
+  reference_url: https://www.themoviedb.org/tv/4533-no-reservations/season/7/episode/14

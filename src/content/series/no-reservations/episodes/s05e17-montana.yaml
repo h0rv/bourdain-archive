@@ -27,5 +27,8 @@ sources:
   - "no-reservations-tvdb"
 related: []
 status: "needs-review"
+source_url: https://www.imdb.com/title/tt1591666/?ref_=ttep_ep17
+identifiers:
+  tmdb: "tv:4533:s5:e17"
 availability:
-  official_url: "https://www.imdb.com/title/tt1591666/?ref_=ttep_ep17"
+  reference_url: https://www.themoviedb.org/tv/4533-no-reservations/season/5/episode/17

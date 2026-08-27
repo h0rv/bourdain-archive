@@ -31,5 +31,8 @@ sources:
   - "no-reservations-tvdb"
 related: []
 status: "needs-review"
+source_url: http://www.noreservationslocations.com/caribbean-island-hopping-episode.html
+identifiers:
+  tmdb: "tv:4533:s6:e14"
 availability:
-  official_url: "http://www.noreservationslocations.com/caribbean-island-hopping-episode.html"
+  reference_url: https://www.themoviedb.org/tv/4533-no-reservations/season/6/episode/14

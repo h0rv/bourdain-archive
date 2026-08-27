@@ -28,5 +28,8 @@ sources:
   - "no-reservations-tvdb"
 related: []
 status: "needs-review"
+source_url: http://www.noreservationslocations.com/liberia-episode.html
+identifiers:
+  tmdb: "tv:4533:s6:e16"
 availability:
-  official_url: "http://www.noreservationslocations.com/liberia-episode.html"
+  reference_url: https://www.themoviedb.org/tv/4533-no-reservations/season/6/episode/16

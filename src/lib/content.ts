@@ -14,6 +14,7 @@ const collectionPaths: Record<string, string> = {
 
 const availabilityFields = [
   ["official_url", "Official"],
+  ["reference_url", "Details"],
   ["archive_url", "Archive"],
   ["library_url", "Library"],
   ["audio_url", "Audio"],
@@ -298,6 +299,7 @@ export function primaryAvailabilityUrl(data: any): string | undefined {
     availability.video_url ??
     availability.audio_url ??
     availability.official_url ??
+    availability.reference_url ??
     availability.streaming_url ??
     availability.purchase_url ??
     availability.library_url ??

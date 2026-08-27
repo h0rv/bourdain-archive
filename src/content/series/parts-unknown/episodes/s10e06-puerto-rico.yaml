@@ -30,5 +30,8 @@ sources:
   - "parts-unknown-tvdb"
 related: []
 status: "needs-review"
+source_url: https://www.cntraveler.com/story/recap-anthony-bourdains-parts-unknown-visits-puerto-rico
+identifiers:
+  tmdb: "tv:56305:s10:e6"
 availability:
-  official_url: "https://www.cntraveler.com/story/recap-anthony-bourdains-parts-unknown-visits-puerto-rico"
+  reference_url: https://www.themoviedb.org/tv/56305-anthony-bourdain-parts-unknown/season/10/episode/6
