@@ -3,8 +3,8 @@
  * Image hygiene checks for archive content.
  *
  * This is intentionally offline-friendly. It verifies local assets, flags
- * preview patterns known to break, and reports entries that still rely on
- * metadata fallback instead of a safe visual.
+ * preview patterns known to break, and rejects public records that would
+ * render without a safe visual.
  */
 
 import { access, readdir, readFile } from 'node:fs/promises';
@@ -196,7 +196,7 @@ for (const { file, collection, data } of entries) {
     const count = missingByCollection.get(collection) ?? 0;
     missingByCollection.set(collection, count + 1);
     if (data.index_mode !== 'child') {
-      warnings.push(`${file}: no safe image_url or preview image (${previewImage.reason})`);
+      errors.push(`${file}: no safe image_url or preview image (${previewImage.reason})`);
     }
   }
 }
