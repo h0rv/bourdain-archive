@@ -1,0 +1,31 @@
+id: "parts-unknown-s02e06-south-africa"
+title: "South Africa"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 2
+episode: 6
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2013-10-20"
+date_precision: "day"
+summary: "Once considered the most dangerous city in the world, Johannesburg now barely makes the top 50. But the end of the apartheid has led to vast changes in the city. In this episode, Bourdain visits the suburb of Hillbrow (which remains a dangerous locale), spends a day in the life of a taxi driver and discovers the culture and food that make up modern day Johannesburg."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "johannesburg-south-africa"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

@@ -1,59 +1,104 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { entryHref, entryTitle, formatDate, formatType, statusClass, visibleStatus } from '../../lib/content';
+import { entryHref, entryTitle, formatDate, formatType } from '../../lib/content';
+import { withBase } from '../../lib/site';
 
 export async function getStaticPaths() {
   const places = await getCollection('places');
+  const sources = await getCollection('sources');
   const referencedEntries = [
     ...(await getCollection('works')).map((entry) => ({ entry, collection: 'works' })),
     ...(await getCollection('series')).map((entry) => ({ entry, collection: 'series' })),
+    ...(await getCollection('screen')).map((entry) => ({ entry, collection: 'screen' })),
     ...(await getCollection('appearances')).map((entry) => ({ entry, collection: 'appearances' })),
+    ...(await getCollection('literature')).map((entry) => ({ entry, collection: 'literature' })),
+    ...(await getCollection('events')).map((entry) => ({ entry, collection: 'events' })),
   ];
 
   return places.map((entry) => ({
     params: { id: entry.data.id },
     props: {
       entry,
-      linkedEntries: referencedEntries.filter((item) => item.entry.data.places?.includes(entry.data.id)),
+      linkedEntries: referencedEntries
+        .filter((item) => item.entry.data.places?.includes(entry.data.id))
+        .sort((left, right) =>
+          (right.entry.data.date ?? '').localeCompare(left.entry.data.date ?? ''),
+        ),
+      citedSources: (entry.data.sources ?? [])
+        .map((id) => sources.find((source) => source.data.id === id))
+        .filter(Boolean),
     },
   }));
 }
 
-const { entry, linkedEntries } = Astro.props;
+const { entry, linkedEntries, citedSources } = Astro.props;
 const data = entry.data;
-const displayStatus = visibleStatus(data.status);
 ---
-<BaseLayout title={data.name} description={data.summary}>
-  <article>
-    <h1 class="page-title">{data.name}</h1>
-    <p class="meta">Place{displayStatus && <> · <span class={`badge ${statusClass(displayStatus)}`}>{displayStatus}</span></>}</p>
-    <p class="lede">{data.summary}</p>
+
+<BaseLayout
+  title={data.name}
+  description={data.summary}
+  noindex={data.status === 'needs-review' || data.status === 'missing-source'}
+>
+  <article class="place-detail">
+    <header class="page-intro">
+      <p class="eyebrow">
+        Place record{data.status !== 'confirmed' ? ` · ${formatType(data.status)}` : ''}
+      </p>
+      <h1 class="page-title">{data.name}</h1>
+      {data.summary && <p class="lede">{data.summary}</p>}
+      <p class="home-actions">
+        <a class="primary-action" href={withBase('/map/')}>Open travel map</a>
+        <a href={withBase('/places/')}>All places</a>
+      </p>
+    </header>
 
     {data.tags?.length > 0 && (
       <section class="detail-box">
-        <h2>Tags</h2>
-        <ul class="tag-list">
-          {data.tags.map((tag: string) => <li class="tag">{tag}</li>)}
+        <h2>Subjects</h2>
+        <ul class="subject-list">
+          {data.tags.map((tag: string) => <li>{tag}</li>)}
         </ul>
       </section>
     )}
 
     <section class="detail-box">
-      <h2>Entries</h2>
+      <div class="section-title-row">
+        <h2>Archive records</h2>
+        <span>{linkedEntries.length} linked</span>
+      </div>
       {linkedEntries.length > 0 ? (
-        <ul class="clean-list">
+        <ol class="place-entry-list">
           {linkedEntries.map(({ entry: linkedEntry, collection }) => (
             <li>
+              <span>{formatDate(linkedEntry.data.date, linkedEntry.data.date_precision)}</span>
               <a href={entryHref(collection, linkedEntry.data.id)}>{entryTitle(linkedEntry)}</a>
-              <span class="meta"> · {formatType(linkedEntry.data.type)} · {formatDate(linkedEntry.data.date, linkedEntry.data.date_precision)}</span>
+              <small>{formatType(linkedEntry.data.type)}</small>
             </li>
           ))}
-        </ul>
+        </ol>
       ) : (
-        <p class="meta">None.</p>
+        <p class="meta">No canonical records are linked yet.</p>
       )}
     </section>
 
+    {citedSources.length > 0 && (
+      <section class="detail-box">
+        <h2>Sources</h2>
+        <ol class="citation-list">
+          {citedSources.map((source: any, index: number) => (
+            <li>
+              <span class="citation-number">{String(index + 1).padStart(2, '0')}</span>
+              <div>
+                <a class="citation-title" href={entryHref('sources', source.data.id)}>{source.data.title}</a>
+                <p class="citation-meta"><span>{formatType(source.data.type)}</span></p>
+                <p class="citation-actions"><a href={source.data.url} rel="noopener noreferrer">Open original</a></p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </section>
+    )}
   </article>
 </BaseLayout>

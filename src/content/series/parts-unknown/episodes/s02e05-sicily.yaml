@@ -1,0 +1,31 @@
+id: "parts-unknown-s02e05-sicily"
+title: "Sicily"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 2
+episode: 5
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2013-10-13"
+date_precision: "day"
+summary: 'Parts Unknown explores the Sicilian way of life, which puts a premium on savoring family, life, and food. Bourdain travels in search of those foods as he eats his way around the island. He makes his home base at the Villa Monaci, on the outskirts of Catania with his enthusiastic, fast-talking sidekicks who counter the otherwise relaxed tempo and epic "food porn" of this episode.'
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "sicily-italy"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "http://anthonybourdain.tumblr.com/post/63750682556/failure"

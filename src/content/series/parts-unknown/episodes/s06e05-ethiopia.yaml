@@ -1,0 +1,31 @@
+id: "parts-unknown-s06e05-ethiopia"
+title: "Ethiopia"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 6
+episode: 5
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2015-10-25"
+date_precision: "day"
+summary: Marcus and Maya Samuelsson guide Bourdain through Addis Ababa and the Gurage region for injera, music, coffee, skating, and a family village feast.
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "addis-ababa-ethiopia"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

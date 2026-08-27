@@ -1,0 +1,19 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../lib/site';
+---
+
+<BaseLayout title="Not found" description="This archive page could not be found." noindex>
+  <section class="not-found">
+    <p class="eyebrow">404 · Parts unknown</p>
+    <h1 class="page-title">Nothing at this address.</h1>
+    <p class="lede">
+      The record may have moved, or the link may be wrong. Search the catalog or return to the
+      archive index.
+    </p>
+    <p class="home-actions">
+      <a class="primary-action" href={withBase('/archive/')}>Search the archive</a>
+      <a href={withBase('/')}>Return home</a>
+    </p>
+  </section>
+</BaseLayout>

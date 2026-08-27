@@ -1,0 +1,32 @@
+id: "parts-unknown-s04e04-vietnam"
+title: "Vietnam"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 4
+episode: 4
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2014-10-19"
+date_precision: "day"
+summary: In Huế and communities near the former demilitarized zone, Bourdain connects central Vietnamese street food and imperial cuisine with memories of the 1968 Tet Offensive.
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "hue-vietnam"
+  - "quang-tri-vietnam"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

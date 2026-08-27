@@ -1,0 +1,31 @@
+id: "parts-unknown-s06e03-okinawa-japan"
+title: "Okinawa, Japan"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 6
+episode: 3
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2015-10-11"
+date_precision: "day"
+summary: "The alluring island of Okinawa, which endures tragic memories from World War II battles, is explored by Bourdain from historical, political, cultural and culinary perspectives. The tour includes a bloodless bullfight over a bowl of Yakisoba, a retrospective meal of Tundabun with the city's former governor, and a demonstration of open-hand karate experienced first-hand by Bourdain."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "okinawa-japan"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

@@ -18,6 +18,7 @@ summary: "Bourdain visits his brother's family in Connecticut for the holidays, 
 tags:
   - "travel"
   - "food-media"
+  - "special"
 people:
   - "anthony-bourdain"
 places:
@@ -26,6 +27,6 @@ sources:
   - "travel-places-github"
   - "no-reservations-tvdb"
 related: []
-status: "needs-review"
+status: "partial"
 availability:
   official_url: "http://www2.readingeagle.com/article.aspx?id=70789"

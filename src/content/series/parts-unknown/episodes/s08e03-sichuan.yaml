@@ -1,0 +1,32 @@
+id: "parts-unknown-s08e03-sichuan"
+title: "Sichuan"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 8
+episode: 3
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2016-10-16"
+date_precision: "day"
+summary: Bourdain introduces Éric Ripert to Sichuan's numbing heat through hot pot, rabbit head, baijiu, and a visit to the Leshan Giant Buddha.
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "chengdu-china"
+  - "leshan-china"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://explorepartsunknown.com/sichuan/eat-like-bourdain-sichuan/"

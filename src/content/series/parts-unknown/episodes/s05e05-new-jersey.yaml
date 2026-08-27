@@ -1,0 +1,35 @@
+id: "parts-unknown-s05e05-new-jersey"
+title: "New Jersey"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 5
+episode: 5
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2015-05-31"
+date_precision: "day"
+summary: Bourdain returns to his childhood state with his brother, moving from roadside hot dogs and the Jersey Shore to Atlantic City, Camden, and Asbury Park.
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "barnegat-light-united-states"
+  - "atlantic-city-united-states"
+  - "fort-lee-united-states"
+  - "asbury-park-united-states"
+  - "camden-united-states"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

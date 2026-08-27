@@ -1,0 +1,29 @@
+id: no-reservations-s05e14-on-the-street
+title: On the Street
+kind: episode
+index_mode: child
+parent_id: no-reservations-show
+type: episode
+show: No Reservations
+season: 5
+episode: 14
+record_type: television
+media_type: tv-video
+relation_to_bourdain: featured
+contributors:
+  - anthony-bourdain
+date: "2009-08-03"
+date_precision: day
+summary: A themed episode returns to street stalls, markets, and curbside meals that reveal how cities feed themselves outside formal dining rooms.
+tags:
+  - food-media
+  - compilation
+  - street-food
+people:
+  - anthony-bourdain
+places: []
+sources:
+  - no-reservations-tvdb
+related: []
+status: confirmed
+availability: {}

@@ -1,0 +1,32 @@
+id: "parts-unknown-s08e06-japan"
+title: "Japan"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 8
+episode: 6
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2016-11-13"
+date_precision: "day"
+summary: Masa Takayama guides Bourdain through Ishikawa and Tochigi, tracing regional seafood, produce, and ideas of umami back to the chef's formative years.
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "ishikawa-prefecture-japan"
+  - "tochigi-prefecture-japan"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

@@ -1,0 +1,29 @@
+id: no-reservations-s06e07-obsessed
+title: Obsessed
+kind: episode
+index_mode: child
+parent_id: no-reservations-show
+type: episode
+show: No Reservations
+season: 6
+episode: 7
+record_type: television
+media_type: tv-video
+relation_to_bourdain: featured
+contributors:
+  - anthony-bourdain
+date: "2010-03-08"
+date_precision: day
+summary: A themed episode looks at cooks, diners, and craftspeople whose intense fixations shape the food they make and the lives built around it.
+tags:
+  - food-media
+  - compilation
+  - craft
+people:
+  - anthony-bourdain
+places: []
+sources:
+  - no-reservations-tvdb
+related: []
+status: confirmed
+availability: {}

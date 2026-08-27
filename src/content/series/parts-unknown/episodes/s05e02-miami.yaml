@@ -1,0 +1,31 @@
+id: "parts-unknown-s05e02-miami"
+title: "Miami"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 5
+episode: 2
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2015-05-03"
+date_precision: "day"
+summary: "Tony visits favorite haunt Club Deuce bar, the B&M market in “Little Haiti” for cow foot soup, Islas Canarias with chef Michelle Bernstein for a different take on the Cuban sandwich, and explores “The Miami Sound” with Questlove, Willie Clark (the founder of Deep City Records) and 2 Live Crew's Luther Campbell. He also enjoys a surprisingly healthy meal with new Miami resident Iggy Pop."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "miami-united-states"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

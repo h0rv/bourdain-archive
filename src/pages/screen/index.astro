@@ -1,0 +1,168 @@
+---
+import { getCollection } from 'astro:content';
+import linkPreviewCache from '../../../archive/derived/link-previews.json';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import {
+  entryHref,
+  entryTitle,
+  formatDate,
+  formatType,
+  previewForEntry,
+  primaryAvailabilityUrl,
+} from '../../lib/content';
+import '../../styles/catalog.css';
+
+const screen = (await getCollection('screen')).map((entry) => ({ entry, collection: 'screen', section: 'screen' }));
+const appearances = (await getCollection('appearances')).map((entry) => ({
+  entry,
+  collection: 'appearances',
+  section: 'appearances',
+}));
+
+const records = [...screen, ...appearances]
+  .map((item) => {
+    const data: any = item.entry.data;
+    const title = entryTitle(item.entry);
+    const preview = previewForEntry(item.entry, linkPreviewCache.previews);
+    const externalUrl = primaryAvailabilityUrl(data);
+    return {
+      ...item,
+      data,
+      title,
+      preview,
+      externalUrl,
+      searchable: [title, data.summary, data.type, data.role, data.host, ...(data.tags ?? [])]
+        .filter(Boolean)
+        .join(' ')
+        .toLocaleLowerCase(),
+    };
+  })
+  .sort(
+    (left, right) =>
+      (right.data.date ?? '').localeCompare(left.data.date ?? '') ||
+      left.title.localeCompare(right.title),
+  );
+
+const typeOptions = [...new Set(records.map((item) => item.data.type))].sort();
+---
+
+<BaseLayout
+  title="Film, television, and appearances"
+  description="Anthony Bourdain's film and television roles, cameos, interviews, podcasts, and talks."
+>
+  <div class="catalog-page" data-screen-catalog>
+    <header class="catalog-intro">
+      <h1 class="page-title">Film, television &amp; appearances</h1>
+      <p>
+        Acting and voice roles, documentaries, adaptations, long-form interviews, podcasts, panels,
+        and other notable appearances.
+      </p>
+    </header>
+
+    <form class="catalog-tools" role="search">
+      <label class="catalog-field">
+        <span>Search</span>
+        <input type="search" placeholder="Title, role, host, or subject" autocomplete="off" data-screen-search />
+      </label>
+      <label class="catalog-field">
+        <span>Section</span>
+        <select data-screen-section>
+          <option value="">Everything</option>
+          <option value="screen">Films, roles &amp; cameos</option>
+          <option value="appearances">Interviews, audio &amp; talks</option>
+        </select>
+      </label>
+      <label class="catalog-field">
+        <span>Type</span>
+        <select data-screen-type>
+          <option value="">All types</option>
+          {typeOptions.map((type) => <option value={type}>{formatType(type)}</option>)}
+        </select>
+      </label>
+      <label class="catalog-field">
+        <span>Order</span>
+        <select data-screen-order>
+          <option value="newest">Newest first</option>
+          <option value="oldest">Oldest first</option>
+          <option value="title">Title</option>
+        </select>
+      </label>
+    </form>
+
+    <div class="catalog-toolbar">
+      <p class="catalog-count" data-screen-count aria-live="polite">{records.length} records</p>
+      <p class="catalog-count"><a href="../tv/">Browse hosted television →</a></p>
+    </div>
+
+    <ol class="catalog-grid" data-screen-list>
+      {records.map((item) => (
+        <li
+          class="catalog-tile"
+          data-screen-item
+          data-section={item.section}
+          data-type={item.data.type}
+          data-date={item.data.date ?? ''}
+          data-title={item.title.toLocaleLowerCase()}
+          data-search={item.searchable}
+        >
+          {item.preview.image && (
+            <a class="catalog-tile-media" href={entryHref(item.collection, item.data.id)} tabindex="-1">
+              <img src={item.preview.image} alt="" loading="lazy" decoding="async" width="300" height="450" />
+            </a>
+          )}
+          <a class="catalog-tile-title" href={entryHref(item.collection, item.data.id)}>{item.title}</a>
+          <span class="catalog-row-meta">
+            {formatDate(item.data.date, item.data.date_precision)} · {formatType(item.data.type)}
+            {item.data.role ? ` · ${item.data.role}` : ''}
+          </span>
+          <div class="catalog-tile-actions">
+            <a href={entryHref(item.collection, item.data.id)}>Details</a>
+            {item.externalUrl && (
+              <a href={item.externalUrl} target="_blank" rel="noopener noreferrer">Source</a>
+            )}
+          </div>
+        </li>
+      ))}
+    </ol>
+    <p class="catalog-empty" data-screen-empty hidden>No matching records.</p>
+  </div>
+
+  <script>
+    const root = document.querySelector<HTMLElement>('[data-screen-catalog]');
+    const search = root?.querySelector<HTMLInputElement>('[data-screen-search]');
+    const section = root?.querySelector<HTMLSelectElement>('[data-screen-section]');
+    const type = root?.querySelector<HTMLSelectElement>('[data-screen-type]');
+    const order = root?.querySelector<HTMLSelectElement>('[data-screen-order]');
+    const list = root?.querySelector<HTMLOListElement>('[data-screen-list]');
+    const items = [...(root?.querySelectorAll<HTMLElement>('[data-screen-item]') ?? [])];
+    const count = root?.querySelector<HTMLElement>('[data-screen-count]');
+    const empty = root?.querySelector<HTMLElement>('[data-screen-empty]');
+
+    const apply = () => {
+      const query = search?.value.trim().toLocaleLowerCase() ?? '';
+      let visible = 0;
+      for (const item of items) {
+        const matches =
+          (!query || item.dataset.search?.includes(query)) &&
+          (!section?.value || item.dataset.section === section.value) &&
+          (!type?.value || item.dataset.type === type.value);
+        item.hidden = !matches;
+        if (matches) visible += 1;
+      }
+
+      const direction = order?.value === 'oldest' ? 1 : -1;
+      const sorted = [...items].sort((left, right) => {
+        if (order?.value === 'title') return (left.dataset.title ?? '').localeCompare(right.dataset.title ?? '');
+        return direction * (left.dataset.date ?? '').localeCompare(right.dataset.date ?? '');
+      });
+      for (const item of sorted) list?.append(item);
+
+      if (count) count.textContent = `${visible} ${visible === 1 ? 'record' : 'records'}`;
+      if (empty) empty.hidden = visible !== 0;
+    };
+
+    root?.querySelector('form')?.addEventListener('input', apply);
+    root?.querySelector('form')?.addEventListener('change', apply);
+    root?.querySelector('form')?.addEventListener('submit', (event) => event.preventDefault());
+  </script>
+</BaseLayout>

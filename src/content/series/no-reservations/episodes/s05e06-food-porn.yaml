@@ -1,0 +1,28 @@
+id: no-reservations-s05e06-food-porn
+title: Food Porn
+kind: episode
+index_mode: child
+parent_id: no-reservations-show
+type: episode
+show: No Reservations
+season: 5
+episode: 6
+record_type: television
+media_type: tv-video
+relation_to_bourdain: featured
+contributors:
+  - anthony-bourdain
+date: "2009-02-06"
+date_precision: day
+summary: Bourdain and fellow cooks revisit indulgent dishes and the seductive close-up imagery that television uses to turn food into spectacle.
+tags:
+  - food-media
+  - compilation
+people:
+  - anthony-bourdain
+places: []
+sources:
+  - no-reservations-tvdb
+related: []
+status: confirmed
+availability: {}

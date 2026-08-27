@@ -1,0 +1,32 @@
+id: "parts-unknown-s03e05-russia"
+title: "Russia"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 3
+episode: 5
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2014-05-11"
+date_precision: "day"
+summary: Traveling from Moscow to St. Petersburg with Zamir Gotta, Bourdain uses meals and conversations, including one with opposition politician Boris Nemtsov, to examine life under Putin.
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "moscow-russia"
+  - "st-petersburg-russia"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

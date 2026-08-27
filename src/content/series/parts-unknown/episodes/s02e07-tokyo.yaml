@@ -1,0 +1,31 @@
+id: "parts-unknown-s02e07-tokyo"
+title: "Tokyo"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 2
+episode: 7
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2013-11-03"
+date_precision: "day"
+summary: "Bourdain has traveled to Tokyo countless times, but on this trip he is in search of the city's dark, extreme, and bizarrely fetishistic underside. Japan is a paradox. The low birthrate, the dedication, the conformity, and the life of a salary man are well known. There is also a competitive and rigid culture that gives way to some unique subcultures. A significant portion of the episode is spent with sushi chef Yasuda."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "tokyo"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

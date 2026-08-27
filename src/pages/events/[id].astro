@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import EntryDetail from '../../components/EntryDetail.astro';
+import eventImageAttributions from '../../../public/images/events/attribution.json';
 
 export async function getStaticPaths() {
   const entries = await getCollection('events');
@@ -18,5 +19,12 @@ export async function getStaticPaths() {
 }
 
 const { entry, sources, relatedEntries } = Astro.props;
+const imageAttribution = eventImageAttributions.find((item) => item.id === entry.data.id);
 ---
-<EntryDetail entry={entry} collection="events" sources={sources} relatedEntries={relatedEntries} />
+<EntryDetail
+  entry={entry}
+  collection="events"
+  sources={sources}
+  relatedEntries={relatedEntries}
+  imageAttribution={imageAttribution}
+/>

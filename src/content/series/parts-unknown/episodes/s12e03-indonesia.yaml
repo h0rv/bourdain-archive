@@ -1,0 +1,34 @@
+id: parts-unknown-s12e03-indonesia
+title: Indonesia
+kind: episode
+index_mode: child
+parent_id: parts-unknown-show
+type: episode
+show: Parts Unknown
+season: 12
+episode: 3
+record_type: television
+media_type: tv-video
+relation_to_bourdain: featured
+contributors:
+  - anthony-bourdain
+date: "2018-10-07"
+date_precision: day
+summary: From Jakarta's Padang tables and shadow-puppet traditions to Bali's tourism economy and a funeral ceremony, Bourdain considers food as a unifier across Indonesia's immense diversity.
+tags:
+  - travel
+  - food-media
+  - posthumous
+people:
+  - anthony-bourdain
+places:
+  - indonesia
+  - jakarta-indonesia
+  - bali-indonesia
+sources:
+  - parts-unknown-tvdb
+  - field-notes-indonesia
+related: []
+status: confirmed
+availability:
+  official_url: https://explorepartsunknown.com/indonesia/bourdains-field-notes-indonesia/

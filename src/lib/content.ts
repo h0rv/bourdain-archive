@@ -337,6 +337,7 @@ export function youtubeId(url?: string | null): string | undefined {
 const blockedPreviewImageHosts = new Set([
   "opengraph.githubassets.com",
   "interviews.televisionacademy.com",
+  "placehold.co",
   "s0.wp.com",
 ]);
 
@@ -406,4 +407,22 @@ export function previewForEntry(entry: any, cache?: Record<string, any>) {
       urlPreview.host ??
       formatType(data.type),
   };
+}
+
+export function humanizeIdentifier(value: string): string {
+  return value.replace(/[-_]+/g, " ").replace(/\b\w/g, (letter) => letter.toUpperCase());
+}
+
+export function bourdainRelationLabel(relation?: string, collection?: string): string {
+  if (relation === "authored") return "By Bourdain";
+  if (relation === "featured") return "Featuring Bourdain";
+  if (relation === "about") return "About Bourdain";
+  if (relation === "reference") return "Reference work";
+
+  if (collection === "works") return "By Bourdain";
+  if (collection === "literature") return "About Bourdain";
+  if (["appearances", "events", "screen", "series"].includes(collection ?? "")) {
+    return "Featuring Bourdain";
+  }
+  return "Archive record";
 }

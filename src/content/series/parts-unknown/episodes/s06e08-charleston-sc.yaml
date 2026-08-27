@@ -1,0 +1,32 @@
+id: "parts-unknown-s06e08-charleston-sc"
+title: "Charleston, SC"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 6
+episode: 8
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2015-11-15"
+date_precision: "day"
+summary: Sean Brock guides Bourdain through Charleston's Waffle House, Gullah cooking, harbor fishing, modern Southern restaurants, and Rodney Scott's barbecue.
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "charleston-united-states"
+  - "hemingway-united-states"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

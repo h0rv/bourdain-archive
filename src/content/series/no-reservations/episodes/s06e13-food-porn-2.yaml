@@ -1,0 +1,29 @@
+id: no-reservations-s06e13-food-porn-2
+title: Food Porn 2
+kind: episode
+index_mode: child
+parent_id: no-reservations-show
+type: episode
+show: No Reservations
+season: 6
+episode: 13
+record_type: television
+media_type: tv-video
+relation_to_bourdain: featured
+contributors:
+  - anthony-bourdain
+date: "2010-04-19"
+date_precision: day
+summary: A second compilation of extravagant dishes and unabashed appetites examines why food filmed at close range can be both irresistible and ridiculous.
+tags:
+  - food-media
+  - compilation
+people:
+  - anthony-bourdain
+places: []
+sources:
+  - no-reservations-tvdb
+related:
+  - no-reservations-s05e06-food-porn
+status: confirmed
+availability: {}

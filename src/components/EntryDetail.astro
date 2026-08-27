@@ -1,128 +1,372 @@
 ---
 import linkPreviewCache from '../../archive/derived/link-previews.json';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { availabilityBadges, entryHref, entryTitle, formatDate, formatType, kindFor, previewForUrl } from '../lib/content';
+import {
+  archiveTargetsForUrl,
+  availabilityBadges,
+  bourdainRelationLabel,
+  entryHref,
+  entryTitle,
+  formatDate,
+  formatType,
+  hostnameForUrl,
+  humanizeIdentifier,
+  kindFor,
+  previewForEntry,
+  statusClass,
+  visibleStatus,
+} from '../lib/content';
 
 interface Props {
   entry: any;
   collection: string;
   sources?: any[];
-  relatedEntries: any[];
+  relatedEntries?: any[];
   childEntries?: any[];
+  imageAttribution?: {
+    artist?: string;
+    license?: string;
+    source_title?: string;
+    source_url?: string;
+  };
 }
 
-const { entry, collection, relatedEntries, childEntries = [] } = Astro.props;
+const {
+  entry,
+  collection,
+  sources = [],
+  relatedEntries = [],
+  childEntries = [],
+  imageAttribution,
+} = Astro.props;
 const data = entry.data;
 const title = entryTitle(entry);
-const relatedRefs = (data.related ?? []).map((id: string) => relatedEntries.find((item: any) => item.entry.data.id === id)).filter(Boolean);
-const sortedChildEntries = [...childEntries].sort((left: any, right: any) =>
-  (left.entry.data.season ?? 0) - (right.entry.data.season ?? 0) ||
-  (left.entry.data.episode ?? 0) - (right.entry.data.episode ?? 0) ||
-  entryTitle(left.entry).localeCompare(entryTitle(right.entry))
+const relationLabel = bourdainRelationLabel(data.relation_to_bourdain, collection);
+const displayStatus = visibleStatus(data.status);
+const noindex = data.status !== 'confirmed' && data.status !== 'partial';
+
+const sourceById = new Map(sources.map((source: any) => [source.data.id, source]));
+const referencedSources = (data.sources ?? [])
+  .map((id: string) => sourceById.get(id))
+  .filter(Boolean);
+
+const primaryPreview = previewForEntry(entry, linkPreviewCache.previews);
+const sourceArtwork = referencedSources
+  .map((source: any) => ({ source, preview: previewForEntry(source, linkPreviewCache.previews) }))
+  .find((item: any) => item.preview.image);
+const heroImage = primaryPreview.image ?? sourceArtwork?.preview.image;
+const heroArtworkSource = primaryPreview.image ? undefined : sourceArtwork;
+const portraitArtwork = [
+  'adaptation',
+  'acted-role',
+  'book',
+  'comic',
+  'documentary',
+  'film',
+  'show',
+  'television',
+  'voice-role',
+].includes(data.type);
+
+const availabilityActions = availabilityBadges(data.availability)
+  .filter((item) => item.url)
+  .map((item) => ({ ...item, host: hostnameForUrl(item.url) }));
+
+const relatedById = new Map(
+  relatedEntries.map((item: any) => [item.entry.data.id, item]),
 );
-const badges = availabilityBadges(data.availability);
-const availabilityPreviews = badges.map((badge) => ({ ...badge, preview: previewForUrl(badge.url, linkPreviewCache.previews) }));
+const relatedRefs = (data.related ?? [])
+  .map((id: string) => relatedById.get(id))
+  .filter(Boolean);
+
+const entityFor = (id: string) => {
+  const resolved: any = relatedById.get(id);
+  return resolved
+    ? {
+        href: entryHref(resolved.collection, resolved.entry.data.id),
+        label: entryTitle(resolved.entry),
+      }
+    : { label: humanizeIdentifier(id) };
+};
+
+const creators = (data.creator ?? []).map(entityFor);
+const contributors = (data.contributors ?? []).map(entityFor);
+const people = (data.people ?? []).map(entityFor);
+const places = (data.places ?? []).map(entityFor);
+const roleCredits = (data.roles ?? []).map((credit: any) => {
+  const person = entityFor(credit.person);
+  const creditedAs = credit.credited_as ? ` as ${credit.credited_as}` : '';
+  return { ...person, detail: `${credit.role}${creditedAs}` };
+});
+const identifierEntries = Object.entries(data.identifiers ?? {}).filter(
+  ([, value]) => Boolean(value),
+);
+
+const sortedChildEntries = [...childEntries].sort(
+  (left: any, right: any) =>
+    (left.entry.data.season ?? 0) - (right.entry.data.season ?? 0) ||
+    (left.entry.data.episode ?? 0) - (right.entry.data.episode ?? 0) ||
+    entryTitle(left.entry).localeCompare(entryTitle(right.entry)),
+);
+const episodeGroups = new Map<number, any[]>();
+for (const item of sortedChildEntries) {
+  const season = item.entry.data.season ?? 0;
+  const group = episodeGroups.get(season) ?? [];
+  group.push(item);
+  episodeGroups.set(season, group);
+}
+const groupedEpisodes = [...episodeGroups.entries()].sort(([left], [right]) => left - right);
+
+const episodeCode =
+  data.season != null && data.episode != null
+    ? `S${String(data.season).padStart(2, '0')}E${String(data.episode).padStart(2, '0')}`
+    : undefined;
+const hasRecordDetails =
+  Boolean(data.publication) ||
+  Boolean(data.bucket) ||
+  Boolean(data.host) ||
+  Boolean(data.role) ||
+  Boolean(data.duration_minutes) ||
+  creators.length > 0 ||
+  contributors.length > 0 ||
+  roleCredits.length > 0;
 ---
-<BaseLayout title={title} description={data.summary ?? title}>
-  <article>
-    <h1 class="page-title">{title}</h1>
-    <p class="meta">
-      {formatType(kindFor(data, collection))}
-      {data.season && data.episode ? ` · S${String(data.season).padStart(2, '0')}E${String(data.episode).padStart(2, '0')}` : ''}
-      {data.date ? ` · ${formatDate(data.date, data.date_precision)}` : ''}
-    </p>
-
-    {data.summary && <p class="lede">{data.summary}</p>}
-
-    <div class="detail-grid">
-      <section class="detail-box availability-box">
-        <h2>Availability</h2>
-        <div class="link-preview-list">
-          {availabilityPreviews.map((badge) => (
-            badge.url ? (
-              <div class="link-preview">
-                <span class="link-preview-media" aria-hidden="true">
-                  {badge.preview.image ? (
-                    <img src={badge.preview.image} alt="" loading="lazy" decoding="async" />
-                  ) : badge.preview.favicon ? (
-                    <img class="link-preview-favicon" src={badge.preview.favicon} alt="" loading="lazy" decoding="async" />
-                  ) : (
-                    <span aria-hidden="true">{badge.label}</span>
-                  )}
+<BaseLayout title={title} description={data.summary ?? title} image={heroImage} noindex={noindex}>
+  <article class="entry-detail">
+    <header
+      class:list={[
+        'entry-hero',
+        portraitArtwork ? 'is-portrait' : 'is-landscape',
+        !heroImage && 'without-art',
+      ]}
+    >
+      {heroImage && (
+        <figure class="entry-artwork">
+          <img
+            src={heroImage}
+            alt=""
+            width={portraitArtwork ? 720 : 1280}
+            height={portraitArtwork ? 1080 : 720}
+            loading="eager"
+            fetchpriority="high"
+            decoding="async"
+          />
+          {imageAttribution ? (
+            <figcaption>
+              {imageAttribution.artist && <span>{imageAttribution.artist}</span>}
+              {imageAttribution.license && <span> · {imageAttribution.license}</span>}
+              {imageAttribution.source_url && (
+                <span>
+                  {' · '}
+                  <a href={imageAttribution.source_url} target="_blank" rel="noreferrer">
+                    {imageAttribution.source_title ?? 'Image source'}
+                  </a>
                 </span>
-                <span class="link-preview-copy">
-                  <strong>{badge.label}</strong>
-                  {badge.preview.host && <span>{badge.preview.host}</span>}
-                  <code>{badge.url}</code>
-                  <span class="link-preview-actions">
-                    <a href={badge.url}>Open</a>
-                    {badge.preview.archive && <a href={badge.preview.archive.latest_url}>Archive</a>}
-                  </span>
-                </span>
-              </div>
-            ) : (
-              <p class="meta">{badge.label}</p>
-            )
+              )}
+            </figcaption>
+          ) : heroArtworkSource && (
+            <figcaption>
+              Preview via {hostnameForUrl(heroArtworkSource.source.data.url) ?? 'cited source'}
+            </figcaption>
+          )}
+        </figure>
+      )}
+
+      <div class="entry-hero-copy">
+        <p class="entry-taxonomy">{relationLabel}</p>
+        <h1 class="page-title entry-title">{title}</h1>
+        <p class="entry-byline">
+          <span>{formatType(kindFor(data, collection))}</span>
+          {episodeCode && <span>{episodeCode}</span>}
+          {data.date && <time datetime={data.date}>{formatDate(data.date, data.date_precision)}</time>}
+          {displayStatus && (
+            <span class={`entry-status ${statusClass(displayStatus)}`}>
+              {formatType(displayStatus)}
+            </span>
+          )}
+        </p>
+
+        {data.summary && <p class="entry-deck">{data.summary}</p>}
+
+        {availabilityActions.length > 0 && (
+          <nav class="availability-actions" aria-label="Availability">
+            {availabilityActions.map((action) => (
+              <a href={action.url} target="_blank" rel="noreferrer">
+                <span>{action.label}</span>
+                {action.host && <small>{action.host}</small>}
+              </a>
+            ))}
+          </nav>
+        )}
+      </div>
+    </header>
+
+    {hasRecordDetails && (
+      <section class="detail-box record-details" aria-labelledby="record-details-heading">
+        <h2 id="record-details-heading">Record details</h2>
+        <dl class="fact-list">
+          {data.publication && <><dt>Publication</dt><dd>{data.publication}</dd></>}
+          {data.bucket && <><dt>Section</dt><dd>{data.bucket}</dd></>}
+          {data.host && <><dt>Host</dt><dd>{data.host}</dd></>}
+          {data.role && <><dt>Role</dt><dd>{data.role}</dd></>}
+          {data.duration_minutes && <><dt>Duration</dt><dd>{data.duration_minutes} minutes</dd></>}
+          {creators.length > 0 && (
+            <>
+              <dt>{creators.length === 1 ? 'Creator' : 'Creators'}</dt>
+              <dd class="entity-line">
+                {creators.map((creator: any, index: number) => (
+                  <>{index > 0 && ', '}{creator.href ? <a href={creator.href}>{creator.label}</a> : creator.label}</>
+                ))}
+              </dd>
+            </>
+          )}
+          {contributors.length > 0 && (
+            <>
+              <dt>{contributors.length === 1 ? 'Contributor' : 'Contributors'}</dt>
+              <dd class="entity-line">
+                {contributors.map((contributor: any, index: number) => (
+                  <>{index > 0 && ', '}{contributor.href ? <a href={contributor.href}>{contributor.label}</a> : contributor.label}</>
+                ))}
+              </dd>
+            </>
+          )}
+          {roleCredits.length > 0 && (
+            <>
+              <dt>Credits</dt>
+              <dd class="credit-list">
+                {roleCredits.map((credit: any) => (
+                  <span>{credit.href ? <a href={credit.href}>{credit.label}</a> : credit.label} — {credit.detail}</span>
+                ))}
+              </dd>
+            </>
+          )}
+        </dl>
+      </section>
+    )}
+
+    {referencedSources.length > 0 && (
+      <section class="detail-box sources-box" aria-labelledby="sources-heading">
+        <div class="section-title-row">
+          <h2 id="sources-heading">Sources</h2>
+          <span>{referencedSources.length} {referencedSources.length === 1 ? 'citation' : 'citations'}</span>
+        </div>
+        <ol class="citation-list">
+          {referencedSources.map((source: any, index: number) => {
+            const sourceData = source.data;
+            const host = hostnameForUrl(sourceData.url);
+            const archive = host === 'web.archive.org' ? undefined : archiveTargetsForUrl(sourceData.url);
+            return (
+              <li>
+                <span class="citation-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+                <div>
+                  <a class="citation-title" href={sourceData.url} target="_blank" rel="noreferrer">
+                    {entryTitle(source)}
+                  </a>
+                  <p class="citation-meta">
+                    {host && <span>{host}</span>}
+                    {sourceData.type && <span>{formatType(sourceData.type)}</span>}
+                    {sourceData.date && <time datetime={sourceData.date}>{formatDate(sourceData.date, sourceData.date_precision)}</time>}
+                    {!sourceData.date && sourceData.accessed && <span>Accessed {sourceData.accessed}</span>}
+                  </p>
+                  <p class="citation-actions">
+                    <a href={sourceData.url} target="_blank" rel="noreferrer">Original</a>
+                    {archive && <a href={archive.latest_url} target="_blank" rel="noreferrer">Wayback</a>}
+                  </p>
+                </div>
+              </li>
+            );
+          })}
+        </ol>
+      </section>
+    )}
+
+    {groupedEpisodes.length > 0 && (
+      <section class="detail-box episodes-box" aria-labelledby="episodes-heading">
+        <div class="section-title-row">
+          <h2 id="episodes-heading">Episodes</h2>
+          <span>{sortedChildEntries.length} total</span>
+        </div>
+        <div class="episode-seasons">
+          {groupedEpisodes.map(([season, items], index) => (
+            <details class="episode-season" open={index === 0}>
+              <summary>
+                <span>{season > 0 ? `Season ${String(season).padStart(2, '0')}` : 'Episodes'}</span>
+                <small>{items.length}</small>
+              </summary>
+              <ol class="episode-records">
+                {items.map((item: any) => {
+                  const child = item.entry.data;
+                  const code =
+                    child.season != null && child.episode != null
+                      ? `S${String(child.season).padStart(2, '0')}E${String(child.episode).padStart(2, '0')}`
+                      : undefined;
+                  return (
+                    <li>
+                      {code && <span class="episode-code">{code}</span>}
+                      <a href={entryHref(item.collection, child.id)}>{entryTitle(item.entry)}</a>
+                      <span class="episode-record-meta">
+                        {child.date && <time datetime={child.date}>{formatDate(child.date, child.date_precision)}</time>}
+                        {child.places?.length > 0 && <span>{child.places.map((place: string) => entityFor(place).label).join(' · ')}</span>}
+                      </span>
+                    </li>
+                  );
+                })}
+              </ol>
+            </details>
           ))}
         </div>
       </section>
+    )}
 
-      {data.tags?.length > 0 && (
-        <section class="detail-box">
-          <h2>Tags</h2>
-          <ul class="tag-list">
-            {data.tags.map((tag: string) => <li class="tag">{tag}</li>)}
-          </ul>
-        </section>
-      )}
+    {(people.length > 0 || places.length > 0 || data.tags?.length > 0 || identifierEntries.length > 0) && (
+      <div class="detail-index-grid">
+        {people.length > 0 && (
+          <section class="detail-box">
+            <h2>People</h2>
+            <ul class="reference-list">
+              {people.map((person: any) => <li>{person.href ? <a href={person.href}>{person.label}</a> : person.label}</li>)}
+            </ul>
+          </section>
+        )}
+        {places.length > 0 && (
+          <section class="detail-box">
+            <h2>Places</h2>
+            <ul class="reference-list">
+              {places.map((place: any) => <li>{place.href ? <a href={place.href}>{place.label}</a> : place.label}</li>)}
+            </ul>
+          </section>
+        )}
+        {data.tags?.length > 0 && (
+          <section class="detail-box">
+            <h2>Subjects</h2>
+            <ul class="subject-list">
+              {data.tags.map((tag: string) => <li>{humanizeIdentifier(tag)}</li>)}
+            </ul>
+          </section>
+        )}
+        {identifierEntries.length > 0 && (
+          <section class="detail-box">
+            <h2>Identifiers</h2>
+            <dl class="identifier-list">
+              {identifierEntries.map(([key, value]) => <><dt>{humanizeIdentifier(key)}</dt><dd>{String(value)}</dd></>)}
+            </dl>
+          </section>
+        )}
+      </div>
+    )}
 
-      {data.people?.length > 0 && (
-        <section class="detail-box">
-          <h2>People</h2>
-          <ul class="clean-list">
-            {data.people.map((person: string) => <li>{person}</li>)}
-          </ul>
-        </section>
-      )}
-
-      {data.places?.length > 0 && (
-        <section class="detail-box">
-          <h2>Places</h2>
-          <ul class="clean-list">
-            {data.places.map((place: string) => <li>{place}</li>)}
-          </ul>
-        </section>
-      )}
-    </div>
-
-    {sortedChildEntries.length > 0 && (
-      <section class="detail-box">
-        <h2>Episodes</h2>
-        <ul class="clean-list">
-          {sortedChildEntries.map((item: any) => (
+    {relatedRefs.length > 0 && (
+      <section class="detail-box related-box" aria-labelledby="related-heading">
+        <h2 id="related-heading">Related records</h2>
+        <ul class="related-records">
+          {relatedRefs.map((item: any) => (
             <li>
               <a href={entryHref(item.collection, item.entry.data.id)}>{entryTitle(item.entry)}</a>
-              <span class="meta">
-                {item.entry.data.season && item.entry.data.episode ? ` S${String(item.entry.data.season).padStart(2, '0')}E${String(item.entry.data.episode).padStart(2, '0')}` : ''}
-                {item.entry.data.date ? ` · ${formatDate(item.entry.data.date, item.entry.data.date_precision)}` : ''}
-              </span>
+              <span>{formatType(kindFor(item.entry.data, item.collection))}{item.entry.data.date ? ` · ${formatDate(item.entry.data.date, item.entry.data.date_precision)}` : ''}</span>
             </li>
           ))}
         </ul>
       </section>
     )}
-
-    <section class="detail-box">
-      <h2>Related</h2>
-      {relatedRefs.length > 0 ? (
-        <ul class="clean-list">
-          {relatedRefs.map((item: any) => (
-            <li><a href={entryHref(item.collection, item.entry.data.id)}>{entryTitle(item.entry)}</a></li>
-          ))}
-        </ul>
-      ) : (
-        <p class="meta">None.</p>
-      )}
-    </section>
   </article>
 </BaseLayout>

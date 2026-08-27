@@ -1,0 +1,29 @@
+id: no-reservations-s08e11-sex-drugs-and-rock-and-roll
+title: Sex, Drugs and Rock & Roll
+kind: episode
+index_mode: child
+parent_id: no-reservations-show
+type: episode
+show: No Reservations
+season: 8
+episode: 11
+record_type: television
+media_type: tv-video
+relation_to_bourdain: featured
+contributors:
+  - anthony-bourdain
+date: null
+date_precision: unknown
+summary: A catalogue-listed themed compilation gathers encounters with musicians, nightlife, excess, and the unruly cultures surrounding food and travel.
+tags:
+  - food-media
+  - compilation
+  - music
+people:
+  - anthony-bourdain
+places: []
+sources:
+  - no-reservations-tvdb
+related: []
+status: partial
+availability: {}

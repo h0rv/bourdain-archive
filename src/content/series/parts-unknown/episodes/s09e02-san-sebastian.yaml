@@ -1,0 +1,31 @@
+id: "parts-unknown-s09e02-san-sebastian"
+title: "San Sebastian"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 9
+episode: 2
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2017-05-07"
+date_precision: "day"
+summary: "Bourdain visits the coastal city of San Sebastian in the Basque Country, famous for its spectacular views and incomparable fresh seafood. Alongside friend and renowned chef Juan Mari Arzak, Bourdain dines at favorite haunt Ganbara for its popular dish of seared wild mushrooms and foie gras with raw egg yolk, and is given a taste of the finest Basque delicacies prepared simply, including grilled turbot at famed restaurant Elkano, in Getaria."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "san-sebastian-spain"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

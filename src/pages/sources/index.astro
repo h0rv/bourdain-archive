@@ -1,0 +1,136 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import {
+  archiveTargetsForUrl,
+  entryHref,
+  formatDate,
+  formatType,
+  hostnameForUrl,
+  sourceGroupFor,
+  sourceGroupLabels,
+  sourceGroups,
+  sourceTimelineDate,
+} from '../../lib/content';
+import '../../styles/catalog.css';
+
+const sources = (await getCollection('sources'))
+  .map((entry) => {
+    const group = sourceGroupFor(entry.data);
+    const timeline = sourceTimelineDate(entry.data);
+    const host = hostnameForUrl(entry.data.url);
+    return {
+      entry,
+      group,
+      timeline,
+      host,
+      archive: archiveTargetsForUrl(entry.data.url),
+      searchable: [
+        entry.data.title,
+        entry.data.type,
+        entry.data.notes,
+        host,
+        ...(entry.data.creator ?? []),
+      ]
+        .filter(Boolean)
+        .join(' ')
+        .toLocaleLowerCase(),
+    };
+  })
+  .sort(
+    (left, right) =>
+      (right.timeline.date ?? '').localeCompare(left.timeline.date ?? '') ||
+      left.entry.data.title.localeCompare(right.entry.data.title),
+  );
+
+const groupsPresent = new Set(sources.map((source) => source.group));
+const groupOptions = sourceGroups.filter((group) => groupsPresent.has(group.id));
+---
+
+<BaseLayout
+  title="Sources"
+  description="Evidence, primary sources, catalogs, archives, and reference links used by the Bourdain Archive."
+>
+  <div class="catalog-page" data-source-catalog>
+    <header class="catalog-intro">
+      <h1 class="page-title">Sources</h1>
+      <p>
+        The evidence layer behind the archive: primary writing, interviews, official records, library
+        catalogs, recovered pages, and contextual reporting. Links open the publisher or an archived
+        capture; this site does not mirror copyrighted text.
+      </p>
+    </header>
+
+    <form class="catalog-tools catalog-tools-compact" role="search">
+      <label class="catalog-field">
+        <span>Search sources</span>
+        <input type="search" placeholder="Title, publication, host, or type" autocomplete="off" data-source-search />
+      </label>
+      <label class="catalog-field">
+        <span>Group</span>
+        <select data-source-group>
+          <option value="">All groups</option>
+          {groupOptions.map((group) => <option value={group.id}>{group.label}</option>)}
+        </select>
+      </label>
+    </form>
+
+    <div class="catalog-toolbar">
+      <p class="catalog-count" data-source-count aria-live="polite">{sources.length} sources</p>
+      <p class="catalog-count">Last-access dates are recorded on each evidence page.</p>
+    </div>
+
+    <ol class="catalog-source-list">
+      {sources.map((source) => (
+        <li
+          class="catalog-source-row"
+          data-source-item
+          data-group={source.group}
+          data-search={source.searchable}
+        >
+          <div class="catalog-source-copy">
+            <a href={entryHref('sources', source.entry.data.id)}>{source.entry.data.title}</a>
+            <span class="catalog-source-meta">
+              {formatDate(source.timeline.date, source.timeline.precision)} · {formatType(source.entry.data.type)} · {sourceGroupLabels[source.group] ?? formatType(source.group)}
+            </span>
+            {source.host && <span class="catalog-source-host">{source.host}</span>}
+          </div>
+          <div class="catalog-source-actions">
+            <a href={source.entry.data.url} target="_blank" rel="noopener noreferrer">Original</a>
+            {source.archive && (
+              <a href={source.archive.latest_url} target="_blank" rel="noopener noreferrer">Archive</a>
+            )}
+          </div>
+        </li>
+      ))}
+    </ol>
+    <p class="catalog-empty" data-source-empty hidden>No matching sources.</p>
+  </div>
+
+  <script>
+    const root = document.querySelector<HTMLElement>('[data-source-catalog]');
+    const search = root?.querySelector<HTMLInputElement>('[data-source-search]');
+    const group = root?.querySelector<HTMLSelectElement>('[data-source-group]');
+    const items = [...(root?.querySelectorAll<HTMLElement>('[data-source-item]') ?? [])];
+    const count = root?.querySelector<HTMLElement>('[data-source-count]');
+    const empty = root?.querySelector<HTMLElement>('[data-source-empty]');
+
+    const apply = () => {
+      const query = search?.value.trim().toLocaleLowerCase() ?? '';
+      let visible = 0;
+      for (const item of items) {
+        const matches =
+          (!query || item.dataset.search?.includes(query)) &&
+          (!group?.value || item.dataset.group === group.value);
+        item.hidden = !matches;
+        if (matches) visible += 1;
+      }
+      if (count) count.textContent = `${visible} ${visible === 1 ? 'source' : 'sources'}`;
+      if (empty) empty.hidden = visible !== 0;
+    };
+
+    root?.querySelector('form')?.addEventListener('input', apply);
+    root?.querySelector('form')?.addEventListener('change', apply);
+    root?.querySelector('form')?.addEventListener('submit', (event) => event.preventDefault());
+  </script>
+</BaseLayout>

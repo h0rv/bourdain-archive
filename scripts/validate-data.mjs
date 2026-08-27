@@ -15,6 +15,7 @@ const DATE_PRECISIONS = new Set(['day', 'month', 'year', 'unknown']);
 const STATUS_VALUES = new Set(['confirmed', 'needs-review', 'missing-source', 'dead-link', 'partial']);
 const INDEX_MODES = new Set(['rollup', 'child', 'hidden']);
 const URL_FIELD_RE = /(^|_)url$/;
+const CORE_SOURCE_REQUIRED_COLLECTIONS = new Set(['works', 'series', 'appearances', 'screen', 'literature']);
 
 const errors = [];
 const warnings = [];
@@ -158,6 +159,9 @@ function checkDate(entry) {
 const entries = (await Promise.all(COLLECTIONS.map(loadCollection))).flat();
 const byId = new Map();
 const byCollection = new Map(COLLECTIONS.map((collection) => [collection, new Map()]));
+const sourceUrlOwners = new Map();
+const confirmedWithoutSources = new Map();
+const episodeKeyOwners = new Map();
 
 for (const entry of entries) {
   const { data, path, collection } = entry;
@@ -172,7 +176,24 @@ for (const entry of entries) {
       if (byId.has(data.id)) errors.push(`${path}: duplicate id ${data.id} also in ${byId.get(data.id).path}`);
       byId.set(data.id, entry);
     }
-    byCollection.get(collection)?.set(data.id, entry);
+    const collectionEntries = byCollection.get(collection);
+    if (collectionEntries?.has(data.id)) {
+      errors.push(`${path}: duplicate ${collection} id ${data.id} also in ${collectionEntries.get(data.id).path}`);
+    }
+    collectionEntries?.set(data.id, entry);
+  }
+
+  if (collection === 'sources' && data.url) {
+    const owner = sourceUrlOwners.get(data.url);
+    if (owner) errors.push(`${path}: duplicate source URL ${data.url} also in ${owner}`);
+    else sourceUrlOwners.set(data.url, path);
+  }
+
+  if (collection === 'series' && data.type === 'episode' && data.show && data.season != null && data.episode != null) {
+    const episodeKey = `${String(data.show).trim().toLowerCase()}|${data.season}|${data.episode}`;
+    const owner = episodeKeyOwners.get(episodeKey);
+    if (owner) errors.push(`${path}: duplicate show/season/episode key ${episodeKey} also in ${owner}`);
+    else episodeKeyOwners.set(episodeKey, path);
   }
 
   checkDate(entry);
@@ -203,11 +224,24 @@ for (const entry of entries) {
     for (const id of asArray(data.related)) {
       if (!byId.has(id)) errors.push(`${path}: missing related ref ${id}`);
     }
+
+    if (data.status === 'confirmed' && asArray(data.sources).length === 0) {
+      if (CORE_SOURCE_REQUIRED_COLLECTIONS.has(collection)) {
+        errors.push(`${path}: confirmed ${collection} record requires at least one source ref`);
+      } else {
+        const count = confirmedWithoutSources.get(collection) ?? 0;
+        confirmedWithoutSources.set(collection, count + 1);
+      }
+    }
   }
 
   if (!data.date && ['works', 'episodes', 'appearances', 'literature'].includes(collection)) {
     warnings.push(`${path}: undated`);
   }
+}
+
+for (const [collection, count] of Array.from(confirmedWithoutSources.entries()).sort()) {
+  warnings.push(`${collection}: ${count} confirmed records have no source refs`);
 }
 
 for (const warning of warnings) console.warn(`warn: ${warning}`);

@@ -1,0 +1,28 @@
+id: parts-unknown-s12e06-behind-the-scenes
+title: Behind the Scenes
+kind: episode
+index_mode: child
+parent_id: parts-unknown-show
+type: episode
+show: Parts Unknown
+season: 12
+episode: 6
+record_type: television
+media_type: tv-video
+relation_to_bourdain: about
+date: "2018-10-28"
+date_precision: day
+summary: The Parts Unknown crew recalls the trust, creative freedom, conflict, and unguarded moments that defined their years of collaboration with Bourdain.
+tags:
+  - television
+  - posthumous
+  - retrospective
+people:
+  - anthony-bourdain
+places: []
+sources:
+  - parts-unknown-tvdb
+related: []
+status: confirmed
+availability:
+  official_url: https://cnnpressroom.blogs.cnn.com/2018/09/06/final-episodes-of-peabody-emmy-award-winning-cnn-original-series-anthony-bourdain-parts-unknown-premieres-sunday-september-23-with-trip-to-kenya-featuring-w-kamau-bell-in-extended-episod/amp/

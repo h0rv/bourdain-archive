@@ -1,0 +1,15 @@
+id: albuquerque-united-states
+name: Albuquerque, United States
+kind: place
+index_mode: child
+type: place
+summary: Travel location associated with Parts Unknown.
+tags:
+  - travel
+people:
+  - anthony-bourdain
+places:
+  - united-states
+sources:
+  - travel-places-github
+status: needs-review

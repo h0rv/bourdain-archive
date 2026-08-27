@@ -110,6 +110,43 @@ function validHttpUrl(value) {
   }
 }
 
+// The seed CSV contains several known guide-numbering errors. Normalize these
+// before grouping rows so rerunning the importer cannot recreate duplicate or
+// misnumbered episode records already reconciled against TVDB/CNN guides.
+function canonicalEpisode(row) {
+  let season = Number(row.Season);
+  let episode = Number(row.Episode);
+  let title = row.Title;
+  let summary = row.Description ?? undefined;
+
+  if (row.Show === 'Parts Unknown' && season >= 2 && season <= 9) episode -= 1;
+
+  if (row.Show === 'No Reservations' && season === 9) {
+    season = 8;
+    episode += 8;
+  }
+
+  if (row.Show === 'No Reservations' && season === 2) {
+    if (episode === 1 && row.Country === 'Japan' || episode === 7) {
+      episode = 2;
+      title = 'Asia Special: Japan';
+      summary = 'Bourdain travels through Japan, moving between urban food culture and regional traditions.';
+    } else if (episode === 1) {
+      title = 'Asia Special: China';
+      summary = 'Bourdain begins the season in China, exploring regional cooking and the scale of its food traditions.';
+    } else if (episode >= 2 && episode <= 6) {
+      episode += 1;
+    }
+  }
+
+  if (row.Show === 'No Reservations' && season === 5 && episode === 4) {
+    title = 'Azores';
+    summary = 'Bourdain explores the Azores through island agriculture, seafood, and the Portuguese archipelago\'s distinct local culture.';
+  }
+
+  return { season, episode, title, summary };
+}
+
 function placeIdFor(row) {
   const country = clean(row.Country);
   const city = clean(row.City);
@@ -167,11 +204,11 @@ for (const row of rows) {
   const show = showMap[row.Show];
   if (!show || !row.Season || !row.Episode || !row.Title) continue;
 
-  const season = Number(row.Season);
-  const episode = Number(row.Episode);
+  const { season, episode, title, summary } = canonicalEpisode(row);
   const episodeCode = `s${String(season).padStart(2, '0')}e${String(episode).padStart(2, '0')}`;
-  const titleSlug = slugify(row.Title);
+  const titleSlug = slugify(title);
   const id = `${show.slug}-${episodeCode}-${titleSlug}`;
+  const episodeKey = `${show.slug}|${season}|${episode}`;
   const placeId = placeIdFor(row);
   const sourceUrl = validHttpUrl(clean(row.Source));
   const date = dateFromRow([
@@ -197,10 +234,10 @@ for (const row of rows) {
     row.Year,
   ]);
 
-  if (!episodes.has(id)) {
-    episodes.set(id, {
+  if (!episodes.has(episodeKey)) {
+    episodes.set(episodeKey, {
       id,
-      title: row.Title,
+      title,
       kind: 'episode',
       index_mode: 'child',
       parent_id: show.parentId,
@@ -214,7 +251,7 @@ for (const row of rows) {
       contributors: ['anthony-bourdain'],
       date,
       date_precision: date ? 'day' : 'unknown',
-      summary: row.Description ?? undefined,
+      summary,
       tags: ['travel', 'food-media'],
       people: ['anthony-bourdain'],
       places: [],
@@ -225,7 +262,7 @@ for (const row of rows) {
     });
   }
 
-  const episodeRecord = episodes.get(id);
+  const episodeRecord = episodes.get(episodeKey);
   if (placeId && !episodeRecord.places.includes(placeId)) episodeRecord.places.push(placeId);
 
   if (placeId && !existingPlaceIds.has(placeId) && !places.has(placeId)) {

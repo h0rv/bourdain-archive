@@ -1,0 +1,28 @@
+id: no-reservations-s08e16-off-the-charts
+title: Off the Charts
+kind: episode
+index_mode: child
+parent_id: no-reservations-show
+type: episode
+show: No Reservations
+season: 8
+episode: 16
+record_type: television
+media_type: tv-video
+relation_to_bourdain: featured
+contributors:
+  - anthony-bourdain
+date: null
+date_precision: unknown
+summary: A catalogue-listed compilation returns to unusual, extreme, and hard-to-rank moments from the series; its original air date remains unverified.
+tags:
+  - food-media
+  - compilation
+people:
+  - anthony-bourdain
+places: []
+sources:
+  - no-reservations-tvdb
+related: []
+status: partial
+availability: {}

@@ -1,0 +1,32 @@
+id: "no-reservations-s02e02-asia-special-japan"
+title: "Asia Special: Japan"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 2
+episode: 2
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2006-03-27"
+date_precision: "day"
+summary: In the second half of the Asia premiere, Bourdain explores Osaka's food and baseball culture before traveling to the Kiso Valley for ritual, hospitality, and a quieter view of Japan.
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "osaka-japan"
+  - "kisoji-japan"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "confirmed"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

@@ -1,0 +1,120 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { entryHref } from '../../lib/content';
+import '../../styles/catalog.css';
+
+const places = await getCollection('places');
+const referencedEntries = [
+  ...(await getCollection('works')),
+  ...(await getCollection('series')),
+  ...(await getCollection('screen')),
+  ...(await getCollection('appearances')),
+  ...(await getCollection('literature')),
+  ...(await getCollection('events')),
+];
+
+const counts = new Map<string, number>();
+for (const entry of referencedEntries) {
+  for (const placeId of new Set(entry.data.places ?? [])) {
+    counts.set(placeId, (counts.get(placeId) ?? 0) + 1);
+  }
+}
+
+const rows = places
+  .map((entry) => ({
+    entry,
+    name: entry.data.name,
+    count: counts.get(entry.data.id) ?? 0,
+    searchable: [entry.data.name, entry.data.summary, ...(entry.data.tags ?? [])]
+      .filter(Boolean)
+      .join(' ')
+      .toLocaleLowerCase(),
+  }))
+  .sort((left, right) => left.name.localeCompare(right.name));
+---
+
+<BaseLayout
+  title="Places"
+  description="An alphabetical index of places connected to Anthony Bourdain's work and travels."
+>
+  <div class="catalog-page" data-place-catalog>
+    <header class="catalog-intro">
+      <h1 class="page-title">Places</h1>
+      <p>
+        Countries, cities, and regions connected to indexed episodes and works. Counts reflect direct
+        references in the archive.
+      </p>
+    </header>
+
+    <form class="catalog-tools catalog-tools-compact" role="search">
+      <label class="catalog-field">
+        <span>Search places</span>
+        <input type="search" placeholder="City, country, or region" autocomplete="off" data-place-search />
+      </label>
+      <label class="catalog-field">
+        <span>References</span>
+        <select data-place-usage>
+          <option value="">All places</option>
+          <option value="referenced">With indexed entries</option>
+          <option value="unreferenced">Without direct entries</option>
+        </select>
+      </label>
+    </form>
+
+    <div class="catalog-toolbar">
+      <p class="catalog-count" data-place-count aria-live="polite">{rows.length} places</p>
+      <p class="catalog-count"><a href="../map/">Open the travel map →</a></p>
+    </div>
+
+    <ol class="catalog-source-list">
+      {rows.map((row) => (
+        <li
+          class="catalog-source-row"
+          data-place-item
+          data-search={row.searchable}
+          data-count={row.count}
+        >
+          <div class="catalog-source-copy">
+            <a href={entryHref('places', row.entry.data.id)}>{row.name}</a>
+            {row.entry.data.summary && <span class="catalog-source-host">{row.entry.data.summary}</span>}
+          </div>
+          <span class="catalog-source-meta">
+            {row.count} {row.count === 1 ? 'entry' : 'entries'}
+          </span>
+        </li>
+      ))}
+    </ol>
+    <p class="catalog-empty" data-place-empty hidden>No matching places.</p>
+  </div>
+
+  <script>
+    const root = document.querySelector<HTMLElement>('[data-place-catalog]');
+    const search = root?.querySelector<HTMLInputElement>('[data-place-search]');
+    const usage = root?.querySelector<HTMLSelectElement>('[data-place-usage]');
+    const items = [...(root?.querySelectorAll<HTMLElement>('[data-place-item]') ?? [])];
+    const count = root?.querySelector<HTMLElement>('[data-place-count]');
+    const empty = root?.querySelector<HTMLElement>('[data-place-empty]');
+
+    const apply = () => {
+      const query = search?.value.trim().toLocaleLowerCase() ?? '';
+      let visible = 0;
+      for (const item of items) {
+        const references = Number(item.dataset.count ?? 0);
+        const usageMatches =
+          !usage?.value ||
+          (usage.value === 'referenced' && references > 0) ||
+          (usage.value === 'unreferenced' && references === 0);
+        const matches = (!query || item.dataset.search?.includes(query)) && usageMatches;
+        item.hidden = !matches;
+        if (matches) visible += 1;
+      }
+      if (count) count.textContent = `${visible} ${visible === 1 ? 'place' : 'places'}`;
+      if (empty) empty.hidden = visible !== 0;
+    };
+
+    root?.querySelector('form')?.addEventListener('input', apply);
+    root?.querySelector('form')?.addEventListener('change', apply);
+    root?.querySelector('form')?.addEventListener('submit', (event) => event.preventDefault());
+  </script>
+</BaseLayout>

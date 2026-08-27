@@ -1,0 +1,29 @@
+id: no-reservations-s06e11-techniques
+title: Techniques
+kind: episode
+index_mode: child
+parent_id: no-reservations-show
+type: episode
+show: No Reservations
+season: 6
+episode: 11
+record_type: television
+media_type: tv-video
+relation_to_bourdain: featured
+contributors:
+  - anthony-bourdain
+date: "2010-04-05"
+date_precision: day
+summary: Bourdain revisits cooks around the world to focus on the learned movements, tools, and repeatable methods behind memorable food.
+tags:
+  - food-media
+  - compilation
+  - craft
+people:
+  - anthony-bourdain
+places: []
+sources:
+  - no-reservations-tvdb
+related: []
+status: confirmed
+availability: {}

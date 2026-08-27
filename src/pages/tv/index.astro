@@ -2,81 +2,98 @@
 import { getCollection } from 'astro:content';
 import linkPreviewCache from '../../../archive/derived/link-previews.json';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { entryHref, entryTitle, formatDate, previewForEntry, archiveTargetsForUrl, primaryAvailabilityUrl } from '../../lib/content';
+import {
+  entryHref,
+  entryTitle,
+  formatDate,
+  previewForEntry,
+  primaryAvailabilityUrl,
+} from '../../lib/content';
 import { withBase } from '../../lib/site';
 
 const series = await getCollection('series');
 const sources = await getCollection('sources');
-const sourceById = new Map(sources.map((e) => [e.data.id, e]));
-const shows = series.filter((s) => s.data.type === 'show').sort((a,b) => (a.data.date ?? '').localeCompare(b.data.date ?? ''));
-const episodes = series.filter((s) => s.data.type === 'episode').sort((a,b) => (a.data.season ?? 0) - (b.data.season ?? 0) || (a.data.episode ?? 0) - (b.data.episode ?? 0));
-const episodesByShow = new Map();
-for (const ep of episodes) {
-  const key = ep.data.parent_id ?? 'unknown';
-  if (!episodesByShow.has(key)) episodesByShow.set(key, []);
-  episodesByShow.get(key)!.push(ep);
-}
+const sourceById = new Map(sources.map((entry) => [entry.data.id, entry]));
+const shows = series
+  .filter((entry) => entry.data.type === 'show')
+  .sort((left, right) => (left.data.date ?? '').localeCompare(right.data.date ?? ''));
+const episodes = series.filter((entry) => entry.data.type === 'episode');
+
 const previewFor = (entry: any) => {
   const own = previewForEntry(entry, linkPreviewCache.previews);
   if (own.image) return own;
-  for (const sid of entry.data.sources ?? []) {
-    const src = sourceById.get(sid);
-    if (!src) continue;
-    const pv = previewForEntry(src, linkPreviewCache.previews);
-    if (pv.image) return { ...own, image: pv.image, host: pv.host, url: pv.url, archive: pv.archive };
+  for (const sourceId of entry.data.sources ?? []) {
+    const source = sourceById.get(sourceId);
+    if (!source) continue;
+    const sourcePreview = previewForEntry(source, linkPreviewCache.previews);
+    if (sourcePreview.image) return { ...own, image: sourcePreview.image };
   }
   return own;
 };
-const imgFor = (entry: any) => previewFor(entry).image ?? '';
-const officialFor = (entry: any) => previewFor(entry).url ?? primaryAvailabilityUrl(entry.data);
-const archiveFor = (entry: any) => previewFor(entry).archive ?? archiveTargetsForUrl(officialFor(entry));
 ---
-<BaseLayout title="TV + Movies">
-  <h1 class="page-title">TV + Movies</h1>
-  <div class="show-groups" style="content-visibility:auto; contain-intrinsic-size: 2000px;">
-    {shows.map((show, idx) => {
-      const eps = episodesByShow.get(show.data.id) ?? [];
-      const seasons = new Map();
-      for (const ep of eps) {
-        const s = ep.data.season ?? 0;
-        if (!seasons.has(s)) seasons.set(s, []);
-        seasons.get(s)!.push(ep);
-      }
-      const showImg = imgFor(show);
-      const showOfficial = officialFor(show);
-      const showArchive = archiveFor(show);
-      const showTitle = entryTitle(show);
+
+<BaseLayout
+  title="Television"
+  description="Anthony Bourdain’s television series, production roles, and indexed episode guides."
+>
+  <header class="page-intro split-intro">
+    <div>
+      <p class="eyebrow">Nine series · {episodes.length} episode records</p>
+      <h1 class="page-title">Television</h1>
+    </div>
+    <p class="lede">
+      Hosted, narrated, judged, or executive produced by Bourdain. Open a series for its full
+      season-by-season episode index, or <a href={withBase('/archive/?scope=all')}>search every episode</a>.
+    </p>
+  </header>
+
+  <ol class="show-index">
+    {shows.map((show, index) => {
+      const showEpisodes = episodes.filter((episode) => episode.data.parent_id === show.data.id);
+      const seasons = new Set(showEpisodes.map((episode) => episode.data.season).filter(Boolean));
+      const preview = previewFor(show);
+      const officialUrl = primaryAvailabilityUrl(show.data);
       return (
-        <details class="show-group">
-          <summary class="show-summary">
-            <h2 class="show-title">{showTitle}</h2>
-            <span class="show-chevron" aria-hidden="true">▾</span>
-          </summary>
-          <div class="show-body">
-            <p class="show-blurb">{show.data.summary} <a href={entryHref('series', show.data.id)}>Series page →</a> · <a href={showOfficial}>Source</a>{showArchive && <> · <a href={showArchive.latest_url}>Archive</a></>}</p>
-            <img src={showImg || withBase('/images/placeholder.svg')} alt={`${showTitle} cover`} loading={idx === 0 ? "eager" : "lazy"} fetchpriority={idx === 0 ? "high" : undefined} decoding="async" width="640" height="360" style="width:100%; max-width:22rem; aspect-ratio:16/9; object-fit:cover; margin:0.5rem 0; border:1px solid rgba(17,16,14,0.08)" />
-            {[...seasons.entries()].sort(([a],[b]) => a-b).map(([season, list]) => (
-              <details class="season-group">
-                <summary><h3 style="display:inline; font:inherit; margin:0">Season {String(season).padStart(2,'0')}</h3></summary>
-                <ol class="episode-list">
-                  {list.map((ep: any) => {
-                    const official = officialFor(ep);
-                    const arch = archiveFor(ep);
-                    return (
-                      <li>
-                        <a href={entryHref('series', ep.data.id)}>{entryTitle(ep)} S{String(ep.data.season).padStart(2,'0')}E{String(ep.data.episode).padStart(2,'0')}</a>
-                        <span class="meta">{formatDate(ep.data.date, ep.data.date_precision)}{ep.data.places?.length ? ` · ${ep.data.places.join(', ')}` : ''} · <a href={official}>Watch/Source</a>{arch && <> · <a href={arch.latest_url}>Archive</a></>}</span>
-                      </li>
-                    );
-                  })}
-                </ol>
-              </details>
-            ))}
-          </div>
-        </details>
+        <li>
+          <article class="show-catalog-card">
+            <a class="show-poster" href={entryHref('series', show.data.id)}>
+              {preview.image ? (
+                <img
+                  src={preview.image}
+                  alt=""
+                  loading={index < 2 ? 'eager' : 'lazy'}
+                  decoding="async"
+                  width="400"
+                  height="600"
+                />
+              ) : (
+                <span>Television</span>
+              )}
+            </a>
+            <div class="show-catalog-copy">
+              <p class="eyebrow">
+                {formatDate(show.data.date, show.data.date_precision)} · Featuring Bourdain
+              </p>
+              <h2><a href={entryHref('series', show.data.id)}>{entryTitle(show)}</a></h2>
+              <p>{show.data.summary}</p>
+              <dl class="show-counts">
+                <div><dt>Seasons</dt><dd>{seasons.size || '—'}</dd></div>
+                <div><dt>Episodes indexed</dt><dd>{showEpisodes.length || '—'}</dd></div>
+              </dl>
+              <p class="show-actions">
+                <a class="primary-action" href={entryHref('series', show.data.id)}>Browse series</a>
+                {officialUrl && <a href={officialUrl} rel="noopener noreferrer">Official / watch</a>}
+              </p>
+            </div>
+          </article>
+        </li>
       );
     })}
-  </div>
+  </ol>
 
-
+  <aside class="crosslink-band">
+    <p class="eyebrow">Beyond the hosted series</p>
+    <h2>Films, cameos, guest roles + long-form interviews</h2>
+    <p><a href={withBase('/screen/')}>Browse screen and audio appearances →</a></p>
+  </aside>
 </BaseLayout>

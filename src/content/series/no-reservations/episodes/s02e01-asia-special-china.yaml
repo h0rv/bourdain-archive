@@ -1,0 +1,33 @@
+id: "no-reservations-s02e01-asia-special-china"
+title: "Asia Special: China"
+kind: "episode"
+index_mode: "child"
+parent_id: "no-reservations-show"
+type: "episode"
+show: "No Reservations"
+season: 2
+episode: 1
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2006-03-27"
+date_precision: "day"
+summary: Bourdain begins the two-part Asia premiere in Beijing and Sichuan, sampling regional dishes and traditional practices before joining a family meal outside Chengdu.
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "beijing-china"
+  - "chengdu-china"
+  - "xi-an-china"
+sources:
+  - "travel-places-github"
+  - "no-reservations-tvdb"
+related: []
+status: "confirmed"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_No_Reservations"

@@ -1,0 +1,31 @@
+id: "parts-unknown-s08e09-rome"
+title: "Rome"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 8
+episode: 9
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2016-12-04"
+date_precision: "day"
+summary: "Bourdain's Roman holiday takes a cinematic turn, influenced by his tour guides, actress Asia Argento, screenwriter/director Abel Ferrara, and a host of larger than life Romans who take him inside a Rome for the locals. Bourdain shares drinks at the 'Friends Corner' trattoria in Lido di Ostia, dines a traditional Roman meal at Trattoria Morgana, eats pasta and watches an amateur boxing match in the suburbs, and takes a trip to the famed E.U.R zone built by Mussolini."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "rome-italy"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

@@ -1,0 +1,31 @@
+id: "parts-unknown-s03e02-las-vegas"
+title: "Las Vegas"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 3
+episode: 2
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2014-04-20"
+date_precision: "day"
+summary: With Michael Ruhlman, Bourdain looks beyond the Las Vegas Strip at old bars, ambitious restaurants, poker culture, and a changing entertainment city shaped by excess.
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "las-vegas-united-states"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

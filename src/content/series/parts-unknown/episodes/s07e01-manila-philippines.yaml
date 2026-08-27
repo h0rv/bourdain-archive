@@ -1,0 +1,31 @@
+id: "parts-unknown-s07e01-manila-philippines"
+title: "Manila, Philippines"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 7
+episode: 1
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2016-04-24"
+date_precision: "day"
+summary: Stranded in Manila during a typhoon, Bourdain explores sisig, halo-halo, cover-band culture, and the sacrifices of Filipinos who care for families abroad.
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "manila-philippines"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

@@ -1,0 +1,30 @@
+id: no-reservations-s06e22-making-of-india
+title: Making of India
+kind: episode
+index_mode: child
+parent_id: no-reservations-show
+type: episode
+show: No Reservations
+season: 6
+episode: 22
+record_type: television
+media_type: tv-video
+relation_to_bourdain: featured
+contributors:
+  - anthony-bourdain
+date: "2010-08-30"
+date_precision: day
+summary: A behind-the-scenes account follows the crew's decisions, setbacks, and logistics while producing No Reservations in India.
+tags:
+  - food-media
+  - behind-the-scenes
+  - india
+people:
+  - anthony-bourdain
+places:
+  - india
+sources:
+  - no-reservations-tvdb
+related: []
+status: confirmed
+availability: {}

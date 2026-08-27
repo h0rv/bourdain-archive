@@ -1,0 +1,226 @@
+---
+import { getCollection } from 'astro:content';
+import linkPreviewCache from '../../../archive/derived/link-previews.json';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import {
+  entryHref,
+  entryTitle,
+  formatDate,
+  formatType,
+  indexModeFor,
+  mediaTypeFor,
+  mediaTypeLabels,
+  previewForEntry,
+} from '../../lib/content';
+import '../../styles/catalog.css';
+
+const collections = [
+  ['works', await getCollection('works')],
+  ['series', await getCollection('series')],
+  ['screen', await getCollection('screen')],
+  ['appearances', await getCollection('appearances')],
+  ['literature', await getCollection('literature')],
+  ['events', await getCollection('events')],
+] as const;
+
+const relationLabels: Record<string, string> = {
+  authored: 'By Bourdain',
+  featured: 'Featuring Bourdain',
+  about: 'About Bourdain',
+  reference: 'Reference',
+};
+
+const catalog = collections
+  .flatMap(([collection, entries]) =>
+    entries.map((entry) => {
+      const data: any = entry.data;
+      const relation = data.relation_to_bourdain ?? 'reference';
+      const scope = indexModeFor(data, collection);
+      const format = mediaTypeFor(data, collection);
+      const title = entryTitle(entry);
+      const preview = previewForEntry(entry, linkPreviewCache.previews);
+      const searchable = [
+        title,
+        data.summary,
+        data.type,
+        data.show,
+        ...(data.tags ?? []),
+        ...(data.people ?? []),
+        ...(data.places ?? []),
+      ]
+        .filter(Boolean)
+        .join(' ')
+        .toLocaleLowerCase();
+      return { entry, collection, data, relation, scope, format, title, preview, searchable };
+    }),
+  )
+  .filter((item) => item.scope !== 'hidden')
+  .sort(
+    (left, right) =>
+      (right.data.date ?? '').localeCompare(left.data.date ?? '') ||
+      left.title.localeCompare(right.title),
+  );
+
+// Episode stills are incomplete in several source catalogs. In the all-records view,
+// inherit the parent program's official key art instead of emitting an empty or fake image.
+const seriesArtwork = new Map(
+  catalog
+    .filter((item) => item.collection === 'series' && item.data.type === 'show' && item.preview.image)
+    .map((item) => [item.data.id, item.preview.image]),
+);
+for (const item of catalog) {
+  if (!item.preview.image && item.data.type === 'episode' && item.data.parent_id) {
+    item.preview.image = seriesArtwork.get(item.data.parent_id);
+  }
+}
+
+const formatOptions = [...new Set(catalog.map((item) => item.format))]
+  .map((id) => ({ id, label: mediaTypeLabels[id] ?? formatType(id) }))
+  .sort((left, right) => left.label.localeCompare(right.label));
+const rollupCount = catalog.filter((item) => item.scope === 'rollup').length;
+---
+
+<BaseLayout
+  title="Archive"
+  description="Search Anthony Bourdain's writing, television, films, interviews, and major life events."
+>
+  <div class="catalog-page" data-catalog>
+    <header class="catalog-intro">
+      <h1 class="page-title">Archive</h1>
+      <p>
+        A single index of works by Bourdain, appearances featuring him, and substantive work about
+        him. Start with the curated records or include every indexed television episode.
+      </p>
+    </header>
+
+    <form class="catalog-tools" data-catalog-tools role="search">
+      <label class="catalog-field">
+        <span>Search</span>
+        <input
+          type="search"
+          name="q"
+          placeholder="Title, show, place, person, or theme"
+          autocomplete="off"
+          data-catalog-search
+        />
+      </label>
+      <label class="catalog-field">
+        <span>Relationship</span>
+        <select name="relation" data-catalog-filter="relation">
+          <option value="">All relationships</option>
+          <option value="authored">By Bourdain</option>
+          <option value="featured">Featuring Bourdain</option>
+          <option value="about">About Bourdain</option>
+        </select>
+      </label>
+      <label class="catalog-field">
+        <span>Format</span>
+        <select name="format" data-catalog-filter="format">
+          <option value="">All formats</option>
+          {formatOptions.map((option) => <option value={option.id}>{option.label}</option>)}
+        </select>
+      </label>
+      <label class="catalog-field">
+        <span>Scope</span>
+        <select name="scope" data-catalog-filter="scope">
+          <option value="rollup">Curated records</option>
+          <option value="">Everything + episodes</option>
+          <option value="child">Episodes only</option>
+        </select>
+      </label>
+    </form>
+
+    <div class="catalog-toolbar">
+      <p class="catalog-count" data-catalog-count aria-live="polite">
+        {rollupCount} curated records
+      </p>
+      <noscript><p class="catalog-count">JavaScript-free view: all {catalog.length} records.</p></noscript>
+    </div>
+
+    <ol class="catalog-list" data-catalog-list>
+      {catalog.map((item) => (
+        <li
+          class="catalog-row"
+          data-catalog-item
+          data-relation={item.relation}
+          data-format={item.format}
+          data-scope={item.scope}
+          data-search={item.searchable}
+        >
+          {item.preview.image ? (
+            <a class="catalog-row-image" href={entryHref(item.collection, item.data.id)} tabindex="-1">
+              <img src={item.preview.image} alt="" loading="lazy" decoding="async" width="160" height="120" />
+            </a>
+          ) : (
+            <span class="catalog-row-image" aria-hidden="true"></span>
+          )}
+          <div class="catalog-row-copy">
+            <a class="catalog-row-title" href={entryHref(item.collection, item.data.id)}>{item.title}</a>
+            <span class="catalog-row-meta">
+              {formatDate(item.data.date, item.data.date_precision)} · {formatType(item.data.type)}
+              {item.data.show ? ` · ${item.data.show}` : ''}
+              {item.data.season && item.data.episode
+                ? ` · S${String(item.data.season).padStart(2, '0')}E${String(item.data.episode).padStart(2, '0')}`
+                : ''}
+            </span>
+            {item.scope === 'rollup' && item.data.summary && (
+              <p class="catalog-row-summary">{item.data.summary}</p>
+            )}
+          </div>
+          <div class="catalog-row-side" aria-label="Classification">
+            <span class="catalog-chip">{relationLabels[item.relation] ?? 'Reference'}</span>
+            <span class="catalog-chip">{mediaTypeLabels[item.format] ?? formatType(item.format)}</span>
+          </div>
+        </li>
+      ))}
+    </ol>
+    <p class="catalog-empty" data-catalog-empty hidden>No matching records.</p>
+  </div>
+
+  <script>
+    const root = document.querySelector<HTMLElement>('[data-catalog]');
+    const search = root?.querySelector<HTMLInputElement>('[data-catalog-search]');
+    const relation = root?.querySelector<HTMLSelectElement>('[data-catalog-filter="relation"]');
+    const format = root?.querySelector<HTMLSelectElement>('[data-catalog-filter="format"]');
+    const scope = root?.querySelector<HTMLSelectElement>('[data-catalog-filter="scope"]');
+    const items = [...(root?.querySelectorAll<HTMLElement>('[data-catalog-item]') ?? [])];
+    const count = root?.querySelector<HTMLElement>('[data-catalog-count]');
+    const empty = root?.querySelector<HTMLElement>('[data-catalog-empty]');
+
+    const apply = () => {
+      const query = search?.value.trim().toLocaleLowerCase() ?? '';
+      let visible = 0;
+      for (const item of items) {
+        const matches =
+          (!query || item.dataset.search?.includes(query)) &&
+          (!relation?.value || item.dataset.relation === relation.value) &&
+          (!format?.value || item.dataset.format === format.value) &&
+          (!scope?.value || item.dataset.scope === scope.value);
+        item.hidden = !matches;
+        if (matches) visible += 1;
+      }
+      if (count) count.textContent = `${visible} ${visible === 1 ? 'record' : 'records'}`;
+      if (empty) empty.hidden = visible !== 0;
+
+      const params = new URLSearchParams();
+      if (query) params.set('q', search?.value.trim() ?? '');
+      if (relation?.value) params.set('relation', relation.value);
+      if (format?.value) params.set('format', format.value);
+      if (scope?.value && scope.value !== 'rollup') params.set('scope', scope.value);
+      const next = `${location.pathname}${params.size ? `?${params}` : ''}`;
+      history.replaceState(null, '', next);
+    };
+
+    if (root) {
+      const params = new URLSearchParams(location.search);
+      if (search) search.value = params.get('q') ?? '';
+      if (relation) relation.value = params.get('relation') ?? '';
+      if (format) format.value = params.get('format') ?? '';
+      if (scope) scope.value = params.has('scope') ? (params.get('scope') ?? '') : 'rollup';
+      root.querySelector('form')?.addEventListener('input', apply);
+      root.querySelector('form')?.addEventListener('change', apply);
+      root.querySelector('form')?.addEventListener('submit', (event) => event.preventDefault());
+      apply();
+    }
+  </script>
+</BaseLayout>

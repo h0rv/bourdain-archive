@@ -1,0 +1,31 @@
+id: "parts-unknown-s09e01-los-angeles"
+title: "Los Angeles"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 9
+episode: 1
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2017-04-30"
+date_precision: "day"
+summary: "An alternative tour of Los Angeles by Bourdain focuses on the impact and contributions of its less photographed and often overlooked Latino communities. From downtown, for Oaxaqueno specialties at Gish Bac and redefined Mexican food from chef Ray Garcia at Broken Spanish, to Hollywood, for a health-conscious but savory dinner with actor Danny Trejo (Machete) at Trejo's Cantina, the host experiences this vibrant culture against a backdrop of LA glamour."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "los-angeles-united-states"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

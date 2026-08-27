@@ -2,79 +2,213 @@
 import { getCollection } from 'astro:content';
 import linkPreviewCache from '../../../archive/derived/link-previews.json';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { entryHref, entryTitle, formatDate, formatType, previewForEntry, archiveTargetsForUrl, primaryAvailabilityUrl } from '../../lib/content';
+import {
+  entryHref,
+  entryTitle,
+  formatDate,
+  formatType,
+  previewForEntry,
+  sourceTimelineDate,
+} from '../../lib/content';
 import { withBase } from '../../lib/site';
 
 const works = await getCollection('works');
 const literature = await getCollection('literature');
 const sources = await getCollection('sources');
-const sourceById = new Map(sources.map((e) => [e.data.id, e]));
+const sourceById = new Map(sources.map((entry) => [entry.data.id, entry]));
 
-const authoredWorks = works.filter((w) => w.data.relation_to_bourdain === 'authored').sort((a,b) => (a.data.date ?? '').localeCompare(b.data.date ?? ''));
-const byBourdainLit = literature.filter((l) => (l.data as any).relation_to_bourdain === 'authored');
-const writings = [...authoredWorks, ...byBourdainLit].sort((a,b) => (a.data.date ?? '').localeCompare(b.data.date ?? ''));
+const authored = works
+  .filter((entry) => entry.data.relation_to_bourdain === 'authored')
+  .sort((left, right) => (left.data.date ?? '').localeCompare(right.data.date ?? ''));
+const books = authored.filter((entry) => ['book', 'comic'].includes(entry.data.type));
+const shorterWorks = authored.filter((entry) => !['book', 'comic'].includes(entry.data.type));
+const about = literature
+  .filter((entry) => entry.data.relation_to_bourdain !== 'authored')
+  .sort((left, right) => (right.data.date ?? '').localeCompare(left.data.date ?? ''));
 
-const aboutWritings = literature.filter((l) => (l.data as any).relation_to_bourdain !== 'authored').sort((a,b) => (b.data.date ?? '').localeCompare(a.data.date ?? '')).slice(0, 12);
+const webWritingGroups = [
+  {
+    type: 'social-writing',
+    title: 'Tumblr, Medium + Li.st',
+    blurb: 'Recovered posts, cross-posts, dispatches, and fragments from Bourdain’s first-person web writing.',
+  },
+  {
+    type: 'field-note',
+    title: 'Parts Unknown field notes',
+    blurb: 'Destination notes written around the production of Parts Unknown.',
+  },
+  {
+    type: 'essay',
+    title: 'Essays + articles',
+    blurb: 'Magazine, newspaper, and web writing preserved as source records.',
+  },
+];
 
 const previewFor = (entry: any) => {
   const own = previewForEntry(entry, linkPreviewCache.previews);
   if (own.image) return own;
-  for (const sid of entry.data.sources ?? []) {
-    const src = sourceById.get(sid);
-    if (!src) continue;
-    const pv = previewForEntry(src, linkPreviewCache.previews);
-    if (pv.image) return { ...own, image: pv.image, host: pv.host, url: pv.url, archive: pv.archive };
+  for (const sourceId of entry.data.sources ?? []) {
+    const source = sourceById.get(sourceId);
+    if (!source) continue;
+    const sourcePreview = previewForEntry(source, linkPreviewCache.previews);
+    if (sourcePreview.image) return { ...own, image: sourcePreview.image };
   }
   return own;
 };
-const imgFor = (entry: any) => previewFor(entry).image ?? '';
-const officialFor = (entry: any) => previewFor(entry).url ?? primaryAvailabilityUrl(entry.data);
-const archiveFor = (entry: any) => previewFor(entry).archive ?? archiveTargetsForUrl(officialFor(entry));
+
+const recentPrimaryWriting = sources
+  .filter((entry) => ['social-writing', 'field-note', 'article', 'essay'].includes(entry.data.type))
+  .map((entry) => ({ entry, timeline: sourceTimelineDate(entry.data) }))
+  .filter((item) => item.timeline.date)
+  .sort((left, right) => (right.timeline.date ?? '').localeCompare(left.timeline.date ?? ''))
+  .slice(0, 8);
 ---
-<BaseLayout title="Writings">
-  <h1 class="page-title">Writings</h1>
 
-  <ol class="shelf-grid" style="content-visibility:auto; contain-intrinsic-size: 1000px;" aria-label="Writings by Bourdain">
-    {writings.map((entry, idx) => {
-      const col = (entry as any).collection ?? (entry.data.type === 'book' || entry.data.type === 'comic' || entry.data.type === 'essay' || entry.data.type === 'short-story' ? 'works' : 'literature');
-      // fallback: works vs literature based on id presence in works
-      const isWork = works.some(w=>w.data.id===entry.data.id);
-      const href = isWork ? entryHref('works', entry.data.id) : entryHref('literature', entry.data.id);
-      const img = imgFor(entry);
-      const title = entryTitle(entry);
-      const official = officialFor(entry);
-      const arch = archiveFor(entry);
-      return (
-        <li class="shelf-card">
-          <a href={href}>
-            <span class="shelf-card-media"><img src={img || withBase('/images/placeholder.svg')} alt={img ? `${title} cover` : ""} loading={idx === 0 ? "eager" : "lazy"} fetchpriority={idx === 0 ? "high" : undefined} decoding="async" width="400" height="500" /></span>
-            <span class="shelf-card-title">{title}</span>
-            <span class="shelf-card-meta">{formatDate(entry.data.date, entry.data.date_precision)} · {formatType(entry.data.type)}{(entry.data as any).publication ? ` · ${(entry.data as any).publication}` : ''}</span>
-          </a>
-          <span class="meta" style="display:flex; gap:0.4rem; flex-wrap:wrap; font-size:0.58rem"><a href={official}>Source</a>{arch && <>· <a href={arch.latest_url}>Archive</a></>}</span>
-        </li>
-      );
-    })}
-  </ol>
+<BaseLayout
+  title="Writings"
+  description="Books, essays, stories, field notes, web writing, and selected criticism about Anthony Bourdain."
+>
+  <header class="page-intro">
+    <p class="eyebrow">The written record</p>
+    <h1 class="page-title">Writings</h1>
+    <p class="lede">
+      Books and writing by Bourdain are kept separate from interviews, criticism, biography, and
+      remembrance. Source records point outward to legal copies and preserved pages.
+    </p>
+  </header>
 
-  <h2 class="section-heading" style="margin-top:2.5rem" id="about-selected">About Bourdain — selected</h2>
-  <p class="meta">Interviews, reviews, tributes. Not by him, but useful context.</p>
-  <ol class="shelf-grid" aria-labelledby="about-selected">
-    {aboutWritings.map((entry) => {
-      const img = imgFor(entry);
-      const title = entryTitle(entry);
-      const official = officialFor(entry);
-      const arch = archiveFor(entry);
-      return (
-        <li class="shelf-card">
-          <a href={entryHref('literature', entry.data.id)}>
-            <span class="shelf-card-media"><img src={img || withBase('/images/placeholder.svg')} alt={img ? `${title} cover` : ""} loading="lazy" decoding="async" width="400" height="500" /></span>
-            <span class="shelf-card-title">{title}</span>
-            <span class="shelf-card-meta">{formatDate(entry.data.date, entry.data.date_precision)} · {formatType(entry.data.type)}</span>
-          </a>
-          <span class="meta" style="display:flex; gap:0.4rem; flex-wrap:wrap; font-size:0.58rem"><a href={official}>Source</a>{arch && <>· <a href={arch.latest_url}>Archive</a></>}</span>
-        </li>
-      );
-    })}
-  </ol>
+  <section class="home-section" aria-labelledby="books-heading">
+    <header class="section-header">
+      <div>
+        <p class="eyebrow">By Bourdain · {books.length} works</p>
+        <h2 id="books-heading">Books + comics</h2>
+      </div>
+    </header>
+    <ol class="shelf-grid shelf-grid-books">
+      {books.map((entry, index) => {
+        const preview = previewFor(entry);
+        return (
+          <li class="shelf-card">
+            <a href={entryHref('works', entry.data.id)}>
+              <span class="shelf-card-media is-portrait">
+                {preview.image ? (
+                  <img
+                    src={preview.image}
+                    alt=""
+                    loading={index < 2 ? 'eager' : 'lazy'}
+                    decoding="async"
+                    width="400"
+                    height="600"
+                  />
+                ) : (
+                  <span class="shelf-card-fallback">{formatType(entry.data.type)}</span>
+                )}
+              </span>
+              <span class="shelf-card-title">{entryTitle(entry)}</span>
+              <span class="shelf-card-meta">
+                {formatDate(entry.data.date, entry.data.date_precision)} · {formatType(entry.data.type)}
+              </span>
+            </a>
+          </li>
+        );
+      })}
+    </ol>
+  </section>
+
+  {shorterWorks.length > 0 && (
+    <section class="home-section" aria-labelledby="shorter-heading">
+      <header class="section-header">
+        <div>
+          <p class="eyebrow">By Bourdain</p>
+          <h2 id="shorter-heading">Essays + stories</h2>
+        </div>
+      </header>
+      <ol class="editorial-list compact-editorial-list">
+        {shorterWorks.map((entry) => {
+          const preview = previewFor(entry);
+          return (
+            <li>
+              <a class="editorial-list-media" href={entryHref('works', entry.data.id)}>
+                {preview.image ? (
+                  <img src={preview.image} alt="" loading="lazy" decoding="async" width="320" height="200" />
+                ) : (
+                  <span>{formatType(entry.data.type)}</span>
+                )}
+              </a>
+              <div>
+                <p class="eyebrow">{formatDate(entry.data.date, entry.data.date_precision)}</p>
+                <h3><a href={entryHref('works', entry.data.id)}>{entryTitle(entry)}</a></h3>
+                {entry.data.summary && <p>{entry.data.summary}</p>}
+              </div>
+            </li>
+          );
+        })}
+      </ol>
+    </section>
+  )}
+
+  <section class="home-section" aria-labelledby="web-heading">
+    <header class="section-header">
+      <div>
+        <p class="eyebrow">By Bourdain · primary web archive</p>
+        <h2 id="web-heading">Dispatches from the open web</h2>
+      </div>
+      <a href={withBase('/sources/')}>Search every source →</a>
+    </header>
+    <div class="writing-groups">
+      {webWritingGroups.map((group) => {
+        const count = sources.filter((entry) => entry.data.type === group.type).length;
+        return (
+          <article>
+            <p class="catalog-number">{count}</p>
+            <h3>{group.title}</h3>
+            <p>{group.blurb}</p>
+          </article>
+        );
+      })}
+    </div>
+    {recentPrimaryWriting.length > 0 && (
+      <ol class="source-strip" aria-label="Recent dated primary writing">
+        {recentPrimaryWriting.map(({ entry, timeline }) => (
+          <li>
+            <a href={entryHref('sources', entry.data.id)}>{entry.data.title}</a>
+            <span>{formatDate(timeline.date, timeline.precision)}</span>
+          </li>
+        ))}
+      </ol>
+    )}
+  </section>
+
+  <section class="home-section" id="about" aria-labelledby="about-heading">
+    <header class="section-header">
+      <div>
+        <p class="eyebrow">About Bourdain · selected, not exhaustive</p>
+        <h2 id="about-heading">Profiles, criticism + remembrance</h2>
+      </div>
+      <span>{about.length} records</span>
+    </header>
+    <ol class="editorial-list">
+      {about.map((entry) => {
+        const preview = previewFor(entry);
+        return (
+          <li>
+            <a class="editorial-list-media" href={entryHref('literature', entry.data.id)}>
+              {preview.image ? (
+                <img src={preview.image} alt="" loading="lazy" decoding="async" width="320" height="200" />
+              ) : (
+                <span>{entry.data.publication}</span>
+              )}
+            </a>
+            <div>
+              <p class="eyebrow">
+                {entry.data.publication} · {formatDate(entry.data.date, entry.data.date_precision)} · {formatType(entry.data.type)}
+              </p>
+              <h3><a href={entryHref('literature', entry.data.id)}>{entryTitle(entry)}</a></h3>
+              {entry.data.summary && <p>{entry.data.summary}</p>}
+            </div>
+          </li>
+        );
+      })}
+    </ol>
+  </section>
 </BaseLayout>

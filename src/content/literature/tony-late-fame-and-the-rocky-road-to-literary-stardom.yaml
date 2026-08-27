@@ -1,0 +1,28 @@
+id: tony-late-fame-and-the-rocky-road-to-literary-stardom
+title: "Tony, Late Fame, and the Rocky Road to Literary Stardom"
+type: review
+record_type: literature
+media_type: article-essay
+relation_to_bourdain: about
+date: "2026-08-07"
+date_precision: day
+publication: The New Yorker
+bucket: Film review
+summary: The New Yorker's film criticism considers Tony alongside Bourdain's late arrival at fame and the difficult path that preceded his literary breakthrough.
+tags:
+  - about-bourdain
+  - literature
+  - posthumous
+  - film-review
+  - biopic
+people:
+  - anthony-bourdain
+places: []
+sources:
+  - new-yorker-tony-late-fame
+related:
+  - tony-2026
+  - kitchen-confidential
+status: confirmed
+availability:
+  official_url: https://www.newyorker.com/culture/the-current-cinema/tony-late-fame-and-the-rocky-road-to-literary-stardom

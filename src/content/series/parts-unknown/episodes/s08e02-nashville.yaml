@@ -1,0 +1,31 @@
+id: "parts-unknown-s08e02-nashville"
+title: "Nashville"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 8
+episode: 2
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2016-10-02"
+date_precision: "day"
+summary: "Bourdain absorbs the tastes, sights and sounds of music city, from chef Josh Habiger's Catbird Seat and Bolton's famous hot chicken, to a night of cooking, drinking and rocking out with singer Alison Mosshart, and her bandmates. The episode features performances by The Kills, Dead Weather and Margo Price."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "nashville-united-states"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

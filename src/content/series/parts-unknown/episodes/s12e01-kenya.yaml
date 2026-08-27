@@ -1,0 +1,31 @@
+id: parts-unknown-s12e01-kenya
+title: Kenya
+kind: episode
+index_mode: child
+parent_id: parts-unknown-show
+type: episode
+show: Parts Unknown
+season: 12
+episode: 1
+record_type: television
+media_type: tv-video
+relation_to_bourdain: featured
+contributors:
+  - anthony-bourdain
+date: "2018-09-23"
+date_precision: day
+summary: Bourdain takes W. Kamau Bell on his first trip to Africa, meeting Nairobi residents and a Maasai conservation community while asking who gets to define Kenya's future.
+tags:
+  - travel
+  - food-media
+  - posthumous
+people:
+  - anthony-bourdain
+places: []
+sources:
+  - parts-unknown-tvdb
+  - field-notes-kenya
+related: []
+status: confirmed
+availability:
+  official_url: https://explorepartsunknown.com/kenya/bourdains-field-notes-kenya/

@@ -1,0 +1,31 @@
+id: anthony-bourdain-filmmaker
+title: "Anthony Bourdain, Filmmaker"
+type: book
+record_type: work
+media_type: book-print
+relation_to_bourdain: about
+image_url: https://wayne-state-university-us.imgix.net/covers/9780814352922.jpg?auto=format&w=600
+creator:
+  - todd-kennedy
+date: "2026-10-20"
+date_precision: day
+summary: Todd Kennedy's book-length study treats Bourdain as a filmmaker, examining the visual language, production choices, and cultural arguments of his television work.
+tags:
+  - about-bourdain
+  - book
+  - posthumous
+  - television
+  - film-criticism
+people:
+  - anthony-bourdain
+  - todd-kennedy
+places: []
+sources:
+  - wayne-state-anthony-bourdain-filmmaker
+related:
+  - no-reservations-show
+  - parts-unknown-show
+status: confirmed
+availability:
+  official_url: https://wsupress.wayne.edu/9780814352922/
+  purchase_url: https://wsupress.wayne.edu/9780814352922/

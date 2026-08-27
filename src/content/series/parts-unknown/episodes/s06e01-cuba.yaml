@@ -1,0 +1,32 @@
+id: "parts-unknown-s06e01-cuba"
+title: "Cuba"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 6
+episode: 1
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2015-09-27"
+date_precision: "day"
+summary: "Bourdain explores Cuba - just as the half-century U.S. embargo softens and economic and social progress loom - from its bustling capital city Havana, to the slower paced, music mecca Santiago. Sampled food includes pig's head soup with plantains and pumpkin, flan in a beer can, and dogfish ceviche with pickled vegetables. The tour culminates with a dialogue-free tracking shot capturing the hopeful anxiety of its people, seemingly waiting for something to start."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "havana-cuba"
+  - "santiago-cuba"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

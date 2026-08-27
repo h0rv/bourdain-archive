@@ -1,0 +1,32 @@
+id: "parts-unknown-s08e08-minas-gerais-brazil"
+title: "Minas Gerais, Brazil"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 8
+episode: 8
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2016-11-27"
+date_precision: "day"
+summary: In Minas Gerais, Bourdain explores mineiro cooking, Afro-Brazilian cultural influence, baroque towns, and the vast contemporary-art complex at Inhotim.
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "belo-horizonte-minas-gerais-brazil"
+  - "brumadinho-brazil"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

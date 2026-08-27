@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../lib/site';
+---
+
+<BaseLayout
+  title="About"
+  description="Scope, editorial method, sourcing policy, and contribution guide for the Bourdain Archive."
+>
+  <header class="page-intro about-intro">
+    <p class="eyebrow">Method + scope · updated August 2026</p>
+    <h1 class="page-title">About this archive</h1>
+    <p class="lede">
+      Bourdain Archive is an independent, open-source finding aid for Anthony Bourdain’s work and
+      cultural record. It exists to help people discover what he made, where he appeared, where he
+      travelled, and where the underlying material can be found legally.
+    </p>
+  </header>
+
+  <div class="prose-grid">
+    <section>
+      <h2>What belongs here</h2>
+      <p>
+        Books, essays, field notes, television, films, voice and acting roles, podcasts, interviews,
+        talks, primary web material, and substantial criticism or biography. “Substantial” means
+        work with lasting documentary, literary, critical, or historical value—not recycled
+        celebrity coverage.
+      </p>
+    </section>
+    <section>
+      <h2>What this is not</h2>
+      <p>
+        This is not a mirror of copyrighted books, articles, transcripts, or episodes. It is not an
+        official estate project, and it does not claim completeness where the evidence is still
+        being reviewed.
+      </p>
+    </section>
+    <section>
+      <h2>The three relationships</h2>
+      <dl class="taxonomy-list">
+        <div><dt>By Bourdain</dt><dd>Authored or co-authored work.</dd></div>
+        <div><dt>Featuring Bourdain</dt><dd>Interviews, performances, hosted work, and credited production roles.</dd></div>
+        <div><dt>About Bourdain</dt><dd>Posthumous films, books, profiles, criticism, and reference material.</dd></div>
+      </dl>
+    </section>
+    <section>
+      <h2>Evidence before certainty</h2>
+      <p>
+        Every canonical record should point to a publisher, broadcaster, archive, catalog, or
+        reputable publication. Records marked <em>needs review</em> remain visible for research but
+        are excluded from search-engine indexing until verified.
+      </p>
+    </section>
+    <section>
+      <h2>Images + rights</h2>
+      <p>
+        Covers and posters are used as a visual index and normally remain remote previews from
+        publishers, libraries, broadcasters, or film databases. Local images require a recorded
+        creator, source, license, and credit. The archive does not bulk-copy editorial photography.
+      </p>
+    </section>
+    <section>
+      <h2>Preserving the trail</h2>
+      <p>
+        Original URLs remain the primary citation. When a page disappears, the archive links to
+        documented captures where available. Browse the <a href={withBase('/sources/')}>source ledger</a>
+        to see the evidence behind the catalog.
+      </p>
+    </section>
+  </div>
+
+  <section class="contribute-band">
+    <p class="eyebrow">Corrections welcome</p>
+    <h2>A public archive gets better in public.</h2>
+    <p>
+      Missing work, wrong episode order, a dead link, a stronger citation, or better rights-cleared
+      artwork? Open an issue or pull request with the source that supports the change.
+    </p>
+    <p>
+      <a class="primary-action" href="https://github.com/h0rv/bourdain-archive">Contribute on GitHub</a>
+      <a href={withBase('/archive/')}>Browse the archive</a>
+    </p>
+  </section>
+</BaseLayout>

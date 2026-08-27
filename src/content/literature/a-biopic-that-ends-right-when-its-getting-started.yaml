@@ -1,0 +1,27 @@
+id: a-biopic-that-ends-right-when-its-getting-started
+title: A Biopic That Ends Right When It's Getting Started
+type: review
+record_type: literature
+media_type: article-essay
+relation_to_bourdain: about
+date: "2026-08"
+date_precision: month
+publication: The Atlantic
+bucket: Film review
+summary: The Atlantic reviews Tony as an origin story whose narrow time frame ends before the work and public life that made Bourdain culturally consequential.
+tags:
+  - about-bourdain
+  - literature
+  - posthumous
+  - film-review
+  - biopic
+people:
+  - anthony-bourdain
+places: []
+sources:
+  - atlantic-tony-biopic-ends-when-started
+related:
+  - tony-2026
+status: confirmed
+availability:
+  official_url: https://www.theatlantic.com/culture/2026/08/tony-anthony-bourdain-movie-review/688192/

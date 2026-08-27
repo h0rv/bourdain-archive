@@ -1,0 +1,32 @@
+id: "parts-unknown-s04e06-iran"
+title: "Iran"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 4
+episode: 6
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2014-11-02"
+date_precision: "day"
+summary: "Bourdain shines a light on how Iranians are existing within an oppressive government system. He visits Isfahan and Tehran and stops at two private homes for traditional Persian cooking. The episode ends with a nightlife scene in Northern Tehran. This episode features Jason Rezaian and his wife and journalist Yeganeh Salehi before they were taken into custody by Iranian authorities in 2014."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "isfahan-iran"
+  - "tehran-iran"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

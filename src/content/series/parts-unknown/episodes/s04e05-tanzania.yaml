@@ -1,0 +1,33 @@
+id: "parts-unknown-s04e05-tanzania"
+title: "Tanzania"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 4
+episode: 5
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2014-10-26"
+date_precision: "day"
+summary: From Zanzibar's layered trading history to the Serengeti and Ngorongoro Crater, Bourdain explores Tanzanian street food, landscape, and wildlife.
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "ngorongoro-crater-tanzania"
+  - "serengeti-tanzania"
+  - "zanzibar-tanzania"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.imdb.com/title/tt4129732/plotsummary?ref_=tt_ov_pl"

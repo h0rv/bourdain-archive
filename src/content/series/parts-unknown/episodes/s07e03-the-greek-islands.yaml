@@ -1,0 +1,31 @@
+id: "parts-unknown-s07e03-the-greek-islands"
+title: "The Greek Islands"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 7
+episode: 3
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2016-05-08"
+date_precision: "day"
+summary: On Naxos, Bourdain dives a shipwreck, eats from the surrounding waters, and joins musicians and villagers whose food and celebrations sustain island identity.
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "naxos-greece"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

@@ -1,0 +1,32 @@
+id: parts-unknown-s12e05-far-west-texas
+title: Far West Texas
+kind: episode
+index_mode: child
+parent_id: parts-unknown-show
+type: episode
+show: Parts Unknown
+season: 12
+episode: 5
+record_type: television
+media_type: tv-video
+relation_to_bourdain: featured
+contributors:
+  - anthony-bourdain
+date: "2018-10-21"
+date_precision: day
+summary: In the Big Bend borderlands, Bourdain eats with working cowboys and explores the prehistoric White Shaman rock-art site with an anthropologist.
+tags:
+  - travel
+  - food-media
+  - posthumous
+people:
+  - anthony-bourdain
+places:
+  - united-states
+sources:
+  - parts-unknown-tvdb
+  - field-notes-west-texas
+related: []
+status: confirmed
+availability:
+  official_url: https://explorepartsunknown.com/west-texas/bourdains-field-notes-west-texas/

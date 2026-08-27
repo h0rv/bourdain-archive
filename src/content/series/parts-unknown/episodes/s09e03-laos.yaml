@@ -1,0 +1,31 @@
+id: "parts-unknown-s09e03-laos"
+title: "Laos"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 9
+episode: 3
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2017-05-14"
+date_precision: "day"
+summary: "The rich sensory experience of Laos with its enchanting scenery, distinctive aromas, and exceptional food are explored in Bourdain's trip to this Southeast Asian country which also continues to suffer the effects of the Secret War by the U.S in the 1960's-1970's. In his travels, the host takes in a boat festival, dines on imperial dishes at the Ban Lao hotel prepared by Mama Vahn, and communes with residents who have fallen victim to active bombs that still pepper the countryside."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "luang-prabang-laos"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://explorepartsunknown.com/destination/laos/"

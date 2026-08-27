@@ -1,0 +1,34 @@
+id: "parts-unknown-s09e05-antarctica"
+title: "Antarctica"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 9
+episode: 5
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2017-06-04"
+date_precision: "day"
+summary: "Bourdain travels to the bottom of the world to experience the serene beauty and mystery of the driest, coldest, windiest place on earth. Taken under the wings of such hearty residents as scientists, contractors and the U.S. military, Bourdain's adventures include a helicopter view of the largest active volcano in the southern hemisphere, a snowmobile drive over 8 ft. thick sea ice, a visit with a colony of Adele penguins, and a trip the South Pole."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "mcmurdo-station-antarctica"
+  - "cape-royds-antarctica"
+  - "lake-hoare-antarctica"
+  - "south-pole-antarctica"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://www.eater.com/2017/6/4/15732806/anthony-bourdain-antarctica-parts-unknown"

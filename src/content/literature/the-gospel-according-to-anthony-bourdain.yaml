@@ -1,0 +1,27 @@
+id: the-gospel-according-to-anthony-bourdain
+title: The Gospel According to Anthony Bourdain
+type: profile
+record_type: literature
+media_type: article-essay
+relation_to_bourdain: about
+date: "2026-08-07"
+date_precision: day
+publication: The New York Times Magazine
+bucket: Cultural profile
+summary: A New York Times Magazine examination of Bourdain's enduring following and the values, rituals, and contradictions that shape his posthumous cultural influence.
+tags:
+  - about-bourdain
+  - literature
+  - posthumous
+  - legacy
+  - fandom
+people:
+  - anthony-bourdain
+places: []
+sources:
+  - nyt-gospel-according-to-anthony-bourdain
+related:
+  - tony-2026
+status: confirmed
+availability:
+  official_url: https://www.nytimes.com/2026/08/07/magazine/tony-anthony-bourdain-cult-fandom.html

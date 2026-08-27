@@ -1,0 +1,29 @@
+id: no-reservations-s06e26-issues-special
+title: Issues Special
+kind: episode
+index_mode: child
+parent_id: no-reservations-show
+type: episode
+show: No Reservations
+season: 6
+episode: 26
+record_type: television
+media_type: tv-video
+relation_to_bourdain: featured
+contributors:
+  - anthony-bourdain
+date: "2010-12-06"
+date_precision: day
+summary: The season finale revisits journeys where food opened onto political conflict, inequality, migration, and other public questions beyond the plate.
+tags:
+  - food-media
+  - compilation
+  - politics
+people:
+  - anthony-bourdain
+places: []
+sources:
+  - no-reservations-tvdb
+related: []
+status: confirmed
+availability: {}

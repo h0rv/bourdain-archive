@@ -1,0 +1,31 @@
+id: "parts-unknown-s06e07-istanbul"
+title: "Istanbul"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 6
+episode: 7
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2015-11-08"
+date_precision: "day"
+summary: "The cliché East meets West rings true in Istanbul as Bourdain explores its confluence of food, culture and politics, featuring a Turkish breakfast with old friend Esra, an oil wrestling tournament, and lunch at an Armenian restaurant near the Golden Horn. Bourdain leaves the urban sprawl of Istanbul for Sedef Island and a meal with author and philosopher Gündüz Vassaf and celebrated Turkish actress Serra Yilmaz."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "istanbul-turkey"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

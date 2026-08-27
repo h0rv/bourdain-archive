@@ -1,0 +1,32 @@
+id: "parts-unknown-s05e07-hawaii"
+title: "Hawaii"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 5
+episode: 7
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2015-06-14"
+date_precision: "day"
+summary: "Bourdain explores the other Hawaii, the one that the 8 million tourists don’t see when they descend on the islands every year. Tony meets with travel writer and novelist Paul Theroux, Chef Andrew Le of Pig and the Lady in Honolulu, talent manager Shep Gordon and communes with residents of Molokai for a meal at an ancient oceanside fish pond."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "honolulu-united-states"
+  - "molokai-united-states"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

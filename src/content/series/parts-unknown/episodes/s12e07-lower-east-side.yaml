@@ -1,0 +1,35 @@
+id: parts-unknown-s12e07-lower-east-side
+title: Lower East Side
+kind: episode
+index_mode: child
+parent_id: parts-unknown-show
+type: episode
+show: Parts Unknown
+season: 12
+episode: 7
+record_type: television
+media_type: tv-video
+relation_to_bourdain: featured
+contributors:
+  - anthony-bourdain
+date: "2018-11-11"
+date_precision: day
+summary: Bourdain revisits the Lower East Side through meals and memories with artists whose punk, film, music, and street culture reshaped downtown New York in the 1970s and '80s.
+tags:
+  - travel
+  - food-media
+  - posthumous
+  - new-york
+people:
+  - anthony-bourdain
+places:
+  - new-york-city
+  - manhattan-united-states
+  - united-states
+sources:
+  - parts-unknown-tvdb
+  - field-notes-lower-east-side
+related: []
+status: confirmed
+availability:
+  official_url: https://explorepartsunknown.com/lower-east-side/bourdains-field-notes-lower-east-side/

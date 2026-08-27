@@ -1,0 +1,87 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import {
+  archiveTargetsForUrl,
+  formatDate,
+  formatType,
+  hostnameForUrl,
+  sourceGroupFor,
+  sourceGroupLabels,
+  sourceTimelineDate,
+} from '../../lib/content';
+import '../../styles/catalog.css';
+
+export async function getStaticPaths() {
+  const sources = await getCollection('sources');
+  return sources.map((entry) => ({ params: { id: entry.data.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const data = entry.data;
+const timeline = sourceTimelineDate(data);
+const group = sourceGroupFor(data);
+const host = hostnameForUrl(data.url);
+const archive = archiveTargetsForUrl(data.url);
+---
+
+<BaseLayout title={data.title} description={data.notes ?? `Evidence record for ${data.title}.`}>
+  <article class="catalog-page">
+    <header class="catalog-intro">
+      <p class="catalog-kicker">Source evidence</p>
+      <h1 class="page-title">{data.title}</h1>
+      <p class="catalog-source-meta">
+        {formatDate(timeline.date, timeline.precision)} · {formatType(data.type)} · {sourceGroupLabels[group] ?? formatType(group)}
+      </p>
+    </header>
+
+    <div class="catalog-evidence">
+      <div class="catalog-evidence-main">
+        {data.notes && (
+          <section class="catalog-evidence-box">
+            <h2>Notes</h2>
+            <p>{data.notes}</p>
+          </section>
+        )}
+
+        <section class="catalog-evidence-box">
+          <h2>Original URL</h2>
+          <p class="catalog-url">{data.url}</p>
+          <div class="catalog-source-actions">
+            <a href={data.url} target="_blank" rel="noopener noreferrer">Open original</a>
+            {archive && (
+              <>
+                <a href={archive.latest_url} target="_blank" rel="noopener noreferrer">Latest capture</a>
+                <a href={archive.calendar_url} target="_blank" rel="noopener noreferrer">Capture history</a>
+              </>
+            )}
+          </div>
+        </section>
+      </div>
+
+      <aside class="catalog-evidence-aside" aria-label="Source metadata">
+        <section class="catalog-evidence-box">
+          <h2>Evidence record</h2>
+          <p class="catalog-source-meta">
+            Host: {host ?? 'Unknown'}<br />
+            Accessed: {data.accessed}<br />
+            Status: {formatType(data.status)}<br />
+            Relationship: {data.relation_to_bourdain ? formatType(data.relation_to_bourdain) : 'Unclassified'}
+          </p>
+        </section>
+
+        {data.creator.length > 0 && (
+          <section class="catalog-evidence-box">
+            <h2>Creator</h2>
+            <p>{data.creator.join(', ')}</p>
+          </section>
+        )}
+
+        <section class="catalog-evidence-box">
+          <h2>Archive navigation</h2>
+          <p><a href="../">All sources →</a></p>
+        </section>
+      </aside>
+    </div>
+  </article>
+</BaseLayout>

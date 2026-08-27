@@ -1,0 +1,29 @@
+id: no-reservations-s06e18-where-it-all-began
+title: Where It All Began
+kind: episode
+index_mode: child
+parent_id: no-reservations-show
+type: episode
+show: No Reservations
+season: 6
+episode: 18
+record_type: television
+media_type: tv-video
+relation_to_bourdain: featured
+contributors:
+  - anthony-bourdain
+date: "2010-08-02"
+date_precision: day
+summary: Bourdain looks back at formative meals, early influences, and the people and places that set his life in kitchens and travel in motion.
+tags:
+  - food-media
+  - compilation
+  - origins
+people:
+  - anthony-bourdain
+places: []
+sources:
+  - no-reservations-tvdb
+related: []
+status: confirmed
+availability: {}

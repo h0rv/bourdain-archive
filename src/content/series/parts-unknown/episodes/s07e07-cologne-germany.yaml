@@ -1,0 +1,31 @@
+id: "parts-unknown-s07e07-cologne-germany"
+title: "Cologne, Germany"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 7
+episode: 7
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2016-06-05"
+date_precision: "day"
+summary: "The 40-day Cologne Carnival celebration sets the tone for Bourdain's visit to this city that boasts many delicacies (kolsch, mett, blood sausage with himmel und erde, schnitzel), and maintains a peaceful atmosphere and sense of tolerance, despite the recent New Year's Eve assaults linked to incoming refugees, which the host discusses with the locals."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "cologne-germany"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

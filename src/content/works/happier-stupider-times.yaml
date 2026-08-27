@@ -1,0 +1,25 @@
+id: happier-stupider-times
+title: "Happier, Stupider Times"
+type: book
+record_type: work
+media_type: book-print
+relation_to_bourdain: about
+image_url: https://shop.a24films.com/cdn/shop/files/GT_01_Happier_Stupider_Times_Anthony_Bourdain_Cover_Front_873590d5-4891-4736-b4fa-c8443e52dade_grande.jpg?v=1787333533
+date: "2026-09"
+date_precision: month
+summary: A24 publication assembling a photographic and archival portrait of Anthony Bourdain, his work, and the people and places around him.
+tags:
+  - about-bourdain
+  - book
+  - posthumous
+  - photography
+people:
+  - anthony-bourdain
+places: []
+sources:
+  - a24-happier-stupider-times
+related: []
+status: confirmed
+availability:
+  official_url: https://shop.a24films.com/products/happier-stupider-times
+  purchase_url: https://shop.a24films.com/products/happier-stupider-times

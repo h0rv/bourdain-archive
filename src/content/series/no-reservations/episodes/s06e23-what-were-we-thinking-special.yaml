@@ -1,0 +1,29 @@
+id: no-reservations-s06e23-what-were-we-thinking-special
+title: What Were We Thinking Special
+kind: episode
+index_mode: child
+parent_id: no-reservations-show
+type: episode
+show: No Reservations
+season: 6
+episode: 23
+record_type: television
+media_type: tv-video
+relation_to_bourdain: featured
+contributors:
+  - anthony-bourdain
+date: "2010-09-06"
+date_precision: day
+summary: Bourdain and the production team revisit ill-advised plans, awkward encounters, and other moments that did not unfold as expected.
+tags:
+  - food-media
+  - compilation
+  - behind-the-scenes
+people:
+  - anthony-bourdain
+places: []
+sources:
+  - no-reservations-tvdb
+related: []
+status: confirmed
+availability: {}

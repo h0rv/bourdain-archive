@@ -1,0 +1,31 @@
+id: "parts-unknown-s07e05-tbilisi-georgia"
+title: "Tbilisi, Georgia"
+kind: "episode"
+index_mode: "child"
+parent_id: "parts-unknown-show"
+type: "episode"
+show: "Parts Unknown"
+season: 7
+episode: 5
+record_type: "television"
+media_type: "tv-video"
+relation_to_bourdain: "featured"
+contributors:
+  - "anthony-bourdain"
+date: "2016-05-22"
+date_precision: "day"
+summary: "Sidekick Zamir Gotta temporarily upstages Bourdain in this tour of the mountainous Eurasian country Georgia, featuring the cities Tbilisi, Batumi, and Khurvaleti (bordering Russia), with traditional dishes that include spicy chashashuli stew, chkmeruli at Café Gabriadze and an epic meal at the Black Lion. On the political front, acclaimed journalist Tamara Chergoleishvili (Tabula magazine editor-in-chief) offers Bourdain an insider's POV of her country's changing views."
+tags:
+  - "travel"
+  - "food-media"
+people:
+  - "anthony-bourdain"
+places:
+  - "tbilisi-georgia"
+sources:
+  - "travel-places-github"
+  - "parts-unknown-tvdb"
+related: []
+status: "needs-review"
+availability:
+  official_url: "https://en.wikipedia.org/wiki/Anthony_Bourdain:_Parts_Unknown"

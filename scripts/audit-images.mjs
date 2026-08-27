@@ -14,8 +14,14 @@ import YAML from 'yaml';
 const CONTENT_ROOT = 'src/content';
 const PUBLIC_ROOT = 'public';
 const PREVIEW_CACHE = 'archive/derived/link-previews.json';
-const COLLECTIONS_EXPECTING_VISUALS = new Set(['works', 'episodes', 'series', 'appearances', 'screen', 'events', 'literature']);
-const BLOCKED_IMAGE_HOSTS = new Set(['interviews.televisionacademy.com']);
+const COLLECTIONS_EXPECTING_VISUALS = new Set(['works', 'series', 'appearances', 'screen', 'events', 'literature']);
+const BLOCKED_IMAGE_HOSTS = new Set([
+  'opengraph.githubassets.com',
+  'interviews.televisionacademy.com',
+  's0.wp.com',
+]);
+const PLACEHOLDER_IMAGE_HOSTS = new Set(['placehold.co', 'placeholder.com', 'via.placeholder.com']);
+const BLOCKED_IMAGE_PATHS = [/^archive\.org\/services\/img\/The_Nerdist_Podcast_528$/i];
 
 const errors = [];
 const warnings = [];
@@ -43,8 +49,19 @@ async function exists(path) {
 function isBlockedRemoteImage(url) {
   if (!url || !/^https?:\/\//.test(url)) return false;
   try {
-    const host = new URL(url).hostname.replace(/^www\./, '');
-    return BLOCKED_IMAGE_HOSTS.has(host);
+    const parsed = new URL(url);
+    const host = parsed.hostname.replace(/^www\./, '');
+    const hostAndPath = `${host}${parsed.pathname}`;
+    return BLOCKED_IMAGE_HOSTS.has(host) || BLOCKED_IMAGE_PATHS.some((pattern) => pattern.test(hostAndPath));
+  } catch {
+    return false;
+  }
+}
+
+function isPlaceholderRemoteImage(url) {
+  if (!url || !/^https?:\/\//.test(url)) return false;
+  try {
+    return PLACEHOLDER_IMAGE_HOSTS.has(new URL(url).hostname.replace(/^www\./, ''));
   } catch {
     return false;
   }
@@ -84,7 +101,9 @@ function primaryAvailabilityUrl(data) {
 }
 
 function previewImageFor(data, cache, sourceById = new Map(), seen = new Set()) {
-  if (data.image_url) return { image: data.image_url, reason: 'explicit image_url' };
+  if (data.image_url && !isBlockedRemoteImage(data.image_url) && !isPlaceholderRemoteImage(data.image_url)) {
+    return { image: data.image_url, reason: 'explicit image_url' };
+  }
   const url = primaryAvailabilityUrl(data);
   const videoId = youtubeId(url);
   if (videoId) return { image: `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`, reason: 'YouTube thumbnail fallback' };
@@ -138,13 +157,17 @@ const sourceById = new Map(entries.filter((entry) => entry.collection === 'sourc
 
 for (const [url, preview] of Object.entries(previewCache)) {
   if (isBlockedRemoteImage(preview?.image)) {
-    errors.push(`${PREVIEW_CACHE}: blocked broken preview image for ${url}: ${preview.image}`);
+    warnings.push(`${PREVIEW_CACHE}: ignored blocked preview image for ${url}: ${preview.image}`);
   }
 }
 
 const missingByCollection = new Map();
 
 for (const { file, collection, data } of entries) {
+  if (data.image_url && isPlaceholderRemoteImage(data.image_url)) {
+    errors.push(`${file}: image_url uses a generated placeholder host: ${data.image_url}`);
+  }
+
   if (data.image_url && isBlockedRemoteImage(data.image_url)) {
     errors.push(`${file}: image_url uses blocked broken host: ${data.image_url}`);
   }
@@ -154,12 +177,14 @@ for (const { file, collection, data } of entries) {
     errors.push(`${file}: local image_url is missing: ${data.image_url}`);
   }
 
-  if (!COLLECTIONS_EXPECTING_VISUALS.has(collection) || data.index_mode === 'child') continue;
+  if (!COLLECTIONS_EXPECTING_VISUALS.has(collection)) continue;
   const previewImage = previewImageFor(data, previewCache, sourceById);
   if (!previewImage.image) {
     const count = missingByCollection.get(collection) ?? 0;
     missingByCollection.set(collection, count + 1);
-    warnings.push(`${file}: no safe image_url or preview image (${previewImage.reason})`);
+    if (data.index_mode !== 'child') {
+      warnings.push(`${file}: no safe image_url or preview image (${previewImage.reason})`);
+    }
   }
 }
 

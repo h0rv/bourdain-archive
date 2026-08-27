@@ -1,0 +1,27 @@
+id: i-think-tony-would-have-hated-this
+title: I Think Tony Would Have Hated This
+type: review
+record_type: literature
+media_type: article-essay
+relation_to_bourdain: about
+date: "2026-08"
+date_precision: month
+publication: Bon Appétit
+bucket: Film review
+summary: A critical response to Tony that measures the biopic's choices against Bourdain's voice, public persona, and resistance to easy mythmaking.
+tags:
+  - about-bourdain
+  - literature
+  - posthumous
+  - film-review
+  - biopic
+people:
+  - anthony-bourdain
+places: []
+sources:
+  - bon-appetit-i-think-tony-would-have-hated-this
+related:
+  - tony-2026
+status: confirmed
+availability:
+  official_url: https://www.bonappetit.com/story/anthony-bourdain-a24-biopic-tony-review

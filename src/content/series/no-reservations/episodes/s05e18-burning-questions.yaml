@@ -1,0 +1,29 @@
+id: no-reservations-s05e18-burning-questions
+title: Burning Questions
+kind: episode
+index_mode: child
+parent_id: no-reservations-show
+type: episode
+show: No Reservations
+season: 5
+episode: 18
+record_type: television
+media_type: tv-video
+relation_to_bourdain: featured
+contributors:
+  - anthony-bourdain
+date: "2009-08-31"
+date_precision: day
+summary: Bourdain answers viewer questions and uses earlier journeys to revisit the practical, cultural, and sometimes absurd problems of making the series.
+tags:
+  - food-media
+  - compilation
+  - behind-the-scenes
+people:
+  - anthony-bourdain
+places: []
+sources:
+  - no-reservations-tvdb
+related: []
+status: confirmed
+availability: {}
