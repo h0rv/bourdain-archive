@@ -50,29 +50,15 @@
     padding-top: 0.9rem;
   }
 
-  .home-intro,
   .split-intro {
     grid-template-columns: 1fr;
-  }
-
-  .home-deck,
-  .home-intro .eyebrow,
-  .home-intro h1,
-  .home-actions {
-    grid-column: 1;
-    grid-row: auto;
-  }
-
-  .home-deck {
-    margin-top: 1rem;
   }
 
   .split-intro .lede {
     margin-top: 0.25rem;
   }
 
-  .page-title,
-  .home-intro h1 {
+  .page-title {
     font-size: clamp(2.6rem, 12vw, 4rem);
   }
 
@@ -133,6 +119,24 @@
     font-size: 0.56rem;
     letter-spacing: 0.025em;
     white-space: nowrap;
+  }
+
+  .top-bar-links .top-bar-search {
+    width: 2.75rem;
+    padding-inline: 0;
+    justify-content: center;
+  }
+
+  .top-bar-search-label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
   }
 
   .archive-stats {

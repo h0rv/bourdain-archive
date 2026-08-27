@@ -76,6 +76,31 @@ header[role="banner"],
   text-underline-offset: 0.35rem;
 }
 
+.top-bar-links a:focus-visible {
+  outline-offset: -3px;
+}
+
+.top-bar-links .top-bar-search {
+  display: inline-flex;
+  gap: 0.4rem;
+  align-items: center;
+  background: color-mix(in srgb, var(--wash) 62%, var(--cream));
+}
+
+.top-bar-search svg {
+  width: 1rem;
+  height: 1rem;
+  fill: none;
+  stroke: currentcolor;
+  stroke-linecap: square;
+  stroke-width: 1.75;
+}
+
+.top-bar-links .top-bar-search:hover,
+.top-bar-links .top-bar-search[aria-current="page"] {
+  background: var(--wash);
+}
+
 .site-main {
   min-height: calc(100vh - 12rem);
   padding-block: clamp(0.8rem, 1.8vw, 1.5rem) clamp(2.5rem, 6vw, 5rem);
@@ -90,8 +115,7 @@ header[role="banner"],
   text-transform: uppercase;
 }
 
-.page-intro,
-.home-intro {
+.page-intro {
   max-width: 72rem;
   margin-bottom: clamp(1.6rem, 3.5vw, 2.75rem);
 }
@@ -123,8 +147,7 @@ header[role="banner"],
   text-transform: uppercase;
 }
 
-.page-title,
-.home-intro h1 {
+.page-title {
   max-width: 18ch;
   margin: 0;
   font-family: var(--display);
@@ -132,34 +155,6 @@ header[role="banner"],
   font-weight: 800;
   letter-spacing: -0.065em;
   line-height: 0.94;
-}
-
-.home-intro {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.65fr);
-  gap: 0.35rem clamp(2rem, 6vw, 7rem);
-  align-items: end;
-  max-width: none;
-}
-
-.home-intro .eyebrow,
-.home-intro h1 {
-  grid-column: 1;
-}
-
-.home-intro h1 {
-  max-width: 12ch;
-}
-
-.home-deck {
-  grid-column: 2;
-  grid-row: 1 / span 2;
-  max-width: 40rem;
-  margin: 0;
-  color: var(--muted);
-  font-family: var(--display);
-  font-size: clamp(1.25rem, 2.2vw, 1.85rem);
-  line-height: 1.25;
 }
 
 .home-actions {
@@ -243,6 +238,10 @@ header[role="banner"],
   scroll-margin-top: 2rem;
 }
 
+.site-main > .home-section:first-child {
+  margin-top: 0;
+}
+
 .section-header {
   display: flex;
   gap: 1rem 2rem;
@@ -251,7 +250,7 @@ header[role="banner"],
   margin-bottom: 1rem;
 }
 
-.section-header h2,
+.section-header :is(h1, h2),
 .crosslink-band h2,
 .contribute-band h2 {
   max-width: 22ch;
