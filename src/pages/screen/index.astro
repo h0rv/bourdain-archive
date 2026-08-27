@@ -1,7 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
 import linkPreviewCache from '../../../archive/derived/link-previews.json';
-import BrowseCard from '../../components/BrowseCard.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import {
   entryHref,
@@ -58,7 +57,6 @@ const items = [...screen, ...appearances]
     const title = entryTitle(item.entry);
     const preview = previewForEntry(item.entry, linkPreviewCache.previews);
     const externalUrl = primaryAvailabilityUrl(data);
-    const textOnly = data.image_mode === 'text';
     const shape = mediaShapeFor(data, preview.image);
     const dimensions = {
       portrait: { width: 400, height: 600 },
@@ -77,7 +75,6 @@ const items = [...screen, ...appearances]
       title,
       preview,
       externalUrl,
-      textOnly,
       shape,
       dimensions,
       group,
@@ -167,15 +164,7 @@ const groups = [
                 data-type={item.data.type}
                 data-search={item.searchable}
               >
-                {item.textOnly ? (
-                  <BrowseCard
-                    href={entryHref(item.collection, item.data.id)}
-                    title={item.title}
-                    shape={item.shape}
-                    textOnly
-                    medium={formatType(item.data.type)}
-                  />
-                ) : item.preview.image ? (
+                {item.preview.image && (
                   <a
                     class:list={['catalog-tile-media', `is-${item.shape}`]}
                     href={entryHref(item.collection, item.data.id)}
@@ -191,9 +180,7 @@ const groups = [
                       height={item.dimensions.height}
                     />
                   </a>
-                ) : null}
-                {!item.textOnly && (
-                  <>
+                )}
                     <a class="catalog-tile-title" href={entryHref(item.collection, item.data.id)}>{item.title}</a>
                     <span class="catalog-row-meta">
                       {formatDate(item.data.date, item.data.date_precision)}, {formatType(item.data.type)}
@@ -205,8 +192,6 @@ const groups = [
                         <a href={item.externalUrl} target="_blank" rel="noopener noreferrer">Source</a>
                       )}
                     </div>
-                  </>
-                )}
               </li>
             ))}
           </ol>

@@ -398,8 +398,7 @@ export function previewForEntry(entry: any, cache?: Record<string, any>) {
     host: urlPreview.host,
     title: urlPreview.title,
     description: urlPreview.description,
-    image:
-      data.image_mode === "text" ? undefined : (siteAssetUrl(data.image_url) ?? urlPreview.image),
+    image: siteAssetUrl(data.image_url) ?? urlPreview.image,
     favicon: urlPreview.favicon,
     archive: urlPreview.archive,
     label:

@@ -86,7 +86,6 @@ const commonEntrySchema = z.object({
   roles: z.array(roleSchema).default([]),
   status: statusSchema.default("needs-review"),
   image_url: imageField,
-  image_mode: z.literal("text").optional(),
   availability: availabilitySchema,
 });
 

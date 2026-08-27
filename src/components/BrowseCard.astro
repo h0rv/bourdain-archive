@@ -8,8 +8,6 @@ interface Props {
   loading?: 'eager' | 'lazy';
   priority?: boolean;
   fallback?: string;
-  textOnly?: boolean;
-  medium?: string;
 }
 
 const {
@@ -21,8 +19,6 @@ const {
   loading = 'lazy',
   priority = false,
   fallback,
-  textOnly = false,
-  medium,
 } = Astro.props;
 const dimensions = {
   portrait: { width: 400, height: 600 },
@@ -32,31 +28,22 @@ const dimensions = {
 const sizeMode = shape === 'portrait' ? 'poster' : 'still';
 ---
 
-<a class:list={['browse-card', `is-${sizeMode}-card`, textOnly && 'is-text-only']} href={href}>
-  {textOnly ? (
-    <span class:list={['browse-card-text', `is-${shape}`]}>
-      <strong>{title}</strong>
-      {medium && <span>{medium}</span>}
-    </span>
-  ) : (
-    <>
-      <span class:list={['browse-card-media', `is-${shape}`]}>
-        {image ? (
-          <img
-            src={image}
-            alt=""
-            width={dimensions.width}
-            height={dimensions.height}
-            loading={loading}
-            fetchpriority={priority ? 'high' : undefined}
-            decoding="async"
-          />
-        ) : (
-          <span class="browse-card-fallback">{fallback}</span>
-        )}
-      </span>
-      <strong>{title}</strong>
-      {meta && <span class="browse-card-meta">{meta}</span>}
-    </>
-  )}
+<a class:list={['browse-card', `is-${sizeMode}-card`]} href={href}>
+  <span class:list={['browse-card-media', `is-${shape}`]}>
+    {image ? (
+      <img
+        src={image}
+        alt=""
+        width={dimensions.width}
+        height={dimensions.height}
+        loading={loading}
+        fetchpriority={priority ? 'high' : undefined}
+        decoding="async"
+      />
+    ) : (
+      <span class="browse-card-fallback">{fallback}</span>
+    )}
+  </span>
+  <strong>{title}</strong>
+  {meta && <span class="browse-card-meta">{meta}</span>}
 </a>

@@ -53,14 +53,11 @@ const relatedById = new Map(
   relatedEntries.map((item: any) => [item.entry.data.id, item]),
 );
 const primaryPreview = previewForEntry(entry, linkPreviewCache.previews);
-const textOnlyArtwork = data.image_mode === 'text';
-const sourceArtwork = textOnlyArtwork
-  ? undefined
-  : referencedSources
-      .map((source: any) => ({ source, preview: previewForEntry(source, linkPreviewCache.previews) }))
-      .find((item: any) => item.preview.image);
+const sourceArtwork = referencedSources
+  .map((source: any) => ({ source, preview: previewForEntry(source, linkPreviewCache.previews) }))
+  .find((item: any) => item.preview.image);
 const parentEntry: any = data.parent_id ? relatedById.get(data.parent_id) : undefined;
-const parentArtwork = !textOnlyArtwork && parentEntry
+const parentArtwork = parentEntry
   ? previewForEntry(parentEntry.entry, linkPreviewCache.previews).image
   : undefined;
 const heroImage = primaryPreview.image ?? sourceArtwork?.preview.image ?? parentArtwork;
