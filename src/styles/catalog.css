@@ -248,13 +248,12 @@
 }
 
 .catalog-tile.has-media {
-  grid-template-rows: 1fr auto auto auto;
-  height: 100%;
+  grid-template-rows: auto auto auto auto;
 }
 
 .catalog-tile-media {
   display: block;
-  align-self: end;
+  align-self: start;
   overflow: hidden;
   background: var(--wash);
 }
