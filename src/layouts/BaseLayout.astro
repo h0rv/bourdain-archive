@@ -68,8 +68,7 @@ const structuredData = {
     <meta name="twitter:title" content={pageTitle} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={socialImage} />
-    <link rel="icon" href={withBase('/favicon.ico')} sizes="any" />
-    <link rel="icon" href={withBase('/favicon.png')} type="image/png" />
+    <link rel="icon" href={withBase('/favicon-light.png')} type="image/png" sizes="512x512" />
     <link rel="apple-touch-icon" href={withBase('/apple-touch-icon.png')} />
     <title>{pageTitle}</title>
     <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
@@ -80,10 +79,7 @@ const structuredData = {
       <nav class="top-bar" aria-label="Primary">
         <a href={withBase('/')} class="top-bar-brand" aria-label="Bourdain Archive home">
           <img src={withBase('/images/cook-free-or-die.png')} alt="" width="46" height="65" loading="eager" decoding="async" />
-          <span>
-            <strong>Bourdain Archive</strong>
-            <small>Cook free or die</small>
-          </span>
+          <strong>Bourdain Archive</strong>
         </a>
         <span class="top-bar-spacer" aria-hidden="true"></span>
         <ul class="top-bar-links" role="list">

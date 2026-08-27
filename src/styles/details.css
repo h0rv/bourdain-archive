@@ -8,8 +8,7 @@
   display: grid;
   gap: clamp(1.5rem, 3vw, 3rem);
   align-items: center;
-  padding-block: clamp(0.75rem, 2vw, 1.75rem);
-  border-block: 1px solid rgba(17, 16, 14, 0.18);
+  padding-block: clamp(0.4rem, 1.2vw, 1rem);
 }
 
 .entry-hero.is-portrait {
@@ -166,8 +165,6 @@
 
 .entry-detail .detail-box {
   margin-top: clamp(1.75rem, 3.5vw, 3rem);
-  padding-top: 1rem;
-  border-top: 1px solid rgba(17, 16, 14, 0.18);
 }
 
 .entry-detail .detail-box::before {
@@ -207,7 +204,7 @@
   display: grid;
   grid-template-columns: minmax(7.5rem, 12rem) minmax(0, 1fr);
   margin: 0;
-  border-top: 1px solid rgba(17, 16, 14, 0.1);
+  gap: 0.35rem 0;
 }
 
 .fact-list dt,
@@ -216,8 +213,7 @@
 .identifier-list dd {
   min-width: 0;
   margin: 0;
-  padding-block: 0.55rem;
-  border-bottom: 1px solid rgba(17, 16, 14, 0.1);
+  padding-block: 0.2rem;
 }
 
 .fact-list dt,
@@ -251,14 +247,9 @@
   list-style: none;
 }
 
-.citation-list {
-  border-top: 1px solid rgba(17, 16, 14, 0.1);
-}
-
 .citation-list li {
   display: block;
-  padding-block: 0.65rem;
-  border-bottom: 1px solid rgba(17, 16, 14, 0.1);
+  padding-block: 0.45rem;
 }
 
 .citation-number {
@@ -413,14 +404,13 @@
 .related-records {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
-  border-top: 1px solid rgba(17, 16, 14, 0.1);
+  gap: 0.7rem 2rem;
 }
 
 .related-records li {
   display: grid;
   gap: 0.15rem;
-  padding: 0.7rem 0.8rem 0.7rem 0;
-  border-bottom: 1px solid rgba(17, 16, 14, 0.1);
+  padding: 0;
 }
 
 .related-records a {

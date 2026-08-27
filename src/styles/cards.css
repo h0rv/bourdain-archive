@@ -61,9 +61,7 @@
 }
 
 .browse-subsection > h3 {
-  padding-bottom: 0.55rem;
   margin: 0 0 1rem;
-  border-bottom: 1px solid var(--rule);
   font-family: var(--display);
   font-size: clamp(1.3rem, 2.5vw, 1.8rem);
   line-height: 1.1;
@@ -316,21 +314,15 @@
 .writing-groups {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0;
-  border-block: 1px solid var(--rule-strong);
+  gap: clamp(1.5rem, 4vw, 3rem);
 }
 
 .writing-groups article {
-  padding: 1rem 1.25rem 1.25rem;
-  border-right: 1px solid var(--rule);
+  padding: 0;
 }
 
 .writing-groups article:first-child {
   padding-left: 0;
-}
-
-.writing-groups article:last-child {
-  border-right: 0;
 }
 
 .catalog-number {
@@ -384,25 +376,19 @@
 .place-links {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.4rem 1.5rem;
   padding: 0;
   margin: 0;
   list-style: none;
-  border-top: 1px solid var(--rule);
 }
 
 .place-links li {
   min-width: 0;
-  border-right: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
-}
-
-.place-links li:nth-child(5n) {
-  border-right: 0;
 }
 
 .place-links a {
   display: block;
-  padding: 0.7rem 0.75rem;
+  padding: 0.25rem 0;
   font-family: var(--display);
   font-size: 1.15rem;
   font-weight: 650;
@@ -423,8 +409,6 @@
   grid-template-columns: minmax(8rem, 11.5rem) minmax(0, 1fr);
   gap: 1.25rem;
   height: 100%;
-  padding-top: 1rem;
-  border-top: 1px solid var(--rule-strong);
 }
 
 .show-poster {
@@ -529,9 +513,7 @@
 }
 
 .place-detail .detail-box {
-  padding-top: 1rem;
   margin-top: clamp(2rem, 5vw, 4rem);
-  border-top: 1px solid var(--rule-strong);
 }
 
 .place-entry-list {

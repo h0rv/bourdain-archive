@@ -8,16 +8,12 @@ header[role="banner"],
   padding-inline: var(--gutter);
 }
 
-body > header {
-  border-bottom: 1px solid var(--rule);
-}
-
 .top-bar {
   display: flex;
-  gap: 0.75rem 1.25rem;
+  gap: 0.35rem 1rem;
   align-items: center;
-  min-height: 5.25rem;
-  padding-block: 0.5rem;
+  min-height: 4.2rem;
+  padding-block: 0.35rem;
 }
 
 .top-bar a {
@@ -28,36 +24,22 @@ body > header {
 .top-bar-brand {
   display: inline-flex;
   flex: 0 0 auto;
-  gap: 0.7rem;
+  gap: 0.55rem;
   align-items: center;
 }
 
 .top-bar-brand img {
-  width: 2.9rem;
-  height: 4rem;
+  width: 2.35rem;
+  height: 3.2rem;
   object-fit: contain;
-}
-
-.top-bar-brand > span {
-  display: grid;
-  line-height: 1;
 }
 
 .top-bar-brand strong {
   font-family: var(--display);
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   font-weight: 800;
   letter-spacing: -0.035em;
-}
-
-.top-bar-brand small {
-  margin-top: 0.25rem;
-  color: var(--accent);
-  font-family: var(--mono);
-  font-size: 0.62rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  line-height: 1;
 }
 
 .top-bar-spacer {
@@ -79,7 +61,6 @@ body > header {
   place-items: center;
   min-height: 2.75rem;
   padding: 0.4rem 0.62rem;
-  border-bottom: 2px solid transparent;
   font-family: var(--mono);
   font-size: 0.7rem;
   font-weight: 600;
@@ -90,17 +71,18 @@ body > header {
 .top-bar-links a:hover,
 .top-bar-links a[aria-current="page"] {
   color: var(--accent);
-  border-bottom-color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.35rem;
 }
 
 .site-main {
   min-height: calc(100vh - 12rem);
-  padding-block: clamp(1.25rem, 3vw, 2.5rem) clamp(2.5rem, 6vw, 5rem);
+  padding-block: clamp(0.8rem, 1.8vw, 1.5rem) clamp(2.5rem, 6vw, 5rem);
 }
 
 .site-footer {
   padding-block: 1rem 1.5rem;
-  border-top: 1px solid var(--rule);
   color: var(--muted);
   font-family: var(--mono);
   font-size: 0.7rem;
@@ -111,7 +93,7 @@ body > header {
 .page-intro,
 .home-intro {
   max-width: 72rem;
-  margin-bottom: clamp(2rem, 4vw, 3.5rem);
+  margin-bottom: clamp(1.6rem, 3.5vw, 2.75rem);
 }
 
 .page-intro .lede {
@@ -266,9 +248,7 @@ body > header {
   gap: 1rem 2rem;
   align-items: end;
   justify-content: space-between;
-  padding-bottom: 0.8rem;
-  margin-bottom: 1.25rem;
-  border-bottom: 1px solid var(--rule-strong);
+  margin-bottom: 1rem;
 }
 
 .section-header h2,
@@ -305,9 +285,7 @@ body > header {
 .contribute-band,
 .not-found {
   max-width: 62rem;
-  padding-top: 1.5rem;
   margin-top: clamp(3rem, 6vw, 5rem);
-  border-top: 3px solid var(--ink);
 }
 
 .crosslink-band > p:not(.eyebrow),
@@ -326,13 +304,11 @@ body > header {
 .prose-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0 clamp(2rem, 6vw, 6rem);
-  border-top: 1px solid var(--rule-strong);
+  gap: clamp(2rem, 4vw, 3.5rem) clamp(2rem, 6vw, 6rem);
 }
 
 .prose-grid > section {
-  padding-block: 1.5rem 2.25rem;
-  border-bottom: 1px solid var(--rule);
+  padding-block: 0;
 }
 
 .prose-grid h2 {
