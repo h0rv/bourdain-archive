@@ -97,10 +97,7 @@ const formatOptions = [...new Set(catalog.map((item) => item.format))]
   <div class="catalog-page" data-catalog>
     <header class="catalog-intro">
       <h1 class="page-title">Archive</h1>
-      <p>
-        Search work by Bourdain, his appearances, and selected work about him. Episode guides are
-        included in the full view.
-      </p>
+      <p>Search Bourdain's work, appearances, and selected writing about him.</p>
     </header>
 
     <form class="catalog-tools" data-catalog-tools role="search">
@@ -131,10 +128,10 @@ const formatOptions = [...new Set(catalog.map((item) => item.format))]
         </select>
       </label>
       <label class="catalog-field">
-        <span>Scope</span>
+        <span>Show</span>
         <select name="scope" data-catalog-filter="scope">
           <option value="rollup">Works and appearances</option>
-          <option value="">Everything and episodes</option>
+          <option value="">Everything, including episodes</option>
           <option value="child">Episodes only</option>
         </select>
       </label>

@@ -24,7 +24,7 @@ const availabilityFields = [
 ] as const;
 
 export const sourceGroups = [
-  { id: "curated", label: "Curated entries" },
+  { id: "curated", label: "Selected" },
   { id: "tumblr", label: "Tumblr" },
   { id: "medium", label: "Medium" },
   { id: "list", label: "Li.st" },
@@ -424,5 +424,5 @@ export function bourdainRelationLabel(relation?: string, collection?: string): s
   if (["appearances", "events", "screen", "series"].includes(collection ?? "")) {
     return "Featuring Bourdain";
   }
-  return "Archive record";
+  return "Reference";
 }
