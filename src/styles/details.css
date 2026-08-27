@@ -6,9 +6,9 @@
 
 .entry-hero {
   display: grid;
-  gap: clamp(1.5rem, 4vw, 4rem);
+  gap: clamp(1.5rem, 3vw, 3rem);
   align-items: center;
-  padding-block: clamp(1rem, 3vw, 2.5rem);
+  padding-block: clamp(0.75rem, 2vw, 1.75rem);
   border-block: 1px solid rgba(17, 16, 14, 0.18);
 }
 
@@ -78,7 +78,7 @@
   max-width: 18ch;
   margin: 0;
   font-family: var(--display);
-  font-size: clamp(2.7rem, 6.4vw, 5.8rem);
+  font-size: clamp(2.35rem, 4.8vw, 4.4rem);
   font-weight: 650;
   letter-spacing: -0.035em;
   line-height: 0.92;
@@ -101,7 +101,7 @@
 }
 
 .entry-byline > :not(:first-child)::before {
-  content: "·";
+  content: ",";
   margin-right: 0.7rem;
   color: var(--faint);
 }
@@ -170,7 +170,7 @@
 }
 
 .entry-detail .detail-box {
-  margin-top: clamp(2rem, 5vw, 4rem);
+  margin-top: clamp(1.75rem, 3.5vw, 3rem);
   padding-top: 1rem;
   border-top: 1px solid rgba(17, 16, 14, 0.18);
 }
@@ -261,10 +261,8 @@
 }
 
 .citation-list li {
-  display: grid;
-  grid-template-columns: 2.25rem minmax(0, 1fr);
-  gap: 0.8rem;
-  padding-block: 0.85rem;
+  display: block;
+  padding-block: 0.65rem;
   border-bottom: 1px solid rgba(17, 16, 14, 0.1);
 }
 
@@ -278,7 +276,7 @@
 
 .citation-title {
   font-family: var(--display);
-  font-size: 1.18rem;
+  font-size: 1.02rem;
   font-weight: 600;
   line-height: 1.2;
   text-decoration-thickness: 1px;
@@ -289,7 +287,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.2rem 0.8rem;
-  margin: 0.32rem 0 0;
+  margin: 0.2rem 0 0;
   color: var(--muted);
   font-family: var(--mono);
   font-size: 0.7rem;
@@ -297,7 +295,7 @@
 }
 
 .citation-meta > :not(:first-child)::before {
-  content: "·";
+  content: ",";
   margin-right: 0.8rem;
   color: var(--faint);
 }
@@ -374,7 +372,7 @@
 }
 
 .episode-record-meta > :not(:first-child)::before {
-  content: "·";
+  content: ",";
   margin-right: 0.65rem;
   color: var(--faint);
 }
@@ -480,7 +478,7 @@ article:not(.entry-detail) > .detail-box + .detail-box {
   }
 
   .entry-title.page-title {
-    font-size: clamp(2.6rem, 13vw, 4.5rem);
+    font-size: clamp(2.35rem, 11vw, 3.75rem);
   }
 
   .episode-records li {
@@ -506,11 +504,6 @@ article:not(.entry-detail) > .detail-box + .detail-box {
 
   .availability-actions a {
     flex: 1 1 9rem;
-  }
-
-  .citation-list li {
-    grid-template-columns: 1.7rem minmax(0, 1fr);
-    gap: 0.55rem;
   }
 
   .episode-records li {

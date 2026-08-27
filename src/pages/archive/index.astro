@@ -88,8 +88,8 @@ const rollupCount = catalog.filter((item) => item.scope === 'rollup').length;
     <header class="catalog-intro">
       <h1 class="page-title">Archive</h1>
       <p>
-        A single index of works by Bourdain, appearances featuring him, and substantive work about
-        him. Start with the curated records or include every indexed television episode.
+        Search work by Bourdain, his appearances, and selected work about him. Episode guides are
+        included in the full view.
       </p>
     </header>
 
@@ -123,8 +123,8 @@ const rollupCount = catalog.filter((item) => item.scope === 'rollup').length;
       <label class="catalog-field">
         <span>Scope</span>
         <select name="scope" data-catalog-filter="scope">
-          <option value="rollup">Curated records</option>
-          <option value="">Everything + episodes</option>
+          <option value="rollup">Main entries</option>
+          <option value="">Everything and episodes</option>
           <option value="child">Episodes only</option>
         </select>
       </label>
@@ -132,9 +132,9 @@ const rollupCount = catalog.filter((item) => item.scope === 'rollup').length;
 
     <div class="catalog-toolbar">
       <p class="catalog-count" data-catalog-count aria-live="polite">
-        {rollupCount} curated records
+        {rollupCount} main entries
       </p>
-      <noscript><p class="catalog-count">JavaScript-free view: all {catalog.length} records.</p></noscript>
+      <noscript><p class="catalog-count">All {catalog.length} entries are shown.</p></noscript>
     </div>
 
     <ol class="catalog-list" data-catalog-list>
@@ -149,7 +149,13 @@ const rollupCount = catalog.filter((item) => item.scope === 'rollup').length;
         >
           {item.preview.image ? (
             <a class="catalog-row-image" href={entryHref(item.collection, item.data.id)} tabindex="-1">
-              <img src={item.preview.image} alt="" loading="lazy" decoding="async" width="160" height="120" />
+              <img
+                src={item.scope === 'rollup' ? item.preview.image : undefined}
+                data-src={item.preview.image}
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
             </a>
           ) : (
             <span class="catalog-row-image" aria-hidden="true"></span>
@@ -157,10 +163,10 @@ const rollupCount = catalog.filter((item) => item.scope === 'rollup').length;
           <div class="catalog-row-copy">
             <a class="catalog-row-title" href={entryHref(item.collection, item.data.id)}>{item.title}</a>
             <span class="catalog-row-meta">
-              {formatDate(item.data.date, item.data.date_precision)} · {formatType(item.data.type)}
-              {item.data.show ? ` · ${item.data.show}` : ''}
+              {formatDate(item.data.date, item.data.date_precision)}, {formatType(item.data.type)}
+              {item.data.show ? `, ${item.data.show}` : ''}
               {item.data.season && item.data.episode
-                ? ` · S${String(item.data.season).padStart(2, '0')}E${String(item.data.episode).padStart(2, '0')}`
+                ? `, S${String(item.data.season).padStart(2, '0')}E${String(item.data.episode).padStart(2, '0')}`
                 : ''}
             </span>
             {item.scope === 'rollup' && item.data.summary && (
@@ -174,7 +180,7 @@ const rollupCount = catalog.filter((item) => item.scope === 'rollup').length;
         </li>
       ))}
     </ol>
-    <p class="catalog-empty" data-catalog-empty hidden>No matching records.</p>
+    <p class="catalog-empty" data-catalog-empty hidden>No matching entries.</p>
   </div>
 
   <script>
@@ -197,9 +203,13 @@ const rollupCount = catalog.filter((item) => item.scope === 'rollup').length;
           (!format?.value || item.dataset.format === format.value) &&
           (!scope?.value || item.dataset.scope === scope.value);
         item.hidden = !matches;
-        if (matches) visible += 1;
+        if (matches) {
+          const image = item.querySelector<HTMLImageElement>('img[data-src]');
+          if (image && !image.hasAttribute('src')) image.src = image.dataset.src ?? '';
+          visible += 1;
+        }
       }
-      if (count) count.textContent = `${visible} ${visible === 1 ? 'record' : 'records'}`;
+      if (count) count.textContent = `${visible} ${visible === 1 ? 'entry' : 'entries'}`;
       if (empty) empty.hidden = visible !== 0;
 
       const params = new URLSearchParams();

@@ -95,15 +95,11 @@ body > header {
 
 .site-main {
   min-height: calc(100vh - 12rem);
-  padding-block: clamp(1.5rem, 4vw, 3.5rem) clamp(4rem, 8vw, 7rem);
+  padding-block: clamp(1.25rem, 3vw, 2.5rem) clamp(2.5rem, 6vw, 5rem);
 }
 
 .site-footer {
-  display: flex;
-  gap: 1rem 2rem;
-  align-items: baseline;
-  justify-content: space-between;
-  padding-block: 1.4rem 2rem;
+  padding-block: 1rem 1.5rem;
   border-top: 1px solid var(--rule);
   color: var(--muted);
   font-family: var(--mono);
@@ -112,21 +108,10 @@ body > header {
   text-transform: uppercase;
 }
 
-.site-footer p {
-  max-width: 62ch;
-  margin: 0;
-}
-
-.site-footer nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem 1rem;
-}
-
 .page-intro,
 .home-intro {
   max-width: 72rem;
-  margin-bottom: clamp(2.5rem, 6vw, 5rem);
+  margin-bottom: clamp(2rem, 4vw, 3.5rem);
 }
 
 .page-intro .lede {
@@ -135,8 +120,8 @@ body > header {
 
 .split-intro {
   display: grid;
-  grid-template-columns: minmax(18rem, 0.8fr) minmax(18rem, 1.2fr);
-  gap: 1.5rem clamp(2rem, 6vw, 6rem);
+  grid-template-columns: minmax(15rem, 0.65fr) minmax(20rem, 1.35fr);
+  gap: 1.5rem clamp(2rem, 5vw, 5rem);
   align-items: end;
   max-width: none;
 }
@@ -161,7 +146,7 @@ body > header {
   max-width: 18ch;
   margin: 0;
   font-family: var(--display);
-  font-size: clamp(3.2rem, 9vw, 7.75rem);
+  font-size: clamp(2.8rem, 5.8vw, 4.65rem);
   font-weight: 800;
   letter-spacing: -0.065em;
   line-height: 0.88;
@@ -181,7 +166,7 @@ body > header {
 }
 
 .home-intro h1 {
-  max-width: 10ch;
+  max-width: 12ch;
 }
 
 .home-deck {
@@ -228,9 +213,9 @@ body > header {
 
 .archive-stats {
   display: grid;
-  grid-template-columns: repeat(6, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   padding: 0;
-  margin: 0 0 clamp(4rem, 9vw, 8rem);
+  margin: 0 0 clamp(3rem, 6vw, 5rem);
   border-block: 1px solid var(--rule-strong);
 }
 
@@ -272,7 +257,7 @@ body > header {
 }
 
 .home-section {
-  margin-top: clamp(4rem, 9vw, 8rem);
+  margin-top: clamp(3rem, 6vw, 5rem);
   scroll-margin-top: 2rem;
 }
 
@@ -292,7 +277,7 @@ body > header {
   max-width: 22ch;
   margin: 0;
   font-family: var(--display);
-  font-size: clamp(2rem, 5vw, 4rem);
+  font-size: clamp(1.7rem, 3.6vw, 3rem);
   font-weight: 800;
   letter-spacing: -0.045em;
   line-height: 0.95;
@@ -321,7 +306,7 @@ body > header {
 .not-found {
   max-width: 62rem;
   padding-top: 1.5rem;
-  margin-top: clamp(4rem, 9vw, 8rem);
+  margin-top: clamp(3rem, 6vw, 5rem);
   border-top: 3px solid var(--ink);
 }
 

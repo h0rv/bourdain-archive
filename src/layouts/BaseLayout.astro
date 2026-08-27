@@ -12,11 +12,11 @@ interface Props {
 const siteName = 'Bourdain Archive';
 const {
   title = siteName,
-  description = 'A sourced index of Anthony Bourdain’s writing, television, films, interviews, travels, and cultural legacy.',
+  description = "A guide to Anthony Bourdain's writing, television, films, interviews, and travels.",
   image,
   noindex = false,
 } = Astro.props;
-const pageTitle = title === siteName ? siteName : `${title} · ${siteName}`;
+const pageTitle = title === siteName ? siteName : `${title} | ${siteName}`;
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site ?? Astro.url.origin).href;
 const socialImage = new URL(
   image ?? withBase('/images/cook-free-or-die.png'),
@@ -27,12 +27,17 @@ const navItems = [
   { href: withBase('/archive/'), label: 'Archive' },
   { href: withBase('/writings/'), label: 'Writings' },
   { href: withBase('/tv/'), label: 'Television' },
-  { href: withBase('/screen/'), label: 'Screen + audio' },
-  { href: withBase('/places/'), label: 'Places' },
+  { href: withBase('/screen/'), label: 'Screen and audio' },
+  { href: withBase('/map/'), label: 'Places' },
   { href: withBase('/about/'), label: 'About' },
 ];
-const isCurrent = (href: string) =>
-  href === withBase('/') ? currentPath === href : currentPath.startsWith(href);
+const isCurrent = (href: string) => {
+  if (href === withBase('/')) return currentPath === href;
+  if (href === withBase('/map/')) {
+    return currentPath.startsWith(withBase('/map/')) || currentPath.startsWith(withBase('/places/'));
+  }
+  return currentPath.startsWith(href);
+};
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
@@ -94,13 +99,7 @@ const structuredData = {
       <slot />
     </main>
     <footer class="site-footer">
-      <p>
-        A sourced index—not a content mirror. Built for scholarship, discovery, and the long web.
-      </p>
-      <nav aria-label="Footer">
-        <a href={withBase('/sources/')}>Sources</a>
-        <a href="https://github.com/h0rv/bourdain-archive">Contribute on GitHub</a>
-      </nav>
+      <a href="https://github.com/h0rv/bourdain-archive">Corrections and additions on GitHub</a>
     </footer>
   </body>
 </html>

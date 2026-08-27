@@ -34,16 +34,16 @@ const previewFor = (entry: any) => {
 
 <BaseLayout
   title="Television"
-  description="Anthony Bourdain’s television series, production roles, and indexed episode guides."
+  description="Anthony Bourdain's television series and episode guides."
 >
   <header class="page-intro split-intro">
     <div>
-      <p class="eyebrow">Nine series · {episodes.length} episode records</p>
+      <p class="eyebrow">Series and episode guides</p>
       <h1 class="page-title">Television</h1>
     </div>
     <p class="lede">
-      Hosted, narrated, judged, or executive produced by Bourdain. Open a series for its full
-      season-by-season episode index, or <a href={withBase('/archive/?scope=all')}>search every episode</a>.
+      Bourdain hosted, narrated, judged, or produced each series listed here. Open a series to see
+      its seasons and episodes, or <a href={withBase('/archive/?scope=child')}>search every episode</a>.
     </p>
   </header>
 
@@ -72,17 +72,17 @@ const previewFor = (entry: any) => {
             </a>
             <div class="show-catalog-copy">
               <p class="eyebrow">
-                {formatDate(show.data.date, show.data.date_precision)} · Featuring Bourdain
+                {formatDate(show.data.date, show.data.date_precision)}, featuring Bourdain
               </p>
               <h2><a href={entryHref('series', show.data.id)}>{entryTitle(show)}</a></h2>
               <p>{show.data.summary}</p>
               <dl class="show-counts">
-                <div><dt>Seasons</dt><dd>{seasons.size || '—'}</dd></div>
-                <div><dt>Episodes indexed</dt><dd>{showEpisodes.length || '—'}</dd></div>
+                <div><dt>Seasons</dt><dd>{seasons.size || '0'}</dd></div>
+                <div><dt>Episodes</dt><dd>{showEpisodes.length || '0'}</dd></div>
               </dl>
               <p class="show-actions">
                 <a class="primary-action" href={entryHref('series', show.data.id)}>Browse series</a>
-                {officialUrl && <a href={officialUrl} rel="noopener noreferrer">Official / watch</a>}
+                {officialUrl && <a href={officialUrl} rel="noopener noreferrer">Official site</a>}
               </p>
             </div>
           </article>
@@ -92,8 +92,7 @@ const previewFor = (entry: any) => {
   </ol>
 
   <aside class="crosslink-band">
-    <p class="eyebrow">Beyond the hosted series</p>
-    <h2>Films, cameos, guest roles + long-form interviews</h2>
-    <p><a href={withBase('/screen/')}>Browse screen and audio appearances →</a></p>
+    <h2>Films, guest roles, and interviews</h2>
+    <p><a href={withBase('/screen/')}>Browse screen and audio appearances</a></p>
   </aside>
 </BaseLayout>

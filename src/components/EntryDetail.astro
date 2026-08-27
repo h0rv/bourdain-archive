@@ -89,19 +89,12 @@ const entityFor = (id: string) => {
     : { label: humanizeIdentifier(id) };
 };
 
-const creators = (data.creator ?? []).map(entityFor);
 const contributors = (data.contributors ?? []).map(entityFor);
-const people = (data.people ?? []).map(entityFor);
-const places = (data.places ?? []).map(entityFor);
 const roleCredits = (data.roles ?? []).map((credit: any) => {
   const person = entityFor(credit.person);
   const creditedAs = credit.credited_as ? ` as ${credit.credited_as}` : '';
   return { ...person, detail: `${credit.role}${creditedAs}` };
 });
-const identifierEntries = Object.entries(data.identifiers ?? {}).filter(
-  ([, value]) => Boolean(value),
-);
-
 const sortedChildEntries = [...childEntries].sort(
   (left: any, right: any) =>
     (left.entry.data.season ?? 0) - (right.entry.data.season ?? 0) ||
@@ -123,11 +116,9 @@ const episodeCode =
     : undefined;
 const hasRecordDetails =
   Boolean(data.publication) ||
-  Boolean(data.bucket) ||
   Boolean(data.host) ||
   Boolean(data.role) ||
   Boolean(data.duration_minutes) ||
-  creators.length > 0 ||
   contributors.length > 0 ||
   roleCredits.length > 0;
 ---
@@ -154,10 +145,10 @@ const hasRecordDetails =
           {imageAttribution ? (
             <figcaption>
               {imageAttribution.artist && <span>{imageAttribution.artist}</span>}
-              {imageAttribution.license && <span> · {imageAttribution.license}</span>}
+              {imageAttribution.license && <span>, {imageAttribution.license}</span>}
               {imageAttribution.source_url && (
                 <span>
-                  {' · '}
+                  {', '}
                   <a href={imageAttribution.source_url} target="_blank" rel="noreferrer">
                     {imageAttribution.source_title ?? 'Image source'}
                   </a>
@@ -203,23 +194,12 @@ const hasRecordDetails =
 
     {hasRecordDetails && (
       <section class="detail-box record-details" aria-labelledby="record-details-heading">
-        <h2 id="record-details-heading">Record details</h2>
+        <h2 id="record-details-heading">Details</h2>
         <dl class="fact-list">
           {data.publication && <><dt>Publication</dt><dd>{data.publication}</dd></>}
-          {data.bucket && <><dt>Section</dt><dd>{data.bucket}</dd></>}
           {data.host && <><dt>Host</dt><dd>{data.host}</dd></>}
           {data.role && <><dt>Role</dt><dd>{data.role}</dd></>}
           {data.duration_minutes && <><dt>Duration</dt><dd>{data.duration_minutes} minutes</dd></>}
-          {creators.length > 0 && (
-            <>
-              <dt>{creators.length === 1 ? 'Creator' : 'Creators'}</dt>
-              <dd class="entity-line">
-                {creators.map((creator: any, index: number) => (
-                  <>{index > 0 && ', '}{creator.href ? <a href={creator.href}>{creator.label}</a> : creator.label}</>
-                ))}
-              </dd>
-            </>
-          )}
           {contributors.length > 0 && (
             <>
               <dt>{contributors.length === 1 ? 'Contributor' : 'Contributors'}</dt>
@@ -235,7 +215,7 @@ const hasRecordDetails =
               <dt>Credits</dt>
               <dd class="credit-list">
                 {roleCredits.map((credit: any) => (
-                  <span>{credit.href ? <a href={credit.href}>{credit.label}</a> : credit.label} — {credit.detail}</span>
+                  <span>{credit.href ? <a href={credit.href}>{credit.label}</a> : credit.label}, {credit.detail}</span>
                 ))}
               </dd>
             </>
@@ -246,32 +226,27 @@ const hasRecordDetails =
 
     {referencedSources.length > 0 && (
       <section class="detail-box sources-box" aria-labelledby="sources-heading">
-        <div class="section-title-row">
-          <h2 id="sources-heading">Sources</h2>
-          <span>{referencedSources.length} {referencedSources.length === 1 ? 'citation' : 'citations'}</span>
-        </div>
+        <h2 id="sources-heading">Sources</h2>
         <ol class="citation-list">
-          {referencedSources.map((source: any, index: number) => {
+          {referencedSources.map((source: any) => {
             const sourceData = source.data;
             const host = hostnameForUrl(sourceData.url);
             const archive = host === 'web.archive.org' ? undefined : archiveTargetsForUrl(sourceData.url);
             return (
               <li>
-                <span class="citation-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
                 <div>
                   <a class="citation-title" href={sourceData.url} target="_blank" rel="noreferrer">
                     {entryTitle(source)}
                   </a>
                   <p class="citation-meta">
                     {host && <span>{host}</span>}
-                    {sourceData.type && <span>{formatType(sourceData.type)}</span>}
                     {sourceData.date && <time datetime={sourceData.date}>{formatDate(sourceData.date, sourceData.date_precision)}</time>}
-                    {!sourceData.date && sourceData.accessed && <span>Accessed {sourceData.accessed}</span>}
                   </p>
-                  <p class="citation-actions">
-                    <a href={sourceData.url} target="_blank" rel="noreferrer">Original</a>
-                    {archive && <a href={archive.latest_url} target="_blank" rel="noreferrer">Wayback</a>}
-                  </p>
+                  {archive && (
+                    <p class="citation-actions">
+                      <a href={archive.latest_url} target="_blank" rel="noreferrer">Saved copy</a>
+                    </p>
+                  )}
                 </div>
               </li>
             );
@@ -306,7 +281,7 @@ const hasRecordDetails =
                       <a href={entryHref(item.collection, child.id)}>{entryTitle(item.entry)}</a>
                       <span class="episode-record-meta">
                         {child.date && <time datetime={child.date}>{formatDate(child.date, child.date_precision)}</time>}
-                        {child.places?.length > 0 && <span>{child.places.map((place: string) => entityFor(place).label).join(' · ')}</span>}
+                        {child.places?.length > 0 && <span>{child.places.map((place: string) => entityFor(place).label).join(', ')}</span>}
                       </span>
                     </li>
                   );
@@ -318,51 +293,14 @@ const hasRecordDetails =
       </section>
     )}
 
-    {(people.length > 0 || places.length > 0 || data.tags?.length > 0 || identifierEntries.length > 0) && (
-      <div class="detail-index-grid">
-        {people.length > 0 && (
-          <section class="detail-box">
-            <h2>People</h2>
-            <ul class="reference-list">
-              {people.map((person: any) => <li>{person.href ? <a href={person.href}>{person.label}</a> : person.label}</li>)}
-            </ul>
-          </section>
-        )}
-        {places.length > 0 && (
-          <section class="detail-box">
-            <h2>Places</h2>
-            <ul class="reference-list">
-              {places.map((place: any) => <li>{place.href ? <a href={place.href}>{place.label}</a> : place.label}</li>)}
-            </ul>
-          </section>
-        )}
-        {data.tags?.length > 0 && (
-          <section class="detail-box">
-            <h2>Subjects</h2>
-            <ul class="subject-list">
-              {data.tags.map((tag: string) => <li>{humanizeIdentifier(tag)}</li>)}
-            </ul>
-          </section>
-        )}
-        {identifierEntries.length > 0 && (
-          <section class="detail-box">
-            <h2>Identifiers</h2>
-            <dl class="identifier-list">
-              {identifierEntries.map(([key, value]) => <><dt>{humanizeIdentifier(key)}</dt><dd>{String(value)}</dd></>)}
-            </dl>
-          </section>
-        )}
-      </div>
-    )}
-
     {relatedRefs.length > 0 && (
       <section class="detail-box related-box" aria-labelledby="related-heading">
-        <h2 id="related-heading">Related records</h2>
+        <h2 id="related-heading">Related</h2>
         <ul class="related-records">
           {relatedRefs.map((item: any) => (
             <li>
               <a href={entryHref(item.collection, item.entry.data.id)}>{entryTitle(item.entry)}</a>
-              <span>{formatType(kindFor(item.entry.data, item.collection))}{item.entry.data.date ? ` · ${formatDate(item.entry.data.date, item.entry.data.date_precision)}` : ''}</span>
+              <span>{formatType(kindFor(item.entry.data, item.collection))}{item.entry.data.date ? `, ${formatDate(item.entry.data.date, item.entry.data.date_precision)}` : ''}</span>
             </li>
           ))}
         </ul>

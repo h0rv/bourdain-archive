@@ -29,18 +29,18 @@ const about = literature
 const webWritingGroups = [
   {
     type: 'social-writing',
-    title: 'Tumblr, Medium + Li.st',
-    blurb: 'Recovered posts, cross-posts, dispatches, and fragments from Bourdain’s first-person web writing.',
+    title: 'Tumblr, Medium, and Li.st',
+    blurb: "Posts from Bourdain's own accounts.",
   },
   {
     type: 'field-note',
     title: 'Parts Unknown field notes',
-    blurb: 'Destination notes written around the production of Parts Unknown.',
+    blurb: 'Destination notes written during the production of Parts Unknown.',
   },
   {
     type: 'essay',
-    title: 'Essays + articles',
-    blurb: 'Magazine, newspaper, and web writing preserved as source records.',
+    title: 'Essays and articles',
+    blurb: 'Magazine, newspaper, and web articles by Bourdain.',
   },
 ];
 
@@ -69,19 +69,19 @@ const recentPrimaryWriting = sources
   description="Books, essays, stories, field notes, web writing, and selected criticism about Anthony Bourdain."
 >
   <header class="page-intro">
-    <p class="eyebrow">The written record</p>
+    <p class="eyebrow">Books and articles</p>
     <h1 class="page-title">Writings</h1>
     <p class="lede">
-      Books and writing by Bourdain are kept separate from interviews, criticism, biography, and
-      remembrance. Source records point outward to legal copies and preserved pages.
+      Books and articles by Bourdain appear first. Profiles, criticism, biography, and remembrance
+      appear in a separate section below.
     </p>
   </header>
 
   <section class="home-section" aria-labelledby="books-heading">
     <header class="section-header">
       <div>
-        <p class="eyebrow">By Bourdain · {books.length} works</p>
-        <h2 id="books-heading">Books + comics</h2>
+        <p class="eyebrow">By Bourdain</p>
+        <h2 id="books-heading">Books and comics</h2>
       </div>
     </header>
     <ol class="shelf-grid shelf-grid-books">
@@ -106,7 +106,7 @@ const recentPrimaryWriting = sources
               </span>
               <span class="shelf-card-title">{entryTitle(entry)}</span>
               <span class="shelf-card-meta">
-                {formatDate(entry.data.date, entry.data.date_precision)} · {formatType(entry.data.type)}
+                {formatDate(entry.data.date, entry.data.date_precision)}, {formatType(entry.data.type)}
               </span>
             </a>
           </li>
@@ -120,7 +120,7 @@ const recentPrimaryWriting = sources
       <header class="section-header">
         <div>
           <p class="eyebrow">By Bourdain</p>
-          <h2 id="shorter-heading">Essays + stories</h2>
+          <h2 id="shorter-heading">Essays and stories</h2>
         </div>
       </header>
       <ol class="editorial-list compact-editorial-list">
@@ -150,10 +150,10 @@ const recentPrimaryWriting = sources
   <section class="home-section" aria-labelledby="web-heading">
     <header class="section-header">
       <div>
-        <p class="eyebrow">By Bourdain · primary web archive</p>
-        <h2 id="web-heading">Dispatches from the open web</h2>
+        <p class="eyebrow">By Bourdain</p>
+        <h2 id="web-heading">Web writing</h2>
       </div>
-      <a href={withBase('/sources/')}>Search every source →</a>
+      <a href={withBase('/sources/')}>Browse all links</a>
     </header>
     <div class="writing-groups">
       {webWritingGroups.map((group) => {
@@ -182,10 +182,10 @@ const recentPrimaryWriting = sources
   <section class="home-section" id="about" aria-labelledby="about-heading">
     <header class="section-header">
       <div>
-        <p class="eyebrow">About Bourdain · selected, not exhaustive</p>
-        <h2 id="about-heading">Profiles, criticism + remembrance</h2>
+        <p class="eyebrow">About Bourdain</p>
+        <h2 id="about-heading">Profiles, criticism, and remembrance</h2>
       </div>
-      <span>{about.length} records</span>
+      <span>{about.length} works</span>
     </header>
     <ol class="editorial-list">
       {about.map((entry) => {
@@ -201,7 +201,7 @@ const recentPrimaryWriting = sources
             </a>
             <div>
               <p class="eyebrow">
-                {entry.data.publication} · {formatDate(entry.data.date, entry.data.date_precision)} · {formatType(entry.data.type)}
+                {entry.data.publication}, {formatDate(entry.data.date, entry.data.date_precision)}, {formatType(entry.data.type)}
               </p>
               <h3><a href={entryHref('literature', entry.data.id)}>{entryTitle(entry)}</a></h3>
               {entry.data.summary && <p>{entry.data.summary}</p>}

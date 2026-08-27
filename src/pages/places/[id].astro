@@ -43,9 +43,7 @@ const data = entry.data;
 >
   <article class="place-detail">
     <header class="page-intro">
-      <p class="eyebrow">
-        Place record{data.status !== 'confirmed' ? ` · ${formatType(data.status)}` : ''}
-      </p>
+      {data.status !== 'confirmed' && <p class="eyebrow">{formatType(data.status)}</p>}
       <h1 class="page-title">{data.name}</h1>
       {data.summary && <p class="lede">{data.summary}</p>}
       <p class="home-actions">
@@ -54,19 +52,10 @@ const data = entry.data;
       </p>
     </header>
 
-    {data.tags?.length > 0 && (
-      <section class="detail-box">
-        <h2>Subjects</h2>
-        <ul class="subject-list">
-          {data.tags.map((tag: string) => <li>{tag}</li>)}
-        </ul>
-      </section>
-    )}
-
     <section class="detail-box">
       <div class="section-title-row">
-        <h2>Archive records</h2>
-        <span>{linkedEntries.length} linked</span>
+        <h2>Related work</h2>
+        <span>{linkedEntries.length}</span>
       </div>
       {linkedEntries.length > 0 ? (
         <ol class="place-entry-list">
@@ -79,7 +68,7 @@ const data = entry.data;
           ))}
         </ol>
       ) : (
-        <p class="meta">No canonical records are linked yet.</p>
+        <p class="meta">No work is linked to this place yet.</p>
       )}
     </section>
 
@@ -87,13 +76,10 @@ const data = entry.data;
       <section class="detail-box">
         <h2>Sources</h2>
         <ol class="citation-list">
-          {citedSources.map((source: any, index: number) => (
+          {citedSources.map((source: any) => (
             <li>
-              <span class="citation-number">{String(index + 1).padStart(2, '0')}</span>
               <div>
-                <a class="citation-title" href={entryHref('sources', source.data.id)}>{source.data.title}</a>
-                <p class="citation-meta"><span>{formatType(source.data.type)}</span></p>
-                <p class="citation-actions"><a href={source.data.url} rel="noopener noreferrer">Open original</a></p>
+                <a class="citation-title" href={source.data.url} rel="noopener noreferrer">{source.data.title}</a>
               </div>
             </li>
           ))}
