@@ -256,11 +256,16 @@ async function inspectPage(page) {
       .filter((image) => !image.hasAttribute("alt"))
       .map((image) => imageSource(image));
     const fallbackImages = contentImages
-      .filter((image) =>
-        /placeholder|placehold|fallback|default|generic|cook-free-or-die|logo/i.test(
-          imageSource(image),
-        ),
-      )
+      .filter((image) => {
+        const source = imageSource(image);
+        let filename = source;
+        try {
+          filename = new URL(source, window.location.href).pathname.split("/").pop() ?? source;
+        } catch {}
+        return /(^|[-_.])(placeholder|placehold|fallback|generic|cook-free-or-die|logo)([-_.]|$)/i.test(
+          filename,
+        );
+      })
       .map((image) => imageSource(image));
     const cropRisks = contentImages.flatMap((image) => {
       const rect = image.getBoundingClientRect();
@@ -290,7 +295,12 @@ async function inspectPage(page) {
       const rect = image.getBoundingClientRect();
       if (image.naturalWidth < 1 || image.naturalHeight < 1 || rect.width < 40 || rect.height < 40)
         return [];
-      const scale = Math.max(rect.width / image.naturalWidth, rect.height / image.naturalHeight);
+      const widthScale = rect.width / image.naturalWidth;
+      const heightScale = rect.height / image.naturalHeight;
+      const scale =
+        getComputedStyle(image).objectFit === "contain"
+          ? Math.min(widthScale, heightScale)
+          : Math.max(widthScale, heightScale);
       if (scale < 1.75) return [];
       return [
         {
@@ -301,6 +311,27 @@ async function inspectPage(page) {
         },
       ];
     });
+    const tinySourceImages = contentImages
+      .filter((image) => {
+        const rect = image.getBoundingClientRect();
+        return (
+          image.complete &&
+          image.naturalWidth > 0 &&
+          image.naturalHeight > 0 &&
+          image.naturalWidth <= 4 &&
+          image.naturalHeight <= 4 &&
+          rect.width >= 40 &&
+          rect.height >= 40
+        );
+      })
+      .map((image) => ({
+        src: imageSource(image),
+        natural: [image.naturalWidth, image.naturalHeight],
+        rendered: [
+          Math.round(image.getBoundingClientRect().width),
+          Math.round(image.getBoundingClientRect().height),
+        ],
+      }));
 
     const mediaCandidates = main
       ? [
@@ -413,6 +444,7 @@ async function inspectPage(page) {
       brokenImages,
       incompleteImages,
       zeroDimensionImages,
+      tinySourceImages,
       missingAlt,
       fallbackImages: [...new Set(fallbackImages)],
       cropRisks,
@@ -511,6 +543,14 @@ function evaluateChecks(audit, responseStatus, events) {
         "zero-dimension-images",
         `${audit.zeroDimensionImages.length} loaded images have no rendered size.`,
         { images: audit.zeroDimensionImages },
+      ),
+    );
+  if (audit.tinySourceImages.length)
+    failures.push(
+      issue(
+        "tiny-source-images",
+        `${audit.tinySourceImages.length} content images returned only a tracking pixel.`,
+        { images: audit.tinySourceImages },
       ),
     );
   if (audit.missingAlt.length)
