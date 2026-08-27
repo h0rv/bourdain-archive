@@ -40,6 +40,12 @@ const CONTACT_SHEET_SIZE = clampNumber(
 );
 const FAIL_ON_WARNINGS = process.env.AUDIT_FAIL_ON_WARNINGS === "1";
 const ALLOW_FAILURES = process.env.AUDIT_ALLOW_FAILURES === "1";
+const FAILED_RETRY_PASSES = clampNumber(
+  process.env.AUDIT_FAILED_RETRY_PASSES,
+  1,
+  0,
+  3,
+);
 const BASE_PATH = normalizeBasePath(
   process.env.AUDIT_BASE_PATH ?? process.env.BASE_PATH ?? "/",
 );
@@ -1141,22 +1147,24 @@ async function run() {
   console.log(`Output: ${relative(ROOT, OUTPUT)}`);
 
   const server = await startStaticServer();
-  const browser = await chromium.launch({ headless: true });
-  const context = await browser.newContext({
+  const contextOptions = {
     colorScheme: "light",
     deviceScaleFactor: 1,
     locale: "en-US",
     reducedMotion: "reduce",
     serviceWorkers: "block",
     timezoneId: "UTC",
-  });
+  };
+  const browser = await chromium.launch({ headless: true });
+  const context = await browser.newContext(contextOptions);
 
   const results = [];
   let nextJob = 0;
   let completed = 0;
+  const retryStats = { attempted: 0, recovered: 0 };
 
-  async function openWorkerPage() {
-    const page = await context.newPage();
+  async function openWorkerPage(targetContext = context) {
+    const page = await targetContext.newPage();
     page.setDefaultTimeout(PAGE_TIMEOUT_MS);
     const state = { current: null };
     attachPageEvents(page, state);
@@ -1247,6 +1255,49 @@ async function run() {
 
   try {
     await Promise.all(Array.from({ length: CONCURRENCY }, () => worker()));
+    for (let pass = 1; pass <= FAILED_RETRY_PASSES; pass += 1) {
+      const failedSequences = results
+        .filter((result) => result.failures.length)
+        .map((result) => result.sequence);
+      if (!failedSequences.length) break;
+
+      console.log(
+        `\nRetrying ${failedSequences.length} failed captures one at a time (pass ${pass}/${FAILED_RETRY_PASSES}).`,
+      );
+      await new Promise((resolvePromise) => setTimeout(resolvePromise, 1_500));
+      const retryBrowser = await chromium.launch({ headless: true });
+      const retryContext = await retryBrowser.newContext(contextOptions);
+      const retryPage = await openWorkerPage(retryContext);
+      try {
+        for (const failedSequence of failedSequences) {
+          const resultIndex = results.findIndex(
+            (result) => result.sequence === failedSequence,
+          );
+          const job = jobs.find((item) => item.sequence === failedSequence);
+          if (resultIndex < 0 || !job) continue;
+
+          retryStats.attempted += 1;
+          try {
+            const retry = await auditJob(
+              retryPage.page,
+              retryPage.state,
+              job,
+              server.baseUrl,
+            );
+            if (!retry.failures.length) {
+              results[resultIndex] = retry;
+              retryStats.recovered += 1;
+            }
+          } catch {
+            // Keep the first result so a failed retry cannot hide the problem.
+          }
+        }
+      } finally {
+        await closeWorkerPage(retryPage);
+        await retryContext.close().catch(() => {});
+        await retryBrowser.close().catch(() => {});
+      }
+    }
   } finally {
     await context.close().catch(() => {});
     await browser.close().catch(() => {});
@@ -1287,6 +1338,7 @@ async function run() {
       imageWaitMs: IMAGE_WAIT_MS,
       mapWaitMs: MAP_WAIT_MS,
       mediaMode: MEDIA_MODE,
+      failedRetryPasses: FAILED_RETRY_PASSES,
       requestedRoutes: [...REQUESTED_ROUTES],
       viewportDefinitions: VIEWPORTS,
     },
@@ -1304,6 +1356,8 @@ async function run() {
       pagesWithWarnings,
       failureCount,
       warningCount,
+      retriedPages: retryStats.attempted,
+      recoveredPages: retryStats.recovered,
       missingSequences,
       durationSeconds: Math.round((Date.now() - started.getTime()) / 1000),
     },
