@@ -10,20 +10,39 @@ const ROOT = process.cwd();
 const DIST = resolve(ROOT, process.env.AUDIT_DIST ?? "dist");
 const OUTPUT = resolve(ROOT, process.env.AUDIT_OUTPUT ?? "tmp/visual-audit");
 const CONCURRENCY = clampNumber(process.env.AUDIT_CONCURRENCY, 8, 1, 20);
-const PAGE_TIMEOUT_MS = clampNumber(process.env.AUDIT_PAGE_TIMEOUT_MS, 15_000, 2_000, 60_000);
+const PAGE_TIMEOUT_MS = clampNumber(
+  process.env.AUDIT_PAGE_TIMEOUT_MS,
+  15_000,
+  2_000,
+  60_000,
+);
 const MEDIA_MODE =
-  process.argv.includes("--full") || process.env.AUDIT_MEDIA_MODE === "full" ? "full" : "viewport";
+  process.argv.includes("--full") || process.env.AUDIT_MEDIA_MODE === "full"
+    ? "full"
+    : "viewport";
 const IMAGE_WAIT_MS = clampNumber(
   process.env.AUDIT_IMAGE_WAIT_MS,
   MEDIA_MODE === "full" ? 15_000 : 5_000,
   0,
   15_000,
 );
-const MAP_WAIT_MS = clampNumber(process.env.AUDIT_MAP_WAIT_MS, 5_000, 0, 15_000);
-const CONTACT_SHEET_SIZE = clampNumber(process.env.AUDIT_CONTACT_SHEET_SIZE, 80, 20, 200);
+const MAP_WAIT_MS = clampNumber(
+  process.env.AUDIT_MAP_WAIT_MS,
+  5_000,
+  0,
+  15_000,
+);
+const CONTACT_SHEET_SIZE = clampNumber(
+  process.env.AUDIT_CONTACT_SHEET_SIZE,
+  80,
+  20,
+  200,
+);
 const FAIL_ON_WARNINGS = process.env.AUDIT_FAIL_ON_WARNINGS === "1";
 const ALLOW_FAILURES = process.env.AUDIT_ALLOW_FAILURES === "1";
-const BASE_PATH = normalizeBasePath(process.env.AUDIT_BASE_PATH ?? process.env.BASE_PATH ?? "/");
+const BASE_PATH = normalizeBasePath(
+  process.env.AUDIT_BASE_PATH ?? process.env.BASE_PATH ?? "/",
+);
 const REQUESTED_ROUTES = new Set(
   (process.env.AUDIT_ROUTES ?? "")
     .split(",")
@@ -55,7 +74,9 @@ const CONTENT_TYPES = {
 
 function clampNumber(value, fallback, min, max) {
   const parsed = Number(value);
-  return Number.isFinite(parsed) ? Math.min(max, Math.max(min, parsed)) : fallback;
+  return Number.isFinite(parsed)
+    ? Math.min(max, Math.max(min, parsed))
+    : fallback;
 }
 
 function normalizeBasePath(value) {
@@ -95,7 +116,8 @@ async function walkHtml(directory) {
     for (const entry of entries) {
       const fullPath = join(current, entry.name);
       if (entry.isDirectory()) await walk(fullPath);
-      else if (entry.isFile() && entry.name.endsWith(".html")) files.push(fullPath);
+      else if (entry.isFile() && entry.name.endsWith(".html"))
+        files.push(fullPath);
     }
   }
   await walk(directory);
@@ -105,26 +127,36 @@ async function walkHtml(directory) {
 function htmlFileToRoute(file) {
   const path = relative(DIST, file).split(sep).join("/");
   if (path === "index.html") return "/";
-  if (path.endsWith("/index.html")) return `/${path.slice(0, -"index.html".length)}`;
+  if (path.endsWith("/index.html"))
+    return `/${path.slice(0, -"index.html".length)}`;
   return `/${path}`;
 }
 
 async function enumerateRoutes() {
   await access(join(DIST, "index.html"));
   const files = await walkHtml(DIST);
-  const routes = files.map(htmlFileToRoute).sort((left, right) => left.localeCompare(right));
-  return REQUESTED_ROUTES.size ? routes.filter((route) => REQUESTED_ROUTES.has(route)) : routes;
+  const routes = files
+    .map(htmlFileToRoute)
+    .sort((left, right) => left.localeCompare(right));
+  return REQUESTED_ROUTES.size
+    ? routes.filter((route) => REQUESTED_ROUTES.has(route))
+    : routes;
 }
 
 function resolveRequestPath(requestPath) {
   let pathname;
   try {
-    pathname = decodeURIComponent(new URL(requestPath, "http://audit.local").pathname);
+    pathname = decodeURIComponent(
+      new URL(requestPath, "http://audit.local").pathname,
+    );
   } catch {
     return null;
   }
 
-  if (BASE_PATH && (pathname === BASE_PATH || pathname.startsWith(`${BASE_PATH}/`))) {
+  if (
+    BASE_PATH &&
+    (pathname === BASE_PATH || pathname.startsWith(`${BASE_PATH}/`))
+  ) {
     pathname = pathname.slice(BASE_PATH.length) || "/";
   }
 
@@ -139,7 +171,9 @@ async function startStaticServer() {
     const file = resolveRequestPath(request.url ?? "/");
     try {
       if (!file || !(await stat(file)).isFile()) throw new Error("Not found");
-      const type = CONTENT_TYPES[extname(file).toLowerCase()] ?? "application/octet-stream";
+      const type =
+        CONTENT_TYPES[extname(file).toLowerCase()] ??
+        "application/octet-stream";
       response.writeHead(200, {
         "Content-Type": type,
         "Cache-Control": "public, max-age=3600",
@@ -158,7 +192,8 @@ async function startStaticServer() {
     server.listen(0, "127.0.0.1", resolvePromise);
   });
   const address = server.address();
-  if (!address || typeof address === "string") throw new Error("Could not start the audit server.");
+  if (!address || typeof address === "string")
+    throw new Error("Could not start the audit server.");
   return {
     baseUrl: `http://127.0.0.1:${address.port}`,
     close: () =>
@@ -185,11 +220,15 @@ async function inspectPage(page) {
       if (document.fonts?.ready) {
         await Promise.race([
           document.fonts.ready,
-          new Promise((resolvePromise) => window.setTimeout(resolvePromise, 1_500)),
+          new Promise((resolvePromise) =>
+            window.setTimeout(resolvePromise, 1_500),
+          ),
         ]);
       }
       const pending = [...document.images].filter(
-        (image) => !image.complete && (mediaMode === "full" || imageIsNearViewport(image)),
+        (image) =>
+          !image.complete &&
+          (mediaMode === "full" || imageIsNearViewport(image)),
       );
       if (pending.length && imageWaitMs > 0) {
         await Promise.race([
@@ -197,29 +236,59 @@ async function inspectPage(page) {
             pending.map(
               (image) =>
                 new Promise((resolvePromise) => {
-                  image.addEventListener("load", resolvePromise, { once: true });
-                  image.addEventListener("error", resolvePromise, { once: true });
+                  image.addEventListener("load", resolvePromise, {
+                    once: true,
+                  });
+                  image.addEventListener("error", resolvePromise, {
+                    once: true,
+                  });
                 }),
             ),
           ),
-          new Promise((resolvePromise) => window.setTimeout(resolvePromise, imageWaitMs)),
+          new Promise((resolvePromise) =>
+            window.setTimeout(resolvePromise, imageWaitMs),
+          ),
+        ]);
+      }
+      const loaded = [...document.images].filter(
+        (image) =>
+          image.complete &&
+          image.naturalWidth > 0 &&
+          (mediaMode === "full" || imageIsNearViewport(image)),
+      );
+      if (loaded.length && imageWaitMs > 0) {
+        await Promise.race([
+          Promise.all(
+            loaded.map((image) => image.decode().catch(() => undefined)),
+          ),
+          new Promise((resolvePromise) =>
+            window.setTimeout(resolvePromise, imageWaitMs),
+          ),
         ]);
       }
       if (document.querySelector(".maplibregl-map") && mapWaitMs > 0) {
-        await new Promise((resolvePromise) => window.setTimeout(resolvePromise, mapWaitMs));
+        await new Promise((resolvePromise) =>
+          window.setTimeout(resolvePromise, mapWaitMs),
+        );
       }
       await new Promise((resolvePromise) =>
         requestAnimationFrame(() => requestAnimationFrame(resolvePromise)),
       );
     },
-    { imageWaitMs: IMAGE_WAIT_MS, mapWaitMs: MAP_WAIT_MS, mediaMode: MEDIA_MODE },
+    {
+      imageWaitMs: IMAGE_WAIT_MS,
+      mapWaitMs: MAP_WAIT_MS,
+      mediaMode: MEDIA_MODE,
+    },
   );
 
   return page.evaluate((mediaMode) => {
     const visible = (element) => {
       const style = getComputedStyle(element);
       return (
-        style.display !== "none" && style.visibility !== "hidden" && Number(style.opacity) !== 0
+        style.display !== "none" &&
+        style.visibility !== "hidden" &&
+        Number(style.opacity) !== 0
       );
     };
     const selector = (element) => {
@@ -240,7 +309,10 @@ async function inspectPage(page) {
     const main = document.querySelector("main");
     const contentImages = main ? [...main.querySelectorAll("img")] : [];
     const brokenImages = images
-      .filter((image) => imageIsInScope(image) && image.complete && image.naturalWidth === 0)
+      .filter(
+        (image) =>
+          imageIsInScope(image) && image.complete && image.naturalWidth === 0,
+      )
       .map((image) => imageSource(image));
     const incompleteImages = images
       .filter((image) => imageIsInScope(image) && !image.complete)
@@ -260,7 +332,9 @@ async function inspectPage(page) {
         const source = imageSource(image);
         let filename = source;
         try {
-          filename = new URL(source, window.location.href).pathname.split("/").pop() ?? source;
+          filename =
+            new URL(source, window.location.href).pathname.split("/").pop() ??
+            source;
         } catch {}
         return /(^|[-_.])(placeholder|placehold|fallback|generic|cook-free-or-die|logo)([-_.]|$)/i.test(
           filename,
@@ -293,7 +367,12 @@ async function inspectPage(page) {
     });
     const upscaleRisks = contentImages.flatMap((image) => {
       const rect = image.getBoundingClientRect();
-      if (image.naturalWidth < 1 || image.naturalHeight < 1 || rect.width < 40 || rect.height < 40)
+      if (
+        image.naturalWidth < 1 ||
+        image.naturalHeight < 1 ||
+        rect.width < 40 ||
+        rect.height < 40
+      )
         return [];
       const widthScale = rect.width / image.naturalWidth;
       const heightScale = rect.height / image.naturalHeight;
@@ -344,17 +423,24 @@ async function inspectPage(page) {
       .flatMap((element) => {
         if (!visible(element)) return [];
         const rect = element.getBoundingClientRect();
-        if (mediaMode !== "full" && (rect.top >= window.innerHeight + 300 || rect.bottom <= -300))
+        if (
+          mediaMode !== "full" &&
+          (rect.top >= window.innerHeight + 300 || rect.bottom <= -300)
+        )
           return [];
         if (rect.width < 80 || rect.height < 80) return [];
         const background = getComputedStyle(element).backgroundImage;
         const loadedImage = [...element.querySelectorAll("img")].some(
           (image) => image.naturalWidth > 0,
         );
-        if (element instanceof HTMLImageElement && element.naturalWidth > 0) return [];
+        if (element instanceof HTMLImageElement && element.naturalWidth > 0)
+          return [];
         if (loadedImage || (background && background !== "none")) return [];
         return [
-          { selector: selector(element), size: [Math.round(rect.width), Math.round(rect.height)] },
+          {
+            selector: selector(element),
+            size: [Math.round(rect.width), Math.round(rect.height)],
+          },
         ];
       })
       .slice(0, 20);
@@ -370,38 +456,45 @@ async function inspectPage(page) {
       .filter(([, count]) => count > 1)
       .map(([src, count]) => ({ src, count }));
 
-    const ids = [...document.querySelectorAll("[id]")].map((element) => element.id);
-    const repeatedIds = [...new Set(ids.filter((id, index) => ids.indexOf(id) !== index))];
-    const horizontalOverflow = document.documentElement.scrollWidth > window.innerWidth + 2;
-    const brokenHashLinks = [...document.querySelectorAll("a[href]")].flatMap((link) => {
-      let target;
-      try {
-        target = new URL(link.href, window.location.href);
-      } catch {
-        return [];
-      }
-      if (
-        !target.hash ||
-        target.hash === "#" ||
-        target.origin !== window.location.origin ||
-        target.pathname !== window.location.pathname
-      )
-        return [];
-      let id;
-      try {
-        id = decodeURIComponent(target.hash.slice(1));
-      } catch {
-        id = target.hash.slice(1);
-      }
-      return document.getElementById(id)
-        ? []
-        : [
-            {
-              href: link.getAttribute("href"),
-              text: link.textContent?.trim().slice(0, 80),
-            },
-          ];
-    });
+    const ids = [...document.querySelectorAll("[id]")].map(
+      (element) => element.id,
+    );
+    const repeatedIds = [
+      ...new Set(ids.filter((id, index) => ids.indexOf(id) !== index)),
+    ];
+    const horizontalOverflow =
+      document.documentElement.scrollWidth > window.innerWidth + 2;
+    const brokenHashLinks = [...document.querySelectorAll("a[href]")].flatMap(
+      (link) => {
+        let target;
+        try {
+          target = new URL(link.href, window.location.href);
+        } catch {
+          return [];
+        }
+        if (
+          !target.hash ||
+          target.hash === "#" ||
+          target.origin !== window.location.origin ||
+          target.pathname !== window.location.pathname
+        )
+          return [];
+        let id;
+        try {
+          id = decodeURIComponent(target.hash.slice(1));
+        } catch {
+          id = target.hash.slice(1);
+        }
+        return document.getElementById(id)
+          ? []
+          : [
+              {
+                href: link.getAttribute("href"),
+                text: link.textContent?.trim().slice(0, 80),
+              },
+            ];
+      },
+    );
     const mapCanvas = document.querySelector(".maplibregl-canvas");
     const mapCanvasRect = mapCanvas?.getBoundingClientRect();
     const overflowElements = horizontalOverflow
@@ -409,7 +502,8 @@ async function inspectPage(page) {
           .flatMap((element) => {
             if (!visible(element)) return [];
             const rect = element.getBoundingClientRect();
-            if (rect.right <= window.innerWidth + 2 && rect.left >= -2) return [];
+            if (rect.right <= window.innerWidth + 2 && rect.left >= -2)
+              return [];
             return [
               {
                 selector: selector(element),
@@ -433,14 +527,18 @@ async function inspectPage(page) {
       },
       linksWithoutHref: [...document.querySelectorAll("a")]
         .filter(
-          (link) => !link.getAttribute("href") || link.getAttribute("href")?.includes("undefined"),
+          (link) =>
+            !link.getAttribute("href") ||
+            link.getAttribute("href")?.includes("undefined"),
         )
         .map((link) => link.textContent?.trim().slice(0, 80) || "(empty link)"),
       brokenHashLinks,
       repeatedIds,
       imageCount: images.length,
       contentImageCount: contentImages.length,
-      contentImageSources: [...new Set(contentImages.map(imageSource).filter(Boolean))],
+      contentImageSources: [
+        ...new Set(contentImages.map(imageSource).filter(Boolean)),
+      ],
       brokenImages,
       incompleteImages,
       zeroDimensionImages,
@@ -461,7 +559,9 @@ async function inspectPage(page) {
         canvasSize: mapCanvasRect
           ? [Math.round(mapCanvasRect.width), Math.round(mapCanvasRect.height)]
           : [0, 0],
-        visibleError: Boolean(document.querySelector(".map-error:not([hidden])")),
+        visibleError: Boolean(
+          document.querySelector(".map-error:not([hidden])"),
+        ),
       },
     };
   }, MEDIA_MODE);
@@ -472,12 +572,18 @@ function evaluateChecks(audit, responseStatus, events) {
   const warnings = [];
 
   if (responseStatus !== 200)
-    failures.push(issue("http", `Page returned HTTP ${responseStatus ?? "no response"}.`));
-  for (const error of events.pageErrors) failures.push(issue("page-error", error));
-  for (const error of events.consoleErrors) failures.push(issue("console-error", error));
+    failures.push(
+      issue("http", `Page returned HTTP ${responseStatus ?? "no response"}.`),
+    );
+  for (const error of events.pageErrors)
+    failures.push(issue("page-error", error));
+  for (const error of events.consoleErrors)
+    failures.push(issue("console-error", error));
   for (const request of events.failedRequests) {
     const target = request.error?.includes("ERR_ABORTED") ? warnings : failures;
-    target.push(issue("request-failed", `Request failed for ${request.url}.`, request));
+    target.push(
+      issue("request-failed", `Request failed for ${request.url}.`, request),
+    );
   }
   for (const response of events.badResponses) {
     failures.push(
@@ -489,22 +595,36 @@ function evaluateChecks(audit, responseStatus, events) {
     );
   }
 
-  if (!audit.title.trim()) failures.push(issue("missing-title", "The page has no document title."));
+  if (!audit.title.trim())
+    failures.push(issue("missing-title", "The page has no document title."));
   if (!audit.lang.trim())
-    failures.push(issue("missing-language", "The html element has no language."));
+    failures.push(
+      issue("missing-language", "The html element has no language."),
+    );
   if (audit.landmarks.headers !== 1)
     failures.push(
-      issue("header-landmark", `Expected one page header and found ${audit.landmarks.headers}.`),
+      issue(
+        "header-landmark",
+        `Expected one page header and found ${audit.landmarks.headers}.`,
+      ),
     );
   if (audit.landmarks.mains !== 1)
     failures.push(
-      issue("main-landmark", `Expected one main element and found ${audit.landmarks.mains}.`),
+      issue(
+        "main-landmark",
+        `Expected one main element and found ${audit.landmarks.mains}.`,
+      ),
     );
   if (audit.landmarks.labelledNavigation < 1)
-    failures.push(issue("navigation-landmark", "No labelled navigation was found."));
+    failures.push(
+      issue("navigation-landmark", "No labelled navigation was found."),
+    );
   if (audit.landmarks.mainHeadings !== 1)
     failures.push(
-      issue("main-heading", `Expected one main h1 and found ${audit.landmarks.mainHeadings}.`),
+      issue(
+        "main-heading",
+        `Expected one main h1 and found ${audit.landmarks.mainHeadings}.`,
+      ),
     );
   if (audit.horizontalOverflow)
     failures.push(
@@ -521,13 +641,23 @@ function evaluateChecks(audit, responseStatus, events) {
       audit.mapState.canvasSize[1] < 1 ||
       audit.mapState.visibleError)
   ) {
-    failures.push(issue("map-render", "The map did not produce a visible canvas.", audit.mapState));
+    failures.push(
+      issue(
+        "map-render",
+        "The map did not produce a visible canvas.",
+        audit.mapState,
+      ),
+    );
   }
   if (audit.brokenImages.length)
     failures.push(
-      issue("broken-images", `${audit.brokenImages.length} images failed to render.`, {
-        images: audit.brokenImages,
-      }),
+      issue(
+        "broken-images",
+        `${audit.brokenImages.length} images failed to render.`,
+        {
+          images: audit.brokenImages,
+        },
+      ),
     );
   if (audit.incompleteImages.length)
     failures.push(
@@ -555,15 +685,23 @@ function evaluateChecks(audit, responseStatus, events) {
     );
   if (audit.missingAlt.length)
     failures.push(
-      issue("missing-alt", `${audit.missingAlt.length} images have no alt attribute.`, {
-        images: audit.missingAlt,
-      }),
+      issue(
+        "missing-alt",
+        `${audit.missingAlt.length} images have no alt attribute.`,
+        {
+          images: audit.missingAlt,
+        },
+      ),
     );
   if (audit.repeatedIds.length)
     failures.push(
-      issue("duplicate-ids", `${audit.repeatedIds.length} duplicate element IDs were found.`, {
-        ids: audit.repeatedIds,
-      }),
+      issue(
+        "duplicate-ids",
+        `${audit.repeatedIds.length} duplicate element IDs were found.`,
+        {
+          ids: audit.repeatedIds,
+        },
+      ),
     );
   if (audit.brokenHashLinks.length)
     failures.push(
@@ -576,9 +714,13 @@ function evaluateChecks(audit, responseStatus, events) {
 
   if (audit.linksWithoutHref.length)
     warnings.push(
-      issue("links-without-href", `${audit.linksWithoutHref.length} links have no valid href.`, {
-        links: audit.linksWithoutHref,
-      }),
+      issue(
+        "links-without-href",
+        `${audit.linksWithoutHref.length} links have no valid href.`,
+        {
+          links: audit.linksWithoutHref,
+        },
+      ),
     );
   if (audit.emptyMediaBoxes.length)
     warnings.push(
@@ -606,9 +748,13 @@ function evaluateChecks(audit, responseStatus, events) {
     );
   if (audit.fallbackImages.length)
     warnings.push(
-      issue("fallback-art", `${audit.fallbackImages.length} images look like fallback art.`, {
-        images: audit.fallbackImages,
-      }),
+      issue(
+        "fallback-art",
+        `${audit.fallbackImages.length} images look like fallback art.`,
+        {
+          images: audit.fallbackImages,
+        },
+      ),
     );
   if (audit.duplicatePageArt.length)
     warnings.push(
@@ -627,7 +773,8 @@ function attachPageEvents(page, state) {
     state.current?.pageErrors.push(error.message);
   });
   page.on("console", (message) => {
-    if (message.type() === "error") state.current?.consoleErrors.push(message.text());
+    if (message.type() === "error")
+      state.current?.consoleErrors.push(message.text());
   });
   page.on("requestfailed", (request) => {
     state.current?.failedRequests.push({
@@ -677,7 +824,9 @@ async function captureHomeSections(page, job) {
   });
 
   if (!anchorTargets.length) {
-    failures.push(issue("home-anchor-navigation", "The home page has no section links."));
+    failures.push(
+      issue("home-anchor-navigation", "The home page has no section links."),
+    );
   }
 
   for (const id of anchorTargets) {
@@ -736,12 +885,28 @@ async function captureHomeSections(page, job) {
               .map(
                 (image) =>
                   new Promise((resolvePromise) => {
-                    image.addEventListener("load", resolvePromise, { once: true });
-                    image.addEventListener("error", resolvePromise, { once: true });
+                    image.addEventListener("load", resolvePromise, {
+                      once: true,
+                    });
+                    image.addEventListener("error", resolvePromise, {
+                      once: true,
+                    });
                   }),
               ),
           ),
-          new Promise((resolvePromise) => window.setTimeout(resolvePromise, 2_500)),
+          new Promise((resolvePromise) =>
+            window.setTimeout(resolvePromise, 2_500),
+          ),
+        ]);
+        await Promise.race([
+          Promise.all(
+            images
+              .filter((image) => image.complete && image.naturalWidth > 0)
+              .map((image) => image.decode().catch(() => undefined)),
+          ),
+          new Promise((resolvePromise) =>
+            window.setTimeout(resolvePromise, 2_500),
+          ),
         ]);
         await new Promise((resolvePromise) =>
           requestAnimationFrame(() => requestAnimationFrame(resolvePromise)),
@@ -822,7 +987,8 @@ async function auditJob(page, state, job, baseUrl) {
   const checked = audit
     ? evaluateChecks(audit, responseStatus, events)
     : { failures: [], warnings: [] };
-  if (navigationError) checked.failures.push(issue("navigation-error", navigationError));
+  if (navigationError)
+    checked.failures.push(issue("navigation-error", navigationError));
   if (captureError) checked.failures.push(issue("capture-error", captureError));
   checked.failures.push(...homeSections.failures);
 
@@ -862,16 +1028,27 @@ function buildDuplicateArtReport(results) {
     }
   }
   return [...usage.entries()]
-    .map(([src, routes]) => ({ src, routeCount: routes.size, routes: [...routes].sort() }))
+    .map(([src, routes]) => ({
+      src,
+      routeCount: routes.size,
+      routes: [...routes].sort(),
+    }))
     .filter((entry) => entry.routeCount > 1)
-    .sort((left, right) => right.routeCount - left.routeCount || left.src.localeCompare(right.src))
+    .sort(
+      (left, right) =>
+        right.routeCount - left.routeCount || left.src.localeCompare(right.src),
+    )
     .slice(0, 1_000);
 }
 
 function buildContactSheet(results, sheetNumber, totalSheets) {
   const cards = results
     .map((result) => {
-      const state = result.failures.length ? "fail" : result.warnings.length ? "warn" : "pass";
+      const state = result.failures.length
+        ? "fail"
+        : result.warnings.length
+          ? "warn"
+          : "pass";
       const capture = result.capture
         ? `<a href="${escapeHtml(result.capture)}"><img src="${escapeHtml(result.capture)}" alt="" loading="lazy"></a>`
         : '<div class="missing-capture">Capture failed</div>';
@@ -898,7 +1075,10 @@ async function writeAuditPages(report) {
     const filename = `contact-sheet-${String(number).padStart(3, "0")}.html`;
     const start = index * CONTACT_SHEET_SIZE;
     const items = report.results.slice(start, start + CONTACT_SHEET_SIZE);
-    await writeFile(join(OUTPUT, filename), buildContactSheet(items, number, totalSheets));
+    await writeFile(
+      join(OUTPUT, filename),
+      buildContactSheet(items, number, totalSheets),
+    );
     sheets.push(filename);
   }
 
@@ -940,17 +1120,24 @@ async function run() {
   const started = new Date();
   const routes = await enumerateRoutes();
   if (!routes.length)
-    throw new Error("No generated HTML routes were found. Run npm run build first.");
+    throw new Error(
+      "No generated HTML routes were found. Run npm run build first.",
+    );
   await prepareOutput();
 
   const jobs = [];
   let sequence = 1;
   for (const route of routes) {
-    for (const viewport of VIEWPORTS) jobs.push({ sequence: sequence++, route, viewport });
+    for (const viewport of VIEWPORTS)
+      jobs.push({ sequence: sequence++, route, viewport });
   }
 
-  console.log(`Checking ${routes.length} routes at ${VIEWPORTS.length} viewport sizes.`);
-  console.log(`Capturing ${jobs.length} first view screenshots with ${CONCURRENCY} workers.`);
+  console.log(
+    `Checking ${routes.length} routes at ${VIEWPORTS.length} viewport sizes.`,
+  );
+  console.log(
+    `Capturing ${jobs.length} first view screenshots with ${CONCURRENCY} workers.`,
+  );
   console.log(`Output: ${relative(ROOT, OUTPUT)}`);
 
   const server = await startStaticServer();
@@ -994,9 +1181,15 @@ async function run() {
 
         for (let attempt = 0; attempt < 2 && !result; attempt += 1) {
           try {
-            result = await auditJob(workerPage.page, workerPage.state, job, server.baseUrl);
+            result = await auditJob(
+              workerPage.page,
+              workerPage.state,
+              job,
+              server.baseUrl,
+            );
           } catch (error) {
-            runnerError = error instanceof Error ? error.message : String(error);
+            runnerError =
+              error instanceof Error ? error.message : String(error);
             await closeWorkerPage(workerPage);
             workerPage = await openWorkerPage();
             jobsOnPage = 0;
@@ -1008,7 +1201,10 @@ async function run() {
             sequence: job.sequence,
             route: job.route,
             viewport: job.viewport.name,
-            viewportSize: { width: job.viewport.width, height: job.viewport.height },
+            viewportSize: {
+              width: job.viewport.width,
+              height: job.viewport.height,
+            },
             url: `${server.baseUrl}${routeToUrlPath(job.route)}`,
             responseStatus: null,
             durationMs: 0,
@@ -1019,7 +1215,8 @@ async function run() {
             failures: [
               issue(
                 "audit-runner-error",
-                runnerError ?? "The browser page closed before the audit finished.",
+                runnerError ??
+                  "The browser page closed before the audit finished.",
               ),
             ],
             warnings: [],
@@ -1058,12 +1255,24 @@ async function run() {
   process.stdout.write("\n");
 
   results.sort((left, right) => left.sequence - right.sequence);
-  const pagesWithFailures = results.filter((result) => result.failures.length).length;
-  const pagesWithWarnings = results.filter((result) => result.warnings.length).length;
-  const failureCount = results.reduce((sum, result) => sum + result.failures.length, 0);
-  const warningCount = results.reduce((sum, result) => sum + result.warnings.length, 0);
+  const pagesWithFailures = results.filter(
+    (result) => result.failures.length,
+  ).length;
+  const pagesWithWarnings = results.filter(
+    (result) => result.warnings.length,
+  ).length;
+  const failureCount = results.reduce(
+    (sum, result) => sum + result.failures.length,
+    0,
+  );
+  const warningCount = results.reduce(
+    (sum, result) => sum + result.warnings.length,
+    0,
+  );
   const missingSequences = jobs
-    .filter((job) => !results.some((result) => result.sequence === job.sequence))
+    .filter(
+      (job) => !results.some((result) => result.sequence === job.sequence),
+    )
     .map((job) => job.sequence);
 
   const report = {
@@ -1087,7 +1296,10 @@ async function run() {
       expectedPages: jobs.length,
       auditedPages: results.length,
       captures: results.filter((result) => result.capture).length,
-      sectionCaptures: results.reduce((sum, result) => sum + result.sectionCaptures.length, 0),
+      sectionCaptures: results.reduce(
+        (sum, result) => sum + result.sectionCaptures.length,
+        0,
+      ),
       pagesWithFailures,
       pagesWithWarnings,
       failureCount,
@@ -1101,18 +1313,26 @@ async function run() {
 
   const sheets = await writeAuditPages(report);
   report.summary.contactSheets = sheets.length;
-  await writeFile(join(OUTPUT, "report.json"), `${JSON.stringify(report, null, 2)}\n`);
+  await writeFile(
+    join(OUTPUT, "report.json"),
+    `${JSON.stringify(report, null, 2)}\n`,
+  );
 
   console.log(`Audit report: ${relative(ROOT, join(OUTPUT, "report.json"))}`);
-  console.log(`Contact sheet index: ${relative(ROOT, join(OUTPUT, "index.html"))}`);
+  console.log(
+    `Contact sheet index: ${relative(ROOT, join(OUTPUT, "index.html"))}`,
+  );
   console.log(
     `${pagesWithFailures} captures have failures and ${pagesWithWarnings} have warnings.`,
   );
 
-  const incompleteCoverage = results.length !== jobs.length || missingSequences.length > 0;
+  const incompleteCoverage =
+    results.length !== jobs.length || missingSequences.length > 0;
   if (
     !ALLOW_FAILURES &&
-    (incompleteCoverage || pagesWithFailures > 0 || (FAIL_ON_WARNINGS && pagesWithWarnings > 0))
+    (incompleteCoverage ||
+      pagesWithFailures > 0 ||
+      (FAIL_ON_WARNINGS && pagesWithWarnings > 0))
   ) {
     process.exitCode = 1;
   }
