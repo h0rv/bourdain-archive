@@ -9,7 +9,7 @@ creator:
 date: "2001"
 date_precision: year
 summary: Short nonfiction book about Mary Mallon, public health, class, food labor, and stigma.
-image_url: https://covers.openlibrary.org/b/id/488054-L.jpg
+image_url: https://res.cloudinary.com/bloomsbury-atlas/image/upload/w_568%2Cc_scale%2Cdpr_1.5/jackets/9780747566878.jpg
 tags:
   - labor
   - class

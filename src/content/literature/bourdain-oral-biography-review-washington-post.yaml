@@ -8,6 +8,7 @@ date: "2021-09-30"
 date_precision: day
 publication: Washington Post
 bucket: Book review
+image_url: https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/PMGLW5BAWII6ZKGZBAT2FJFZCU.jpg
 tags:
   - about-bourdain
   - literature

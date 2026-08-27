@@ -100,7 +100,7 @@ function primaryAvailabilityUrl(data) {
   );
 }
 
-function previewImageFor(data, cache, sourceById = new Map(), seen = new Set()) {
+function previewImageFor(data, cache, sourceById = new Map(), entryById = new Map(), seen = new Set()) {
   if (data.image_url && !isBlockedRemoteImage(data.image_url) && !isPlaceholderRemoteImage(data.image_url)) {
     return { image: data.image_url, reason: 'explicit image_url' };
   }
@@ -111,12 +111,24 @@ function previewImageFor(data, cache, sourceById = new Map(), seen = new Set()) 
   if (image && !isBlockedRemoteImage(image)) return { image, reason: `cached preview image for ${url}` };
   if (image && isBlockedRemoteImage(image)) return { image: undefined, reason: `cached preview image is blocked: ${image}` };
 
+  if (data.parent_id) {
+    const parentKey = `entry:${data.parent_id}`;
+    const parent = entryById.get(data.parent_id);
+    if (parent && !seen.has(parentKey)) {
+      seen.add(parentKey);
+      const parentImage = previewImageFor(parent, cache, sourceById, entryById, seen);
+      if (parentImage.image) {
+        return { ...parentImage, reason: `parent ${data.parent_id}: ${parentImage.reason}` };
+      }
+    }
+  }
+
   for (const sourceId of data.sources ?? []) {
     if (seen.has(sourceId)) continue;
     seen.add(sourceId);
     const source = sourceById.get(sourceId);
     if (!source) continue;
-    const sourceImage = previewImageFor(source, cache, sourceById, seen);
+    const sourceImage = previewImageFor(source, cache, sourceById, entryById, seen);
     if (sourceImage.image) return { ...sourceImage, reason: `source ${sourceId}: ${sourceImage.reason}` };
   }
 
@@ -154,6 +166,7 @@ for (const file of files) {
   entries.push({ file, collection, data });
 }
 const sourceById = new Map(entries.filter((entry) => entry.collection === 'sources').map((entry) => [entry.data.id, entry.data]));
+const entryById = new Map(entries.map((entry) => [entry.data.id, entry.data]));
 
 for (const [url, preview] of Object.entries(previewCache)) {
   if (isBlockedRemoteImage(preview?.image)) {
@@ -178,7 +191,7 @@ for (const { file, collection, data } of entries) {
   }
 
   if (!COLLECTIONS_EXPECTING_VISUALS.has(collection)) continue;
-  const previewImage = previewImageFor(data, previewCache, sourceById);
+  const previewImage = previewImageFor(data, previewCache, sourceById, entryById);
   if (!previewImage.image) {
     const count = missingByCollection.get(collection) ?? 0;
     missingByCollection.set(collection, count + 1);
