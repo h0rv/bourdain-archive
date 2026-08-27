@@ -70,7 +70,7 @@ const structuredData = {
     <link rel="icon" href={withBase('/favicon.png')} type="image/png" />
     <link rel="apple-touch-icon" href={withBase('/apple-touch-icon.png')} />
     <title>{pageTitle}</title>
-    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
+    <script is:inline type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   </head>
   <body>
     <a class="skip-link" href="#main-content">Skip to content</a>

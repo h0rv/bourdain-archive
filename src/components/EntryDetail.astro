@@ -50,11 +50,18 @@ const referencedSources = (data.sources ?? [])
   .map((id: string) => sourceById.get(id))
   .filter(Boolean);
 
+const relatedById = new Map(
+  relatedEntries.map((item: any) => [item.entry.data.id, item]),
+);
 const primaryPreview = previewForEntry(entry, linkPreviewCache.previews);
 const sourceArtwork = referencedSources
   .map((source: any) => ({ source, preview: previewForEntry(source, linkPreviewCache.previews) }))
   .find((item: any) => item.preview.image);
-const heroImage = primaryPreview.image ?? sourceArtwork?.preview.image;
+const parentEntry: any = data.parent_id ? relatedById.get(data.parent_id) : undefined;
+const parentArtwork = parentEntry
+  ? previewForEntry(parentEntry.entry, linkPreviewCache.previews).image
+  : undefined;
+const heroImage = primaryPreview.image ?? sourceArtwork?.preview.image ?? parentArtwork;
 const heroArtworkSource = primaryPreview.image ? undefined : sourceArtwork;
 const portraitArtwork = [
   'adaptation',
@@ -66,15 +73,12 @@ const portraitArtwork = [
   'show',
   'television',
   'voice-role',
-].includes(data.type);
+].includes(data.type) || Boolean(parentArtwork && !primaryPreview.image && !sourceArtwork?.preview.image);
 
 const availabilityActions = availabilityBadges(data.availability)
   .filter((item) => item.url)
   .map((item) => ({ ...item, host: hostnameForUrl(item.url) }));
 
-const relatedById = new Map(
-  relatedEntries.map((item: any) => [item.entry.data.id, item]),
-);
 const relatedRefs = (data.related ?? [])
   .map((id: string) => relatedById.get(id))
   .filter(Boolean);
