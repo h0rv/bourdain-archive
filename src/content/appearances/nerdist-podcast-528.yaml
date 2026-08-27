@@ -20,9 +20,10 @@ people:
 places: []
 sources:
   - nerdist-528-archive
+  - nerdist-about
 related: []
 status: confirmed
-image_mode: text
+image_url: https://cdn.nerdist.com/wp-content/uploads/2019/01/13153506/Nerdist_Logo_Horizontal_Red-2.png
 availability:
   archive_url: https://archive.org/details/The_Nerdist_Podcast_528
   audio_url: https://archive.org/details/The_Nerdist_Podcast_528
