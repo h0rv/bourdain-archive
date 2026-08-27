@@ -4,13 +4,14 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import { withBase } from '../../lib/site';
 
 const mapDataUrl = withBase('/archive/derived/travel-places.json');
+const mapWorkerUrl = withBase('/vendor/maplibre/maplibre-gl-worker.js');
 ---
 
 <BaseLayout
   title="Places map"
   description="Explore the cities, countries, and regions visited in Anthony Bourdain's television work."
 >
-  <div class="places-map-page" data-url={mapDataUrl}>
+  <div class="places-map-page" data-url={mapDataUrl} data-worker-url={mapWorkerUrl}>
     <h1 class="sr-only">Places visited by Anthony Bourdain</h1>
 
     <aside class="map-panel" aria-label="Place search">
@@ -402,6 +403,7 @@ const mapDataUrl = withBase('/archive/derived/travel-places.json');
     const panelToggle = document.querySelector<HTMLButtonElement>('#panel-toggle');
     const errorEl = document.querySelector<HTMLElement>('#map-error');
     const dataUrl = shell?.dataset.url;
+    const workerUrl = shell?.dataset.workerUrl;
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     let allPlaces: PlaceRecord[] = [];
@@ -417,6 +419,8 @@ const mapDataUrl = withBase('/archive/derived/travel-places.json');
     setPageHeight();
     window.addEventListener('resize', setPageHeight, { passive: true });
 
+    if (workerUrl) maplibregl.setWorkerUrl(workerUrl);
+
     const map = new maplibregl.Map({
       container: 'map',
       style: 'https://tiles.openfreemap.org/styles/positron',
@@ -426,6 +430,13 @@ const mapDataUrl = withBase('/archive/derived/travel-places.json');
       maxZoom: 15,
       renderWorldCopies: false,
       attributionControl: { compact: true },
+      transformRequest: (url, resourceType) => {
+        if (resourceType === 'Glyphs' && url.startsWith('https://tiles.openfreemap.org/fonts/')) {
+          const range = url.slice(url.lastIndexOf('/') + 1);
+          return { url: `https://tiles.openfreemap.org/fonts/Noto%20Sans%20Regular/${range}` };
+        }
+        return { url };
+      },
     });
 
     map.addControl(new maplibregl.NavigationControl({ showCompass: false }), 'top-right');

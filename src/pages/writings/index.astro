@@ -95,7 +95,8 @@ const recentPrimaryWriting = sources
                   <img
                     src={preview.image}
                     alt=""
-                    loading={index < 2 ? 'eager' : 'lazy'}
+                    loading={index < 6 ? 'eager' : 'lazy'}
+                    fetchpriority={index < 2 ? 'high' : undefined}
                     decoding="async"
                     width="400"
                     height="600"

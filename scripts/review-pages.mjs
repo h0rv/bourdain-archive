@@ -97,7 +97,7 @@ async function run() {
       const url = BASE + p;
       console.log(`\n== ${viewport.name} ${p} ==`);
       const response = await page.goto(url, { waitUntil: 'domcontentloaded' });
-      await page.waitForTimeout(250);
+      await page.waitForTimeout(p === '/map/' ? 2500 : 600);
       if (!response?.ok() && p !== '/404/') errors.push(`${p}: HTTP ${response?.status() ?? 'no response'}`);
     // basic checks
       const title = await page.title();

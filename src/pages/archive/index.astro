@@ -39,6 +39,17 @@ const catalog = collections
       const format = mediaTypeFor(data, collection);
       const title = entryTitle(entry);
       const preview = previewForEntry(entry, linkPreviewCache.previews);
+      const portrait = [
+        'adaptation',
+        'acted-role',
+        'book',
+        'comic',
+        'documentary',
+        'film',
+        'show',
+        'television',
+        'voice-role',
+      ].includes(data.type);
       const searchable = [
         title,
         data.summary,
@@ -51,7 +62,7 @@ const catalog = collections
         .filter(Boolean)
         .join(' ')
         .toLocaleLowerCase();
-      return { entry, collection, data, relation, scope, format, title, preview, searchable };
+      return { entry, collection, data, relation, scope, format, title, preview, searchable, portrait };
     }),
   )
   .filter((item) => item.scope !== 'hidden')
@@ -140,14 +151,22 @@ const formatOptions = [...new Set(catalog.map((item) => item.format))]
           data-search={item.searchable}
         >
           {item.preview.image ? (
-            <a class="catalog-row-image" href={entryHref(item.collection, item.data.id)} tabindex="-1">
-              <img
-                src={item.scope === 'rollup' ? item.preview.image : undefined}
-                data-src={item.preview.image}
-                alt=""
-                loading="lazy"
-                decoding="async"
-              />
+            <a
+              class:list={['catalog-row-image', item.portrait ? 'is-portrait' : 'is-landscape']}
+              href={entryHref(item.collection, item.data.id)}
+              tabindex="-1"
+              data-image-src={item.preview.image}
+            >
+              {item.scope === 'rollup' && (
+                <img
+                  src={item.preview.image}
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                  width="192"
+                  height="168"
+                />
+              )}
             </a>
           ) : (
             <span class="catalog-row-image" aria-hidden="true"></span>
@@ -195,8 +214,17 @@ const formatOptions = [...new Set(catalog.map((item) => item.format))]
           (!scope?.value || item.dataset.scope === scope.value);
         item.hidden = !matches;
         if (matches) {
-          const image = item.querySelector<HTMLImageElement>('img[data-src]');
-          if (image && !image.hasAttribute('src')) image.src = image.dataset.src ?? '';
+          const imageHolder = item.querySelector<HTMLElement>('[data-image-src]');
+          if (imageHolder && !imageHolder.querySelector('img')) {
+            const image = document.createElement('img');
+            image.src = imageHolder.dataset.imageSrc ?? '';
+            image.alt = '';
+            image.loading = 'lazy';
+            image.decoding = 'async';
+            image.width = 192;
+            image.height = 168;
+            imageHolder.append(image);
+          }
           visible += 1;
         }
       }
