@@ -295,7 +295,7 @@
 
 .catalog-source-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr);
   gap: 0.7rem;
   align-items: start;
   padding: 0.75rem 0;

@@ -2,7 +2,6 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import {
-  archiveTargetsForUrl,
   formatDate,
   formatType,
   sourceGroupFor,
@@ -20,7 +19,6 @@ const { entry } = Astro.props;
 const data = entry.data;
 const timeline = sourceTimelineDate(data);
 const group = sourceGroupFor(data);
-const archive = archiveTargetsForUrl(data.url);
 ---
 
 <BaseLayout title={data.title} description={data.notes ?? data.title}>
@@ -36,9 +34,6 @@ const archive = archiveTargetsForUrl(data.url);
 
     <div class="catalog-source-actions">
       <a href={data.url} target="_blank" rel="noopener noreferrer">Open source</a>
-      {archive && (
-        <a href={archive.latest_url} target="_blank" rel="noopener noreferrer">Open saved copy</a>
-      )}
       <a href="../">All sources</a>
     </div>
   </article>

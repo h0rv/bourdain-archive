@@ -2,7 +2,6 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import {
-  archiveTargetsForUrl,
   formatDate,
   formatType,
   hostnameForUrl,
@@ -23,7 +22,6 @@ const sources = (await getCollection('sources'))
       group,
       timeline,
       host,
-      archive: archiveTargetsForUrl(entry.data.url),
       searchable: [
         entry.data.title,
         entry.data.type,
@@ -86,11 +84,6 @@ const groupOptions = sourceGroups.filter((group) => groupsPresent.has(group.id))
               {formatDate(source.timeline.date, source.timeline.precision)}, {formatType(source.entry.data.type)}, {sourceGroupLabels[source.group] ?? formatType(source.group)}
             </span>
             {source.host && <span class="catalog-source-host">{source.host}</span>}
-          </div>
-          <div class="catalog-source-actions">
-            {source.archive && (
-              <a href={source.archive.latest_url} target="_blank" rel="noopener noreferrer">Saved copy</a>
-            )}
           </div>
         </li>
       ))}
