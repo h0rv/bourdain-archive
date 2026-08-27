@@ -19,6 +19,10 @@
   grid-template-columns: minmax(20rem, 37rem) minmax(0, 1fr);
 }
 
+.entry-hero.is-square {
+  grid-template-columns: minmax(14rem, 24rem) minmax(0, 1fr);
+}
+
 .entry-hero.without-art {
   grid-template-columns: minmax(0, 1fr);
 }
@@ -41,7 +45,8 @@
 }
 
 .is-portrait .entry-artwork img,
-.is-landscape .entry-artwork img {
+.is-landscape .entry-artwork img,
+.is-square .entry-artwork img {
   object-fit: contain;
 }
 

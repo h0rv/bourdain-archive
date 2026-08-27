@@ -92,7 +92,9 @@
 
 .browse-card {
   display: grid;
+  grid-template-rows: 1fr auto auto;
   gap: 0.4rem;
+  height: 100%;
   color: var(--ink);
   text-decoration: none;
 }
@@ -100,6 +102,7 @@
 .browse-card-media {
   display: grid;
   place-items: center;
+  align-self: end;
   overflow: hidden;
   background: color-mix(in srgb, var(--cream) 76%, var(--wash));
   border: 1px solid var(--rule);

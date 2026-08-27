@@ -18,13 +18,51 @@ const appearances = (await getCollection('appearances')).map((entry) => ({
   collection: 'appearances',
 }));
 
+type MediaShape = 'portrait' | 'landscape' | 'square';
+
+const shapeFromImageUrl = (image?: string): MediaShape | undefined => {
+  if (!image) return undefined;
+  let normalized = image.toLocaleLowerCase();
+  try {
+    normalized = decodeURIComponent(normalized);
+  } catch {
+    // Keep the original URL when it contains an incomplete escape sequence.
+  }
+
+  const dimensions = [...normalized.matchAll(/(\d{3,4})x(\d{3,4})/g)].at(-1);
+  if (dimensions) {
+    const ratio = Number(dimensions[1]) / Number(dimensions[2]);
+    if (ratio >= 1.25) return 'landscape';
+    if (ratio <= 0.8) return 'portrait';
+    return 'square';
+  }
+
+  if (/(?:ytimg|youtube|horizontal|_wide\b|maxresdefault|sddefault|hqdefault)/.test(normalized)) {
+    return 'landscape';
+  }
+  return undefined;
+};
+
+const mediaShapeFor = (data: any, image?: string): MediaShape => {
+  const imageShape = shapeFromImageUrl(image);
+  if (imageShape) return imageShape;
+  if (['documentary', 'film', 'adaptation', 'television'].includes(data.type)) return 'portrait';
+  if (['podcast', 'radio'].includes(data.type)) return 'square';
+  return 'landscape';
+};
+
 const items = [...screen, ...appearances]
   .map((item) => {
     const data: any = item.entry.data;
     const title = entryTitle(item.entry);
     const preview = previewForEntry(item.entry, linkPreviewCache.previews);
     const externalUrl = primaryAvailabilityUrl(data);
-    const portrait = ['adaptation', 'book', 'comic', 'documentary', 'film', 'show', 'television'].includes(data.type);
+    const shape = mediaShapeFor(data, preview.image);
+    const dimensions = {
+      portrait: { width: 400, height: 600 },
+      landscape: { width: 640, height: 400 },
+      square: { width: 500, height: 500 },
+    }[shape];
     const group =
       item.collection === 'appearances'
         ? 'interviews'
@@ -37,7 +75,8 @@ const items = [...screen, ...appearances]
       title,
       preview,
       externalUrl,
-      portrait,
+      shape,
+      dimensions,
       group,
       searchable: [title, data.summary, data.type, data.role, data.host, ...(data.tags ?? [])]
         .filter(Boolean)
@@ -65,7 +104,7 @@ const groups = [
   },
   {
     id: 'interviews',
-    title: 'Interviews and audio',
+    title: 'Interviews and podcasts',
     description: 'Interviews, podcasts, radio, panels, and talks.',
   },
 ];
@@ -115,7 +154,7 @@ const groups = [
           <ol class="catalog-grid">
             {items.filter((item) => item.group === group.id).map((item, index) => (
               <li
-                class="catalog-tile"
+                class:list={['catalog-tile', item.preview.image && 'has-media']}
                 data-screen-item
                 data-group={item.group}
                 data-type={item.data.type}
@@ -123,7 +162,7 @@ const groups = [
               >
                 {item.preview.image && (
                   <a
-                    class:list={['catalog-tile-media', item.portrait ? 'is-portrait' : 'is-landscape']}
+                    class:list={['catalog-tile-media', `is-${item.shape}`]}
                     href={entryHref(item.collection, item.data.id)}
                     tabindex="-1"
                   >
@@ -133,8 +172,8 @@ const groups = [
                       loading={groupIndex === 0 && index < 5 ? 'eager' : 'lazy'}
                       fetchpriority={groupIndex === 0 && index < 2 ? 'high' : undefined}
                       decoding="async"
-                      width="300"
-                      height="450"
+                      width={item.dimensions.width}
+                      height={item.dimensions.height}
                     />
                   </a>
                 )}

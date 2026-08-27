@@ -62,17 +62,48 @@ const parentArtwork = parentEntry
   : undefined;
 const heroImage = primaryPreview.image ?? sourceArtwork?.preview.image ?? parentArtwork;
 const heroArtworkSource = primaryPreview.image ? undefined : sourceArtwork;
-const portraitArtwork = [
-  'adaptation',
-  'acted-role',
-  'book',
-  'comic',
-  'documentary',
-  'film',
-  'show',
-  'television',
-  'voice-role',
-].includes(data.type) || Boolean(parentArtwork && !primaryPreview.image && !sourceArtwork?.preview.image);
+type MediaShape = 'portrait' | 'landscape' | 'square';
+
+const shapeFromImageUrl = (image?: string): MediaShape | undefined => {
+  if (!image) return undefined;
+  let normalized = image.toLocaleLowerCase();
+  try {
+    normalized = decodeURIComponent(normalized);
+  } catch {
+    // Keep the original URL when it contains an incomplete escape sequence.
+  }
+
+  const dimensions = [...normalized.matchAll(/(\d{3,4})x(\d{3,4})/g)].at(-1);
+  if (dimensions) {
+    const ratio = Number(dimensions[1]) / Number(dimensions[2]);
+    if (ratio >= 1.25) return 'landscape';
+    if (ratio <= 0.8) return 'portrait';
+    return 'square';
+  }
+
+  if (/(?:ytimg|youtube|horizontal|_wide\b|maxresdefault|sddefault|hqdefault)/.test(normalized)) {
+    return 'landscape';
+  }
+  return undefined;
+};
+
+const inheritedSeriesArtwork = Boolean(
+  parentArtwork && !primaryPreview.image && !sourceArtwork?.preview.image,
+);
+const artworkShape: MediaShape =
+  shapeFromImageUrl(heroImage) ??
+  (inheritedSeriesArtwork
+    ? 'portrait'
+    : ['adaptation', 'book', 'comic', 'documentary', 'film', 'show', 'television'].includes(data.type)
+      ? 'portrait'
+      : ['podcast', 'radio'].includes(data.type)
+        ? 'square'
+        : 'landscape');
+const artworkDimensions = {
+  portrait: { width: 720, height: 1080 },
+  landscape: { width: 1280, height: 720 },
+  square: { width: 900, height: 900 },
+}[artworkShape];
 
 const allAvailabilityActions = availabilityBadges(data.availability)
   .filter((item) => item.url)
@@ -142,7 +173,7 @@ const hasRecordDetails =
     <header
       class:list={[
         'entry-hero',
-        portraitArtwork ? 'is-portrait' : 'is-landscape',
+        `is-${artworkShape}`,
         !heroImage && 'without-art',
       ]}
     >
@@ -151,8 +182,8 @@ const hasRecordDetails =
           <img
             src={heroImage}
             alt=""
-            width={portraitArtwork ? 720 : 1280}
-            height={portraitArtwork ? 1080 : 720}
+            width={artworkDimensions.width}
+            height={artworkDimensions.height}
             loading="eager"
             fetchpriority="high"
             decoding="async"

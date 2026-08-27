@@ -233,8 +233,14 @@
   min-width: 0;
 }
 
+.catalog-tile.has-media {
+  grid-template-rows: 1fr auto auto auto;
+  height: 100%;
+}
+
 .catalog-tile-media {
   display: block;
+  align-self: end;
   overflow: hidden;
   background: var(--wash);
 }
@@ -245,6 +251,10 @@
 
 .catalog-tile-media.is-landscape {
   aspect-ratio: 16 / 10;
+}
+
+.catalog-tile-media.is-square {
+  aspect-ratio: 1;
 }
 
 .catalog-tile-media img {
